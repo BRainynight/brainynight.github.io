@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"brainynight.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Module and Package這篇的重點依然在於「相對引用與絕對引用」，但在這之間，先來看一些有關 import 的觀念。 [TOC] Concept Python 只有一種型態的 module object，所有的 Module 都是這種型態(type)。不管它是用 C, Python 或其他來實作。  管理這些 module ，提供他們名稱層級架構的，就是 Package。  可以把 P">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NewPost">
+<meta property="og:url" content="http://brainynight.github.io/2021/12/26/NewPost/index.html">
+<meta property="og:site_name" content="Hexo 今天天氣真好">
+<meta property="og:description" content="Module and Package這篇的重點依然在於「相對引用與絕對引用」，但在這之間，先來看一些有關 import 的觀念。 [TOC] Concept Python 只有一種型態的 module object，所有的 Module 都是這種型態(type)。不管它是用 C, Python 或其他來實作。  管理這些 module ，提供他們名稱層級架構的，就是 Package。  可以把 P">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2021-12-26T14:40:55.000Z">
+<meta property="article:modified_time" content="2021-12-26T15:03:50.548Z">
+<meta property="article:author" content="Judy">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="os">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://brainynight.github.io/2021/12/26/NewPost/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-TW'
+  };
+</script>
+
+  <title>NewPost | Hexo 今天天氣真好</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo 今天天氣真好</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>關於</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="http://brainynight.github.io/2021/12/26/NewPost/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Judy">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo 今天天氣真好">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          NewPost
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">發表於</span>
+              
+
+              <time title="創建時間：2021-12-26 22:40:55 / 修改時間：23:03:50" itemprop="dateCreated datePublished" datetime="2021-12-26T22:40:55+08:00">2021-12-26</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Module-and-Package"><a href="#Module-and-Package" class="headerlink" title="Module and Package"></a>Module and Package</h1><p><strong>這篇的重點依然在於「相對引用與絕對引用」，但在這之間，先來看一些有關 import 的觀念。</strong></p>
+<p>[TOC]</p>
+<h2 id="Concept"><a href="#Concept" class="headerlink" title="Concept"></a><a target="_blank" rel="noopener" href="https://docs.python.org/3/reference/import.html#packages">Concept</a></h2><ul>
+<li><p>Python 只有一種型態的 module object，所有的 Module 都是這種型態(type)。不管它是用 C, Python 或其他來實作。</p>
+</li>
+<li><p>管理這些 module ，提供他們名稱層級架構的，就是 Package。</p>
+</li>
+<li><p>可以把 Package 就想像成一個檔案系統管理檔案的樣子，但 Package 的管理並不如 file system 這樣的單純。</p>
+<p>所有的 package 本質上都是 module，但不是所有的 module 都是 package ，這是一個充分非必要條件。Package 可以視為是一種特殊的 modeuld，更仔細的說：<strong>任何包含有 <code>__path__</code> 屬性的 module 會被認為是一個 package</strong>。</p>
+<blockquote>
+<p>All packages are modules, but not all module are packages.</p>
+<p>Packages Are a special kind of module; specifically, any module that contains a <code>__path__</code> attribute is considered a package.</p>
+</blockquote>
+</li>
+<li><p>Python定義了兩種的 package，regular package 和 namespace package </p>
+</li>
+</ul>
+<h3 id="Regular-package"><a href="#Regular-package" class="headerlink" title="Regular package"></a><a target="_blank" rel="noopener" href="https://docs.python.org/3/reference/import.html#packages">Regular package</a></h3><p>現在的 python 不一定非得有 <code>__init__.py</code>  才能是 package，但是只要有這個檔案，在 import 到該 package 時，一定會先執行  <code>__init__.py</code> 再去執行其他動作。</p>
+<p>如下面的例子中，並沒有直接 <code>import parent</code>，都只有匯入其下的 subpackage，然而，<code>parent</code> 下面有一個  <code>__init__.py</code> ，所以必定會先執行。接著才是 subpackage 的 <code>__init__.py</code>。</p>
+<p>也因此，如果有一些初始化動作要做，可以放在  <code>__init__.py</code>，它就如同其他一般的 Python Module 一樣。</p>
+<ul>
+<li>傳統的 package，只要資料夾中含有 <code>__init__.py</code> ，當 regular package 被 import 時，<code>__init__.py</code> 會被偷偷地先執行，並且，這個檔案裏面的物件，會被綁定在 package 的名稱空間下。</li>
+<li>當  <code>__init__.py</code>  被 import 時，Python 會添加一些額外的 attribute 進來。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">parent/</span><br><span class="line">    __init__.py</span><br><span class="line">    one/</span><br><span class="line">        __init__.py</span><br><span class="line">    two/</span><br><span class="line">        __init__.py</span><br><span class="line">    three/</span><br><span class="line">        __init__.py</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> parent.one  <span class="comment"># implicitly execute parent/__init__.py and parent/one/__init__.py</span></span><br><span class="line"><span class="keyword">import</span> parent.two  <span class="comment"># implicitly execute parent/two/__init__.py</span></span><br><span class="line"><span class="keyword">import</span> parent.three <span class="comment"># implicitly execute parent/three/__init__.py</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Namespace-packages-簡介"><a href="#Namespace-packages-簡介" class="headerlink" title="Namespace packages (簡介)"></a>Namespace packages (簡介)</h3><ul>
+<li>namespace package 是由多個 <a target="_blank" rel="noopener" href="https://docs.python.org/3/glossary.html#term-portion">portions (直接翻譯：部份)</a>構成的，每個 portion 都貢獻一個 subpackage 給 parent package。</li>
+<li>portion  可分佈在 file system 中不同的地方，資料夾、網路、甚至是 zip file 反正必須是 Python 可以搜尋到的地方。</li>
+<li>Namespace packages 的 <code>__path__</code> 不使用傳統的 list，而是一個自訂的可迭代物件類型(custom iterable type)<ul>
+<li>若 parent 的路徑發生改變，這個可迭代物件在下一次的 import 中，會自動重新搜尋 package  portions 。</li>
+</ul>
+</li>
+<li>namespace packages 沒有 <code>parent/__init__.py</code> 這樣的檔案，事實上，在 import search 的時候，他們可能會找到多個 parent directories 。不同的  parent directories 中都提供了不同的 subpackage。</li>
+<li>以上面的例子來說， <code>parent/one</code> 與 <code>parent/two</code> 在檔案架構中的物理位置，可以不是相鄰的兩個資料夾。</li>
+<li>關於 Namespace Packages 可以看 <a target="_blank" rel="noopener" href="https://www.python.org/dev/peps/pep-0420"><strong>PEP 420</strong></a> 有更多細節。</li>
+</ul>
+<h2 id="Import-Search"><a href="#Import-Search" class="headerlink" title="Import Search"></a>Import Search</h2><p>import 有兩個步驟，這裡只著重在 Search。為了開始搜索，首先需要導入 module/package 的<strong>完整限定名稱</strong>，這個名稱會在導入搜索的各階段被使用。</p>
+<h3 id="1-Module-Cache"><a href="#1-Module-Cache" class="headerlink" title="1.Module Cache"></a>1.Module Cache</h3><ul>
+<li>在 import search 期間，首先會被檢查的地方是 <code>sys.modules</code>。</li>
+<li>import search 的範圍就是 <a target="_blank" rel="noopener" href="https://docs.python.org/3/library/sys.html#sys.modules"><code>sys.modules</code></a>。這個字典會將<strong>已經載入的模組名稱</strong>(module name) mapping 到已經加載的 module 實例。</li>
+<li><code>sys.modules</code> 是可寫的，但是要很小心、隨意改寫很容易有錯，<strong>總之不要動它</strong>。<ul>
+<li>隨意地刪除 key 有可能不會破壞關聯的 Module (因為其他 module 可能保留對它的reference)。但是，他會使字典的映射功能無效﹔使用該 key 找 module 時找不到，引發 <a target="_blank" rel="noopener" href="https://docs.python.org/zh-tw/3/library/exceptions.html#ModuleNotFoundError"><code>ModuleNotFoundError</code></a></li>
+</ul>
+</li>
+</ul>
+<p>來實際操作看看：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys </span><br><span class="line"><span class="built_in">print</span>(sys.modules) <span class="comment"># 超多東西</span></span><br><span class="line"><span class="built_in">print</span>(sys.modules[<span class="string">&quot;typing&quot;</span>]) <span class="comment"># 挑其中的 typing 出來看</span></span><br><span class="line"><span class="comment"># &lt;module &#x27;typing&#x27; from &#x27;C:\\path\\to\\user\\anaconda3\\lib\\typing.py&#x27;&gt;</span></span><br><span class="line"><span class="built_in">type</span>(sys.modules[<span class="string">&quot;typing&quot;</span>])</span><br><span class="line"><span class="comment"># module</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><code>sys.modules</code> 是一個字典，紀錄著 modeul name : module instance 這樣一組一組的訊息，是匯入模組時第一個搜尋的地方。</p>
+</blockquote>
+<h3 id="2-Finders-and-Loader"><a href="#2-Finders-and-Loader" class="headerlink" title="2. Finders and Loader"></a>2. Finders and Loader</h3><p>若指定的 module name 在 <code>sys.modules</code> 中找不到，會調用 Python 的 import 協議 (protocol)，以尋找並加載此 module 。</p>
+<p>這個協議包含兩個部分: <a target="_blank" rel="noopener" href="https://docs.python.org/3/glossary.html#term-finder">finders</a> and <a target="_blank" rel="noopener" href="https://docs.python.org/3/glossary.html#term-loader">loaders</a>，但將不細講。</p>
+<h1 id="PEP328-Imports-Multi-Line-and-Absolute-Relative"><a href="#PEP328-Imports-Multi-Line-and-Absolute-Relative" class="headerlink" title="PEP328 Imports: Multi-Line and Absolute/Relative"></a><a target="_blank" rel="noopener" href="https://www.python.org/dev/peps/pep-0328/#rationale-for-absolute-imports">PEP328 Imports: Multi-Line and Absolute/Relative</a></h1><h2 id="Absolute-Import-絕對位置匯入"><a href="#Absolute-Import-絕對位置匯入" class="headerlink" title="Absolute Import 絕對位置匯入"></a>Absolute Import 絕對位置匯入</h2><p>absolute import 指被引入的 package 使用的是從 root folder 到該 package/module 之間的完整路徑。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> foo</span><br></pre></td></tr></table></figure>
+
+<p>像這樣的用法，在 Python 2.4 之前，並沒有明確的說 import 所指的位置應該是 top-level 或是 其他 module insider。為了解決這個歧異(ambiguity) 從 Python 2.5 開始，這種 <code>import foo</code> 的寫法，被稱為「 <strong>absolute import</strong>」。</p>
+<p>它代表這個 <code>foo</code> 必定是可以透過 <code>sys.path</code> 取得的 module 或 package，這稱為絕對匯入。</p>
+<blockquote>
+<p>To resolve the ambiguity, it is proposed that <code>foo</code> will always be a module or package reachable from <code>sys.path</code>. This is called an absolute import.</p>
+</blockquote>
+<p>根據 <a target="_blank" rel="noopener" href="https://www.python.org/dev/peps/pep-0328/#rationale-for-absolute-imports">PEP 328</a>，從 python 2.5開始，所有直接<code>import xxx</code> 語法，都會是 top-level module : 與 <code>__main__</code> 同級(資料夾)的 module。</p>
+<p>絕對導入的優點是清楚、架構易懂，但也有著問題：重命名層次結構中 high-level 的 package 時、或是將一個 package 移至另一個 package 時，要去修改所有的程式碼，需要付出較高的代價。</p>
+<p>一個簡單粗暴，但就軟體架構規劃未必是好事的作法是，在移動 package 時將「要被 import 的 package」的層級，用 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sys.path.append(<span class="string">&quot;path/to/pkg&#x27;s/parent&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>強制把該 package 加到被搜索行列（ <code>sys.path</code>）裡面。</p>
+<h3 id="Why-Absolute-Import-not-Good"><a href="#Why-Absolute-Import-not-Good" class="headerlink" title="Why Absolute Import not Good?"></a>Why Absolute Import not Good?</h3><p>舉例說說這個問題，暫且拋開什麼物件導向的設計問題：假設現在有個專案是「開商店街」，目前寫了兩個店面：電影院跟披薩店。其中披薩店止負責賣披薩，披薩要從工廠訂貨。</p>
+<ul>
+<li>main.py<ul>
+<li>pizza<ul>
+<li>pizzaStore<ul>
+<li>store</li>
+</ul>
+</li>
+<li>pizzaFactor<ul>
+<li>produce</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>movieTheater<ul>
+<li>movie_list </li>
+<li>customer </li>
+<li>store </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>在這個案例中，<code>pizza</code> 下面還有兩個 sub-package。而 <code>movieTheater</code> 比較單純只有一層級。</p>
+<ol>
+<li><p><code>main</code> 的角度沒什麼問題，從根目錄(root)開始往下找到套件位置而已。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># main.py</span></span><br><span class="line"><span class="keyword">from</span> pizza.pizzaStore <span class="keyword">import</span> store <span class="keyword">as</span> pstore</span><br><span class="line"><span class="keyword">from</span> movieTheater <span class="keyword">import</span> store <span class="keyword">as</span> mstore</span><br></pre></td></tr></table></figure></li>
+<li><p><code>pizza/store</code>：由於使用絕對路徑，<strong>所有直接<code>import xxx</code> 語法，都會是 top-level module : 與 <code>__main__</code> 同級(資料夾)的 module。</strong></p>
+<p> 這裡的 <code>__main__</code> 是 <code>main.py</code>，所以想要匯入 <code>pizzaFactor</code> 底下的套件，需要將 <code>pizzaFactor</code> 從根目錄開始把完整路徑寫下來！（明明就在隔壁，卻要大老遠這樣繞一圈！）</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># pizza/store.py </span></span><br><span class="line"><span class="keyword">from</span> pizza.pizzaFactor <span class="keyword">import</span> produce</span><br></pre></td></tr></table></figure></li>
+<li><p><code>movieTheater/store</code>：同上原因，雖然 <code>movie_list</code> 跟 <code>customer</code> 在物理位置上是相鄰的，但很可惜 import 的角度要從根目錄開始執行，所以還是得像這樣把自己的 package name <code>movieTheater</code> 完整的寫出來。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># movieTheater/store.py </span></span><br><span class="line"><span class="keyword">import</span> movieTheater.movie_list </span><br><span class="line"><span class="keyword">import</span> movieTheater.customer</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>若是未來商店街擴增，我想依照商店種類分門別類：食物、娛樂、教育、交通。食物底下增加了麥當勞、肯德基，娛樂多開了遊樂園，教育下有文具店、書店，並且還蓋了車站隸屬於交通！</p>
+<p>那每當資料夾層級有所更動，就必須打開舊有的 Code ，<strong>進去每個 python 檔案把所有的絕對路徑改成「基於__main__根目錄的視角下」的絕對路徑。</strong> 簡直是場災難！</p>
+<p>上面也提過，一個比較簡單粗暴的方法是透過 <code>sys.path.append</code> 解決。在這個例子中，應該這樣實踐</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># movieTheater/store.py </span></span><br><span class="line"><span class="keyword">import</span> sys </span><br><span class="line">sys.path.append(<span class="string">&quot;movieTheater&quot;</span>)</span><br><span class="line"><span class="keyword">import</span> movie_list </span><br><span class="line"><span class="keyword">import</span> customer</span><br></pre></td></tr></table></figure>
+
+<p>恩…雖然是解決了要把 package 路徑從頂層開始寫的問題，可一旦要移動 package，<code>sys.path.append</code>的內容也需要改變。根本的問題並沒有解決，但就想迅速解決問題來說，也不失一個暫時的替代方法（比起打開每個 py 檔一個個修改 package name 成絕對路徑，或是改成正確關係的相對路徑…. ）。</p>
+<h2 id="Relative-Import"><a href="#Relative-Import" class="headerlink" title="Relative Import"></a>Relative Import</h2><blockquote>
+<p>當 import package 時 package 前面有 <code>.</code> 就是相對匯入。</p>
+</blockquote>
+<p>在最標準的起手式<code>import .pkgName</code> ，相對路徑的<strong>起點</strong>就是寫這行的<strong>檔案的所在位置</strong>而非 root file 。</p>
+<ul>
+<li>一個點表示當前包的位置開始引入</li>
+<li>兩個點表示上級</li>
+<li>三個點表示上上級</li>
+</ul>
+<p>以此類推，舉例說明</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">package/</span><br><span class="line">    __init__.py</span><br><span class="line">    subpackage1/</span><br><span class="line">        __init__.py <span class="comment"># here!</span></span><br><span class="line">        moduleX.py <span class="comment"># here! </span></span><br><span class="line">        moduleY.py</span><br><span class="line">    subpackage2/</span><br><span class="line">        __init__.py</span><br><span class="line">        moduleZ.py</span><br><span class="line">    moduleA.py</span><br></pre></td></tr></table></figure>
+
+<p>不管在 <code>subpackage1/moduleX.py</code> 或 <code>subpackage1/__init__.py</code> 中，下面的導入都是有效的(因為他們同級)。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> .moduleY <span class="keyword">import</span> spam</span><br><span class="line"><span class="keyword">from</span> .moduleY <span class="keyword">import</span> spam <span class="keyword">as</span> ham</span><br><span class="line"><span class="keyword">from</span> . <span class="keyword">import</span> moduleY</span><br><span class="line"><span class="keyword">from</span> ..subpackage1 <span class="keyword">import</span> moduleY</span><br><span class="line"><span class="keyword">from</span> ..subpackage2.moduleZ <span class="keyword">import</span> eggs</span><br><span class="line"><span class="keyword">from</span> ..moduleA <span class="keyword">import</span> foo</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>絕對匯入可以用</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> XXX.YYY</span><br><span class="line"><span class="keyword">from</span> XXX <span class="keyword">import</span> YYY</span><br></pre></td></tr></table></figure></li>
+<li><p>但相對匯入只能用 <code>from XXX import YYY</code>  這種語法。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> .moduleY <span class="keyword">import</span> spam</span><br></pre></td></tr></table></figure>
+
+<p>另一種寫法是禁止的 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> .moduleY <span class="comment"># 禁止!!!!!!</span></span><br></pre></td></tr></table></figure>
+
+<p>這是因為，寫 <code>import XXX.YYY.ZZZ</code> 之後，去除 keyword <code>import</code>，<code>XXX.YYY.ZZZ</code> 是可使用的(usable)。</p>
+<p>但是，去除 <code>import</code> 後，<code>.moduleY</code> 是一個不可使用的表達方式 (not usable in an expression )。</p>
+</li>
+</ul>
+<h3 id="相對匯入的原則-Rationale-for-Relative-Imports"><a href="#相對匯入的原則-Rationale-for-Relative-Imports" class="headerlink" title="相對匯入的原則 (Rationale for Relative Imports)"></a>相對匯入的原則 (<a target="_blank" rel="noopener" href="https://www.python.org/dev/peps/pep-0328/#id9">Rationale for Relative Imports</a>)</h3><p>隨著絕對匯入的作法敲定，出現了一個問題﹔是否該允許相對匯入的存在。相對匯入最大的優點在於：重新編排大型 package 架構時，不需要一一編輯 sub-package。</p>
+<p>此外，沒有相對引入的話，在 package 內部的模組，無法輕易的 import 自己。(In addition, a module inside a package can’t easily import itself without relative imports.) 看看最上面 movieTheater 的案例，明明相鄰的兩個檔案，卻需要大老遠從 root 拉路徑過來，這種繞遠路的行為十足弔詭。</p>
+<h3 id="缺點"><a href="#缺點" class="headerlink" title="缺點"></a>缺點</h3><p>然而，使用相對路徑還是有些須注意的地方：</p>
+<ol>
+<li>使用了相對路徑的檔案沒辦法直接執行(不能作為 <code>__main__</code>)</li>
+<li>由於相對路徑變得要計算套件之間的上下層關係來決定 import，<strong>因此 top level 不能低於被 import 的套件</strong>。需要在 import 套件中最高層的位置的<strong>再上一層</strong>，建立呼叫這一整套 package 的 .py 作為直接執行的檔案（他就是 <code>__main__</code>）。</li>
+</ol>
+<p>某些程度上這種作為變得十足麻煩，想測試套件還需要往上爬一層創立另一個檔案再來 import …. ，甚至有些專案會把相對路徑跟絕對路徑都寫出來：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>: </span><br><span class="line">    <span class="keyword">from</span> .where <span class="keyword">import</span> package </span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    <span class="keyword">from</span> where.package <span class="keyword">import</span> * </span><br></pre></td></tr></table></figure>
+
+<p>我曾經在 stackoverflow 看到一則討論在說為何用了相對路徑的 python 檔不能執行？這很麻煩。而某位網友說：「使用相對路徑的檔案你應該視為『套件』而非『腳本 (script) 』」。</p>
+<p>或許正因為這個原因，比起嫌相對路徑比絕對路徑麻煩，更應該把相對路徑跟絕對路徑本來當作是在不同的場合所使用的…. 這樣的思路來思考吧。</p>
+<p>簡單的例子就看 <code>moduleY</code> 那一塊吧。</p>
+<h3 id="相對路徑的觀察"><a href="#相對路徑的觀察" class="headerlink" title="相對路徑的觀察"></a>相對路徑的觀察</h3><p>下面在觀察相對路徑的究竟是怎麼引用的，是我自己的觀察，我也不知道對不對。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">relativePath (dir)</span><br><span class="line">│  config.py</span><br><span class="line">│  testfile.py</span><br><span class="line">└─visualize</span><br><span class="line">    └─prining.py</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># testfile.py</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;\n__file__=<span class="subst">&#123;__file__&#125;</span> | __name__=<span class="subst">&#123;__name__&#125;</span> | __package__=<span class="subst">&#123;__package__&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="keyword">from</span> visualize.prining <span class="keyword">import</span> printSth</span><br><span class="line">printSth()</span><br><span class="line"></span><br><span class="line"><span class="comment"># config.py</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;__file__=<span class="subst">&#123;__file__&#125;</span> | __name__=<span class="subst">&#123;__name__&#125;</span> | __package__=<span class="subst">&#123;__package__&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Config</span>():</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, </span>):</span></span><br><span class="line">        self.number = <span class="number">100</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getNum</span>(<span class="params">self, </span>):</span></span><br><span class="line">        <span class="keyword">return</span> self.number</span><br><span class="line">    </span><br><span class="line"><span class="comment"># visualize/prining.py</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;__file__=<span class="subst">&#123;__file__&#125;</span> | __name__=<span class="subst">&#123;__name__&#125;</span> | __package__=<span class="subst">&#123;__package__&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="keyword">from</span> ..config <span class="keyword">import</span> Config</span><br><span class="line">cfg = Config()</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printSth</span>():</span></span><br><span class="line">    num = cfg.getNum()</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;number in config is&quot;</span>, num)</span><br></pre></td></tr></table></figure>
+
+<p>執行指令，發生錯誤。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">python testfile.py</span><br><span class="line"></span><br><span class="line"><span class="comment"># 發生例外狀況: ValueError</span></span><br><span class="line"><span class="comment"># attempted relative import beyond top-level package</span></span><br></pre></td></tr></table></figure>
+
+<p><code>visualize/prining.py</code> 中使用的是相對路徑，<code>config</code> 確實在這個檔案的再上一層資料夾（與 <code>visualize</code> 同層級），應該使用兩個點沒錯，為什麼還是出現「import 超過 top-level 的 package」？</p>
+<p>來看輸出：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">__file__=d:\workspace\gitSB\relativePath\testfile.py | __name__=__main__ | __package__=</span><br><span class="line">__file__=d:\workspace\gitSB\relativePath\visualize\prining.py | __name__=visualize.prining | __package__=visualize</span><br></pre></td></tr></table></figure>
+
+<p>猜想：相對匯入的「相對基準點」，是基於 <code>__package__</code> 的階層關係去推算。</p>
+<p>回顧一下：</p>
+<ol>
+<li><code>testfile</code> 以絕對路徑引用了 <code>visualize.prining</code>：它直接看到了名為 <code>visualize</code> 的套件，<code>visualize</code> 前沒有任何前綴，所以 <code>visualize</code> 是一個 top level module。</li>
+<li><code>visualize/prining.py</code> 以相對路徑引用了與 <code>testfile </code>同層級的 <code>config</code><ul>
+<li><code>__package__=visualize</code> ，他的搜索空間被限縮在 <code>__package__</code> 底下。<ul>
+<li><code>. </code> : 當前位置 <code>visualize</code></li>
+<li><code>..</code> : 超出範圍！</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>也就是說，問題應該在於 <code>testfile.py</code> 對 package <code>visualize.prining</code> 使用了絕對匯入，導致直接訂了它的 <code>__package__</code> 屬性。</p>
+<p>解決辦法是，在 <code>testfile.py</code> 中也使用相對匯入，然後再更上一層建立一個 <code>.py</code> 來 call <code>testfile.py</code>，這邊列出有修改的內容，以及資料夾結構</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">relativePath (dir)</span><br><span class="line">│  execute.py</span><br><span class="line">└─pkgs</span><br><span class="line">    │  config.py</span><br><span class="line">    │  testfile.py</span><br><span class="line">    └─visualize</span><br><span class="line">       └─ prining.py</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># pkgs.testfile.py</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;\n__file__=<span class="subst">&#123;__file__&#125;</span> | __name__=<span class="subst">&#123;__name__&#125;</span> | __package__=<span class="subst">&#123;__package__&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="keyword">from</span> .visualize.prining <span class="keyword">import</span> printSth</span><br><span class="line">printSth()</span><br><span class="line"></span><br><span class="line"><span class="comment"># execute.py</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&#x27;\n__file__=<span class="subst">&#123;__file__&#125;</span> | __name__=<span class="subst">&#123;__name__&#125;</span> | __package__=<span class="subst">&#123;__package__&#125;</span>&#x27;</span>)</span><br><span class="line"><span class="keyword">from</span> pkgs <span class="keyword">import</span> testfile</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># python execute.py</span></span><br><span class="line">__file__=d:\workspace\gitSB\relativePath\execute.py | __name__=__main__ | __package__=</span><br><span class="line">__file__=d:\workspace\gitSB\relativePath\pkgs\testfile.py | __name__=pkgs.testfile | __package__=pkgs</span><br><span class="line">__file__=d:\workspace\gitSB\relativePath\pkgs\visualize\prining.py | __name__=pkgs.visualize.prining | __package__=pkgs.visualize</span><br><span class="line">__file__=d:\workspace\gitSB\relativePath\pkgs\config.py | __name__=pkgs.config | __package__=pkgs</span><br><span class="line">number <span class="keyword">in</span> config <span class="keyword">is</span> <span class="number">100</span></span><br></pre></td></tr></table></figure>
+
+<p>觀察：保留了他們<strong>完整的</strong>名稱空間域，使得相對路徑可以正常的找到 package。</p>
+<h4 id="結論"><a href="#結論" class="headerlink" title="結論"></a>結論</h4><p>使用相對路徑的時候，要視相對路徑往上 call 的層級，決定 execute 的那個 <code>.py</code> 應該落在哪個資料夾位置：</p>
+<p>例如，如果 <code>visualize\prining.py</code> 這個檔案的相對路徑只用到了同層級的 ( <code>.py</code> also in visualize )，那相對路徑在搜索 <code>visualize</code> 名稱空間可以找到這個包，那直接使用 <code>python testfile.py</code> 應該就沒什麼問題。</p>
+<p>但是， <code>visualize\prining.py</code> 的相對路徑 call 的是上一層資料夾中的檔案，我們不能夠失去這個「上層資料夾」的名稱，否則無法找尋目標檔案，那就必須再往上一層去呼叫這個 package 裡面的包，以保留給他們完整的名稱空間。</p>
+<h3 id="Why-Relative-Import"><a href="#Why-Relative-Import" class="headerlink" title="Why Relative Import?"></a>Why Relative Import?</h3><p>前面說了一些 import 的流程。使用絕對路徑 import 起來很清晰，但有些缺點，像是如果很多層，一層層這樣 import 顯得很冗長。</p>
+<p>但最大的問題在於 — import package 不可以重複的名稱，否則，運氣好是找不到 module 報錯、運氣不好是誤用其他同名的 module 而不自知。</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://carsonwah.github.io/15213187969322.html">理解Python的 relative 和 absolute import</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.python.org/dev/peps/pep-0328/#rationale-for-absolute-imports">PEP 328 – Imports: Multi-Line and Absolute/Relative</a></li>
+</ul>
+<h2 id="Attribute-package-¶"><a href="#Attribute-package-¶" class="headerlink" title="Attribute : __package__¶"></a>Attribute : <code>__package__</code><a target="_blank" rel="noopener" href="https://docs.python.org/3/reference/import.html#__package__">¶</a></h2><p>以下是官方文檔的內容：</p>
+<p>The module’s <code>__package__</code> attribute must be set. Its value must be a string, but it can be the same value as its <code>__name__</code>. When the module is a package, its <code>__package__</code> value should be set to its <code>__name__</code>. When the module is not a package, <code>__package__</code> should be set to the empty string for top-level modules, or for submodules, to the parent package’s name. See <a target="_blank" rel="noopener" href="https://www.python.org/dev/peps/pep-0366"><strong>PEP 366</strong></a> for further details.</p>
+<p>This attribute is used instead of <code>__name__</code> to calculate explicit relative imports for main modules, as defined in <a target="_blank" rel="noopener" href="https://www.python.org/dev/peps/pep-0366"><strong>PEP 366</strong></a>. It is expected to have the same value as <code>__spec__.parent</code>.</p>
+<p>模組的 <code>__package__</code> 在相對匯入時必須設置一串 string，他可以與 <code>__name__</code> 同名。當 module 是一個 package 的時候，他的 <code>__package__</code> 應該與 <code>__name__</code> 相同。若模組不是 package，若他是 top-level modeules 則 <code>__package__</code> 應該為空字串、若是子模組則應該是其 parent 的名字。更多細節參見 PEP 366。</p>
+<p>這個屬性將會代替<code>__name__</code>來計算 module 在相對匯入時的實際位置。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Python/" rel="tag"># Python</a>
+              <a href="/tags/os/" rel="tag"># os</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/12/26/hello-world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Module-and-Package"><span class="nav-number">1.</span> <span class="nav-text">Module and Package</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Concept"><span class="nav-number">1.1.</span> <span class="nav-text">Concept</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Regular-package"><span class="nav-number">1.1.1.</span> <span class="nav-text">Regular package</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Namespace-packages-%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.1.2.</span> <span class="nav-text">Namespace packages (簡介)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Import-Search"><span class="nav-number">1.2.</span> <span class="nav-text">Import Search</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Module-Cache"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.Module Cache</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Finders-and-Loader"><span class="nav-number">1.2.2.</span> <span class="nav-text">2. Finders and Loader</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PEP328-Imports-Multi-Line-and-Absolute-Relative"><span class="nav-number">2.</span> <span class="nav-text">PEP328 Imports: Multi-Line and Absolute&#x2F;Relative</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Absolute-Import-%E7%B5%95%E5%B0%8D%E4%BD%8D%E7%BD%AE%E5%8C%AF%E5%85%A5"><span class="nav-number">2.1.</span> <span class="nav-text">Absolute Import 絕對位置匯入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Why-Absolute-Import-not-Good"><span class="nav-number">2.1.1.</span> <span class="nav-text">Why Absolute Import not Good?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Relative-Import"><span class="nav-number">2.2.</span> <span class="nav-text">Relative Import</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B8%E5%B0%8D%E5%8C%AF%E5%85%A5%E7%9A%84%E5%8E%9F%E5%89%87-Rationale-for-Relative-Imports"><span class="nav-number">2.2.1.</span> <span class="nav-text">相對匯入的原則 (Rationale for Relative Imports)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%BA%E9%BB%9E"><span class="nav-number">2.2.2.</span> <span class="nav-text">缺點</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B8%E5%B0%8D%E8%B7%AF%E5%BE%91%E7%9A%84%E8%A7%80%E5%AF%9F"><span class="nav-number">2.2.3.</span> <span class="nav-text">相對路徑的觀察</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B5%90%E8%AB%96"><span class="nav-number">2.2.3.1.</span> <span class="nav-text">結論</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Why-Relative-Import"><span class="nav-number">2.2.4.</span> <span class="nav-text">Why Relative Import?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">2.3.</span> <span class="nav-text">Reference</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Attribute-package-%C2%B6"><span class="nav-number">2.4.</span> <span class="nav-text">Attribute : __package__</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Judy</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">標籤</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Judy</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
