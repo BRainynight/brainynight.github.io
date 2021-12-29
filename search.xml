@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>部落格指令自動化</title>
+    <url>/2021/12/30/automatic-command/</url>
+    <content><![CDATA[<h1 id="部落格指令自動化"><a href="#部落格指令自動化" class="headerlink" title="部落格指令自動化"></a>部落格指令自動化</h1><p>想用原始一點的方法來搞個半自動化，第一步當然就是不要打那麼多指令！</p>
+<p>我希望能將 <code>hexo clean</code>, <code>hexo generate</code>, <code>hexo server</code>/<code>hexo deploy</code> 的步驟集合在一起，並且開啟部落格的 Demo 網址。這裡使用 Make 做指令簡化</p>
+<p>在部落格的根目錄創建一個 makefile，內容如下</p>
+<figure class="highlight makefile"><table><tr><td class="code"><pre><span class="line"><span class="section">local:</span></span><br><span class="line">	python -m webbrowser <span class="string">&quot;http://localhost:4000&quot;</span></span><br><span class="line">	hexo cl &amp;&amp; hexo g &amp;&amp; hexo server </span><br><span class="line"></span><br><span class="line"><span class="section">demo:</span></span><br><span class="line">	python -m webbrowser <span class="string">&quot;http://localhost:4000&quot;</span></span><br><span class="line">	hexo server </span><br><span class="line"></span><br><span class="line"><span class="section">push:</span></span><br><span class="line">	python -m webbrowser <span class="string">&quot;https://&lt;UserName&gt;.github.io/&quot;</span></span><br><span class="line">	hexo cl &amp;&amp; hexo g &amp;&amp; hexo d </span><br></pre></td></tr></table></figure>
+
+<p>需要注意，Command 的縮排是 tab 不是空白鍵！</p>
+<h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><p>先開啟網頁是因為一旦 server 打開就會佔一個 process  在那邊，阻斷後面的指令。而網頁先開啟來只是一個動作，不會阻斷後續的指令。</p>
+<h3 id="local"><a href="#local" class="headerlink" title="local"></a><code>local</code></h3><p>是每次改完部落格，要清除靜態檔案重新生成並打 local 的展示網頁的時候。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">make <span class="built_in">local</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="demo"><a href="#demo" class="headerlink" title="demo"></a><code>demo</code></h3><p>單純想打開 local demo，沒有要清掉資料重新生成。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">make demo</span><br></pre></td></tr></table></figure>
+
+<h3 id="push"><a href="#push" class="headerlink" title="push"></a><code>push</code></h3><p>確認本地的改動，要將資料 push 到線上了。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">make push</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hello World</title>
     <url>/2021/12/26/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
