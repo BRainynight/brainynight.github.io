@@ -25,76 +25,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Python 視覺化 matplotlib 基本設置</title>
-    <url>/2021/12/30/python-visualize-basic/</url>
-    <content><![CDATA[<h2 id="子圖"><a href="#子圖" class="headerlink" title="子圖"></a>子圖</h2><h3 id="add-subplot"><a href="#add-subplot" class="headerlink" title="add_subplot"></a><code>add_subplot</code></h3><p>初使用時最常接觸的就是這個方法，當要用某張子圖的時候再使用 <code>fig.add_subplot()</code> 得到某個 <code>ax</code> ，用它進行繪圖。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">fig = plt.figure(figsize=(<span class="number">20</span>, <span class="number">16</span>), dpi=<span class="number">300</span>) </span><br><span class="line">fig.suptitle(<span class="string">&quot;Big title&quot;</span>, fontsize=<span class="number">20</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 子圖 1</span></span><br><span class="line">ax = fig.add_subplot(<span class="number">2</span>, <span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">ax.title.set_text(<span class="string">&quot;Subtitle 1&quot;</span>)</span><br><span class="line">plt.plot(np.arange(<span class="number">1</span>, <span class="number">11</span>), color=<span class="string">&#x27;b&#x27;</span>, label=<span class="string">&quot;lr&quot;</span>, alpha=<span class="number">0.7</span>)</span><br><span class="line">ax.legend() <span class="comment"># 圖例</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 子圖 2</span></span><br><span class="line">ax = fig.add_subplot(<span class="number">2</span>, <span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">ax.title.set_text(<span class="string">&quot;Subtitle 1&quot;</span>)</span><br><span class="line">plt.plot(np.arange(<span class="number">1</span>, <span class="number">11</span>), color=<span class="string">&#x27;r&#x27;</span>, label=<span class="string">&quot;lr&quot;</span>, alpha=<span class="number">0.7</span>)</span><br><span class="line">ax.legend()</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;fileName.png&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>但我並不喜歡這個用法，以上面這份程式為例，這總作法會讓 <code>fig.add_subplot(2, 1, 1)</code> 散布在整份程式中，一旦我要修改子圖在行列上的數量，修正起來變得無比麻煩。</p>
-<h3 id="一口氣指定完子圖"><a href="#一口氣指定完子圖" class="headerlink" title="一口氣指定完子圖"></a>一口氣指定完子圖</h3><p>一種方法是：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">fig, axes = plt.subplots(n_rows, n_cols)</span><br></pre></td></tr></table></figure>
-
-<p>不錯的是可以一口氣解決，但我更喜歡另一種作法：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">fig = plt.figure(figsize=(<span class="number">10</span>, <span class="number">8</span>), dpi=<span class="number">100</span>)</span><br><span class="line">axes = fig.subplots(<span class="number">2</span>, <span class="number">3</span>).reshape(-<span class="number">1</span>) <span class="comment"># axes.shape: (6, )</span></span><br><span class="line">axes = fig.subplots(<span class="number">2</span>, <span class="number">3</span>)             <span class="comment"># axes.shape: (2, 3)</span></span><br></pre></td></tr></table></figure>
-
-<p>原先的作法在取用 <code>axes</code> 的時候，要謹慎的選取 <code>axes[0][1]</code> 之類的 index ，同樣的一旦子圖在行列上的數量改變，透過 index 取得 <code>ax</code> 的時候也很容易出錯。因此我習慣先把他 <code>reshape</code> 成一個維度，直接用 <code>ax = axes[i]</code> 取用，簡單省事。缺點是難以知道現在處於哪一行哪一列，如果子圖有需要落在確切位置的需求，這個簡單粗暴的方法可能就不太適合。</p>
-<h3 id="大標題"><a href="#大標題" class="headerlink" title="大標題"></a>大標題</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ax.set_title(<span class="string">&quot;sub plot title&quot;</span>) <span class="comment"># 子圖的標題</span></span><br><span class="line">fig.suptitle(<span class="string">&quot;Figure title&quot;</span>)   <span class="comment"># 整張圖的大標題</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="合併子圖、跨行跨列"><a href="#合併子圖、跨行跨列" class="headerlink" title="合併子圖、跨行跨列"></a>合併子圖、跨行跨列</h3><h4 id="subplot2grid"><a href="#subplot2grid" class="headerlink" title="subplot2grid"></a><code>subplot2grid</code></h4><p>上面的用法都是規規矩矩，每張子圖大小一致。想要讓圖的形狀跨越多欄多列，應該使用 <code>subplot2grid</code>。<a href="https://matplotlib.org/3.1.1/gallery/userdemo/demo_gridspec01.html#sphx-glr-gallery-userdemo-demo-gridspec01-py" title="matplotlib 官網 subplot2grid 的範例">subplot2grid example</a></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ax1 = plt.subplot2grid((<span class="number">3</span>,<span class="number">3</span>), (<span class="number">0</span>,<span class="number">0</span>), colspan=<span class="number">3</span>)</span><br><span class="line">ax2 = plt.subplot2grid((<span class="number">3</span>,<span class="number">3</span>), (<span class="number">1</span>,<span class="number">0</span>), colspan=<span class="number">2</span>)</span><br><span class="line">ax3 = plt.subplot2grid((<span class="number">3</span>,<span class="number">3</span>), (<span class="number">1</span>, <span class="number">2</span>), rowspan=<span class="number">2</span>)</span><br><span class="line">ax4 = plt.subplot2grid((<span class="number">3</span>,<span class="number">3</span>), (<span class="number">2</span>, <span class="number">0</span>))</span><br><span class="line">ax5 = plt.subplot2grid((<span class="number">3</span>,<span class="number">3</span>), (<span class="number">2</span>, <span class="number">1</span>))</span><br></pre></td></tr></table></figure>
-
-<p>得到的圖相當於：</p>
-<p><img src="https://matplotlib.org/3.1.1/_images/sphx_glr_demo_gridspec01_001.png" alt="subplot2grid"></p>
-<p>事實上 <code>subplot2grid</code> 依然可以作到像是 <code>subplot</code> 這樣只給出正規方正的子圖，在不做 <code>colspan</code>/<code>rowspan</code> 的情況下，這兩個操作是等價的：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ax = plt.subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>)  <span class="comment"># 1. 算子圖要從 1 開始算子圖</span></span><br><span class="line">ax = plt.subplot2grid((<span class="number">2</span>,<span class="number">2</span>),(<span class="number">0</span>, <span class="number">0</span>)) <span class="comment"># 2. 先規定整張圖的 (row, col), 在列出要回傳的子圖位於哪個位置 (不像上面是算 index)</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="GridSpec"><a href="#GridSpec" class="headerlink" title="GridSpec"></a><code>GridSpec</code></h4><p>還有另一個方法是透過 <code>GridSpec</code> 達成。我們可以先用 <code>gridspec</code> 創建一個框架，並把框架的某一塊指派給 <code>plt.subplot</code> 真正創建子圖。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.gridspec <span class="keyword">as</span> gridspec</span><br><span class="line">gs = gridspec.GridSpec(<span class="number">2</span>, <span class="number">2</span>)</span><br><span class="line">ax = plt.subplot(gs[<span class="number">0</span>, <span class="number">0</span>]) <span class="comment"># 等價 ax = plt.subplot2grid((2,2),(0, 0))</span></span><br></pre></td></tr></table></figure>
-
-<p>所以，在前面一小節的分隔圖，在這個章節應該如下實做：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">gs = gridspec.GridSpec(<span class="number">3</span>, <span class="number">3</span>)</span><br><span class="line">ax1 = plt.subplot(gs[<span class="number">0</span>, :])</span><br><span class="line">ax2 = plt.subplot(gs[<span class="number">1</span>,:-<span class="number">1</span>])</span><br><span class="line">ax3 = plt.subplot(gs[<span class="number">1</span>:, -<span class="number">1</span>])</span><br><span class="line">ax4 = plt.subplot(gs[-<span class="number">1</span>,<span class="number">0</span>])</span><br><span class="line">ax5 = plt.subplot(gs[-<span class="number">1</span>,-<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
-
-<h4 id="subplot2grid-與-GridSpec-的差別"><a href="#subplot2grid-與-GridSpec-的差別" class="headerlink" title="subplot2grid 與 GridSpec 的差別"></a><code>subplot2grid</code> 與 <code>GridSpec</code> 的差別</h4><p>我覺得可這樣看待</p>
-<ul>
-<li><p><code>subplot2grid</code> 屬於 pyplot 類別中，它直接與畫面操作有關，所以直接指派位置就有圖出來了</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ax = plt.subplot2grid((2,2),(0, 0))</span><br></pre></td></tr></table></figure></li>
-<li><p>但是 <code>gridspec</code> 不是屬於 pyplot ，如果只有創建而沒有再指定畫布，是不會出現東西的</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.gridspec <span class="keyword">as</span> gridspec</span><br><span class="line">gs = gridspec.GridSpec(<span class="number">2</span>, <span class="number">2</span>)</span><br><span class="line">plt.show() <span class="comment"># 不會有圖跑出來喔</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-<p>此外，gridspec 能做到的 layout(布局) 也更加彈性，詳細可以在這篇裡面看: <a href="https://matplotlib.org/2.0.2/users/gridspec.html#customizing-location-of-subplot-using-gridspec">Customizing Location of Subplot Using GridSpec</a> ，中文版: <a href="https://wizardforcel.gitbooks.io/matplotlib-user-guide/content/3.3.html">使用 GridSpec 自定义子图位置</a>。</p>
-<p><img src="https://matplotlib.org/2.0.2/_images/demo_gridspec06.png" alt="gridspec 更加彈性的布局"></p>
-<h2 id="圖上標示與設置"><a href="#圖上標示與設置" class="headerlink" title="圖上標示與設置"></a>圖上標示與設置</h2><h3 id="限制座標軸數值"><a href="#限制座標軸數值" class="headerlink" title="限制座標軸數值"></a>限制座標軸數值</h3><p>限制 x 與 y 軸顯示的數值上下界。</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ax.set_ylim([<span class="number">0</span>, <span class="number">0.1</span>])</span><br><span class="line">ax.set_xlim([<span class="number">0</span>, <span class="number">10</span>])</span><br></pre></td></tr></table></figure>
-
-<h3 id="繪製橫-直線"><a href="#繪製橫-直線" class="headerlink" title="繪製橫/直線"></a>繪製橫/直線</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ax.axhline(y=<span class="number">0.03</span>, color=<span class="string">&#x27;r&#x27;</span>, linestyle=<span class="string">&#x27;-.&#x27;</span>, alpha=<span class="number">0.2</span>)  <span class="comment"># 橫線</span></span><br><span class="line">ax.axvline(x=<span class="number">5</span>, color=<span class="string">&#x27;b&#x27;</span>, linestyle=<span class="string">&#x27;-*&#x27;</span>, alpha=<span class="number">0.2</span>)  <span class="comment"># 直線</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="縮減空白邊緣"><a href="#縮減空白邊緣" class="headerlink" title="縮減空白邊緣"></a><a href="https://stackoverflow.com/questions/55767312/how-to-position-suptitle" title="stackoverflow: How to position suptitle?">縮減空白邊緣</a></h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">fig.tight_layout(rect=[<span class="number">0</span>, <span class="number">0.03</span>, <span class="number">1</span>, <span class="number">0.95</span>]) <span class="comment"># 保留標題的空間</span></span><br><span class="line">fig.suptitle(<span class="string">&quot;title&quot;</span>)</span><br><span class="line">fig.savefig(<span class="string">&quot;fig.png&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<p><code>tight_layout</code> 要在所有繪圖都結束之後，就要 <code>savefig</code> 或是 <code>plt.show()</code> 之前再放才會生效！或是在 import之後直接改變全局：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">plt.rcParams[<span class="string">&quot;figure.autolayout&quot;</span>] = <span class="literal">True</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="全局的設置-matplotlibrc"><a href="#全局的設置-matplotlibrc" class="headerlink" title="全局的設置 matplotlibrc"></a><a href="https://matplotlib.org/stable/tutorials/introductory/customizing.html?highlight=figure.autolayout#the-matplotlibrc-file" title="matplotlib 官網 subplot2grid 的 matplotlibrc 設置">全局的設置 <code>matplotlibrc</code></a></h2><p><code>matplotlib</code> 裡面有很多設定，包含 <code>dpi</code>, <code>figsize</code>, <code>color</code>, <code>linewidth</code>…..，如果希望一些改變能夠直接作用在 global 上，可以透過設定 <code>matplotlibrc</code> 檔案達成：</p>
-<p>在沒有使用 <code>style.use(&#39;&lt;path&gt;/&lt;style-name&gt;.mplstyle&#39;)</code> 指向設定檔時，預設的搜索順序是這樣：</p>
-<ol>
-<li>當前資料夾：當前這個資料夾中存在 <code>matplotlibrc</code>，而在這個資料夾之中所有的繪圖，也都想用這樣的設定套用，那非常適合這麼做。</li>
-<li>如果存在環境變數 <code>$MATPLOTLIBRC</code>：如果這是個檔案，就直接用。如果是個資料夾，會尋找並使用其下的 <code>$MATPLOTLIBRC/matplotlibrc</code> </li>
-<li>恩，剩下兩條我覺得太麻煩了，懶得翻譯。可以去看原文。</li>
-</ol>
-<p>如果上述的路徑下都沒有  <code>matplotlibrc</code> 檔案那不會再額外搜索其他地方。我們可以直接透過下面這個的作法尋找當前使用的是誰：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line">matplotlib.matplotlib_fname()</span><br></pre></td></tr></table></figure>
-
-<h4 id="我的-matplotlibrc-檔案"><a href="#我的-matplotlibrc-檔案" class="headerlink" title="我的 matplotlibrc 檔案"></a>我的 <code>matplotlibrc</code> 檔案</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">figure.autolayout: True</span><br><span class="line">legend.fontsize:   large</span><br><span class="line">figure.titlesize:   x-large</span><br><span class="line">figure.dpi:  100</span><br><span class="line">axes.titlesize:     x-large </span><br><span class="line">image.cmap: hsv</span><br><span class="line">hist.bins: 20 </span><br></pre></td></tr></table></figure>
-
-
-
-<hr>
-]]></content>
-      <tags>
-        <tag>python</tag>
-        <tag>visualize</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>新年快樂之部落格沿革(?)</title>
     <url>/2022/01/01/blog-source/</url>
     <content><![CDATA[<p>2022 新年快樂！新年的第一篇文章，來寫個段小故事。</p>
@@ -252,6 +182,76 @@
       <tags>
         <tag>blog</tag>
         <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python 視覺化 matplotlib 基本設置</title>
+    <url>/2021/12/30/python-visualize-basic/</url>
+    <content><![CDATA[<h2 id="子圖"><a href="#子圖" class="headerlink" title="子圖"></a>子圖</h2><h3 id="add-subplot"><a href="#add-subplot" class="headerlink" title="add_subplot"></a><code>add_subplot</code></h3><p>初使用時最常接觸的就是這個方法，當要用某張子圖的時候再使用 <code>fig.add_subplot()</code> 得到某個 <code>ax</code> ，用它進行繪圖。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">fig = plt.figure(figsize=(<span class="number">20</span>, <span class="number">16</span>), dpi=<span class="number">300</span>) </span><br><span class="line">fig.suptitle(<span class="string">&quot;Big title&quot;</span>, fontsize=<span class="number">20</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 子圖 1</span></span><br><span class="line">ax = fig.add_subplot(<span class="number">2</span>, <span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">ax.title.set_text(<span class="string">&quot;Subtitle 1&quot;</span>)</span><br><span class="line">plt.plot(np.arange(<span class="number">1</span>, <span class="number">11</span>), color=<span class="string">&#x27;b&#x27;</span>, label=<span class="string">&quot;lr&quot;</span>, alpha=<span class="number">0.7</span>)</span><br><span class="line">ax.legend() <span class="comment"># 圖例</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 子圖 2</span></span><br><span class="line">ax = fig.add_subplot(<span class="number">2</span>, <span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">ax.title.set_text(<span class="string">&quot;Subtitle 1&quot;</span>)</span><br><span class="line">plt.plot(np.arange(<span class="number">1</span>, <span class="number">11</span>), color=<span class="string">&#x27;r&#x27;</span>, label=<span class="string">&quot;lr&quot;</span>, alpha=<span class="number">0.7</span>)</span><br><span class="line">ax.legend()</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;fileName.png&quot;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>但我並不喜歡這個用法，以上面這份程式為例，這總作法會讓 <code>fig.add_subplot(2, 1, 1)</code> 散布在整份程式中，一旦我要修改子圖在行列上的數量，修正起來變得無比麻煩。</p>
+<h3 id="一口氣指定完子圖"><a href="#一口氣指定完子圖" class="headerlink" title="一口氣指定完子圖"></a>一口氣指定完子圖</h3><p>一種方法是：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">fig, axes = plt.subplots(n_rows, n_cols)</span><br></pre></td></tr></table></figure>
+
+<p>不錯的是可以一口氣解決，但我更喜歡另一種作法：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">fig = plt.figure(figsize=(<span class="number">10</span>, <span class="number">8</span>), dpi=<span class="number">100</span>)</span><br><span class="line">axes = fig.subplots(<span class="number">2</span>, <span class="number">3</span>).reshape(-<span class="number">1</span>) <span class="comment"># axes.shape: (6, )</span></span><br><span class="line">axes = fig.subplots(<span class="number">2</span>, <span class="number">3</span>)             <span class="comment"># axes.shape: (2, 3)</span></span><br></pre></td></tr></table></figure>
+
+<p>原先的作法在取用 <code>axes</code> 的時候，要謹慎的選取 <code>axes[0][1]</code> 之類的 index ，同樣的一旦子圖在行列上的數量改變，透過 index 取得 <code>ax</code> 的時候也很容易出錯。因此我習慣先把他 <code>reshape</code> 成一個維度，直接用 <code>ax = axes[i]</code> 取用，簡單省事。缺點是難以知道現在處於哪一行哪一列，如果子圖有需要落在確切位置的需求，這個簡單粗暴的方法可能就不太適合。</p>
+<h3 id="大標題"><a href="#大標題" class="headerlink" title="大標題"></a>大標題</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ax.set_title(<span class="string">&quot;sub plot title&quot;</span>) <span class="comment"># 子圖的標題</span></span><br><span class="line">fig.suptitle(<span class="string">&quot;Figure title&quot;</span>)   <span class="comment"># 整張圖的大標題</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="合併子圖、跨行跨列"><a href="#合併子圖、跨行跨列" class="headerlink" title="合併子圖、跨行跨列"></a>合併子圖、跨行跨列</h3><h4 id="subplot2grid"><a href="#subplot2grid" class="headerlink" title="subplot2grid"></a><code>subplot2grid</code></h4><p>上面的用法都是規規矩矩，每張子圖大小一致。想要讓圖的形狀跨越多欄多列，應該使用 <code>subplot2grid</code>。<a href="https://matplotlib.org/3.1.1/gallery/userdemo/demo_gridspec01.html#sphx-glr-gallery-userdemo-demo-gridspec01-py" title="matplotlib 官網 subplot2grid 的範例">subplot2grid example</a></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ax1 = plt.subplot2grid((<span class="number">3</span>,<span class="number">3</span>), (<span class="number">0</span>,<span class="number">0</span>), colspan=<span class="number">3</span>)</span><br><span class="line">ax2 = plt.subplot2grid((<span class="number">3</span>,<span class="number">3</span>), (<span class="number">1</span>,<span class="number">0</span>), colspan=<span class="number">2</span>)</span><br><span class="line">ax3 = plt.subplot2grid((<span class="number">3</span>,<span class="number">3</span>), (<span class="number">1</span>, <span class="number">2</span>), rowspan=<span class="number">2</span>)</span><br><span class="line">ax4 = plt.subplot2grid((<span class="number">3</span>,<span class="number">3</span>), (<span class="number">2</span>, <span class="number">0</span>))</span><br><span class="line">ax5 = plt.subplot2grid((<span class="number">3</span>,<span class="number">3</span>), (<span class="number">2</span>, <span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+
+<p>得到的圖相當於：</p>
+<p><img src="https://matplotlib.org/3.1.1/_images/sphx_glr_demo_gridspec01_001.png" alt="subplot2grid"></p>
+<p>事實上 <code>subplot2grid</code> 依然可以作到像是 <code>subplot</code> 這樣只給出正規方正的子圖，在不做 <code>colspan</code>/<code>rowspan</code> 的情況下，這兩個操作是等價的：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ax = plt.subplot(<span class="number">2</span>,<span class="number">2</span>,<span class="number">1</span>)  <span class="comment"># 1. 算子圖要從 1 開始算子圖</span></span><br><span class="line">ax = plt.subplot2grid((<span class="number">2</span>,<span class="number">2</span>),(<span class="number">0</span>, <span class="number">0</span>)) <span class="comment"># 2. 先規定整張圖的 (row, col), 在列出要回傳的子圖位於哪個位置 (不像上面是算 index)</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="GridSpec"><a href="#GridSpec" class="headerlink" title="GridSpec"></a><code>GridSpec</code></h4><p>還有另一個方法是透過 <code>GridSpec</code> 達成。我們可以先用 <code>gridspec</code> 創建一個框架，並把框架的某一塊指派給 <code>plt.subplot</code> 真正創建子圖。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.gridspec <span class="keyword">as</span> gridspec</span><br><span class="line">gs = gridspec.GridSpec(<span class="number">2</span>, <span class="number">2</span>)</span><br><span class="line">ax = plt.subplot(gs[<span class="number">0</span>, <span class="number">0</span>]) <span class="comment"># 等價 ax = plt.subplot2grid((2,2),(0, 0))</span></span><br></pre></td></tr></table></figure>
+
+<p>所以，在前面一小節的分隔圖，在這個章節應該如下實做：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">gs = gridspec.GridSpec(<span class="number">3</span>, <span class="number">3</span>)</span><br><span class="line">ax1 = plt.subplot(gs[<span class="number">0</span>, :])</span><br><span class="line">ax2 = plt.subplot(gs[<span class="number">1</span>,:-<span class="number">1</span>])</span><br><span class="line">ax3 = plt.subplot(gs[<span class="number">1</span>:, -<span class="number">1</span>])</span><br><span class="line">ax4 = plt.subplot(gs[-<span class="number">1</span>,<span class="number">0</span>])</span><br><span class="line">ax5 = plt.subplot(gs[-<span class="number">1</span>,-<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
+
+<h4 id="subplot2grid-與-GridSpec-的差別"><a href="#subplot2grid-與-GridSpec-的差別" class="headerlink" title="subplot2grid 與 GridSpec 的差別"></a><code>subplot2grid</code> 與 <code>GridSpec</code> 的差別</h4><p>我覺得可這樣看待</p>
+<ul>
+<li><p><code>subplot2grid</code> 屬於 pyplot 類別中，它直接與畫面操作有關，所以直接指派位置就有圖出來了</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ax = plt.subplot2grid((2,2),(0, 0))</span><br></pre></td></tr></table></figure></li>
+<li><p>但是 <code>gridspec</code> 不是屬於 pyplot ，如果只有創建而沒有再指定畫布，是不會出現東西的</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.gridspec <span class="keyword">as</span> gridspec</span><br><span class="line">gs = gridspec.GridSpec(<span class="number">2</span>, <span class="number">2</span>)</span><br><span class="line">plt.show() <span class="comment"># 不會有圖跑出來喔</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>此外，gridspec 能做到的 layout(布局) 也更加彈性，詳細可以在這篇裡面看: <a href="https://matplotlib.org/2.0.2/users/gridspec.html#customizing-location-of-subplot-using-gridspec">Customizing Location of Subplot Using GridSpec</a> ，中文版: <a href="https://wizardforcel.gitbooks.io/matplotlib-user-guide/content/3.3.html">使用 GridSpec 自定义子图位置</a>。</p>
+<p><img src="https://matplotlib.org/2.0.2/_images/demo_gridspec06.png" alt="gridspec 更加彈性的布局"></p>
+<h2 id="圖上標示與設置"><a href="#圖上標示與設置" class="headerlink" title="圖上標示與設置"></a>圖上標示與設置</h2><h3 id="限制座標軸數值"><a href="#限制座標軸數值" class="headerlink" title="限制座標軸數值"></a>限制座標軸數值</h3><p>限制 x 與 y 軸顯示的數值上下界。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ax.set_ylim([<span class="number">0</span>, <span class="number">0.1</span>])</span><br><span class="line">ax.set_xlim([<span class="number">0</span>, <span class="number">10</span>])</span><br></pre></td></tr></table></figure>
+
+<h3 id="繪製橫-直線"><a href="#繪製橫-直線" class="headerlink" title="繪製橫/直線"></a>繪製橫/直線</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ax.axhline(y=<span class="number">0.03</span>, color=<span class="string">&#x27;r&#x27;</span>, linestyle=<span class="string">&#x27;-.&#x27;</span>, alpha=<span class="number">0.2</span>)  <span class="comment"># 橫線</span></span><br><span class="line">ax.axvline(x=<span class="number">5</span>, color=<span class="string">&#x27;b&#x27;</span>, linestyle=<span class="string">&#x27;-*&#x27;</span>, alpha=<span class="number">0.2</span>)  <span class="comment"># 直線</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="縮減空白邊緣"><a href="#縮減空白邊緣" class="headerlink" title="縮減空白邊緣"></a><a href="https://stackoverflow.com/questions/55767312/how-to-position-suptitle" title="stackoverflow: How to position suptitle?">縮減空白邊緣</a></h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">fig.tight_layout(rect=[<span class="number">0</span>, <span class="number">0.03</span>, <span class="number">1</span>, <span class="number">0.95</span>]) <span class="comment"># 保留標題的空間</span></span><br><span class="line">fig.suptitle(<span class="string">&quot;title&quot;</span>)</span><br><span class="line">fig.savefig(<span class="string">&quot;fig.png&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p><code>tight_layout</code> 要在所有繪圖都結束之後，就要 <code>savefig</code> 或是 <code>plt.show()</code> 之前再放才會生效！或是在 import之後直接改變全局：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">plt.rcParams[<span class="string">&quot;figure.autolayout&quot;</span>] = <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="全局的設置-matplotlibrc"><a href="#全局的設置-matplotlibrc" class="headerlink" title="全局的設置 matplotlibrc"></a><a href="https://matplotlib.org/stable/tutorials/introductory/customizing.html?highlight=figure.autolayout#the-matplotlibrc-file" title="matplotlib 官網 subplot2grid 的 matplotlibrc 設置">全局的設置 <code>matplotlibrc</code></a></h2><p><code>matplotlib</code> 裡面有很多設定，包含 <code>dpi</code>, <code>figsize</code>, <code>color</code>, <code>linewidth</code>…..，如果希望一些改變能夠直接作用在 global 上，可以透過設定 <code>matplotlibrc</code> 檔案達成：</p>
+<p>在沒有使用 <code>style.use(&#39;&lt;path&gt;/&lt;style-name&gt;.mplstyle&#39;)</code> 指向設定檔時，預設的搜索順序是這樣：</p>
+<ol>
+<li>當前資料夾：當前這個資料夾中存在 <code>matplotlibrc</code>，而在這個資料夾之中所有的繪圖，也都想用這樣的設定套用，那非常適合這麼做。</li>
+<li>如果存在環境變數 <code>$MATPLOTLIBRC</code>：如果這是個檔案，就直接用。如果是個資料夾，會尋找並使用其下的 <code>$MATPLOTLIBRC/matplotlibrc</code> </li>
+<li>恩，剩下兩條我覺得太麻煩了，懶得翻譯。可以去看原文。</li>
+</ol>
+<p>如果上述的路徑下都沒有  <code>matplotlibrc</code> 檔案那不會再額外搜索其他地方。我們可以直接透過下面這個的作法尋找當前使用的是誰：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line">matplotlib.matplotlib_fname()</span><br></pre></td></tr></table></figure>
+
+<h4 id="我的-matplotlibrc-檔案"><a href="#我的-matplotlibrc-檔案" class="headerlink" title="我的 matplotlibrc 檔案"></a>我的 <code>matplotlibrc</code> 檔案</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">figure.autolayout: True</span><br><span class="line">legend.fontsize:   large</span><br><span class="line">figure.titlesize:   x-large</span><br><span class="line">figure.dpi:  100</span><br><span class="line">axes.titlesize:     x-large </span><br><span class="line">image.cmap: hsv</span><br><span class="line">hist.bins: 20 </span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+]]></content>
+      <tags>
+        <tag>python</tag>
+        <tag>visualize</tag>
       </tags>
   </entry>
 </search>
