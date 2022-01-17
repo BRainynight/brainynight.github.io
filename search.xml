@@ -1,30 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>部落格指令自動化</title>
-    <url>/2021/12/30/automatic-command/</url>
-    <content><![CDATA[<p>想用原始一點的方法來搞個半自動化，第一步當然就是不要打那麼多指令！</p>
-<p>我希望能將 <code>hexo clean</code>, <code>hexo generate</code>, <code>hexo server</code>/<code>hexo deploy</code> 的步驟集合在一起，並且開啟部落格的 Demo 網址。這裡使用 Make 做指令簡化</p>
-<p>在部落格的根目錄創建一個 makefile，內容如下</p>
-<span id="more"></span>
-
-<figure class="highlight makefile"><table><tr><td class="code"><pre><span class="line"><span class="section">local:</span></span><br><span class="line">	python -m webbrowser <span class="string">&quot;http://localhost:4000&quot;</span></span><br><span class="line">	hexo cl &amp;&amp; hexo g &amp;&amp; hexo server </span><br><span class="line"></span><br><span class="line"><span class="section">demo:</span></span><br><span class="line">	python -m webbrowser <span class="string">&quot;http://localhost:4000&quot;</span></span><br><span class="line">	hexo server </span><br><span class="line"></span><br><span class="line"><span class="section">push:</span></span><br><span class="line">	python -m webbrowser <span class="string">&quot;https://&lt;UserName&gt;.github.io/&quot;</span></span><br><span class="line">	hexo cl &amp;&amp; hexo g &amp;&amp; hexo d </span><br></pre></td></tr></table></figure>
-
-<p>需要注意，Command 的縮排是 tab 不是空白鍵！</p>
-<h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><p>先開啟網頁是因為一旦 server 打開就會佔一個 process  在那邊，阻斷後面的指令。而網頁先開啟來只是一個動作，不會阻斷後續的指令。</p>
-<h3 id="local"><a href="#local" class="headerlink" title="local"></a><code>local</code></h3><p>是每次改完部落格，要清除靜態檔案重新生成並打 local 的展示網頁的時候。</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">make <span class="built_in">local</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="demo"><a href="#demo" class="headerlink" title="demo"></a><code>demo</code></h3><p>單純想打開 local demo，沒有要清掉資料重新生成。</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">make demo</span><br></pre></td></tr></table></figure>
-
-<h3 id="push"><a href="#push" class="headerlink" title="push"></a><code>push</code></h3><p>確認本地的改動，要將資料 push 到線上了。</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">make push</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>blog</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>新年快樂之部落格沿革(?)</title>
     <url>/2022/01/01/blog-source/</url>
     <content><![CDATA[<p>2022 新年快樂！新年的第一篇文章，來寫個段小故事。</p>
@@ -46,8 +22,32 @@
 <p>恩，真是一段不長不短的歷史。總之就是告誡自己，不要被漂亮的擴充功能迷惑，換了框架很痛苦的。</p>
 ]]></content>
       <tags>
-        <tag>blog</tag>
         <tag>about</tag>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>部落格指令自動化</title>
+    <url>/2021/12/30/automatic-command/</url>
+    <content><![CDATA[<p>想用原始一點的方法來搞個半自動化，第一步當然就是不要打那麼多指令！</p>
+<p>我希望能將 <code>hexo clean</code>, <code>hexo generate</code>, <code>hexo server</code>/<code>hexo deploy</code> 的步驟集合在一起，並且開啟部落格的 Demo 網址。這裡使用 Make 做指令簡化</p>
+<p>在部落格的根目錄創建一個 makefile，內容如下</p>
+<span id="more"></span>
+
+<figure class="highlight makefile"><table><tr><td class="code"><pre><span class="line"><span class="section">local:</span></span><br><span class="line">	python -m webbrowser <span class="string">&quot;http://localhost:4000&quot;</span></span><br><span class="line">	hexo cl &amp;&amp; hexo g &amp;&amp; hexo server </span><br><span class="line"></span><br><span class="line"><span class="section">demo:</span></span><br><span class="line">	python -m webbrowser <span class="string">&quot;http://localhost:4000&quot;</span></span><br><span class="line">	hexo server </span><br><span class="line"></span><br><span class="line"><span class="section">push:</span></span><br><span class="line">	python -m webbrowser <span class="string">&quot;https://&lt;UserName&gt;.github.io/&quot;</span></span><br><span class="line">	hexo cl &amp;&amp; hexo g &amp;&amp; hexo d </span><br></pre></td></tr></table></figure>
+
+<p>需要注意，Command 的縮排是 tab 不是空白鍵！</p>
+<h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><p>先開啟網頁是因為一旦 server 打開就會佔一個 process  在那邊，阻斷後面的指令。而網頁先開啟來只是一個動作，不會阻斷後續的指令。</p>
+<h3 id="local"><a href="#local" class="headerlink" title="local"></a><code>local</code></h3><p>是每次改完部落格，要清除靜態檔案重新生成並打 local 的展示網頁的時候。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">make <span class="built_in">local</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="demo"><a href="#demo" class="headerlink" title="demo"></a><code>demo</code></h3><p>單純想打開 local demo，沒有要清掉資料重新生成。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">make demo</span><br></pre></td></tr></table></figure>
+
+<h3 id="push"><a href="#push" class="headerlink" title="push"></a><code>push</code></h3><p>確認本地的改動，要將資料 push 到線上了。</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">make push</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>blog</tag>
       </tags>
   </entry>
   <entry>
@@ -185,6 +185,51 @@
       </tags>
   </entry>
   <entry>
+    <title>Python 資料永久化套件:Pickle (2)</title>
+    <url>/2022/01/17/pickle-advance/</url>
+    <content><![CDATA[<h2 id="PEP-3155-Qualified-name"><a href="#PEP-3155-Qualified-name" class="headerlink" title="PEP 3155 Qualified name"></a>PEP 3155 Qualified name</h2><p>有關 Fully Qualified Name 的部份我是第一次看到…，嘗試閱讀 PEP 內容，不是很確定閱讀理解是否正確，若有錯誤歡迎指教！</p>
+<p>這個 PEP 議題是添加一個 <code>__qualname__</code> 屬性在函式跟類別中。對於 Top-Level 的函式與類別，這個屬性等同於 <code>__name__</code>，而對於巢狀的類別跟巢狀函式，<code>__qualname__</code> 屬性 dotted name 呈現，代表從 Top-Level 算起，該物件的層級位置。<code>repr()</code> 跟 <code>str()</code> 作用於類別與函式上時，也被修改成使用 <code>__qualname__</code>  而非 <code>__name__</code>。</p>
+<p>dotted name 表示從一個模組的 global 區域到該類別、函式或方法的路徑。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span>:</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">D</span>:</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">meth</span>(<span class="params">self</span>):</span></span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">In [<span class="number">2</span>]: C.__qualname__</span><br><span class="line">Out[<span class="number">2</span>]: <span class="string">&#x27;C&#x27;</span></span><br><span class="line"></span><br><span class="line">In [<span class="number">3</span>]: C.D.__qualname__</span><br><span class="line">Out[<span class="number">3</span>]: <span class="string">&#x27;C.D&#x27;</span></span><br><span class="line"></span><br><span class="line">In [<span class="number">4</span>]: C.D.__name__</span><br><span class="line">Out[<span class="number">4</span>]: <span class="string">&#x27;D&#x27;</span></span><br><span class="line">    </span><br><span class="line">In [<span class="number">5</span>]: C.D.meth.__qualname__</span><br><span class="line">Out[<span class="number">5</span>]: <span class="string">&#x27;C.D.meth&#x27;</span></span><br></pre></td></tr></table></figure>
+
+<p>而且對於被 <code>import</code> 的模組是不存在 <code>__qualname__</code> 屬性的，他們只有 <code>__name__</code>屬性，表達的是他的 Fully Qualified Name：該模組到其頂層父模組之間的層級關係：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> email.mime.text</span><br><span class="line">email.mime.text.__name__</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="情境探討-有裝飾器的函式無法被-Pickle"><a href="#情境探討-有裝飾器的函式無法被-Pickle" class="headerlink" title="情境探討: 有裝飾器的函式無法被 Pickle"></a>情境探討: 有裝飾器的函式無法被 Pickle</h2><p>問題來源<a href="https://blog.csdn.net/qq_39314099/article/details/83822593">自此網站</a>，我們可以嘗試用閱讀完官方文件後的邏輯來解釋這個問題。因為覺得程式繁瑣，所以大概照著意思稍微改寫了一下，博主寫了一個名為 <code>haha</code> 的函式，會印出 <code>hello XXX</code>，並為它添加了計時裝飾器。雖然沒有明確的說怎麼存檔出了錯，但根據引發的 Error 我大致假設是嘗試存 <code>haha</code> 這個函式。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> time, pickle</span><br><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> wraps</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">timer</span>(<span class="params">mth, *args,**kwargs</span>):</span>    </span><br><span class="line">    <span class="comment"># @wraps(mth)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span>(<span class="params">*args,**kwargs</span>):</span></span><br><span class="line">        st = time.time()</span><br><span class="line">        res = mth(*args,**kwargs)</span><br><span class="line">        et = time.time()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;Spend <span class="subst">&#123;<span class="built_in">float</span>(et-st)&#125;</span> sec.&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@timer</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">haha</span>(<span class="params">name=<span class="literal">None</span></span>):</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;Hello <span class="subst">&#123;name&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;function.pkl&quot;</span>, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;name of haha function is:&quot;</span>, haha)</span><br><span class="line">    pickle.dump(haha, f)</span><br></pre></td></tr></table></figure>
+
+<p>在試圖存下這個函式時發生了問題：<code>AttributeError: Can&#39;t pickle local object &#39;timer.&lt;locals&gt;.wrapper&#39;</code>。而樓主表示只要給裝飾器裡面裝上 <code>warp</code>，問題就解決了。<code>warp</code>應該擺放的位置已經寫在程式裡面了，可以試著註解與取消註解看看函式的名稱的不同。</p>
+<ul>
+<li>沒有 <code>warp</code> 的情況：<code>&lt;function timer.&lt;locals&gt;.wrapper at 0x000001EBECA588B8&gt;</code></li>
+<li>有 <code>warp</code> 的情況：<code>&lt;function haha at 0x000001BF76B188B8&gt;</code></li>
+</ul>
+<p>所以追根究底，這個問題的癥結點在於包上裝飾器後，若沒有使用 <code>functools.wraps</code> 讓裝飾後的函式名稱仍保持原樣，該函式的名稱會變成裝飾器內部函式 <code>wrapper</code> 的名稱。而由於 <code>wrapper</code> 不是一個 top-level 的函式，而是隸屬 <code>timer</code> 函式下的 <code>&lt;locals&gt;</code>，因此 Pickle 在試圖存取時直接因為名稱不符合 Pickable 原則而引發了錯誤。</p>
+<p>而且決方法僅僅是讓裝飾後的函式保留原本的名稱，一樣叫做 <code>haha</code>，Pickle 發現這個名稱存在於 Top-Level 就把他記下來。但實際上他記得的也只有名稱，Unpickle 的時候如果沒有保留定義 <code>haha</code> 的函式、或是 <code>haha</code> 的內容和 Pickle 時不一樣，執行起來仍會是不同的內容！</p>
+<h2 id="個人見解"><a href="#個人見解" class="headerlink" title="個人見解"></a>個人見解</h2><p>Pickle 是刻意設計不儲存程式碼，對函式與類別都以 name reference 的方式保存的。因此想要透過 pickle 來「永久的」存下函式與類別是不可能的，乍聽起來很不方便。但換個角度或許該想的是：</p>
+<ul>
+<li><p>什麼東西是應該被永久保存的呢？應該是資料。</p>
+</li>
+<li><p>資料應該以何種形式存在呢？應該是實例。</p>
+</li>
+<li><p>所以函式、類別是什麼？我想是一個流程、或是一個抽象的敘述。</p>
+<p>理論上，如果有一些變動性的、Runtime 才決定的資料也應該是外部傳入，如果是內部所需要的資料也跟外界無關，作為 local 變數定義在程式碼中就好。</p>
+</li>
+</ul>
+<p>這樣思考起來，好像也能夠明白為何函式與類別不會把程式碼存下來。</p>
+<p>但如果，需要函式有一點「記憶力」呢？例如，在執行 Min-max 正規化時，希望函式能夠記住第一次正規化的上下界屬性，後面都直接帶入就好，不用每次都傳入上下界；或是希望把這組正規化參數記下來，但不希望是把 min ＆ max 倆組分別記下來、怕資訊太零散。</p>
+<p>這種時候，或許可以考慮使用 Callable Object。定義一個 Class 並實踐 <code>__call__</code> 方法，把正規化行為定義在裡面，而需要記憶的屬性紀錄在實例裡面，像是 <code>self.mins</code>, <code>self.maxs</code>… ，在儲存的時候直接把這個 normalizer 存下來即可。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">norm</span>(<span class="params">arr, mins, maxs</span>):</span></span><br><span class="line">    <span class="keyword">return</span> (arr-mins)/(maxs-mins)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Normalizer</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, mins, maxs</span>):</span></span><br><span class="line">        self.mins = mins </span><br><span class="line">        self.maxs = maxs </span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span>(<span class="params">self, arr</span>):</span></span><br><span class="line">        <span class="keyword">return</span> (arr-self.mins)/(self.maxs-self.mins)</span><br><span class="line">        </span><br><span class="line"><span class="comment"># in some main process.... </span></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="keyword">for</span> data <span class="keyword">in</span> datalist:</span><br><span class="line">        mins, maxs = data.<span class="built_in">min</span>(), data.<span class="built_in">max</span>()</span><br><span class="line">        data = norm(data, mins, maxs)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 1. 透過 function 達成</span></span><br><span class="line">        normalizer = <span class="keyword">lambda</span> arr: norm(arr, mins, maxs)</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">normalizer</span>(<span class="params">arr</span>):</span> <span class="comment"># OR do this... </span></span><br><span class="line">            <span class="keyword">return</span> norm(arr, mins, maxs)</span><br><span class="line">        validation_data = normalizer(validation_data)</span><br><span class="line">        </span><br><span class="line">        joblib.dump(normalizer, <span class="string">&quot;normalizer.pkl&quot;</span>) <span class="comment"># 決對會出錯.. </span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 2. 透過 callable object 達成 </span></span><br><span class="line">        normalizer = Normalizer(mins, maxs)</span><br><span class="line">        data = normalizer(data)</span><br><span class="line">        validation_data = normalizer(validation_data)</span><br><span class="line">        joblib.dump(normalizer, <span class="string">&quot;normalizer.pkl&quot;</span>)     </span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>python</tag>
+        <tag>官方文件</tag>
+        <tag>pickle</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python 視覺化 matplotlib 基本設置</title>
     <url>/2021/12/30/python-visualize-basic/</url>
     <content><![CDATA[<h2 id="子圖"><a href="#子圖" class="headerlink" title="子圖"></a>子圖</h2><h3 id="add-subplot"><a href="#add-subplot" class="headerlink" title="add_subplot"></a><code>add_subplot</code></h3><p>初使用時最常接觸的就是這個方法，當要用某張子圖的時候再使用 <code>fig.add_subplot()</code> 得到某個 <code>ax</code> ，用它進行繪圖。</p>
@@ -255,7 +300,7 @@
       </tags>
   </entry>
   <entry>
-    <title>Python 資料永久化套件:Pickle</title>
+    <title>Python 資料永久化套件:Pickle (1)</title>
     <url>/2022/01/17/pickle-basic/</url>
     <content><![CDATA[<p>Pickle 是 Python 裡面物件儲存的原生套件，延伸的套件有不少，我個人就慣用 <code>joblib</code>。</p>
 <p>Pickle 直接翻譯是醃漬的意思，這樣說起來很怪，所以以下我可能會用「打包、存檔」之類的作為他的中文敘述，unpicke 直翻有拆開的意思，大陸那邊會有人稱為酸洗，同樣覺得很怪異，以下可能會用「復原、讀取、解包」之類的詞來敘述。若撰寫的當下覺得替代的中文會使意義變得模糊，則會直接採用原本的 pickle 與 unpickle 作為敘述。</p>
@@ -275,7 +320,7 @@
 <blockquote>
 <p>Note that functions (built-in and user-defined) are pickled by “fully qualified” name reference, not by value. <a href="https://docs.python.org/3/library/pickle.html#id8">2</a> This means that only the function name is pickled, along with the name of the module the function is defined in. Neither the function’s code, nor any of its function attributes are pickled. Thus the defining module must be importable in the unpickling environment, and the module must contain the named object, otherwise an exception will be raised. <a href="https://docs.python.org/3/library/pickle.html#id9">3</a></p>
 </blockquote>
-<p>有關 <a href="https://www.python.org/dev/peps/pep-3155/" title="Qualified name for classes and functions">PEP 3155</a> 的 “fully qualified” name reference 在後面會稍微提到。</p>
+<p>有關 <a href="https://www.python.org/dev/peps/pep-3155/" title="Qualified name for classes and functions">PEP 3155</a> 的 “fully qualified” name reference 在之後會稍微提到。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">function_example</span>():</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Hi&quot;</span>)</span><br><span class="line"></span><br><span class="line">lambda_example = <span class="keyword">lambda</span> : <span class="built_in">print</span>(<span class="string">&quot;this is lambda&quot;</span>)</span><br><span class="line"></span><br><span class="line">In [<span class="number">5</span>]: lambda_example.__name__ <span class="comment"># 所有的 lambda 函式名稱都是 lambda </span></span><br><span class="line">Out[<span class="number">5</span>]: <span class="string">&#x27;&lt;lambda&gt;&#x27;</span></span><br><span class="line"></span><br><span class="line">In [<span class="number">6</span>]: function_example.__name__ <span class="comment"># function 的名稱是自己的</span></span><br><span class="line">Out[<span class="number">6</span>]: <span class="string">&#x27;function_example&#x27;</span></span><br></pre></td></tr></table></figure>
 
 <p>此外，被 Pickle 的內容實際只有名稱，而沒有程式碼。因此在 Unpickle 的環境如果沒有在對應的位置定義對應的函式，是沒有辦法被 Unpickle 的! 我們可以先嘗試在一個檔案中定義函式並把他存下來：</p>
@@ -346,6 +391,7 @@
       <tags>
         <tag>python</tag>
         <tag>官方文件</tag>
+        <tag>pickle</tag>
       </tags>
   </entry>
 </search>
