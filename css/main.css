@@ -27,7 +27,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --body-bg-color: #0b1644;
-    --content-bg-color: #fffffd;
+    --content-bg-color: #4c5166;
     --card-bg-color: #555;
     --text-color: #ccc;
     --blockquote-color: #bbb;
