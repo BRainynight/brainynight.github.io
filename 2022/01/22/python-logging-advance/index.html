@@ -304,8 +304,8 @@
 <li><p><code>Logger.debug()</code>, <code>Logger.info()</code>, <code>Logger.warning()</code>, <code>Logger.error()</code>, <code>Logger.critical() </code>：括號裡面填寫要傳入的日誌訊息， <strong>必須是 string 形式</strong>，剩下的一些參數可以透過 <code>**kwargs</code> 傳入 (ex. <code>exc_info</code>… )</p>
 <ul>
 <li><p>當紀錄的訊息是從 print 轉過來的時候要注意，所有的訊息要寫在同一條 string 裡面：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"var1=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>var1<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">,</span> <span class="token string-interpolation"><span class="token string">f"var2=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>var2<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
-logger<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"var1=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>var1<span class="token punctuation">&#125;</span></span><span class="token string">; var2=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>var2<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"var1=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>var1<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">,</span> <span class="token string-interpolation"><span class="token string">f"var2=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>var2<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+logger<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"var1=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>var1<span class="token punctuation">&#125;</span></span><span class="token string">; var2=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>var2<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span></code></pre>
 
 <p>如果像 print 一樣兩個 string 放不同位置，第二個位置的字串會被當作其他參數，必須要改成只有一條 string。</p>
 </li>
@@ -322,11 +322,11 @@ logger<span class="token punctuation">.</span>info<span class="token punctuation
 <li><p>名稱如之前所提，有上下的層級架構關係</p>
 </li>
 <li><p>用相同的名稱 呼叫 <a target="_blank" rel="noopener" href="https://docs.python.org/3/library/logging.html#logging.getLogger"><code>getLogger()</code></a> 得到的是 reference :arrow_right: 都參考至相同物件名稱的 logger 物件。</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">logger1 <span class="token operator">=</span> logging<span class="token punctuation">.</span>get_logger<span class="token punctuation">(</span><span class="token string">"aaa"</span><span class="token punctuation">)</span>
+<pre class="language-python" data-language="python"><code class="language-python">logger1 <span class="token operator">=</span> logging<span class="token punctuation">.</span>get_logger<span class="token punctuation">(</span><span class="token string">"aaa"</span><span class="token punctuation">)</span>
 logger2 <span class="token operator">=</span> logging<span class="token punctuation">.</span>get_logger<span class="token punctuation">(</span><span class="token string">"aaa"</span><span class="token punctuation">)</span> 
 <span class="token builtin">id</span><span class="token punctuation">(</span>logger1<span class="token punctuation">)</span><span class="token operator">==</span><span class="token builtin">id</span><span class="token punctuation">(</span>logger2<span class="token punctuation">)</span> <span class="token comment"># True</span>
 
-<span class="token comment"># 兩條呼叫到的會是同一個 logger 物件：名為 'aaa' 的 logger object. </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+<span class="token comment"># 兩條呼叫到的會是同一個 logger 物件：名為 'aaa' 的 logger object. </span></code></pre></li>
 <li><p>嚴重性等級的定義：Logger 能接受的訊息等級受到其父代所影響</p>
 <ol>
 <li>如果自己的等級沒有另外定義，會使用父代所定義的訊息嚴重性等級。</li>
@@ -369,12 +369,12 @@ logger2 <span class="token operator">=</span> logging<span class="token punctuat
 <ol>
 <li>訊息字串格式字串 <code>fmt</code>：可調用的一些屬性變數參見 <a target="_blank" rel="noopener" href="https://docs.python.org/3.7/library/logging.html#logrecord-attributes">LogRecord attributes</a></li>
 <li>日期格式字串 <code>datefmt</code>: 預設使用  <a target="_blank" rel="noopener" href="https://docs.python.org/3/library/time.html#time.localtime"><code>time.localtime()</code></a> 打下時間戳，預設的格式為 <code>%Y-%m-%d %H:%M:%S</code></li>
-<li>style indicator：撰寫模式的提取符號，預設是 <code>%</code>，可修改成 <code>&#123;</code> 或 <code>$</code>。參考不同的 style-indicator 所對應的 formatter 撰寫模式： <pre class="line-numbers language-python" data-language="python"><code class="language-python">logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'%(asctime)s - %(message)s'</span><span class="token punctuation">,</span> style<span class="token operator">=</span><span class="token string">'%'</span><span class="token punctuation">)</span>
+<li>style indicator：撰寫模式的提取符號，預設是 <code>%</code>，可修改成 <code>&#123;</code> 或 <code>$</code>。參考不同的 style-indicator 所對應的 formatter 撰寫模式： <pre class="language-python" data-language="python"><code class="language-python">logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'%(asctime)s - %(message)s'</span><span class="token punctuation">,</span> style<span class="token operator">=</span><span class="token string">'%'</span><span class="token punctuation">)</span>
 logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'$(asctime)s - $(message)s'</span><span class="token punctuation">,</span> style<span class="token operator">=</span><span class="token string">'$'</span><span class="token punctuation">)</span>
-logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'&#123;asctime&#125; - &#123;message&#125;'</span><span class="token punctuation">,</span> style<span class="token operator">=</span><span class="token string">'&#123;'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
+logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'&#123;asctime&#125; - &#123;message&#125;'</span><span class="token punctuation">,</span> style<span class="token operator">=</span><span class="token string">'&#123;'</span><span class="token punctuation">)</span></code></pre></li>
 </ol>
 <p>最後舉個例子：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">formatter <span class="token operator">=</span> logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'%(asctime)s - %(name)s - %(levelname)s : %(message)s'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="language-python" data-language="python"><code class="language-python">formatter <span class="token operator">=</span> logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'%(asctime)s - %(name)s - %(levelname)s : %(message)s'</span><span class="token punctuation">)</span></code></pre>
 
 <ul>
 <li><code>message</code>：應用程式傳入的日誌訊息</li>
@@ -384,7 +384,7 @@ logging<span class="token punctuation">.</span>Formatter<span class="token punct
 <li><p>用在 handler 和 logger 上，提供比「訊息緊急程度層級」更細節的過濾規則</p>
 </li>
 <li><p>最基本，不用實做改寫的 filter，提供以「logger 階層等級」過濾的方法：只能通過<strong>低於自己的層級</strong>。例如 : 設定<code>A.B</code> ，則只會通過 logger <code>A.B</code>, <code>A.B.C</code>, <code>A.B.D</code>…</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">f <span class="token operator">=</span> logging<span class="token punctuation">.</span>Filter<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"A.B"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="language-python" data-language="python"><code class="language-python">f <span class="token operator">=</span> logging<span class="token punctuation">.</span>Filter<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"A.B"</span><span class="token punctuation">)</span></code></pre>
 
 <p>代表 “A.B” 以下(包含)層級的 logger 事件訊息可以通過這個過濾器。</p>
 </li>
@@ -398,7 +398,7 @@ logging<span class="token punctuation">.</span>Formatter<span class="token punct
 <li>實作一個 <code>logging.Filter</code> 類別，並實作其 <code>filter</code> 方法</li>
 <li>把這個客製化 filter 實例化後，用 <code>.addFilter()</code> 加到 logger 或 handler </li>
 </ol>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 稍微用code表示上面的條列項目</span>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token comment"># 稍微用code表示上面的條列項目</span>
 <span class="token keyword">import</span> logging
 
 <span class="token keyword">class</span> <span class="token class-name">CustomFilter</span><span class="token punctuation">(</span>logging<span class="token punctuation">.</span>Filter<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -408,7 +408,7 @@ logging<span class="token punctuation">.</span>Formatter<span class="token punct
 
 logging<span class="token punctuation">.</span>basicConfig<span class="token punctuation">(</span>level<span class="token operator">=</span>logging<span class="token punctuation">.</span>INFO<span class="token punctuation">)</span>
 logger <span class="token operator">=</span> logging<span class="token punctuation">.</span>getLogger<span class="token punctuation">(</span><span class="token punctuation">)</span>
-f <span class="token operator">=</span> CustomFilter<span class="token punctuation">(</span><span class="token punctuation">)</span>logger<span class="token punctuation">.</span>addFilter<span class="token punctuation">(</span>f<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+f <span class="token operator">=</span> CustomFilter<span class="token punctuation">(</span><span class="token punctuation">)</span>logger<span class="token punctuation">.</span>addFilter<span class="token punctuation">(</span>f<span class="token punctuation">)</span></code></pre>
 
 <p>舉例而言，一個過濾敏感資料的自定義 Filter 範例 <a target="_blank" rel="noopener" href="https://gist.github.com/acdha/9238791">https://gist.github.com/acdha/9238791</a></p>
 

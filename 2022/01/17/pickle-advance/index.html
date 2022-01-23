@@ -275,7 +275,7 @@
         <h2 id="PEP-3155-Qualified-name"><a href="#PEP-3155-Qualified-name" class="headerlink" title="PEP 3155 Qualified name"></a>PEP 3155 Qualified name</h2><p>有關 Fully Qualified Name 的部份我是第一次看到…，嘗試閱讀 PEP 內容，不是很確定閱讀理解是否正確，若有錯誤歡迎指教！</p>
 <p>這個 PEP 議題是添加一個 <code>__qualname__</code> 屬性在函式跟類別中。對於 Top-Level 的函式與類別，這個屬性等同於 <code>__name__</code>，而對於巢狀的類別跟巢狀函式，<code>__qualname__</code> 屬性 dotted name 呈現，代表從 Top-Level 算起，該物件的層級位置。<code>repr()</code> 跟 <code>str()</code> 作用於類別與函式上時，也被修改成使用 <code>__qualname__</code>  而非 <code>__name__</code>。</p>
 <p>dotted name 表示從一個模組的 global 區域到該類別、函式或方法的路徑。</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">C</span><span class="token punctuation">:</span>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">C</span><span class="token punctuation">:</span>
     <span class="token keyword">class</span> <span class="token class-name">D</span><span class="token punctuation">:</span>
         <span class="token keyword">def</span> <span class="token function">meth</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
             <span class="token keyword">pass</span>
@@ -290,16 +290,16 @@ In <span class="token punctuation">[</span><span class="token number">4</span><s
 Out<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'D'</span>
     
 In <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">:</span> C<span class="token punctuation">.</span>D<span class="token punctuation">.</span>meth<span class="token punctuation">.</span>__qualname__
-Out<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'C.D.meth'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+Out<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'C.D.meth'</span></code></pre>
 
 <p>而且對於被 <code>import</code> 的模組是不存在 <code>__qualname__</code> 屬性的，他們只有 <code>__name__</code>屬性，表達的是他的 Fully Qualified Name：該模組到其頂層父模組之間的層級關係：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> email<span class="token punctuation">.</span>mime<span class="token punctuation">.</span>text
-email<span class="token punctuation">.</span>mime<span class="token punctuation">.</span>text<span class="token punctuation">.</span>__name__<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> email<span class="token punctuation">.</span>mime<span class="token punctuation">.</span>text
+email<span class="token punctuation">.</span>mime<span class="token punctuation">.</span>text<span class="token punctuation">.</span>__name__</code></pre>
 
 
 
 <h2 id="情境探討-有裝飾器的函式無法被-Pickle"><a href="#情境探討-有裝飾器的函式無法被-Pickle" class="headerlink" title="情境探討: 有裝飾器的函式無法被 Pickle"></a>情境探討: 有裝飾器的函式無法被 Pickle</h2><p>問題來源<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39314099/article/details/83822593">自此網站</a>，我們可以嘗試用閱讀完官方文件後的邏輯來解釋這個問題。因為覺得程式繁瑣，所以大概照著意思稍微改寫了一下，博主寫了一個名為 <code>haha</code> 的函式，會印出 <code>hello XXX</code>，並為它添加了計時裝飾器。雖然沒有明確的說怎麼存檔出了錯，但根據引發的 Error 我大致假設是嘗試存 <code>haha</code> 這個函式。</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> time<span class="token punctuation">,</span> pickle
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> time<span class="token punctuation">,</span> pickle
 <span class="token keyword">from</span> functools <span class="token keyword">import</span> wraps
 
 <span class="token keyword">def</span> <span class="token function">timer</span><span class="token punctuation">(</span>mth<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>    
@@ -318,7 +318,7 @@ email<span class="token punctuation">.</span>mime<span class="token punctuation"
 
 <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"function.pkl"</span><span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"name of haha function is:"</span><span class="token punctuation">,</span> haha<span class="token punctuation">)</span>
-    pickle<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>haha<span class="token punctuation">,</span> f<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    pickle<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>haha<span class="token punctuation">,</span> f<span class="token punctuation">)</span></code></pre>
 
 <p>在試圖存下這個函式時發生了問題：<code>AttributeError: Can&#39;t pickle local object &#39;timer.&lt;locals&gt;.wrapper&#39;</code>。而樓主表示只要給裝飾器裡面裝上 <code>warp</code>，問題就解決了。<code>warp</code>應該擺放的位置已經寫在程式裡面了，可以試著註解與取消註解看看函式的名稱的不同。</p>
 <ul>
@@ -340,7 +340,7 @@ email<span class="token punctuation">.</span>mime<span class="token punctuation"
 <p>這樣思考起來，好像也能夠明白為何函式與類別不會把程式碼存下來。</p>
 <p>但如果，需要函式有一點「記憶力」呢？例如，在執行 Min-max 正規化時，希望函式能夠記住第一次正規化的上下界屬性，後面都直接帶入就好，不用每次都傳入上下界；或是希望把這組正規化參數記下來，但不希望是把 min ＆ max 倆組分別記下來、怕資訊太零散。</p>
 <p>這種時候，或許可以考慮使用 Callable Object。定義一個 Class 並實踐 <code>__call__</code> 方法，把正規化行為定義在裡面，而需要記憶的屬性紀錄在實例裡面，像是 <code>self.mins</code>, <code>self.maxs</code>… ，在儲存的時候直接把這個 normalizer 存下來即可。</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">norm</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">norm</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">return</span> <span class="token punctuation">(</span>arr<span class="token operator">-</span>mins<span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span>maxs<span class="token operator">-</span>mins<span class="token punctuation">)</span>
 
 <span class="token keyword">class</span> <span class="token class-name">Normalizer</span><span class="token punctuation">:</span>
@@ -369,7 +369,7 @@ email<span class="token punctuation">.</span>mime<span class="token punctuation"
         normalizer <span class="token operator">=</span> Normalizer<span class="token punctuation">(</span>mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span>
         data <span class="token operator">=</span> normalizer<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
         validation_data <span class="token operator">=</span> normalizer<span class="token punctuation">(</span>validation_data<span class="token punctuation">)</span>
-        joblib<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>normalizer<span class="token punctuation">,</span> <span class="token string">"normalizer.pkl"</span><span class="token punctuation">)</span>     <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        joblib<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>normalizer<span class="token punctuation">,</span> <span class="token string">"normalizer.pkl"</span><span class="token punctuation">)</span>     </code></pre>
 
 
     </div>

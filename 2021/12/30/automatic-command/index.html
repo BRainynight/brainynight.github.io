@@ -274,7 +274,7 @@
 <p>在部落格的根目錄創建一個 makefile，內容如下</p>
 <span id="more"></span>
 
-<pre class="line-numbers language-makefile" data-language="makefile"><code class="language-makefile"><span class="token symbol">local</span><span class="token punctuation">:</span>
+<pre class="language-makefile" data-language="makefile"><code class="language-makefile"><span class="token symbol">local</span><span class="token punctuation">:</span>
 	python -m webbrowser <span class="token string">"http://localhost:4000"</span>
 	hexo cl &amp;&amp; hexo g &amp;&amp; hexo server 
 
@@ -284,18 +284,18 @@
 
 <span class="token symbol">push</span><span class="token punctuation">:</span>
 	python -m webbrowser <span class="token string">"https://&lt;UserName>.github.io/"</span>
-	hexo cl &amp;&amp; hexo g &amp;&amp; hexo d <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+	hexo cl &amp;&amp; hexo g &amp;&amp; hexo d </code></pre>
 
 <p>需要注意，Command 的縮排是 tab 不是空白鍵！</p>
 <h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><p>先開啟網頁是因為一旦 server 打開就會佔一個 process  在那邊，阻斷後面的指令。而網頁先開啟來只是一個動作，不會阻斷後續的指令。</p>
 <h3 id="local"><a href="#local" class="headerlink" title="local"></a><code>local</code></h3><p>是每次改完部落格，要清除靜態檔案重新生成並打 local 的展示網頁的時候。</p>
-<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">make local<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="language-sh" data-language="sh"><code class="language-sh">make local</code></pre>
 
 <h3 id="demo"><a href="#demo" class="headerlink" title="demo"></a><code>demo</code></h3><p>單純想打開 local demo，沒有要清掉資料重新生成。</p>
-<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">make demo<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="language-sh" data-language="sh"><code class="language-sh">make demo</code></pre>
 
 <h3 id="push"><a href="#push" class="headerlink" title="push"></a><code>push</code></h3><p>確認本地的改動，要將資料 push 到線上了。</p>
-<pre class="line-numbers language-sh" data-language="sh"><code class="language-sh">make push<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="language-sh" data-language="sh"><code class="language-sh">make push</code></pre>
     </div>
 
     

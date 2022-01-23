@@ -291,7 +291,7 @@
 <p>Note that functions (built-in and user-defined) are pickled by “fully qualified” name reference, not by value. <a target="_blank" rel="noopener" href="https://docs.python.org/3/library/pickle.html#id8">2</a> This means that only the function name is pickled, along with the name of the module the function is defined in. Neither the function’s code, nor any of its function attributes are pickled. Thus the defining module must be importable in the unpickling environment, and the module must contain the named object, otherwise an exception will be raised. <a target="_blank" rel="noopener" href="https://docs.python.org/3/library/pickle.html#id9">3</a></p>
 </blockquote>
 <p>有關 <a target="_blank" rel="noopener" href="https://www.python.org/dev/peps/pep-3155/" title="Qualified name for classes and functions">PEP 3155</a> 的 “fully qualified” name reference 在之後會稍微提到。</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">function_example</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">function_example</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Hi"</span><span class="token punctuation">)</span>
 
 lambda_example <span class="token operator">=</span> <span class="token keyword">lambda</span> <span class="token punctuation">:</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"this is lambda"</span><span class="token punctuation">)</span>
@@ -300,35 +300,35 @@ In <span class="token punctuation">[</span><span class="token number">5</span><s
 Out<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'&lt;lambda>'</span>
 
 In <span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">:</span> function_example<span class="token punctuation">.</span>__name__ <span class="token comment"># function 的名稱是自己的</span>
-Out<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'function_example'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+Out<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'function_example'</span></code></pre>
 
 <p>此外，被 Pickle 的內容實際只有名稱，而沒有程式碼。因此在 Unpickle 的環境如果沒有在對應的位置定義對應的函式，是沒有辦法被 Unpickle 的! 我們可以先嘗試在一個檔案中定義函式並把他存下來：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pickle 
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pickle 
 <span class="token keyword">def</span> <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"lalalala~~~~"</span><span class="token punctuation">)</span>
 
 <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"function.pkl"</span><span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
-    pickle<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>bar<span class="token punctuation">,</span> f<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    pickle<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>bar<span class="token punctuation">,</span> f<span class="token punctuation">)</span></code></pre>
 
 <p>然後在一個全新、沒有定義過 <code>bar</code> 函式的環境中，試圖將其復原。會發現引發了 <code>AttributeError</code></p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pickle 
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pickle 
 <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"function.pkl"</span><span class="token punctuation">,</span> <span class="token string">"rb"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
     bar <span class="token operator">=</span> pickle<span class="token punctuation">.</span>load<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
-<span class="token comment"># AttributeError: Can't get attribute 'bar' on &lt;module '__main__'></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># AttributeError: Can't get attribute 'bar' on &lt;module '__main__'></span></code></pre>
 
 <p>類別也一樣，被儲存的實際上只有名稱而沒有程式碼，若在 Unpickle 的環境中沒有定義該類別，一樣會引發 <code>AttributeError</code>。</p>
 <h2 id="Pickle-Class-Instance"><a href="#Pickle-Class-Instance" class="headerlink" title="Pickle Class Instance"></a><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/pickle.html#pickling-class-instances">Pickle Class Instance</a></h2><p>與 Function 相同，儲存類別的方式也是透過 named reference 儲存(classes are pickled by named reference)。</p>
 <p>雖然 Pickle 可以儲存類別的實例，但實際上他<strong>不會儲存任何的類別程式碼、類別屬性</strong>。準確的來說，他存的是實例的「屬性」，用 Python 來敘述 pickle 的 <code>dump</code> 與 <code>load</code> 動作如下：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">save</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">save</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">return</span> <span class="token punctuation">(</span>obj<span class="token punctuation">.</span>__class__<span class="token punctuation">,</span> obj<span class="token punctuation">.</span>__dict__<span class="token punctuation">)</span>
 
 <span class="token keyword">def</span> <span class="token function">load</span><span class="token punctuation">(</span>cls<span class="token punctuation">,</span> attributes<span class="token punctuation">)</span><span class="token punctuation">:</span>
     obj <span class="token operator">=</span> cls<span class="token punctuation">.</span>__new__<span class="token punctuation">(</span>cls<span class="token punctuation">)</span>
     obj<span class="token punctuation">.</span>__dict__<span class="token punctuation">.</span>update<span class="token punctuation">(</span>attributes<span class="token punctuation">)</span>
-    <span class="token keyword">return</span> obj<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token keyword">return</span> obj</code></pre>
 
 <p>用實際的例子演示一下儲存跟復原的邏輯：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Foo</span><span class="token punctuation">:</span>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Foo</span><span class="token punctuation">:</span>
     attr <span class="token operator">=</span> <span class="token string">'A class attribute'</span>
     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token punctuation">)</span><span class="token punctuation">:</span>
         self<span class="token punctuation">.</span>inst_arr <span class="token operator">=</span> <span class="token string">"Instance attribute!"</span>
@@ -336,10 +336,10 @@ Out<span class="token punctuation">[</span><span class="token number">6</span><s
         
 foo <span class="token operator">=</span> Foo<span class="token punctuation">(</span><span class="token punctuation">)</span>
 pickled_info <span class="token operator">=</span> save<span class="token punctuation">(</span>foo<span class="token punctuation">)</span> <span class="token comment"># (__main__.Foo, &#123;'inst_arr': 'Instance attribute!'&#125;)</span>
-recover_foo <span class="token operator">=</span> load<span class="token punctuation">(</span><span class="token operator">*</span>pickled_info<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+recover_foo <span class="token operator">=</span> load<span class="token punctuation">(</span><span class="token operator">*</span>pickled_info<span class="token punctuation">)</span></code></pre>
 
 <p>如果我們想要復原存下來的實例，程式碼中必須保留該類別的定義，否則會引發錯誤。上面僅僅是用程式說明邏輯，現在實際套用 pickle 套件</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pickle
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pickle
         
 foo <span class="token operator">=</span> Foo<span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"test.pkl"</span><span class="token punctuation">,</span> <span class="token string">"wb"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
@@ -348,23 +348,23 @@ foo <span class="token operator">=</span> Foo<span class="token punctuation">(</
 <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"test.pkl"</span><span class="token punctuation">,</span> <span class="token string">"rb"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
     my_foo <span class="token operator">=</span> pickle<span class="token punctuation">.</span>load<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>my_foo<span class="token punctuation">.</span>inst_arr<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>my_foo<span class="token punctuation">.</span>attr<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">print</span><span class="token punctuation">(</span>my_foo<span class="token punctuation">.</span>attr<span class="token punctuation">)</span></code></pre>
 
 <p>但如果用別份程式碼定義把實例從 pkl 中復原，而該份程式碼中沒有類別 <code>Foo</code>，就會引發錯誤：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pickle
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pickle
 <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"test.pkl"</span><span class="token punctuation">,</span> <span class="token string">"rb"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
     my_foo <span class="token operator">=</span> pickle<span class="token punctuation">.</span>load<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
-<span class="token comment"># AttributeError: Can't get attribute 'Foo' on &lt;module '__main__'></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># AttributeError: Can't get attribute 'Foo' on &lt;module '__main__'></span></code></pre>
 
 <ul>
 <li><code>pickle.dump</code> ：記住該實例所使用類別的名字 (named reference)、與其實例屬性</li>
 <li><code>pickle.load</code>：試圖在程式中尋找記住的類別名字，在不初始化的情況(不調用 <code>__init__</code>)下，默默的創建一個實例，並對所有的實例屬性套用 <code>pkl</code> 中所記憶的數值。</li>
 </ul>
 <p>如果 pickle 沒辦法在程式中尋找到該 named reference 就會引發例外，不是定義在 Top Level 的函式、類別會沒有辦法透過 named reference 取得；而所有的 lambda function 都共享同一個 name reference , <code>&lt;lambda&gt;</code>，代表在復原的時候根本沒辦法找到存到的是哪個 lambda 函式，所以在試圖 dump 的時候就先被排除了。</p>
-<pre class="line-numbers language-none"><code class="language-none">PicklingError: Can&#39;t pickle &lt;function &lt;lambda&gt; at 0x00000213F8790948&gt;: attribute lookup &lt;lambda&gt; on __main__ failed<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="language-none"><code class="language-none">PicklingError: Can&#39;t pickle &lt;function &lt;lambda&gt; at 0x00000213F8790948&gt;: attribute lookup &lt;lambda&gt; on __main__ failed</code></pre>
 
 <h3 id="刻意的設計"><a href="#刻意的設計" class="headerlink" title="刻意的設計"></a>刻意的設計</h3><p>不儲存有關類別的屬性、類別的程式碼是故意的設計，這樣做的好處是：如果在 v1 版本中我們儲存了某個實例，後來發現該實例對應的類別有錯、或是對類別擴增了方法而修改程式變成 v2 版本。我們依然可以在 v2 版本中讀取曾經存下來的實例，即使他是在前面版本 (v1) 中存下來的。</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># V1</span>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token comment"># V1</span>
 <span class="token keyword">import</span> pickle 
 <span class="token keyword">class</span> <span class="token class-name">Dog</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> legs<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -372,9 +372,9 @@ foo <span class="token operator">=</span> Foo<span class="token punctuation">(</
 
 dog <span class="token operator">=</span> Dog<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span>
 <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"test.pkl"</span><span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
-    pickle<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>dog<span class="token punctuation">,</span> f<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    pickle<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>dog<span class="token punctuation">,</span> f<span class="token punctuation">)</span></code></pre>
 
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># V2</span>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token comment"># V2</span>
 <span class="token keyword">import</span> pickle 
 <span class="token keyword">class</span> <span class="token class-name">Dog</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> legs<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -386,7 +386,7 @@ dog <span class="token operator">=</span> Dog<span class="token punctuation">(</
 <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'test.pkl'</span><span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
     dog <span class="token operator">=</span> pickle<span class="token punctuation">.</span>load<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
 
-dog<span class="token punctuation">.</span>voice<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># can run! </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+dog<span class="token punctuation">.</span>voice<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># can run! </span></code></pre>
 
 <h3 id="永久保存物件的版本"><a href="#永久保存物件的版本" class="headerlink" title="永久保存物件的版本"></a>永久保存物件的版本</h3><p>如果們希望這是一個  long-lived 的物件，可以看到不同版本的類別，或許可以考慮在裡面放置版本號碼，以便透過類別的 <code>__setstate()__</code> 方法做適當的轉換。(官方文件裡面這樣寫，但我不是很懂要怎麼實踐)</p>
 <h2 id="改變-Pickle-時的預設行為"><a href="#改變-Pickle-時的預設行為" class="headerlink" title="改變 Pickle 時的預設行為"></a>改變 Pickle 時的預設行為</h2><p>Pickle 實例的時候，如果該實例的類別有設定下列方法，會改變 Pickle 時的預設舉動</p>
@@ -394,12 +394,12 @@ dog<span class="token punctuation">.</span>voice<span class="token punctuation">
 <h4 id="object-getstate"><a href="#object-getstate" class="headerlink" title="object.__getstate__()"></a><code>object.__getstate__()</code></h4><p>類別可以可以決定屬於它們的實例要如何被打包，如果類別定義了此方法，pickle 時會直接呼叫此方法，用它的回傳作為實例所存下來的內容。而不是一般使用實例 pickle 的預設方式：使用 <code>__dict__</code> 作為存下的內容。</p>
 <h4 id="object-setstate-state"><a href="#object-setstate-state" class="headerlink" title="object.__setstate__(state)"></a><code>object.__setstate__(state)</code></h4><p>若類別有定義此方法，Unpickle 的時候就會將得到的 state 傳入此方法。如果類別有定義此方法，則 state 物件不限定要是字典，因為在復原物件的時候 <code>__setstate__</code> 自己有一套規則了！</p>
 <p>但如果沒有實踐此方法，被存下來的 state (pickled state) 必須是字典的形式，這樣才能把它指派給新的(復原的) 實例的字典。大概有點像下面這種感覺吧：</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">saved_pkl <span class="token operator">=</span> <span class="token punctuation">&#123;</span> arg1<span class="token punctuation">:</span>val1<span class="token punctuation">,</span> arg2<span class="token punctuation">:</span>val2<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">&#125;</span>
-new_obj<span class="token punctuation">.</span>__dict__ <span class="token operator">=</span> saved_pkl<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre class="language-python" data-language="python"><code class="language-python">saved_pkl <span class="token operator">=</span> <span class="token punctuation">&#123;</span> arg1<span class="token punctuation">:</span>val1<span class="token punctuation">,</span> arg2<span class="token punctuation">:</span>val2<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">&#125;</span>
+new_obj<span class="token punctuation">.</span>__dict__ <span class="token operator">=</span> saved_pkl</code></pre>
 
 <p>關於 <code>__getstate__</code> 與 <code>__setstate__</code> 方法，可以參考  <a target="_blank" rel="noopener" href="https://docs.python.org/3/library/pickle.html#pickle-state">Handling Stateful Objects</a> 有更多資訊。</p>
 <h3 id="處理擁有狀態的物件-Handling-Stateful-Objects"><a href="#處理擁有狀態的物件-Handling-Stateful-Objects" class="headerlink" title="處理擁有狀態的物件 (Handling Stateful Objects)"></a>處理擁有狀態的物件 (Handling Stateful Objects)</h3><p>這個例子將展示如何 modify 類別的 pickle 行為：<code>TextReader</code> 類別打開一個文字檔，當 <code>readline</code> 被呼叫的時候會回傳行數以及該行內容。如果 <code>TextReader</code> 實例被打包，除了文件物件(file object) 之外的屬性都可以被儲存。當實例復原時(unpickle)，檔案會被重新開啟，並且從上次最後讀取的位置繼續。這樣的功能就是透過 <code>__setstate__()</code> 和 <code>__getstate__()</code> 方法達成的，如果不實做這兩個方法，在嘗試 <code>dump</code> 的時候就會引發例外</p>
-<pre class="line-numbers language-none"><code class="language-none">TypeError: cannot serialize &#39;_io.TextIOWrapper&#39; object<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="language-none"><code class="language-none">TypeError: cannot serialize &#39;_io.TextIOWrapper&#39; object</code></pre>
 
 <p>這個類別在實做的時候做了幾件事：</p>
 <ul>
@@ -413,7 +413,7 @@ new_obj<span class="token punctuation">.</span>__dict__ <span class="token opera
 </li>
 </ul>
 <p>如此一來，<code>TextReader</code> 的實例雖然實際上並沒有每個屬性都真正被 pickle 下來，但復原的時候卻彷彿回到上次剛結束的狀態繼續，達到儲存實例狀態的目的。</p>
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">TextReader</span><span class="token punctuation">:</span>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">TextReader</span><span class="token punctuation">:</span>
     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> filename<span class="token punctuation">)</span><span class="token punctuation">:</span>
         self<span class="token punctuation">.</span>filename <span class="token operator">=</span> filename
         self<span class="token punctuation">.</span><span class="token builtin">file</span> <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span>filename<span class="token punctuation">)</span>
@@ -438,14 +438,14 @@ new_obj<span class="token punctuation">.</span>__dict__ <span class="token opera
         <span class="token builtin">file</span> <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>filename<span class="token punctuation">)</span>
         <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>lineno<span class="token punctuation">)</span><span class="token punctuation">:</span>
             <span class="token builtin">file</span><span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        self<span class="token punctuation">.</span><span class="token builtin">file</span> <span class="token operator">=</span> <span class="token builtin">file</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+        self<span class="token punctuation">.</span><span class="token builtin">file</span> <span class="token operator">=</span> <span class="token builtin">file</span></code></pre>
 
-<pre class="line-numbers language-python" data-language="python"><code class="language-python">reader <span class="token operator">=</span> TextReader<span class="token punctuation">(</span><span class="token string">"hello.txt"</span><span class="token punctuation">)</span>
+<pre class="language-python" data-language="python"><code class="language-python">reader <span class="token operator">=</span> TextReader<span class="token punctuation">(</span><span class="token string">"hello.txt"</span><span class="token punctuation">)</span>
 reader<span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span>
 reader<span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
 new_reader <span class="token operator">=</span> pickle<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>pickle<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>reader<span class="token punctuation">)</span><span class="token punctuation">)</span>
-new_reader<span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+new_reader<span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
 
 
 
