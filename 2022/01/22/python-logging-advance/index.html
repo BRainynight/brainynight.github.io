@@ -2,9 +2,11 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.4.0">
+
+
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -13,23 +15,12 @@
 <link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"brainynight.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
-  </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QBCDYXBD36"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-QBCDYXBD36');
-</script>
-  <meta name="description" content="logging 模組第二篇，有關模組中四個常見物件的使用方式。">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"brainynight.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="logging 模組第二篇，有關模組中四個常見物件的使用方式。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python 日誌模組 Logging (2)">
 <meta property="og:url" content="http://brainynight.github.io/2022/01/22/python-logging-advance/index.html">
@@ -44,81 +35,48 @@
 <meta property="article:tag" content="logging">
 <meta name="twitter:card" content="summary">
 
+
 <link rel="canonical" href="http://brainynight.github.io/2022/01/22/python-logging-advance/">
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : true,
-    lang   : 'zh-TW'
-  };
-</script>
 
-  <title>Python 日誌模組 Logging (2) | 今天天氣真好</title>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"http://brainynight.github.io/2022/01/22/python-logging-advance/","path":"2022/01/22/python-logging-advance/","title":"Python 日誌模組 Logging (2)"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Python 日誌模組 Logging (2) | 今天天氣真好</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QBCDYXBD36"></script>
-    <script>
-      if (CONFIG.hostname === location.hostname) {
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-QBCDYXBD36');
-      }
-    </script>
-
-
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-QBCDYXBD36","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
 
 
 
 
   <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
+  <main class="main">
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切換導航欄">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">今天天氣真好</h1>
-      <span class="logo-line-after"><i></i></span>
+      <i class="logo-line"></i>
+      <p class="site-title">今天天氣真好</p>
+      <i class="logo-line"></i>
     </a>
   </div>
 
@@ -131,29 +89,12 @@
 
 
 
-
 <nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
-
-  </li>
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -164,23 +105,22 @@
 
 
   <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
+    <div class="popup search-popup"><div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
            placeholder="搜尋..." spellcheck="false"
            type="search" class="search-input">
   </div>
-  <span class="popup-btn-close">
+  <span class="popup-btn-close" role="button">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
   </div>
 </div>
 
@@ -188,28 +128,88 @@
   </div>
 
 </div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Loggers"><span class="nav-number">1.</span> <span class="nav-text">Loggers</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.</span> <span class="nav-text">常用的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85"><span class="nav-number">1.2.</span> <span class="nav-text">注意事項</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Handlers"><span class="nav-number">2.</span> <span class="nav-text">Handlers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Formatters"><span class="nav-number">3.</span> <span class="nav-text">Formatters</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Filters"><span class="nav-number">4.</span> <span class="nav-text">Filters</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Judy</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
     </header>
 
     
-  <div class="back-to-top">
+  <div class="back-to-top" role="button" aria-label="回到頂端">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
   <div class="reading-progress-bar"></div>
 
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
 
-          <div class="content post posts-expand">
-            
+    <div class="main-inner post posts-expand">
 
-    
+
+  
+
+
+<div class="post-block">
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="http://brainynight.github.io/2022/01/22/python-logging-advance/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -226,41 +226,44 @@
           Python 日誌模組 Logging (2)
         </h1>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-              
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
 
-              <time title="創建時間：2022-01-22 16:41:38 / 修改時間：18:25:11" itemprop="dateCreated datePublished" datetime="2022-01-22T16:41:38+08:00">2022-01-22</time>
-            </span>
+      <time title="創建時間：2022-01-22 16:41:38 / 修改時間：18:25:11" itemprop="dateCreated datePublished" datetime="2022-01-22T16:41:38+08:00">2022-01-22</time>
+    </span>
 
-          
-            <span class="post-meta-item" title="閱讀次數" id="busuanzi_container_page_pv" style="display: none;">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">閱讀次數：</span>
-              <span id="busuanzi_value_page_pv"></span>
-            </span><br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>2.9k</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>5 分鐘</span>
-            </span>
+  
+    <span class="post-meta-item" title="閱讀次數" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">閱讀次數：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>3.6k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>7 分鐘</span>
+    </span>
+</div>
+
             <div class="post-description">logging 模組第二篇，有關模組中四個常見物件的使用方式。</div>
-
         </div>
       </header>
 
@@ -268,8 +271,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
         <p>Logging 模組中主要就是這四種物件：</p>
 <ul>
 <li>Loggers : 提供直接讓其他應用程式使用的接口 (expose the interface that application code directly uses)</li>
@@ -296,7 +297,8 @@
 <li><p><code>Logger.debug(), Logger.info(), Logger.warning(), Logger.error(), and Logger.critical() </code>：括號裡面填寫要傳入的日誌訊息， <strong>必須是 string 形式</strong>，剩下的一些參數可以透過 <code>**kwargs</code> 傳入 (ex. <code>exc_info</code>… )</p>
 <ul>
 <li><p>當紀錄的訊息是從 print 轉過來的時候要注意，所有的訊息要寫在同一條 string 裡面：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;var1=<span class="subst">&#123;var1&#125;</span>&quot;</span>, <span class="string">f&quot;var2=<span class="subst">&#123;var2&#125;</span>&quot;</span>)</span><br><span class="line">logger.info(<span class="string">f&quot;var1=<span class="subst">&#123;var1&#125;</span>; var2=<span class="subst">&#123;var2&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"var1=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>var1<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">,</span> <span class="token string-interpolation"><span class="token string">f"var2=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>var2<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+logger<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"var1=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>var1<span class="token punctuation">&#125;</span></span><span class="token string">; var2=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>var2<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>如果像 print 一樣兩個 string 放不同位置，第二個位置的字串會被當作其他參數，必須要改成只有一條 string。</p>
 </li>
@@ -313,7 +315,11 @@
 <li><p>名稱如之前所提，有上下的層級架構關係</p>
 </li>
 <li><p>用相同的名稱 呼叫 <a target="_blank" rel="noopener" href="https://docs.python.org/3/library/logging.html#logging.getLogger"><code>getLogger()</code></a> 得到的是 reference :arrow_right: 都參考至相同物件名稱的 logger 物件。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">logger1 = logging.get_logger(<span class="string">&quot;aaa&quot;</span>)</span><br><span class="line">logger2 = logging.get_logger(<span class="string">&quot;aaa&quot;</span>) </span><br><span class="line"><span class="built_in">id</span>(logger1)==<span class="built_in">id</span>(logger2) <span class="comment"># True</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 兩條呼叫到的會是同一個 logger 物件：名為 &#x27;aaa&#x27; 的 logger object. </span></span><br></pre></td></tr></table></figure></li>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">logger1 <span class="token operator">=</span> logging<span class="token punctuation">.</span>get_logger<span class="token punctuation">(</span><span class="token string">"aaa"</span><span class="token punctuation">)</span>
+logger2 <span class="token operator">=</span> logging<span class="token punctuation">.</span>get_logger<span class="token punctuation">(</span><span class="token string">"aaa"</span><span class="token punctuation">)</span> 
+<span class="token builtin">id</span><span class="token punctuation">(</span>logger1<span class="token punctuation">)</span><span class="token operator">==</span><span class="token builtin">id</span><span class="token punctuation">(</span>logger2<span class="token punctuation">)</span> <span class="token comment"># True</span>
+
+<span class="token comment"># 兩條呼叫到的會是同一個 logger 物件：名為 'aaa' 的 logger object. </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>嚴重性等級的定義：Logger 能接受的訊息等級受到其父代所影響</p>
 <ol>
 <li>如果自己的等級沒有另外定義，會使用父代所定義的訊息嚴重性等級。</li>
@@ -356,10 +362,12 @@
 <ol>
 <li>訊息字串格式字串 <code>fmt</code>：可調用的一些屬性變數參見 <a target="_blank" rel="noopener" href="https://docs.python.org/3.7/library/logging.html#logrecord-attributes">LogRecord attributes</a></li>
 <li>日期格式字串 <code>datefmt</code>: 預設使用  <a target="_blank" rel="noopener" href="https://docs.python.org/3/library/time.html#time.localtime"><code>time.localtime()</code></a> 打下時間戳，預設的格式為 <code>%Y-%m-%d %H:%M:%S</code></li>
-<li>style indicator：撰寫模式的提取符號，預設是 <code>%</code>，可修改成 <code>&#123;</code> 或 <code>$</code>。參考不同的 style-indicator 所對應的 formatter 撰寫模式： <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">logging.Formatter(<span class="string">&#x27;%(asctime)s - %(message)s&#x27;</span>, style=<span class="string">&#x27;%&#x27;</span>)</span><br><span class="line">logging.Formatter(<span class="string">&#x27;$(asctime)s - $(message)s&#x27;</span>, style=<span class="string">&#x27;$&#x27;</span>)</span><br><span class="line">logging.Formatter(<span class="string">&#x27;&#123;asctime&#125; - &#123;message&#125;&#x27;</span>, style=<span class="string">&#x27;&#123;&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+<li>style indicator：撰寫模式的提取符號，預設是 <code>%</code>，可修改成 <code>&#123;</code> 或 <code>$</code>。參考不同的 style-indicator 所對應的 formatter 撰寫模式： <pre class="line-numbers language-python" data-language="python"><code class="language-python">logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'%(asctime)s - %(message)s'</span><span class="token punctuation">,</span> style<span class="token operator">=</span><span class="token string">'%'</span><span class="token punctuation">)</span>
+logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'$(asctime)s - $(message)s'</span><span class="token punctuation">,</span> style<span class="token operator">=</span><span class="token string">'$'</span><span class="token punctuation">)</span>
+logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'&#123;asctime&#125; - &#123;message&#125;'</span><span class="token punctuation">,</span> style<span class="token operator">=</span><span class="token string">'&#123;'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre></li>
 </ol>
 <p>最後舉個例子：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">formatter = logging.Formatter(<span class="string">&#x27;%(asctime)s - %(name)s - %(levelname)s : %(message)s&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">formatter <span class="token operator">=</span> logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'%(asctime)s - %(name)s - %(levelname)s : %(message)s'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <ul>
 <li><code>message</code>：應用程式傳入的日誌訊息</li>
@@ -369,7 +377,7 @@
 <li><p>用在 handler 和 logger 上，提供比「訊息緊急程度層級」更細節的過濾規則</p>
 </li>
 <li><p>最基本，不用實做改寫的 filter，提供以「logger 階層等級」過濾的方法：只能通過<strong>低於自己的層級</strong>。例如 : 設定<code>A.B</code> ，則只會通過 logger <code>A.B</code>, <code>A.B.C</code>, <code>A.B.D</code>…</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f = logging.Filter(name=<span class="string">&quot;A.B&quot;</span>)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">f <span class="token operator">=</span> logging<span class="token punctuation">.</span>Filter<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"A.B"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>代表 “A.B” 以下(包含)層級的 logger 事件訊息可以通過這個過濾器。</p>
 </li>
@@ -383,7 +391,17 @@
 <li>實作一個 <code>logging.Filter</code> 類別，並實作其 <code>filter</code> 方法</li>
 <li>把這個客製化 filter 實例化後，用 <code>.addFilter()</code> 加到 logger 或 handler </li>
 </ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 稍微用code表示上面的條列項目</span></span><br><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CustomFilter</span>(<span class="params">logging.Filter</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">filter</span>(<span class="params">self, record</span>):</span></span><br><span class="line">        <span class="comment"># 實作過濾規則 </span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span> <span class="comment"># 要 return True 才代表信息被保留</span></span><br><span class="line"></span><br><span class="line">logging.basicConfig(level=logging.INFO)</span><br><span class="line">logger = logging.getLogger()</span><br><span class="line">f = CustomFilter()logger.addFilter(f)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 稍微用code表示上面的條列項目</span>
+<span class="token keyword">import</span> logging
+
+<span class="token keyword">class</span> <span class="token class-name">CustomFilter</span><span class="token punctuation">(</span>logging<span class="token punctuation">.</span>Filter<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">filter</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> record<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># 實作過濾規則 </span>
+        <span class="token keyword">return</span> <span class="token boolean">True</span> <span class="token comment"># 要 return True 才代表信息被保留</span>
+
+logging<span class="token punctuation">.</span>basicConfig<span class="token punctuation">(</span>level<span class="token operator">=</span>logging<span class="token punctuation">.</span>INFO<span class="token punctuation">)</span>
+logger <span class="token operator">=</span> logging<span class="token punctuation">.</span>getLogger<span class="token punctuation">(</span><span class="token punctuation">)</span>
+f <span class="token operator">=</span> CustomFilter<span class="token punctuation">(</span><span class="token punctuation">)</span>logger<span class="token punctuation">.</span>addFilter<span class="token punctuation">(</span>f<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>舉例而言，一個過濾敏感資料的自定義 Filter 範例 <a target="_blank" rel="noopener" href="https://gist.github.com/acdha/9238791">https://gist.github.com/acdha/9238791</a></p>
 
@@ -393,7 +411,7 @@
     
     
 
-      <footer class="post-footer">
+    <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/python/" rel="tag"># python</a>
               <a href="/tags/%E5%AE%98%E6%96%B9%E6%96%87%E4%BB%B6/" rel="tag"># 官方文件</a>
@@ -402,196 +420,79 @@
 
         
 
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2022/01/20/python-logger-quick/" rel="prev" title="Python 日誌模組 Logging (1)">
-      <i class="fa fa-chevron-left"></i> Python 日誌模組 Logging (1)
-    </a></div>
-      <div class="post-nav-item"></div>
-    </div>
-      </footer>
-    
-  </article>
-  
-  
-  
-
-
-
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/01/20/python-logger-quick/" rel="prev" title="Python 日誌模組 Logging (1)">
+                  <i class="fa fa-chevron-left"></i> Python 日誌模組 Logging (1)
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
           </div>
-          
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目錄
-        </li>
-        <li class="sidebar-nav-overview">
-          本站概要
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Loggers"><span class="nav-number">1.</span> <span class="nav-text">Loggers</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.</span> <span class="nav-text">常用的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85"><span class="nav-number">1.2.</span> <span class="nav-text">注意事項</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Handlers"><span class="nav-number">2.</span> <span class="nav-text">Handlers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Formatters"><span class="nav-number">3.</span> <span class="nav-text">Formatters</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Filters"><span class="nav-number">4.</span> <span class="nav-text">Filters</span></a></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">Judy</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">8</span>
-          <span class="site-state-item-name">文章</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-          
-        <span class="site-state-item-count">8</span>
-        <span class="site-state-item-name">標籤</span></a>
-      </div>
-  </nav>
+    </footer>
+  </article>
 </div>
 
 
 
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
 
 
-      </div>
-    </main>
 
-    <footer class="footer">
-      <div class="footer-inner">
-        
+</div>
+  </main>
 
-        
+  <footer class="footer">
+    <div class="footer-inner">
+
 
 <div class="copyright">
-  
   &copy; 
   <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Judy</span>
-    <span class="post-meta-divider">|</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
     <span class="post-meta-item-icon">
-      <i class="fa fa-chart-area"></i>
+      <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">17k</span>
-    <span class="post-meta-divider">|</span>
+    <span title="總字數">28k</span>
+  </span>
+  <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">30 分鐘</span>
+    <span title="所需總閱讀時間">52 分鐘</span>
+  </span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
-  </div>
-
-        
 <div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </div>
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
   </div>
 
-  
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/pisces.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
+    </div>
+  </footer>
 
   
-
-
-
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
-<script src="/js/local-search.js"></script>
-
-
-
-
-
-
-
-
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
 
 
 
 
 
   
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-  
+
+
+
 
 </body>
 </html>

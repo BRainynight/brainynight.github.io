@@ -2,9 +2,11 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.4.0">
+
+
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -13,23 +15,12 @@
 <link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"brainynight.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
-  </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QBCDYXBD36"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-QBCDYXBD36');
-</script>
-  <meta name="description" content="研究 Python 官方文件中的 Pickle 模組，探討常發生的 Pickle error 問題。">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"brainynight.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="研究 Python 官方文件中的 Pickle 模組，探討常發生的 Pickle error 問題。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python 資料永久化套件:Pickle (1)">
 <meta property="og:url" content="http://brainynight.github.io/2022/01/17/pickle-basic/index.html">
@@ -44,81 +35,48 @@
 <meta property="article:tag" content="pickle">
 <meta name="twitter:card" content="summary">
 
+
 <link rel="canonical" href="http://brainynight.github.io/2022/01/17/pickle-basic/">
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : true,
-    lang   : 'zh-TW'
-  };
-</script>
 
-  <title>Python 資料永久化套件:Pickle (1) | 今天天氣真好</title>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"http://brainynight.github.io/2022/01/17/pickle-basic/","path":"2022/01/17/pickle-basic/","title":"Python 資料永久化套件:Pickle (1)"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Python 資料永久化套件:Pickle (1) | 今天天氣真好</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QBCDYXBD36"></script>
-    <script>
-      if (CONFIG.hostname === location.hostname) {
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-QBCDYXBD36');
-      }
-    </script>
-
-
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-QBCDYXBD36","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
 
 
 
 
   <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
+  <main class="main">
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切換導航欄">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">今天天氣真好</h1>
-      <span class="logo-line-after"><i></i></span>
+      <i class="logo-line"></i>
+      <p class="site-title">今天天氣真好</p>
+      <i class="logo-line"></i>
     </a>
   </div>
 
@@ -131,29 +89,12 @@
 
 
 
-
 <nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
-
-  </li>
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -164,23 +105,22 @@
 
 
   <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
+    <div class="popup search-popup"><div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
            placeholder="搜尋..." spellcheck="false"
            type="search" class="search-input">
   </div>
-  <span class="popup-btn-close">
+  <span class="popup-btn-close" role="button">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
   </div>
 </div>
 
@@ -188,28 +128,88 @@
   </div>
 
 </div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E9%BA%BC%E7%89%A9%E4%BB%B6%E5%8F%AF%E4%BB%A5%E8%A2%AB-Pickle-Unpickle"><span class="nav-number">1.</span> <span class="nav-text">什麼物件可以被 Pickle &#x2F; Unpickle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pickle-Function-Class"><span class="nav-number">2.</span> <span class="nav-text">Pickle Function&#x2F;Class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pickle-Class-Instance"><span class="nav-number">3.</span> <span class="nav-text">Pickle Class Instance</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%BB%E6%84%8F%E7%9A%84%E8%A8%AD%E8%A8%88"><span class="nav-number">3.1.</span> <span class="nav-text">刻意的設計</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B0%B8%E4%B9%85%E4%BF%9D%E5%AD%98%E7%89%A9%E4%BB%B6%E7%9A%84%E7%89%88%E6%9C%AC"><span class="nav-number">3.2.</span> <span class="nav-text">永久保存物件的版本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%B9%E8%AE%8A-Pickle-%E6%99%82%E7%9A%84%E9%A0%90%E8%A8%AD%E8%A1%8C%E7%82%BA"><span class="nav-number">4.</span> <span class="nav-text">改變 Pickle 時的預設行為</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E7%B5%84%E6%96%B9%E6%B3%95"><span class="nav-number">4.1.</span> <span class="nav-text">模組方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#object-getnewargs-ex"><span class="nav-number">4.1.1.</span> <span class="nav-text">object.__getnewargs_ex__()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#object-getstate"><span class="nav-number">4.1.2.</span> <span class="nav-text">object.__getstate__()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#object-setstate-state"><span class="nav-number">4.1.3.</span> <span class="nav-text">object.__setstate__(state)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%99%95%E7%90%86%E6%93%81%E6%9C%89%E7%8B%80%E6%85%8B%E7%9A%84%E7%89%A9%E4%BB%B6-Handling-Stateful-Objects"><span class="nav-number">4.2.</span> <span class="nav-text">處理擁有狀態的物件 (Handling Stateful Objects)</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Judy</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
     </header>
 
     
-  <div class="back-to-top">
+  <div class="back-to-top" role="button" aria-label="回到頂端">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
   <div class="reading-progress-bar"></div>
 
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
 
-          <div class="content post posts-expand">
-            
+    <div class="main-inner post posts-expand">
 
-    
+
+  
+
+
+<div class="post-block">
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="http://brainynight.github.io/2022/01/17/pickle-basic/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -226,41 +226,44 @@
           Python 資料永久化套件:Pickle (1)
         </h1>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-              
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
 
-              <time title="創建時間：2022-01-17 19:46:50 / 修改時間：21:03:05" itemprop="dateCreated datePublished" datetime="2022-01-17T19:46:50+08:00">2022-01-17</time>
-            </span>
+      <time title="創建時間：2022-01-17 19:46:50 / 修改時間：21:03:05" itemprop="dateCreated datePublished" datetime="2022-01-17T19:46:50+08:00">2022-01-17</time>
+    </span>
 
-          
-            <span class="post-meta-item" title="閱讀次數" id="busuanzi_container_page_pv" style="display: none;">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">閱讀次數：</span>
-              <span id="busuanzi_value_page_pv"></span>
-            </span><br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>3.6k</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>7 分鐘</span>
-            </span>
+  
+    <span class="post-meta-item" title="閱讀次數" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">閱讀次數：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>5.8k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>11 分鐘</span>
+    </span>
+</div>
+
             <div class="post-description">研究 Python 官方文件中的 Pickle 模組，探討常發生的 Pickle error 問題。</div>
-
         </div>
       </header>
 
@@ -268,8 +271,6 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
         <p>Pickle 是 Python 裡面物件儲存的原生套件，延伸的套件有不少，我個人就慣用 <code>joblib</code>。</p>
 <p>Pickle 直接翻譯是醃漬的意思，這樣說起來很怪，所以以下我可能會用「打包、存檔」之類的作為他的中文敘述，unpicke 直翻有拆開的意思，大陸那邊會有人稱為酸洗，同樣覺得很怪異，以下可能會用「復原、讀取、解包」之類的詞來敘述。若撰寫的當下覺得替代的中文會使意義變得模糊，則會直接採用原本的 pickle 與 unpickle 作為敘述。</p>
 <h2 id="什麼物件可以被-Pickle-Unpickle"><a href="#什麼物件可以被-Pickle-Unpickle" class="headerlink" title="什麼物件可以被 Pickle / Unpickle"></a><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/pickle.html#what-can-be-pickled-and-unpickled">什麼物件可以被 Pickle / Unpickle</a></h2><ul>
@@ -289,39 +290,102 @@
 <p>Note that functions (built-in and user-defined) are pickled by “fully qualified” name reference, not by value. <a target="_blank" rel="noopener" href="https://docs.python.org/3/library/pickle.html#id8">2</a> This means that only the function name is pickled, along with the name of the module the function is defined in. Neither the function’s code, nor any of its function attributes are pickled. Thus the defining module must be importable in the unpickling environment, and the module must contain the named object, otherwise an exception will be raised. <a target="_blank" rel="noopener" href="https://docs.python.org/3/library/pickle.html#id9">3</a></p>
 </blockquote>
 <p>有關 <a target="_blank" rel="noopener" href="https://www.python.org/dev/peps/pep-3155/" title="Qualified name for classes and functions">PEP 3155</a> 的 “fully qualified” name reference 在之後會稍微提到。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">function_example</span>():</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Hi&quot;</span>)</span><br><span class="line"></span><br><span class="line">lambda_example = <span class="keyword">lambda</span> : <span class="built_in">print</span>(<span class="string">&quot;this is lambda&quot;</span>)</span><br><span class="line"></span><br><span class="line">In [<span class="number">5</span>]: lambda_example.__name__ <span class="comment"># 所有的 lambda 函式名稱都是 lambda </span></span><br><span class="line">Out[<span class="number">5</span>]: <span class="string">&#x27;&lt;lambda&gt;&#x27;</span></span><br><span class="line"></span><br><span class="line">In [<span class="number">6</span>]: function_example.__name__ <span class="comment"># function 的名稱是自己的</span></span><br><span class="line">Out[<span class="number">6</span>]: <span class="string">&#x27;function_example&#x27;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">function_example</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Hi"</span><span class="token punctuation">)</span>
+
+lambda_example <span class="token operator">=</span> <span class="token keyword">lambda</span> <span class="token punctuation">:</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"this is lambda"</span><span class="token punctuation">)</span>
+
+In <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">:</span> lambda_example<span class="token punctuation">.</span>__name__ <span class="token comment"># 所有的 lambda 函式名稱都是 lambda </span>
+Out<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'&lt;lambda>'</span>
+
+In <span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">:</span> function_example<span class="token punctuation">.</span>__name__ <span class="token comment"># function 的名稱是自己的</span>
+Out<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'function_example'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>此外，被 Pickle 的內容實際只有名稱，而沒有程式碼。因此在 Unpickle 的環境如果沒有在對應的位置定義對應的函式，是沒有辦法被 Unpickle 的! 我們可以先嘗試在一個檔案中定義函式並把他存下來：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pickle </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bar</span>():</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;lalalala~~~~&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;function.pkl&quot;</span>, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    pickle.dump(bar, f)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pickle 
+<span class="token keyword">def</span> <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"lalalala~~~~"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"function.pkl"</span><span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    pickle<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>bar<span class="token punctuation">,</span> f<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>然後在一個全新、沒有定義過 <code>bar</code> 函式的環境中，試圖將其復原。會發現引發了 <code>AttributeError</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pickle </span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;function.pkl&quot;</span>, <span class="string">&quot;rb&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    bar = pickle.load(f)</span><br><span class="line"><span class="comment"># AttributeError: Can&#x27;t get attribute &#x27;bar&#x27; on &lt;module &#x27;__main__&#x27;&gt;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pickle 
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"function.pkl"</span><span class="token punctuation">,</span> <span class="token string">"rb"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    bar <span class="token operator">=</span> pickle<span class="token punctuation">.</span>load<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+<span class="token comment"># AttributeError: Can't get attribute 'bar' on &lt;module '__main__'></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>類別也一樣，被儲存的實際上只有名稱而沒有程式碼，若在 Unpickle 的環境中沒有定義該類別，一樣會引發 <code>AttributeError</code>。</p>
 <h2 id="Pickle-Class-Instance"><a href="#Pickle-Class-Instance" class="headerlink" title="Pickle Class Instance"></a><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/pickle.html#pickling-class-instances">Pickle Class Instance</a></h2><p>與 Function 相同，儲存類別的方式也是透過 named reference 儲存(classes are pickled by named reference)。</p>
 <p>雖然 Pickle 可以儲存類別的實例，但實際上他<strong>不會儲存任何的類別程式碼、類別屬性</strong>。準確的來說，他存的是實例的「屬性」，用 Python 來敘述 pickle 的 <code>dump</code> 與 <code>load</code> 動作如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">save</span>(<span class="params">obj</span>):</span></span><br><span class="line">    <span class="keyword">return</span> (obj.__class__, obj.__dict__)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load</span>(<span class="params">cls, attributes</span>):</span></span><br><span class="line">    obj = cls.__new__(cls)</span><br><span class="line">    obj.__dict__.update(attributes)</span><br><span class="line">    <span class="keyword">return</span> obj</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">save</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>obj<span class="token punctuation">.</span>__class__<span class="token punctuation">,</span> obj<span class="token punctuation">.</span>__dict__<span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">load</span><span class="token punctuation">(</span>cls<span class="token punctuation">,</span> attributes<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    obj <span class="token operator">=</span> cls<span class="token punctuation">.</span>__new__<span class="token punctuation">(</span>cls<span class="token punctuation">)</span>
+    obj<span class="token punctuation">.</span>__dict__<span class="token punctuation">.</span>update<span class="token punctuation">(</span>attributes<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> obj<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>用實際的例子演示一下儲存跟復原的邏輯：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Foo</span>:</span></span><br><span class="line">    attr = <span class="string">&#x27;A class attribute&#x27;</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, </span>):</span></span><br><span class="line">        self.inst_arr = <span class="string">&quot;Instance attribute!&quot;</span></span><br><span class="line">        self.fake_attr = <span class="string">&quot;This is fake&quot;</span></span><br><span class="line">        </span><br><span class="line">foo = Foo()</span><br><span class="line">pickled_info = save(foo) <span class="comment"># (__main__.Foo, &#123;&#x27;inst_arr&#x27;: &#x27;Instance attribute!&#x27;&#125;)</span></span><br><span class="line">recover_foo = load(*pickled_info)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Foo</span><span class="token punctuation">:</span>
+    attr <span class="token operator">=</span> <span class="token string">'A class attribute'</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>inst_arr <span class="token operator">=</span> <span class="token string">"Instance attribute!"</span>
+        self<span class="token punctuation">.</span>fake_attr <span class="token operator">=</span> <span class="token string">"This is fake"</span>
+        
+foo <span class="token operator">=</span> Foo<span class="token punctuation">(</span><span class="token punctuation">)</span>
+pickled_info <span class="token operator">=</span> save<span class="token punctuation">(</span>foo<span class="token punctuation">)</span> <span class="token comment"># (__main__.Foo, &#123;'inst_arr': 'Instance attribute!'&#125;)</span>
+recover_foo <span class="token operator">=</span> load<span class="token punctuation">(</span><span class="token operator">*</span>pickled_info<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>如果我們想要復原存下來的實例，程式碼中必須保留該類別的定義，否則會引發錯誤。上面僅僅是用程式說明邏輯，現在實際套用 pickle 套件</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line">        </span><br><span class="line">foo = Foo()</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;test.pkl&quot;</span>, <span class="string">&quot;wb&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    pickle.dump(foo, f)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;test.pkl&quot;</span>, <span class="string">&quot;rb&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    my_foo = pickle.load(f)</span><br><span class="line"><span class="built_in">print</span>(my_foo.inst_arr)</span><br><span class="line"><span class="built_in">print</span>(my_foo.attr)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pickle
+        
+foo <span class="token operator">=</span> Foo<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"test.pkl"</span><span class="token punctuation">,</span> <span class="token string">"wb"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    pickle<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>foo<span class="token punctuation">,</span> f<span class="token punctuation">)</span>
+
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"test.pkl"</span><span class="token punctuation">,</span> <span class="token string">"rb"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    my_foo <span class="token operator">=</span> pickle<span class="token punctuation">.</span>load<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>my_foo<span class="token punctuation">.</span>inst_arr<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>my_foo<span class="token punctuation">.</span>attr<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>但如果用別份程式碼定義把實例從 pkl 中復原，而該份程式碼中沒有類別 <code>Foo</code>，就會引發錯誤：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;test.pkl&quot;</span>, <span class="string">&quot;rb&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    my_foo = pickle.load(f)</span><br><span class="line"><span class="comment"># AttributeError: Can&#x27;t get attribute &#x27;Foo&#x27; on &lt;module &#x27;__main__&#x27;&gt;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pickle
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"test.pkl"</span><span class="token punctuation">,</span> <span class="token string">"rb"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    my_foo <span class="token operator">=</span> pickle<span class="token punctuation">.</span>load<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+<span class="token comment"># AttributeError: Can't get attribute 'Foo' on &lt;module '__main__'></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li><code>pickle.dump</code> ：記住該實例所使用類別的名字 (named reference)、與其實例屬性</li>
 <li><code>pickle.load</code>：試圖在程式中尋找記住的類別名字，在不初始化的情況(不調用 <code>__init__</code>)下，默默的創建一個實例，並對所有的實例屬性套用 <code>pkl</code> 中所記憶的數值。</li>
 </ul>
 <p>如果 pickle 沒辦法在程式中尋找到該 named reference 就會引發例外，不是定義在 Top Level 的函式、類別會沒有辦法透過 named reference 取得；而所有的 lambda function 都共享同一個 name reference , <code>&lt;lambda&gt;</code>，代表在復原的時候根本沒辦法找到存到的是哪個 lambda 函式，所以在試圖 dump 的時候就先被排除了。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PicklingError: Can&#x27;t pickle &lt;function &lt;lambda&gt; at 0x00000213F8790948&gt;: attribute lookup &lt;lambda&gt; on __main__ failed</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">PicklingError: Can&#39;t pickle &lt;function &lt;lambda&gt; at 0x00000213F8790948&gt;: attribute lookup &lt;lambda&gt; on __main__ failed<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="刻意的設計"><a href="#刻意的設計" class="headerlink" title="刻意的設計"></a>刻意的設計</h3><p>不儲存有關類別的屬性、類別的程式碼是故意的設計，這樣做的好處是：如果在 v1 版本中我們儲存了某個實例，後來發現該實例對應的類別有錯、或是對類別擴增了方法而修改程式變成 v2 版本。我們依然可以在 v2 版本中讀取曾經存下來的實例，即使他是在前面版本 (v1) 中存下來的。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># V1</span></span><br><span class="line"><span class="keyword">import</span> pickle </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, legs</span>):</span></span><br><span class="line">        self.legs = <span class="number">4</span></span><br><span class="line"></span><br><span class="line">dog = Dog(<span class="number">6</span>)</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;test.pkl&quot;</span>, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    pickle.dump(dog, f)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># V1</span>
+<span class="token keyword">import</span> pickle 
+<span class="token keyword">class</span> <span class="token class-name">Dog</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> legs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>legs <span class="token operator">=</span> <span class="token number">4</span>
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># V2</span></span><br><span class="line"><span class="keyword">import</span> pickle </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Dog</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, legs</span>):</span></span><br><span class="line">        self.legs = <span class="number">4</span></span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">voice</span>(<span class="params">self, </span>):</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;woof! woof! woof!&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;test.pkl&#x27;</span>, <span class="string">&#x27;rb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    dog = pickle.load(f)</span><br><span class="line"></span><br><span class="line">dog.voice() <span class="comment"># can run! </span></span><br></pre></td></tr></table></figure>
+dog <span class="token operator">=</span> Dog<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span>
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"test.pkl"</span><span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    pickle<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>dog<span class="token punctuation">,</span> f<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># V2</span>
+<span class="token keyword">import</span> pickle 
+<span class="token keyword">class</span> <span class="token class-name">Dog</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> legs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>legs <span class="token operator">=</span> <span class="token number">4</span>
+        
+    <span class="token keyword">def</span> <span class="token function">voice</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"woof! woof! woof!"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'test.pkl'</span><span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    dog <span class="token operator">=</span> pickle<span class="token punctuation">.</span>load<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+
+dog<span class="token punctuation">.</span>voice<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># can run! </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="永久保存物件的版本"><a href="#永久保存物件的版本" class="headerlink" title="永久保存物件的版本"></a>永久保存物件的版本</h3><p>如果們希望這是一個  long-lived 的物件，可以看到不同版本的類別，或許可以考慮在裡面放置版本號碼，以便透過類別的 <code>__setstate()__</code> 方法做適當的轉換。(官方文件裡面這樣寫，但我不是很懂要怎麼實踐)</p>
 <h2 id="改變-Pickle-時的預設行為"><a href="#改變-Pickle-時的預設行為" class="headerlink" title="改變 Pickle 時的預設行為"></a>改變 Pickle 時的預設行為</h2><p>Pickle 實例的時候，如果該實例的類別有設定下列方法，會改變 Pickle 時的預設舉動</p>
@@ -329,11 +393,12 @@
 <h4 id="object-getstate"><a href="#object-getstate" class="headerlink" title="object.__getstate__()"></a><code>object.__getstate__()</code></h4><p>類別可以可以決定屬於它們的實例要如何被打包，如果類別定義了此方法，pickle 時會直接呼叫此方法，用它的回傳作為實例所存下來的內容。而不是一般使用實例 pickle 的預設方式：使用 <code>__dict__</code> 作為存下的內容。</p>
 <h4 id="object-setstate-state"><a href="#object-setstate-state" class="headerlink" title="object.__setstate__(state)"></a><code>object.__setstate__(state)</code></h4><p>若類別有定義此方法，Unpickle 的時候就會將得到的 state 傳入此方法。如果類別有定義此方法，則 state 物件不限定要是字典，因為在復原物件的時候 <code>__setstate__</code> 自己有一套規則了！</p>
 <p>但如果沒有實踐此方法，被存下來的 state (pickled state) 必須是字典的形式，這樣才能把它指派給新的(復原的) 實例的字典。大概有點像下面這種感覺吧：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">saved_pkl = &#123; arg1:val1, arg2:val2... &#125;</span><br><span class="line">new_obj.__dict__ = saved_pkl</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">saved_pkl <span class="token operator">=</span> <span class="token punctuation">&#123;</span> arg1<span class="token punctuation">:</span>val1<span class="token punctuation">,</span> arg2<span class="token punctuation">:</span>val2<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">&#125;</span>
+new_obj<span class="token punctuation">.</span>__dict__ <span class="token operator">=</span> saved_pkl<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>關於 <code>__getstate__</code> 與 <code>__setstate__</code> 方法，可以參考  <a target="_blank" rel="noopener" href="https://docs.python.org/3/library/pickle.html#pickle-state">Handling Stateful Objects</a> 有更多資訊。</p>
 <h3 id="處理擁有狀態的物件-Handling-Stateful-Objects"><a href="#處理擁有狀態的物件-Handling-Stateful-Objects" class="headerlink" title="處理擁有狀態的物件 (Handling Stateful Objects)"></a>處理擁有狀態的物件 (Handling Stateful Objects)</h3><p>這個例子將展示如何 modify 類別的 pickle 行為：<code>TextReader</code> 類別打開一個文字檔，當 <code>readline</code> 被呼叫的時候會回傳行數以及該行內容。如果 <code>TextReader</code> 實例被打包，除了文件物件(file object) 之外的屬性都可以被儲存。當實例復原時(unpickle)，檔案會被重新開啟，並且從上次最後讀取的位置繼續。這樣的功能就是透過 <code>__setstate__()</code> 和 <code>__getstate__()</code> 方法達成的，如果不實做這兩個方法，在嘗試 <code>dump</code> 的時候就會引發例外</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TypeError: cannot serialize &#x27;_io.TextIOWrapper&#x27; object</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-none"><code class="language-none">TypeError: cannot serialize &#39;_io.TextIOWrapper&#39; object<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>這個類別在實做的時候做了幾件事：</p>
 <ul>
@@ -347,9 +412,39 @@
 </li>
 </ul>
 <p>如此一來，<code>TextReader</code> 的實例雖然實際上並沒有每個屬性都真正被 pickle 下來，但復原的時候卻彷彿回到上次剛結束的狀態繼續，達到儲存實例狀態的目的。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TextReader</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, filename</span>):</span></span><br><span class="line">        self.filename = filename</span><br><span class="line">        self.file = <span class="built_in">open</span>(filename)</span><br><span class="line">        self.lineno = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">readline</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.lineno += <span class="number">1</span></span><br><span class="line">        line = self.file.readline()</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> line:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        <span class="keyword">if</span> line.endswith(<span class="string">&#x27;\n&#x27;</span>):</span><br><span class="line">            line = line[:-<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;%i: %s&quot;</span> % (self.lineno, line)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__getstate__</span>(<span class="params">self</span>):</span></span><br><span class="line">        state = self.__dict__.copy()</span><br><span class="line">        <span class="keyword">del</span> state[<span class="string">&#x27;file&#x27;</span>]</span><br><span class="line">        <span class="keyword">return</span> state</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__setstate__</span>(<span class="params">self, state</span>):</span></span><br><span class="line">        self.__dict__.update(state)</span><br><span class="line">        file = <span class="built_in">open</span>(self.filename)</span><br><span class="line">        <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(self.lineno):</span><br><span class="line">            file.readline()</span><br><span class="line">        self.file = file</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">TextReader</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> filename<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>filename <span class="token operator">=</span> filename
+        self<span class="token punctuation">.</span><span class="token builtin">file</span> <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span>filename<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>lineno <span class="token operator">=</span> <span class="token number">0</span>
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">reader = TextReader(<span class="string">&quot;hello.txt&quot;</span>)</span><br><span class="line">reader.readline()</span><br><span class="line">reader.readline()</span><br><span class="line"></span><br><span class="line">new_reader = pickle.loads(pickle.dumps(reader))</span><br><span class="line">new_reader.readline()</span><br></pre></td></tr></table></figure>
+    <span class="token keyword">def</span> <span class="token function">readline</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>lineno <span class="token operator">+=</span> <span class="token number">1</span>
+        line <span class="token operator">=</span> self<span class="token punctuation">.</span><span class="token builtin">file</span><span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token keyword">not</span> line<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token boolean">None</span>
+        <span class="token keyword">if</span> line<span class="token punctuation">.</span>endswith<span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            line <span class="token operator">=</span> line<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+        <span class="token keyword">return</span> <span class="token string">"%i: %s"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>lineno<span class="token punctuation">,</span> line<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">__getstate__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        state <span class="token operator">=</span> self<span class="token punctuation">.</span>__dict__<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">del</span> state<span class="token punctuation">[</span><span class="token string">'file'</span><span class="token punctuation">]</span>
+        <span class="token keyword">return</span> state
+
+    <span class="token keyword">def</span> <span class="token function">__setstate__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> state<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>__dict__<span class="token punctuation">.</span>update<span class="token punctuation">(</span>state<span class="token punctuation">)</span>
+        <span class="token builtin">file</span> <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>filename<span class="token punctuation">)</span>
+        <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>lineno<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token builtin">file</span><span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span><span class="token builtin">file</span> <span class="token operator">=</span> <span class="token builtin">file</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">reader <span class="token operator">=</span> TextReader<span class="token punctuation">(</span><span class="token string">"hello.txt"</span><span class="token punctuation">)</span>
+reader<span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span>
+reader<span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+new_reader <span class="token operator">=</span> pickle<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>pickle<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>reader<span class="token punctuation">)</span><span class="token punctuation">)</span>
+new_reader<span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
@@ -362,7 +457,7 @@
     
     
 
-      <footer class="post-footer">
+    <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/python/" rel="tag"># python</a>
               <a href="/tags/%E5%AE%98%E6%96%B9%E6%96%87%E4%BB%B6/" rel="tag"># 官方文件</a>
@@ -371,199 +466,82 @@
 
         
 
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2022/01/01/blog-source/" rel="prev" title="新年快樂之部落格沿革(?)">
-      <i class="fa fa-chevron-left"></i> 新年快樂之部落格沿革(?)
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/01/17/pickle-advance/" rel="next" title="Python 資料永久化套件:Pickle (2)">
-      Python 資料永久化套件:Pickle (2) <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
-  </article>
-  
-  
-  
-
-
-
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/01/01/blog-source/" rel="prev" title="新年快樂之部落格沿革(?)">
+                  <i class="fa fa-chevron-left"></i> 新年快樂之部落格沿革(?)
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/01/17/pickle-advance/" rel="next" title="Python 資料永久化套件:Pickle (2)">
+                  Python 資料永久化套件:Pickle (2) <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
           </div>
-          
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目錄
-        </li>
-        <li class="sidebar-nav-overview">
-          本站概要
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E9%BA%BC%E7%89%A9%E4%BB%B6%E5%8F%AF%E4%BB%A5%E8%A2%AB-Pickle-Unpickle"><span class="nav-number">1.</span> <span class="nav-text">什麼物件可以被 Pickle &#x2F; Unpickle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pickle-Function-Class"><span class="nav-number">2.</span> <span class="nav-text">Pickle Function&#x2F;Class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pickle-Class-Instance"><span class="nav-number">3.</span> <span class="nav-text">Pickle Class Instance</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%BB%E6%84%8F%E7%9A%84%E8%A8%AD%E8%A8%88"><span class="nav-number">3.1.</span> <span class="nav-text">刻意的設計</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B0%B8%E4%B9%85%E4%BF%9D%E5%AD%98%E7%89%A9%E4%BB%B6%E7%9A%84%E7%89%88%E6%9C%AC"><span class="nav-number">3.2.</span> <span class="nav-text">永久保存物件的版本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%B9%E8%AE%8A-Pickle-%E6%99%82%E7%9A%84%E9%A0%90%E8%A8%AD%E8%A1%8C%E7%82%BA"><span class="nav-number">4.</span> <span class="nav-text">改變 Pickle 時的預設行為</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E7%B5%84%E6%96%B9%E6%B3%95"><span class="nav-number">4.1.</span> <span class="nav-text">模組方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#object-getnewargs-ex"><span class="nav-number">4.1.1.</span> <span class="nav-text">object.__getnewargs_ex__()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#object-getstate"><span class="nav-number">4.1.2.</span> <span class="nav-text">object.__getstate__()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#object-setstate-state"><span class="nav-number">4.1.3.</span> <span class="nav-text">object.__setstate__(state)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%99%95%E7%90%86%E6%93%81%E6%9C%89%E7%8B%80%E6%85%8B%E7%9A%84%E7%89%A9%E4%BB%B6-Handling-Stateful-Objects"><span class="nav-number">4.2.</span> <span class="nav-text">處理擁有狀態的物件 (Handling Stateful Objects)</span></a></li></ol></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">Judy</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">8</span>
-          <span class="site-state-item-name">文章</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-          
-        <span class="site-state-item-count">8</span>
-        <span class="site-state-item-name">標籤</span></a>
-      </div>
-  </nav>
+    </footer>
+  </article>
 </div>
 
 
 
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
 
 
-      </div>
-    </main>
 
-    <footer class="footer">
-      <div class="footer-inner">
-        
+</div>
+  </main>
 
-        
+  <footer class="footer">
+    <div class="footer-inner">
+
 
 <div class="copyright">
-  
   &copy; 
   <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Judy</span>
-    <span class="post-meta-divider">|</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
     <span class="post-meta-item-icon">
-      <i class="fa fa-chart-area"></i>
+      <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">17k</span>
-    <span class="post-meta-divider">|</span>
+    <span title="總字數">28k</span>
+  </span>
+  <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">30 分鐘</span>
+    <span title="所需總閱讀時間">52 分鐘</span>
+  </span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
-  </div>
-
-        
 <div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </div>
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
   </div>
 
-  
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/pisces.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
+    </div>
+  </footer>
 
   
-
-
-
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
-<script src="/js/local-search.js"></script>
-
-
-
-
-
-
-
-
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
 
 
 
 
 
   
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-  
+
+
+
 
 </body>
 </html>

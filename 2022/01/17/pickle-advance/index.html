@@ -2,9 +2,11 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.4.0">
+
+
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -13,23 +15,12 @@
 <link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"brainynight.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
-  </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QBCDYXBD36"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-QBCDYXBD36');
-</script>
-  <meta name="description" content="有關 PEP3155 的 Qualified name, 與帶有裝飾器的函式無法被 Pickle 的問題。">
+<script class="next-config" data-name="main" type="application/json">{"hostname":"brainynight.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="有關 PEP3155 的 Qualified name, 與帶有裝飾器的函式無法被 Pickle 的問題。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python 資料永久化套件:Pickle (2)">
 <meta property="og:url" content="http://brainynight.github.io/2022/01/17/pickle-advance/index.html">
@@ -44,81 +35,48 @@
 <meta property="article:tag" content="pickle">
 <meta name="twitter:card" content="summary">
 
+
 <link rel="canonical" href="http://brainynight.github.io/2022/01/17/pickle-advance/">
 
 
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome : false,
-    isPost : true,
-    lang   : 'zh-TW'
-  };
-</script>
 
-  <title>Python 資料永久化套件:Pickle (2) | 今天天氣真好</title>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"http://brainynight.github.io/2022/01/17/pickle-advance/","path":"2022/01/17/pickle-advance/","title":"Python 資料永久化套件:Pickle (2)"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Python 資料永久化套件:Pickle (2) | 今天天氣真好</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QBCDYXBD36"></script>
-    <script>
-      if (CONFIG.hostname === location.hostname) {
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-QBCDYXBD36');
-      }
-    </script>
-
-
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-QBCDYXBD36","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
 
 
 
 
   <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
 
+  <main class="main">
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切換導航欄">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/" class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">今天天氣真好</h1>
-      <span class="logo-line-after"><i></i></span>
+      <i class="logo-line"></i>
+      <p class="site-title">今天天氣真好</p>
+      <i class="logo-line"></i>
     </a>
   </div>
 
@@ -131,29 +89,12 @@
 
 
 
-
 <nav class="site-nav">
-  <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a>
-
-  </li>
-        <li class="menu-item menu-item-categories">
-
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
-
-  </li>
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a></li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
         </a>
@@ -164,23 +105,22 @@
 
 
   <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
+    <div class="popup search-popup"><div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
            placeholder="搜尋..." spellcheck="false"
            type="search" class="search-input">
   </div>
-  <span class="popup-btn-close">
+  <span class="popup-btn-close" role="button">
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result">
-  <div id="no-result">
-    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
   </div>
 </div>
 
@@ -188,28 +128,88 @@
   </div>
 
 </div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#PEP-3155-Qualified-name"><span class="nav-number">1.</span> <span class="nav-text">PEP 3155 Qualified name</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%83%85%E5%A2%83%E6%8E%A2%E8%A8%8E-%E6%9C%89%E8%A3%9D%E9%A3%BE%E5%99%A8%E7%9A%84%E5%87%BD%E5%BC%8F%E7%84%A1%E6%B3%95%E8%A2%AB-Pickle"><span class="nav-number">2.</span> <span class="nav-text">情境探討: 有裝飾器的函式無法被 Pickle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%80%8B%E4%BA%BA%E8%A6%8B%E8%A7%A3"><span class="nav-number">3.</span> <span class="nav-text">個人見解</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Judy</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
     </header>
 
     
-  <div class="back-to-top">
+  <div class="back-to-top" role="button" aria-label="回到頂端">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
   <div class="reading-progress-bar"></div>
 
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
 
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
 
-          <div class="content post posts-expand">
-            
+    <div class="main-inner post posts-expand">
 
-    
+
+  
+
+
+<div class="post-block">
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-TW">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="http://brainynight.github.io/2022/01/17/pickle-advance/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -226,41 +226,44 @@
           Python 資料永久化套件:Pickle (2)
         </h1>
 
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">發表於</span>
-              
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
 
-              <time title="創建時間：2022-01-17 20:56:22 / 修改時間：21:03:36" itemprop="dateCreated datePublished" datetime="2022-01-17T20:56:22+08:00">2022-01-17</time>
-            </span>
+      <time title="創建時間：2022-01-17 20:56:22 / 修改時間：21:03:36" itemprop="dateCreated datePublished" datetime="2022-01-17T20:56:22+08:00">2022-01-17</time>
+    </span>
 
-          
-            <span class="post-meta-item" title="閱讀次數" id="busuanzi_container_page_pv" style="display: none;">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">閱讀次數：</span>
-              <span id="busuanzi_value_page_pv"></span>
-            </span><br>
-            <span class="post-meta-item" title="文章字數">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">文章字數：</span>
-              <span>1.7k</span>
-            </span>
-            <span class="post-meta-item" title="所需閱讀時間">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-              <span>3 分鐘</span>
-            </span>
+  
+    <span class="post-meta-item" title="閱讀次數" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">閱讀次數：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>3k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>5 分鐘</span>
+    </span>
+</div>
+
             <div class="post-description">有關 PEP3155 的 Qualified name, 與帶有裝飾器的函式無法被 Pickle 的問題。</div>
-
         </div>
       </header>
 
@@ -268,20 +271,53 @@
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
         <h2 id="PEP-3155-Qualified-name"><a href="#PEP-3155-Qualified-name" class="headerlink" title="PEP 3155 Qualified name"></a>PEP 3155 Qualified name</h2><p>有關 Fully Qualified Name 的部份我是第一次看到…，嘗試閱讀 PEP 內容，不是很確定閱讀理解是否正確，若有錯誤歡迎指教！</p>
 <p>這個 PEP 議題是添加一個 <code>__qualname__</code> 屬性在函式跟類別中。對於 Top-Level 的函式與類別，這個屬性等同於 <code>__name__</code>，而對於巢狀的類別跟巢狀函式，<code>__qualname__</code> 屬性 dotted name 呈現，代表從 Top-Level 算起，該物件的層級位置。<code>repr()</code> 跟 <code>str()</code> 作用於類別與函式上時，也被修改成使用 <code>__qualname__</code>  而非 <code>__name__</code>。</p>
 <p>dotted name 表示從一個模組的 global 區域到該類別、函式或方法的路徑。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span>:</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">D</span>:</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">meth</span>(<span class="params">self</span>):</span></span><br><span class="line">            <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">In [<span class="number">2</span>]: C.__qualname__</span><br><span class="line">Out[<span class="number">2</span>]: <span class="string">&#x27;C&#x27;</span></span><br><span class="line"></span><br><span class="line">In [<span class="number">3</span>]: C.D.__qualname__</span><br><span class="line">Out[<span class="number">3</span>]: <span class="string">&#x27;C.D&#x27;</span></span><br><span class="line"></span><br><span class="line">In [<span class="number">4</span>]: C.D.__name__</span><br><span class="line">Out[<span class="number">4</span>]: <span class="string">&#x27;D&#x27;</span></span><br><span class="line">    </span><br><span class="line">In [<span class="number">5</span>]: C.D.meth.__qualname__</span><br><span class="line">Out[<span class="number">5</span>]: <span class="string">&#x27;C.D.meth&#x27;</span></span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">C</span><span class="token punctuation">:</span>
+    <span class="token keyword">class</span> <span class="token class-name">D</span><span class="token punctuation">:</span>
+        <span class="token keyword">def</span> <span class="token function">meth</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">pass</span>
+
+In <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">:</span> C<span class="token punctuation">.</span>__qualname__
+Out<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'C'</span>
+
+In <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">:</span> C<span class="token punctuation">.</span>D<span class="token punctuation">.</span>__qualname__
+Out<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'C.D'</span>
+
+In <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">:</span> C<span class="token punctuation">.</span>D<span class="token punctuation">.</span>__name__
+Out<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'D'</span>
+    
+In <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">:</span> C<span class="token punctuation">.</span>D<span class="token punctuation">.</span>meth<span class="token punctuation">.</span>__qualname__
+Out<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'C.D.meth'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>而且對於被 <code>import</code> 的模組是不存在 <code>__qualname__</code> 屬性的，他們只有 <code>__name__</code>屬性，表達的是他的 Fully Qualified Name：該模組到其頂層父模組之間的層級關係：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> email.mime.text</span><br><span class="line">email.mime.text.__name__</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> email<span class="token punctuation">.</span>mime<span class="token punctuation">.</span>text
+email<span class="token punctuation">.</span>mime<span class="token punctuation">.</span>text<span class="token punctuation">.</span>__name__<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 
 
 <h2 id="情境探討-有裝飾器的函式無法被-Pickle"><a href="#情境探討-有裝飾器的函式無法被-Pickle" class="headerlink" title="情境探討: 有裝飾器的函式無法被 Pickle"></a>情境探討: 有裝飾器的函式無法被 Pickle</h2><p>問題來源<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39314099/article/details/83822593">自此網站</a>，我們可以嘗試用閱讀完官方文件後的邏輯來解釋這個問題。因為覺得程式繁瑣，所以大概照著意思稍微改寫了一下，博主寫了一個名為 <code>haha</code> 的函式，會印出 <code>hello XXX</code>，並為它添加了計時裝飾器。雖然沒有明確的說怎麼存檔出了錯，但根據引發的 Error 我大致假設是嘗試存 <code>haha</code> 這個函式。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time, pickle</span><br><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> wraps</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">timer</span>(<span class="params">mth, *args,**kwargs</span>):</span>    </span><br><span class="line">    <span class="comment"># @wraps(mth)</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span>(<span class="params">*args,**kwargs</span>):</span></span><br><span class="line">        st = time.time()</span><br><span class="line">        res = mth(*args,**kwargs)</span><br><span class="line">        et = time.time()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;Spend <span class="subst">&#123;<span class="built_in">float</span>(et-st)&#125;</span> sec.&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@timer</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">haha</span>(<span class="params">name=<span class="literal">None</span></span>):</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;Hello <span class="subst">&#123;name&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&quot;function.pkl&quot;</span>, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;name of haha function is:&quot;</span>, haha)</span><br><span class="line">    pickle.dump(haha, f)</span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> time<span class="token punctuation">,</span> pickle
+<span class="token keyword">from</span> functools <span class="token keyword">import</span> wraps
+
+<span class="token keyword">def</span> <span class="token function">timer</span><span class="token punctuation">(</span>mth<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>    
+    <span class="token comment"># @wraps(mth)</span>
+    <span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        st <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        res <span class="token operator">=</span> mth<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
+        et <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Spend </span><span class="token interpolation"><span class="token punctuation">&#123;</span><span class="token builtin">float</span><span class="token punctuation">(</span>et<span class="token operator">-</span>st<span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span><span class="token string"> sec."</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> res
+    <span class="token keyword">return</span> wrapper
+
+<span class="token decorator annotation punctuation">@timer</span>
+<span class="token keyword">def</span> <span class="token function">haha</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Hello </span><span class="token interpolation"><span class="token punctuation">&#123;</span>name<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"function.pkl"</span><span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"name of haha function is:"</span><span class="token punctuation">,</span> haha<span class="token punctuation">)</span>
+    pickle<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>haha<span class="token punctuation">,</span> f<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>在試圖存下這個函式時發生了問題：<code>AttributeError: Can&#39;t pickle local object &#39;timer.&lt;locals&gt;.wrapper&#39;</code>。而樓主表示只要給裝飾器裡面裝上 <code>warp</code>，問題就解決了。<code>warp</code>應該擺放的位置已經寫在程式裡面了，可以試著註解與取消註解看看函式的名稱的不同。</p>
 <ul>
@@ -303,7 +339,36 @@
 <p>這樣思考起來，好像也能夠明白為何函式與類別不會把程式碼存下來。</p>
 <p>但如果，需要函式有一點「記憶力」呢？例如，在執行 Min-max 正規化時，希望函式能夠記住第一次正規化的上下界屬性，後面都直接帶入就好，不用每次都傳入上下界；或是希望把這組正規化參數記下來，但不希望是把 min ＆ max 倆組分別記下來、怕資訊太零散。</p>
 <p>這種時候，或許可以考慮使用 Callable Object。定義一個 Class 並實踐 <code>__call__</code> 方法，把正規化行為定義在裡面，而需要記憶的屬性紀錄在實例裡面，像是 <code>self.mins</code>, <code>self.maxs</code>… ，在儲存的時候直接把這個 normalizer 存下來即可。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">norm</span>(<span class="params">arr, mins, maxs</span>):</span></span><br><span class="line">    <span class="keyword">return</span> (arr-mins)/(maxs-mins)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Normalizer</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, mins, maxs</span>):</span></span><br><span class="line">        self.mins = mins </span><br><span class="line">        self.maxs = maxs </span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span>(<span class="params">self, arr</span>):</span></span><br><span class="line">        <span class="keyword">return</span> (arr-self.mins)/(self.maxs-self.mins)</span><br><span class="line">        </span><br><span class="line"><span class="comment"># in some main process.... </span></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="keyword">for</span> data <span class="keyword">in</span> datalist:</span><br><span class="line">        mins, maxs = data.<span class="built_in">min</span>(), data.<span class="built_in">max</span>()</span><br><span class="line">        data = norm(data, mins, maxs)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 1. 透過 function 達成</span></span><br><span class="line">        normalizer = <span class="keyword">lambda</span> arr: norm(arr, mins, maxs)</span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">normalizer</span>(<span class="params">arr</span>):</span> <span class="comment"># OR do this... </span></span><br><span class="line">            <span class="keyword">return</span> norm(arr, mins, maxs)</span><br><span class="line">        validation_data = normalizer(validation_data)</span><br><span class="line">        </span><br><span class="line">        joblib.dump(normalizer, <span class="string">&quot;normalizer.pkl&quot;</span>) <span class="comment"># 決對會出錯.. </span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 2. 透過 callable object 達成 </span></span><br><span class="line">        normalizer = Normalizer(mins, maxs)</span><br><span class="line">        data = normalizer(data)</span><br><span class="line">        validation_data = normalizer(validation_data)</span><br><span class="line">        joblib.dump(normalizer, <span class="string">&quot;normalizer.pkl&quot;</span>)     </span><br></pre></td></tr></table></figure>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">norm</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>arr<span class="token operator">-</span>mins<span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span>maxs<span class="token operator">-</span>mins<span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Normalizer</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>mins <span class="token operator">=</span> mins 
+        self<span class="token punctuation">.</span>maxs <span class="token operator">=</span> maxs 
+        
+    <span class="token keyword">def</span> <span class="token function">__call__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> arr<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>arr<span class="token operator">-</span>self<span class="token punctuation">.</span>mins<span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>maxs<span class="token operator">-</span>self<span class="token punctuation">.</span>mins<span class="token punctuation">)</span>
+        
+<span class="token comment"># in some main process.... </span>
+<span class="token keyword">if</span> __name__<span class="token operator">==</span><span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> data <span class="token keyword">in</span> datalist<span class="token punctuation">:</span>
+        mins<span class="token punctuation">,</span> maxs <span class="token operator">=</span> data<span class="token punctuation">.</span><span class="token builtin">min</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> data<span class="token punctuation">.</span><span class="token builtin">max</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        data <span class="token operator">=</span> norm<span class="token punctuation">(</span>data<span class="token punctuation">,</span> mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span>
+        
+        <span class="token comment"># 1. 透過 function 達成</span>
+        normalizer <span class="token operator">=</span> <span class="token keyword">lambda</span> arr<span class="token punctuation">:</span> norm<span class="token punctuation">(</span>arr<span class="token punctuation">,</span> mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span>
+        <span class="token keyword">def</span> <span class="token function">normalizer</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># OR do this... </span>
+            <span class="token keyword">return</span> norm<span class="token punctuation">(</span>arr<span class="token punctuation">,</span> mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span>
+        validation_data <span class="token operator">=</span> normalizer<span class="token punctuation">(</span>validation_data<span class="token punctuation">)</span>
+        
+        joblib<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>normalizer<span class="token punctuation">,</span> <span class="token string">"normalizer.pkl"</span><span class="token punctuation">)</span> <span class="token comment"># 決對會出錯.. </span>
+        
+        <span class="token comment"># 2. 透過 callable object 達成 </span>
+        normalizer <span class="token operator">=</span> Normalizer<span class="token punctuation">(</span>mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span>
+        data <span class="token operator">=</span> normalizer<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+        validation_data <span class="token operator">=</span> normalizer<span class="token punctuation">(</span>validation_data<span class="token punctuation">)</span>
+        joblib<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>normalizer<span class="token punctuation">,</span> <span class="token string">"normalizer.pkl"</span><span class="token punctuation">)</span>     <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
     </div>
@@ -312,7 +377,7 @@
     
     
 
-      <footer class="post-footer">
+    <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/python/" rel="tag"># python</a>
               <a href="/tags/%E5%AE%98%E6%96%B9%E6%96%87%E4%BB%B6/" rel="tag"># 官方文件</a>
@@ -321,199 +386,82 @@
 
         
 
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2022/01/17/pickle-basic/" rel="prev" title="Python 資料永久化套件:Pickle (1)">
-      <i class="fa fa-chevron-left"></i> Python 資料永久化套件:Pickle (1)
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/01/20/python-logger-quick/" rel="next" title="Python 日誌模組 Logging (1)">
-      Python 日誌模組 Logging (1) <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
-  </article>
-  
-  
-  
-
-
-
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/01/17/pickle-basic/" rel="prev" title="Python 資料永久化套件:Pickle (1)">
+                  <i class="fa fa-chevron-left"></i> Python 資料永久化套件:Pickle (1)
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/01/20/python-logger-quick/" rel="next" title="Python 日誌模組 Logging (1)">
+                  Python 日誌模組 Logging (1) <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
           </div>
-          
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          文章目錄
-        </li>
-        <li class="sidebar-nav-overview">
-          本站概要
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#PEP-3155-Qualified-name"><span class="nav-number">1.</span> <span class="nav-text">PEP 3155 Qualified name</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%83%85%E5%A2%83%E6%8E%A2%E8%A8%8E-%E6%9C%89%E8%A3%9D%E9%A3%BE%E5%99%A8%E7%9A%84%E5%87%BD%E5%BC%8F%E7%84%A1%E6%B3%95%E8%A2%AB-Pickle"><span class="nav-number">2.</span> <span class="nav-text">情境探討: 有裝飾器的函式無法被 Pickle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%80%8B%E4%BA%BA%E8%A6%8B%E8%A7%A3"><span class="nav-number">3.</span> <span class="nav-text">個人見解</span></a></li></ol></div>
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">Judy</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">8</span>
-          <span class="site-state-item-name">文章</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-          
-        <span class="site-state-item-count">8</span>
-        <span class="site-state-item-name">標籤</span></a>
-      </div>
-  </nav>
+    </footer>
+  </article>
 </div>
 
 
 
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
 
 
-      </div>
-    </main>
 
-    <footer class="footer">
-      <div class="footer-inner">
-        
+</div>
+  </main>
 
-        
+  <footer class="footer">
+    <div class="footer-inner">
+
 
 <div class="copyright">
-  
   &copy; 
   <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Judy</span>
-    <span class="post-meta-divider">|</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
     <span class="post-meta-item-icon">
-      <i class="fa fa-chart-area"></i>
+      <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">17k</span>
-    <span class="post-meta-divider">|</span>
+    <span title="總字數">28k</span>
+  </span>
+  <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">30 分鐘</span>
+    <span title="所需總閱讀時間">52 分鐘</span>
+  </span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
-  </div>
-
-        
 <div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </div>
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
   </div>
 
-  
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/pisces.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
+    </div>
+  </footer>
 
   
-
-
-
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
-<script src="/js/local-search.js"></script>
-
-
-
-
-
-
-
-
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
 
 
 
 
 
   
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-  
+
+
+
 
 </body>
 </html>
