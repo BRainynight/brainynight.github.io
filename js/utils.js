@@ -151,7 +151,7 @@ NexT.utils = {
     backToTop && backToTop.addEventListener('click', () => {
       window.anime({
         targets  : document.scrollingElement,
-        duration : 500,
+        duration : 100, // change: 
         easing   : 'linear',
         scrollTop: 0
       });
@@ -186,7 +186,7 @@ NexT.utils = {
         const offset = nav.parentNode.getBoundingClientRect().top + window.scrollY + 10;
         window.anime({
           targets  : document.scrollingElement,
-          duration : 500,
+          duration : 100, // change: 
           easing   : 'linear',
           scrollTop: offset
         });
@@ -239,7 +239,7 @@ NexT.utils = {
         const offset = target.getBoundingClientRect().top + window.scrollY;
         window.anime({
           targets  : document.scrollingElement,
-          duration : 500,
+          duration : 100,   // change: 切換成 toc 的動畫速度
           easing   : 'linear',
           scrollTop: offset,
           complete : () => {
@@ -277,7 +277,7 @@ NexT.utils = {
     if (!tocElement.parentNode.classList.contains('sidebar-toc-active')) return;
     window.anime({
       targets  : tocElement,
-      duration : 200,
+      duration : 100, // change: 回到最上
       easing   : 'linear',
       scrollTop: tocElement.scrollTop - (tocElement.offsetHeight / 2) + target.getBoundingClientRect().top - tocElement.getBoundingClientRect().top
     });
@@ -298,7 +298,7 @@ NexT.utils = {
   },
 
   activateSidebarPanel: function(index) {
-    const duration = 200;
+    const duration = 100; // change: 回到最上
     const sidebar = document.querySelector('.sidebar-inner');
     const panel = document.querySelector('.sidebar-panel-container');
     const activeClassName = ['sidebar-toc-active', 'sidebar-overview-active'];

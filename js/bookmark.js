@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Auto scroll to the position
       window.anime({
         targets  : document.scrollingElement,
-        duration : 200,
+        duration : 10, // change:
         easing   : 'linear',
         scrollTop: top
       });
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
       doSaveScroll();
       window.anime({
         targets : link,
-        duration: 200,
+        duration: 10, // change:
         easing  : 'linear',
         top     : -30,
         complete: () => {

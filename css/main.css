@@ -221,7 +221,7 @@ body {
   background: var(--body-bg-color);
   box-sizing: border-box;
   color: var(--text-color);
-  font-family: "Linux Biolinum", Noto Serif SC, sans-serif;
+  font-family: Noto Serif SC, 'Noto Serif TC', 'Microsoft YaHei', sans-serif;
   font-size: 1em;
   line-height: 2;
   min-height: 100%;
@@ -234,7 +234,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Noto Serif SC, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: Noto Serif SC, 'Noto Serif TC', 'Microsoft YaHei', sans-serif;
   font-weight: bold;
   line-height: 1.5;
   margin: 30px 0 15px;
@@ -1305,7 +1305,7 @@ pre code {
   color: var(--brand-hover-color);
 }
 .site-title {
-  font-family: Noto Serif SC, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: Noto Serif SC, 'Noto Serif TC', 'Microsoft YaHei', sans-serif;
   font-size: 1.375em;
   font-weight: normal;
   line-height: 1.5;
@@ -1989,7 +1989,7 @@ pre code {
   width: 4px;
 }
 .post-body {
-  font-family: Noto Serif SC, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: Noto Serif SC, 'Noto Serif TC', 'Microsoft YaHei', sans-serif;
   overflow-wrap: break-word;
 }
 @media (min-width: 1200px) {
@@ -2176,7 +2176,7 @@ pre code {
 }
 .posts-expand .post-meta-container {
   color: #999;
-  font-family: Noto Serif SC, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-family: Noto Serif SC, 'Noto Serif TC', 'Microsoft YaHei', sans-serif;
   font-size: 0.75em;
   margin-top: 3px;
 }
@@ -3058,9 +3058,9 @@ code {
   font-weight: lighter;
 }
 @font-face {
-  font-family: 'Noto Serif TC', serif;
-  font-weight: normal;
+  font-family: 'Noto Serif TC';
+  font-weight: 400;
   font-style: normal;
-  font-display: swap;
-  src: local(''), url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap") format("woff2"); /* Super Modern Browsers */
+  font-display: fallback;
+  src: local('Noto Serif TC'), local('Noto-Serif-TC'), url("/fonts/NotoSerifTC-Regular.otf");
 }
