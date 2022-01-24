@@ -3062,7 +3062,7 @@ code {
   font-weight: 400;
   font-style: normal;
   font-display: fallback;
-  src: local('Noto Serif TC'), local('Noto-Serif-TC'), url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400&display=fallback"),;
+  src: local('Noto Serif TC'), local('Noto-Serif-TC'), url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400&display=fallback"); /* Super Modern Browsers */
 }
 @font-face {
   font-family: 'Noto Serif TC';
