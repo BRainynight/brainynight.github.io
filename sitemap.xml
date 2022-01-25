@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://brainynight.github.io/google02cdd75a253528db.html</loc>
+    
+    <lastmod>2022-01-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://brainynight.github.io/2022/01/22/python-logging-advance/</loc>
     
     <lastmod>2022-01-23</lastmod>
@@ -145,14 +154,14 @@
   </url>
   
   <url>
-    <loc>http://brainynight.github.io/tags/logging/</loc>
+    <loc>http://brainynight.github.io/tags/pickle/</loc>
     <lastmod>2022-01-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://brainynight.github.io/tags/pickle/</loc>
+    <loc>http://brainynight.github.io/tags/logging/</loc>
     <lastmod>2022-01-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

@@ -63,7 +63,7 @@ NexT.motion.middleWares = {
       sequence.push({
         targets,
         complete: () => targets.classList.add('animated', 'fadeInDown'),
-        deltaT  : '-=200' // change: 猜測為側邊欄位渲染？
+        deltaT  : '-=200' // change: 瀑布式 block 顯示
       });
     });
 
