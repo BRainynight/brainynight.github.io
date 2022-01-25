@@ -18,7 +18,7 @@ NexT.motion.integrator = {
     if (!CONFIG.motion.async) this.queue = [this.queue];
     this.queue.forEach(sequence => {
       const timeline = window.anime.timeline({
-        duration: 10,  // change:
+        duration: 50,  // change:
         easing  : 'linear'
       });
       sequence.forEach(item => {
@@ -37,7 +37,7 @@ NexT.motion.middleWares = {
       sequence.push({
         targets,
         scaleX  : [0, 1],
-        duration: 10, // change: 猜測為文字渲染, 或是封面 block 的區塊渲染？
+        duration: 50, // change: 猜測為文字渲染, 或是封面 block 的區塊渲染？
         deltaT  : '-=200'
       });
     }
@@ -63,7 +63,7 @@ NexT.motion.middleWares = {
       sequence.push({
         targets,
         complete: () => targets.classList.add('animated', 'fadeInDown'),
-        deltaT  : '-=200'
+        deltaT  : '-=200' // change: 猜測為側邊欄位渲染？
       });
     });
 
