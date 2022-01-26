@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>新年快樂之部落格沿革(?)</title>
+    <url>/2022/01/01/blog-0-source/</url>
+    <content><![CDATA[<p>2022 新年快樂！新年的第一篇文章，來寫個段小故事。</p>
+<p>我相信自己一路走來在各種平台、格式上轉換的痛苦已經算少了，但每次想起依然常常覺得…. 小坎坷阿，希望現在的決定夠有遠見了？</p>
+<span id="more"></span>
+
+<h3 id="純樸的文字編輯器：Evernote"><a href="#純樸的文字編輯器：Evernote" class="headerlink" title="純樸的文字編輯器：Evernote"></a>純樸的文字編輯器：Evernote</h3><p>從高中起一直有寫心得、觀後感與日記的習慣，那時候用的是 Evernote。大學開始寫程式時，也有著紀錄 bug 的習慣，那時候用的是 Line 記事本跟 Evernote。可以想見，這種紀錄方式簡直是災難… 我希望至少 Code 可以是彩色的（好卑微阿），開始尋找替代方案。</p>
+<p>儘管將程式相關的內容從 Evernote 抽離，它依然是我挺喜歡的筆記軟體。但，隨著 Markdown 語法越來越盛行，Evernote 卻遲遲不能夠跟進，加上 Notion 後來出了教育帳戶免費的策略，最後包括慣用的其他紀錄也都轉移到 Notion 去了。</p>
+<h3 id="Blogger"><a href="#Blogger" class="headerlink" title="Blogger"></a>Blogger</h3><p>由於當時有在用 Blogger 在寫遊記，所以第一時間想到的替代工具就是 Google 旗下的 Blogger ，大約也用了一年多。當對排版越來越要求，發現 Blogger 那種 word 編輯器 + html 編輯界面的方式實在是太沒效率了！決定再次轉移。</p>
+<h3 id="HackMD"><a href="#HackMD" class="headerlink" title="HackMD"></a>HackMD</h3><p>開始用 Markdown 在寫技術筆記，並使用 HackMD 作為平台。但 HackMD 有個很大的缺點，它不支援內文搜尋模式….. （曾經支援，後來疑似因為 loading 太大拿掉內文搜索只能找標題）文章一多不記得什麼內容在哪篇文章，這根本災難！只好又開始尋找替代方案</p>
+<p>那個時期不知道為什麼，HackMD 老是不溫不火，號稱是從日本 IT 圈紅回來的軟體，在台灣小有名氣其實也很好用。但感覺一直是維持狀態，更新狀態不大，反而有退一步取消內文搜索功能的這種事件。</p>
+<h3 id="Github-Typora"><a href="#Github-Typora" class="headerlink" title="Github + Typora"></a>Github + Typora</h3><p>腦子動到 Github 的頭上，發展出用離線的 Markdown 編輯器 Typora 加上 Github 做同步。在我開始將 HackMD 的內容拉下來，跟本地的離線檔案整併時發現有些筆記不小心使用到了一些只有 HackMD 支援的 Markdown 延伸語法，導致這些內容在 Typora 上完全沒有效果！！像是亂碼一樣！</p>
+<p>至此，我下定決心，以後寫文章絕對不要再搞出這麼多麻煩，乖乖用基礎的 Markdown 語法，很方便了！別搞那麼多事！</p>
+<h3 id="熱門的部落格平台：Medium"><a href="#熱門的部落格平台：Medium" class="headerlink" title="熱門的部落格平台：Medium"></a>熱門的部落格平台：Medium</h3><p>想有個部落格的心情依舊在，我曾嘗試過 Medium 平台並不是很喜歡。一來是平台的彈性低、程式碼甚至沒辦法上色，非得透過 Gist ；二來是 Medium 還是比較適合英文文章，英文字寫起來格式是又優雅又漂亮，但中文一個斜體就搞得版面很不和諧。後來也就拿來放一些跟 Code 無關的事情，一些搞環境經驗之類的而已。</p>
+<h3 id="初體驗靜態網頁產生器：Pelican"><a href="#初體驗靜態網頁產生器：Pelican" class="headerlink" title="初體驗靜態網頁產生器：Pelican"></a>初體驗靜態網頁產生器：Pelican</h3><p>大四時一度嘗試使用 Github Page + Pelican 做靜態網站生成，挑選這個組合是因為覺得綁定網域得付錢、感覺這部落格又是有一更沒一更不知道哪天會不會荒廢，決定先從免費的試試看，Github Page 是這個選項很好的解答。而 Pelican 是它背後是用 Python 寫的，好歹我比較熟 (不敢一下子踏入 js) 。</p>
+<p>不知道是對網站管理沒經驗、放太多圖片塞到流量還是什麼問題，大約半年覺得網站載入太慢了受不了，加上對版面的主題既不滿意、又改不動，在充滿羞恥的心情下收掉了這個第一個自己架的部落格。</p>
+<h3 id="再次回歸-Github-Typora"><a href="#再次回歸-Github-Typora" class="headerlink" title="再次回歸 Github + Typora"></a>再次回歸 Github + Typora</h3><p>此後，我一直用 Typora + Github 的模式寫筆記，由於有過自己搭建的經驗，每次看到別人的部落格是使用 Github page 的時候，都會多留意兩眼框架與主題，以及一些自己喜歡的小工具、要素等等，也是那時候看到 Hexo 與 Next 主題被很多人採用。過去使用 Peclian 時，我極度討厭文章太長，每次都要卷到最上面才能點目錄跳轉的情況，甚至自己研究用 CSS 弄了一個懸浮目錄，功能是有卻醜到自己受不了，關站很大一個原因也是這樣。</p>
+<h3 id="現在：Hexo"><a href="#現在：Hexo" class="headerlink" title="現在：Hexo"></a>現在：Hexo</h3><p>直到最近看到有在追蹤的一位作者的文章<a href="https://www.ithome.com.tw/voice/148476">技術網站架設經驗雜談</a>，邊看產生了很多共鳴，想到了一直有個小小的期許：能彈性控制的部落格！才鼓起勇氣再次搭建了部落格。這次打算嘗試許多人都採用的 Hexo 來搭建，管他語言不一樣，大不了學學吧！於是最終就有了這個部落格。</p>
+<p>恩，真是一段不長不短的歷史。總之就是告誡自己，不要被漂亮的擴充功能迷惑，換了框架很痛苦的。</p>
+]]></content>
+      <tags>
+        <tag>about</tag>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>建置 Hexo 部落格</title>
     <url>/2021/12/30/blog-0-hexo-build-env/</url>
     <content><![CDATA[<h2 id="前置作業"><a href="#前置作業" class="headerlink" title="前置作業"></a>前置作業</h2><ol>
@@ -248,136 +274,6 @@ public&#x2F;
       </tags>
   </entry>
   <entry>
-    <title>新年快樂之部落格沿革(?)</title>
-    <url>/2022/01/01/blog-0-source/</url>
-    <content><![CDATA[<p>2022 新年快樂！新年的第一篇文章，來寫個段小故事。</p>
-<p>我相信自己一路走來在各種平台、格式上轉換的痛苦已經算少了，但每次想起依然常常覺得…. 小坎坷阿，希望現在的決定夠有遠見了？</p>
-<span id="more"></span>
-
-<h3 id="純樸的文字編輯器：Evernote"><a href="#純樸的文字編輯器：Evernote" class="headerlink" title="純樸的文字編輯器：Evernote"></a>純樸的文字編輯器：Evernote</h3><p>從高中起一直有寫心得、觀後感與日記的習慣，那時候用的是 Evernote。大學開始寫程式時，也有著紀錄 bug 的習慣，那時候用的是 Line 記事本跟 Evernote。可以想見，這種紀錄方式簡直是災難… 我希望至少 Code 可以是彩色的（好卑微阿），開始尋找替代方案。</p>
-<p>儘管將程式相關的內容從 Evernote 抽離，它依然是我挺喜歡的筆記軟體。但，隨著 Markdown 語法越來越盛行，Evernote 卻遲遲不能夠跟進，加上 Notion 後來出了教育帳戶免費的策略，最後包括慣用的其他紀錄也都轉移到 Notion 去了。</p>
-<h3 id="Blogger"><a href="#Blogger" class="headerlink" title="Blogger"></a>Blogger</h3><p>由於當時有在用 Blogger 在寫遊記，所以第一時間想到的替代工具就是 Google 旗下的 Blogger ，大約也用了一年多。當對排版越來越要求，發現 Blogger 那種 word 編輯器 + html 編輯界面的方式實在是太沒效率了！決定再次轉移。</p>
-<h3 id="HackMD"><a href="#HackMD" class="headerlink" title="HackMD"></a>HackMD</h3><p>開始用 Markdown 在寫技術筆記，並使用 HackMD 作為平台。但 HackMD 有個很大的缺點，它不支援內文搜尋模式….. （曾經支援，後來疑似因為 loading 太大拿掉內文搜索只能找標題）文章一多不記得什麼內容在哪篇文章，這根本災難！只好又開始尋找替代方案</p>
-<p>那個時期不知道為什麼，HackMD 老是不溫不火，號稱是從日本 IT 圈紅回來的軟體，在台灣小有名氣其實也很好用。但感覺一直是維持狀態，更新狀態不大，反而有退一步取消內文搜索功能的這種事件。</p>
-<h3 id="Github-Typora"><a href="#Github-Typora" class="headerlink" title="Github + Typora"></a>Github + Typora</h3><p>腦子動到 Github 的頭上，發展出用離線的 Markdown 編輯器 Typora 加上 Github 做同步。在我開始將 HackMD 的內容拉下來，跟本地的離線檔案整併時發現有些筆記不小心使用到了一些只有 HackMD 支援的 Markdown 延伸語法，導致這些內容在 Typora 上完全沒有效果！！像是亂碼一樣！</p>
-<p>至此，我下定決心，以後寫文章絕對不要再搞出這麼多麻煩，乖乖用基礎的 Markdown 語法，很方便了！別搞那麼多事！</p>
-<h3 id="熱門的部落格平台：Medium"><a href="#熱門的部落格平台：Medium" class="headerlink" title="熱門的部落格平台：Medium"></a>熱門的部落格平台：Medium</h3><p>想有個部落格的心情依舊在，我曾嘗試過 Medium 平台並不是很喜歡。一來是平台的彈性低、程式碼甚至沒辦法上色，非得透過 Gist ；二來是 Medium 還是比較適合英文文章，英文字寫起來格式是又優雅又漂亮，但中文一個斜體就搞得版面很不和諧。後來也就拿來放一些跟 Code 無關的事情，一些搞環境經驗之類的而已。</p>
-<h3 id="初體驗靜態網頁產生器：Pelican"><a href="#初體驗靜態網頁產生器：Pelican" class="headerlink" title="初體驗靜態網頁產生器：Pelican"></a>初體驗靜態網頁產生器：Pelican</h3><p>大四時一度嘗試使用 Github Page + Pelican 做靜態網站生成，挑選這個組合是因為覺得綁定網域得付錢、感覺這部落格又是有一更沒一更不知道哪天會不會荒廢，決定先從免費的試試看，Github Page 是這個選項很好的解答。而 Pelican 是它背後是用 Python 寫的，好歹我比較熟 (不敢一下子踏入 js) 。</p>
-<p>不知道是對網站管理沒經驗、放太多圖片塞到流量還是什麼問題，大約半年覺得網站載入太慢了受不了，加上對版面的主題既不滿意、又改不動，在充滿羞恥的心情下收掉了這個第一個自己架的部落格。</p>
-<h3 id="再次回歸-Github-Typora"><a href="#再次回歸-Github-Typora" class="headerlink" title="再次回歸 Github + Typora"></a>再次回歸 Github + Typora</h3><p>此後，我一直用 Typora + Github 的模式寫筆記，由於有過自己搭建的經驗，每次看到別人的部落格是使用 Github page 的時候，都會多留意兩眼框架與主題，以及一些自己喜歡的小工具、要素等等，也是那時候看到 Hexo 與 Next 主題被很多人採用。過去使用 Peclian 時，我極度討厭文章太長，每次都要卷到最上面才能點目錄跳轉的情況，甚至自己研究用 CSS 弄了一個懸浮目錄，功能是有卻醜到自己受不了，關站很大一個原因也是這樣。</p>
-<h3 id="現在：Hexo"><a href="#現在：Hexo" class="headerlink" title="現在：Hexo"></a>現在：Hexo</h3><p>直到最近看到有在追蹤的一位作者的文章<a href="https://www.ithome.com.tw/voice/148476">技術網站架設經驗雜談</a>，邊看產生了很多共鳴，想到了一直有個小小的期許：能彈性控制的部落格！才鼓起勇氣再次搭建了部落格。這次打算嘗試許多人都採用的 Hexo 來搭建，管他語言不一樣，大不了學學吧！於是最終就有了這個部落格。</p>
-<p>恩，真是一段不長不短的歷史。總之就是告誡自己，不要被漂亮的擴充功能迷惑，換了框架很痛苦的。</p>
-]]></content>
-      <tags>
-        <tag>blog</tag>
-        <tag>about</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo Blog 客製化 (3) Next 主題加速</title>
-    <url>/2022/01/26/blog-3-speedup/</url>
-    <content><![CDATA[<p>說實話，在改字體後還想要網站加速，突然覺得自己有點癡人說夢。改字體本來就會造成額外的負擔! 但還是基於個人的喜好依然想改，照樣記錄一下心路歷程! </p>
-<h2 id="改變字體"><a href="#改變字體" class="headerlink" title="改變字體"></a>改變字體</h2><p>有關  <code>_config.next.yml</code> 與  <code>source\_data\styles.styl</code>  的配置參見前面的兩個章節！</p>
-<ol>
-<li><p>在 <code>_config.next.yml</code> 中配置字體段落</p>
-<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">font</span><span class="token punctuation">:</span>
-  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> 
-  <span class="token key atrule">host</span><span class="token punctuation">:</span>
-  <span class="token key atrule">global</span><span class="token punctuation">:</span>
-    <span class="token key atrule">external</span><span class="token punctuation">:</span> <span class="token boolean important">false</span> <span class="token comment"># 如果寫 true, 就可以不用考慮後面的第三步了。</span>
-    <span class="token key atrule">family</span><span class="token punctuation">:</span> <span class="token string">'Noto Serif SC'</span></code></pre></li>
-<li><p>在<code>source\_data\variables.styl</code> 中設置環境變數，覆蓋原本的設定檔。</p>
-<p>記得要整段 font 的段落都複製！舉例而言，如果只覆蓋了 <code>font-family-chinese</code> 與 <code>font-family-base</code> 兩個變數，疑似因為在 Next 原本檔案中有其它變數使用到 <code>font-family-base</code>，而他們只會記住舊的變數。這會導致畫面有部份（像是 side bar）更改字體，而有部份依然使用微軟正黑體。</p>
-<pre class="language-stylus" data-language="stylus"><code class="language-stylus"><span class="token variable-declaration"><span class="token variable">$font-family-chinese</span>      <span class="token operator">=</span> <span class="token string">'Noto Serif TC'</span><span class="token punctuation">,</span> <span class="token string">'Microsoft YaHei'</span><span class="token punctuation">;</span> </span>
-
-<span class="token variable-declaration"><span class="token variable">$font-family-base</span>         <span class="token operator">=</span> $font-family-chinese<span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span></span>
-<span class="token variable-declaration"><span class="token variable">$font-family-base</span>         <span class="token operator">=</span> get_font_family<span class="token punctuation">(</span><span class="token string">'global'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> $font-family-chinese<span class="token punctuation">,</span> sans-serif <span class="token keyword">if</span> get_font_family<span class="token punctuation">(</span><span class="token string">'global'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
-
-<span class="token variable-declaration"><span class="token variable">$font-family-logo</span>         <span class="token operator">=</span> $font-family-base<span class="token punctuation">;</span></span>
-<span class="token variable-declaration"><span class="token variable">$font-family-logo</span>         <span class="token operator">=</span> get_font_family<span class="token punctuation">(</span><span class="token string">'title'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> $font-family-base <span class="token keyword">if</span> get_font_family<span class="token punctuation">(</span><span class="token string">'title'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
-
-<span class="token variable-declaration"><span class="token variable">$font-family-headings</span>     <span class="token operator">=</span> $font-family-base<span class="token punctuation">;</span></span>
-<span class="token variable-declaration"><span class="token variable">$font-family-headings</span>     <span class="token operator">=</span> get_font_family<span class="token punctuation">(</span><span class="token string">'headings'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> $font-family-base <span class="token keyword">if</span> get_font_family<span class="token punctuation">(</span><span class="token string">'headings'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
-
-<span class="token variable-declaration"><span class="token variable">$font-family-posts</span>        <span class="token operator">=</span> $font-family-base<span class="token punctuation">;</span></span>
-<span class="token variable-declaration"><span class="token variable">$font-family-posts</span>        <span class="token operator">=</span> get_font_family<span class="token punctuation">(</span><span class="token string">'posts'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> $font-family-base <span class="token keyword">if</span> get_font_family<span class="token punctuation">(</span><span class="token string">'posts'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
-
-<span class="token variable-declaration"><span class="token variable">$font-family-monospace</span>    <span class="token operator">=</span> consolas<span class="token punctuation">,</span> Menlo<span class="token punctuation">,</span> monospace<span class="token punctuation">,</span> $font-family-chinese<span class="token punctuation">;</span></span>
-<span class="token variable-declaration"><span class="token variable">$font-family-monospace</span>    <span class="token operator">=</span> get_font_family<span class="token punctuation">(</span><span class="token string">'codes'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> consolas<span class="token punctuation">,</span> Menlo<span class="token punctuation">,</span> monospace<span class="token punctuation">,</span> $font-family-chinese <span class="token keyword">if</span> get_font_family<span class="token punctuation">(</span><span class="token string">'codes'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
-</code></pre></li>
-</ol>
-<p>接下來是第三步驟，主要是我發現改字體後的載入速度比使用原生的微軟正黑體慢了至少 0.5~1秒以上吧。我嘗試想加速字體載入的部份，會先寫建議使用的方法，再紀錄一下我嘗試的方法。</p>
-<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">font</span><span class="token punctuation">:</span>
-  <span class="token key atrule">global</span><span class="token punctuation">:</span>
-    <span class="token key atrule">external</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
-    <span class="token key atrule">family</span><span class="token punctuation">:</span> <span class="token string">'Noto Serif SC'</span></code></pre>
-
-
-
-<h3 id="方法一：字體預載入"><a href="#方法一：字體預載入" class="headerlink" title="方法一：字體預載入"></a>方法一：字體預載入</h3><p>來到 <a href="https://fonts.google.com/noto/specimen/Noto+Serif+TC">google font api</a> ，我們選擇要的粗細(Regular) 之後，左邊會有個彈出視窗，教導我們怎麼在 Html 跟 CSS 中嵌入。</p>
-<blockquote>
-<p>To embed a font, copy the code into the <code>&lt;head&gt;</code> of your html</p>
-</blockquote>
-<pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>preconnect<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://fonts.googleapis.com<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>preconnect<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://fonts.gstatic.com<span class="token punctuation">"</span></span> <span class="token attr-name">crossorigin</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://fonts.googleapis.com/css2?family=Noto+Serif+TC&amp;display=fallback<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre>
-
-<p>可以用 Vscode 之類的在部落格資料夾中找到寫有 <code>&lt;head&gt;</code> 的模板，在我的版本 (V8.9) 中，這位於 <code>themes\next\layout\_layout.njk</code>，直接在 <code>&lt;head&gt;</code> 中把上面那段落貼上，就完成了！</p>
-<p>由於我對網頁前端並不熟悉，不是很確定這是否為關鍵因素。但在我使用預設的 config <code>external:true</code> 並把 preload 註解掉之後，透過 <a href="https://pagespeed.web.dev/">pagespeed</a> 測試，載入時間落差約有一秒左右。</p>
-<h3 id="方法二：掛載在當前網域下-不建議"><a href="#方法二：掛載在當前網域下-不建議" class="headerlink" title="方法二：掛載在當前網域下 (不建議)"></a>方法二：掛載在當前網域下 (不建議)</h3><p>在 <code>source\_data\styles.styl</code> 中添加字體的匯入：</p>
-<pre class="language-stylus" data-language="stylus"><code class="language-stylus"><span class="token atrule-declaration"><span class="token atrule">@font-face</span> <span class="token punctuation">&#123;</span></span>
-  <span class="token property-declaration"><span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">'Noto Serif TC'</span><span class="token punctuation">;</span></span>
-  <span class="token property-declaration"><span class="token property">font-weight</span><span class="token punctuation">:</span> <span class="token number">400</span><span class="token punctuation">;</span></span>
-  <span class="token property-declaration"><span class="token property">font-style</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span></span>
-  <span class="token property-declaration"><span class="token property">font-display</span><span class="token punctuation">:</span> fallback<span class="token punctuation">;</span></span>
-  src<span class="token punctuation">:</span> <span class="token func"><span class="token function">local</span><span class="token punctuation">(</span><span class="token string">'Noto Serif TC'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> local<span class="token punctuation">(</span><span class="token string">'Noto-Serif-TC'</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
-       <span class="token func"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string">'/fonts/NotoSerifTC-Regular.otf'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
-<span class="token punctuation">&#125;</span></code></pre>
-
-<p><code>font-display: fallback</code> 可以使網頁先使用預設字體（微軟正黑體）這種本身就存在於電腦中的字體，使內容可以先顯示。而背景會默默把設定的 Noto Serif TC 下載，事後置換。</p>
-<p>選擇掛在於子網域未必會比較好，因為完整的 otf 檔案高達 MB 級，儘管設置了字體置換，等到完整的載入字體也需要長達 10 秒的時間 (視網路速度吧)。而 google font api 本身有把字體切割成很多部份，讓網頁可以選擇載入有用到的部份字形即可，節省下載量。</p>
-<h2 id="找出網頁的-Bug"><a href="#找出網頁的-Bug" class="headerlink" title="找出網頁的 Bug"></a>找出網頁的 Bug</h2><p>可以打開 chrome <a href="https://support.google.com/campaignmanager/answer/2828688?hl=zh-Hant">開發人員工具</a> 中 “Network” 項目，並 ctrl+R  重新整理網頁。檢查一下都是哪些檔案拖垮了網站速度。我當時發現有一些找不到路徑的字體檔案、Hexo 在產生靜態頁面時有寫的 warning 都有影響，所以修到沒 bug 在推上網路很重要。務必確保網頁在載入的期間只有載入<strong>需要的元件</strong>，不需要花時間試誤。</p>
-<pre class="language-none"><code class="language-none">Warning: Accessing non-existent property &#39;filename&#39; of module exports inside circular dependency</code></pre>
-
-<p>Google 一番之後，參考<a href="https://www.haoyizebo.com/posts/710984d0/">此篇文章</a> 發現是 <code>nib</code> 套件出了問題。我的解決方法沒有順著他的教學，先嘗試重新安裝 <code>hexo-renderer-stylus</code> 但並沒有用。添加 <code>&quot;resolutions&quot;</code> 的部分忘記有沒有嘗試過，或許還是失敗了吧。</p>
-<p>最終，我是在 <code>package-lock.json</code> 的 <code>nib</code> 套件下找到: </p>
-<pre class="language-yaml" data-language="yaml"><code class="language-yaml">"stylus"<span class="token punctuation">:</span>0.54.5</code></pre>
-
-<p>修改成</p>
-<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">"stylus"</span><span class="token punctuation">:</span> 0.54.8</code></pre>
-
-<p><code>npm install</code> 之後參照輸出的資訊內容，先後下指令 <code>npm audit fix</code> 與 <code>npm audit fix --force</code> 解決了這個問題。</p>
-<h2 id="修改-Next-主題的動畫時間-不建議"><a href="#修改-Next-主題的動畫時間-不建議" class="headerlink" title="修改 Next 主題的動畫時間 [不建議]"></a>修改 Next 主題的動畫時間 [不建議]</h2><p>由於不同版本的 Next 程式碼內容也可能有所不同，參考自: <a href="https://blog.csdn.net/Domino_b/article/details/81704118">Hexo NexT 主題修改動畫效果速度</a>。</p>
-<ol>
-<li>使用 Vscode 之類的編輯器在 Next 主題中尋找關鍵字 <code>duration</code>，它可能出現在很多 js 檔案中，有些預設是 200、有些是 500。</li>
-<li>直接改數字，我先改成 100 之後大概看一下效果，網頁載入的速度明顯有提升! 可以先在 localhost 上測試。不敢貿然換成 0 的原因是不確定會不會因為某些元素來不及載入造成錯誤，反而拖到整體的時間。</li>
-<li>稍微判讀一下程式變數，有些頗容易看出函式意義的可以改短一點，不怕會不會影響載入，例如: <code>registerSidebarTOC</code>函式應該是跟側邊欄位「文章目錄」、「本站摘要」之間切換的動畫吧，我會再把數字改小一點。</li>
-</ol>
-<p>反覆在 local 端測試會不會造成 Bug 或使用者體驗不佳，之後就可以部屬到 github page 上了。部屬之後可以到 <a href="https://pagespeed.web.dev/">pagespeed</a> 測試一下表現如何，該網頁會給一些診斷建議，但我自己沒有前端經驗不太知道怎麼改，只是拿來測速度。目前的網頁測試在電腦版中大約有 85-89 分的成績。</p>
-<h2 id="在-Next-Config-中設置動畫選項"><a href="#在-Next-Config-中設置動畫選項" class="headerlink" title="在 Next Config 中設置動畫選項"></a>在 Next Config 中設置動畫選項</h2><p>在手動更改 duration 數值後依然不滿意的我繼續爬，發現其實 Next 主題在 config 中就已有一段設定了，可以<strong>直接把動畫關掉</strong>。即使想要保留動畫，<code>async</code> 也可考慮開起來，讓元素們非同步加載有機會讓 Loading 更快吧。之所以前一段去改 duration 列為不建議是因為，我不太確定修改間隔會不會對元素的加載產生一些問題，但還是記錄起來。</p>
-<p>值得一提的是，包括進場動畫其實都是可以改的! 在 Next 主題的 demo 頁面中有展示各個特效名稱對應的效果: <a href="https://theme-next.js.org/animate/%E3%80%82">https://theme-next.js.org/animate/。</a></p>
-<p>這邊是我已經改過的 yaml 部分: </p>
-<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">motion</span><span class="token punctuation">:</span>
-  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-  <span class="token key atrule">async</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-  <span class="token key atrule">transition</span><span class="token punctuation">:</span>
-    <span class="token comment"># All available transition variants: https://theme-next.js.org/animate/</span>
-    <span class="token key atrule">post_block</span><span class="token punctuation">:</span> fadeIn
-    <span class="token key atrule">post_header</span><span class="token punctuation">:</span> fadeInUp 
-    <span class="token key atrule">post_body</span><span class="token punctuation">:</span> fadeIn
-    <span class="token key atrule">coll_header</span><span class="token punctuation">:</span> fadeInLeft
-    <span class="token comment"># Only for Pisces | Gemini.</span>
-    <span class="token key atrule">sidebar</span><span class="token punctuation">:</span> fadeInUp</code></pre>
-
-
-
-]]></content>
-      <tags>
-        <tag>blog</tag>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo Blog 客製化 (2) Next 主題更新與 PrismJs 啟用</title>
     <url>/2022/01/26/blog-2-theme-Next-update/</url>
     <content><![CDATA[<h2 id="主題版本更新"><a href="#主題版本更新" class="headerlink" title="主題版本更新"></a>主題版本更新</h2><p>Next 主題有在定期更新，每次更新後可能 config 的內容位置都可能有更動。</p>
@@ -441,186 +337,106 @@ public&#x2F;
       </tags>
   </entry>
   <entry>
-    <title>Python 資料永久化套件:Pickle (1)</title>
-    <url>/2022/01/17/pickle-basic/</url>
-    <content><![CDATA[<p>Pickle 是 Python 裡面物件儲存的原生套件，延伸的套件有不少，我個人就慣用 <code>joblib</code>。</p>
-<p>Pickle 直接翻譯是醃漬的意思，這樣說起來很怪，所以以下我可能會用「打包、存檔」之類的作為他的中文敘述，unpicke 直翻有拆開的意思，大陸那邊會有人稱為酸洗，同樣覺得很怪異，以下可能會用「復原、讀取、解包」之類的詞來敘述。若撰寫的當下覺得替代的中文會使意義變得模糊，則會直接採用原本的 pickle 與 unpickle 作為敘述。</p>
-<h2 id="什麼物件可以被-Pickle-Unpickle"><a href="#什麼物件可以被-Pickle-Unpickle" class="headerlink" title="什麼物件可以被 Pickle / Unpickle"></a><a href="https://docs.python.org/3/library/pickle.html#what-can-be-pickled-and-unpickled">什麼物件可以被 Pickle / Unpickle</a></h2><ul>
-<li>基本型態的數值：None、布林值、整數、浮點數、複數</li>
-<li>基本型態的文字類：字串、位元、位元陣列</li>
-<li>基本的可迭代類型：tuple、list、set、字典(dictionaries)，若其內含物件都是 picklable 物件的化就可以。</li>
-<li>在 Top Level 被定義的<ul>
-<li>函式 (function) ，只接受用 <code>def</code> 定義的，用 <code>lambda</code> 定義的一樣是 Unpicklable。 <strong>[以 name reference 形式儲存]</strong></li>
-<li>類別 <strong>[以 name reference 形式儲存]</strong></li>
-<li>類別的實例：其 <code>__dict__</code> 或 <code>__getstat__()</code>的回傳必須是 pickable 的。</li>
-</ul>
-</li>
-</ul>
-<p>企圖將 unpickle 物件存下來會引發<a href="https://docs.python.org/3/library/pickle.html#pickle.PicklingError"><code>PicklingError</code></a> 例外，嘗試 pickle 一個高度遞迴的資料結構可能會超過最高遞迴深度而引發 <a href="https://docs.python.org/3/library/exceptions.html#RecursionError"><code>RecursionError</code></a>（對於這個問題可以透過設置  <a href="https://docs.python.org/3/library/sys.html#sys.setrecursionlimit"><code>sys.setrecursionlimit()</code></a> 解決）</p>
-<h2 id="Pickle-Function-Class"><a href="#Pickle-Function-Class" class="headerlink" title="Pickle Function/Class"></a>Pickle Function/Class</h2><p>不管是 Built-in function 或使用者自訂的函式，都是透過 function 自身的完整名稱 (“fully qualified” name reference) 將 function pickle 下來，而不是透過值 pickle。這是為何 lambda 函數沒辦法被 pickle ，因為所有的 lambda 函數的名稱都一樣叫做 <code>&lt;lambda&gt;</code>。Python 官方文件的內容如下：</p>
-<blockquote>
-<p>Note that functions (built-in and user-defined) are pickled by “fully qualified” name reference, not by value. <a href="https://docs.python.org/3/library/pickle.html#id8">2</a> This means that only the function name is pickled, along with the name of the module the function is defined in. Neither the function’s code, nor any of its function attributes are pickled. Thus the defining module must be importable in the unpickling environment, and the module must contain the named object, otherwise an exception will be raised. <a href="https://docs.python.org/3/library/pickle.html#id9">3</a></p>
-</blockquote>
-<p>有關 <a href="https://www.python.org/dev/peps/pep-3155/" title="Qualified name for classes and functions">PEP 3155</a> 的 “fully qualified” name reference 在之後會稍微提到。</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">function_example</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Hi"</span><span class="token punctuation">)</span>
+    <title>Python 資料永久化套件:Pickle (2)</title>
+    <url>/2022/01/17/pickle-advance/</url>
+    <content><![CDATA[<h2 id="PEP-3155-Qualified-name"><a href="#PEP-3155-Qualified-name" class="headerlink" title="PEP 3155 Qualified name"></a>PEP 3155 Qualified name</h2><p>有關 Fully Qualified Name 的部份我是第一次看到…，嘗試閱讀 PEP 內容，不是很確定閱讀理解是否正確，若有錯誤歡迎指教！</p>
+<p>這個 PEP 議題是添加一個 <code>__qualname__</code> 屬性在函式跟類別中。對於 Top-Level 的函式與類別，這個屬性等同於 <code>__name__</code>，而對於巢狀的類別跟巢狀函式，<code>__qualname__</code> 屬性 dotted name 呈現，代表從 Top-Level 算起，該物件的層級位置。<code>repr()</code> 跟 <code>str()</code> 作用於類別與函式上時，也被修改成使用 <code>__qualname__</code>  而非 <code>__name__</code>。</p>
+<p>dotted name 表示從一個模組的 global 區域到該類別、函式或方法的路徑。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">C</span><span class="token punctuation">:</span>
+    <span class="token keyword">class</span> <span class="token class-name">D</span><span class="token punctuation">:</span>
+        <span class="token keyword">def</span> <span class="token function">meth</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">pass</span>
 
-lambda_example <span class="token operator">=</span> <span class="token keyword">lambda</span> <span class="token punctuation">:</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"this is lambda"</span><span class="token punctuation">)</span>
+In <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">:</span> C<span class="token punctuation">.</span>__qualname__
+Out<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'C'</span>
 
-In <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">:</span> lambda_example<span class="token punctuation">.</span>__name__ <span class="token comment"># 所有的 lambda 函式名稱都是 lambda </span>
-Out<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'&lt;lambda>'</span>
+In <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">:</span> C<span class="token punctuation">.</span>D<span class="token punctuation">.</span>__qualname__
+Out<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'C.D'</span>
 
-In <span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">:</span> function_example<span class="token punctuation">.</span>__name__ <span class="token comment"># function 的名稱是自己的</span>
-Out<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'function_example'</span></code></pre>
+In <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">:</span> C<span class="token punctuation">.</span>D<span class="token punctuation">.</span>__name__
+Out<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'D'</span>
+    
+In <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">:</span> C<span class="token punctuation">.</span>D<span class="token punctuation">.</span>meth<span class="token punctuation">.</span>__qualname__
+Out<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'C.D.meth'</span></code></pre>
 
-<p>此外，被 Pickle 的內容實際只有名稱，而沒有程式碼。因此在 Unpickle 的環境如果沒有在對應的位置定義對應的函式，是沒有辦法被 Unpickle 的! 我們可以先嘗試在一個檔案中定義函式並把他存下來：</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pickle 
-<span class="token keyword">def</span> <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"lalalala~~~~"</span><span class="token punctuation">)</span>
+<p>而且對於被 <code>import</code> 的模組是不存在 <code>__qualname__</code> 屬性的，他們只有 <code>__name__</code>屬性，表達的是他的 Fully Qualified Name：該模組到其頂層父模組之間的層級關係：</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> email<span class="token punctuation">.</span>mime<span class="token punctuation">.</span>text
+email<span class="token punctuation">.</span>mime<span class="token punctuation">.</span>text<span class="token punctuation">.</span>__name__</code></pre>
+
+
+
+<h2 id="情境探討-有裝飾器的函式無法被-Pickle"><a href="#情境探討-有裝飾器的函式無法被-Pickle" class="headerlink" title="情境探討: 有裝飾器的函式無法被 Pickle"></a>情境探討: 有裝飾器的函式無法被 Pickle</h2><p>問題來源<a href="https://blog.csdn.net/qq_39314099/article/details/83822593">自此網站</a>，我們可以嘗試用閱讀完官方文件後的邏輯來解釋這個問題。因為覺得程式繁瑣，所以大概照著意思稍微改寫了一下，博主寫了一個名為 <code>haha</code> 的函式，會印出 <code>hello XXX</code>，並為它添加了計時裝飾器。雖然沒有明確的說怎麼存檔出了錯，但根據引發的 Error 我大致假設是嘗試存 <code>haha</code> 這個函式。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> time<span class="token punctuation">,</span> pickle
+<span class="token keyword">from</span> functools <span class="token keyword">import</span> wraps
+
+<span class="token keyword">def</span> <span class="token function">timer</span><span class="token punctuation">(</span>mth<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>    
+    <span class="token comment"># @wraps(mth)</span>
+    <span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        st <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        res <span class="token operator">=</span> mth<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
+        et <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Spend </span><span class="token interpolation"><span class="token punctuation">&#123;</span><span class="token builtin">float</span><span class="token punctuation">(</span>et<span class="token operator">-</span>st<span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span><span class="token string"> sec."</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> res
+    <span class="token keyword">return</span> wrapper
+
+<span class="token decorator annotation punctuation">@timer</span>
+<span class="token keyword">def</span> <span class="token function">haha</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Hello </span><span class="token interpolation"><span class="token punctuation">&#123;</span>name<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
 
 <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"function.pkl"</span><span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
-    pickle<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>bar<span class="token punctuation">,</span> f<span class="token punctuation">)</span></code></pre>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"name of haha function is:"</span><span class="token punctuation">,</span> haha<span class="token punctuation">)</span>
+    pickle<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>haha<span class="token punctuation">,</span> f<span class="token punctuation">)</span></code></pre>
 
-<p>然後在一個全新、沒有定義過 <code>bar</code> 函式的環境中，試圖將其復原。會發現引發了 <code>AttributeError</code></p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pickle 
-<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"function.pkl"</span><span class="token punctuation">,</span> <span class="token string">"rb"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
-    bar <span class="token operator">=</span> pickle<span class="token punctuation">.</span>load<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
-<span class="token comment"># AttributeError: Can't get attribute 'bar' on &lt;module '__main__'></span></code></pre>
-
-<p>類別也一樣，被儲存的實際上只有名稱而沒有程式碼，若在 Unpickle 的環境中沒有定義該類別，一樣會引發 <code>AttributeError</code>。</p>
-<h2 id="Pickle-Class-Instance"><a href="#Pickle-Class-Instance" class="headerlink" title="Pickle Class Instance"></a><a href="https://docs.python.org/3/library/pickle.html#pickling-class-instances">Pickle Class Instance</a></h2><p>與 Function 相同，儲存類別的方式也是透過 named reference 儲存(classes are pickled by named reference)。</p>
-<p>雖然 Pickle 可以儲存類別的實例，但實際上他<strong>不會儲存任何的類別程式碼、類別屬性</strong>。準確的來說，他存的是實例的「屬性」，用 Python 來敘述 pickle 的 <code>dump</code> 與 <code>load</code> 動作如下：</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">save</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> <span class="token punctuation">(</span>obj<span class="token punctuation">.</span>__class__<span class="token punctuation">,</span> obj<span class="token punctuation">.</span>__dict__<span class="token punctuation">)</span>
-
-<span class="token keyword">def</span> <span class="token function">load</span><span class="token punctuation">(</span>cls<span class="token punctuation">,</span> attributes<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    obj <span class="token operator">=</span> cls<span class="token punctuation">.</span>__new__<span class="token punctuation">(</span>cls<span class="token punctuation">)</span>
-    obj<span class="token punctuation">.</span>__dict__<span class="token punctuation">.</span>update<span class="token punctuation">(</span>attributes<span class="token punctuation">)</span>
-    <span class="token keyword">return</span> obj</code></pre>
-
-<p>用實際的例子演示一下儲存跟復原的邏輯：</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Foo</span><span class="token punctuation">:</span>
-    attr <span class="token operator">=</span> <span class="token string">'A class attribute'</span>
-    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token punctuation">)</span><span class="token punctuation">:</span>
-        self<span class="token punctuation">.</span>inst_arr <span class="token operator">=</span> <span class="token string">"Instance attribute!"</span>
-        self<span class="token punctuation">.</span>fake_attr <span class="token operator">=</span> <span class="token string">"This is fake"</span>
-        
-foo <span class="token operator">=</span> Foo<span class="token punctuation">(</span><span class="token punctuation">)</span>
-pickled_info <span class="token operator">=</span> save<span class="token punctuation">(</span>foo<span class="token punctuation">)</span> <span class="token comment"># (__main__.Foo, &#123;'inst_arr': 'Instance attribute!'&#125;)</span>
-recover_foo <span class="token operator">=</span> load<span class="token punctuation">(</span><span class="token operator">*</span>pickled_info<span class="token punctuation">)</span></code></pre>
-
-<p>如果我們想要復原存下來的實例，程式碼中必須保留該類別的定義，否則會引發錯誤。上面僅僅是用程式說明邏輯，現在實際套用 pickle 套件</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pickle
-        
-foo <span class="token operator">=</span> Foo<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"test.pkl"</span><span class="token punctuation">,</span> <span class="token string">"wb"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
-    pickle<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>foo<span class="token punctuation">,</span> f<span class="token punctuation">)</span>
-
-<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"test.pkl"</span><span class="token punctuation">,</span> <span class="token string">"rb"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
-    my_foo <span class="token operator">=</span> pickle<span class="token punctuation">.</span>load<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>my_foo<span class="token punctuation">.</span>inst_arr<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>my_foo<span class="token punctuation">.</span>attr<span class="token punctuation">)</span></code></pre>
-
-<p>但如果用別份程式碼定義把實例從 pkl 中復原，而該份程式碼中沒有類別 <code>Foo</code>，就會引發錯誤：</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pickle
-<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"test.pkl"</span><span class="token punctuation">,</span> <span class="token string">"rb"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
-    my_foo <span class="token operator">=</span> pickle<span class="token punctuation">.</span>load<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
-<span class="token comment"># AttributeError: Can't get attribute 'Foo' on &lt;module '__main__'></span></code></pre>
-
+<p>在試圖存下這個函式時發生了問題：<code>AttributeError: Can&#39;t pickle local object &#39;timer.&lt;locals&gt;.wrapper&#39;</code>。而樓主表示只要給裝飾器裡面裝上 <code>warp</code>，問題就解決了。<code>warp</code>應該擺放的位置已經寫在程式裡面了，可以試著註解與取消註解看看函式的名稱的不同。</p>
 <ul>
-<li><code>pickle.dump</code> ：記住該實例所使用類別的名字 (named reference)、與其實例屬性</li>
-<li><code>pickle.load</code>：試圖在程式中尋找記住的類別名字，在不初始化的情況(不調用 <code>__init__</code>)下，默默的創建一個實例，並對所有的實例屬性套用 <code>pkl</code> 中所記憶的數值。</li>
+<li>沒有 <code>warp</code> 的情況：<code>&lt;function timer.&lt;locals&gt;.wrapper at 0x000001EBECA588B8&gt;</code></li>
+<li>有 <code>warp</code> 的情況：<code>&lt;function haha at 0x000001BF76B188B8&gt;</code></li>
 </ul>
-<p>如果 pickle 沒辦法在程式中尋找到該 named reference 就會引發例外，不是定義在 Top Level 的函式、類別會沒有辦法透過 named reference 取得；而所有的 lambda function 都共享同一個 name reference , <code>&lt;lambda&gt;</code>，代表在復原的時候根本沒辦法找到存到的是哪個 lambda 函式，所以在試圖 dump 的時候就先被排除了。</p>
-<pre class="language-none"><code class="language-none">PicklingError: Can&#39;t pickle &lt;function &lt;lambda&gt; at 0x00000213F8790948&gt;: attribute lookup &lt;lambda&gt; on __main__ failed</code></pre>
-
-<h3 id="刻意的設計"><a href="#刻意的設計" class="headerlink" title="刻意的設計"></a>刻意的設計</h3><p>不儲存有關類別的屬性、類別的程式碼是故意的設計，這樣做的好處是：如果在 v1 版本中我們儲存了某個實例，後來發現該實例對應的類別有錯、或是對類別擴增了方法而修改程式變成 v2 版本。我們依然可以在 v2 版本中讀取曾經存下來的實例，即使他是在前面版本 (v1) 中存下來的。</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token comment"># V1</span>
-<span class="token keyword">import</span> pickle 
-<span class="token keyword">class</span> <span class="token class-name">Dog</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> legs<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        self<span class="token punctuation">.</span>legs <span class="token operator">=</span> <span class="token number">4</span>
-
-dog <span class="token operator">=</span> Dog<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span>
-<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"test.pkl"</span><span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
-    pickle<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>dog<span class="token punctuation">,</span> f<span class="token punctuation">)</span></code></pre>
-
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token comment"># V2</span>
-<span class="token keyword">import</span> pickle 
-<span class="token keyword">class</span> <span class="token class-name">Dog</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> legs<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        self<span class="token punctuation">.</span>legs <span class="token operator">=</span> <span class="token number">4</span>
-        
-    <span class="token keyword">def</span> <span class="token function">voice</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"woof! woof! woof!"</span><span class="token punctuation">)</span>
-
-<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'test.pkl'</span><span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
-    dog <span class="token operator">=</span> pickle<span class="token punctuation">.</span>load<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
-
-dog<span class="token punctuation">.</span>voice<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># can run! </span></code></pre>
-
-<h3 id="永久保存物件的版本"><a href="#永久保存物件的版本" class="headerlink" title="永久保存物件的版本"></a>永久保存物件的版本</h3><p>如果們希望這是一個  long-lived 的物件，可以看到不同版本的類別，或許可以考慮在裡面放置版本號碼，以便透過類別的 <code>__setstate()__</code> 方法做適當的轉換。(官方文件裡面這樣寫，但我不是很懂要怎麼實踐)</p>
-<h2 id="改變-Pickle-時的預設行為"><a href="#改變-Pickle-時的預設行為" class="headerlink" title="改變 Pickle 時的預設行為"></a>改變 Pickle 時的預設行為</h2><p>Pickle 實例的時候，如果該實例的類別有設定下列方法，會改變 Pickle 時的預設舉動</p>
-<h3 id="模組方法"><a href="#模組方法" class="headerlink" title="模組方法"></a>模組方法</h3><h4 id="object-getnewargs-ex"><a href="#object-getnewargs-ex" class="headerlink" title="object.__getnewargs_ex__()"></a><code>object.__getnewargs_ex__()</code></h4><p>在協定2與3中，實踐了此方法的類別可以在 unpickling 的時候將寫在 <code>__getnewargs_ex__</code> 的參數傳遞到 <code>__new__()</code> 裡面以建構物件。此方法必須回傳一對 tuple：<code>(args, kwargs)</code>，其中 <code>args</code> 是一個 tuple 包含著位置參數 (positional arguments)、<code>kwargs</code> 是一個字典包含關鍵字參數。</p>
-<h4 id="object-getstate"><a href="#object-getstate" class="headerlink" title="object.__getstate__()"></a><code>object.__getstate__()</code></h4><p>類別可以可以決定屬於它們的實例要如何被打包，如果類別定義了此方法，pickle 時會直接呼叫此方法，用它的回傳作為實例所存下來的內容。而不是一般使用實例 pickle 的預設方式：使用 <code>__dict__</code> 作為存下的內容。</p>
-<h4 id="object-setstate-state"><a href="#object-setstate-state" class="headerlink" title="object.__setstate__(state)"></a><code>object.__setstate__(state)</code></h4><p>若類別有定義此方法，Unpickle 的時候就會將得到的 state 傳入此方法。如果類別有定義此方法，則 state 物件不限定要是字典，因為在復原物件的時候 <code>__setstate__</code> 自己有一套規則了！</p>
-<p>但如果沒有實踐此方法，被存下來的 state (pickled state) 必須是字典的形式，這樣才能把它指派給新的(復原的) 實例的字典。大概有點像下面這種感覺吧：</p>
-<pre class="language-python" data-language="python"><code class="language-python">saved_pkl <span class="token operator">=</span> <span class="token punctuation">&#123;</span> arg1<span class="token punctuation">:</span>val1<span class="token punctuation">,</span> arg2<span class="token punctuation">:</span>val2<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">&#125;</span>
-new_obj<span class="token punctuation">.</span>__dict__ <span class="token operator">=</span> saved_pkl</code></pre>
-
-<p>關於 <code>__getstate__</code> 與 <code>__setstate__</code> 方法，可以參考  <a href="https://docs.python.org/3/library/pickle.html#pickle-state">Handling Stateful Objects</a> 有更多資訊。</p>
-<h3 id="處理擁有狀態的物件-Handling-Stateful-Objects"><a href="#處理擁有狀態的物件-Handling-Stateful-Objects" class="headerlink" title="處理擁有狀態的物件 (Handling Stateful Objects)"></a>處理擁有狀態的物件 (Handling Stateful Objects)</h3><p>這個例子將展示如何 modify 類別的 pickle 行為：<code>TextReader</code> 類別打開一個文字檔，當 <code>readline</code> 被呼叫的時候會回傳行數以及該行內容。如果 <code>TextReader</code> 實例被打包，除了文件物件(file object) 之外的屬性都可以被儲存。當實例復原時(unpickle)，檔案會被重新開啟，並且從上次最後讀取的位置繼續。這樣的功能就是透過 <code>__setstate__()</code> 和 <code>__getstate__()</code> 方法達成的，如果不實做這兩個方法，在嘗試 <code>dump</code> 的時候就會引發例外</p>
-<pre class="language-none"><code class="language-none">TypeError: cannot serialize &#39;_io.TextIOWrapper&#39; object</code></pre>
-
-<p>這個類別在實做的時候做了幾件事：</p>
+<p>所以追根究底，這個問題的癥結點在於包上裝飾器後，若沒有使用 <code>functools.wraps</code> 讓裝飾後的函式名稱仍保持原樣，該函式的名稱會變成裝飾器內部函式 <code>wrapper</code> 的名稱。而由於 <code>wrapper</code> 不是一個 top-level 的函式，而是隸屬 <code>timer</code> 函式下的 <code>&lt;locals&gt;</code>，因此 Pickle 在試圖存取時直接因為名稱不符合 Pickable 原則而引發了錯誤。</p>
+<p>而且決方法僅僅是讓裝飾後的函式保留原本的名稱，一樣叫做 <code>haha</code>，Pickle 發現這個名稱存在於 Top-Level 就把他記下來。但實際上他記得的也只有名稱，Unpickle 的時候如果沒有保留定義 <code>haha</code> 的函式、或是 <code>haha</code> 的內容和 Pickle 時不一樣，執行起來仍會是不同的內容！</p>
+<h2 id="個人見解"><a href="#個人見解" class="headerlink" title="個人見解"></a>個人見解</h2><p>Pickle 是刻意設計不儲存程式碼，對函式與類別都以 name reference 的方式保存的。因此想要透過 pickle 來「永久的」存下函式與類別是不可能的，乍聽起來很不方便。但換個角度或許該想的是：</p>
 <ul>
-<li><code>__getstate__()</code>：先將物件的 <code>__dict__</code> 屬性複製，並將沒辦法 pickle 的 IO 物件移除，回傳剩下的屬性字典(state)。</li>
-<li><code>__setstate__()</code>：<ol>
-<li>將獲得的 state 更新進入新實例的 <code>__dict__</code> 屬性裡面</li>
-<li>根據已經復原的 <code>self.fileName</code>屬性，打開文字檔案。</li>
-<li>根據已經復原 <code>self.lineno</code> 屬性，將 <code>file</code> 的狀態讀到上次結束時的行數（把 file 復原到上次結束的狀態，因為他不能直接被 pickle）</li>
-<li>把已復原的 <code>file</code> 指派給實例的 <code>self.file</code> 屬性。</li>
-</ol>
+<li><p>什麼東西是應該被永久保存的呢？應該是資料。</p>
+</li>
+<li><p>資料應該以何種形式存在呢？應該是實例。</p>
+</li>
+<li><p>所以函式、類別是什麼？我想是一個流程、或是一個抽象的敘述。</p>
+<p>理論上，如果有一些變動性的、Runtime 才決定的資料也應該是外部傳入，如果是內部所需要的資料也跟外界無關，作為 local 變數定義在程式碼中就好。</p>
 </li>
 </ul>
-<p>如此一來，<code>TextReader</code> 的實例雖然實際上並沒有每個屬性都真正被 pickle 下來，但復原的時候卻彷彿回到上次剛結束的狀態繼續，達到儲存實例狀態的目的。</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">TextReader</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> filename<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        self<span class="token punctuation">.</span>filename <span class="token operator">=</span> filename
-        self<span class="token punctuation">.</span><span class="token builtin">file</span> <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span>filename<span class="token punctuation">)</span>
-        self<span class="token punctuation">.</span>lineno <span class="token operator">=</span> <span class="token number">0</span>
+<p>這樣思考起來，好像也能夠明白為何函式與類別不會把程式碼存下來。</p>
+<p>但如果，需要函式有一點「記憶力」呢？例如，在執行 Min-max 正規化時，希望函式能夠記住第一次正規化的上下界屬性，後面都直接帶入就好，不用每次都傳入上下界；或是希望把這組正規化參數記下來，但不希望是把 min ＆ max 倆組分別記下來、怕資訊太零散。</p>
+<p>這種時候，或許可以考慮使用 Callable Object。定義一個 Class 並實踐 <code>__call__</code> 方法，把正規化行為定義在裡面，而需要記憶的屬性紀錄在實例裡面，像是 <code>self.mins</code>, <code>self.maxs</code>… ，在儲存的時候直接把這個 normalizer 存下來即可。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">norm</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>arr<span class="token operator">-</span>mins<span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span>maxs<span class="token operator">-</span>mins<span class="token punctuation">)</span>
 
-    <span class="token keyword">def</span> <span class="token function">readline</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        self<span class="token punctuation">.</span>lineno <span class="token operator">+=</span> <span class="token number">1</span>
-        line <span class="token operator">=</span> self<span class="token punctuation">.</span><span class="token builtin">file</span><span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token keyword">if</span> <span class="token keyword">not</span> line<span class="token punctuation">:</span>
-            <span class="token keyword">return</span> <span class="token boolean">None</span>
-        <span class="token keyword">if</span> line<span class="token punctuation">.</span>endswith<span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            line <span class="token operator">=</span> line<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
-        <span class="token keyword">return</span> <span class="token string">"%i: %s"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>lineno<span class="token punctuation">,</span> line<span class="token punctuation">)</span>
-
-    <span class="token keyword">def</span> <span class="token function">__getstate__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        state <span class="token operator">=</span> self<span class="token punctuation">.</span>__dict__<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token keyword">del</span> state<span class="token punctuation">[</span><span class="token string">'file'</span><span class="token punctuation">]</span>
-        <span class="token keyword">return</span> state
-
-    <span class="token keyword">def</span> <span class="token function">__setstate__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> state<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        self<span class="token punctuation">.</span>__dict__<span class="token punctuation">.</span>update<span class="token punctuation">(</span>state<span class="token punctuation">)</span>
-        <span class="token builtin">file</span> <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>filename<span class="token punctuation">)</span>
-        <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>lineno<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token builtin">file</span><span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        self<span class="token punctuation">.</span><span class="token builtin">file</span> <span class="token operator">=</span> <span class="token builtin">file</span></code></pre>
-
-<pre class="language-python" data-language="python"><code class="language-python">reader <span class="token operator">=</span> TextReader<span class="token punctuation">(</span><span class="token string">"hello.txt"</span><span class="token punctuation">)</span>
-reader<span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span>
-reader<span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-new_reader <span class="token operator">=</span> pickle<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>pickle<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>reader<span class="token punctuation">)</span><span class="token punctuation">)</span>
-new_reader<span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
-
-
-
-
+<span class="token keyword">class</span> <span class="token class-name">Normalizer</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>mins <span class="token operator">=</span> mins 
+        self<span class="token punctuation">.</span>maxs <span class="token operator">=</span> maxs 
+        
+    <span class="token keyword">def</span> <span class="token function">__call__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> arr<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>arr<span class="token operator">-</span>self<span class="token punctuation">.</span>mins<span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>maxs<span class="token operator">-</span>self<span class="token punctuation">.</span>mins<span class="token punctuation">)</span>
+        
+<span class="token comment"># in some main process.... </span>
+<span class="token keyword">if</span> __name__<span class="token operator">==</span><span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> data <span class="token keyword">in</span> datalist<span class="token punctuation">:</span>
+        mins<span class="token punctuation">,</span> maxs <span class="token operator">=</span> data<span class="token punctuation">.</span><span class="token builtin">min</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> data<span class="token punctuation">.</span><span class="token builtin">max</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        data <span class="token operator">=</span> norm<span class="token punctuation">(</span>data<span class="token punctuation">,</span> mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span>
+        
+        <span class="token comment"># 1. 透過 function 達成</span>
+        normalizer <span class="token operator">=</span> <span class="token keyword">lambda</span> arr<span class="token punctuation">:</span> norm<span class="token punctuation">(</span>arr<span class="token punctuation">,</span> mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span>
+        <span class="token keyword">def</span> <span class="token function">normalizer</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># OR do this... </span>
+            <span class="token keyword">return</span> norm<span class="token punctuation">(</span>arr<span class="token punctuation">,</span> mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span>
+        validation_data <span class="token operator">=</span> normalizer<span class="token punctuation">(</span>validation_data<span class="token punctuation">)</span>
+        
+        joblib<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>normalizer<span class="token punctuation">,</span> <span class="token string">"normalizer.pkl"</span><span class="token punctuation">)</span> <span class="token comment"># 決對會出錯.. </span>
+        
+        <span class="token comment"># 2. 透過 callable object 達成 </span>
+        normalizer <span class="token operator">=</span> Normalizer<span class="token punctuation">(</span>mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span>
+        data <span class="token operator">=</span> normalizer<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+        validation_data <span class="token operator">=</span> normalizer<span class="token punctuation">(</span>validation_data<span class="token punctuation">)</span>
+        joblib<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>normalizer<span class="token punctuation">,</span> <span class="token string">"normalizer.pkl"</span><span class="token punctuation">)</span>     </code></pre>
 
 ]]></content>
       <tags>
@@ -821,228 +637,296 @@ WARNING:And this, too
       </tags>
   </entry>
   <entry>
-    <title>Python 資料永久化套件:Pickle (2)</title>
-    <url>/2022/01/17/pickle-advance/</url>
-    <content><![CDATA[<h2 id="PEP-3155-Qualified-name"><a href="#PEP-3155-Qualified-name" class="headerlink" title="PEP 3155 Qualified name"></a>PEP 3155 Qualified name</h2><p>有關 Fully Qualified Name 的部份我是第一次看到…，嘗試閱讀 PEP 內容，不是很確定閱讀理解是否正確，若有錯誤歡迎指教！</p>
-<p>這個 PEP 議題是添加一個 <code>__qualname__</code> 屬性在函式跟類別中。對於 Top-Level 的函式與類別，這個屬性等同於 <code>__name__</code>，而對於巢狀的類別跟巢狀函式，<code>__qualname__</code> 屬性 dotted name 呈現，代表從 Top-Level 算起，該物件的層級位置。<code>repr()</code> 跟 <code>str()</code> 作用於類別與函式上時，也被修改成使用 <code>__qualname__</code>  而非 <code>__name__</code>。</p>
-<p>dotted name 表示從一個模組的 global 區域到該類別、函式或方法的路徑。</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">C</span><span class="token punctuation">:</span>
-    <span class="token keyword">class</span> <span class="token class-name">D</span><span class="token punctuation">:</span>
-        <span class="token keyword">def</span> <span class="token function">meth</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">pass</span>
+    <title>Hexo Blog 客製化 (3) Next 主題加速</title>
+    <url>/2022/01/26/blog-3-speedup/</url>
+    <content><![CDATA[<p>說實話，在改字體後還想要網站加速，突然覺得自己有點癡人說夢。改字體本來就會造成額外的負擔! 但還是基於個人的喜好依然想改，照樣記錄一下心路歷程! </p>
+<h2 id="改變字體"><a href="#改變字體" class="headerlink" title="改變字體"></a>改變字體</h2><p>有關  <code>_config.next.yml</code> 與  <code>source\_data\styles.styl</code>  的配置參見前面的兩個章節！</p>
+<ol>
+<li><p>在 <code>_config.next.yml</code> 中配置字體段落</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">font</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> 
+  <span class="token key atrule">host</span><span class="token punctuation">:</span>
+  <span class="token key atrule">global</span><span class="token punctuation">:</span>
+    <span class="token key atrule">external</span><span class="token punctuation">:</span> <span class="token boolean important">false</span> <span class="token comment"># 如果寫 true, 就可以不用考慮後面的第三步了。</span>
+    <span class="token key atrule">family</span><span class="token punctuation">:</span> <span class="token string">'Noto Serif SC'</span></code></pre></li>
+<li><p>在<code>source\_data\variables.styl</code> 中設置環境變數，覆蓋原本的設定檔。</p>
+<p>記得要整段 font 的段落都複製！舉例而言，如果只覆蓋了 <code>font-family-chinese</code> 與 <code>font-family-base</code> 兩個變數，疑似因為在 Next 原本檔案中有其它變數使用到 <code>font-family-base</code>，而他們只會記住舊的變數。這會導致畫面有部份（像是 side bar）更改字體，而有部份依然使用微軟正黑體。</p>
+<pre class="language-stylus" data-language="stylus"><code class="language-stylus"><span class="token variable-declaration"><span class="token variable">$font-family-chinese</span>      <span class="token operator">=</span> <span class="token string">'Noto Serif TC'</span><span class="token punctuation">,</span> <span class="token string">'Microsoft YaHei'</span><span class="token punctuation">;</span> </span>
 
-In <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">:</span> C<span class="token punctuation">.</span>__qualname__
-Out<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'C'</span>
+<span class="token variable-declaration"><span class="token variable">$font-family-base</span>         <span class="token operator">=</span> $font-family-chinese<span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span></span>
+<span class="token variable-declaration"><span class="token variable">$font-family-base</span>         <span class="token operator">=</span> get_font_family<span class="token punctuation">(</span><span class="token string">'global'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> $font-family-chinese<span class="token punctuation">,</span> sans-serif <span class="token keyword">if</span> get_font_family<span class="token punctuation">(</span><span class="token string">'global'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 
-In <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">:</span> C<span class="token punctuation">.</span>D<span class="token punctuation">.</span>__qualname__
-Out<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'C.D'</span>
+<span class="token variable-declaration"><span class="token variable">$font-family-logo</span>         <span class="token operator">=</span> $font-family-base<span class="token punctuation">;</span></span>
+<span class="token variable-declaration"><span class="token variable">$font-family-logo</span>         <span class="token operator">=</span> get_font_family<span class="token punctuation">(</span><span class="token string">'title'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> $font-family-base <span class="token keyword">if</span> get_font_family<span class="token punctuation">(</span><span class="token string">'title'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 
-In <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">:</span> C<span class="token punctuation">.</span>D<span class="token punctuation">.</span>__name__
-Out<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'D'</span>
-    
-In <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">:</span> C<span class="token punctuation">.</span>D<span class="token punctuation">.</span>meth<span class="token punctuation">.</span>__qualname__
-Out<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'C.D.meth'</span></code></pre>
+<span class="token variable-declaration"><span class="token variable">$font-family-headings</span>     <span class="token operator">=</span> $font-family-base<span class="token punctuation">;</span></span>
+<span class="token variable-declaration"><span class="token variable">$font-family-headings</span>     <span class="token operator">=</span> get_font_family<span class="token punctuation">(</span><span class="token string">'headings'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> $font-family-base <span class="token keyword">if</span> get_font_family<span class="token punctuation">(</span><span class="token string">'headings'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 
-<p>而且對於被 <code>import</code> 的模組是不存在 <code>__qualname__</code> 屬性的，他們只有 <code>__name__</code>屬性，表達的是他的 Fully Qualified Name：該模組到其頂層父模組之間的層級關係：</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> email<span class="token punctuation">.</span>mime<span class="token punctuation">.</span>text
-email<span class="token punctuation">.</span>mime<span class="token punctuation">.</span>text<span class="token punctuation">.</span>__name__</code></pre>
+<span class="token variable-declaration"><span class="token variable">$font-family-posts</span>        <span class="token operator">=</span> $font-family-base<span class="token punctuation">;</span></span>
+<span class="token variable-declaration"><span class="token variable">$font-family-posts</span>        <span class="token operator">=</span> get_font_family<span class="token punctuation">(</span><span class="token string">'posts'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> $font-family-base <span class="token keyword">if</span> get_font_family<span class="token punctuation">(</span><span class="token string">'posts'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+
+<span class="token variable-declaration"><span class="token variable">$font-family-monospace</span>    <span class="token operator">=</span> consolas<span class="token punctuation">,</span> Menlo<span class="token punctuation">,</span> monospace<span class="token punctuation">,</span> $font-family-chinese<span class="token punctuation">;</span></span>
+<span class="token variable-declaration"><span class="token variable">$font-family-monospace</span>    <span class="token operator">=</span> get_font_family<span class="token punctuation">(</span><span class="token string">'codes'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> consolas<span class="token punctuation">,</span> Menlo<span class="token punctuation">,</span> monospace<span class="token punctuation">,</span> $font-family-chinese <span class="token keyword">if</span> get_font_family<span class="token punctuation">(</span><span class="token string">'codes'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+</code></pre></li>
+</ol>
+<p>接下來是第三步驟，主要是我發現改字體後的載入速度比使用原生的微軟正黑體慢了至少 0.5~1秒以上吧。我嘗試想加速字體載入的部份，會先寫建議使用的方法，再紀錄一下我嘗試的方法。</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">font</span><span class="token punctuation">:</span>
+  <span class="token key atrule">global</span><span class="token punctuation">:</span>
+    <span class="token key atrule">external</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+    <span class="token key atrule">family</span><span class="token punctuation">:</span> <span class="token string">'Noto Serif SC'</span></code></pre>
 
 
 
-<h2 id="情境探討-有裝飾器的函式無法被-Pickle"><a href="#情境探討-有裝飾器的函式無法被-Pickle" class="headerlink" title="情境探討: 有裝飾器的函式無法被 Pickle"></a>情境探討: 有裝飾器的函式無法被 Pickle</h2><p>問題來源<a href="https://blog.csdn.net/qq_39314099/article/details/83822593">自此網站</a>，我們可以嘗試用閱讀完官方文件後的邏輯來解釋這個問題。因為覺得程式繁瑣，所以大概照著意思稍微改寫了一下，博主寫了一個名為 <code>haha</code> 的函式，會印出 <code>hello XXX</code>，並為它添加了計時裝飾器。雖然沒有明確的說怎麼存檔出了錯，但根據引發的 Error 我大致假設是嘗試存 <code>haha</code> 這個函式。</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> time<span class="token punctuation">,</span> pickle
-<span class="token keyword">from</span> functools <span class="token keyword">import</span> wraps
+<h3 id="方法一：字體預載入"><a href="#方法一：字體預載入" class="headerlink" title="方法一：字體預載入"></a>方法一：字體預載入</h3><p>來到 <a href="https://fonts.google.com/noto/specimen/Noto+Serif+TC">google font api</a> ，我們選擇要的粗細(Regular) 之後，左邊會有個彈出視窗，教導我們怎麼在 Html 跟 CSS 中嵌入。</p>
+<blockquote>
+<p>To embed a font, copy the code into the <code>&lt;head&gt;</code> of your html</p>
+</blockquote>
+<pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>preconnect<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://fonts.googleapis.com<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>preconnect<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://fonts.gstatic.com<span class="token punctuation">"</span></span> <span class="token attr-name">crossorigin</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://fonts.googleapis.com/css2?family=Noto+Serif+TC&amp;display=fallback<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre>
 
-<span class="token keyword">def</span> <span class="token function">timer</span><span class="token punctuation">(</span>mth<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>    
-    <span class="token comment"># @wraps(mth)</span>
-    <span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        st <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        res <span class="token operator">=</span> mth<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
-        et <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Spend </span><span class="token interpolation"><span class="token punctuation">&#123;</span><span class="token builtin">float</span><span class="token punctuation">(</span>et<span class="token operator">-</span>st<span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span><span class="token string"> sec."</span></span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span> res
-    <span class="token keyword">return</span> wrapper
+<p>可以用 Vscode 之類的在部落格資料夾中找到寫有 <code>&lt;head&gt;</code> 的模板，在我的版本 (V8.9) 中，這位於 <code>themes\next\layout\_layout.njk</code>，直接在 <code>&lt;head&gt;</code> 中把上面那段落貼上，就完成了！</p>
+<p>由於我對網頁前端並不熟悉，不是很確定這是否為關鍵因素。但在我使用預設的 config <code>external:true</code> 並把 preload 註解掉之後，透過 <a href="https://pagespeed.web.dev/">pagespeed</a> 測試，載入時間落差約有一秒左右。</p>
+<h3 id="方法二：掛載在當前網域下-不建議"><a href="#方法二：掛載在當前網域下-不建議" class="headerlink" title="方法二：掛載在當前網域下 (不建議)"></a>方法二：掛載在當前網域下 (不建議)</h3><p>在 <code>source\_data\styles.styl</code> 中添加字體的匯入：</p>
+<pre class="language-stylus" data-language="stylus"><code class="language-stylus"><span class="token atrule-declaration"><span class="token atrule">@font-face</span> <span class="token punctuation">&#123;</span></span>
+  <span class="token property-declaration"><span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">'Noto Serif TC'</span><span class="token punctuation">;</span></span>
+  <span class="token property-declaration"><span class="token property">font-weight</span><span class="token punctuation">:</span> <span class="token number">400</span><span class="token punctuation">;</span></span>
+  <span class="token property-declaration"><span class="token property">font-style</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span></span>
+  <span class="token property-declaration"><span class="token property">font-display</span><span class="token punctuation">:</span> fallback<span class="token punctuation">;</span></span>
+  src<span class="token punctuation">:</span> <span class="token func"><span class="token function">local</span><span class="token punctuation">(</span><span class="token string">'Noto Serif TC'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> local<span class="token punctuation">(</span><span class="token string">'Noto-Serif-TC'</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+       <span class="token func"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string">'/fonts/NotoSerifTC-Regular.otf'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="token punctuation">&#125;</span></code></pre>
 
-<span class="token decorator annotation punctuation">@timer</span>
-<span class="token keyword">def</span> <span class="token function">haha</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Hello </span><span class="token interpolation"><span class="token punctuation">&#123;</span>name<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+<p><code>font-display: fallback</code> 可以使網頁先使用預設字體（微軟正黑體）這種本身就存在於電腦中的字體，使內容可以先顯示。而背景會默默把設定的 Noto Serif TC 下載，事後置換。</p>
+<p>選擇掛在於子網域未必會比較好，因為完整的 otf 檔案高達 MB 級，儘管設置了字體置換，等到完整的載入字體也需要長達 10 秒的時間 (視網路速度吧)。而 google font api 本身有把字體切割成很多部份，讓網頁可以選擇載入有用到的部份字形即可，節省下載量。</p>
+<h2 id="找出網頁的-Bug"><a href="#找出網頁的-Bug" class="headerlink" title="找出網頁的 Bug"></a>找出網頁的 Bug</h2><p>可以打開 chrome <a href="https://support.google.com/campaignmanager/answer/2828688?hl=zh-Hant">開發人員工具</a> 中 “Network” 項目，並 ctrl+R  重新整理網頁。檢查一下都是哪些檔案拖垮了網站速度。我當時發現有一些找不到路徑的字體檔案、Hexo 在產生靜態頁面時有寫的 warning 都有影響，所以修到沒 bug 在推上網路很重要。務必確保網頁在載入的期間只有載入<strong>需要的元件</strong>，不需要花時間試誤。</p>
+<pre class="language-none"><code class="language-none">Warning: Accessing non-existent property &#39;filename&#39; of module exports inside circular dependency</code></pre>
+
+<p>Google 一番之後，參考<a href="https://www.haoyizebo.com/posts/710984d0/">此篇文章</a> 發現是 <code>nib</code> 套件出了問題。我的解決方法沒有順著他的教學，先嘗試重新安裝 <code>hexo-renderer-stylus</code> 但並沒有用。添加 <code>&quot;resolutions&quot;</code> 的部分忘記有沒有嘗試過，或許還是失敗了吧。</p>
+<p>最終，我是在 <code>package-lock.json</code> 的 <code>nib</code> 套件下找到: </p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml">"stylus"<span class="token punctuation">:</span>0.54.5</code></pre>
+
+<p>修改成</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">"stylus"</span><span class="token punctuation">:</span> 0.54.8</code></pre>
+
+<p><code>npm install</code> 之後參照輸出的資訊內容，先後下指令 <code>npm audit fix</code> 與 <code>npm audit fix --force</code> 解決了這個問題。</p>
+<h2 id="修改-Next-主題的動畫時間-不建議"><a href="#修改-Next-主題的動畫時間-不建議" class="headerlink" title="修改 Next 主題的動畫時間 [不建議]"></a>修改 Next 主題的動畫時間 [不建議]</h2><p>由於不同版本的 Next 程式碼內容也可能有所不同，參考自: <a href="https://blog.csdn.net/Domino_b/article/details/81704118">Hexo NexT 主題修改動畫效果速度</a>。</p>
+<ol>
+<li>使用 Vscode 之類的編輯器在 Next 主題中尋找關鍵字 <code>duration</code>，它可能出現在很多 js 檔案中，有些預設是 200、有些是 500。</li>
+<li>直接改數字，我先改成 100 之後大概看一下效果，網頁載入的速度明顯有提升! 可以先在 localhost 上測試。不敢貿然換成 0 的原因是不確定會不會因為某些元素來不及載入造成錯誤，反而拖到整體的時間。</li>
+<li>稍微判讀一下程式變數，有些頗容易看出函式意義的可以改短一點，不怕會不會影響載入，例如: <code>registerSidebarTOC</code>函式應該是跟側邊欄位「文章目錄」、「本站摘要」之間切換的動畫吧，我會再把數字改小一點。</li>
+</ol>
+<p>反覆在 local 端測試會不會造成 Bug 或使用者體驗不佳，之後就可以部屬到 github page 上了。部屬之後可以到 <a href="https://pagespeed.web.dev/">pagespeed</a> 測試一下表現如何，該網頁會給一些診斷建議，但我自己沒有前端經驗不太知道怎麼改，只是拿來測速度。目前的網頁測試在電腦版中大約有 85-89 分的成績。</p>
+<h2 id="在-Next-Config-中設置動畫選項"><a href="#在-Next-Config-中設置動畫選項" class="headerlink" title="在 Next Config 中設置動畫選項"></a>在 Next Config 中設置動畫選項</h2><p>在手動更改 duration 數值後依然不滿意的我繼續爬，發現其實 Next 主題在 config 中就已有一段設定了，可以<strong>直接把動畫關掉</strong>。即使想要保留動畫，<code>async</code> 也可考慮開起來，讓元素們非同步加載有機會讓 Loading 更快吧。之所以前一段去改 duration 列為不建議是因為，我不太確定修改間隔會不會對元素的加載產生一些問題，但還是記錄起來。</p>
+<p>值得一提的是，包括進場動畫其實都是可以改的! 在 Next 主題的 demo 頁面中有展示各個特效名稱對應的效果: <a href="https://theme-next.js.org/animate/%E3%80%82">https://theme-next.js.org/animate/。</a></p>
+<p>這邊是我已經改過的 yaml 部分: </p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">motion</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">async</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">transition</span><span class="token punctuation">:</span>
+    <span class="token comment"># All available transition variants: https://theme-next.js.org/animate/</span>
+    <span class="token key atrule">post_block</span><span class="token punctuation">:</span> fadeIn
+    <span class="token key atrule">post_header</span><span class="token punctuation">:</span> fadeInUp 
+    <span class="token key atrule">post_body</span><span class="token punctuation">:</span> fadeIn
+    <span class="token key atrule">coll_header</span><span class="token punctuation">:</span> fadeInLeft
+    <span class="token comment"># Only for Pisces | Gemini.</span>
+    <span class="token key atrule">sidebar</span><span class="token punctuation">:</span> fadeInUp</code></pre>
+
+
+
+]]></content>
+      <tags>
+        <tag>blog</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python 資料永久化套件:Pickle (1)</title>
+    <url>/2022/01/17/pickle-basic/</url>
+    <content><![CDATA[<p>Pickle 是 Python 裡面物件儲存的原生套件，延伸的套件有不少，我個人就慣用 <code>joblib</code>。</p>
+<p>Pickle 直接翻譯是醃漬的意思，這樣說起來很怪，所以以下我可能會用「打包、存檔」之類的作為他的中文敘述，unpicke 直翻有拆開的意思，大陸那邊會有人稱為酸洗，同樣覺得很怪異，以下可能會用「復原、讀取、解包」之類的詞來敘述。若撰寫的當下覺得替代的中文會使意義變得模糊，則會直接採用原本的 pickle 與 unpickle 作為敘述。</p>
+<h2 id="什麼物件可以被-Pickle-Unpickle"><a href="#什麼物件可以被-Pickle-Unpickle" class="headerlink" title="什麼物件可以被 Pickle / Unpickle"></a><a href="https://docs.python.org/3/library/pickle.html#what-can-be-pickled-and-unpickled">什麼物件可以被 Pickle / Unpickle</a></h2><ul>
+<li>基本型態的數值：None、布林值、整數、浮點數、複數</li>
+<li>基本型態的文字類：字串、位元、位元陣列</li>
+<li>基本的可迭代類型：tuple、list、set、字典(dictionaries)，若其內含物件都是 picklable 物件的化就可以。</li>
+<li>在 Top Level 被定義的<ul>
+<li>函式 (function) ，只接受用 <code>def</code> 定義的，用 <code>lambda</code> 定義的一樣是 Unpicklable。 <strong>[以 name reference 形式儲存]</strong></li>
+<li>類別 <strong>[以 name reference 形式儲存]</strong></li>
+<li>類別的實例：其 <code>__dict__</code> 或 <code>__getstat__()</code>的回傳必須是 pickable 的。</li>
+</ul>
+</li>
+</ul>
+<p>企圖將 unpickle 物件存下來會引發<a href="https://docs.python.org/3/library/pickle.html#pickle.PicklingError"><code>PicklingError</code></a> 例外，嘗試 pickle 一個高度遞迴的資料結構可能會超過最高遞迴深度而引發 <a href="https://docs.python.org/3/library/exceptions.html#RecursionError"><code>RecursionError</code></a>（對於這個問題可以透過設置  <a href="https://docs.python.org/3/library/sys.html#sys.setrecursionlimit"><code>sys.setrecursionlimit()</code></a> 解決）</p>
+<h2 id="Pickle-Function-Class"><a href="#Pickle-Function-Class" class="headerlink" title="Pickle Function/Class"></a>Pickle Function/Class</h2><p>不管是 Built-in function 或使用者自訂的函式，都是透過 function 自身的完整名稱 (“fully qualified” name reference) 將 function pickle 下來，而不是透過值 pickle。這是為何 lambda 函數沒辦法被 pickle ，因為所有的 lambda 函數的名稱都一樣叫做 <code>&lt;lambda&gt;</code>。Python 官方文件的內容如下：</p>
+<blockquote>
+<p>Note that functions (built-in and user-defined) are pickled by “fully qualified” name reference, not by value. <a href="https://docs.python.org/3/library/pickle.html#id8">2</a> This means that only the function name is pickled, along with the name of the module the function is defined in. Neither the function’s code, nor any of its function attributes are pickled. Thus the defining module must be importable in the unpickling environment, and the module must contain the named object, otherwise an exception will be raised. <a href="https://docs.python.org/3/library/pickle.html#id9">3</a></p>
+</blockquote>
+<p>有關 <a href="https://www.python.org/dev/peps/pep-3155/" title="Qualified name for classes and functions">PEP 3155</a> 的 “fully qualified” name reference 在之後會稍微提到。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">function_example</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Hi"</span><span class="token punctuation">)</span>
+
+lambda_example <span class="token operator">=</span> <span class="token keyword">lambda</span> <span class="token punctuation">:</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"this is lambda"</span><span class="token punctuation">)</span>
+
+In <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">:</span> lambda_example<span class="token punctuation">.</span>__name__ <span class="token comment"># 所有的 lambda 函式名稱都是 lambda </span>
+Out<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'&lt;lambda>'</span>
+
+In <span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">:</span> function_example<span class="token punctuation">.</span>__name__ <span class="token comment"># function 的名稱是自己的</span>
+Out<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'function_example'</span></code></pre>
+
+<p>此外，被 Pickle 的內容實際只有名稱，而沒有程式碼。因此在 Unpickle 的環境如果沒有在對應的位置定義對應的函式，是沒有辦法被 Unpickle 的! 我們可以先嘗試在一個檔案中定義函式並把他存下來：</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pickle 
+<span class="token keyword">def</span> <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"lalalala~~~~"</span><span class="token punctuation">)</span>
 
 <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"function.pkl"</span><span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"name of haha function is:"</span><span class="token punctuation">,</span> haha<span class="token punctuation">)</span>
-    pickle<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>haha<span class="token punctuation">,</span> f<span class="token punctuation">)</span></code></pre>
+    pickle<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>bar<span class="token punctuation">,</span> f<span class="token punctuation">)</span></code></pre>
 
-<p>在試圖存下這個函式時發生了問題：<code>AttributeError: Can&#39;t pickle local object &#39;timer.&lt;locals&gt;.wrapper&#39;</code>。而樓主表示只要給裝飾器裡面裝上 <code>warp</code>，問題就解決了。<code>warp</code>應該擺放的位置已經寫在程式裡面了，可以試著註解與取消註解看看函式的名稱的不同。</p>
-<ul>
-<li>沒有 <code>warp</code> 的情況：<code>&lt;function timer.&lt;locals&gt;.wrapper at 0x000001EBECA588B8&gt;</code></li>
-<li>有 <code>warp</code> 的情況：<code>&lt;function haha at 0x000001BF76B188B8&gt;</code></li>
-</ul>
-<p>所以追根究底，這個問題的癥結點在於包上裝飾器後，若沒有使用 <code>functools.wraps</code> 讓裝飾後的函式名稱仍保持原樣，該函式的名稱會變成裝飾器內部函式 <code>wrapper</code> 的名稱。而由於 <code>wrapper</code> 不是一個 top-level 的函式，而是隸屬 <code>timer</code> 函式下的 <code>&lt;locals&gt;</code>，因此 Pickle 在試圖存取時直接因為名稱不符合 Pickable 原則而引發了錯誤。</p>
-<p>而且決方法僅僅是讓裝飾後的函式保留原本的名稱，一樣叫做 <code>haha</code>，Pickle 發現這個名稱存在於 Top-Level 就把他記下來。但實際上他記得的也只有名稱，Unpickle 的時候如果沒有保留定義 <code>haha</code> 的函式、或是 <code>haha</code> 的內容和 Pickle 時不一樣，執行起來仍會是不同的內容！</p>
-<h2 id="個人見解"><a href="#個人見解" class="headerlink" title="個人見解"></a>個人見解</h2><p>Pickle 是刻意設計不儲存程式碼，對函式與類別都以 name reference 的方式保存的。因此想要透過 pickle 來「永久的」存下函式與類別是不可能的，乍聽起來很不方便。但換個角度或許該想的是：</p>
-<ul>
-<li><p>什麼東西是應該被永久保存的呢？應該是資料。</p>
-</li>
-<li><p>資料應該以何種形式存在呢？應該是實例。</p>
-</li>
-<li><p>所以函式、類別是什麼？我想是一個流程、或是一個抽象的敘述。</p>
-<p>理論上，如果有一些變動性的、Runtime 才決定的資料也應該是外部傳入，如果是內部所需要的資料也跟外界無關，作為 local 變數定義在程式碼中就好。</p>
-</li>
-</ul>
-<p>這樣思考起來，好像也能夠明白為何函式與類別不會把程式碼存下來。</p>
-<p>但如果，需要函式有一點「記憶力」呢？例如，在執行 Min-max 正規化時，希望函式能夠記住第一次正規化的上下界屬性，後面都直接帶入就好，不用每次都傳入上下界；或是希望把這組正規化參數記下來，但不希望是把 min ＆ max 倆組分別記下來、怕資訊太零散。</p>
-<p>這種時候，或許可以考慮使用 Callable Object。定義一個 Class 並實踐 <code>__call__</code> 方法，把正規化行為定義在裡面，而需要記憶的屬性紀錄在實例裡面，像是 <code>self.mins</code>, <code>self.maxs</code>… ，在儲存的時候直接把這個 normalizer 存下來即可。</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">norm</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> <span class="token punctuation">(</span>arr<span class="token operator">-</span>mins<span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span>maxs<span class="token operator">-</span>mins<span class="token punctuation">)</span>
+<p>然後在一個全新、沒有定義過 <code>bar</code> 函式的環境中，試圖將其復原。會發現引發了 <code>AttributeError</code></p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pickle 
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"function.pkl"</span><span class="token punctuation">,</span> <span class="token string">"rb"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    bar <span class="token operator">=</span> pickle<span class="token punctuation">.</span>load<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+<span class="token comment"># AttributeError: Can't get attribute 'bar' on &lt;module '__main__'></span></code></pre>
 
-<span class="token keyword">class</span> <span class="token class-name">Normalizer</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        self<span class="token punctuation">.</span>mins <span class="token operator">=</span> mins 
-        self<span class="token punctuation">.</span>maxs <span class="token operator">=</span> maxs 
+<p>類別也一樣，被儲存的實際上只有名稱而沒有程式碼，若在 Unpickle 的環境中沒有定義該類別，一樣會引發 <code>AttributeError</code>。</p>
+<h2 id="Pickle-Class-Instance"><a href="#Pickle-Class-Instance" class="headerlink" title="Pickle Class Instance"></a><a href="https://docs.python.org/3/library/pickle.html#pickling-class-instances">Pickle Class Instance</a></h2><p>與 Function 相同，儲存類別的方式也是透過 named reference 儲存(classes are pickled by named reference)。</p>
+<p>雖然 Pickle 可以儲存類別的實例，但實際上他<strong>不會儲存任何的類別程式碼、類別屬性</strong>。準確的來說，他存的是實例的「屬性」，用 Python 來敘述 pickle 的 <code>dump</code> 與 <code>load</code> 動作如下：</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">save</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>obj<span class="token punctuation">.</span>__class__<span class="token punctuation">,</span> obj<span class="token punctuation">.</span>__dict__<span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">load</span><span class="token punctuation">(</span>cls<span class="token punctuation">,</span> attributes<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    obj <span class="token operator">=</span> cls<span class="token punctuation">.</span>__new__<span class="token punctuation">(</span>cls<span class="token punctuation">)</span>
+    obj<span class="token punctuation">.</span>__dict__<span class="token punctuation">.</span>update<span class="token punctuation">(</span>attributes<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> obj</code></pre>
+
+<p>用實際的例子演示一下儲存跟復原的邏輯：</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Foo</span><span class="token punctuation">:</span>
+    attr <span class="token operator">=</span> <span class="token string">'A class attribute'</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>inst_arr <span class="token operator">=</span> <span class="token string">"Instance attribute!"</span>
+        self<span class="token punctuation">.</span>fake_attr <span class="token operator">=</span> <span class="token string">"This is fake"</span>
         
-    <span class="token keyword">def</span> <span class="token function">__call__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> arr<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> <span class="token punctuation">(</span>arr<span class="token operator">-</span>self<span class="token punctuation">.</span>mins<span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>maxs<span class="token operator">-</span>self<span class="token punctuation">.</span>mins<span class="token punctuation">)</span>
+foo <span class="token operator">=</span> Foo<span class="token punctuation">(</span><span class="token punctuation">)</span>
+pickled_info <span class="token operator">=</span> save<span class="token punctuation">(</span>foo<span class="token punctuation">)</span> <span class="token comment"># (__main__.Foo, &#123;'inst_arr': 'Instance attribute!'&#125;)</span>
+recover_foo <span class="token operator">=</span> load<span class="token punctuation">(</span><span class="token operator">*</span>pickled_info<span class="token punctuation">)</span></code></pre>
+
+<p>如果我們想要復原存下來的實例，程式碼中必須保留該類別的定義，否則會引發錯誤。上面僅僅是用程式說明邏輯，現在實際套用 pickle 套件</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pickle
         
-<span class="token comment"># in some main process.... </span>
-<span class="token keyword">if</span> __name__<span class="token operator">==</span><span class="token string">"__main__"</span><span class="token punctuation">:</span>
-    <span class="token keyword">for</span> data <span class="token keyword">in</span> datalist<span class="token punctuation">:</span>
-        mins<span class="token punctuation">,</span> maxs <span class="token operator">=</span> data<span class="token punctuation">.</span><span class="token builtin">min</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> data<span class="token punctuation">.</span><span class="token builtin">max</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-        data <span class="token operator">=</span> norm<span class="token punctuation">(</span>data<span class="token punctuation">,</span> mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span>
+foo <span class="token operator">=</span> Foo<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"test.pkl"</span><span class="token punctuation">,</span> <span class="token string">"wb"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    pickle<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>foo<span class="token punctuation">,</span> f<span class="token punctuation">)</span>
+
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"test.pkl"</span><span class="token punctuation">,</span> <span class="token string">"rb"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    my_foo <span class="token operator">=</span> pickle<span class="token punctuation">.</span>load<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>my_foo<span class="token punctuation">.</span>inst_arr<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>my_foo<span class="token punctuation">.</span>attr<span class="token punctuation">)</span></code></pre>
+
+<p>但如果用別份程式碼定義把實例從 pkl 中復原，而該份程式碼中沒有類別 <code>Foo</code>，就會引發錯誤：</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pickle
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"test.pkl"</span><span class="token punctuation">,</span> <span class="token string">"rb"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    my_foo <span class="token operator">=</span> pickle<span class="token punctuation">.</span>load<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+<span class="token comment"># AttributeError: Can't get attribute 'Foo' on &lt;module '__main__'></span></code></pre>
+
+<ul>
+<li><code>pickle.dump</code> ：記住該實例所使用類別的名字 (named reference)、與其實例屬性</li>
+<li><code>pickle.load</code>：試圖在程式中尋找記住的類別名字，在不初始化的情況(不調用 <code>__init__</code>)下，默默的創建一個實例，並對所有的實例屬性套用 <code>pkl</code> 中所記憶的數值。</li>
+</ul>
+<p>如果 pickle 沒辦法在程式中尋找到該 named reference 就會引發例外，不是定義在 Top Level 的函式、類別會沒有辦法透過 named reference 取得；而所有的 lambda function 都共享同一個 name reference , <code>&lt;lambda&gt;</code>，代表在復原的時候根本沒辦法找到存到的是哪個 lambda 函式，所以在試圖 dump 的時候就先被排除了。</p>
+<pre class="language-none"><code class="language-none">PicklingError: Can&#39;t pickle &lt;function &lt;lambda&gt; at 0x00000213F8790948&gt;: attribute lookup &lt;lambda&gt; on __main__ failed</code></pre>
+
+<h3 id="刻意的設計"><a href="#刻意的設計" class="headerlink" title="刻意的設計"></a>刻意的設計</h3><p>不儲存有關類別的屬性、類別的程式碼是故意的設計，這樣做的好處是：如果在 v1 版本中我們儲存了某個實例，後來發現該實例對應的類別有錯、或是對類別擴增了方法而修改程式變成 v2 版本。我們依然可以在 v2 版本中讀取曾經存下來的實例，即使他是在前面版本 (v1) 中存下來的。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token comment"># V1</span>
+<span class="token keyword">import</span> pickle 
+<span class="token keyword">class</span> <span class="token class-name">Dog</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> legs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>legs <span class="token operator">=</span> <span class="token number">4</span>
+
+dog <span class="token operator">=</span> Dog<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span>
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"test.pkl"</span><span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    pickle<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>dog<span class="token punctuation">,</span> f<span class="token punctuation">)</span></code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token comment"># V2</span>
+<span class="token keyword">import</span> pickle 
+<span class="token keyword">class</span> <span class="token class-name">Dog</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> legs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>legs <span class="token operator">=</span> <span class="token number">4</span>
         
-        <span class="token comment"># 1. 透過 function 達成</span>
-        normalizer <span class="token operator">=</span> <span class="token keyword">lambda</span> arr<span class="token punctuation">:</span> norm<span class="token punctuation">(</span>arr<span class="token punctuation">,</span> mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span>
-        <span class="token keyword">def</span> <span class="token function">normalizer</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># OR do this... </span>
-            <span class="token keyword">return</span> norm<span class="token punctuation">(</span>arr<span class="token punctuation">,</span> mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span>
-        validation_data <span class="token operator">=</span> normalizer<span class="token punctuation">(</span>validation_data<span class="token punctuation">)</span>
-        
-        joblib<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>normalizer<span class="token punctuation">,</span> <span class="token string">"normalizer.pkl"</span><span class="token punctuation">)</span> <span class="token comment"># 決對會出錯.. </span>
-        
-        <span class="token comment"># 2. 透過 callable object 達成 </span>
-        normalizer <span class="token operator">=</span> Normalizer<span class="token punctuation">(</span>mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span>
-        data <span class="token operator">=</span> normalizer<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
-        validation_data <span class="token operator">=</span> normalizer<span class="token punctuation">(</span>validation_data<span class="token punctuation">)</span>
-        joblib<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>normalizer<span class="token punctuation">,</span> <span class="token string">"normalizer.pkl"</span><span class="token punctuation">)</span>     </code></pre>
+    <span class="token keyword">def</span> <span class="token function">voice</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"woof! woof! woof!"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'test.pkl'</span><span class="token punctuation">,</span> <span class="token string">'rb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    dog <span class="token operator">=</span> pickle<span class="token punctuation">.</span>load<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
+
+dog<span class="token punctuation">.</span>voice<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># can run! </span></code></pre>
+
+<h3 id="永久保存物件的版本"><a href="#永久保存物件的版本" class="headerlink" title="永久保存物件的版本"></a>永久保存物件的版本</h3><p>如果們希望這是一個  long-lived 的物件，可以看到不同版本的類別，或許可以考慮在裡面放置版本號碼，以便透過類別的 <code>__setstate()__</code> 方法做適當的轉換。(官方文件裡面這樣寫，但我不是很懂要怎麼實踐)</p>
+<h2 id="改變-Pickle-時的預設行為"><a href="#改變-Pickle-時的預設行為" class="headerlink" title="改變 Pickle 時的預設行為"></a>改變 Pickle 時的預設行為</h2><p>Pickle 實例的時候，如果該實例的類別有設定下列方法，會改變 Pickle 時的預設舉動</p>
+<h3 id="模組方法"><a href="#模組方法" class="headerlink" title="模組方法"></a>模組方法</h3><h4 id="object-getnewargs-ex"><a href="#object-getnewargs-ex" class="headerlink" title="object.__getnewargs_ex__()"></a><code>object.__getnewargs_ex__()</code></h4><p>在協定2與3中，實踐了此方法的類別可以在 unpickling 的時候將寫在 <code>__getnewargs_ex__</code> 的參數傳遞到 <code>__new__()</code> 裡面以建構物件。此方法必須回傳一對 tuple：<code>(args, kwargs)</code>，其中 <code>args</code> 是一個 tuple 包含著位置參數 (positional arguments)、<code>kwargs</code> 是一個字典包含關鍵字參數。</p>
+<h4 id="object-getstate"><a href="#object-getstate" class="headerlink" title="object.__getstate__()"></a><code>object.__getstate__()</code></h4><p>類別可以可以決定屬於它們的實例要如何被打包，如果類別定義了此方法，pickle 時會直接呼叫此方法，用它的回傳作為實例所存下來的內容。而不是一般使用實例 pickle 的預設方式：使用 <code>__dict__</code> 作為存下的內容。</p>
+<h4 id="object-setstate-state"><a href="#object-setstate-state" class="headerlink" title="object.__setstate__(state)"></a><code>object.__setstate__(state)</code></h4><p>若類別有定義此方法，Unpickle 的時候就會將得到的 state 傳入此方法。如果類別有定義此方法，則 state 物件不限定要是字典，因為在復原物件的時候 <code>__setstate__</code> 自己有一套規則了！</p>
+<p>但如果沒有實踐此方法，被存下來的 state (pickled state) 必須是字典的形式，這樣才能把它指派給新的(復原的) 實例的字典。大概有點像下面這種感覺吧：</p>
+<pre class="language-python" data-language="python"><code class="language-python">saved_pkl <span class="token operator">=</span> <span class="token punctuation">&#123;</span> arg1<span class="token punctuation">:</span>val1<span class="token punctuation">,</span> arg2<span class="token punctuation">:</span>val2<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">&#125;</span>
+new_obj<span class="token punctuation">.</span>__dict__ <span class="token operator">=</span> saved_pkl</code></pre>
+
+<p>關於 <code>__getstate__</code> 與 <code>__setstate__</code> 方法，可以參考  <a href="https://docs.python.org/3/library/pickle.html#pickle-state">Handling Stateful Objects</a> 有更多資訊。</p>
+<h3 id="處理擁有狀態的物件-Handling-Stateful-Objects"><a href="#處理擁有狀態的物件-Handling-Stateful-Objects" class="headerlink" title="處理擁有狀態的物件 (Handling Stateful Objects)"></a>處理擁有狀態的物件 (Handling Stateful Objects)</h3><p>這個例子將展示如何 modify 類別的 pickle 行為：<code>TextReader</code> 類別打開一個文字檔，當 <code>readline</code> 被呼叫的時候會回傳行數以及該行內容。如果 <code>TextReader</code> 實例被打包，除了文件物件(file object) 之外的屬性都可以被儲存。當實例復原時(unpickle)，檔案會被重新開啟，並且從上次最後讀取的位置繼續。這樣的功能就是透過 <code>__setstate__()</code> 和 <code>__getstate__()</code> 方法達成的，如果不實做這兩個方法，在嘗試 <code>dump</code> 的時候就會引發例外</p>
+<pre class="language-none"><code class="language-none">TypeError: cannot serialize &#39;_io.TextIOWrapper&#39; object</code></pre>
+
+<p>這個類別在實做的時候做了幾件事：</p>
+<ul>
+<li><code>__getstate__()</code>：先將物件的 <code>__dict__</code> 屬性複製，並將沒辦法 pickle 的 IO 物件移除，回傳剩下的屬性字典(state)。</li>
+<li><code>__setstate__()</code>：<ol>
+<li>將獲得的 state 更新進入新實例的 <code>__dict__</code> 屬性裡面</li>
+<li>根據已經復原的 <code>self.fileName</code>屬性，打開文字檔案。</li>
+<li>根據已經復原 <code>self.lineno</code> 屬性，將 <code>file</code> 的狀態讀到上次結束時的行數（把 file 復原到上次結束的狀態，因為他不能直接被 pickle）</li>
+<li>把已復原的 <code>file</code> 指派給實例的 <code>self.file</code> 屬性。</li>
+</ol>
+</li>
+</ul>
+<p>如此一來，<code>TextReader</code> 的實例雖然實際上並沒有每個屬性都真正被 pickle 下來，但復原的時候卻彷彿回到上次剛結束的狀態繼續，達到儲存實例狀態的目的。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">TextReader</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> filename<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>filename <span class="token operator">=</span> filename
+        self<span class="token punctuation">.</span><span class="token builtin">file</span> <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span>filename<span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>lineno <span class="token operator">=</span> <span class="token number">0</span>
+
+    <span class="token keyword">def</span> <span class="token function">readline</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>lineno <span class="token operator">+=</span> <span class="token number">1</span>
+        line <span class="token operator">=</span> self<span class="token punctuation">.</span><span class="token builtin">file</span><span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token keyword">not</span> line<span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token boolean">None</span>
+        <span class="token keyword">if</span> line<span class="token punctuation">.</span>endswith<span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            line <span class="token operator">=</span> line<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+        <span class="token keyword">return</span> <span class="token string">"%i: %s"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>self<span class="token punctuation">.</span>lineno<span class="token punctuation">,</span> line<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">__getstate__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        state <span class="token operator">=</span> self<span class="token punctuation">.</span>__dict__<span class="token punctuation">.</span>copy<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">del</span> state<span class="token punctuation">[</span><span class="token string">'file'</span><span class="token punctuation">]</span>
+        <span class="token keyword">return</span> state
+
+    <span class="token keyword">def</span> <span class="token function">__setstate__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> state<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>__dict__<span class="token punctuation">.</span>update<span class="token punctuation">(</span>state<span class="token punctuation">)</span>
+        <span class="token builtin">file</span> <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>filename<span class="token punctuation">)</span>
+        <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>lineno<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token builtin">file</span><span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span><span class="token builtin">file</span> <span class="token operator">=</span> <span class="token builtin">file</span></code></pre>
+
+<pre class="language-python" data-language="python"><code class="language-python">reader <span class="token operator">=</span> TextReader<span class="token punctuation">(</span><span class="token string">"hello.txt"</span><span class="token punctuation">)</span>
+reader<span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span>
+reader<span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+new_reader <span class="token operator">=</span> pickle<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>pickle<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>reader<span class="token punctuation">)</span><span class="token punctuation">)</span>
+new_reader<span class="token punctuation">.</span>readline<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+
+
+
+
 
 ]]></content>
       <tags>
         <tag>python</tag>
         <tag>官方文件</tag>
         <tag>pickle</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python 視覺化 matplotlib 基本設置</title>
-    <url>/2021/12/30/python-visualize-basic/</url>
-    <content><![CDATA[<h2 id="子圖"><a href="#子圖" class="headerlink" title="子圖"></a>子圖</h2><h3 id="add-subplot"><a href="#add-subplot" class="headerlink" title="add_subplot"></a><code>add_subplot</code></h3><p>初使用時最常接觸的就是這個方法，當要用某張子圖的時候再使用 <code>fig.add_subplot()</code> 得到某個 <code>ax</code> ，用它進行繪圖。</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
-fig <span class="token operator">=</span> plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dpi<span class="token operator">=</span><span class="token number">300</span><span class="token punctuation">)</span> 
-fig<span class="token punctuation">.</span>suptitle<span class="token punctuation">(</span><span class="token string">"Big title"</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">)</span>
-
-<span class="token comment"># 子圖 1</span>
-ax <span class="token operator">=</span> fig<span class="token punctuation">.</span>add_subplot<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>title<span class="token punctuation">.</span>set_text<span class="token punctuation">(</span><span class="token string">"Subtitle 1"</span><span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">'b'</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"lr"</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.7</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># 圖例</span>
-
-<span class="token comment"># 子圖 2</span>
-ax <span class="token operator">=</span> fig<span class="token punctuation">.</span>add_subplot<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>title<span class="token punctuation">.</span>set_text<span class="token punctuation">(</span><span class="token string">"Subtitle 1"</span><span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">'r'</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"lr"</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.7</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-plt<span class="token punctuation">.</span>savefig<span class="token punctuation">(</span><span class="token string">"fileName.png"</span><span class="token punctuation">)</span>
-</code></pre>
-
-<p>但我並不喜歡這個用法，以上面這份程式為例，這總作法會讓 <code>fig.add_subplot(2, 1, 1)</code> 散布在整份程式中，一旦我要修改子圖在行列上的數量，修正起來變得無比麻煩。</p>
-<h3 id="一口氣指定完子圖"><a href="#一口氣指定完子圖" class="headerlink" title="一口氣指定完子圖"></a>一口氣指定完子圖</h3><p>一種方法是：</p>
-<pre class="language-python" data-language="python"><code class="language-python">fig<span class="token punctuation">,</span> axes <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span>n_rows<span class="token punctuation">,</span> n_cols<span class="token punctuation">)</span></code></pre>
-
-<p>不錯的是可以一口氣解決，但我更喜歡另一種作法：</p>
-<pre class="language-python" data-language="python"><code class="language-python">fig <span class="token operator">=</span> plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dpi<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">)</span>
-axes <span class="token operator">=</span> fig<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment"># axes.shape: (6, )</span>
-axes <span class="token operator">=</span> fig<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>             <span class="token comment"># axes.shape: (2, 3)</span></code></pre>
-
-<p>原先的作法在取用 <code>axes</code> 的時候，要謹慎的選取 <code>axes[0][1]</code> 之類的 index ，同樣的一旦子圖在行列上的數量改變，透過 index 取得 <code>ax</code> 的時候也很容易出錯。因此我習慣先把他 <code>reshape</code> 成一個維度，直接用 <code>ax = axes[i]</code> 取用，簡單省事。缺點是難以知道現在處於哪一行哪一列，如果子圖有需要落在確切位置的需求，這個簡單粗暴的方法可能就不太適合。</p>
-<h3 id="大標題"><a href="#大標題" class="headerlink" title="大標題"></a>大標題</h3><pre class="language-python" data-language="python"><code class="language-python">ax<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">"sub plot title"</span><span class="token punctuation">)</span> <span class="token comment"># 子圖的標題</span>
-fig<span class="token punctuation">.</span>suptitle<span class="token punctuation">(</span><span class="token string">"Figure title"</span><span class="token punctuation">)</span>   <span class="token comment"># 整張圖的大標題</span></code></pre>
-
-<h3 id="合併子圖、跨行跨列"><a href="#合併子圖、跨行跨列" class="headerlink" title="合併子圖、跨行跨列"></a>合併子圖、跨行跨列</h3><h4 id="subplot2grid"><a href="#subplot2grid" class="headerlink" title="subplot2grid"></a><code>subplot2grid</code></h4><p>上面的用法都是規規矩矩，每張子圖大小一致。想要讓圖的形狀跨越多欄多列，應該使用 <code>subplot2grid</code>。<a href="https://matplotlib.org/3.1.1/gallery/userdemo/demo_gridspec01.html#sphx-glr-gallery-userdemo-demo-gridspec01-py" title="matplotlib 官網 subplot2grid 的範例">subplot2grid example</a></p>
-<pre class="language-python" data-language="python"><code class="language-python">ax1 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> colspan<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span>
-ax2 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> colspan<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
-ax3 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> rowspan<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
-ax4 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-ax5 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
-
-<p>得到的圖相當於：</p>
-<p><img src="https://matplotlib.org/3.1.1/_images/sphx_glr_demo_gridspec01_001.png" alt="subplot2grid"></p>
-<p>事實上 <code>subplot2grid</code> 依然可以作到像是 <code>subplot</code> 這樣只給出正規方正的子圖，在不做 <code>colspan</code>/<code>rowspan</code> 的情況下，這兩個操作是等價的：</p>
-<pre class="language-python" data-language="python"><code class="language-python">ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment"># 1. 算子圖要從 1 開始算子圖</span>
-ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 2. 先規定整張圖的 (row, col), 在列出要回傳的子圖位於哪個位置 (不像上面是算 index)</span></code></pre>
-
-<h4 id="GridSpec"><a href="#GridSpec" class="headerlink" title="GridSpec"></a><code>GridSpec</code></h4><p>還有另一個方法是透過 <code>GridSpec</code> 達成。我們可以先用 <code>gridspec</code> 創建一個框架，並把框架的某一塊指派給 <code>plt.subplot</code> 真正創建子圖。</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>gridspec <span class="token keyword">as</span> gridspec
-gs <span class="token operator">=</span> gridspec<span class="token punctuation">.</span>GridSpec<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
-ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># 等價 ax = plt.subplot2grid((2,2),(0, 0))</span></code></pre>
-
-<p>所以，在前面一小節的分隔圖，在這個章節應該如下實做：</p>
-<pre class="language-python" data-language="python"><code class="language-python">gs <span class="token operator">=</span> gridspec<span class="token punctuation">.</span>GridSpec<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
-ax1 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-ax2 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-ax3 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-ax4 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-ax5 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
-
-<h4 id="subplot2grid-與-GridSpec-的差別"><a href="#subplot2grid-與-GridSpec-的差別" class="headerlink" title="subplot2grid 與 GridSpec 的差別"></a><code>subplot2grid</code> 與 <code>GridSpec</code> 的差別</h4><p>我覺得可這樣看待</p>
-<ul>
-<li><p><code>subplot2grid</code> 屬於 pyplot 類別中，它直接與畫面操作有關，所以直接指派位置就有圖出來了</p>
-<pre class="language-none"><code class="language-none">ax &#x3D; plt.subplot2grid((2,2),(0, 0))</code></pre></li>
-<li><p>但是 <code>gridspec</code> 不是屬於 pyplot ，如果只有創建而沒有再指定畫布，是不會出現東西的</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>gridspec <span class="token keyword">as</span> gridspec
-gs <span class="token operator">=</span> gridspec<span class="token punctuation">.</span>GridSpec<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># 不會有圖跑出來喔</span></code></pre></li>
-</ul>
-<p>此外，gridspec 能做到的 layout(布局) 也更加彈性，詳細可以在這篇裡面看: <a href="https://matplotlib.org/2.0.2/users/gridspec.html#customizing-location-of-subplot-using-gridspec">Customizing Location of Subplot Using GridSpec</a> ，中文版: <a href="https://wizardforcel.gitbooks.io/matplotlib-user-guide/content/3.3.html">使用 GridSpec 自定义子图位置</a>。</p>
-<p><img src="https://matplotlib.org/2.0.2/_images/demo_gridspec06.png" alt="gridspec 更加彈性的布局"></p>
-<h2 id="圖上標示與設置"><a href="#圖上標示與設置" class="headerlink" title="圖上標示與設置"></a>圖上標示與設置</h2><h3 id="限制座標軸數值"><a href="#限制座標軸數值" class="headerlink" title="限制座標軸數值"></a>限制座標軸數值</h3><p>限制 x 與 y 軸顯示的數值上下界。</p>
-<pre class="language-python" data-language="python"><code class="language-python">ax<span class="token punctuation">.</span>set_ylim<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>set_xlim<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
-
-<h3 id="繪製橫-直線"><a href="#繪製橫-直線" class="headerlink" title="繪製橫/直線"></a>繪製橫/直線</h3><pre class="language-python" data-language="python"><code class="language-python">ax<span class="token punctuation">.</span>axhline<span class="token punctuation">(</span>y<span class="token operator">=</span><span class="token number">0.03</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">'r'</span><span class="token punctuation">,</span> linestyle<span class="token operator">=</span><span class="token string">'-.'</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.2</span><span class="token punctuation">)</span>  <span class="token comment"># 橫線</span>
-ax<span class="token punctuation">.</span>axvline<span class="token punctuation">(</span>x<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">'b'</span><span class="token punctuation">,</span> linestyle<span class="token operator">=</span><span class="token string">'-*'</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.2</span><span class="token punctuation">)</span>  <span class="token comment"># 直線</span></code></pre>
-
-<h3 id="縮減空白邊緣"><a href="#縮減空白邊緣" class="headerlink" title="縮減空白邊緣"></a><a href="https://stackoverflow.com/questions/55767312/how-to-position-suptitle" title="stackoverflow: How to position suptitle?">縮減空白邊緣</a></h3><pre class="language-python" data-language="python"><code class="language-python">fig<span class="token punctuation">.</span>tight_layout<span class="token punctuation">(</span>rect<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.03</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0.95</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># 保留標題的空間</span>
-fig<span class="token punctuation">.</span>suptitle<span class="token punctuation">(</span><span class="token string">"title"</span><span class="token punctuation">)</span>
-fig<span class="token punctuation">.</span>savefig<span class="token punctuation">(</span><span class="token string">"fig.png"</span><span class="token punctuation">)</span></code></pre>
-
-<p><code>tight_layout</code> 要在所有繪圖都結束之後，就要 <code>savefig</code> 或是 <code>plt.show()</code> 之前再放才會生效！或是在 import之後直接改變全局：</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
-plt<span class="token punctuation">.</span>rcParams<span class="token punctuation">[</span><span class="token string">"figure.autolayout"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">True</span></code></pre>
-
-<h2 id="全局的設置-matplotlibrc"><a href="#全局的設置-matplotlibrc" class="headerlink" title="全局的設置 matplotlibrc"></a><a href="https://matplotlib.org/stable/tutorials/introductory/customizing.html?highlight=figure.autolayout#the-matplotlibrc-file" title="matplotlib 官網 subplot2grid 的 matplotlibrc 設置">全局的設置 <code>matplotlibrc</code></a></h2><p><code>matplotlib</code> 裡面有很多設定，包含 <code>dpi</code>, <code>figsize</code>, <code>color</code>, <code>linewidth</code>…..，如果希望一些改變能夠直接作用在 global 上，可以透過設定 <code>matplotlibrc</code> 檔案達成：</p>
-<p>在沒有使用 <code>style.use(&#39;&lt;path&gt;/&lt;style-name&gt;.mplstyle&#39;)</code> 指向設定檔時，預設的搜索順序是這樣：</p>
-<ol>
-<li>當前資料夾：當前這個資料夾中存在 <code>matplotlibrc</code>，而在這個資料夾之中所有的繪圖，也都想用這樣的設定套用，那非常適合這麼做。</li>
-<li>如果存在環境變數 <code>$MATPLOTLIBRC</code>：如果這是個檔案，就直接用。如果是個資料夾，會尋找並使用其下的 <code>$MATPLOTLIBRC/matplotlibrc</code> </li>
-<li>恩，剩下兩條我覺得太麻煩了，懶得翻譯。可以去看原文。</li>
-</ol>
-<p>如果上述的路徑下都沒有  <code>matplotlibrc</code> 檔案那不會再額外搜索其他地方。我們可以直接透過下面這個的作法尋找當前使用的是誰：</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib
-matplotlib<span class="token punctuation">.</span>matplotlib_fname<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
-
-<h4 id="我的-matplotlibrc-檔案"><a href="#我的-matplotlibrc-檔案" class="headerlink" title="我的 matplotlibrc 檔案"></a>我的 <code>matplotlibrc</code> 檔案</h4><pre class="language-matplotlibrc" data-language="matplotlibrc"><code class="language-matplotlibrc">figure.autolayout: True
-legend.fontsize:   large
-figure.titlesize:   x-large
-figure.dpi:  100
-axes.titlesize:     x-large 
-image.cmap: hsv
-hist.bins: 20 </code></pre>
-
-
-
-<hr>
-]]></content>
-      <tags>
-        <tag>python</tag>
-        <tag>visualize</tag>
       </tags>
   </entry>
   <entry>
@@ -1186,6 +1070,122 @@ f <span class="token operator">=</span> CustomFilter<span class="token punctuati
         <tag>python</tag>
         <tag>官方文件</tag>
         <tag>logging</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python 視覺化 matplotlib 基本設置</title>
+    <url>/2021/12/30/python-visualize-basic/</url>
+    <content><![CDATA[<h2 id="子圖"><a href="#子圖" class="headerlink" title="子圖"></a>子圖</h2><h3 id="add-subplot"><a href="#add-subplot" class="headerlink" title="add_subplot"></a><code>add_subplot</code></h3><p>初使用時最常接觸的就是這個方法，當要用某張子圖的時候再使用 <code>fig.add_subplot()</code> 得到某個 <code>ax</code> ，用它進行繪圖。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+fig <span class="token operator">=</span> plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dpi<span class="token operator">=</span><span class="token number">300</span><span class="token punctuation">)</span> 
+fig<span class="token punctuation">.</span>suptitle<span class="token punctuation">(</span><span class="token string">"Big title"</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 子圖 1</span>
+ax <span class="token operator">=</span> fig<span class="token punctuation">.</span>add_subplot<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>title<span class="token punctuation">.</span>set_text<span class="token punctuation">(</span><span class="token string">"Subtitle 1"</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">'b'</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"lr"</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.7</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># 圖例</span>
+
+<span class="token comment"># 子圖 2</span>
+ax <span class="token operator">=</span> fig<span class="token punctuation">.</span>add_subplot<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>title<span class="token punctuation">.</span>set_text<span class="token punctuation">(</span><span class="token string">"Subtitle 1"</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">'r'</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"lr"</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.7</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>savefig<span class="token punctuation">(</span><span class="token string">"fileName.png"</span><span class="token punctuation">)</span>
+</code></pre>
+
+<p>但我並不喜歡這個用法，以上面這份程式為例，這總作法會讓 <code>fig.add_subplot(2, 1, 1)</code> 散布在整份程式中，一旦我要修改子圖在行列上的數量，修正起來變得無比麻煩。</p>
+<h3 id="一口氣指定完子圖"><a href="#一口氣指定完子圖" class="headerlink" title="一口氣指定完子圖"></a>一口氣指定完子圖</h3><p>一種方法是：</p>
+<pre class="language-python" data-language="python"><code class="language-python">fig<span class="token punctuation">,</span> axes <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span>n_rows<span class="token punctuation">,</span> n_cols<span class="token punctuation">)</span></code></pre>
+
+<p>不錯的是可以一口氣解決，但我更喜歡另一種作法：</p>
+<pre class="language-python" data-language="python"><code class="language-python">fig <span class="token operator">=</span> plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dpi<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">)</span>
+axes <span class="token operator">=</span> fig<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment"># axes.shape: (6, )</span>
+axes <span class="token operator">=</span> fig<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>             <span class="token comment"># axes.shape: (2, 3)</span></code></pre>
+
+<p>原先的作法在取用 <code>axes</code> 的時候，要謹慎的選取 <code>axes[0][1]</code> 之類的 index ，同樣的一旦子圖在行列上的數量改變，透過 index 取得 <code>ax</code> 的時候也很容易出錯。因此我習慣先把他 <code>reshape</code> 成一個維度，直接用 <code>ax = axes[i]</code> 取用，簡單省事。缺點是難以知道現在處於哪一行哪一列，如果子圖有需要落在確切位置的需求，這個簡單粗暴的方法可能就不太適合。</p>
+<h3 id="大標題"><a href="#大標題" class="headerlink" title="大標題"></a>大標題</h3><pre class="language-python" data-language="python"><code class="language-python">ax<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">"sub plot title"</span><span class="token punctuation">)</span> <span class="token comment"># 子圖的標題</span>
+fig<span class="token punctuation">.</span>suptitle<span class="token punctuation">(</span><span class="token string">"Figure title"</span><span class="token punctuation">)</span>   <span class="token comment"># 整張圖的大標題</span></code></pre>
+
+<h3 id="合併子圖、跨行跨列"><a href="#合併子圖、跨行跨列" class="headerlink" title="合併子圖、跨行跨列"></a>合併子圖、跨行跨列</h3><h4 id="subplot2grid"><a href="#subplot2grid" class="headerlink" title="subplot2grid"></a><code>subplot2grid</code></h4><p>上面的用法都是規規矩矩，每張子圖大小一致。想要讓圖的形狀跨越多欄多列，應該使用 <code>subplot2grid</code>。<a href="https://matplotlib.org/3.1.1/gallery/userdemo/demo_gridspec01.html#sphx-glr-gallery-userdemo-demo-gridspec01-py" title="matplotlib 官網 subplot2grid 的範例">subplot2grid example</a></p>
+<pre class="language-python" data-language="python"><code class="language-python">ax1 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> colspan<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span>
+ax2 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> colspan<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
+ax3 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> rowspan<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
+ax4 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+ax5 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+
+<p>得到的圖相當於：</p>
+<p><img src="https://matplotlib.org/3.1.1/_images/sphx_glr_demo_gridspec01_001.png" alt="subplot2grid"></p>
+<p>事實上 <code>subplot2grid</code> 依然可以作到像是 <code>subplot</code> 這樣只給出正規方正的子圖，在不做 <code>colspan</code>/<code>rowspan</code> 的情況下，這兩個操作是等價的：</p>
+<pre class="language-python" data-language="python"><code class="language-python">ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment"># 1. 算子圖要從 1 開始算子圖</span>
+ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 2. 先規定整張圖的 (row, col), 在列出要回傳的子圖位於哪個位置 (不像上面是算 index)</span></code></pre>
+
+<h4 id="GridSpec"><a href="#GridSpec" class="headerlink" title="GridSpec"></a><code>GridSpec</code></h4><p>還有另一個方法是透過 <code>GridSpec</code> 達成。我們可以先用 <code>gridspec</code> 創建一個框架，並把框架的某一塊指派給 <code>plt.subplot</code> 真正創建子圖。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>gridspec <span class="token keyword">as</span> gridspec
+gs <span class="token operator">=</span> gridspec<span class="token punctuation">.</span>GridSpec<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># 等價 ax = plt.subplot2grid((2,2),(0, 0))</span></code></pre>
+
+<p>所以，在前面一小節的分隔圖，在這個章節應該如下實做：</p>
+<pre class="language-python" data-language="python"><code class="language-python">gs <span class="token operator">=</span> gridspec<span class="token punctuation">.</span>GridSpec<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+ax1 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+ax2 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+ax3 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+ax4 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+ax5 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+
+<h4 id="subplot2grid-與-GridSpec-的差別"><a href="#subplot2grid-與-GridSpec-的差別" class="headerlink" title="subplot2grid 與 GridSpec 的差別"></a><code>subplot2grid</code> 與 <code>GridSpec</code> 的差別</h4><p>我覺得可這樣看待</p>
+<ul>
+<li><p><code>subplot2grid</code> 屬於 pyplot 類別中，它直接與畫面操作有關，所以直接指派位置就有圖出來了</p>
+<pre class="language-none"><code class="language-none">ax &#x3D; plt.subplot2grid((2,2),(0, 0))</code></pre></li>
+<li><p>但是 <code>gridspec</code> 不是屬於 pyplot ，如果只有創建而沒有再指定畫布，是不會出現東西的</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>gridspec <span class="token keyword">as</span> gridspec
+gs <span class="token operator">=</span> gridspec<span class="token punctuation">.</span>GridSpec<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># 不會有圖跑出來喔</span></code></pre></li>
+</ul>
+<p>此外，gridspec 能做到的 layout(布局) 也更加彈性，詳細可以在這篇裡面看: <a href="https://matplotlib.org/2.0.2/users/gridspec.html#customizing-location-of-subplot-using-gridspec">Customizing Location of Subplot Using GridSpec</a> ，中文版: <a href="https://wizardforcel.gitbooks.io/matplotlib-user-guide/content/3.3.html">使用 GridSpec 自定义子图位置</a>。</p>
+<p><img src="https://matplotlib.org/2.0.2/_images/demo_gridspec06.png" alt="gridspec 更加彈性的布局"></p>
+<h2 id="圖上標示與設置"><a href="#圖上標示與設置" class="headerlink" title="圖上標示與設置"></a>圖上標示與設置</h2><h3 id="限制座標軸數值"><a href="#限制座標軸數值" class="headerlink" title="限制座標軸數值"></a>限制座標軸數值</h3><p>限制 x 與 y 軸顯示的數值上下界。</p>
+<pre class="language-python" data-language="python"><code class="language-python">ax<span class="token punctuation">.</span>set_ylim<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_xlim<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+
+<h3 id="繪製橫-直線"><a href="#繪製橫-直線" class="headerlink" title="繪製橫/直線"></a>繪製橫/直線</h3><pre class="language-python" data-language="python"><code class="language-python">ax<span class="token punctuation">.</span>axhline<span class="token punctuation">(</span>y<span class="token operator">=</span><span class="token number">0.03</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">'r'</span><span class="token punctuation">,</span> linestyle<span class="token operator">=</span><span class="token string">'-.'</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.2</span><span class="token punctuation">)</span>  <span class="token comment"># 橫線</span>
+ax<span class="token punctuation">.</span>axvline<span class="token punctuation">(</span>x<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">'b'</span><span class="token punctuation">,</span> linestyle<span class="token operator">=</span><span class="token string">'-*'</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.2</span><span class="token punctuation">)</span>  <span class="token comment"># 直線</span></code></pre>
+
+<h3 id="縮減空白邊緣"><a href="#縮減空白邊緣" class="headerlink" title="縮減空白邊緣"></a><a href="https://stackoverflow.com/questions/55767312/how-to-position-suptitle" title="stackoverflow: How to position suptitle?">縮減空白邊緣</a></h3><pre class="language-python" data-language="python"><code class="language-python">fig<span class="token punctuation">.</span>tight_layout<span class="token punctuation">(</span>rect<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.03</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0.95</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># 保留標題的空間</span>
+fig<span class="token punctuation">.</span>suptitle<span class="token punctuation">(</span><span class="token string">"title"</span><span class="token punctuation">)</span>
+fig<span class="token punctuation">.</span>savefig<span class="token punctuation">(</span><span class="token string">"fig.png"</span><span class="token punctuation">)</span></code></pre>
+
+<p><code>tight_layout</code> 要在所有繪圖都結束之後，就要 <code>savefig</code> 或是 <code>plt.show()</code> 之前再放才會生效！或是在 import之後直接改變全局：</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+plt<span class="token punctuation">.</span>rcParams<span class="token punctuation">[</span><span class="token string">"figure.autolayout"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">True</span></code></pre>
+
+<h2 id="全局的設置-matplotlibrc"><a href="#全局的設置-matplotlibrc" class="headerlink" title="全局的設置 matplotlibrc"></a><a href="https://matplotlib.org/stable/tutorials/introductory/customizing.html?highlight=figure.autolayout#the-matplotlibrc-file" title="matplotlib 官網 subplot2grid 的 matplotlibrc 設置">全局的設置 <code>matplotlibrc</code></a></h2><p><code>matplotlib</code> 裡面有很多設定，包含 <code>dpi</code>, <code>figsize</code>, <code>color</code>, <code>linewidth</code>…..，如果希望一些改變能夠直接作用在 global 上，可以透過設定 <code>matplotlibrc</code> 檔案達成：</p>
+<p>在沒有使用 <code>style.use(&#39;&lt;path&gt;/&lt;style-name&gt;.mplstyle&#39;)</code> 指向設定檔時，預設的搜索順序是這樣：</p>
+<ol>
+<li>當前資料夾：當前這個資料夾中存在 <code>matplotlibrc</code>，而在這個資料夾之中所有的繪圖，也都想用這樣的設定套用，那非常適合這麼做。</li>
+<li>如果存在環境變數 <code>$MATPLOTLIBRC</code>：如果這是個檔案，就直接用。如果是個資料夾，會尋找並使用其下的 <code>$MATPLOTLIBRC/matplotlibrc</code> </li>
+<li>恩，剩下兩條我覺得太麻煩了，懶得翻譯。可以去看原文。</li>
+</ol>
+<p>如果上述的路徑下都沒有  <code>matplotlibrc</code> 檔案那不會再額外搜索其他地方。我們可以直接透過下面這個的作法尋找當前使用的是誰：</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib
+matplotlib<span class="token punctuation">.</span>matplotlib_fname<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+
+<h4 id="我的-matplotlibrc-檔案"><a href="#我的-matplotlibrc-檔案" class="headerlink" title="我的 matplotlibrc 檔案"></a>我的 <code>matplotlibrc</code> 檔案</h4><pre class="language-matplotlibrc" data-language="matplotlibrc"><code class="language-matplotlibrc">figure.autolayout: True
+legend.fontsize:   large
+figure.titlesize:   x-large
+figure.dpi:  100
+axes.titlesize:     x-large 
+image.cmap: hsv
+hist.bins: 20 </code></pre>
+
+
+
+<hr>
+]]></content>
+      <tags>
+        <tag>python</tag>
+        <tag>visualize</tag>
       </tags>
   </entry>
 </search>
