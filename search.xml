@@ -248,112 +248,62 @@ public&#x2F;
       </tags>
   </entry>
   <entry>
-    <title>新年快樂之部落格沿革(?)</title>
-    <url>/2022/01/01/blog-0-source/</url>
-    <content><![CDATA[<p>2022 新年快樂！新年的第一篇文章，來寫個段小故事。</p>
-<p>我相信自己一路走來在各種平台、格式上轉換的痛苦已經算少了，但每次想起依然常常覺得…. 小坎坷阿，希望現在的決定夠有遠見了？</p>
-<span id="more"></span>
+    <title>Hexo Blog 客製化 (2) Next 主題更新與 PrismJs 啟用</title>
+    <url>/2022/01/26/blog-2-theme-Next-update/</url>
+    <content><![CDATA[<h2 id="主題版本更新"><a href="#主題版本更新" class="headerlink" title="主題版本更新"></a>主題版本更新</h2><p>Next 主題有在定期更新，每次更新後可能 config 的內容位置都可能有更動。</p>
+<p><a href="https://theme-next.js.org/docs/getting-started/configuration">Next 在 v8.x 的版本中有給予建議</a>，不要將個人的變更寫在 <code>theme/Next/_config.yml</code> 下面，這樣每次 config 有改版都要一個個更新，不一定能完美的 merge。</p>
+<p>我們可以在與 site config (配置 hexo 的設定檔) 同層級的地方，創建一個 <code>_config.[theme].yml</code> 的檔案，<code>theme</code> 帶入主題的名稱。這個檔案中的內容會覆蓋 <code>theme/[next]/_config.yml</code> 的內容。</p>
+<p>如果以 NexT 主題為例：我的 <code>theme</code> 底下主題名稱為 <code>next</code>，配置的客製化檔案名稱為 <code>_config.next.yml</code>。並且我只在裡面放有修改區塊的 config ，避免未來如果要升級，我還花功夫去找哪裡有變更。</p>
+<h2 id="PrismJs-的啟用"><a href="#PrismJs-的啟用" class="headerlink" title="PrismJs 的啟用"></a>PrismJs 的啟用</h2><p>這部分跟主題的版本有關，雖然我是在 2021 年底創建部落格的，但不曉得為何用到了很舊版的 Next，其 <code>_config</code> 沒有有關 Prismjs 在 codeblock 欄位底下的配置。</p>
+<p>後來發現這個問題之後進行版本更新，並遇到在兩個配置落差頗大的 <code>_config</code> 之間玩比對遊戲，因此體悟出了上述辦法的優勢。</p>
+<p>更新後，codeblock 裡面有如下配置:</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">codeblock</span><span class="token punctuation">:</span>
+  <span class="token key atrule">theme</span><span class="token punctuation">:</span>
+    <span class="token key atrule">light</span><span class="token punctuation">:</span> default
+    <span class="token key atrule">dark</span><span class="token punctuation">:</span> tomorrow<span class="token punctuation">-</span>night
+  <span class="token key atrule">prism</span><span class="token punctuation">:</span>
+    <span class="token key atrule">light</span><span class="token punctuation">:</span> prism<span class="token punctuation">-</span>tomorrow
+    <span class="token key atrule">dark</span><span class="token punctuation">:</span> prism<span class="token punctuation">-</span>tomorrow</code></pre>
 
-<h3 id="純樸的文字編輯器：Evernote"><a href="#純樸的文字編輯器：Evernote" class="headerlink" title="純樸的文字編輯器：Evernote"></a>純樸的文字編輯器：Evernote</h3><p>從高中起一直有寫心得、觀後感與日記的習慣，那時候用的是 Evernote。大學開始寫程式時，也有著紀錄 bug 的習慣，那時候用的是 Line 記事本跟 Evernote。可以想見，這種紀錄方式簡直是災難… 我希望至少 Code 可以是彩色的（好卑微阿），開始尋找替代方案。</p>
-<p>儘管將程式相關的內容從 Evernote 抽離，它依然是我挺喜歡的筆記軟體。但，隨著 Markdown 語法越來越盛行，Evernote 卻遲遲不能夠跟進，加上 Notion 後來出了教育帳戶免費的策略，最後包括慣用的其他紀錄也都轉移到 Notion 去了。</p>
-<h3 id="Blogger"><a href="#Blogger" class="headerlink" title="Blogger"></a>Blogger</h3><p>由於當時有在用 Blogger 在寫遊記，所以第一時間想到的替代工具就是 Google 旗下的 Blogger ，大約也用了一年多。當對排版越來越要求，發現 Blogger 那種 word 編輯器 + html 編輯界面的方式實在是太沒效率了！決定再次轉移。</p>
-<h3 id="HackMD"><a href="#HackMD" class="headerlink" title="HackMD"></a>HackMD</h3><p>開始用 Markdown 在寫技術筆記，並使用 HackMD 作為平台。但 HackMD 有個很大的缺點，它不支援內文搜尋模式….. （曾經支援，後來疑似因為 loading 太大拿掉內文搜索只能找標題）文章一多不記得什麼內容在哪篇文章，這根本災難！只好又開始尋找替代方案</p>
-<p>那個時期不知道為什麼，HackMD 老是不溫不火，號稱是從日本 IT 圈紅回來的軟體，在台灣小有名氣其實也很好用。但感覺一直是維持狀態，更新狀態不大，反而有退一步取消內文搜索功能的這種事件。</p>
-<h3 id="Github-Typora"><a href="#Github-Typora" class="headerlink" title="Github + Typora"></a>Github + Typora</h3><p>腦子動到 Github 的頭上，發展出用離線的 Markdown 編輯器 Typora 加上 Github 做同步。在我開始將 HackMD 的內容拉下來，跟本地的離線檔案整併時發現有些筆記不小心使用到了一些只有 HackMD 支援的 Markdown 延伸語法，導致這些內容在 Typora 上完全沒有效果！！像是亂碼一樣！</p>
-<p>至此，我下定決心，以後寫文章絕對不要再搞出這麼多麻煩，乖乖用基礎的 Markdown 語法，很方便了！別搞那麼多事！</p>
-<h3 id="熱門的部落格平台：Medium"><a href="#熱門的部落格平台：Medium" class="headerlink" title="熱門的部落格平台：Medium"></a>熱門的部落格平台：Medium</h3><p>想有個部落格的心情依舊在，我曾嘗試過 Medium 平台並不是很喜歡。一來是平台的彈性低、程式碼甚至沒辦法上色，非得透過 Gist ；二來是 Medium 還是比較適合英文文章，英文字寫起來格式是又優雅又漂亮，但中文一個斜體就搞得版面很不和諧。後來也就拿來放一些跟 Code 無關的事情，一些搞環境經驗之類的而已。</p>
-<h3 id="初體驗靜態網頁產生器：Pelican"><a href="#初體驗靜態網頁產生器：Pelican" class="headerlink" title="初體驗靜態網頁產生器：Pelican"></a>初體驗靜態網頁產生器：Pelican</h3><p>大四時一度嘗試使用 Github Page + Pelican 做靜態網站生成，挑選這個組合是因為覺得綁定網域得付錢、感覺這部落格又是有一更沒一更不知道哪天會不會荒廢，決定先從免費的試試看，Github Page 是這個選項很好的解答。而 Pelican 是它背後是用 Python 寫的，好歹我比較熟 (不敢一下子踏入 js) 。</p>
-<p>不知道是對網站管理沒經驗、放太多圖片塞到流量還是什麼問題，大約半年覺得網站載入太慢了受不了，加上對版面的主題既不滿意、又改不動，在充滿羞恥的心情下收掉了這個第一個自己架的部落格。</p>
-<h3 id="再次回歸-Github-Typora"><a href="#再次回歸-Github-Typora" class="headerlink" title="再次回歸 Github + Typora"></a>再次回歸 Github + Typora</h3><p>此後，我一直用 Typora + Github 的模式寫筆記，由於有過自己搭建的經驗，每次看到別人的部落格是使用 Github page 的時候，都會多留意兩眼框架與主題，以及一些自己喜歡的小工具、要素等等，也是那時候看到 Hexo 與 Next 主題被很多人採用。過去使用 Peclian 時，我極度討厭文章太長，每次都要卷到最上面才能點目錄跳轉的情況，甚至自己研究用 CSS 弄了一個懸浮目錄，功能是有卻醜到自己受不了，關站很大一個原因也是這樣。</p>
-<h3 id="現在：Hexo"><a href="#現在：Hexo" class="headerlink" title="現在：Hexo"></a>現在：Hexo</h3><p>直到最近看到有在追蹤的一位作者的文章<a href="https://www.ithome.com.tw/voice/148476">技術網站架設經驗雜談</a>，邊看產生了很多共鳴，想到了一直有個小小的期許：能彈性控制的部落格！才鼓起勇氣再次搭建了部落格。這次打算嘗試許多人都採用的 Hexo 來搭建，管他語言不一樣，大不了學學吧！於是最終就有了這個部落格。</p>
-<p>恩，真是一段不長不短的歷史。總之就是告誡自己，不要被漂亮的擴充功能迷惑，換了框架很痛苦的。</p>
-]]></content>
-      <tags>
-        <tag>blog</tag>
-        <tag>about</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo Blog 客製化 (3) Next 主題加速</title>
-    <url>/2022/01/26/blog-3-speedup/</url>
-    <content><![CDATA[<p>說實話，在改字體後還想要網站加速，突然覺得自己有點癡人說夢。改字體本來就會造成額外的負擔! 但還是基於個人的喜好依然想改，照樣記錄一下心路歷程! </p>
-<h2 id="改變字體"><a href="#改變字體" class="headerlink" title="改變字體"></a>改變字體</h2><p>有關  <code>_config.next.yml</code> 與  <code>source\_data\styles.styl</code>  的配置參見前面的兩個章節！</p>
-<ol>
-<li><p>在 <code>_config.next.yml</code> 中配置字體段落</p>
-<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">font</span><span class="token punctuation">:</span>
-  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> 
-  <span class="token key atrule">host</span><span class="token punctuation">:</span>
-  <span class="token key atrule">global</span><span class="token punctuation">:</span>
-    <span class="token key atrule">external</span><span class="token punctuation">:</span> <span class="token boolean important">false</span> <span class="token comment"># 如果寫 true, 就可以不用考慮後面的第三步了。</span>
-    <span class="token key atrule">family</span><span class="token punctuation">:</span> <span class="token string">'Noto Serif SC'</span></code></pre></li>
-<li><p>在<code>source\_data\variables.styl</code> 中設置環境變數，覆蓋原本的設定檔。</p>
-<p>記得要整段 font 的段落都複製！舉例而言，如果只覆蓋了 <code>font-family-chinese</code> 與 <code>font-family-base</code> 兩個變數，疑似因為在 Next 原本檔案中有其它變數使用到 <code>font-family-base</code>，而他們只會記住舊的變數。這會導致畫面有部份（像是 side bar）更改字體，而有部份依然使用微軟正黑體。</p>
-<pre class="language-stylus" data-language="stylus"><code class="language-stylus"><span class="token variable-declaration"><span class="token variable">$font-family-chinese</span>      <span class="token operator">=</span> <span class="token string">'Noto Serif TC'</span><span class="token punctuation">,</span> <span class="token string">'Microsoft YaHei'</span><span class="token punctuation">;</span> </span>
+<p>並且 hexo 的 <code>_config</code> 要將 prismjs 開啟、highlight 關閉: </p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">highlight</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">line_number</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">auto_detect</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">tab_replace</span><span class="token punctuation">:</span> <span class="token string">''</span>
+  <span class="token key atrule">wrap</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">hljs</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+<span class="token key atrule">prismjs</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">preprocess</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">line_number</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">tab_replace</span><span class="token punctuation">:</span> <span class="token string">''</span></code></pre>
 
-<span class="token variable-declaration"><span class="token variable">$font-family-base</span>         <span class="token operator">=</span> $font-family-chinese<span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span></span>
-<span class="token variable-declaration"><span class="token variable">$font-family-base</span>         <span class="token operator">=</span> get_font_family<span class="token punctuation">(</span><span class="token string">'global'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> $font-family-chinese<span class="token punctuation">,</span> sans-serif <span class="token keyword">if</span> get_font_family<span class="token punctuation">(</span><span class="token string">'global'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
-
-<span class="token variable-declaration"><span class="token variable">$font-family-logo</span>         <span class="token operator">=</span> $font-family-base<span class="token punctuation">;</span></span>
-<span class="token variable-declaration"><span class="token variable">$font-family-logo</span>         <span class="token operator">=</span> get_font_family<span class="token punctuation">(</span><span class="token string">'title'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> $font-family-base <span class="token keyword">if</span> get_font_family<span class="token punctuation">(</span><span class="token string">'title'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
-
-<span class="token variable-declaration"><span class="token variable">$font-family-headings</span>     <span class="token operator">=</span> $font-family-base<span class="token punctuation">;</span></span>
-<span class="token variable-declaration"><span class="token variable">$font-family-headings</span>     <span class="token operator">=</span> get_font_family<span class="token punctuation">(</span><span class="token string">'headings'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> $font-family-base <span class="token keyword">if</span> get_font_family<span class="token punctuation">(</span><span class="token string">'headings'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
-
-<span class="token variable-declaration"><span class="token variable">$font-family-posts</span>        <span class="token operator">=</span> $font-family-base<span class="token punctuation">;</span></span>
-<span class="token variable-declaration"><span class="token variable">$font-family-posts</span>        <span class="token operator">=</span> get_font_family<span class="token punctuation">(</span><span class="token string">'posts'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> $font-family-base <span class="token keyword">if</span> get_font_family<span class="token punctuation">(</span><span class="token string">'posts'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
-
-<span class="token variable-declaration"><span class="token variable">$font-family-monospace</span>    <span class="token operator">=</span> consolas<span class="token punctuation">,</span> Menlo<span class="token punctuation">,</span> monospace<span class="token punctuation">,</span> $font-family-chinese<span class="token punctuation">;</span></span>
-<span class="token variable-declaration"><span class="token variable">$font-family-monospace</span>    <span class="token operator">=</span> get_font_family<span class="token punctuation">(</span><span class="token string">'codes'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> consolas<span class="token punctuation">,</span> Menlo<span class="token punctuation">,</span> monospace<span class="token punctuation">,</span> $font-family-chinese <span class="token keyword">if</span> get_font_family<span class="token punctuation">(</span><span class="token string">'codes'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
-</code></pre></li>
-</ol>
-<p>接下來是第三步驟，主要是我發現改字體後的載入速度比使用原生的微軟正黑體慢了至少 0.5~1秒以上吧。我嘗試想加速字體載入的部份，會先寫建議使用的方法，再紀錄一下我嘗試的方法。</p>
-<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">font</span><span class="token punctuation">:</span>
-  <span class="token key atrule">global</span><span class="token punctuation">:</span>
-    <span class="token key atrule">external</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
-    <span class="token key atrule">family</span><span class="token punctuation">:</span> <span class="token string">'Noto Serif SC'</span></code></pre>
-
-
-
-<h3 id="方法一：字體預載入"><a href="#方法一：字體預載入" class="headerlink" title="方法一：字體預載入"></a>方法一：字體預載入</h3><p>來到 <a href="https://fonts.google.com/noto/specimen/Noto+Serif+TC">google font api</a> ，我們選擇要的粗細(Regular) 之後，左邊會有個彈出視窗，教導我們怎麼在 Html 跟 CSS 中嵌入。</p>
-<blockquote>
-<p>To embed a font, copy the code into the <code>&lt;head&gt;</code> of your html</p>
-</blockquote>
-<pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>preconnect<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://fonts.googleapis.com<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>preconnect<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://fonts.gstatic.com<span class="token punctuation">"</span></span> <span class="token attr-name">crossorigin</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://fonts.googleapis.com/css2?family=Noto+Serif+TC&amp;display=fallback<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre>
-
-<p>可以用 Vscode 之類的在部落格資料夾中找到寫有 <code>&lt;head&gt;</code> 的模板，在我的版本 (V8.9) 中，這位於 <code>themes\next\layout\_layout.njk</code>，直接在 <code>&lt;head&gt;</code> 中把上面那段落貼上，就完成了！</p>
-<p>由於我對網頁前端並不熟悉，不是很確定這是否為關鍵因素。但在我使用預設的 config <code>external:true</code> 並把 preload 註解掉之後，透過 <a href="https://pagespeed.web.dev/">pagespeed</a> 測試，載入時間落差約有一秒左右。</p>
-<h3 id="方法二：掛載在當前網域下-不建議"><a href="#方法二：掛載在當前網域下-不建議" class="headerlink" title="方法二：掛載在當前網域下 (不建議)"></a>方法二：掛載在當前網域下 (不建議)</h3><p>在 <code>source\_data\styles.styl</code> 中添加字體的匯入：</p>
-<pre class="language-stylus" data-language="stylus"><code class="language-stylus"><span class="token atrule-declaration"><span class="token atrule">@font-face</span> <span class="token punctuation">&#123;</span></span>
-  <span class="token property-declaration"><span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">'Noto Serif TC'</span><span class="token punctuation">;</span></span>
-  <span class="token property-declaration"><span class="token property">font-weight</span><span class="token punctuation">:</span> <span class="token number">400</span><span class="token punctuation">;</span></span>
-  <span class="token property-declaration"><span class="token property">font-style</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span></span>
-  <span class="token property-declaration"><span class="token property">font-display</span><span class="token punctuation">:</span> fallback<span class="token punctuation">;</span></span>
-  src<span class="token punctuation">:</span> <span class="token func"><span class="token function">local</span><span class="token punctuation">(</span><span class="token string">'Noto Serif TC'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> local<span class="token punctuation">(</span><span class="token string">'Noto-Serif-TC'</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
-       <span class="token func"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string">'/fonts/NotoSerifTC-Regular.otf'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<h2 id="修改行中程式碼的格式-change-inline-code-style"><a href="#修改行中程式碼的格式-change-inline-code-style" class="headerlink" title="修改行中程式碼的格式 (change inline code style)"></a>修改行中程式碼的格式 (change inline code style)</h2><p>我不喜歡預設的 inline code 格式，覺得太灰、padding 太大。而且這些 code 似乎不隸屬 prismjs 的主題規範，要從 CSS 下手! </p>
+<p>首先，我們可以透過右鍵檢查元素發現 inline code 也是隸屬於 <code>code</code> tag，就瞄準這部份研究，我尋找到的方法是直接去改 css 設定。</p>
+<p>在 <code>source\_data\styles.styl</code> 當中(沒有則創建!)，寫入設定：</p>
+<pre class="language-stylus" data-language="stylus"><code class="language-stylus"><span class="token selector">code <span class="token punctuation">&#123;</span></span>
+  <span class="token property-declaration"><span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token unit">px</span> <span class="token number">4</span><span class="token unit">px</span><span class="token punctuation">;</span></span>
+  <span class="token property-declaration"><span class="token property">word-wrap</span><span class="token punctuation">:</span> break-word<span class="token punctuation">;</span></span>
+  <span class="token property-declaration"><span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#cf222e</span><span class="token punctuation">;</span></span>
+  <span class="token property-declaration"><span class="token property">background</span><span class="token punctuation">:</span> <span class="token hexcode">#fbf7f8</span><span class="token punctuation">;</span></span>
+  <span class="token property-declaration"><span class="token property">border-radius</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token unit">px</span><span class="token punctuation">;</span></span>
+  <span class="token property-declaration"><span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">15</span><span class="token unit">px</span><span class="token punctuation">;</span></span>
+  <span class="token property-declaration"><span class="token property">font-weight</span><span class="token punctuation">:</span> lighter<span class="token punctuation">;</span> <span class="token comment">// lighter, bolder</span></span>
 <span class="token punctuation">&#125;</span></code></pre>
 
-<p><code>font-display: fallback</code> 可以使網頁先使用預設字體（微軟正黑體）這種本身就存在於電腦中的字體，使內容可以先顯示。而背景會默默把設定的 Noto Serif TC 下載，事後置換。</p>
-<p>選擇掛在於子網域未必會比較好，因為完整的 otf 檔案高達 MB 級，儘管設置了字體置換，等到完整的載入字體也需要長達 10 秒的時間 (視網路速度吧)。而 google font api 本身有把字體切割成很多部份，讓網頁可以選擇載入有用到的部份字形即可，節省下載量。</p>
-<h2 id="找出網頁的-Bug"><a href="#找出網頁的-Bug" class="headerlink" title="找出網頁的 Bug"></a>找出網頁的 Bug</h2><p>可以打開 chrome <a href="https://support.google.com/campaignmanager/answer/2828688?hl=zh-Hant">開發人員工具</a> 中 “Network” 項目，並 ctrl+R  重新整理網頁。檢查一下都是哪些檔案拖垮了網站速度。我當時發現有一些找不到路徑的字體檔案、Hexo 在產生靜態頁面時有寫的 warning 都有影響，所以修到沒 bug 在推上網路很重要。務必確保網頁在載入的期間只有載入<strong>需要的元件</strong>，不需要花時間試誤。</p>
-<pre class="language-none"><code class="language-none">Warning: Accessing non-existent property &#39;filename&#39; of module exports inside circular dependency</code></pre>
+<p>字體顏色選擇跟 github keyword 相似的顏色 <code>#cf222e</code>，雖然這使得 inline code 變得紅字很惹眼，但等到看到受不了再來想其他改法吧。</p>
+<p>光寫入沒有用，還要把這個檔案引入 Next 的渲染過程中。在上述的 <code>_config.next.yml</code> 中添加一段：</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">custom_file_path</span><span class="token punctuation">:</span>
+  <span class="token key atrule">style</span><span class="token punctuation">:</span> source/_data/styles.styl</code></pre>
 
-<p>Google 一番之後，參考<a href="https://www.haoyizebo.com/posts/710984d0/">此篇文章</a> 發現是 <code>nib</code> 套件出了問題。我的解決方法沒有順著他的教學，先嘗試重新安裝 <code>hexo-renderer-stylus</code> 但並沒有用。添加 <code>&quot;resolutions&quot;</code> 的部分忘記有沒有嘗試過，或許還是失敗了吧。</p>
-<p>最終，我是在 <code>package-lock.json</code> 的 <code>nib</code> 套件下找到: </p>
-<pre class="language-yaml" data-language="yaml"><code class="language-yaml">"stylus"<span class="token punctuation">:</span>0.54.5</code></pre>
-
-<p>修改成</p>
-<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">"stylus"</span><span class="token punctuation">:</span> 0.54.8</code></pre>
-
-<p><code>npm install</code> 之後參照輸出的資訊內容，先後下指令 <code>npm audit fix</code> 與 <code>npm audit fix --force</code> 解決了這個問題。</p>
-<h2 id="修改-Next-主題的動畫時間"><a href="#修改-Next-主題的動畫時間" class="headerlink" title="修改 Next 主題的動畫時間"></a>修改 Next 主題的動畫時間</h2><p>由於不同版本的 Next 程式碼內容也可能有所不同，參考自: <a href="https://blog.csdn.net/Domino_b/article/details/81704118">Hexo NexT 主題修改動畫效果速度</a>。</p>
-<ol>
-<li>使用 Vscode 之類的編輯器在 Next 主題中尋找關鍵字 <code>duration</code>，它可能出現在很多 js 檔案中，有些預設是 200、有些是 500。</li>
-<li>直接改數字，我先改成 100 之後大概看一下效果，網頁載入的速度明顯有提升! 可以先在 localhost 上測試。不敢貿然換成 0 的原因是不確定會不會因為某些元素來不及載入造成錯誤，反而拖到整體的時間。</li>
-<li>稍微判讀一下程式變數，有些頗容易看出函式意義的可以改短一點，不怕會不會影響載入，例如: <code>registerSidebarTOC</code>函式應該是跟側邊欄位「文章目錄」、「本站摘要」之間切換的動畫吧，我會再把數字改小一點。</li>
-</ol>
-<p>反覆在 local 端測試會不會造成 Bug 或使用者體驗不佳，之後就可以部屬到 github page 上了。部屬之後可以到 <a href="https://pagespeed.web.dev/">pagespeed</a> 測試一下表現如何，該網頁會給一些診斷建議，但我自己沒有前端經驗不太知道怎麼改，只是拿來測速度。目前的網頁測試在電腦版中大約有 85-89 分的成績。</p>
+<p>再嘗試 <code>hexo server</code> 之類的在本地 demo 一下，應該可以看到改動的內容了！</p>
+<hr>
+<p>參考自：</p>
+<ul>
+<li><a href="https://www.cnblogs.com/LyShark/p/11834144.html">Hexo之Next主題代碼優化</a></li>
+<li><a href="https://myiaj.github.io/2020/03/14/hexo-custom-style/">【Hexo】以 Next 主題為基礎，打造自己的樣式吧！</a></li>
+</ul>
 ]]></content>
       <tags>
         <tag>blog</tag>
@@ -470,66 +420,116 @@ email<span class="token punctuation">.</span>mime<span class="token punctuation"
       </tags>
   </entry>
   <entry>
-    <title>Hexo Blog 客製化 (2) Next 主題更新與 PrismJs 啟用</title>
-    <url>/2022/01/26/blog-2-theme-Next-update/</url>
-    <content><![CDATA[<h2 id="主題版本更新"><a href="#主題版本更新" class="headerlink" title="主題版本更新"></a>主題版本更新</h2><p>Next 主題有在定期更新，每次更新後可能 config 的內容位置都可能有更動。</p>
-<p><a href="https://theme-next.js.org/docs/getting-started/configuration">Next 在 v8.x 的版本中有給予建議</a>，不要將個人的變更寫在 <code>theme/Next/_config.yml</code> 下面，這樣每次 config 有改版都要一個個更新，不一定能完美的 merge。</p>
-<p>我們可以在與 site config (配置 hexo 的設定檔) 同層級的地方，創建一個 <code>_config.[theme].yml</code> 的檔案，<code>theme</code> 帶入主題的名稱。這個檔案中的內容會覆蓋 <code>theme/[next]/_config.yml</code> 的內容。</p>
-<p>如果以 NexT 主題為例：我的 <code>theme</code> 底下主題名稱為 <code>next</code>，配置的客製化檔案名稱為 <code>_config.next.yml</code>。並且我只在裡面放有修改區塊的 config ，避免未來如果要升級，我還花功夫去找哪裡有變更。</p>
-<h2 id="PrismJs-的啟用"><a href="#PrismJs-的啟用" class="headerlink" title="PrismJs 的啟用"></a>PrismJs 的啟用</h2><p>這部分跟主題的版本有關，雖然我是在 2021 年底創建部落格的，但不曉得為何用到了很舊版的 Next，其 <code>_config</code> 沒有有關 Prismjs 在 codeblock 欄位底下的配置。</p>
-<p>後來發現這個問題之後進行版本更新，並遇到在兩個配置落差頗大的 <code>_config</code> 之間玩比對遊戲，因此體悟出了上述辦法的優勢。</p>
-<p>更新後，codeblock 裡面有如下配置:</p>
-<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">codeblock</span><span class="token punctuation">:</span>
-  <span class="token key atrule">theme</span><span class="token punctuation">:</span>
-    <span class="token key atrule">light</span><span class="token punctuation">:</span> default
-    <span class="token key atrule">dark</span><span class="token punctuation">:</span> tomorrow<span class="token punctuation">-</span>night
-  <span class="token key atrule">prism</span><span class="token punctuation">:</span>
-    <span class="token key atrule">light</span><span class="token punctuation">:</span> prism<span class="token punctuation">-</span>tomorrow
-    <span class="token key atrule">dark</span><span class="token punctuation">:</span> prism<span class="token punctuation">-</span>tomorrow</code></pre>
+    <title>Hexo Blog 客製化 (3) Next 主題加速</title>
+    <url>/2022/01/26/blog-3-speedup/</url>
+    <content><![CDATA[<p>說實話，在改字體後還想要網站加速，突然覺得自己有點癡人說夢。改字體本來就會造成額外的負擔! 但還是基於個人的喜好依然想改，照樣記錄一下心路歷程! </p>
+<h2 id="改變字體"><a href="#改變字體" class="headerlink" title="改變字體"></a>改變字體</h2><p>有關  <code>_config.next.yml</code> 與  <code>source\_data\styles.styl</code>  的配置參見前面的兩個章節！</p>
+<ol>
+<li><p>在 <code>_config.next.yml</code> 中配置字體段落</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">font</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> 
+  <span class="token key atrule">host</span><span class="token punctuation">:</span>
+  <span class="token key atrule">global</span><span class="token punctuation">:</span>
+    <span class="token key atrule">external</span><span class="token punctuation">:</span> <span class="token boolean important">false</span> <span class="token comment"># 如果寫 true, 就可以不用考慮後面的第三步了。</span>
+    <span class="token key atrule">family</span><span class="token punctuation">:</span> <span class="token string">'Noto Serif SC'</span></code></pre></li>
+<li><p>在<code>source\_data\variables.styl</code> 中設置環境變數，覆蓋原本的設定檔。</p>
+<p>記得要整段 font 的段落都複製！舉例而言，如果只覆蓋了 <code>font-family-chinese</code> 與 <code>font-family-base</code> 兩個變數，疑似因為在 Next 原本檔案中有其它變數使用到 <code>font-family-base</code>，而他們只會記住舊的變數。這會導致畫面有部份（像是 side bar）更改字體，而有部份依然使用微軟正黑體。</p>
+<pre class="language-stylus" data-language="stylus"><code class="language-stylus"><span class="token variable-declaration"><span class="token variable">$font-family-chinese</span>      <span class="token operator">=</span> <span class="token string">'Noto Serif TC'</span><span class="token punctuation">,</span> <span class="token string">'Microsoft YaHei'</span><span class="token punctuation">;</span> </span>
 
-<p>並且 hexo 的 <code>_config</code> 要將 prismjs 開啟、highlight 關閉: </p>
-<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">highlight</span><span class="token punctuation">:</span>
-  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
-  <span class="token key atrule">line_number</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
-  <span class="token key atrule">auto_detect</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
-  <span class="token key atrule">tab_replace</span><span class="token punctuation">:</span> <span class="token string">''</span>
-  <span class="token key atrule">wrap</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-  <span class="token key atrule">hljs</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
-<span class="token key atrule">prismjs</span><span class="token punctuation">:</span>
-  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-  <span class="token key atrule">preprocess</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-  <span class="token key atrule">line_number</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
-  <span class="token key atrule">tab_replace</span><span class="token punctuation">:</span> <span class="token string">''</span></code></pre>
+<span class="token variable-declaration"><span class="token variable">$font-family-base</span>         <span class="token operator">=</span> $font-family-chinese<span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span></span>
+<span class="token variable-declaration"><span class="token variable">$font-family-base</span>         <span class="token operator">=</span> get_font_family<span class="token punctuation">(</span><span class="token string">'global'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> $font-family-chinese<span class="token punctuation">,</span> sans-serif <span class="token keyword">if</span> get_font_family<span class="token punctuation">(</span><span class="token string">'global'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 
-<h2 id="修改行中程式碼的格式-change-inline-code-style"><a href="#修改行中程式碼的格式-change-inline-code-style" class="headerlink" title="修改行中程式碼的格式 (change inline code style)"></a>修改行中程式碼的格式 (change inline code style)</h2><p>我不喜歡預設的 inline code 格式，覺得太灰、padding 太大。而且這些 code 似乎不隸屬 prismjs 的主題規範，要從 CSS 下手! </p>
-<p>首先，我們可以透過右鍵檢查元素發現 inline code 也是隸屬於 <code>code</code> tag，就瞄準這部份研究，我尋找到的方法是直接去改 css 設定。</p>
-<p>在 <code>source\_data\styles.styl</code> 當中(沒有則創建!)，寫入設定：</p>
-<pre class="language-stylus" data-language="stylus"><code class="language-stylus"><span class="token selector">code <span class="token punctuation">&#123;</span></span>
-  <span class="token property-declaration"><span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token unit">px</span> <span class="token number">4</span><span class="token unit">px</span><span class="token punctuation">;</span></span>
-  <span class="token property-declaration"><span class="token property">word-wrap</span><span class="token punctuation">:</span> break-word<span class="token punctuation">;</span></span>
-  <span class="token property-declaration"><span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#cf222e</span><span class="token punctuation">;</span></span>
-  <span class="token property-declaration"><span class="token property">background</span><span class="token punctuation">:</span> <span class="token hexcode">#fbf7f8</span><span class="token punctuation">;</span></span>
-  <span class="token property-declaration"><span class="token property">border-radius</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token unit">px</span><span class="token punctuation">;</span></span>
-  <span class="token property-declaration"><span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">15</span><span class="token unit">px</span><span class="token punctuation">;</span></span>
-  <span class="token property-declaration"><span class="token property">font-weight</span><span class="token punctuation">:</span> lighter<span class="token punctuation">;</span> <span class="token comment">// lighter, bolder</span></span>
+<span class="token variable-declaration"><span class="token variable">$font-family-logo</span>         <span class="token operator">=</span> $font-family-base<span class="token punctuation">;</span></span>
+<span class="token variable-declaration"><span class="token variable">$font-family-logo</span>         <span class="token operator">=</span> get_font_family<span class="token punctuation">(</span><span class="token string">'title'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> $font-family-base <span class="token keyword">if</span> get_font_family<span class="token punctuation">(</span><span class="token string">'title'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+
+<span class="token variable-declaration"><span class="token variable">$font-family-headings</span>     <span class="token operator">=</span> $font-family-base<span class="token punctuation">;</span></span>
+<span class="token variable-declaration"><span class="token variable">$font-family-headings</span>     <span class="token operator">=</span> get_font_family<span class="token punctuation">(</span><span class="token string">'headings'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> $font-family-base <span class="token keyword">if</span> get_font_family<span class="token punctuation">(</span><span class="token string">'headings'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+
+<span class="token variable-declaration"><span class="token variable">$font-family-posts</span>        <span class="token operator">=</span> $font-family-base<span class="token punctuation">;</span></span>
+<span class="token variable-declaration"><span class="token variable">$font-family-posts</span>        <span class="token operator">=</span> get_font_family<span class="token punctuation">(</span><span class="token string">'posts'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> $font-family-base <span class="token keyword">if</span> get_font_family<span class="token punctuation">(</span><span class="token string">'posts'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+
+<span class="token variable-declaration"><span class="token variable">$font-family-monospace</span>    <span class="token operator">=</span> consolas<span class="token punctuation">,</span> Menlo<span class="token punctuation">,</span> monospace<span class="token punctuation">,</span> $font-family-chinese<span class="token punctuation">;</span></span>
+<span class="token variable-declaration"><span class="token variable">$font-family-monospace</span>    <span class="token operator">=</span> get_font_family<span class="token punctuation">(</span><span class="token string">'codes'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> consolas<span class="token punctuation">,</span> Menlo<span class="token punctuation">,</span> monospace<span class="token punctuation">,</span> $font-family-chinese <span class="token keyword">if</span> get_font_family<span class="token punctuation">(</span><span class="token string">'codes'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+</code></pre></li>
+</ol>
+<p>接下來是第三步驟，主要是我發現改字體後的載入速度比使用原生的微軟正黑體慢了至少 0.5~1秒以上吧。我嘗試想加速字體載入的部份，會先寫建議使用的方法，再紀錄一下我嘗試的方法。</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">font</span><span class="token punctuation">:</span>
+  <span class="token key atrule">global</span><span class="token punctuation">:</span>
+    <span class="token key atrule">external</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+    <span class="token key atrule">family</span><span class="token punctuation">:</span> <span class="token string">'Noto Serif SC'</span></code></pre>
+
+
+
+<h3 id="方法一：字體預載入"><a href="#方法一：字體預載入" class="headerlink" title="方法一：字體預載入"></a>方法一：字體預載入</h3><p>來到 <a href="https://fonts.google.com/noto/specimen/Noto+Serif+TC">google font api</a> ，我們選擇要的粗細(Regular) 之後，左邊會有個彈出視窗，教導我們怎麼在 Html 跟 CSS 中嵌入。</p>
+<blockquote>
+<p>To embed a font, copy the code into the <code>&lt;head&gt;</code> of your html</p>
+</blockquote>
+<pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>preconnect<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://fonts.googleapis.com<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>preconnect<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://fonts.gstatic.com<span class="token punctuation">"</span></span> <span class="token attr-name">crossorigin</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://fonts.googleapis.com/css2?family=Noto+Serif+TC&amp;display=fallback<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre>
+
+<p>可以用 Vscode 之類的在部落格資料夾中找到寫有 <code>&lt;head&gt;</code> 的模板，在我的版本 (V8.9) 中，這位於 <code>themes\next\layout\_layout.njk</code>，直接在 <code>&lt;head&gt;</code> 中把上面那段落貼上，就完成了！</p>
+<p>由於我對網頁前端並不熟悉，不是很確定這是否為關鍵因素。但在我使用預設的 config <code>external:true</code> 並把 preload 註解掉之後，透過 <a href="https://pagespeed.web.dev/">pagespeed</a> 測試，載入時間落差約有一秒左右。</p>
+<h3 id="方法二：掛載在當前網域下-不建議"><a href="#方法二：掛載在當前網域下-不建議" class="headerlink" title="方法二：掛載在當前網域下 (不建議)"></a>方法二：掛載在當前網域下 (不建議)</h3><p>在 <code>source\_data\styles.styl</code> 中添加字體的匯入：</p>
+<pre class="language-stylus" data-language="stylus"><code class="language-stylus"><span class="token atrule-declaration"><span class="token atrule">@font-face</span> <span class="token punctuation">&#123;</span></span>
+  <span class="token property-declaration"><span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">'Noto Serif TC'</span><span class="token punctuation">;</span></span>
+  <span class="token property-declaration"><span class="token property">font-weight</span><span class="token punctuation">:</span> <span class="token number">400</span><span class="token punctuation">;</span></span>
+  <span class="token property-declaration"><span class="token property">font-style</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span></span>
+  <span class="token property-declaration"><span class="token property">font-display</span><span class="token punctuation">:</span> fallback<span class="token punctuation">;</span></span>
+  src<span class="token punctuation">:</span> <span class="token func"><span class="token function">local</span><span class="token punctuation">(</span><span class="token string">'Noto Serif TC'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> local<span class="token punctuation">(</span><span class="token string">'Noto-Serif-TC'</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+       <span class="token func"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string">'/fonts/NotoSerifTC-Regular.otf'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
 <span class="token punctuation">&#125;</span></code></pre>
 
-<p>字體顏色選擇跟 github keyword 相似的顏色 <code>#cf222e</code>，雖然這使得 inline code 變得紅字很惹眼，但等到看到受不了再來想其他改法吧。</p>
-<p>光寫入沒有用，還要把這個檔案引入 Next 的渲染過程中。在上述的 <code>_config.next.yml</code> 中添加一段：</p>
-<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">custom_file_path</span><span class="token punctuation">:</span>
-  <span class="token key atrule">style</span><span class="token punctuation">:</span> source/_data/styles.styl</code></pre>
+<p><code>font-display: fallback</code> 可以使網頁先使用預設字體（微軟正黑體）這種本身就存在於電腦中的字體，使內容可以先顯示。而背景會默默把設定的 Noto Serif TC 下載，事後置換。</p>
+<p>選擇掛在於子網域未必會比較好，因為完整的 otf 檔案高達 MB 級，儘管設置了字體置換，等到完整的載入字體也需要長達 10 秒的時間 (視網路速度吧)。而 google font api 本身有把字體切割成很多部份，讓網頁可以選擇載入有用到的部份字形即可，節省下載量。</p>
+<h2 id="找出網頁的-Bug"><a href="#找出網頁的-Bug" class="headerlink" title="找出網頁的 Bug"></a>找出網頁的 Bug</h2><p>可以打開 chrome <a href="https://support.google.com/campaignmanager/answer/2828688?hl=zh-Hant">開發人員工具</a> 中 “Network” 項目，並 ctrl+R  重新整理網頁。檢查一下都是哪些檔案拖垮了網站速度。我當時發現有一些找不到路徑的字體檔案、Hexo 在產生靜態頁面時有寫的 warning 都有影響，所以修到沒 bug 在推上網路很重要。務必確保網頁在載入的期間只有載入<strong>需要的元件</strong>，不需要花時間試誤。</p>
+<pre class="language-none"><code class="language-none">Warning: Accessing non-existent property &#39;filename&#39; of module exports inside circular dependency</code></pre>
 
-<p>再嘗試 <code>hexo server</code> 之類的在本地 demo 一下，應該可以看到改動的內容了！</p>
-<hr>
-<p>參考自：</p>
-<ul>
-<li><a href="https://www.cnblogs.com/LyShark/p/11834144.html">Hexo之Next主題代碼優化</a></li>
-<li><a href="https://myiaj.github.io/2020/03/14/hexo-custom-style/">【Hexo】以 Next 主題為基礎，打造自己的樣式吧！</a></li>
-</ul>
+<p>Google 一番之後，參考<a href="https://www.haoyizebo.com/posts/710984d0/">此篇文章</a> 發現是 <code>nib</code> 套件出了問題。我的解決方法沒有順著他的教學，先嘗試重新安裝 <code>hexo-renderer-stylus</code> 但並沒有用。添加 <code>&quot;resolutions&quot;</code> 的部分忘記有沒有嘗試過，或許還是失敗了吧。</p>
+<p>最終，我是在 <code>package-lock.json</code> 的 <code>nib</code> 套件下找到: </p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml">"stylus"<span class="token punctuation">:</span>0.54.5</code></pre>
+
+<p>修改成</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">"stylus"</span><span class="token punctuation">:</span> 0.54.8</code></pre>
+
+<p><code>npm install</code> 之後參照輸出的資訊內容，先後下指令 <code>npm audit fix</code> 與 <code>npm audit fix --force</code> 解決了這個問題。</p>
+<h2 id="修改-Next-主題的動畫時間"><a href="#修改-Next-主題的動畫時間" class="headerlink" title="修改 Next 主題的動畫時間"></a>修改 Next 主題的動畫時間</h2><p>由於不同版本的 Next 程式碼內容也可能有所不同，參考自: <a href="https://blog.csdn.net/Domino_b/article/details/81704118">Hexo NexT 主題修改動畫效果速度</a>。</p>
+<ol>
+<li>使用 Vscode 之類的編輯器在 Next 主題中尋找關鍵字 <code>duration</code>，它可能出現在很多 js 檔案中，有些預設是 200、有些是 500。</li>
+<li>直接改數字，我先改成 100 之後大概看一下效果，網頁載入的速度明顯有提升! 可以先在 localhost 上測試。不敢貿然換成 0 的原因是不確定會不會因為某些元素來不及載入造成錯誤，反而拖到整體的時間。</li>
+<li>稍微判讀一下程式變數，有些頗容易看出函式意義的可以改短一點，不怕會不會影響載入，例如: <code>registerSidebarTOC</code>函式應該是跟側邊欄位「文章目錄」、「本站摘要」之間切換的動畫吧，我會再把數字改小一點。</li>
+</ol>
+<p>反覆在 local 端測試會不會造成 Bug 或使用者體驗不佳，之後就可以部屬到 github page 上了。部屬之後可以到 <a href="https://pagespeed.web.dev/">pagespeed</a> 測試一下表現如何，該網頁會給一些診斷建議，但我自己沒有前端經驗不太知道怎麼改，只是拿來測速度。目前的網頁測試在電腦版中大約有 85-89 分的成績。</p>
 ]]></content>
       <tags>
         <tag>blog</tag>
         <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>新年快樂之部落格沿革(?)</title>
+    <url>/2022/01/01/blog-0-source/</url>
+    <content><![CDATA[<p>2022 新年快樂！新年的第一篇文章，來寫個段小故事。</p>
+<p>我相信自己一路走來在各種平台、格式上轉換的痛苦已經算少了，但每次想起依然常常覺得…. 小坎坷阿，希望現在的決定夠有遠見了？</p>
+<span id="more"></span>
+
+<h3 id="純樸的文字編輯器：Evernote"><a href="#純樸的文字編輯器：Evernote" class="headerlink" title="純樸的文字編輯器：Evernote"></a>純樸的文字編輯器：Evernote</h3><p>從高中起一直有寫心得、觀後感與日記的習慣，那時候用的是 Evernote。大學開始寫程式時，也有著紀錄 bug 的習慣，那時候用的是 Line 記事本跟 Evernote。可以想見，這種紀錄方式簡直是災難… 我希望至少 Code 可以是彩色的（好卑微阿），開始尋找替代方案。</p>
+<p>儘管將程式相關的內容從 Evernote 抽離，它依然是我挺喜歡的筆記軟體。但，隨著 Markdown 語法越來越盛行，Evernote 卻遲遲不能夠跟進，加上 Notion 後來出了教育帳戶免費的策略，最後包括慣用的其他紀錄也都轉移到 Notion 去了。</p>
+<h3 id="Blogger"><a href="#Blogger" class="headerlink" title="Blogger"></a>Blogger</h3><p>由於當時有在用 Blogger 在寫遊記，所以第一時間想到的替代工具就是 Google 旗下的 Blogger ，大約也用了一年多。當對排版越來越要求，發現 Blogger 那種 word 編輯器 + html 編輯界面的方式實在是太沒效率了！決定再次轉移。</p>
+<h3 id="HackMD"><a href="#HackMD" class="headerlink" title="HackMD"></a>HackMD</h3><p>開始用 Markdown 在寫技術筆記，並使用 HackMD 作為平台。但 HackMD 有個很大的缺點，它不支援內文搜尋模式….. （曾經支援，後來疑似因為 loading 太大拿掉內文搜索只能找標題）文章一多不記得什麼內容在哪篇文章，這根本災難！只好又開始尋找替代方案</p>
+<p>那個時期不知道為什麼，HackMD 老是不溫不火，號稱是從日本 IT 圈紅回來的軟體，在台灣小有名氣其實也很好用。但感覺一直是維持狀態，更新狀態不大，反而有退一步取消內文搜索功能的這種事件。</p>
+<h3 id="Github-Typora"><a href="#Github-Typora" class="headerlink" title="Github + Typora"></a>Github + Typora</h3><p>腦子動到 Github 的頭上，發展出用離線的 Markdown 編輯器 Typora 加上 Github 做同步。在我開始將 HackMD 的內容拉下來，跟本地的離線檔案整併時發現有些筆記不小心使用到了一些只有 HackMD 支援的 Markdown 延伸語法，導致這些內容在 Typora 上完全沒有效果！！像是亂碼一樣！</p>
+<p>至此，我下定決心，以後寫文章絕對不要再搞出這麼多麻煩，乖乖用基礎的 Markdown 語法，很方便了！別搞那麼多事！</p>
+<h3 id="熱門的部落格平台：Medium"><a href="#熱門的部落格平台：Medium" class="headerlink" title="熱門的部落格平台：Medium"></a>熱門的部落格平台：Medium</h3><p>想有個部落格的心情依舊在，我曾嘗試過 Medium 平台並不是很喜歡。一來是平台的彈性低、程式碼甚至沒辦法上色，非得透過 Gist ；二來是 Medium 還是比較適合英文文章，英文字寫起來格式是又優雅又漂亮，但中文一個斜體就搞得版面很不和諧。後來也就拿來放一些跟 Code 無關的事情，一些搞環境經驗之類的而已。</p>
+<h3 id="初體驗靜態網頁產生器：Pelican"><a href="#初體驗靜態網頁產生器：Pelican" class="headerlink" title="初體驗靜態網頁產生器：Pelican"></a>初體驗靜態網頁產生器：Pelican</h3><p>大四時一度嘗試使用 Github Page + Pelican 做靜態網站生成，挑選這個組合是因為覺得綁定網域得付錢、感覺這部落格又是有一更沒一更不知道哪天會不會荒廢，決定先從免費的試試看，Github Page 是這個選項很好的解答。而 Pelican 是它背後是用 Python 寫的，好歹我比較熟 (不敢一下子踏入 js) 。</p>
+<p>不知道是對網站管理沒經驗、放太多圖片塞到流量還是什麼問題，大約半年覺得網站載入太慢了受不了，加上對版面的主題既不滿意、又改不動，在充滿羞恥的心情下收掉了這個第一個自己架的部落格。</p>
+<h3 id="再次回歸-Github-Typora"><a href="#再次回歸-Github-Typora" class="headerlink" title="再次回歸 Github + Typora"></a>再次回歸 Github + Typora</h3><p>此後，我一直用 Typora + Github 的模式寫筆記，由於有過自己搭建的經驗，每次看到別人的部落格是使用 Github page 的時候，都會多留意兩眼框架與主題，以及一些自己喜歡的小工具、要素等等，也是那時候看到 Hexo 與 Next 主題被很多人採用。過去使用 Peclian 時，我極度討厭文章太長，每次都要卷到最上面才能點目錄跳轉的情況，甚至自己研究用 CSS 弄了一個懸浮目錄，功能是有卻醜到自己受不了，關站很大一個原因也是這樣。</p>
+<h3 id="現在：Hexo"><a href="#現在：Hexo" class="headerlink" title="現在：Hexo"></a>現在：Hexo</h3><p>直到最近看到有在追蹤的一位作者的文章<a href="https://www.ithome.com.tw/voice/148476">技術網站架設經驗雜談</a>，邊看產生了很多共鳴，想到了一直有個小小的期許：能彈性控制的部落格！才鼓起勇氣再次搭建了部落格。這次打算嘗試許多人都採用的 Hexo 來搭建，管他語言不一樣，大不了學學吧！於是最終就有了這個部落格。</p>
+<p>恩，真是一段不長不短的歷史。總之就是告誡自己，不要被漂亮的擴充功能迷惑，換了框架很痛苦的。</p>
+]]></content>
+      <tags>
+        <tag>blog</tag>
+        <tag>about</tag>
       </tags>
   </entry>
   <entry>
