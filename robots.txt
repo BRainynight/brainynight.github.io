@@ -1,6 +1,3 @@
 User-agent: *
 Allow: /
-Allow: /archives/
-Allow: /categories/
-Allow: /tags/ 
 Sitemap: https://brainynight.github.io/sitemap.xml
