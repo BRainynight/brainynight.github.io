@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://brainynight.github.io/2022/01/26/blog-2-theme-Next-update/</loc>
+    <loc>https://brainynight.github.io/2022/01/26/blog-3-speedup/</loc>
     
     <lastmod>2022-01-26</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://brainynight.github.io/2022/01/26/blog-3-speedup/</loc>
+    <loc>https://brainynight.github.io/2022/01/26/blog-2-theme-Next-update/</loc>
     
     <lastmod>2022-01-26</lastmod>
     
@@ -135,13 +135,6 @@
   </url>
   
   <url>
-    <loc>https://brainynight.github.io/tags/hexo/</loc>
-    <lastmod>2022-01-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://brainynight.github.io/tags/about/</loc>
     <lastmod>2022-01-26</lastmod>
     <changefreq>weekly</changefreq>
@@ -149,7 +142,7 @@
   </url>
   
   <url>
-    <loc>https://brainynight.github.io/tags/blog-hexo/</loc>
+    <loc>https://brainynight.github.io/tags/hexo/</loc>
     <lastmod>2022-01-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
