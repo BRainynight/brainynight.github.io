@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
+<meta name="generator" content="Hexo 5.4.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="fInRyOgNeZhOz7qqAsRDN-Hh4cOsfLWjcr2M3c-HnsM">
+  <meta name="msvalidate.01" content="E0E5BF9DC17624BA5DB02DE076050404">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"brainynight.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="減少 Next 主題的載入時間!!">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo Blog 客製化 (3) Next 主題加速">
+<meta property="og:url" content="https://brainynight.github.io/2022/01/26/blog-3-speedup/index.html">
+<meta property="og:site_name" content="Judy&#39;s Blog">
+<meta property="og:description" content="減少 Next 主題的載入時間!!">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2022-01-26T05:43:09.000Z">
+<meta property="article:modified_time" content="2022-01-26T05:50:55.817Z">
+<meta property="article:author" content="Judy">
+<meta property="article:tag" content="blog, hexo">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://brainynight.github.io/2022/01/26/blog-3-speedup/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://brainynight.github.io/2022/01/26/blog-3-speedup/","path":"2022/01/26/blog-3-speedup/","title":"Hexo Blog 客製化 (3) Next 主題加速"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Hexo Blog 客製化 (3) Next 主題加速 | Judy's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QBCDYXBD36"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-QBCDYXBD36","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=fallback" rel="stylesheet">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Judy's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%B9%E8%AE%8A%E5%AD%97%E9%AB%94"><span class="nav-number">1.</span> <span class="nav-text">改變字體</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9A%E5%AD%97%E9%AB%94%E9%A0%90%E8%BC%89%E5%85%A5"><span class="nav-number">1.1.</span> <span class="nav-text">方法一：字體預載入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%9A%E6%8E%9B%E8%BC%89%E5%9C%A8%E7%95%B6%E5%89%8D%E7%B6%B2%E5%9F%9F%E4%B8%8B-%E4%B8%8D%E5%BB%BA%E8%AD%B0"><span class="nav-number">1.2.</span> <span class="nav-text">方法二：掛載在當前網域下 (不建議)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%BE%E5%87%BA%E7%B6%B2%E9%A0%81%E7%9A%84-Bug"><span class="nav-number">2.</span> <span class="nav-text">找出網頁的 Bug</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9-Next-%E4%B8%BB%E9%A1%8C%E7%9A%84%E5%8B%95%E7%95%AB%E6%99%82%E9%96%93"><span class="nav-number">3.</span> <span class="nav-text">修改 Next 主題的動畫時間</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Judy</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://brainynight.github.io/2022/01/26/blog-3-speedup/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Judy">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Judy's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Hexo Blog 客製化 (3) Next 主題加速
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2022-01-26 13:43:09 / 修改時間：13:50:55" itemprop="dateCreated datePublished" datetime="2022-01-26T13:43:09+08:00">2022-01-26</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="閱讀次數" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">閱讀次數：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>3.7k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>7 分鐘</span>
+    </span>
+</div>
+
+            <div class="post-description">減少 Next 主題的載入時間!!</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>說實話，在改字體後還想要網站加速，突然覺得自己有點癡人說夢。改字體本來就會造成額外的負擔! 但還是基於個人的喜好依然想改，照樣記錄一下心路歷程! </p>
+<h2 id="改變字體"><a href="#改變字體" class="headerlink" title="改變字體"></a>改變字體</h2><p>有關  <code>_config.next.yml</code> 與  <code>source\_data\styles.styl</code>  的配置參見前面的兩個章節！</p>
+<ol>
+<li><p>在 <code>_config.next.yml</code> 中配置字體段落</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">font</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> 
+  <span class="token key atrule">host</span><span class="token punctuation">:</span>
+  <span class="token key atrule">global</span><span class="token punctuation">:</span>
+    <span class="token key atrule">external</span><span class="token punctuation">:</span> <span class="token boolean important">false</span> <span class="token comment"># 如果寫 true, 就可以不用考慮後面的第三步了。</span>
+    <span class="token key atrule">family</span><span class="token punctuation">:</span> <span class="token string">'Noto Serif SC'</span></code></pre></li>
+<li><p>在<code>source\_data\variables.styl</code> 中設置環境變數，覆蓋原本的設定檔。</p>
+<p>記得要整段 font 的段落都複製！舉例而言，如果只覆蓋了 <code>font-family-chinese</code> 與 <code>font-family-base</code> 兩個變數，疑似因為在 Next 原本檔案中有其它變數使用到 <code>font-family-base</code>，而他們只會記住舊的變數。這會導致畫面有部份（像是 side bar）更改字體，而有部份依然使用微軟正黑體。</p>
+<pre class="language-stylus" data-language="stylus"><code class="language-stylus"><span class="token variable-declaration"><span class="token variable">$font-family-chinese</span>      <span class="token operator">=</span> <span class="token string">'Noto Serif TC'</span><span class="token punctuation">,</span> <span class="token string">'Microsoft YaHei'</span><span class="token punctuation">;</span> </span>
+
+<span class="token variable-declaration"><span class="token variable">$font-family-base</span>         <span class="token operator">=</span> $font-family-chinese<span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span></span>
+<span class="token variable-declaration"><span class="token variable">$font-family-base</span>         <span class="token operator">=</span> get_font_family<span class="token punctuation">(</span><span class="token string">'global'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> $font-family-chinese<span class="token punctuation">,</span> sans-serif <span class="token keyword">if</span> get_font_family<span class="token punctuation">(</span><span class="token string">'global'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+
+<span class="token variable-declaration"><span class="token variable">$font-family-logo</span>         <span class="token operator">=</span> $font-family-base<span class="token punctuation">;</span></span>
+<span class="token variable-declaration"><span class="token variable">$font-family-logo</span>         <span class="token operator">=</span> get_font_family<span class="token punctuation">(</span><span class="token string">'title'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> $font-family-base <span class="token keyword">if</span> get_font_family<span class="token punctuation">(</span><span class="token string">'title'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+
+<span class="token variable-declaration"><span class="token variable">$font-family-headings</span>     <span class="token operator">=</span> $font-family-base<span class="token punctuation">;</span></span>
+<span class="token variable-declaration"><span class="token variable">$font-family-headings</span>     <span class="token operator">=</span> get_font_family<span class="token punctuation">(</span><span class="token string">'headings'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> $font-family-base <span class="token keyword">if</span> get_font_family<span class="token punctuation">(</span><span class="token string">'headings'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+
+<span class="token variable-declaration"><span class="token variable">$font-family-posts</span>        <span class="token operator">=</span> $font-family-base<span class="token punctuation">;</span></span>
+<span class="token variable-declaration"><span class="token variable">$font-family-posts</span>        <span class="token operator">=</span> get_font_family<span class="token punctuation">(</span><span class="token string">'posts'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> $font-family-base <span class="token keyword">if</span> get_font_family<span class="token punctuation">(</span><span class="token string">'posts'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+
+<span class="token variable-declaration"><span class="token variable">$font-family-monospace</span>    <span class="token operator">=</span> consolas<span class="token punctuation">,</span> Menlo<span class="token punctuation">,</span> monospace<span class="token punctuation">,</span> $font-family-chinese<span class="token punctuation">;</span></span>
+<span class="token variable-declaration"><span class="token variable">$font-family-monospace</span>    <span class="token operator">=</span> get_font_family<span class="token punctuation">(</span><span class="token string">'codes'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> consolas<span class="token punctuation">,</span> Menlo<span class="token punctuation">,</span> monospace<span class="token punctuation">,</span> $font-family-chinese <span class="token keyword">if</span> get_font_family<span class="token punctuation">(</span><span class="token string">'codes'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+</code></pre></li>
+</ol>
+<p>接下來是第三步驟，主要是我發現改字體後的載入速度比使用原生的微軟正黑體慢了至少 0.5~1秒以上吧。我嘗試想加速字體載入的部份，會先寫建議使用的方法，再紀錄一下我嘗試的方法。</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">font</span><span class="token punctuation">:</span>
+  <span class="token key atrule">global</span><span class="token punctuation">:</span>
+    <span class="token key atrule">external</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+    <span class="token key atrule">family</span><span class="token punctuation">:</span> <span class="token string">'Noto Serif SC'</span></code></pre>
+
+
+
+<h3 id="方法一：字體預載入"><a href="#方法一：字體預載入" class="headerlink" title="方法一：字體預載入"></a>方法一：字體預載入</h3><p>來到 <a target="_blank" rel="noopener" href="https://fonts.google.com/noto/specimen/Noto+Serif+TC">google font api</a> ，我們選擇要的粗細(Regular) 之後，左邊會有個彈出視窗，教導我們怎麼在 Html 跟 CSS 中嵌入。</p>
+<blockquote>
+<p>To embed a font, copy the code into the <code>&lt;head&gt;</code> of your html</p>
+</blockquote>
+<pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>preconnect<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://fonts.googleapis.com<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>preconnect<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://fonts.gstatic.com<span class="token punctuation">"</span></span> <span class="token attr-name">crossorigin</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://fonts.googleapis.com/css2?family=Noto+Serif+TC&amp;display=fallback<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre>
+
+<p>可以用 Vscode 之類的在部落格資料夾中找到寫有 <code>&lt;head&gt;</code> 的模板，在我的版本 (V8.9) 中，這位於 <code>themes\next\layout\_layout.njk</code>，直接在 <code>&lt;head&gt;</code> 中把上面那段落貼上，就完成了！</p>
+<p>由於我對網頁前端並不熟悉，不是很確定這是否為關鍵因素。但在我使用預設的 config <code>external:true</code> 並把 preload 註解掉之後，透過 <a target="_blank" rel="noopener" href="https://pagespeed.web.dev/">pagespeed</a> 測試，載入時間落差約有一秒左右。</p>
+<h3 id="方法二：掛載在當前網域下-不建議"><a href="#方法二：掛載在當前網域下-不建議" class="headerlink" title="方法二：掛載在當前網域下 (不建議)"></a>方法二：掛載在當前網域下 (不建議)</h3><p>在 <code>source\_data\styles.styl</code> 中添加字體的匯入：</p>
+<pre class="language-stylus" data-language="stylus"><code class="language-stylus"><span class="token atrule-declaration"><span class="token atrule">@font-face</span> <span class="token punctuation">&#123;</span></span>
+  <span class="token property-declaration"><span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">'Noto Serif TC'</span><span class="token punctuation">;</span></span>
+  <span class="token property-declaration"><span class="token property">font-weight</span><span class="token punctuation">:</span> <span class="token number">400</span><span class="token punctuation">;</span></span>
+  <span class="token property-declaration"><span class="token property">font-style</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span></span>
+  <span class="token property-declaration"><span class="token property">font-display</span><span class="token punctuation">:</span> fallback<span class="token punctuation">;</span></span>
+  src<span class="token punctuation">:</span> <span class="token func"><span class="token function">local</span><span class="token punctuation">(</span><span class="token string">'Noto Serif TC'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> local<span class="token punctuation">(</span><span class="token string">'Noto-Serif-TC'</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+       <span class="token func"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string">'/fonts/NotoSerifTC-Regular.otf'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+<p><code>font-display: fallback</code> 可以使網頁先使用預設字體（微軟正黑體）這種本身就存在於電腦中的字體，使內容可以先顯示。而背景會默默把設定的 Noto Serif TC 下載，事後置換。</p>
+<p>選擇掛在於子網域未必會比較好，因為完整的 otf 檔案高達 MB 級，儘管設置了字體置換，等到完整的載入字體也需要長達 10 秒的時間 (視網路速度吧)。而 google font api 本身有把字體切割成很多部份，讓網頁可以選擇載入有用到的部份字形即可，節省下載量。</p>
+<h2 id="找出網頁的-Bug"><a href="#找出網頁的-Bug" class="headerlink" title="找出網頁的 Bug"></a>找出網頁的 Bug</h2><p>可以打開 chrome <a target="_blank" rel="noopener" href="https://support.google.com/campaignmanager/answer/2828688?hl=zh-Hant">開發人員工具</a> 中 “Network” 項目，並 ctrl+R  重新整理網頁。檢查一下都是哪些檔案拖垮了網站速度。我當時發現有一些找不到路徑的字體檔案、Hexo 在產生靜態頁面時有寫的 warning 都有影響，所以修到沒 bug 在推上網路很重要。務必確保網頁在載入的期間只有載入<strong>需要的元件</strong>，不需要花時間試誤。</p>
+<pre class="language-none"><code class="language-none">Warning: Accessing non-existent property &#39;filename&#39; of module exports inside circular dependency</code></pre>
+
+<p>Google 一番之後，參考<a target="_blank" rel="noopener" href="https://www.haoyizebo.com/posts/710984d0/">此篇文章</a> 發現是 <code>nib</code> 套件出了問題。我的解決方法沒有順著他的教學，先嘗試重新安裝 <code>hexo-renderer-stylus</code> 但並沒有用。添加 <code>&quot;resolutions&quot;</code> 的部分忘記有沒有嘗試過，或許還是失敗了吧。</p>
+<p>最終，我是在 <code>package-lock.json</code> 的 <code>nib</code> 套件下找到: </p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml">"stylus"<span class="token punctuation">:</span>0.54.5</code></pre>
+
+<p>修改成</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">"stylus"</span><span class="token punctuation">:</span> 0.54.8</code></pre>
+
+<p><code>npm install</code> 之後參照輸出的資訊內容，先後下指令 <code>npm audit fix</code> 與 <code>npm audit fix --force</code> 解決了這個問題。</p>
+<h2 id="修改-Next-主題的動畫時間"><a href="#修改-Next-主題的動畫時間" class="headerlink" title="修改 Next 主題的動畫時間"></a>修改 Next 主題的動畫時間</h2><p>由於不同版本的 Next 程式碼內容也可能有所不同，參考自: <a target="_blank" rel="noopener" href="https://blog.csdn.net/Domino_b/article/details/81704118">Hexo NexT 主題修改動畫效果速度</a>。</p>
+<ol>
+<li>使用 Vscode 之類的編輯器在 Next 主題中尋找關鍵字 <code>duration</code>，它可能出現在很多 js 檔案中，有些預設是 200、有些是 500。</li>
+<li>直接改數字，我先改成 100 之後大概看一下效果，網頁載入的速度明顯有提升! 可以先在 localhost 上測試。不敢貿然換成 0 的原因是不確定會不會因為某些元素來不及載入造成錯誤，反而拖到整體的時間。</li>
+<li>稍微判讀一下程式變數，有些頗容易看出函式意義的可以改短一點，不怕會不會影響載入，例如: <code>registerSidebarTOC</code>函式應該是跟側邊欄位「文章目錄」、「本站摘要」之間切換的動畫吧，我會再把數字改小一點。</li>
+</ol>
+<p>反覆在 local 端測試會不會造成 Bug 或使用者體驗不佳，之後就可以部屬到 github page 上了。部屬之後可以到 <a target="_blank" rel="noopener" href="https://pagespeed.web.dev/">pagespeed</a> 測試一下表現如何，該網頁會給一些診斷建議，但我自己沒有前端經驗不太知道怎麼改，只是拿來測速度。目前的網頁測試在電腦版中大約有 85-89 分的成績。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/blog-hexo/" rel="tag"># blog, hexo</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/01/26/blog-2-theme-Next-update/" rel="prev" title="Hexo Blog 客製化 (2) Next 主題更新與 PrismJs 啟用">
+                  <i class="fa fa-chevron-left"></i> Hexo Blog 客製化 (2) Next 主題更新與 PrismJs 啟用
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Judy</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">37k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">1:07</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
