@@ -1,4 +1,6 @@
-<!DOCTYPE html><html lang="zh-TW"><head>
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
@@ -19,12 +21,12 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"brainynight.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInUp","post_body":"fadeIn","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"brainynight.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInUp","post_body":"fadeIn","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 <meta name="description" content="研究 Python 官方文件中的 Pickle 模組，探討常發生的 Pickle error 問題。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python 資料永久化套件:Pickle (1)">
 <meta property="og:url" content="https://brainynight.github.io/2022/01/17/pickle-basic/index.html">
-<meta property="og:site_name" content="Judy's Blog">
+<meta property="og:site_name" content="Judy&#39;s Blog">
 <meta property="og:description" content="研究 Python 官方文件中的 Pickle 模組，探討常發生的 Pickle error 問題。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2022-01-17T11:46:50.000Z">
@@ -45,9 +47,9 @@
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>Python 資料永久化套件:Pickle (1) | Judy's Blog</title>
   
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-QBCDYXBD36"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QBCDYXBD36"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-QBCDYXBD36","only_pageview":false}</script>
-  
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
 
 
 
@@ -57,15 +59,15 @@
   </noscript>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&amp;display=fallback" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=fallback" rel="stylesheet">
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage">
+<body itemscope itemtype="http://schema.org/WebPage">
   <div class="headband"></div>
 
   <main class="main">
-    <header class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切換導航欄" role="button">
@@ -114,7 +116,9 @@
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off" maxlength="80" placeholder="搜尋..." spellcheck="false" type="search" class="search-input">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
   </div>
   <span class="popup-btn-close" role="button">
     <i class="fa fa-times-circle"></i>
@@ -153,12 +157,12 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E9%BA%BC%E7%89%A9%E4%BB%B6%E5%8F%AF%E4%BB%A5%E8%A2%AB-Pickle-Unpickle"><span class="nav-number">1.</span> <span class="nav-text">什麼物件可以被 Pickle / Unpickle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pickle-Function-Class"><span class="nav-number">2.</span> <span class="nav-text">Pickle Function/Class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pickle-Class-Instance"><span class="nav-number">3.</span> <span class="nav-text">Pickle Class Instance</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%BB%E6%84%8F%E7%9A%84%E8%A8%AD%E8%A8%88"><span class="nav-number">3.1.</span> <span class="nav-text">刻意的設計</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B0%B8%E4%B9%85%E4%BF%9D%E5%AD%98%E7%89%A9%E4%BB%B6%E7%9A%84%E7%89%88%E6%9C%AC"><span class="nav-number">3.2.</span> <span class="nav-text">永久保存物件的版本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%B9%E8%AE%8A-Pickle-%E6%99%82%E7%9A%84%E9%A0%90%E8%A8%AD%E8%A1%8C%E7%82%BA"><span class="nav-number">4.</span> <span class="nav-text">改變 Pickle 時的預設行為</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E7%B5%84%E6%96%B9%E6%B3%95"><span class="nav-number">4.1.</span> <span class="nav-text">模組方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#object-getnewargs-ex"><span class="nav-number">4.1.1.</span> <span class="nav-text">object.__getnewargs_ex__()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#object-getstate"><span class="nav-number">4.1.2.</span> <span class="nav-text">object.__getstate__()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#object-setstate-state"><span class="nav-number">4.1.3.</span> <span class="nav-text">object.__setstate__(state)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%99%95%E7%90%86%E6%93%81%E6%9C%89%E7%8B%80%E6%85%8B%E7%9A%84%E7%89%A9%E4%BB%B6-Handling-Stateful-Objects"><span class="nav-number">4.2.</span> <span class="nav-text">處理擁有狀態的物件 (Handling Stateful Objects)</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E9%BA%BC%E7%89%A9%E4%BB%B6%E5%8F%AF%E4%BB%A5%E8%A2%AB-Pickle-Unpickle"><span class="nav-number">1.</span> <span class="nav-text">什麼物件可以被 Pickle &#x2F; Unpickle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pickle-Function-Class"><span class="nav-number">2.</span> <span class="nav-text">Pickle Function&#x2F;Class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pickle-Class-Instance"><span class="nav-number">3.</span> <span class="nav-text">Pickle Class Instance</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%BB%E6%84%8F%E7%9A%84%E8%A8%AD%E8%A8%88"><span class="nav-number">3.1.</span> <span class="nav-text">刻意的設計</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B0%B8%E4%B9%85%E4%BF%9D%E5%AD%98%E7%89%A9%E4%BB%B6%E7%9A%84%E7%89%88%E6%9C%AC"><span class="nav-number">3.2.</span> <span class="nav-text">永久保存物件的版本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%B9%E8%AE%8A-Pickle-%E6%99%82%E7%9A%84%E9%A0%90%E8%A8%AD%E8%A1%8C%E7%82%BA"><span class="nav-number">4.</span> <span class="nav-text">改變 Pickle 時的預設行為</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E7%B5%84%E6%96%B9%E6%B3%95"><span class="nav-number">4.1.</span> <span class="nav-text">模組方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#object-getnewargs-ex"><span class="nav-number">4.1.1.</span> <span class="nav-text">object.__getnewargs_ex__()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#object-getstate"><span class="nav-number">4.1.2.</span> <span class="nav-text">object.__getstate__()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#object-setstate-state"><span class="nav-number">4.1.3.</span> <span class="nav-text">object.__setstate__(state)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%99%95%E7%90%86%E6%93%81%E6%9C%89%E7%8B%80%E6%85%8B%E7%9A%84%E7%89%A9%E4%BB%B6-Handling-Stateful-Objects"><span class="nav-number">4.2.</span> <span class="nav-text">處理擁有狀態的物件 (Handling Stateful Objects)</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
         <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author site-overview-item animated" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
   <p class="site-author-name" itemprop="name">Judy</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -211,16 +215,16 @@
   
   
 
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
     <link itemprop="mainEntityOfPage" href="https://brainynight.github.io/2022/01/17/pickle-basic/">
 
-    <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
       <meta itemprop="name" content="Judy">
       <meta itemprop="description" content="">
     </span>
 
-    <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Judy's Blog">
     </span>
       <header class="post-header">
@@ -260,7 +264,7 @@
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
-      <span class="post-meta-item-text">所需閱讀時間 ≈</span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
       <span>12 分鐘</span>
     </span>
 </div>
@@ -298,7 +302,7 @@
 lambda_example <span class="token operator">=</span> <span class="token keyword">lambda</span> <span class="token punctuation">:</span> <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"this is lambda"</span><span class="token punctuation">)</span>
 
 In <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">:</span> lambda_example<span class="token punctuation">.</span>__name__ <span class="token comment"># 所有的 lambda 函式名稱都是 lambda </span>
-Out<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'&lt;lambda&gt;'</span>
+Out<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'&lt;lambda>'</span>
 
 In <span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">:</span> function_example<span class="token punctuation">.</span>__name__ <span class="token comment"># function 的名稱是自己的</span>
 Out<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'function_example'</span></code></pre>
@@ -315,7 +319,7 @@ Out<span class="token punctuation">[</span><span class="token number">6</span><s
 <pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pickle 
 <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"function.pkl"</span><span class="token punctuation">,</span> <span class="token string">"rb"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
     bar <span class="token operator">=</span> pickle<span class="token punctuation">.</span>load<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
-<span class="token comment"># AttributeError: Can't get attribute 'bar' on &lt;module '__main__'&gt;</span></code></pre>
+<span class="token comment"># AttributeError: Can't get attribute 'bar' on &lt;module '__main__'></span></code></pre>
 
 <p>類別也一樣，被儲存的實際上只有名稱而沒有程式碼，若在 Unpickle 的環境中沒有定義該類別，一樣會引發 <code>AttributeError</code>。</p>
 <h2 id="Pickle-Class-Instance"><a href="#Pickle-Class-Instance" class="headerlink" title="Pickle Class Instance"></a><a target="_blank" rel="noopener" href="https://docs.python.org/3/library/pickle.html#pickling-class-instances">Pickle Class Instance</a></h2><p>與 Function 相同，儲存類別的方式也是透過 named reference 儲存(classes are pickled by named reference)。</p>
@@ -336,7 +340,7 @@ Out<span class="token punctuation">[</span><span class="token number">6</span><s
         self<span class="token punctuation">.</span>fake_attr <span class="token operator">=</span> <span class="token string">"This is fake"</span>
         
 foo <span class="token operator">=</span> Foo<span class="token punctuation">(</span><span class="token punctuation">)</span>
-pickled_info <span class="token operator">=</span> save<span class="token punctuation">(</span>foo<span class="token punctuation">)</span> <span class="token comment"># (__main__.Foo, {'inst_arr': 'Instance attribute!'})</span>
+pickled_info <span class="token operator">=</span> save<span class="token punctuation">(</span>foo<span class="token punctuation">)</span> <span class="token comment"># (__main__.Foo, &#123;'inst_arr': 'Instance attribute!'&#125;)</span>
 recover_foo <span class="token operator">=</span> load<span class="token punctuation">(</span><span class="token operator">*</span>pickled_info<span class="token punctuation">)</span></code></pre>
 
 <p>如果我們想要復原存下來的實例，程式碼中必須保留該類別的定義，否則會引發錯誤。上面僅僅是用程式說明邏輯，現在實際套用 pickle 套件</p>
@@ -355,14 +359,14 @@ foo <span class="token operator">=</span> Foo<span class="token punctuation">(</
 <pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pickle
 <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"test.pkl"</span><span class="token punctuation">,</span> <span class="token string">"rb"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
     my_foo <span class="token operator">=</span> pickle<span class="token punctuation">.</span>load<span class="token punctuation">(</span>f<span class="token punctuation">)</span>
-<span class="token comment"># AttributeError: Can't get attribute 'Foo' on &lt;module '__main__'&gt;</span></code></pre>
+<span class="token comment"># AttributeError: Can't get attribute 'Foo' on &lt;module '__main__'></span></code></pre>
 
 <ul>
 <li><code>pickle.dump</code> ：記住該實例所使用類別的名字 (named reference)、與其實例屬性</li>
 <li><code>pickle.load</code>：試圖在程式中尋找記住的類別名字，在不初始化的情況(不調用 <code>__init__</code>)下，默默的創建一個實例，並對所有的實例屬性套用 <code>pkl</code> 中所記憶的數值。</li>
 </ul>
 <p>如果 pickle 沒辦法在程式中尋找到該 named reference 就會引發例外，不是定義在 Top Level 的函式、類別會沒有辦法透過 named reference 取得；而所有的 lambda function 都共享同一個 name reference , <code>&lt;lambda&gt;</code>，代表在復原的時候根本沒辦法找到存到的是哪個 lambda 函式，所以在試圖 dump 的時候就先被排除了。</p>
-<pre class="language-none"><code class="language-none">PicklingError: Can't pickle &lt;function &lt;lambda&gt; at 0x00000213F8790948&gt;: attribute lookup &lt;lambda&gt; on __main__ failed</code></pre>
+<pre class="language-none"><code class="language-none">PicklingError: Can&#39;t pickle &lt;function &lt;lambda&gt; at 0x00000213F8790948&gt;: attribute lookup &lt;lambda&gt; on __main__ failed</code></pre>
 
 <h3 id="刻意的設計"><a href="#刻意的設計" class="headerlink" title="刻意的設計"></a>刻意的設計</h3><p>不儲存有關類別的屬性、類別的程式碼是故意的設計，這樣做的好處是：如果在 v1 版本中我們儲存了某個實例，後來發現該實例對應的類別有錯、或是對類別擴增了方法而修改程式變成 v2 版本。我們依然可以在 v2 版本中讀取曾經存下來的實例，即使他是在前面版本 (v1) 中存下來的。</p>
 <pre class="language-python" data-language="python"><code class="language-python"><span class="token comment"># V1</span>
@@ -395,12 +399,12 @@ dog<span class="token punctuation">.</span>voice<span class="token punctuation">
 <h4 id="object-getstate"><a href="#object-getstate" class="headerlink" title="object.__getstate__()"></a><code>object.__getstate__()</code></h4><p>類別可以可以決定屬於它們的實例要如何被打包，如果類別定義了此方法，pickle 時會直接呼叫此方法，用它的回傳作為實例所存下來的內容。而不是一般使用實例 pickle 的預設方式：使用 <code>__dict__</code> 作為存下的內容。</p>
 <h4 id="object-setstate-state"><a href="#object-setstate-state" class="headerlink" title="object.__setstate__(state)"></a><code>object.__setstate__(state)</code></h4><p>若類別有定義此方法，Unpickle 的時候就會將得到的 state 傳入此方法。如果類別有定義此方法，則 state 物件不限定要是字典，因為在復原物件的時候 <code>__setstate__</code> 自己有一套規則了！</p>
 <p>但如果沒有實踐此方法，被存下來的 state (pickled state) 必須是字典的形式，這樣才能把它指派給新的(復原的) 實例的字典。大概有點像下面這種感覺吧：</p>
-<pre class="language-python" data-language="python"><code class="language-python">saved_pkl <span class="token operator">=</span> <span class="token punctuation">{</span> arg1<span class="token punctuation">:</span>val1<span class="token punctuation">,</span> arg2<span class="token punctuation">:</span>val2<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">}</span>
+<pre class="language-python" data-language="python"><code class="language-python">saved_pkl <span class="token operator">=</span> <span class="token punctuation">&#123;</span> arg1<span class="token punctuation">:</span>val1<span class="token punctuation">,</span> arg2<span class="token punctuation">:</span>val2<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token punctuation">&#125;</span>
 new_obj<span class="token punctuation">.</span>__dict__ <span class="token operator">=</span> saved_pkl</code></pre>
 
 <p>關於 <code>__getstate__</code> 與 <code>__setstate__</code> 方法，可以參考  <a target="_blank" rel="noopener" href="https://docs.python.org/3/library/pickle.html#pickle-state">Handling Stateful Objects</a> 有更多資訊。</p>
 <h3 id="處理擁有狀態的物件-Handling-Stateful-Objects"><a href="#處理擁有狀態的物件-Handling-Stateful-Objects" class="headerlink" title="處理擁有狀態的物件 (Handling Stateful Objects)"></a>處理擁有狀態的物件 (Handling Stateful Objects)</h3><p>這個例子將展示如何 modify 類別的 pickle 行為：<code>TextReader</code> 類別打開一個文字檔，當 <code>readline</code> 被呼叫的時候會回傳行數以及該行內容。如果 <code>TextReader</code> 實例被打包，除了文件物件(file object) 之外的屬性都可以被儲存。當實例復原時(unpickle)，檔案會被重新開啟，並且從上次最後讀取的位置繼續。這樣的功能就是透過 <code>__setstate__()</code> 和 <code>__getstate__()</code> 方法達成的，如果不實做這兩個方法，在嘗試 <code>dump</code> 的時候就會引發例外</p>
-<pre class="language-none"><code class="language-none">TypeError: cannot serialize '_io.TextIOWrapper' object</code></pre>
+<pre class="language-none"><code class="language-none">TypeError: cannot serialize &#39;_io.TextIOWrapper&#39; object</code></pre>
 
 <p>這個類別在實做的時候做了幾件事：</p>
 <ul>
@@ -497,7 +501,7 @@ new_reader<span class="token punctuation">.</span>readline<span class="token pun
 
 
 <div class="copyright">
-  © 
+  &copy; 
   <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
@@ -520,7 +524,7 @@ new_reader<span class="token punctuation">.</span>readline<span class="token pun
 </div>
 <div class="busuanzi-count">
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> &amp; <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
   </div>
 
     </div>
@@ -528,23 +532,22 @@ new_reader<span class="token punctuation">.</span>readline<span class="token pun
 
   
   <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
 
   
 <script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
-
+<script src="/js/third-party/search/local-search.js"></script>
 
 
 
 
 
   
-  <script async="" src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 
 
 
-
-
-<script src="/bundle.js"></script></body></html>
+</body>
+</html>
