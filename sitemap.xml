@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://brainynight.github.io/2022/01/01/blog-0-source/</loc>
+    <loc>https://brainynight.github.io/2021/12/30/blog-0-hexo-build-env/</loc>
     
     <lastmod>2022-01-26</lastmod>
     
@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>https://brainynight.github.io/2021/12/30/blog-0-hexo-build-env/</loc>
+    <loc>https://brainynight.github.io/2022/01/01/blog-0-source/</loc>
     
     <lastmod>2022-01-26</lastmod>
     
@@ -128,13 +128,6 @@
 
   
   <url>
-    <loc>https://brainynight.github.io/tags/about/</loc>
-    <lastmod>2022-01-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://brainynight.github.io/tags/blog/</loc>
     <lastmod>2022-01-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -143,6 +136,13 @@
   
   <url>
     <loc>https://brainynight.github.io/tags/hexo/</loc>
+    <lastmod>2022-01-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://brainynight.github.io/tags/about/</loc>
     <lastmod>2022-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -170,14 +170,14 @@
   </url>
   
   <url>
-    <loc>https://brainynight.github.io/tags/logging/</loc>
+    <loc>https://brainynight.github.io/tags/visualize/</loc>
     <lastmod>2022-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://brainynight.github.io/tags/visualize/</loc>
+    <loc>https://brainynight.github.io/tags/logging/</loc>
     <lastmod>2022-01-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
