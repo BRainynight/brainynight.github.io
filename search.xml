@@ -1,32 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>新年快樂之部落格沿革(?)</title>
-    <url>/2022/01/01/blog-0-source/</url>
-    <content><![CDATA[<p>2022 新年快樂！新年的第一篇文章，來寫個段小故事。</p>
-<p>我相信自己一路走來在各種平台、格式上轉換的痛苦已經算少了，但每次想起依然常常覺得…. 小坎坷阿，希望現在的決定夠有遠見了？</p>
-<span id="more"></span>
-
-<h3 id="純樸的文字編輯器：Evernote"><a href="#純樸的文字編輯器：Evernote" class="headerlink" title="純樸的文字編輯器：Evernote"></a>純樸的文字編輯器：Evernote</h3><p>從高中起一直有寫心得、觀後感與日記的習慣，那時候用的是 Evernote。大學開始寫程式時，也有著紀錄 bug 的習慣，那時候用的是 Line 記事本跟 Evernote。可以想見，這種紀錄方式簡直是災難… 我希望至少 Code 可以是彩色的（好卑微阿），開始尋找替代方案。</p>
-<p>儘管將程式相關的內容從 Evernote 抽離，它依然是我挺喜歡的筆記軟體。但，隨著 Markdown 語法越來越盛行，Evernote 卻遲遲不能夠跟進，加上 Notion 後來出了教育帳戶免費的策略，最後包括慣用的其他紀錄也都轉移到 Notion 去了。</p>
-<h3 id="Blogger"><a href="#Blogger" class="headerlink" title="Blogger"></a>Blogger</h3><p>由於當時有在用 Blogger 在寫遊記，所以第一時間想到的替代工具就是 Google 旗下的 Blogger ，大約也用了一年多。當對排版越來越要求，發現 Blogger 那種 word 編輯器 + html 編輯界面的方式實在是太沒效率了！決定再次轉移。</p>
-<h3 id="HackMD"><a href="#HackMD" class="headerlink" title="HackMD"></a>HackMD</h3><p>開始用 Markdown 在寫技術筆記，並使用 HackMD 作為平台。但 HackMD 有個很大的缺點，它不支援內文搜尋模式….. （曾經支援，後來疑似因為 loading 太大拿掉內文搜索只能找標題）文章一多不記得什麼內容在哪篇文章，這根本災難！只好又開始尋找替代方案</p>
-<p>那個時期不知道為什麼，HackMD 老是不溫不火，號稱是從日本 IT 圈紅回來的軟體，在台灣小有名氣其實也很好用。但感覺一直是維持狀態，更新狀態不大，反而有退一步取消內文搜索功能的這種事件。</p>
-<h3 id="Github-Typora"><a href="#Github-Typora" class="headerlink" title="Github + Typora"></a>Github + Typora</h3><p>腦子動到 Github 的頭上，發展出用離線的 Markdown 編輯器 Typora 加上 Github 做同步。在我開始將 HackMD 的內容拉下來，跟本地的離線檔案整併時發現有些筆記不小心使用到了一些只有 HackMD 支援的 Markdown 延伸語法，導致這些內容在 Typora 上完全沒有效果！！像是亂碼一樣！</p>
-<p>至此，我下定決心，以後寫文章絕對不要再搞出這麼多麻煩，乖乖用基礎的 Markdown 語法，很方便了！別搞那麼多事！</p>
-<h3 id="熱門的部落格平台：Medium"><a href="#熱門的部落格平台：Medium" class="headerlink" title="熱門的部落格平台：Medium"></a>熱門的部落格平台：Medium</h3><p>想有個部落格的心情依舊在，我曾嘗試過 Medium 平台並不是很喜歡。一來是平台的彈性低、程式碼甚至沒辦法上色，非得透過 Gist ；二來是 Medium 還是比較適合英文文章，英文字寫起來格式是又優雅又漂亮，但中文一個斜體就搞得版面很不和諧。後來也就拿來放一些跟 Code 無關的事情，一些搞環境經驗之類的而已。</p>
-<h3 id="初體驗靜態網頁產生器：Pelican"><a href="#初體驗靜態網頁產生器：Pelican" class="headerlink" title="初體驗靜態網頁產生器：Pelican"></a>初體驗靜態網頁產生器：Pelican</h3><p>大四時一度嘗試使用 Github Page + Pelican 做靜態網站生成，挑選這個組合是因為覺得綁定網域得付錢、感覺這部落格又是有一更沒一更不知道哪天會不會荒廢，決定先從免費的試試看，Github Page 是這個選項很好的解答。而 Pelican 是它背後是用 Python 寫的，好歹我比較熟 (不敢一下子踏入 js) 。</p>
-<p>不知道是對網站管理沒經驗、放太多圖片塞到流量還是什麼問題，大約半年覺得網站載入太慢了受不了，加上對版面的主題既不滿意、又改不動，在充滿羞恥的心情下收掉了這個第一個自己架的部落格。</p>
-<h3 id="再次回歸-Github-Typora"><a href="#再次回歸-Github-Typora" class="headerlink" title="再次回歸 Github + Typora"></a>再次回歸 Github + Typora</h3><p>此後，我一直用 Typora + Github 的模式寫筆記，由於有過自己搭建的經驗，每次看到別人的部落格是使用 Github page 的時候，都會多留意兩眼框架與主題，以及一些自己喜歡的小工具、要素等等，也是那時候看到 Hexo 與 Next 主題被很多人採用。過去使用 Peclian 時，我極度討厭文章太長，每次都要卷到最上面才能點目錄跳轉的情況，甚至自己研究用 CSS 弄了一個懸浮目錄，功能是有卻醜到自己受不了，關站很大一個原因也是這樣。</p>
-<h3 id="現在：Hexo"><a href="#現在：Hexo" class="headerlink" title="現在：Hexo"></a>現在：Hexo</h3><p>直到最近看到有在追蹤的一位作者的文章<a href="https://www.ithome.com.tw/voice/148476">技術網站架設經驗雜談</a>，邊看產生了很多共鳴，想到了一直有個小小的期許：能彈性控制的部落格！才鼓起勇氣再次搭建了部落格。這次打算嘗試許多人都採用的 Hexo 來搭建，管他語言不一樣，大不了學學吧！於是最終就有了這個部落格。</p>
-<p>恩，真是一段不長不短的歷史。總之就是告誡自己，不要被漂亮的擴充功能迷惑，換了框架很痛苦的。</p>
-]]></content>
-      <tags>
-        <tag>about</tag>
-        <tag>blog</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>建置 Hexo 部落格</title>
     <url>/2021/12/30/blog-0-hexo-build-env/</url>
     <content><![CDATA[<h2 id="前置作業"><a href="#前置作業" class="headerlink" title="前置作業"></a>前置作業</h2><ol>
@@ -242,6 +216,32 @@ public&#x2F;
       </tags>
   </entry>
   <entry>
+    <title>新年快樂之部落格沿革(?)</title>
+    <url>/2022/01/01/blog-0-source/</url>
+    <content><![CDATA[<p>2022 新年快樂！新年的第一篇文章，來寫個段小故事。</p>
+<p>我相信自己一路走來在各種平台、格式上轉換的痛苦已經算少了，但每次想起依然常常覺得…. 小坎坷阿，希望現在的決定夠有遠見了？</p>
+<span id="more"></span>
+
+<h3 id="純樸的文字編輯器：Evernote"><a href="#純樸的文字編輯器：Evernote" class="headerlink" title="純樸的文字編輯器：Evernote"></a>純樸的文字編輯器：Evernote</h3><p>從高中起一直有寫心得、觀後感與日記的習慣，那時候用的是 Evernote。大學開始寫程式時，也有著紀錄 bug 的習慣，那時候用的是 Line 記事本跟 Evernote。可以想見，這種紀錄方式簡直是災難… 我希望至少 Code 可以是彩色的（好卑微阿），開始尋找替代方案。</p>
+<p>儘管將程式相關的內容從 Evernote 抽離，它依然是我挺喜歡的筆記軟體。但，隨著 Markdown 語法越來越盛行，Evernote 卻遲遲不能夠跟進，加上 Notion 後來出了教育帳戶免費的策略，最後包括慣用的其他紀錄也都轉移到 Notion 去了。</p>
+<h3 id="Blogger"><a href="#Blogger" class="headerlink" title="Blogger"></a>Blogger</h3><p>由於當時有在用 Blogger 在寫遊記，所以第一時間想到的替代工具就是 Google 旗下的 Blogger ，大約也用了一年多。當對排版越來越要求，發現 Blogger 那種 word 編輯器 + html 編輯界面的方式實在是太沒效率了！決定再次轉移。</p>
+<h3 id="HackMD"><a href="#HackMD" class="headerlink" title="HackMD"></a>HackMD</h3><p>開始用 Markdown 在寫技術筆記，並使用 HackMD 作為平台。但 HackMD 有個很大的缺點，它不支援內文搜尋模式….. （曾經支援，後來疑似因為 loading 太大拿掉內文搜索只能找標題）文章一多不記得什麼內容在哪篇文章，這根本災難！只好又開始尋找替代方案</p>
+<p>那個時期不知道為什麼，HackMD 老是不溫不火，號稱是從日本 IT 圈紅回來的軟體，在台灣小有名氣其實也很好用。但感覺一直是維持狀態，更新狀態不大，反而有退一步取消內文搜索功能的這種事件。</p>
+<h3 id="Github-Typora"><a href="#Github-Typora" class="headerlink" title="Github + Typora"></a>Github + Typora</h3><p>腦子動到 Github 的頭上，發展出用離線的 Markdown 編輯器 Typora 加上 Github 做同步。在我開始將 HackMD 的內容拉下來，跟本地的離線檔案整併時發現有些筆記不小心使用到了一些只有 HackMD 支援的 Markdown 延伸語法，導致這些內容在 Typora 上完全沒有效果！！像是亂碼一樣！</p>
+<p>至此，我下定決心，以後寫文章絕對不要再搞出這麼多麻煩，乖乖用基礎的 Markdown 語法，很方便了！別搞那麼多事！</p>
+<h3 id="熱門的部落格平台：Medium"><a href="#熱門的部落格平台：Medium" class="headerlink" title="熱門的部落格平台：Medium"></a>熱門的部落格平台：Medium</h3><p>想有個部落格的心情依舊在，我曾嘗試過 Medium 平台並不是很喜歡。一來是平台的彈性低、程式碼甚至沒辦法上色，非得透過 Gist ；二來是 Medium 還是比較適合英文文章，英文字寫起來格式是又優雅又漂亮，但中文一個斜體就搞得版面很不和諧。後來也就拿來放一些跟 Code 無關的事情，一些搞環境經驗之類的而已。</p>
+<h3 id="初體驗靜態網頁產生器：Pelican"><a href="#初體驗靜態網頁產生器：Pelican" class="headerlink" title="初體驗靜態網頁產生器：Pelican"></a>初體驗靜態網頁產生器：Pelican</h3><p>大四時一度嘗試使用 Github Page + Pelican 做靜態網站生成，挑選這個組合是因為覺得綁定網域得付錢、感覺這部落格又是有一更沒一更不知道哪天會不會荒廢，決定先從免費的試試看，Github Page 是這個選項很好的解答。而 Pelican 是它背後是用 Python 寫的，好歹我比較熟 (不敢一下子踏入 js) 。</p>
+<p>不知道是對網站管理沒經驗、放太多圖片塞到流量還是什麼問題，大約半年覺得網站載入太慢了受不了，加上對版面的主題既不滿意、又改不動，在充滿羞恥的心情下收掉了這個第一個自己架的部落格。</p>
+<h3 id="再次回歸-Github-Typora"><a href="#再次回歸-Github-Typora" class="headerlink" title="再次回歸 Github + Typora"></a>再次回歸 Github + Typora</h3><p>此後，我一直用 Typora + Github 的模式寫筆記，由於有過自己搭建的經驗，每次看到別人的部落格是使用 Github page 的時候，都會多留意兩眼框架與主題，以及一些自己喜歡的小工具、要素等等，也是那時候看到 Hexo 與 Next 主題被很多人採用。過去使用 Peclian 時，我極度討厭文章太長，每次都要卷到最上面才能點目錄跳轉的情況，甚至自己研究用 CSS 弄了一個懸浮目錄，功能是有卻醜到自己受不了，關站很大一個原因也是這樣。</p>
+<h3 id="現在：Hexo"><a href="#現在：Hexo" class="headerlink" title="現在：Hexo"></a>現在：Hexo</h3><p>直到最近看到有在追蹤的一位作者的文章<a href="https://www.ithome.com.tw/voice/148476">技術網站架設經驗雜談</a>，邊看產生了很多共鳴，想到了一直有個小小的期許：能彈性控制的部落格！才鼓起勇氣再次搭建了部落格。這次打算嘗試許多人都採用的 Hexo 來搭建，管他語言不一樣，大不了學學吧！於是最終就有了這個部落格。</p>
+<p>恩，真是一段不長不短的歷史。總之就是告誡自己，不要被漂亮的擴充功能迷惑，換了框架很痛苦的。</p>
+]]></content>
+      <tags>
+        <tag>blog</tag>
+        <tag>about</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo Blog 客製化 (1) 部落格指令自動化</title>
     <url>/2021/12/30/blog-1-automatic-command/</url>
     <content><![CDATA[<p>想用原始一點的方法來搞個半自動化，第一步當然就是不要打那麼多指令！</p>
@@ -443,197 +443,6 @@ email<span class="token punctuation">.</span>mime<span class="token punctuation"
         <tag>python</tag>
         <tag>官方文件</tag>
         <tag>pickle</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python 日誌模組 Logging (1)</title>
-    <url>/2022/01/20/python-logger-quick/</url>
-    <content><![CDATA[<p>在開發 Python 專案時，是否經歷過一種狀況：在測試的時候需要不斷輸出一些資訊以便觀察狀態，但在正式上線之後又不須要這些東西輸入。有可能是不想給使用者看到，也有可能是不斷 print out 會造成某些阻塞。<br>當開發版與上線版之間在切換時，最樸實無華的作法就是打開程式，一行行的把 Print 註解掉，但這顯然非常的沒有效率。</p>
-<span id="more"></span>
-
-<p>Python 的原生套件中有一個名為 <code>logging</code> 的模組，在一些較為正式的模組套件包中都不難看到它的蹤影。本篇文章接下來的內容大多是閱讀 Python 官方文件後的快速整理，希望能將 logging 模組簡單的介紹並上手！</p>
-<h2 id="日誌等級的基本認知"><a href="#日誌等級的基本認知" class="headerlink" title="日誌等級的基本認知"></a>日誌等級的基本認知</h2><p>預設的 logging 訊息等級一共有五個，其中 <strong>logging 的日誌等級預設是 WARNING(30)</strong> ，因此在預設的情況下，數值小於30的日誌等級不會輸出。</p>
-<table>
-<thead>
-<tr>
-<th>等級</th>
-<th>數值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>DEBUG</td>
-<td>10</td>
-</tr>
-<tr>
-<td>INFO</td>
-<td>20</td>
-</tr>
-<tr>
-<td>WARNING</td>
-<td>30</td>
-</tr>
-<tr>
-<td>ERROR</td>
-<td>40</td>
-</tr>
-<tr>
-<td>CRITICAL</td>
-<td>50</td>
-</tr>
-</tbody></table>
-<h2 id="單一模組：使用-logging-即可"><a href="#單一模組：使用-logging-即可" class="headerlink" title="單一模組：使用 logging 即可"></a>單一模組：使用 logging 即可</h2><h3 id="直接使用"><a href="#直接使用" class="headerlink" title="直接使用"></a>直接使用</h3><p>不設定 handler，也不設定<code>basicConfig</code> ，預設是輸出到終端機上(terminal/stdout)。如前面所說，logging 的日誌等級預設是 <code>WARNING(30)</code>。因此低於 WARNING 的 INFO 沒有被輸出在 terminal。</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> logging
-logging<span class="token punctuation">.</span>warning<span class="token punctuation">(</span><span class="token string">'Watch out!'</span><span class="token punctuation">)</span>  
-logging<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">'I told you so'</span><span class="token punctuation">)</span> </code></pre>
-
-<pre class="language-none"><code class="language-none">WARNING:root:Watch out!</code></pre>
-
-<h3 id="寫入日誌檔案"><a href="#寫入日誌檔案" class="headerlink" title="寫入日誌檔案"></a>寫入日誌檔案</h3><p>多數的情況需要儲存、以供事後查看這些紀錄檔案，例如訓練深度學習模型的時候，或是執行一個長時間運行的系統的時候。</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> logging
-logging<span class="token punctuation">.</span>basicConfig<span class="token punctuation">(</span>filename<span class="token operator">=</span><span class="token string">'example.log'</span><span class="token punctuation">,</span> level<span class="token operator">=</span>logging<span class="token punctuation">.</span>DEBUG<span class="token punctuation">)</span>
-logging<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string">'This message should go to the log file'</span><span class="token punctuation">)</span>
-logging<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">'So should this'</span><span class="token punctuation">)</span>
-logging<span class="token punctuation">.</span>warning<span class="token punctuation">(</span><span class="token string">'And this, too'</span><span class="token punctuation">)</span></code></pre>
-
-<p>如此一來將不會有任何輸出，但查看當前的執行目錄會發現 <code>example.log</code> 這個檔案裡有寫入日誌訊息。由於<code>basicConfig</code> 函式中，設置了等級為 DEBUG等級 (10)，因此三行訊息都有被包含進去。</p>
-<pre class="language-none"><code class="language-none"># example.log 內部的長相
-DEBUG:root:This message should go to the log file
-INFO:root:So should this
-WARNING:root:And this, too</code></pre>
-
-<p>如果重複執行上面的程式，日誌會不斷的加在<code>example.log</code>當前內容的後面，想要每次都直接刷新日誌檔案而不是接續(append)，需要加上參數 <code>filemode=w</code> 。</p>
-<pre class="language-python" data-language="python"><code class="language-python">logging<span class="token punctuation">.</span>basicConfig<span class="token punctuation">(</span>filename<span class="token operator">=</span><span class="token string">'example.log'</span><span class="token punctuation">,</span>filemode<span class="token operator">=</span><span class="token string">'w'</span><span class="token punctuation">,</span>  level<span class="token operator">=</span>logging<span class="token punctuation">.</span>DEBUG<span class="token punctuation">)</span></code></pre>
-
-<h2 id="多重模組：使用-logger"><a href="#多重模組：使用-logger" class="headerlink" title="多重模組：使用 logger"></a>多重模組：使用 logger</h2><p>多數情況我們所要面臨的狀況並沒有那麼簡單，專案是具有架構層級的模組，每個檔案都各自使用 logging 險得雜亂無章。後面會仔細介紹設定，這裡先簡單的提供了一個 function 可以直接調用。</p>
-<p>它將創建一個 logger，將輸出導向 terminal (stdout)、並自動儲存日誌到檔案。但以下幾點需要注意：</p>
-<ol>
-<li><p>不使用層級：直接使用 <code>get_logger()</code>，返回的 logger 不會有層級。<code>rootName</code> 參數可自由選擇是否更改，但 child 請設為空</p>
-<pre class="language-python" data-language="python"><code class="language-python">logger <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span><span class="token string">"__main__"</span><span class="token punctuation">,</span> childName<span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">)</span></code></pre></li>
-<li><p>根據程式的 package 層級自動設定：要把 <code>childName=__name__</code>在子程式中打上去！</p>
-<pre class="language-python" data-language="python"><code class="language-python">logger <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span><span class="token string">"__main__"</span><span class="token punctuation">,</span> childName<span class="token operator">=</span>__name__<span class="token punctuation">)</span></code></pre></li>
-<li><p>自定義層級：同時覆蓋 rootName, child 自己寫層級架構。</p>
-<pre class="language-python" data-language="python"><code class="language-python">get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span><span class="token string">"parent"</span><span class="token punctuation">,</span> childName<span class="token operator">=</span><span class="token string">"child1.child2"</span><span class="token punctuation">)</span></code></pre></li>
-</ol>
-<p>除了 <code>rootName</code> 與 <code>childName</code> 兩個參數是會影響到 logger 層級的，其他都是有關 log file 的參數：</p>
-<ul>
-<li><code>fileName</code>：可自訂 log file 的名稱</li>
-<li><code>timeFalg</code>：是否要再檔名後面自動添加當前的時間戳，如此能使 log file 不被覆蓋，因為函式中預設的寫入行為是覆寫(<code>w</code>)。</li>
-<li><code>log_dir</code>：log file 所儲存的資料夾，預設會在當前的目錄下創建一個名為 <code>logs</code> 的資料夾，並將紀錄都存在裡面。</li>
-</ul>
-<p>如果有不只一個 python 檔在跑，且彼此沒有上下層級關係，記得覆寫 rootName，不要讓兩個 logger 同名，否則當其中一份程式碼中跑到新增訊息，輸入的訊息會讓兩個程式的 logger 都接收到，影響到彼此的 output。</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> logging<span class="token punctuation">,</span> sys<span class="token punctuation">,</span> os
-
-<span class="token keyword">def</span> <span class="token function">get_logger</span><span class="token punctuation">(</span>rootName<span class="token operator">=</span><span class="token string">"__main__"</span><span class="token punctuation">,</span> childName<span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">,</span> fileName<span class="token operator">=</span><span class="token string">"record"</span><span class="token punctuation">,</span> timeFlag<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> log_dir<span class="token operator">=</span><span class="token string">"logs"</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    logName <span class="token operator">=</span> rootName <span class="token keyword">if</span> <span class="token keyword">not</span> childName <span class="token keyword">else</span>  rootName<span class="token operator">+</span><span class="token string">"."</span><span class="token operator">+</span>childName
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Your Log name is : "</span><span class="token punctuation">,</span> logName<span class="token punctuation">)</span>
-    logger <span class="token operator">=</span> logging<span class="token punctuation">.</span>getLogger<span class="token punctuation">(</span>logName<span class="token punctuation">)</span> 
-    logger<span class="token punctuation">.</span>setLevel<span class="token punctuation">(</span>logging<span class="token punctuation">.</span>DEBUG<span class="token punctuation">)</span>
-    <span class="token keyword">if</span> timeFlag<span class="token punctuation">:</span>
-        <span class="token keyword">from</span> datetime <span class="token keyword">import</span> datetime
-        now <span class="token operator">=</span> datetime<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        dt_string <span class="token operator">=</span> now<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%m%d_%H%M%S"</span><span class="token punctuation">)</span>
-        fileName<span class="token operator">+=</span><span class="token string">"_"</span><span class="token operator">+</span>dt_string
-        
-    <span class="token keyword">if</span> <span class="token keyword">not</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>isdir<span class="token punctuation">(</span>log_dir<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        os<span class="token punctuation">.</span>mkdir<span class="token punctuation">(</span>log_dir<span class="token punctuation">)</span>
-    
-    fileName <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>log_dir<span class="token punctuation">,</span> fileName<span class="token punctuation">)</span>
-
-    <span class="token keyword">if</span> <span class="token keyword">not</span> childName<span class="token punctuation">:</span> <span class="token comment"># 只能在最頂層加，如果每一層都這樣加，每一個 child logger 也會都 print 一行</span>
-        <span class="token comment"># file handler</span>
-        fh <span class="token operator">=</span> logging<span class="token punctuation">.</span>FileHandler<span class="token punctuation">(</span>fileName<span class="token operator">+</span><span class="token string">".log"</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">'w'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8-sig'</span><span class="token punctuation">)</span>
-        fh<span class="token punctuation">.</span>setLevel<span class="token punctuation">(</span>logging<span class="token punctuation">.</span>INFO<span class="token punctuation">)</span>
-        ch <span class="token operator">=</span> logging<span class="token punctuation">.</span>StreamHandler<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># sys.stdout</span>
-        ch<span class="token punctuation">.</span>setLevel<span class="token punctuation">(</span>logging<span class="token punctuation">.</span>DEBUG<span class="token punctuation">)</span>
-
-        formatter <span class="token operator">=</span> logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'%(asctime)s - %(name)s - %(levelname)s : %(message)s'</span><span class="token punctuation">)</span>
-        <span class="token comment"># formatter = logging.Formatter('%(message)s')</span>
-        ch<span class="token punctuation">.</span>setFormatter<span class="token punctuation">(</span>formatter<span class="token punctuation">)</span>
-        fh<span class="token punctuation">.</span>setFormatter<span class="token punctuation">(</span>formatter<span class="token punctuation">)</span>
-
-        <span class="token comment"># put filehandler into logger</span>
-        logger<span class="token punctuation">.</span>addHandler<span class="token punctuation">(</span>fh<span class="token punctuation">)</span>
-        logger<span class="token punctuation">.</span>addHandler<span class="token punctuation">(</span>ch<span class="token punctuation">)</span>
-    <span class="token keyword">return</span> logger</code></pre>
-
-<h3 id="簡易範例"><a href="#簡易範例" class="headerlink" title="簡易範例"></a>簡易範例</h3><ol>
-<li><p>Root file，執行的時候是 <code>python xxx.py</code> 的那個 <code>xxx.py</code> 的檔案中應該這樣調用 logger : </p>
- <pre class="language-python" data-language="python"><code class="language-python">logger <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span>__name__<span class="token punctuation">)</span></code></pre></li>
-<li><p>Child file，被 <code>xxx.py</code> 所調用的模組</p>
- <pre class="language-python" data-language="python"><code class="language-python">logger <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>childName<span class="token operator">=</span>__name__<span class="token punctuation">)</span>  </code></pre></li>
-</ol>
-<p>不管是哪個檔案，使用 logger 的時候都直接按照訊息層級的嚴重性，正常使用即可: </p>
-<pre class="language-python" data-language="python"><code class="language-python">logger<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string">"just debug desp"</span><span class="token punctuation">)</span>
-logger<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">"some information"</span><span class="token punctuation">)</span>
-logger<span class="token punctuation">.</span>warning<span class="token punctuation">(</span><span class="token string">"This is warning, your action may cause some unexpected effect."</span><span class="token punctuation">)</span>
-logger<span class="token punctuation">.</span>error<span class="token punctuation">(</span><span class="token string">"something wrong!"</span><span class="token punctuation">)</span>
-logger<span class="token punctuation">.</span>critical<span class="token punctuation">(</span><span class="token string">"Your code is dead!!"</span><span class="token punctuation">)</span></code></pre>
-
-<p><strong>Hint 1.</strong> 如果覺得預設的 logger 格式太過冗長，可以參考下一章改變範例 code 中的 <code>formatter</code> 達成。</p>
-<p><strong>Hint 2.</strong> 如果希望錯誤/例外發生時，可以把 trace 一併寫進去，參考後面的 <a href="#%E7%B4%80%E9%8C%84%E4%BE%8B%E5%A4%96%E7%9A%84traceback%E8%A8%8A%E6%81%AF">紀錄例外的traceback訊息</a>。 </p>
-<h3 id="層級架構說明"><a href="#層級架構說明" class="headerlink" title="層級架構說明"></a>層級架構說明</h3><p>程式中的說明文字，具體範例如下:</p>
-<h4 id="狀況1-都不使用"><a href="#狀況1-都不使用" class="headerlink" title="狀況1. 都不使用"></a>狀況1. 都不使用</h4><p>完全不使用層級的話，大可以所有的檔案都如下: </p>
-<pre class="language-python" data-language="python"><code class="language-python">logger <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span>__name__<span class="token punctuation">)</span></code></pre>
-
-<p>但強烈不建議，如果這樣何必搞 logger，直接用 logging 就好了吧。</p>
-<h4 id="狀況2-根據套件層級自動設定"><a href="#狀況2-根據套件層級自動設定" class="headerlink" title="狀況2. 根據套件層級自動設定"></a>狀況2. 根據套件層級自動設定</h4><p>簡易範例中即示範了此種狀況，這種情況下，<strong>請勿改變 root file 中 logger 的 rootName 屬性</strong>，讓他保留範例中的樣子，也就是 <code>__name__</code> (在 main file 中 <code>__name__</code>==<code>__main__</code>) </p>
-<h4 id="狀況3-手動設定層級名稱"><a href="#狀況3-手動設定層級名稱" class="headerlink" title="狀況3. 手動設定層級名稱"></a>狀況3. 手動設定層級名稱</h4><p>想搞怪? 自己設定層級名稱! </p>
-<pre class="language-python" data-language="python"><code class="language-python">logger1 <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span><span class="token string">"boss"</span><span class="token punctuation">)</span>
-logger2 <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span><span class="token string">"boss"</span><span class="token punctuation">,</span> childName<span class="token operator">=</span><span class="token string">"manager"</span><span class="token punctuation">)</span>
-logger3 <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span><span class="token string">"boss"</span><span class="token punctuation">,</span> childName<span class="token operator">=</span><span class="token string">"manager.department"</span><span class="token punctuation">)</span>
-logger4 <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span><span class="token string">"boss"</span><span class="token punctuation">,</span> childName<span class="token operator">=</span><span class="token string">"manager.department.engineer"</span><span class="token punctuation">)</span></code></pre>
-
-
-
-<h2 id="訊息格式"><a href="#訊息格式" class="headerlink" title="訊息格式"></a>訊息格式</h2><p>logging 模組中，使用最原始的表達方式 <code>%s</code> 常常是為了向下兼容</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> logging
-logging<span class="token punctuation">.</span>warning<span class="token punctuation">(</span><span class="token string">'%s before you %s'</span><span class="token punctuation">,</span> <span class="token string">'Look'</span><span class="token punctuation">,</span> <span class="token string">'leap!'</span><span class="token punctuation">)</span></code></pre>
-
-<h3 id="改變訊息的呈現格式"><a href="#改變訊息的呈現格式" class="headerlink" title="改變訊息的呈現格式"></a>改變訊息的呈現格式</h3><p>透過<code>logging.basicConfig</code> 的 <code>format</code> 參數設定 log 的訊息模式，可以動用的變數可以參考<a href="https://docs.python.org/3.7/library/logging.html#logrecord-attributes">官方網站</a>，羅列了使用者可以動用的各種資訊，像是 function Name, … 各種的。</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> logging
-logging<span class="token punctuation">.</span>basicConfig<span class="token punctuation">(</span><span class="token builtin">format</span><span class="token operator">=</span><span class="token string">'%(levelname)s:%(message)s'</span><span class="token punctuation">,</span> level<span class="token operator">=</span>logging<span class="token punctuation">.</span>DEBUG<span class="token punctuation">)</span>
-logging<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string">'This message should appear on the console'</span><span class="token punctuation">)</span>
-logging<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">'So should this'</span><span class="token punctuation">)</span>
-logging<span class="token punctuation">.</span>warning<span class="token punctuation">(</span><span class="token string">'And this, too'</span><span class="token punctuation">)</span>
-
-<span class="token triple-quoted-string string">''' 
-DEBUG:This message should appear on the console
-INFO:So should this
-WARNING:And this, too
-'''</span>
-<span class="token comment"># %(levelname)s = DEBUG, INFO, WARNING... </span>
-<span class="token comment"># %(messages)s = ()裡面的訊息</span>
- </code></pre>
-
-<h2 id="紀錄例外的traceback訊息"><a href="#紀錄例外的traceback訊息" class="headerlink" title="紀錄例外的traceback訊息"></a>紀錄例外的traceback訊息</h2><ul>
-<li><code>logger.exception(&#39;any msg&#39;)</code> ：<strong>直接使用 exception層級，會將堆疊訊息寫進去 log 中</strong>。層級為 error 層級</li>
-<li><code>exc_info=True</code> 若想把例外訊息以<strong>其他層級寫入</strong>，可以把此參數調成True。預設為False，不會把堆疊訊息寫入。</li>
-</ul>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> traceback
-
-<span class="token keyword">def</span> <span class="token function">main_loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        logger<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'print </span><span class="token interpolation"><span class="token punctuation">&#123;</span>i<span class="token punctuation">&#125;</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
-        <span class="token keyword">if</span> i<span class="token operator">==</span> <span class="token number">5</span><span class="token punctuation">:</span>
-            <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">"Break"</span><span class="token punctuation">)</span>
-<span class="token keyword">try</span><span class="token punctuation">:</span>
-    main_loop<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">except</span> Exception<span class="token punctuation">:</span>
-    <span class="token comment"># 將引發例外的堆疊訊息寫入logger, 甚麼動作都不用下</span>
-    logger<span class="token punctuation">.</span>exception<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span> 
-    <span class="token comment"># 堆疊訊息以info的層級寫入</span>
-    logger<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">'info has exc_info'</span><span class="token punctuation">,</span>exc_info<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-    <span class="token comment"># 當例外發生時，只會當純的寫入此行，因為 exc_info=False</span>
-    logger<span class="token punctuation">.</span>warning<span class="token punctuation">(</span><span class="token string">'warning without exc_info'</span><span class="token punctuation">,</span>exc_info<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
-    
-    <span class="token comment"># [Optional] 只將traceback的紀錄寫進指定txt</span>
-    traceback<span class="token punctuation">.</span>print_exc<span class="token punctuation">(</span><span class="token builtin">file</span><span class="token operator">=</span><span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'traceback_INFO.txt'</span><span class="token punctuation">,</span><span class="token string">'w+'</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
-
-]]></content>
-      <tags>
-        <tag>python</tag>
-        <tag>官方文件</tag>
-        <tag>logging</tag>
       </tags>
   </entry>
   <entry>
@@ -927,6 +736,197 @@ new_reader<span class="token punctuation">.</span>readline<span class="token pun
         <tag>python</tag>
         <tag>官方文件</tag>
         <tag>pickle</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python 日誌模組 Logging (1)</title>
+    <url>/2022/01/20/python-logger-quick/</url>
+    <content><![CDATA[<p>在開發 Python 專案時，是否經歷過一種狀況：在測試的時候需要不斷輸出一些資訊以便觀察狀態，但在正式上線之後又不須要這些東西輸入。有可能是不想給使用者看到，也有可能是不斷 print out 會造成某些阻塞。<br>當開發版與上線版之間在切換時，最樸實無華的作法就是打開程式，一行行的把 Print 註解掉，但這顯然非常的沒有效率。</p>
+<span id="more"></span>
+
+<p>Python 的原生套件中有一個名為 <code>logging</code> 的模組，在一些較為正式的模組套件包中都不難看到它的蹤影。本篇文章接下來的內容大多是閱讀 Python 官方文件後的快速整理，希望能將 logging 模組簡單的介紹並上手！</p>
+<h2 id="日誌等級的基本認知"><a href="#日誌等級的基本認知" class="headerlink" title="日誌等級的基本認知"></a>日誌等級的基本認知</h2><p>預設的 logging 訊息等級一共有五個，其中 <strong>logging 的日誌等級預設是 WARNING(30)</strong> ，因此在預設的情況下，數值小於30的日誌等級不會輸出。</p>
+<table>
+<thead>
+<tr>
+<th>等級</th>
+<th>數值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>DEBUG</td>
+<td>10</td>
+</tr>
+<tr>
+<td>INFO</td>
+<td>20</td>
+</tr>
+<tr>
+<td>WARNING</td>
+<td>30</td>
+</tr>
+<tr>
+<td>ERROR</td>
+<td>40</td>
+</tr>
+<tr>
+<td>CRITICAL</td>
+<td>50</td>
+</tr>
+</tbody></table>
+<h2 id="單一模組：使用-logging-即可"><a href="#單一模組：使用-logging-即可" class="headerlink" title="單一模組：使用 logging 即可"></a>單一模組：使用 logging 即可</h2><h3 id="直接使用"><a href="#直接使用" class="headerlink" title="直接使用"></a>直接使用</h3><p>不設定 handler，也不設定<code>basicConfig</code> ，預設是輸出到終端機上(terminal/stdout)。如前面所說，logging 的日誌等級預設是 <code>WARNING(30)</code>。因此低於 WARNING 的 INFO 沒有被輸出在 terminal。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> logging
+logging<span class="token punctuation">.</span>warning<span class="token punctuation">(</span><span class="token string">'Watch out!'</span><span class="token punctuation">)</span>  
+logging<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">'I told you so'</span><span class="token punctuation">)</span> </code></pre>
+
+<pre class="language-none"><code class="language-none">WARNING:root:Watch out!</code></pre>
+
+<h3 id="寫入日誌檔案"><a href="#寫入日誌檔案" class="headerlink" title="寫入日誌檔案"></a>寫入日誌檔案</h3><p>多數的情況需要儲存、以供事後查看這些紀錄檔案，例如訓練深度學習模型的時候，或是執行一個長時間運行的系統的時候。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> logging
+logging<span class="token punctuation">.</span>basicConfig<span class="token punctuation">(</span>filename<span class="token operator">=</span><span class="token string">'example.log'</span><span class="token punctuation">,</span> level<span class="token operator">=</span>logging<span class="token punctuation">.</span>DEBUG<span class="token punctuation">)</span>
+logging<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string">'This message should go to the log file'</span><span class="token punctuation">)</span>
+logging<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">'So should this'</span><span class="token punctuation">)</span>
+logging<span class="token punctuation">.</span>warning<span class="token punctuation">(</span><span class="token string">'And this, too'</span><span class="token punctuation">)</span></code></pre>
+
+<p>如此一來將不會有任何輸出，但查看當前的執行目錄會發現 <code>example.log</code> 這個檔案裡有寫入日誌訊息。由於<code>basicConfig</code> 函式中，設置了等級為 DEBUG等級 (10)，因此三行訊息都有被包含進去。</p>
+<pre class="language-none"><code class="language-none"># example.log 內部的長相
+DEBUG:root:This message should go to the log file
+INFO:root:So should this
+WARNING:root:And this, too</code></pre>
+
+<p>如果重複執行上面的程式，日誌會不斷的加在<code>example.log</code>當前內容的後面，想要每次都直接刷新日誌檔案而不是接續(append)，需要加上參數 <code>filemode=w</code> 。</p>
+<pre class="language-python" data-language="python"><code class="language-python">logging<span class="token punctuation">.</span>basicConfig<span class="token punctuation">(</span>filename<span class="token operator">=</span><span class="token string">'example.log'</span><span class="token punctuation">,</span>filemode<span class="token operator">=</span><span class="token string">'w'</span><span class="token punctuation">,</span>  level<span class="token operator">=</span>logging<span class="token punctuation">.</span>DEBUG<span class="token punctuation">)</span></code></pre>
+
+<h2 id="多重模組：使用-logger"><a href="#多重模組：使用-logger" class="headerlink" title="多重模組：使用 logger"></a>多重模組：使用 logger</h2><p>多數情況我們所要面臨的狀況並沒有那麼簡單，專案是具有架構層級的模組，每個檔案都各自使用 logging 險得雜亂無章。後面會仔細介紹設定，這裡先簡單的提供了一個 function 可以直接調用。</p>
+<p>它將創建一個 logger，將輸出導向 terminal (stdout)、並自動儲存日誌到檔案。但以下幾點需要注意：</p>
+<ol>
+<li><p>不使用層級：直接使用 <code>get_logger()</code>，返回的 logger 不會有層級。<code>rootName</code> 參數可自由選擇是否更改，但 child 請設為空</p>
+<pre class="language-python" data-language="python"><code class="language-python">logger <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span><span class="token string">"__main__"</span><span class="token punctuation">,</span> childName<span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">)</span></code></pre></li>
+<li><p>根據程式的 package 層級自動設定：要把 <code>childName=__name__</code>在子程式中打上去！</p>
+<pre class="language-python" data-language="python"><code class="language-python">logger <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span><span class="token string">"__main__"</span><span class="token punctuation">,</span> childName<span class="token operator">=</span>__name__<span class="token punctuation">)</span></code></pre></li>
+<li><p>自定義層級：同時覆蓋 rootName, child 自己寫層級架構。</p>
+<pre class="language-python" data-language="python"><code class="language-python">get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span><span class="token string">"parent"</span><span class="token punctuation">,</span> childName<span class="token operator">=</span><span class="token string">"child1.child2"</span><span class="token punctuation">)</span></code></pre></li>
+</ol>
+<p>除了 <code>rootName</code> 與 <code>childName</code> 兩個參數是會影響到 logger 層級的，其他都是有關 log file 的參數：</p>
+<ul>
+<li><code>fileName</code>：可自訂 log file 的名稱</li>
+<li><code>timeFalg</code>：是否要再檔名後面自動添加當前的時間戳，如此能使 log file 不被覆蓋，因為函式中預設的寫入行為是覆寫(<code>w</code>)。</li>
+<li><code>log_dir</code>：log file 所儲存的資料夾，預設會在當前的目錄下創建一個名為 <code>logs</code> 的資料夾，並將紀錄都存在裡面。</li>
+</ul>
+<p>如果有不只一個 python 檔在跑，且彼此沒有上下層級關係，記得覆寫 rootName，不要讓兩個 logger 同名，否則當其中一份程式碼中跑到新增訊息，輸入的訊息會讓兩個程式的 logger 都接收到，影響到彼此的 output。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> logging<span class="token punctuation">,</span> sys<span class="token punctuation">,</span> os
+
+<span class="token keyword">def</span> <span class="token function">get_logger</span><span class="token punctuation">(</span>rootName<span class="token operator">=</span><span class="token string">"__main__"</span><span class="token punctuation">,</span> childName<span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">,</span> fileName<span class="token operator">=</span><span class="token string">"record"</span><span class="token punctuation">,</span> timeFlag<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> log_dir<span class="token operator">=</span><span class="token string">"logs"</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    logName <span class="token operator">=</span> rootName <span class="token keyword">if</span> <span class="token keyword">not</span> childName <span class="token keyword">else</span>  rootName<span class="token operator">+</span><span class="token string">"."</span><span class="token operator">+</span>childName
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Your Log name is : "</span><span class="token punctuation">,</span> logName<span class="token punctuation">)</span>
+    logger <span class="token operator">=</span> logging<span class="token punctuation">.</span>getLogger<span class="token punctuation">(</span>logName<span class="token punctuation">)</span> 
+    logger<span class="token punctuation">.</span>setLevel<span class="token punctuation">(</span>logging<span class="token punctuation">.</span>DEBUG<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> timeFlag<span class="token punctuation">:</span>
+        <span class="token keyword">from</span> datetime <span class="token keyword">import</span> datetime
+        now <span class="token operator">=</span> datetime<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        dt_string <span class="token operator">=</span> now<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%m%d_%H%M%S"</span><span class="token punctuation">)</span>
+        fileName<span class="token operator">+=</span><span class="token string">"_"</span><span class="token operator">+</span>dt_string
+        
+    <span class="token keyword">if</span> <span class="token keyword">not</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>isdir<span class="token punctuation">(</span>log_dir<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        os<span class="token punctuation">.</span>mkdir<span class="token punctuation">(</span>log_dir<span class="token punctuation">)</span>
+    
+    fileName <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>log_dir<span class="token punctuation">,</span> fileName<span class="token punctuation">)</span>
+
+    <span class="token keyword">if</span> <span class="token keyword">not</span> childName<span class="token punctuation">:</span> <span class="token comment"># 只能在最頂層加，如果每一層都這樣加，每一個 child logger 也會都 print 一行</span>
+        <span class="token comment"># file handler</span>
+        fh <span class="token operator">=</span> logging<span class="token punctuation">.</span>FileHandler<span class="token punctuation">(</span>fileName<span class="token operator">+</span><span class="token string">".log"</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">'w'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8-sig'</span><span class="token punctuation">)</span>
+        fh<span class="token punctuation">.</span>setLevel<span class="token punctuation">(</span>logging<span class="token punctuation">.</span>INFO<span class="token punctuation">)</span>
+        ch <span class="token operator">=</span> logging<span class="token punctuation">.</span>StreamHandler<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># sys.stdout</span>
+        ch<span class="token punctuation">.</span>setLevel<span class="token punctuation">(</span>logging<span class="token punctuation">.</span>DEBUG<span class="token punctuation">)</span>
+
+        formatter <span class="token operator">=</span> logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'%(asctime)s - %(name)s - %(levelname)s : %(message)s'</span><span class="token punctuation">)</span>
+        <span class="token comment"># formatter = logging.Formatter('%(message)s')</span>
+        ch<span class="token punctuation">.</span>setFormatter<span class="token punctuation">(</span>formatter<span class="token punctuation">)</span>
+        fh<span class="token punctuation">.</span>setFormatter<span class="token punctuation">(</span>formatter<span class="token punctuation">)</span>
+
+        <span class="token comment"># put filehandler into logger</span>
+        logger<span class="token punctuation">.</span>addHandler<span class="token punctuation">(</span>fh<span class="token punctuation">)</span>
+        logger<span class="token punctuation">.</span>addHandler<span class="token punctuation">(</span>ch<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> logger</code></pre>
+
+<h3 id="簡易範例"><a href="#簡易範例" class="headerlink" title="簡易範例"></a>簡易範例</h3><ol>
+<li><p>Root file，執行的時候是 <code>python xxx.py</code> 的那個 <code>xxx.py</code> 的檔案中應該這樣調用 logger : </p>
+ <pre class="language-python" data-language="python"><code class="language-python">logger <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span>__name__<span class="token punctuation">)</span></code></pre></li>
+<li><p>Child file，被 <code>xxx.py</code> 所調用的模組</p>
+ <pre class="language-python" data-language="python"><code class="language-python">logger <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>childName<span class="token operator">=</span>__name__<span class="token punctuation">)</span>  </code></pre></li>
+</ol>
+<p>不管是哪個檔案，使用 logger 的時候都直接按照訊息層級的嚴重性，正常使用即可: </p>
+<pre class="language-python" data-language="python"><code class="language-python">logger<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string">"just debug desp"</span><span class="token punctuation">)</span>
+logger<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">"some information"</span><span class="token punctuation">)</span>
+logger<span class="token punctuation">.</span>warning<span class="token punctuation">(</span><span class="token string">"This is warning, your action may cause some unexpected effect."</span><span class="token punctuation">)</span>
+logger<span class="token punctuation">.</span>error<span class="token punctuation">(</span><span class="token string">"something wrong!"</span><span class="token punctuation">)</span>
+logger<span class="token punctuation">.</span>critical<span class="token punctuation">(</span><span class="token string">"Your code is dead!!"</span><span class="token punctuation">)</span></code></pre>
+
+<p><strong>Hint 1.</strong> 如果覺得預設的 logger 格式太過冗長，可以參考下一章改變範例 code 中的 <code>formatter</code> 達成。</p>
+<p><strong>Hint 2.</strong> 如果希望錯誤/例外發生時，可以把 trace 一併寫進去，參考後面的 <a href="#%E7%B4%80%E9%8C%84%E4%BE%8B%E5%A4%96%E7%9A%84traceback%E8%A8%8A%E6%81%AF">紀錄例外的traceback訊息</a>。 </p>
+<h3 id="層級架構說明"><a href="#層級架構說明" class="headerlink" title="層級架構說明"></a>層級架構說明</h3><p>程式中的說明文字，具體範例如下:</p>
+<h4 id="狀況1-都不使用"><a href="#狀況1-都不使用" class="headerlink" title="狀況1. 都不使用"></a>狀況1. 都不使用</h4><p>完全不使用層級的話，大可以所有的檔案都如下: </p>
+<pre class="language-python" data-language="python"><code class="language-python">logger <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span>__name__<span class="token punctuation">)</span></code></pre>
+
+<p>但強烈不建議，如果這樣何必搞 logger，直接用 logging 就好了吧。</p>
+<h4 id="狀況2-根據套件層級自動設定"><a href="#狀況2-根據套件層級自動設定" class="headerlink" title="狀況2. 根據套件層級自動設定"></a>狀況2. 根據套件層級自動設定</h4><p>簡易範例中即示範了此種狀況，這種情況下，<strong>請勿改變 root file 中 logger 的 rootName 屬性</strong>，讓他保留範例中的樣子，也就是 <code>__name__</code> (在 main file 中 <code>__name__</code>==<code>__main__</code>) </p>
+<h4 id="狀況3-手動設定層級名稱"><a href="#狀況3-手動設定層級名稱" class="headerlink" title="狀況3. 手動設定層級名稱"></a>狀況3. 手動設定層級名稱</h4><p>想搞怪? 自己設定層級名稱! </p>
+<pre class="language-python" data-language="python"><code class="language-python">logger1 <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span><span class="token string">"boss"</span><span class="token punctuation">)</span>
+logger2 <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span><span class="token string">"boss"</span><span class="token punctuation">,</span> childName<span class="token operator">=</span><span class="token string">"manager"</span><span class="token punctuation">)</span>
+logger3 <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span><span class="token string">"boss"</span><span class="token punctuation">,</span> childName<span class="token operator">=</span><span class="token string">"manager.department"</span><span class="token punctuation">)</span>
+logger4 <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span><span class="token string">"boss"</span><span class="token punctuation">,</span> childName<span class="token operator">=</span><span class="token string">"manager.department.engineer"</span><span class="token punctuation">)</span></code></pre>
+
+
+
+<h2 id="訊息格式"><a href="#訊息格式" class="headerlink" title="訊息格式"></a>訊息格式</h2><p>logging 模組中，使用最原始的表達方式 <code>%s</code> 常常是為了向下兼容</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> logging
+logging<span class="token punctuation">.</span>warning<span class="token punctuation">(</span><span class="token string">'%s before you %s'</span><span class="token punctuation">,</span> <span class="token string">'Look'</span><span class="token punctuation">,</span> <span class="token string">'leap!'</span><span class="token punctuation">)</span></code></pre>
+
+<h3 id="改變訊息的呈現格式"><a href="#改變訊息的呈現格式" class="headerlink" title="改變訊息的呈現格式"></a>改變訊息的呈現格式</h3><p>透過<code>logging.basicConfig</code> 的 <code>format</code> 參數設定 log 的訊息模式，可以動用的變數可以參考<a href="https://docs.python.org/3.7/library/logging.html#logrecord-attributes">官方網站</a>，羅列了使用者可以動用的各種資訊，像是 function Name, … 各種的。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> logging
+logging<span class="token punctuation">.</span>basicConfig<span class="token punctuation">(</span><span class="token builtin">format</span><span class="token operator">=</span><span class="token string">'%(levelname)s:%(message)s'</span><span class="token punctuation">,</span> level<span class="token operator">=</span>logging<span class="token punctuation">.</span>DEBUG<span class="token punctuation">)</span>
+logging<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string">'This message should appear on the console'</span><span class="token punctuation">)</span>
+logging<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">'So should this'</span><span class="token punctuation">)</span>
+logging<span class="token punctuation">.</span>warning<span class="token punctuation">(</span><span class="token string">'And this, too'</span><span class="token punctuation">)</span>
+
+<span class="token triple-quoted-string string">''' 
+DEBUG:This message should appear on the console
+INFO:So should this
+WARNING:And this, too
+'''</span>
+<span class="token comment"># %(levelname)s = DEBUG, INFO, WARNING... </span>
+<span class="token comment"># %(messages)s = ()裡面的訊息</span>
+ </code></pre>
+
+<h2 id="紀錄例外的traceback訊息"><a href="#紀錄例外的traceback訊息" class="headerlink" title="紀錄例外的traceback訊息"></a>紀錄例外的traceback訊息</h2><ul>
+<li><code>logger.exception(&#39;any msg&#39;)</code> ：<strong>直接使用 exception層級，會將堆疊訊息寫進去 log 中</strong>。層級為 error 層級</li>
+<li><code>exc_info=True</code> 若想把例外訊息以<strong>其他層級寫入</strong>，可以把此參數調成True。預設為False，不會把堆疊訊息寫入。</li>
+</ul>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> traceback
+
+<span class="token keyword">def</span> <span class="token function">main_loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        logger<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'print </span><span class="token interpolation"><span class="token punctuation">&#123;</span>i<span class="token punctuation">&#125;</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> i<span class="token operator">==</span> <span class="token number">5</span><span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">"Break"</span><span class="token punctuation">)</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+    main_loop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span> Exception<span class="token punctuation">:</span>
+    <span class="token comment"># 將引發例外的堆疊訊息寫入logger, 甚麼動作都不用下</span>
+    logger<span class="token punctuation">.</span>exception<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span> 
+    <span class="token comment"># 堆疊訊息以info的層級寫入</span>
+    logger<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">'info has exc_info'</span><span class="token punctuation">,</span>exc_info<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    <span class="token comment"># 當例外發生時，只會當純的寫入此行，因為 exc_info=False</span>
+    logger<span class="token punctuation">.</span>warning<span class="token punctuation">(</span><span class="token string">'warning without exc_info'</span><span class="token punctuation">,</span>exc_info<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+    
+    <span class="token comment"># [Optional] 只將traceback的紀錄寫進指定txt</span>
+    traceback<span class="token punctuation">.</span>print_exc<span class="token punctuation">(</span><span class="token builtin">file</span><span class="token operator">=</span><span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'traceback_INFO.txt'</span><span class="token punctuation">,</span><span class="token string">'w+'</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+
+]]></content>
+      <tags>
+        <tag>python</tag>
+        <tag>官方文件</tag>
+        <tag>logging</tag>
       </tags>
   </entry>
   <entry>
