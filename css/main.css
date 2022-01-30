@@ -3044,12 +3044,12 @@ mark.search-keyword {
   }
 }
 code {
-  padding: 2px 4px;
+  padding: 0.1em 0.25em;
   overflow-wrap: break-word;
   word-break: break-all;
   color: #cf222e;
   background: #fbf7f8;
-  border-radius: 3px;
-  font-size: 15px;
+  border-radius: 0.2em;
+  font-size: 1em;
   font-weight: lighter;
 }
