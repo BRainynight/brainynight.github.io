@@ -1,6 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hexo Blog 客製化 (1) 部落格指令自動化</title>
+    <url>/posts/2021_12_30_blog-1-automatic-command.html</url>
+    <content><![CDATA[<p>想用原始一點的方法來搞個半自動化，第一步當然就是不要打那麼多指令！</p>
+<p>我希望能將 <code>hexo clean</code>, <code>hexo generate</code>, <code>hexo server</code>/<code>hexo deploy</code> 的步驟集合在一起，並且開啟部落格的 Demo 網址。這裡使用 Make 做指令簡化</p>
+<p>在部落格的根目錄創建一個 makefile，內容如下</p>
+<pre class="language-makefile" data-language="makefile"><code class="language-makefile"><span class="token symbol">local</span><span class="token punctuation">:</span>
+	python -m webbrowser <span class="token string">"http://localhost:4000"</span>
+	hexo cl &amp;&amp; hexo g &amp;&amp; hexo server 
+
+<span class="token symbol">demo</span><span class="token punctuation">:</span>
+	python -m webbrowser <span class="token string">"http://localhost:4000"</span>
+	hexo server 
+
+<span class="token symbol">push</span><span class="token punctuation">:</span>
+	python -m webbrowser <span class="token string">"https://&lt;UserName>.github.io/"</span>
+	hexo cl &amp;&amp; hexo g &amp;&amp; hexo d </code></pre>
+
+<p>需要注意，Command 的縮排是 tab 不是空白鍵！</p>
+<h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><p>先開啟網頁是因為一旦 server 打開就會佔一個 process  在那邊，阻斷後面的指令。而網頁先開啟來只是一個動作，不會阻斷後續的指令。</p>
+<h3 id="local"><a href="#local" class="headerlink" title="local"></a><code>local</code></h3><p>是每次改完部落格，要清除靜態檔案重新生成並打 local 的展示網頁的時候。</p>
+<pre class="language-sh" data-language="sh"><code class="language-sh">make local</code></pre>
+
+<h3 id="demo"><a href="#demo" class="headerlink" title="demo"></a><code>demo</code></h3><p>單純想打開 local demo，沒有要清掉資料重新生成。</p>
+<pre class="language-sh" data-language="sh"><code class="language-sh">make demo</code></pre>
+
+<h3 id="push"><a href="#push" class="headerlink" title="push"></a><code>push</code></h3><p>確認本地的改動，要將資料 push 到線上了。</p>
+<pre class="language-sh" data-language="sh"><code class="language-sh">make push</code></pre>]]></content>
+      <tags>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>新年快樂之部落格沿革(?)</title>
+    <url>/posts/2022_01_01_blog-0-source.html</url>
+    <content><![CDATA[<p>2022 新年快樂！新年的第一篇文章，來寫個段小故事。</p>
+<p>我相信自己一路走來在各種平台、格式上轉換的痛苦已經算少了，但每次想起依然常常覺得…. 小坎坷阿，希望現在的決定夠有遠見了？</p>
+<span id="more"></span>
+
+<h3 id="純樸的文字編輯器：Evernote"><a href="#純樸的文字編輯器：Evernote" class="headerlink" title="純樸的文字編輯器：Evernote"></a>純樸的文字編輯器：Evernote</h3><p>從高中起一直有寫心得、觀後感與日記的習慣，那時候用的是 Evernote。大學開始寫程式時，也有著紀錄 bug 的習慣，那時候用的是 Line 記事本跟 Evernote。可以想見，這種紀錄方式簡直是災難… 我希望至少 Code 可以是彩色的（好卑微阿），開始尋找替代方案。</p>
+<p>儘管將程式相關的內容從 Evernote 抽離，它依然是我挺喜歡的筆記軟體。但，隨著 Markdown 語法越來越盛行，Evernote 卻遲遲不能夠跟進，加上 Notion 後來出了教育帳戶免費的策略，最後包括慣用的其他紀錄也都轉移到 Notion 去了。</p>
+<h3 id="Blogger"><a href="#Blogger" class="headerlink" title="Blogger"></a>Blogger</h3><p>由於當時有在用 Blogger 在寫遊記，所以第一時間想到的替代工具就是 Google 旗下的 Blogger ，大約也用了一年多。當對排版越來越要求，發現 Blogger 那種 word 編輯器 + html 編輯界面的方式實在是太沒效率了！決定再次轉移。</p>
+<h3 id="HackMD"><a href="#HackMD" class="headerlink" title="HackMD"></a>HackMD</h3><p>開始用 Markdown 在寫技術筆記，並使用 HackMD 作為平台。但 HackMD 有個很大的缺點，它不支援內文搜尋模式….. （曾經支援，後來疑似因為 loading 太大拿掉內文搜索只能找標題）文章一多不記得什麼內容在哪篇文章，這根本災難！只好又開始尋找替代方案</p>
+<p>那個時期不知道為什麼，HackMD 老是不溫不火，號稱是從日本 IT 圈紅回來的軟體，在台灣小有名氣其實也很好用。但感覺一直是維持狀態，更新狀態不大，反而有退一步取消內文搜索功能的這種事件。</p>
+<h3 id="Github-Typora"><a href="#Github-Typora" class="headerlink" title="Github + Typora"></a>Github + Typora</h3><p>腦子動到 Github 的頭上，發展出用離線的 Markdown 編輯器 Typora 加上 Github 做同步。在我開始將 HackMD 的內容拉下來，跟本地的離線檔案整併時發現有些筆記不小心使用到了一些只有 HackMD 支援的 Markdown 延伸語法，導致這些內容在 Typora 上完全沒有效果！！像是亂碼一樣！</p>
+<p>至此，我下定決心，以後寫文章絕對不要再搞出這麼多麻煩，乖乖用基礎的 Markdown 語法，很方便了！別搞那麼多事！</p>
+<h3 id="熱門的部落格平台：Medium"><a href="#熱門的部落格平台：Medium" class="headerlink" title="熱門的部落格平台：Medium"></a>熱門的部落格平台：Medium</h3><p>想有個部落格的心情依舊在，我曾嘗試過 Medium 平台並不是很喜歡。一來是平台的彈性低、程式碼甚至沒辦法上色，非得透過 Gist ；二來是 Medium 還是比較適合英文文章，英文字寫起來格式是又優雅又漂亮，但中文一個斜體就搞得版面很不和諧。後來也就拿來放一些跟 Code 無關的事情，一些搞環境經驗之類的而已。</p>
+<h3 id="初體驗靜態網頁產生器：Pelican"><a href="#初體驗靜態網頁產生器：Pelican" class="headerlink" title="初體驗靜態網頁產生器：Pelican"></a>初體驗靜態網頁產生器：Pelican</h3><p>大四時一度嘗試使用 Github Page + Pelican 做靜態網站生成，挑選這個組合是因為覺得綁定網域得付錢、感覺這部落格又是有一更沒一更不知道哪天會不會荒廢，決定先從免費的試試看，Github Page 是這個選項很好的解答。而 Pelican 是它背後是用 Python 寫的，好歹我比較熟 (不敢一下子踏入 js) 。</p>
+<p>不知道是對網站管理沒經驗、放太多圖片塞到流量還是什麼問題，大約半年覺得網站載入太慢了受不了，加上對版面的主題既不滿意、又改不動，在充滿羞恥的心情下收掉了這個第一個自己架的部落格。</p>
+<h3 id="再次回歸-Github-Typora"><a href="#再次回歸-Github-Typora" class="headerlink" title="再次回歸 Github + Typora"></a>再次回歸 Github + Typora</h3><p>此後，我一直用 Typora + Github 的模式寫筆記，由於有過自己搭建的經驗，每次看到別人的部落格是使用 Github page 的時候，都會多留意兩眼框架與主題，以及一些自己喜歡的小工具、要素等等，也是那時候看到 Hexo 與 Next 主題被很多人採用。過去使用 Peclian 時，我極度討厭文章太長，每次都要卷到最上面才能點目錄跳轉的情況，甚至自己研究用 CSS 弄了一個懸浮目錄，功能是有卻醜到自己受不了，關站很大一個原因也是這樣。</p>
+<h3 id="現在：Hexo"><a href="#現在：Hexo" class="headerlink" title="現在：Hexo"></a>現在：Hexo</h3><p>直到最近看到有在追蹤的一位作者的文章<a href="https://www.ithome.com.tw/voice/148476">技術網站架設經驗雜談</a>，邊看產生了很多共鳴，想到了一直有個小小的期許：能彈性控制的部落格！才鼓起勇氣再次搭建了部落格。這次打算嘗試許多人都採用的 Hexo 來搭建，管他語言不一樣，大不了學學吧！於是最終就有了這個部落格。</p>
+<p>恩，真是一段不長不短的歷史。總之就是告誡自己，不要被漂亮的擴充功能迷惑，換了框架很痛苦的。</p>
+]]></content>
+      <tags>
+        <tag>blog</tag>
+        <tag>about</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo Blog 客製化 (2) Next 主題更新與 PrismJs 啟用</title>
+    <url>/posts/2022_01_26_blog-2-theme-Next-update.html</url>
+    <content><![CDATA[<h2 id="主題版本更新"><a href="#主題版本更新" class="headerlink" title="主題版本更新"></a>主題版本更新</h2><p>Next 主題有在定期更新，每次更新後可能 config 的內容位置都可能有更動。</p>
+<p><a href="https://theme-next.js.org/docs/getting-started/configuration">Next 在 v8.x 的版本中有給予建議</a>，不要將個人的變更寫在 <code>theme/Next/_config.yml</code> 下面，這樣每次 config 有改版都要一個個更新，不一定能完美的 merge。</p>
+<p>我們可以在與 site config (配置 hexo 的設定檔) 同層級的地方，創建一個 <code>_config.[theme].yml</code> 的檔案，<code>theme</code> 帶入主題的名稱。這個檔案中的內容會覆蓋 <code>theme/[next]/_config.yml</code> 的內容。</p>
+<p>如果以 NexT 主題為例：我的 <code>theme</code> 底下主題名稱為 <code>next</code>，配置的客製化檔案名稱為 <code>_config.next.yml</code>。並且我只在裡面放有修改區塊的 config ，避免未來如果要升級，我還花功夫去找哪裡有變更。</p>
+<h2 id="PrismJs-的啟用"><a href="#PrismJs-的啟用" class="headerlink" title="PrismJs 的啟用"></a>PrismJs 的啟用</h2><p>這部分跟主題的版本有關，雖然我是在 2021 年底創建部落格的，但不曉得為何用到了很舊版的 Next，其 <code>_config</code> 沒有有關 Prismjs 在 codeblock 欄位底下的配置。</p>
+<p>後來發現這個問題之後進行版本更新，並遇到在兩個配置落差頗大的 <code>_config</code> 之間玩比對遊戲，因此體悟出了上述辦法的優勢。</p>
+<p>更新後，codeblock 裡面有如下配置:</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">codeblock</span><span class="token punctuation">:</span>
+  <span class="token key atrule">theme</span><span class="token punctuation">:</span>
+    <span class="token key atrule">light</span><span class="token punctuation">:</span> default
+    <span class="token key atrule">dark</span><span class="token punctuation">:</span> tomorrow<span class="token punctuation">-</span>night
+  <span class="token key atrule">prism</span><span class="token punctuation">:</span>
+    <span class="token key atrule">light</span><span class="token punctuation">:</span> prism<span class="token punctuation">-</span>tomorrow
+    <span class="token key atrule">dark</span><span class="token punctuation">:</span> prism<span class="token punctuation">-</span>tomorrow</code></pre>
+
+<p>並且 hexo 的 <code>_config</code> 要將 prismjs 開啟、highlight 關閉: </p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">highlight</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">line_number</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">auto_detect</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">tab_replace</span><span class="token punctuation">:</span> <span class="token string">''</span>
+  <span class="token key atrule">wrap</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">hljs</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+<span class="token key atrule">prismjs</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">preprocess</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">line_number</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">tab_replace</span><span class="token punctuation">:</span> <span class="token string">''</span></code></pre>
+
+<h2 id="修改行中程式碼的格式-change-inline-code-style"><a href="#修改行中程式碼的格式-change-inline-code-style" class="headerlink" title="修改行中程式碼的格式 (change inline code style)"></a>修改行中程式碼的格式 (change inline code style)</h2><p>我不喜歡預設的 inline code 格式，覺得太灰、padding 太大。而且這些 code 似乎不隸屬 prismjs 的主題規範，要從 CSS 下手! </p>
+<p>首先，我們可以透過右鍵檢查元素發現 inline code 也是隸屬於 <code>code</code> tag，就瞄準這部份研究，我尋找到的方法是直接去改 css 設定。</p>
+<p>在 <code>source\_data\styles.styl</code> 當中(沒有則創建!)，寫入設定：</p>
+<pre class="language-stylus" data-language="stylus"><code class="language-stylus"><span class="token selector">code <span class="token punctuation">&#123;</span></span>
+  <span class="token property-declaration"><span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token unit">px</span> <span class="token number">4</span><span class="token unit">px</span><span class="token punctuation">;</span></span>
+  <span class="token property-declaration"><span class="token property">word-wrap</span><span class="token punctuation">:</span> break-word<span class="token punctuation">;</span></span>
+  <span class="token property-declaration"><span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#cf222e</span><span class="token punctuation">;</span></span>
+  <span class="token property-declaration"><span class="token property">background</span><span class="token punctuation">:</span> <span class="token hexcode">#fbf7f8</span><span class="token punctuation">;</span></span>
+  <span class="token property-declaration"><span class="token property">border-radius</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token unit">px</span><span class="token punctuation">;</span></span>
+  <span class="token property-declaration"><span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">15</span><span class="token unit">px</span><span class="token punctuation">;</span></span>
+  <span class="token property-declaration"><span class="token property">font-weight</span><span class="token punctuation">:</span> lighter<span class="token punctuation">;</span> <span class="token comment">// lighter, bolder</span></span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+<p>字體顏色選擇跟 github keyword 相似的顏色 <code>#cf222e</code>，雖然這使得 inline code 變得紅字很惹眼，但等到看到受不了再來想其他改法吧。</p>
+<p>光寫入沒有用，還要把這個檔案引入 Next 的渲染過程中。在上述的 <code>_config.next.yml</code> 中添加一段：</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">custom_file_path</span><span class="token punctuation">:</span>
+  <span class="token key atrule">style</span><span class="token punctuation">:</span> source/_data/styles.styl</code></pre>
+
+<p>再嘗試 <code>hexo server</code> 之類的在本地 demo 一下，應該可以看到改動的內容了！</p>
+<hr>
+<p>參考自：</p>
+<ul>
+<li><a href="https://www.cnblogs.com/LyShark/p/11834144.html">Hexo之Next主題代碼優化</a></li>
+<li><a href="https://myiaj.github.io/2020/03/14/hexo-custom-style/">【Hexo】以 Next 主題為基礎，打造自己的樣式吧！</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>blog</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>建置 Hexo 部落格</title>
     <url>/posts/2021_12_30_blog-0-hexo-build-env.html</url>
     <content><![CDATA[<h2 id="前置作業"><a href="#前置作業" class="headerlink" title="前置作業"></a>前置作業</h2><ol>
@@ -213,369 +334,6 @@ public&#x2F;
       <tags>
         <tag>blog</tag>
         <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo Blog 客製化 (1) 部落格指令自動化</title>
-    <url>/posts/2021_12_30_blog-1-automatic-command.html</url>
-    <content><![CDATA[<p>想用原始一點的方法來搞個半自動化，第一步當然就是不要打那麼多指令！</p>
-<p>我希望能將 <code>hexo clean</code>, <code>hexo generate</code>, <code>hexo server</code>/<code>hexo deploy</code> 的步驟集合在一起，並且開啟部落格的 Demo 網址。這裡使用 Make 做指令簡化</p>
-<p>在部落格的根目錄創建一個 makefile，內容如下</p>
-<pre class="language-makefile" data-language="makefile"><code class="language-makefile"><span class="token symbol">local</span><span class="token punctuation">:</span>
-	python -m webbrowser <span class="token string">"http://localhost:4000"</span>
-	hexo cl &amp;&amp; hexo g &amp;&amp; hexo server 
-
-<span class="token symbol">demo</span><span class="token punctuation">:</span>
-	python -m webbrowser <span class="token string">"http://localhost:4000"</span>
-	hexo server 
-
-<span class="token symbol">push</span><span class="token punctuation">:</span>
-	python -m webbrowser <span class="token string">"https://&lt;UserName>.github.io/"</span>
-	hexo cl &amp;&amp; hexo g &amp;&amp; hexo d </code></pre>
-
-<p>需要注意，Command 的縮排是 tab 不是空白鍵！</p>
-<h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><p>先開啟網頁是因為一旦 server 打開就會佔一個 process  在那邊，阻斷後面的指令。而網頁先開啟來只是一個動作，不會阻斷後續的指令。</p>
-<h3 id="local"><a href="#local" class="headerlink" title="local"></a><code>local</code></h3><p>是每次改完部落格，要清除靜態檔案重新生成並打 local 的展示網頁的時候。</p>
-<pre class="language-sh" data-language="sh"><code class="language-sh">make local</code></pre>
-
-<h3 id="demo"><a href="#demo" class="headerlink" title="demo"></a><code>demo</code></h3><p>單純想打開 local demo，沒有要清掉資料重新生成。</p>
-<pre class="language-sh" data-language="sh"><code class="language-sh">make demo</code></pre>
-
-<h3 id="push"><a href="#push" class="headerlink" title="push"></a><code>push</code></h3><p>確認本地的改動，要將資料 push 到線上了。</p>
-<pre class="language-sh" data-language="sh"><code class="language-sh">make push</code></pre>]]></content>
-      <tags>
-        <tag>blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo Blog 客製化 (2) Next 主題更新與 PrismJs 啟用</title>
-    <url>/posts/2022_01_26_blog-2-theme-Next-update.html</url>
-    <content><![CDATA[<h2 id="主題版本更新"><a href="#主題版本更新" class="headerlink" title="主題版本更新"></a>主題版本更新</h2><p>Next 主題有在定期更新，每次更新後可能 config 的內容位置都可能有更動。</p>
-<p><a href="https://theme-next.js.org/docs/getting-started/configuration">Next 在 v8.x 的版本中有給予建議</a>，不要將個人的變更寫在 <code>theme/Next/_config.yml</code> 下面，這樣每次 config 有改版都要一個個更新，不一定能完美的 merge。</p>
-<p>我們可以在與 site config (配置 hexo 的設定檔) 同層級的地方，創建一個 <code>_config.[theme].yml</code> 的檔案，<code>theme</code> 帶入主題的名稱。這個檔案中的內容會覆蓋 <code>theme/[next]/_config.yml</code> 的內容。</p>
-<p>如果以 NexT 主題為例：我的 <code>theme</code> 底下主題名稱為 <code>next</code>，配置的客製化檔案名稱為 <code>_config.next.yml</code>。並且我只在裡面放有修改區塊的 config ，避免未來如果要升級，我還花功夫去找哪裡有變更。</p>
-<h2 id="PrismJs-的啟用"><a href="#PrismJs-的啟用" class="headerlink" title="PrismJs 的啟用"></a>PrismJs 的啟用</h2><p>這部分跟主題的版本有關，雖然我是在 2021 年底創建部落格的，但不曉得為何用到了很舊版的 Next，其 <code>_config</code> 沒有有關 Prismjs 在 codeblock 欄位底下的配置。</p>
-<p>後來發現這個問題之後進行版本更新，並遇到在兩個配置落差頗大的 <code>_config</code> 之間玩比對遊戲，因此體悟出了上述辦法的優勢。</p>
-<p>更新後，codeblock 裡面有如下配置:</p>
-<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">codeblock</span><span class="token punctuation">:</span>
-  <span class="token key atrule">theme</span><span class="token punctuation">:</span>
-    <span class="token key atrule">light</span><span class="token punctuation">:</span> default
-    <span class="token key atrule">dark</span><span class="token punctuation">:</span> tomorrow<span class="token punctuation">-</span>night
-  <span class="token key atrule">prism</span><span class="token punctuation">:</span>
-    <span class="token key atrule">light</span><span class="token punctuation">:</span> prism<span class="token punctuation">-</span>tomorrow
-    <span class="token key atrule">dark</span><span class="token punctuation">:</span> prism<span class="token punctuation">-</span>tomorrow</code></pre>
-
-<p>並且 hexo 的 <code>_config</code> 要將 prismjs 開啟、highlight 關閉: </p>
-<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">highlight</span><span class="token punctuation">:</span>
-  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
-  <span class="token key atrule">line_number</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
-  <span class="token key atrule">auto_detect</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
-  <span class="token key atrule">tab_replace</span><span class="token punctuation">:</span> <span class="token string">''</span>
-  <span class="token key atrule">wrap</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-  <span class="token key atrule">hljs</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
-<span class="token key atrule">prismjs</span><span class="token punctuation">:</span>
-  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-  <span class="token key atrule">preprocess</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-  <span class="token key atrule">line_number</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
-  <span class="token key atrule">tab_replace</span><span class="token punctuation">:</span> <span class="token string">''</span></code></pre>
-
-<h2 id="修改行中程式碼的格式-change-inline-code-style"><a href="#修改行中程式碼的格式-change-inline-code-style" class="headerlink" title="修改行中程式碼的格式 (change inline code style)"></a>修改行中程式碼的格式 (change inline code style)</h2><p>我不喜歡預設的 inline code 格式，覺得太灰、padding 太大。而且這些 code 似乎不隸屬 prismjs 的主題規範，要從 CSS 下手! </p>
-<p>首先，我們可以透過右鍵檢查元素發現 inline code 也是隸屬於 <code>code</code> tag，就瞄準這部份研究，我尋找到的方法是直接去改 css 設定。</p>
-<p>在 <code>source\_data\styles.styl</code> 當中(沒有則創建!)，寫入設定：</p>
-<pre class="language-stylus" data-language="stylus"><code class="language-stylus"><span class="token selector">code <span class="token punctuation">&#123;</span></span>
-  <span class="token property-declaration"><span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token unit">px</span> <span class="token number">4</span><span class="token unit">px</span><span class="token punctuation">;</span></span>
-  <span class="token property-declaration"><span class="token property">word-wrap</span><span class="token punctuation">:</span> break-word<span class="token punctuation">;</span></span>
-  <span class="token property-declaration"><span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#cf222e</span><span class="token punctuation">;</span></span>
-  <span class="token property-declaration"><span class="token property">background</span><span class="token punctuation">:</span> <span class="token hexcode">#fbf7f8</span><span class="token punctuation">;</span></span>
-  <span class="token property-declaration"><span class="token property">border-radius</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token unit">px</span><span class="token punctuation">;</span></span>
-  <span class="token property-declaration"><span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">15</span><span class="token unit">px</span><span class="token punctuation">;</span></span>
-  <span class="token property-declaration"><span class="token property">font-weight</span><span class="token punctuation">:</span> lighter<span class="token punctuation">;</span> <span class="token comment">// lighter, bolder</span></span>
-<span class="token punctuation">&#125;</span></code></pre>
-
-<p>字體顏色選擇跟 github keyword 相似的顏色 <code>#cf222e</code>，雖然這使得 inline code 變得紅字很惹眼，但等到看到受不了再來想其他改法吧。</p>
-<p>光寫入沒有用，還要把這個檔案引入 Next 的渲染過程中。在上述的 <code>_config.next.yml</code> 中添加一段：</p>
-<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">custom_file_path</span><span class="token punctuation">:</span>
-  <span class="token key atrule">style</span><span class="token punctuation">:</span> source/_data/styles.styl</code></pre>
-
-<p>再嘗試 <code>hexo server</code> 之類的在本地 demo 一下，應該可以看到改動的內容了！</p>
-<hr>
-<p>參考自：</p>
-<ul>
-<li><a href="https://www.cnblogs.com/LyShark/p/11834144.html">Hexo之Next主題代碼優化</a></li>
-<li><a href="https://myiaj.github.io/2020/03/14/hexo-custom-style/">【Hexo】以 Next 主題為基礎，打造自己的樣式吧！</a></li>
-</ul>
-]]></content>
-      <tags>
-        <tag>blog</tag>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>新年快樂之部落格沿革(?)</title>
-    <url>/posts/2022_01_01_blog-0-source.html</url>
-    <content><![CDATA[<p>2022 新年快樂！新年的第一篇文章，來寫個段小故事。</p>
-<p>我相信自己一路走來在各種平台、格式上轉換的痛苦已經算少了，但每次想起依然常常覺得…. 小坎坷阿，希望現在的決定夠有遠見了？</p>
-<span id="more"></span>
-
-<h3 id="純樸的文字編輯器：Evernote"><a href="#純樸的文字編輯器：Evernote" class="headerlink" title="純樸的文字編輯器：Evernote"></a>純樸的文字編輯器：Evernote</h3><p>從高中起一直有寫心得、觀後感與日記的習慣，那時候用的是 Evernote。大學開始寫程式時，也有著紀錄 bug 的習慣，那時候用的是 Line 記事本跟 Evernote。可以想見，這種紀錄方式簡直是災難… 我希望至少 Code 可以是彩色的（好卑微阿），開始尋找替代方案。</p>
-<p>儘管將程式相關的內容從 Evernote 抽離，它依然是我挺喜歡的筆記軟體。但，隨著 Markdown 語法越來越盛行，Evernote 卻遲遲不能夠跟進，加上 Notion 後來出了教育帳戶免費的策略，最後包括慣用的其他紀錄也都轉移到 Notion 去了。</p>
-<h3 id="Blogger"><a href="#Blogger" class="headerlink" title="Blogger"></a>Blogger</h3><p>由於當時有在用 Blogger 在寫遊記，所以第一時間想到的替代工具就是 Google 旗下的 Blogger ，大約也用了一年多。當對排版越來越要求，發現 Blogger 那種 word 編輯器 + html 編輯界面的方式實在是太沒效率了！決定再次轉移。</p>
-<h3 id="HackMD"><a href="#HackMD" class="headerlink" title="HackMD"></a>HackMD</h3><p>開始用 Markdown 在寫技術筆記，並使用 HackMD 作為平台。但 HackMD 有個很大的缺點，它不支援內文搜尋模式….. （曾經支援，後來疑似因為 loading 太大拿掉內文搜索只能找標題）文章一多不記得什麼內容在哪篇文章，這根本災難！只好又開始尋找替代方案</p>
-<p>那個時期不知道為什麼，HackMD 老是不溫不火，號稱是從日本 IT 圈紅回來的軟體，在台灣小有名氣其實也很好用。但感覺一直是維持狀態，更新狀態不大，反而有退一步取消內文搜索功能的這種事件。</p>
-<h3 id="Github-Typora"><a href="#Github-Typora" class="headerlink" title="Github + Typora"></a>Github + Typora</h3><p>腦子動到 Github 的頭上，發展出用離線的 Markdown 編輯器 Typora 加上 Github 做同步。在我開始將 HackMD 的內容拉下來，跟本地的離線檔案整併時發現有些筆記不小心使用到了一些只有 HackMD 支援的 Markdown 延伸語法，導致這些內容在 Typora 上完全沒有效果！！像是亂碼一樣！</p>
-<p>至此，我下定決心，以後寫文章絕對不要再搞出這麼多麻煩，乖乖用基礎的 Markdown 語法，很方便了！別搞那麼多事！</p>
-<h3 id="熱門的部落格平台：Medium"><a href="#熱門的部落格平台：Medium" class="headerlink" title="熱門的部落格平台：Medium"></a>熱門的部落格平台：Medium</h3><p>想有個部落格的心情依舊在，我曾嘗試過 Medium 平台並不是很喜歡。一來是平台的彈性低、程式碼甚至沒辦法上色，非得透過 Gist ；二來是 Medium 還是比較適合英文文章，英文字寫起來格式是又優雅又漂亮，但中文一個斜體就搞得版面很不和諧。後來也就拿來放一些跟 Code 無關的事情，一些搞環境經驗之類的而已。</p>
-<h3 id="初體驗靜態網頁產生器：Pelican"><a href="#初體驗靜態網頁產生器：Pelican" class="headerlink" title="初體驗靜態網頁產生器：Pelican"></a>初體驗靜態網頁產生器：Pelican</h3><p>大四時一度嘗試使用 Github Page + Pelican 做靜態網站生成，挑選這個組合是因為覺得綁定網域得付錢、感覺這部落格又是有一更沒一更不知道哪天會不會荒廢，決定先從免費的試試看，Github Page 是這個選項很好的解答。而 Pelican 是它背後是用 Python 寫的，好歹我比較熟 (不敢一下子踏入 js) 。</p>
-<p>不知道是對網站管理沒經驗、放太多圖片塞到流量還是什麼問題，大約半年覺得網站載入太慢了受不了，加上對版面的主題既不滿意、又改不動，在充滿羞恥的心情下收掉了這個第一個自己架的部落格。</p>
-<h3 id="再次回歸-Github-Typora"><a href="#再次回歸-Github-Typora" class="headerlink" title="再次回歸 Github + Typora"></a>再次回歸 Github + Typora</h3><p>此後，我一直用 Typora + Github 的模式寫筆記，由於有過自己搭建的經驗，每次看到別人的部落格是使用 Github page 的時候，都會多留意兩眼框架與主題，以及一些自己喜歡的小工具、要素等等，也是那時候看到 Hexo 與 Next 主題被很多人採用。過去使用 Peclian 時，我極度討厭文章太長，每次都要卷到最上面才能點目錄跳轉的情況，甚至自己研究用 CSS 弄了一個懸浮目錄，功能是有卻醜到自己受不了，關站很大一個原因也是這樣。</p>
-<h3 id="現在：Hexo"><a href="#現在：Hexo" class="headerlink" title="現在：Hexo"></a>現在：Hexo</h3><p>直到最近看到有在追蹤的一位作者的文章<a href="https://www.ithome.com.tw/voice/148476">技術網站架設經驗雜談</a>，邊看產生了很多共鳴，想到了一直有個小小的期許：能彈性控制的部落格！才鼓起勇氣再次搭建了部落格。這次打算嘗試許多人都採用的 Hexo 來搭建，管他語言不一樣，大不了學學吧！於是最終就有了這個部落格。</p>
-<p>恩，真是一段不長不短的歷史。總之就是告誡自己，不要被漂亮的擴充功能迷惑，換了框架很痛苦的。</p>
-]]></content>
-      <tags>
-        <tag>blog</tag>
-        <tag>about</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo Blog 客製化 (3) Next 主題加速</title>
-    <url>/posts/2022_01_26_blog-3-speedup.html</url>
-    <content><![CDATA[<p>說實話，在改字體後還想要網站加速，突然覺得自己有點癡人說夢。改字體本來就會造成額外的負擔! 但還是基於個人的喜好依然想改，照樣記錄一下心路歷程! </p>
-<h2 id="改變字體"><a href="#改變字體" class="headerlink" title="改變字體"></a>改變字體</h2><p>有關  <code>_config.next.yml</code> 與  <code>source\_data\styles.styl</code>  的配置參見前面的兩個章節！</p>
-<ol>
-<li><p>在 <code>_config.next.yml</code> 中配置字體段落</p>
-<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">font</span><span class="token punctuation">:</span>
-  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> 
-  <span class="token key atrule">host</span><span class="token punctuation">:</span>
-  <span class="token key atrule">global</span><span class="token punctuation">:</span>
-    <span class="token key atrule">external</span><span class="token punctuation">:</span> <span class="token boolean important">false</span> <span class="token comment"># 如果寫 true, 就可以不用考慮後面的第三步了。</span>
-    <span class="token key atrule">family</span><span class="token punctuation">:</span> <span class="token string">'Noto Serif SC'</span></code></pre></li>
-<li><p>在<code>source\_data\variables.styl</code> 中設置環境變數，覆蓋原本的設定檔。</p>
-<p>記得要整段 font 的段落都複製！舉例而言，如果只覆蓋了 <code>font-family-chinese</code> 與 <code>font-family-base</code> 兩個變數，疑似因為在 Next 原本檔案中有其它變數使用到 <code>font-family-base</code>，而他們只會記住舊的變數。這會導致畫面有部份（像是 side bar）更改字體，而有部份依然使用微軟正黑體。</p>
-<pre class="language-stylus" data-language="stylus"><code class="language-stylus"><span class="token variable-declaration"><span class="token variable">$font-family-chinese</span>      <span class="token operator">=</span> <span class="token string">'Noto Serif TC'</span><span class="token punctuation">,</span> <span class="token string">'Microsoft YaHei'</span><span class="token punctuation">;</span> </span>
-
-<span class="token variable-declaration"><span class="token variable">$font-family-base</span>         <span class="token operator">=</span> $font-family-chinese<span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span></span>
-<span class="token variable-declaration"><span class="token variable">$font-family-base</span>         <span class="token operator">=</span> get_font_family<span class="token punctuation">(</span><span class="token string">'global'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> $font-family-chinese<span class="token punctuation">,</span> sans-serif <span class="token keyword">if</span> get_font_family<span class="token punctuation">(</span><span class="token string">'global'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
-
-<span class="token variable-declaration"><span class="token variable">$font-family-logo</span>         <span class="token operator">=</span> $font-family-base<span class="token punctuation">;</span></span>
-<span class="token variable-declaration"><span class="token variable">$font-family-logo</span>         <span class="token operator">=</span> get_font_family<span class="token punctuation">(</span><span class="token string">'title'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> $font-family-base <span class="token keyword">if</span> get_font_family<span class="token punctuation">(</span><span class="token string">'title'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
-
-<span class="token variable-declaration"><span class="token variable">$font-family-headings</span>     <span class="token operator">=</span> $font-family-base<span class="token punctuation">;</span></span>
-<span class="token variable-declaration"><span class="token variable">$font-family-headings</span>     <span class="token operator">=</span> get_font_family<span class="token punctuation">(</span><span class="token string">'headings'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> $font-family-base <span class="token keyword">if</span> get_font_family<span class="token punctuation">(</span><span class="token string">'headings'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
-
-<span class="token variable-declaration"><span class="token variable">$font-family-posts</span>        <span class="token operator">=</span> $font-family-base<span class="token punctuation">;</span></span>
-<span class="token variable-declaration"><span class="token variable">$font-family-posts</span>        <span class="token operator">=</span> get_font_family<span class="token punctuation">(</span><span class="token string">'posts'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> $font-family-base <span class="token keyword">if</span> get_font_family<span class="token punctuation">(</span><span class="token string">'posts'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
-
-<span class="token variable-declaration"><span class="token variable">$font-family-monospace</span>    <span class="token operator">=</span> consolas<span class="token punctuation">,</span> Menlo<span class="token punctuation">,</span> monospace<span class="token punctuation">,</span> $font-family-chinese<span class="token punctuation">;</span></span>
-<span class="token variable-declaration"><span class="token variable">$font-family-monospace</span>    <span class="token operator">=</span> get_font_family<span class="token punctuation">(</span><span class="token string">'codes'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> consolas<span class="token punctuation">,</span> Menlo<span class="token punctuation">,</span> monospace<span class="token punctuation">,</span> $font-family-chinese <span class="token keyword">if</span> get_font_family<span class="token punctuation">(</span><span class="token string">'codes'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
-</code></pre></li>
-</ol>
-<p>接下來是第三步驟，主要是我發現改字體後的載入速度比使用原生的微軟正黑體慢了至少 0.5~1秒以上吧。我嘗試想加速字體載入的部份，會先寫建議使用的方法，再紀錄一下我嘗試的方法。</p>
-<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">font</span><span class="token punctuation">:</span>
-  <span class="token key atrule">global</span><span class="token punctuation">:</span>
-    <span class="token key atrule">external</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
-    <span class="token key atrule">family</span><span class="token punctuation">:</span> <span class="token string">'Noto Serif SC'</span></code></pre>
-
-
-
-<h3 id="方法一：字體預載入"><a href="#方法一：字體預載入" class="headerlink" title="方法一：字體預載入"></a>方法一：字體預載入</h3><p>來到 <a href="https://fonts.google.com/noto/specimen/Noto+Serif+TC">google font api</a> ，我們選擇要的粗細(Regular) 之後，左邊會有個彈出視窗，教導我們怎麼在 Html 跟 CSS 中嵌入。</p>
-<blockquote>
-<p>To embed a font, copy the code into the <code>&lt;head&gt;</code> of your html</p>
-</blockquote>
-<pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>preconnect<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://fonts.googleapis.com<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>preconnect<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://fonts.gstatic.com<span class="token punctuation">"</span></span> <span class="token attr-name">crossorigin</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://fonts.googleapis.com/css2?family=Noto+Serif+TC&amp;display=fallback<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre>
-
-<p>可以用 Vscode 之類的在部落格資料夾中找到寫有 <code>&lt;head&gt;</code> 的模板，在我的版本 (V8.9) 中，這位於 <code>themes\next\layout\_layout.njk</code>，直接在 <code>&lt;head&gt;</code> 中把上面那段落貼上，就完成了！</p>
-<p>由於我對網頁前端並不熟悉，不是很確定這是否為關鍵因素。但在我使用預設的 config <code>external:true</code> 並把 preload 註解掉之後，透過 <a href="https://pagespeed.web.dev/">pagespeed</a> 測試，載入時間落差約有一秒左右。</p>
-<h3 id="方法二：掛載在當前網域下-不建議"><a href="#方法二：掛載在當前網域下-不建議" class="headerlink" title="方法二：掛載在當前網域下 (不建議)"></a>方法二：掛載在當前網域下 (不建議)</h3><p>在 <code>source\_data\styles.styl</code> 中添加字體的匯入：</p>
-<pre class="language-stylus" data-language="stylus"><code class="language-stylus"><span class="token atrule-declaration"><span class="token atrule">@font-face</span> <span class="token punctuation">&#123;</span></span>
-  <span class="token property-declaration"><span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">'Noto Serif TC'</span><span class="token punctuation">;</span></span>
-  <span class="token property-declaration"><span class="token property">font-weight</span><span class="token punctuation">:</span> <span class="token number">400</span><span class="token punctuation">;</span></span>
-  <span class="token property-declaration"><span class="token property">font-style</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span></span>
-  <span class="token property-declaration"><span class="token property">font-display</span><span class="token punctuation">:</span> fallback<span class="token punctuation">;</span></span>
-  src<span class="token punctuation">:</span> <span class="token func"><span class="token function">local</span><span class="token punctuation">(</span><span class="token string">'Noto Serif TC'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> local<span class="token punctuation">(</span><span class="token string">'Noto-Serif-TC'</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
-       <span class="token func"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string">'/fonts/NotoSerifTC-Regular.otf'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
-<span class="token punctuation">&#125;</span></code></pre>
-
-<p><code>font-display: fallback</code> 可以使網頁先使用預設字體（微軟正黑體）這種本身就存在於電腦中的字體，使內容可以先顯示。而背景會默默把設定的 Noto Serif TC 下載，事後置換。</p>
-<p>選擇掛在於子網域未必會比較好，因為完整的 otf 檔案高達 MB 級，儘管設置了字體置換，等到完整的載入字體也需要長達 10 秒的時間 (視網路速度吧)。而 google font api 本身有把字體切割成很多部份，讓網頁可以選擇載入有用到的部份字形即可，節省下載量。</p>
-<h2 id="找出網頁的-Bug"><a href="#找出網頁的-Bug" class="headerlink" title="找出網頁的 Bug"></a>找出網頁的 Bug</h2><p>可以打開 chrome <a href="https://support.google.com/campaignmanager/answer/2828688?hl=zh-Hant">開發人員工具</a> 中 “Network” 項目，並 ctrl+R  重新整理網頁。檢查一下都是哪些檔案拖垮了網站速度。我當時發現有一些找不到路徑的字體檔案、Hexo 在產生靜態頁面時有寫的 warning 都有影響，所以修到沒 bug 在推上網路很重要。務必確保網頁在載入的期間只有載入<strong>需要的元件</strong>，不需要花時間試誤。</p>
-<pre class="language-none"><code class="language-none">Warning: Accessing non-existent property &#39;filename&#39; of module exports inside circular dependency</code></pre>
-
-<p>Google 一番之後，參考<a href="https://www.haoyizebo.com/posts/710984d0/">此篇文章</a> 發現是 <code>nib</code> 套件出了問題。我的解決方法沒有順著他的教學，先嘗試重新安裝 <code>hexo-renderer-stylus</code> 但並沒有用。添加 <code>&quot;resolutions&quot;</code> 的部分忘記有沒有嘗試過，或許還是失敗了吧。</p>
-<p>最終，我是在 <code>package-lock.json</code> 的 <code>nib</code> 套件下找到: </p>
-<pre class="language-yaml" data-language="yaml"><code class="language-yaml">"stylus"<span class="token punctuation">:</span>0.54.5</code></pre>
-
-<p>修改成</p>
-<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">"stylus"</span><span class="token punctuation">:</span> 0.54.8</code></pre>
-
-<p><code>npm install</code> 之後參照輸出的資訊內容，先後下指令 <code>npm audit fix</code> 與 <code>npm audit fix --force</code> 解決了這個問題。</p>
-<h2 id="修改-Next-主題的動畫時間-不建議"><a href="#修改-Next-主題的動畫時間-不建議" class="headerlink" title="修改 Next 主題的動畫時間 [不建議]"></a>修改 Next 主題的動畫時間 [不建議]</h2><p>由於不同版本的 Next 程式碼內容也可能有所不同，參考自: <a href="https://blog.csdn.net/Domino_b/article/details/81704118">Hexo NexT 主題修改動畫效果速度</a>。</p>
-<ol>
-<li>使用 Vscode 之類的編輯器在 Next 主題中尋找關鍵字 <code>duration</code>，它可能出現在很多 js 檔案中，有些預設是 200、有些是 500。</li>
-<li>直接改數字，我先改成 100 之後大概看一下效果，網頁載入的速度明顯有提升! 可以先在 localhost 上測試。不敢貿然換成 0 的原因是不確定會不會因為某些元素來不及載入造成錯誤，反而拖到整體的時間。</li>
-<li>稍微判讀一下程式變數，有些頗容易看出函式意義的可以改短一點，不怕會不會影響載入，例如: <code>registerSidebarTOC</code>函式應該是跟側邊欄位「文章目錄」、「本站摘要」之間切換的動畫吧，我會再把數字改小一點。</li>
-</ol>
-<p>反覆在 local 端測試會不會造成 Bug 或使用者體驗不佳，之後就可以部屬到 github page 上了。部屬之後可以到 <a href="https://pagespeed.web.dev/">pagespeed</a> 測試一下表現如何，該網頁會給一些診斷建議，但我自己沒有前端經驗不太知道怎麼改，只是拿來測速度。目前的網頁測試在電腦版中大約有 85-89 分的成績。</p>
-<h2 id="在-Next-Config-中設置動畫選項"><a href="#在-Next-Config-中設置動畫選項" class="headerlink" title="在 Next Config 中設置動畫選項"></a>在 Next Config 中設置動畫選項</h2><p>在手動更改 duration 數值後依然不滿意的我繼續爬，發現其實 Next 主題在 config 中就已有一段設定了，可以<strong>直接把動畫關掉</strong>。即使想要保留動畫，<code>async</code> 也可考慮開起來，讓元素們非同步加載有機會讓 Loading 更快吧。之所以前一段去改 duration 列為不建議是因為，我不太確定修改間隔會不會對元素的加載產生一些問題，但還是記錄起來。</p>
-<p>值得一提的是，包括進場動畫其實都是可以改的! 在 Next 主題的 demo 頁面中有展示各個特效名稱對應的效果: <a href="https://theme-next.js.org/animate/">https://theme-next.js.org/animate/</a> 。</p>
-<p>這邊是我已經改過的 yaml 部分: </p>
-<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">motion</span><span class="token punctuation">:</span>
-  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-  <span class="token key atrule">async</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-  <span class="token key atrule">transition</span><span class="token punctuation">:</span>
-    <span class="token comment"># All available transition variants: https://theme-next.js.org/animate/</span>
-    <span class="token key atrule">post_block</span><span class="token punctuation">:</span> fadeIn
-    <span class="token key atrule">post_header</span><span class="token punctuation">:</span> fadeInUp 
-    <span class="token key atrule">post_body</span><span class="token punctuation">:</span> fadeIn
-    <span class="token key atrule">coll_header</span><span class="token punctuation">:</span> fadeInLeft
-    <span class="token comment"># Only for Pisces | Gemini.</span>
-    <span class="token key atrule">sidebar</span><span class="token punctuation">:</span> fadeInUp</code></pre>
-
-<h2 id="Plugin-hexo-filter-optimize"><a href="#Plugin-hexo-filter-optimize" class="headerlink" title="Plugin : hexo-filter-optimize"></a>Plugin : <code>hexo-filter-optimize</code></h2><p>下載之後</p>
-<pre class="language-sh" data-language="sh"><code class="language-sh">npm install hexo-filter-optimize</code></pre>
-
-<p>在 site config (hexo config) 中添加設定: 我會把 css 的 bundle 關掉，因為開啟來的時候有一點造成畫面跑版，看得不太舒服。</p>
-<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">filter_optimize</span><span class="token punctuation">:</span>
-  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-  <span class="token comment"># remove the surrounding comments in each of the bundled files</span>
-  <span class="token key atrule">remove_comments</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
-  <span class="token key atrule">css</span><span class="token punctuation">:</span>
-    <span class="token comment"># minify all css files</span>
-    <span class="token key atrule">minify</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-    <span class="token comment"># bundle loaded css files into one</span>
-    <span class="token key atrule">bundle</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
-    <span class="token comment"># use a script block to load css elements dynamically</span>
-    <span class="token key atrule">delivery</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-    <span class="token comment"># make specific css content inline into the html page</span>
-    <span class="token comment">#   - only support the full path</span>
-    <span class="token comment">#   - default is ['css/main.css']</span>
-    <span class="token key atrule">inlines</span><span class="token punctuation">:</span>
-    <span class="token key atrule">excludes</span><span class="token punctuation">:</span>
-  <span class="token key atrule">js</span><span class="token punctuation">:</span>
-    <span class="token comment"># minify all js files</span>
-    <span class="token key atrule">minify</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-    <span class="token comment"># bundle loaded js files into one</span>
-    <span class="token key atrule">bundle</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-    <span class="token key atrule">excludes</span><span class="token punctuation">:</span>
-  <span class="token comment"># set the priority of this plugin,</span>
-  <span class="token comment"># lower means it will be executed first, default of Hexo is 10</span>
-  <span class="token key atrule">priority</span><span class="token punctuation">:</span> <span class="token number">12</span></code></pre>
-
-<p>使用 <code>hexo-filter-optimize</code> 之後，有機會讓分數提升，我在手機版面上的分數就從 55 提升到了 78 (雖然有點迷惑那個分數的意義)</p>
-]]></content>
-      <tags>
-        <tag>blog</tag>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python 資料永久化套件:Pickle (2)</title>
-    <url>/posts/2022_01_17_pickle-advance.html</url>
-    <content><![CDATA[<h2 id="PEP-3155-Qualified-name"><a href="#PEP-3155-Qualified-name" class="headerlink" title="PEP 3155 Qualified name"></a>PEP 3155 Qualified name</h2><p>有關 Fully Qualified Name 的部份我是第一次看到…，嘗試閱讀 PEP 內容，不是很確定閱讀理解是否正確，若有錯誤歡迎指教！</p>
-<p>這個 PEP 議題是添加一個 <code>__qualname__</code> 屬性在函式跟類別中。對於 Top-Level 的函式與類別，這個屬性等同於 <code>__name__</code>，而對於巢狀的類別跟巢狀函式，<code>__qualname__</code> 屬性 dotted name 呈現，代表從 Top-Level 算起，該物件的層級位置。<code>repr()</code> 跟 <code>str()</code> 作用於類別與函式上時，也被修改成使用 <code>__qualname__</code>  而非 <code>__name__</code>。</p>
-<p>dotted name 表示從一個模組的 global 區域到該類別、函式或方法的路徑。</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">C</span><span class="token punctuation">:</span>
-    <span class="token keyword">class</span> <span class="token class-name">D</span><span class="token punctuation">:</span>
-        <span class="token keyword">def</span> <span class="token function">meth</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">pass</span>
-
-In <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">:</span> C<span class="token punctuation">.</span>__qualname__
-Out<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'C'</span>
-
-In <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">:</span> C<span class="token punctuation">.</span>D<span class="token punctuation">.</span>__qualname__
-Out<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'C.D'</span>
-
-In <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">:</span> C<span class="token punctuation">.</span>D<span class="token punctuation">.</span>__name__
-Out<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'D'</span>
-    
-In <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">:</span> C<span class="token punctuation">.</span>D<span class="token punctuation">.</span>meth<span class="token punctuation">.</span>__qualname__
-Out<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'C.D.meth'</span></code></pre>
-
-<p>而且對於被 <code>import</code> 的模組是不存在 <code>__qualname__</code> 屬性的，他們只有 <code>__name__</code>屬性，表達的是他的 Fully Qualified Name：該模組到其頂層父模組之間的層級關係：</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> email<span class="token punctuation">.</span>mime<span class="token punctuation">.</span>text
-email<span class="token punctuation">.</span>mime<span class="token punctuation">.</span>text<span class="token punctuation">.</span>__name__</code></pre>
-
-
-
-<h2 id="情境探討-有裝飾器的函式無法被-Pickle"><a href="#情境探討-有裝飾器的函式無法被-Pickle" class="headerlink" title="情境探討: 有裝飾器的函式無法被 Pickle"></a>情境探討: 有裝飾器的函式無法被 Pickle</h2><p>問題來源<a href="https://blog.csdn.net/qq_39314099/article/details/83822593">自此網站</a>，我們可以嘗試用閱讀完官方文件後的邏輯來解釋這個問題。因為覺得程式繁瑣，所以大概照著意思稍微改寫了一下，博主寫了一個名為 <code>haha</code> 的函式，會印出 <code>hello XXX</code>，並為它添加了計時裝飾器。雖然沒有明確的說怎麼存檔出了錯，但根據引發的 Error 我大致假設是嘗試存 <code>haha</code> 這個函式。</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> time<span class="token punctuation">,</span> pickle
-<span class="token keyword">from</span> functools <span class="token keyword">import</span> wraps
-
-<span class="token keyword">def</span> <span class="token function">timer</span><span class="token punctuation">(</span>mth<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>    
-    <span class="token comment"># @wraps(mth)</span>
-    <span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        st <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        res <span class="token operator">=</span> mth<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
-        et <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Spend </span><span class="token interpolation"><span class="token punctuation">&#123;</span><span class="token builtin">float</span><span class="token punctuation">(</span>et<span class="token operator">-</span>st<span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span><span class="token string"> sec."</span></span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span> res
-    <span class="token keyword">return</span> wrapper
-
-<span class="token decorator annotation punctuation">@timer</span>
-<span class="token keyword">def</span> <span class="token function">haha</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Hello </span><span class="token interpolation"><span class="token punctuation">&#123;</span>name<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
-
-<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"function.pkl"</span><span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"name of haha function is:"</span><span class="token punctuation">,</span> haha<span class="token punctuation">)</span>
-    pickle<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>haha<span class="token punctuation">,</span> f<span class="token punctuation">)</span></code></pre>
-
-<p>在試圖存下這個函式時發生了問題：<code>AttributeError: Can&#39;t pickle local object &#39;timer.&lt;locals&gt;.wrapper&#39;</code>。而樓主表示只要給裝飾器裡面裝上 <code>warp</code>，問題就解決了。<code>warp</code>應該擺放的位置已經寫在程式裡面了，可以試著註解與取消註解看看函式的名稱的不同。</p>
-<ul>
-<li>沒有 <code>warp</code> 的情況：<code>&lt;function timer.&lt;locals&gt;.wrapper at 0x000001EBECA588B8&gt;</code></li>
-<li>有 <code>warp</code> 的情況：<code>&lt;function haha at 0x000001BF76B188B8&gt;</code></li>
-</ul>
-<p>所以追根究底，這個問題的癥結點在於包上裝飾器後，若沒有使用 <code>functools.wraps</code> 讓裝飾後的函式名稱仍保持原樣，該函式的名稱會變成裝飾器內部函式 <code>wrapper</code> 的名稱。而由於 <code>wrapper</code> 不是一個 top-level 的函式，而是隸屬 <code>timer</code> 函式下的 <code>&lt;locals&gt;</code>，因此 Pickle 在試圖存取時直接因為名稱不符合 Pickable 原則而引發了錯誤。</p>
-<p>而且決方法僅僅是讓裝飾後的函式保留原本的名稱，一樣叫做 <code>haha</code>，Pickle 發現這個名稱存在於 Top-Level 就把他記下來。但實際上他記得的也只有名稱，Unpickle 的時候如果沒有保留定義 <code>haha</code> 的函式、或是 <code>haha</code> 的內容和 Pickle 時不一樣，執行起來仍會是不同的內容！</p>
-<h2 id="個人見解"><a href="#個人見解" class="headerlink" title="個人見解"></a>個人見解</h2><p>Pickle 是刻意設計不儲存程式碼，對函式與類別都以 name reference 的方式保存的。因此想要透過 pickle 來「永久的」存下函式與類別是不可能的，乍聽起來很不方便。但換個角度或許該想的是：</p>
-<ul>
-<li><p>什麼東西是應該被永久保存的呢？應該是資料。</p>
-</li>
-<li><p>資料應該以何種形式存在呢？應該是實例。</p>
-</li>
-<li><p>所以函式、類別是什麼？我想是一個流程、或是一個抽象的敘述。</p>
-<p>理論上，如果有一些變動性的、Runtime 才決定的資料也應該是外部傳入，如果是內部所需要的資料也跟外界無關，作為 local 變數定義在程式碼中就好。</p>
-</li>
-</ul>
-<p>這樣思考起來，好像也能夠明白為何函式與類別不會把程式碼存下來。</p>
-<p>但如果，需要函式有一點「記憶力」呢？例如，在執行 Min-max 正規化時，希望函式能夠記住第一次正規化的上下界屬性，後面都直接帶入就好，不用每次都傳入上下界；或是希望把這組正規化參數記下來，但不希望是把 min ＆ max 倆組分別記下來、怕資訊太零散。</p>
-<p>這種時候，或許可以考慮使用 Callable Object。定義一個 Class 並實踐 <code>__call__</code> 方法，把正規化行為定義在裡面，而需要記憶的屬性紀錄在實例裡面，像是 <code>self.mins</code>, <code>self.maxs</code>… ，在儲存的時候直接把這個 normalizer 存下來即可。</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">norm</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> <span class="token punctuation">(</span>arr<span class="token operator">-</span>mins<span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span>maxs<span class="token operator">-</span>mins<span class="token punctuation">)</span>
-
-<span class="token keyword">class</span> <span class="token class-name">Normalizer</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        self<span class="token punctuation">.</span>mins <span class="token operator">=</span> mins 
-        self<span class="token punctuation">.</span>maxs <span class="token operator">=</span> maxs 
-        
-    <span class="token keyword">def</span> <span class="token function">__call__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> arr<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> <span class="token punctuation">(</span>arr<span class="token operator">-</span>self<span class="token punctuation">.</span>mins<span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>maxs<span class="token operator">-</span>self<span class="token punctuation">.</span>mins<span class="token punctuation">)</span>
-        
-<span class="token comment"># in some main process.... </span>
-<span class="token keyword">if</span> __name__<span class="token operator">==</span><span class="token string">"__main__"</span><span class="token punctuation">:</span>
-    <span class="token keyword">for</span> data <span class="token keyword">in</span> datalist<span class="token punctuation">:</span>
-        mins<span class="token punctuation">,</span> maxs <span class="token operator">=</span> data<span class="token punctuation">.</span><span class="token builtin">min</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> data<span class="token punctuation">.</span><span class="token builtin">max</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-        data <span class="token operator">=</span> norm<span class="token punctuation">(</span>data<span class="token punctuation">,</span> mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span>
-        
-        <span class="token comment"># 1. 透過 function 達成</span>
-        normalizer <span class="token operator">=</span> <span class="token keyword">lambda</span> arr<span class="token punctuation">:</span> norm<span class="token punctuation">(</span>arr<span class="token punctuation">,</span> mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span>
-        <span class="token keyword">def</span> <span class="token function">normalizer</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># OR do this... </span>
-            <span class="token keyword">return</span> norm<span class="token punctuation">(</span>arr<span class="token punctuation">,</span> mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span>
-        validation_data <span class="token operator">=</span> normalizer<span class="token punctuation">(</span>validation_data<span class="token punctuation">)</span>
-        
-        joblib<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>normalizer<span class="token punctuation">,</span> <span class="token string">"normalizer.pkl"</span><span class="token punctuation">)</span> <span class="token comment"># 決對會出錯.. </span>
-        
-        <span class="token comment"># 2. 透過 callable object 達成 </span>
-        normalizer <span class="token operator">=</span> Normalizer<span class="token punctuation">(</span>mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span>
-        data <span class="token operator">=</span> normalizer<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
-        validation_data <span class="token operator">=</span> normalizer<span class="token punctuation">(</span>validation_data<span class="token punctuation">)</span>
-        joblib<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>normalizer<span class="token punctuation">,</span> <span class="token string">"normalizer.pkl"</span><span class="token punctuation">)</span>     </code></pre>
-
-]]></content>
-      <tags>
-        <tag>python</tag>
-        <tag>官方文件</tag>
-        <tag>pickle</tag>
       </tags>
   </entry>
   <entry>
@@ -959,6 +717,391 @@ new_reader<span class="token punctuation">.</span>readline<span class="token pun
       </tags>
   </entry>
   <entry>
+    <title>Hexo Blog 客製化 (3) Next 主題加速</title>
+    <url>/posts/2022_01_26_blog-3-speedup.html</url>
+    <content><![CDATA[<p>說實話，在改字體後還想要網站加速，突然覺得自己有點癡人說夢。改字體本來就會造成額外的負擔! 但還是基於個人的喜好依然想改，照樣記錄一下心路歷程! </p>
+<h2 id="改變字體"><a href="#改變字體" class="headerlink" title="改變字體"></a>改變字體</h2><p>有關  <code>_config.next.yml</code> 與  <code>source\_data\styles.styl</code>  的配置參見前面的兩個章節！</p>
+<ol>
+<li><p>在 <code>_config.next.yml</code> 中配置字體段落</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">font</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span> 
+  <span class="token key atrule">host</span><span class="token punctuation">:</span>
+  <span class="token key atrule">global</span><span class="token punctuation">:</span>
+    <span class="token key atrule">external</span><span class="token punctuation">:</span> <span class="token boolean important">false</span> <span class="token comment"># 如果寫 true, 就可以不用考慮後面的第三步了。</span>
+    <span class="token key atrule">family</span><span class="token punctuation">:</span> <span class="token string">'Noto Serif SC'</span></code></pre></li>
+<li><p>在<code>source\_data\variables.styl</code> 中設置環境變數，覆蓋原本的設定檔。</p>
+<p>記得要整段 font 的段落都複製！舉例而言，如果只覆蓋了 <code>font-family-chinese</code> 與 <code>font-family-base</code> 兩個變數，疑似因為在 Next 原本檔案中有其它變數使用到 <code>font-family-base</code>，而他們只會記住舊的變數。這會導致畫面有部份（像是 side bar）更改字體，而有部份依然使用微軟正黑體。</p>
+<pre class="language-stylus" data-language="stylus"><code class="language-stylus"><span class="token variable-declaration"><span class="token variable">$font-family-chinese</span>      <span class="token operator">=</span> <span class="token string">'Noto Serif TC'</span><span class="token punctuation">,</span> <span class="token string">'Microsoft YaHei'</span><span class="token punctuation">;</span> </span>
+
+<span class="token variable-declaration"><span class="token variable">$font-family-base</span>         <span class="token operator">=</span> $font-family-chinese<span class="token punctuation">,</span> sans-serif<span class="token punctuation">;</span></span>
+<span class="token variable-declaration"><span class="token variable">$font-family-base</span>         <span class="token operator">=</span> get_font_family<span class="token punctuation">(</span><span class="token string">'global'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> $font-family-chinese<span class="token punctuation">,</span> sans-serif <span class="token keyword">if</span> get_font_family<span class="token punctuation">(</span><span class="token string">'global'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+
+<span class="token variable-declaration"><span class="token variable">$font-family-logo</span>         <span class="token operator">=</span> $font-family-base<span class="token punctuation">;</span></span>
+<span class="token variable-declaration"><span class="token variable">$font-family-logo</span>         <span class="token operator">=</span> get_font_family<span class="token punctuation">(</span><span class="token string">'title'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> $font-family-base <span class="token keyword">if</span> get_font_family<span class="token punctuation">(</span><span class="token string">'title'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+
+<span class="token variable-declaration"><span class="token variable">$font-family-headings</span>     <span class="token operator">=</span> $font-family-base<span class="token punctuation">;</span></span>
+<span class="token variable-declaration"><span class="token variable">$font-family-headings</span>     <span class="token operator">=</span> get_font_family<span class="token punctuation">(</span><span class="token string">'headings'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> $font-family-base <span class="token keyword">if</span> get_font_family<span class="token punctuation">(</span><span class="token string">'headings'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+
+<span class="token variable-declaration"><span class="token variable">$font-family-posts</span>        <span class="token operator">=</span> $font-family-base<span class="token punctuation">;</span></span>
+<span class="token variable-declaration"><span class="token variable">$font-family-posts</span>        <span class="token operator">=</span> get_font_family<span class="token punctuation">(</span><span class="token string">'posts'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> $font-family-base <span class="token keyword">if</span> get_font_family<span class="token punctuation">(</span><span class="token string">'posts'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+
+<span class="token variable-declaration"><span class="token variable">$font-family-monospace</span>    <span class="token operator">=</span> consolas<span class="token punctuation">,</span> Menlo<span class="token punctuation">,</span> monospace<span class="token punctuation">,</span> $font-family-chinese<span class="token punctuation">;</span></span>
+<span class="token variable-declaration"><span class="token variable">$font-family-monospace</span>    <span class="token operator">=</span> get_font_family<span class="token punctuation">(</span><span class="token string">'codes'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> consolas<span class="token punctuation">,</span> Menlo<span class="token punctuation">,</span> monospace<span class="token punctuation">,</span> $font-family-chinese <span class="token keyword">if</span> get_font_family<span class="token punctuation">(</span><span class="token string">'codes'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+</code></pre></li>
+</ol>
+<p>接下來是第三步驟，主要是我發現改字體後的載入速度比使用原生的微軟正黑體慢了至少 0.5~1秒以上吧。我嘗試想加速字體載入的部份，會先寫建議使用的方法，再紀錄一下我嘗試的方法。</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">font</span><span class="token punctuation">:</span>
+  <span class="token key atrule">global</span><span class="token punctuation">:</span>
+    <span class="token key atrule">external</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+    <span class="token key atrule">family</span><span class="token punctuation">:</span> <span class="token string">'Noto Serif SC'</span></code></pre>
+
+
+
+<h3 id="方法一：字體預載入"><a href="#方法一：字體預載入" class="headerlink" title="方法一：字體預載入"></a>方法一：字體預載入</h3><p>來到 <a href="https://fonts.google.com/noto/specimen/Noto+Serif+TC">google font api</a> ，我們選擇要的粗細(Regular) 之後，左邊會有個彈出視窗，教導我們怎麼在 Html 跟 CSS 中嵌入。</p>
+<blockquote>
+<p>To embed a font, copy the code into the <code>&lt;head&gt;</code> of your html</p>
+</blockquote>
+<pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>preconnect<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://fonts.googleapis.com<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>preconnect<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://fonts.gstatic.com<span class="token punctuation">"</span></span> <span class="token attr-name">crossorigin</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://fonts.googleapis.com/css2?family=Noto+Serif+TC&amp;display=fallback<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></code></pre>
+
+<p>可以用 Vscode 之類的在部落格資料夾中找到寫有 <code>&lt;head&gt;</code> 的模板，在我的版本 (V8.9) 中，這位於 <code>themes\next\layout\_layout.njk</code>，直接在 <code>&lt;head&gt;</code> 中把上面那段落貼上，就完成了！</p>
+<p>由於我對網頁前端並不熟悉，不是很確定這是否為關鍵因素。但在我使用預設的 config <code>external:true</code> 並把 preload 註解掉之後，透過 <a href="https://pagespeed.web.dev/">pagespeed</a> 測試，載入時間落差約有一秒左右。</p>
+<h3 id="方法二：掛載在當前網域下-不建議"><a href="#方法二：掛載在當前網域下-不建議" class="headerlink" title="方法二：掛載在當前網域下 (不建議)"></a>方法二：掛載在當前網域下 (不建議)</h3><p>在 <code>source\_data\styles.styl</code> 中添加字體的匯入：</p>
+<pre class="language-stylus" data-language="stylus"><code class="language-stylus"><span class="token atrule-declaration"><span class="token atrule">@font-face</span> <span class="token punctuation">&#123;</span></span>
+  <span class="token property-declaration"><span class="token property">font-family</span><span class="token punctuation">:</span> <span class="token string">'Noto Serif TC'</span><span class="token punctuation">;</span></span>
+  <span class="token property-declaration"><span class="token property">font-weight</span><span class="token punctuation">:</span> <span class="token number">400</span><span class="token punctuation">;</span></span>
+  <span class="token property-declaration"><span class="token property">font-style</span><span class="token punctuation">:</span> normal<span class="token punctuation">;</span></span>
+  <span class="token property-declaration"><span class="token property">font-display</span><span class="token punctuation">:</span> fallback<span class="token punctuation">;</span></span>
+  src<span class="token punctuation">:</span> <span class="token func"><span class="token function">local</span><span class="token punctuation">(</span><span class="token string">'Noto Serif TC'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> local<span class="token punctuation">(</span><span class="token string">'Noto-Serif-TC'</span><span class="token punctuation">)</span><span class="token punctuation">,</span></span>
+       <span class="token func"><span class="token function">url</span><span class="token punctuation">(</span><span class="token string">'/fonts/NotoSerifTC-Regular.otf'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+<p><code>font-display: fallback</code> 可以使網頁先使用預設字體（微軟正黑體）這種本身就存在於電腦中的字體，使內容可以先顯示。而背景會默默把設定的 Noto Serif TC 下載，事後置換。</p>
+<p>選擇掛在於子網域未必會比較好，因為完整的 otf 檔案高達 MB 級，儘管設置了字體置換，等到完整的載入字體也需要長達 10 秒的時間 (視網路速度吧)。而 google font api 本身有把字體切割成很多部份，讓網頁可以選擇載入有用到的部份字形即可，節省下載量。</p>
+<h2 id="找出網頁的-Bug"><a href="#找出網頁的-Bug" class="headerlink" title="找出網頁的 Bug"></a>找出網頁的 Bug</h2><p>可以打開 chrome <a href="https://support.google.com/campaignmanager/answer/2828688?hl=zh-Hant">開發人員工具</a> 中 “Network” 項目，並 ctrl+R  重新整理網頁。檢查一下都是哪些檔案拖垮了網站速度。我當時發現有一些找不到路徑的字體檔案、Hexo 在產生靜態頁面時有寫的 warning 都有影響，所以修到沒 bug 在推上網路很重要。務必確保網頁在載入的期間只有載入<strong>需要的元件</strong>，不需要花時間試誤。</p>
+<pre class="language-none"><code class="language-none">Warning: Accessing non-existent property &#39;filename&#39; of module exports inside circular dependency</code></pre>
+
+<p>Google 一番之後，參考<a href="https://www.haoyizebo.com/posts/710984d0/">此篇文章</a> 發現是 <code>nib</code> 套件出了問題。我的解決方法沒有順著他的教學，先嘗試重新安裝 <code>hexo-renderer-stylus</code> 但並沒有用。添加 <code>&quot;resolutions&quot;</code> 的部分忘記有沒有嘗試過，或許還是失敗了吧。</p>
+<p>最終，我是在 <code>package-lock.json</code> 的 <code>nib</code> 套件下找到: </p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml">"stylus"<span class="token punctuation">:</span>0.54.5</code></pre>
+
+<p>修改成</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">"stylus"</span><span class="token punctuation">:</span> 0.54.8</code></pre>
+
+<p><code>npm install</code> 之後參照輸出的資訊內容，先後下指令 <code>npm audit fix</code> 與 <code>npm audit fix --force</code> 解決了這個問題。</p>
+<h2 id="修改-Next-主題的動畫時間-不建議"><a href="#修改-Next-主題的動畫時間-不建議" class="headerlink" title="修改 Next 主題的動畫時間 [不建議]"></a>修改 Next 主題的動畫時間 [不建議]</h2><p>由於不同版本的 Next 程式碼內容也可能有所不同，參考自: <a href="https://blog.csdn.net/Domino_b/article/details/81704118">Hexo NexT 主題修改動畫效果速度</a>。</p>
+<ol>
+<li>使用 Vscode 之類的編輯器在 Next 主題中尋找關鍵字 <code>duration</code>，它可能出現在很多 js 檔案中，有些預設是 200、有些是 500。</li>
+<li>直接改數字，我先改成 100 之後大概看一下效果，網頁載入的速度明顯有提升! 可以先在 localhost 上測試。不敢貿然換成 0 的原因是不確定會不會因為某些元素來不及載入造成錯誤，反而拖到整體的時間。</li>
+<li>稍微判讀一下程式變數，有些頗容易看出函式意義的可以改短一點，不怕會不會影響載入，例如: <code>registerSidebarTOC</code>函式應該是跟側邊欄位「文章目錄」、「本站摘要」之間切換的動畫吧，我會再把數字改小一點。</li>
+</ol>
+<p>反覆在 local 端測試會不會造成 Bug 或使用者體驗不佳，之後就可以部屬到 github page 上了。部屬之後可以到 <a href="https://pagespeed.web.dev/">pagespeed</a> 測試一下表現如何，該網頁會給一些診斷建議，但我自己沒有前端經驗不太知道怎麼改，只是拿來測速度。目前的網頁測試在電腦版中大約有 85-89 分的成績。</p>
+<h2 id="在-Next-Config-中設置動畫選項"><a href="#在-Next-Config-中設置動畫選項" class="headerlink" title="在 Next Config 中設置動畫選項"></a>在 Next Config 中設置動畫選項</h2><p>在手動更改 duration 數值後依然不滿意的我繼續爬，發現其實 Next 主題在 config 中就已有一段設定了，可以<strong>直接把動畫關掉</strong>。即使想要保留動畫，<code>async</code> 也可考慮開起來，讓元素們非同步加載有機會讓 Loading 更快吧。之所以前一段去改 duration 列為不建議是因為，我不太確定修改間隔會不會對元素的加載產生一些問題，但還是記錄起來。</p>
+<p>值得一提的是，包括進場動畫其實都是可以改的! 在 Next 主題的 demo 頁面中有展示各個特效名稱對應的效果: <a href="https://theme-next.js.org/animate/">https://theme-next.js.org/animate/</a> 。</p>
+<p>這邊是我已經改過的 yaml 部分: </p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">motion</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">async</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">transition</span><span class="token punctuation">:</span>
+    <span class="token comment"># All available transition variants: https://theme-next.js.org/animate/</span>
+    <span class="token key atrule">post_block</span><span class="token punctuation">:</span> fadeIn
+    <span class="token key atrule">post_header</span><span class="token punctuation">:</span> fadeInUp 
+    <span class="token key atrule">post_body</span><span class="token punctuation">:</span> fadeIn
+    <span class="token key atrule">coll_header</span><span class="token punctuation">:</span> fadeInLeft
+    <span class="token comment"># Only for Pisces | Gemini.</span>
+    <span class="token key atrule">sidebar</span><span class="token punctuation">:</span> fadeInUp</code></pre>
+
+<h2 id="Plugin-hexo-filter-optimize"><a href="#Plugin-hexo-filter-optimize" class="headerlink" title="Plugin : hexo-filter-optimize"></a>Plugin : <code>hexo-filter-optimize</code></h2><p>下載之後</p>
+<pre class="language-sh" data-language="sh"><code class="language-sh">npm install hexo-filter-optimize</code></pre>
+
+<p>在 site config (hexo config) 中添加設定: 我會把 css 的 bundle 關掉，因為開啟來的時候有一點造成畫面跑版，看得不太舒服。</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">filter_optimize</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token comment"># remove the surrounding comments in each of the bundled files</span>
+  <span class="token key atrule">remove_comments</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">css</span><span class="token punctuation">:</span>
+    <span class="token comment"># minify all css files</span>
+    <span class="token key atrule">minify</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token comment"># bundle loaded css files into one</span>
+    <span class="token key atrule">bundle</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+    <span class="token comment"># use a script block to load css elements dynamically</span>
+    <span class="token key atrule">delivery</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token comment"># make specific css content inline into the html page</span>
+    <span class="token comment">#   - only support the full path</span>
+    <span class="token comment">#   - default is ['css/main.css']</span>
+    <span class="token key atrule">inlines</span><span class="token punctuation">:</span>
+    <span class="token key atrule">excludes</span><span class="token punctuation">:</span>
+  <span class="token key atrule">js</span><span class="token punctuation">:</span>
+    <span class="token comment"># minify all js files</span>
+    <span class="token key atrule">minify</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token comment"># bundle loaded js files into one</span>
+    <span class="token key atrule">bundle</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+    <span class="token key atrule">excludes</span><span class="token punctuation">:</span>
+  <span class="token comment"># set the priority of this plugin,</span>
+  <span class="token comment"># lower means it will be executed first, default of Hexo is 10</span>
+  <span class="token key atrule">priority</span><span class="token punctuation">:</span> <span class="token number">12</span></code></pre>
+
+<p>使用 <code>hexo-filter-optimize</code> 之後，有機會讓分數提升，我在手機版面上的分數就從 55 提升到了 78 (雖然有點迷惑那個分數的意義)</p>
+]]></content>
+      <tags>
+        <tag>blog</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python 資料永久化套件:Pickle (2)</title>
+    <url>/posts/2022_01_17_pickle-advance.html</url>
+    <content><![CDATA[<h2 id="PEP-3155-Qualified-name"><a href="#PEP-3155-Qualified-name" class="headerlink" title="PEP 3155 Qualified name"></a>PEP 3155 Qualified name</h2><p>有關 Fully Qualified Name 的部份我是第一次看到…，嘗試閱讀 PEP 內容，不是很確定閱讀理解是否正確，若有錯誤歡迎指教！</p>
+<p>這個 PEP 議題是添加一個 <code>__qualname__</code> 屬性在函式跟類別中。對於 Top-Level 的函式與類別，這個屬性等同於 <code>__name__</code>，而對於巢狀的類別跟巢狀函式，<code>__qualname__</code> 屬性 dotted name 呈現，代表從 Top-Level 算起，該物件的層級位置。<code>repr()</code> 跟 <code>str()</code> 作用於類別與函式上時，也被修改成使用 <code>__qualname__</code>  而非 <code>__name__</code>。</p>
+<p>dotted name 表示從一個模組的 global 區域到該類別、函式或方法的路徑。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">C</span><span class="token punctuation">:</span>
+    <span class="token keyword">class</span> <span class="token class-name">D</span><span class="token punctuation">:</span>
+        <span class="token keyword">def</span> <span class="token function">meth</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">pass</span>
+
+In <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">:</span> C<span class="token punctuation">.</span>__qualname__
+Out<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'C'</span>
+
+In <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">:</span> C<span class="token punctuation">.</span>D<span class="token punctuation">.</span>__qualname__
+Out<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'C.D'</span>
+
+In <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">:</span> C<span class="token punctuation">.</span>D<span class="token punctuation">.</span>__name__
+Out<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'D'</span>
+    
+In <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">:</span> C<span class="token punctuation">.</span>D<span class="token punctuation">.</span>meth<span class="token punctuation">.</span>__qualname__
+Out<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'C.D.meth'</span></code></pre>
+
+<p>而且對於被 <code>import</code> 的模組是不存在 <code>__qualname__</code> 屬性的，他們只有 <code>__name__</code>屬性，表達的是他的 Fully Qualified Name：該模組到其頂層父模組之間的層級關係：</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> email<span class="token punctuation">.</span>mime<span class="token punctuation">.</span>text
+email<span class="token punctuation">.</span>mime<span class="token punctuation">.</span>text<span class="token punctuation">.</span>__name__</code></pre>
+
+
+
+<h2 id="情境探討-有裝飾器的函式無法被-Pickle"><a href="#情境探討-有裝飾器的函式無法被-Pickle" class="headerlink" title="情境探討: 有裝飾器的函式無法被 Pickle"></a>情境探討: 有裝飾器的函式無法被 Pickle</h2><p>問題來源<a href="https://blog.csdn.net/qq_39314099/article/details/83822593">自此網站</a>，我們可以嘗試用閱讀完官方文件後的邏輯來解釋這個問題。因為覺得程式繁瑣，所以大概照著意思稍微改寫了一下，博主寫了一個名為 <code>haha</code> 的函式，會印出 <code>hello XXX</code>，並為它添加了計時裝飾器。雖然沒有明確的說怎麼存檔出了錯，但根據引發的 Error 我大致假設是嘗試存 <code>haha</code> 這個函式。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> time<span class="token punctuation">,</span> pickle
+<span class="token keyword">from</span> functools <span class="token keyword">import</span> wraps
+
+<span class="token keyword">def</span> <span class="token function">timer</span><span class="token punctuation">(</span>mth<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>    
+    <span class="token comment"># @wraps(mth)</span>
+    <span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        st <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        res <span class="token operator">=</span> mth<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
+        et <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Spend </span><span class="token interpolation"><span class="token punctuation">&#123;</span><span class="token builtin">float</span><span class="token punctuation">(</span>et<span class="token operator">-</span>st<span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span><span class="token string"> sec."</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> res
+    <span class="token keyword">return</span> wrapper
+
+<span class="token decorator annotation punctuation">@timer</span>
+<span class="token keyword">def</span> <span class="token function">haha</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Hello </span><span class="token interpolation"><span class="token punctuation">&#123;</span>name<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"function.pkl"</span><span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"name of haha function is:"</span><span class="token punctuation">,</span> haha<span class="token punctuation">)</span>
+    pickle<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>haha<span class="token punctuation">,</span> f<span class="token punctuation">)</span></code></pre>
+
+<p>在試圖存下這個函式時發生了問題：<code>AttributeError: Can&#39;t pickle local object &#39;timer.&lt;locals&gt;.wrapper&#39;</code>。而樓主表示只要給裝飾器裡面裝上 <code>warp</code>，問題就解決了。<code>warp</code>應該擺放的位置已經寫在程式裡面了，可以試著註解與取消註解看看函式的名稱的不同。</p>
+<ul>
+<li>沒有 <code>warp</code> 的情況：<code>&lt;function timer.&lt;locals&gt;.wrapper at 0x000001EBECA588B8&gt;</code></li>
+<li>有 <code>warp</code> 的情況：<code>&lt;function haha at 0x000001BF76B188B8&gt;</code></li>
+</ul>
+<p>所以追根究底，這個問題的癥結點在於包上裝飾器後，若沒有使用 <code>functools.wraps</code> 讓裝飾後的函式名稱仍保持原樣，該函式的名稱會變成裝飾器內部函式 <code>wrapper</code> 的名稱。而由於 <code>wrapper</code> 不是一個 top-level 的函式，而是隸屬 <code>timer</code> 函式下的 <code>&lt;locals&gt;</code>，因此 Pickle 在試圖存取時直接因為名稱不符合 Pickable 原則而引發了錯誤。</p>
+<p>而且決方法僅僅是讓裝飾後的函式保留原本的名稱，一樣叫做 <code>haha</code>，Pickle 發現這個名稱存在於 Top-Level 就把他記下來。但實際上他記得的也只有名稱，Unpickle 的時候如果沒有保留定義 <code>haha</code> 的函式、或是 <code>haha</code> 的內容和 Pickle 時不一樣，執行起來仍會是不同的內容！</p>
+<h2 id="個人見解"><a href="#個人見解" class="headerlink" title="個人見解"></a>個人見解</h2><p>Pickle 是刻意設計不儲存程式碼，對函式與類別都以 name reference 的方式保存的。因此想要透過 pickle 來「永久的」存下函式與類別是不可能的，乍聽起來很不方便。但換個角度或許該想的是：</p>
+<ul>
+<li><p>什麼東西是應該被永久保存的呢？應該是資料。</p>
+</li>
+<li><p>資料應該以何種形式存在呢？應該是實例。</p>
+</li>
+<li><p>所以函式、類別是什麼？我想是一個流程、或是一個抽象的敘述。</p>
+<p>理論上，如果有一些變動性的、Runtime 才決定的資料也應該是外部傳入，如果是內部所需要的資料也跟外界無關，作為 local 變數定義在程式碼中就好。</p>
+</li>
+</ul>
+<p>這樣思考起來，好像也能夠明白為何函式與類別不會把程式碼存下來。</p>
+<p>但如果，需要函式有一點「記憶力」呢？例如，在執行 Min-max 正規化時，希望函式能夠記住第一次正規化的上下界屬性，後面都直接帶入就好，不用每次都傳入上下界；或是希望把這組正規化參數記下來，但不希望是把 min ＆ max 倆組分別記下來、怕資訊太零散。</p>
+<p>這種時候，或許可以考慮使用 Callable Object。定義一個 Class 並實踐 <code>__call__</code> 方法，把正規化行為定義在裡面，而需要記憶的屬性紀錄在實例裡面，像是 <code>self.mins</code>, <code>self.maxs</code>… ，在儲存的時候直接把這個 normalizer 存下來即可。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">norm</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>arr<span class="token operator">-</span>mins<span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span>maxs<span class="token operator">-</span>mins<span class="token punctuation">)</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Normalizer</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>mins <span class="token operator">=</span> mins 
+        self<span class="token punctuation">.</span>maxs <span class="token operator">=</span> maxs 
+        
+    <span class="token keyword">def</span> <span class="token function">__call__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> arr<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>arr<span class="token operator">-</span>self<span class="token punctuation">.</span>mins<span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>maxs<span class="token operator">-</span>self<span class="token punctuation">.</span>mins<span class="token punctuation">)</span>
+        
+<span class="token comment"># in some main process.... </span>
+<span class="token keyword">if</span> __name__<span class="token operator">==</span><span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> data <span class="token keyword">in</span> datalist<span class="token punctuation">:</span>
+        mins<span class="token punctuation">,</span> maxs <span class="token operator">=</span> data<span class="token punctuation">.</span><span class="token builtin">min</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> data<span class="token punctuation">.</span><span class="token builtin">max</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        data <span class="token operator">=</span> norm<span class="token punctuation">(</span>data<span class="token punctuation">,</span> mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span>
+        
+        <span class="token comment"># 1. 透過 function 達成</span>
+        normalizer <span class="token operator">=</span> <span class="token keyword">lambda</span> arr<span class="token punctuation">:</span> norm<span class="token punctuation">(</span>arr<span class="token punctuation">,</span> mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span>
+        <span class="token keyword">def</span> <span class="token function">normalizer</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># OR do this... </span>
+            <span class="token keyword">return</span> norm<span class="token punctuation">(</span>arr<span class="token punctuation">,</span> mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span>
+        validation_data <span class="token operator">=</span> normalizer<span class="token punctuation">(</span>validation_data<span class="token punctuation">)</span>
+        
+        joblib<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>normalizer<span class="token punctuation">,</span> <span class="token string">"normalizer.pkl"</span><span class="token punctuation">)</span> <span class="token comment"># 決對會出錯.. </span>
+        
+        <span class="token comment"># 2. 透過 callable object 達成 </span>
+        normalizer <span class="token operator">=</span> Normalizer<span class="token punctuation">(</span>mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span>
+        data <span class="token operator">=</span> normalizer<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+        validation_data <span class="token operator">=</span> normalizer<span class="token punctuation">(</span>validation_data<span class="token punctuation">)</span>
+        joblib<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>normalizer<span class="token punctuation">,</span> <span class="token string">"normalizer.pkl"</span><span class="token punctuation">)</span>     </code></pre>
+
+]]></content>
+      <tags>
+        <tag>python</tag>
+        <tag>官方文件</tag>
+        <tag>pickle</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python 日誌模組 Logging (2)</title>
+    <url>/posts/2022_01_22_python-logging-advance.html</url>
+    <content><![CDATA[<p>Logging 模組中主要就是這四種物件：</p>
+<ul>
+<li>Loggers : 提供直接讓其他應用程式使用的接口 (expose the interface that application code directly uses)</li>
+<li>Handlers : 發送日誌紀錄到適合的目標地點，像是檔案、stdout、甚至 Qt GUI 等等。</li>
+<li>Formatters : 輸出的格式。</li>
+<li>Filters : 過濾器，決定哪些日誌訊息可以傳到輸出。</li>
+</ul>
+<h2 id="Loggers"><a href="#Loggers" class="headerlink" title="Loggers"></a><a href="https://docs.python.org/3/howto/logging.html#advanced-logging-tutorial">Loggers</a></h2><p>logger 負責三個工作</p>
+<ol>
+<li>暴露一些方法讓應用程式去調用，在執行期間(runtime) 中紀錄訊息。</li>
+<li>根據嚴重性或 filter 物件，決定讓那些訊息要傳遞出去。<ul>
+<li>預設的過濾條件就是根據嚴重性(severity)</li>
+</ul>
+</li>
+<li>將相關的日誌訊息傳遞到相關的 log handlers 手上。</li>
+</ol>
+<h3 id="常用的方法"><a href="#常用的方法" class="headerlink" title="常用的方法"></a>常用的方法</h3><ul>
+<li><code>Logger.setLevel()</code> : 設定嚴重性的 threshold 。</li>
+<li><code>Logger.addHandler()</code> , <code>Logger.removeHandler()</code> : 新增或移除 handler.</li>
+<li><code>Logger.addFilter()</code> ,<code>Logger.removeFilter()</code> : 新增或移除 Filter，</li>
+</ul>
+<p>每當 logger 物件被創建時，下面的函數會自動配置產生：</p>
+<ul>
+<li><p><code>Logger.debug()</code>, <code>Logger.info()</code>, <code>Logger.warning()</code>, <code>Logger.error()</code>, <code>Logger.critical() </code>：括號裡面填寫要傳入的日誌訊息， <strong>必須是 string 形式</strong>，剩下的一些參數可以透過 <code>**kwargs</code> 傳入 (ex. <code>exc_info</code>… )</p>
+<ul>
+<li><p>當紀錄的訊息是從 print 轉過來的時候要注意，所有的訊息要寫在同一條 string 裡面：</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"var1=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>var1<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">,</span> <span class="token string-interpolation"><span class="token string">f"var2=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>var2<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+logger<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"var1=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>var1<span class="token punctuation">&#125;</span></span><span class="token string">; var2=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>var2<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span></code></pre>
+
+<p>如果像 print 一樣兩個 string 放不同位置，第二個位置的字串會被當作其他參數，必須要改成只有一條 string。</p>
+</li>
+</ul>
+</li>
+<li><p><code>Logger.exception() </code> : 一個很像 <code>Logger.error()</code> 模式的 logger 方法，不同的是它會<strong>追蹤例外發生的紀錄(traceback)</strong> (dumps a stack trace along with it)，這只應該在例外處理中 (exception handler) 使用。</p>
+</li>
+<li><p><code>Logger.log(level:int, msg: str)</code> : 除非是用到 <strong>自訂的訊息等級</strong> ，它的效果跟第一點的一樣，但是更加的冗長，沒事可以不要用。</p>
+</li>
+</ul>
+<h3 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h3><ol>
+<li><p><code>getLogger()</code> 回傳的是「和輸入名稱相同的 logger 實例的 reference」，如果沒有指定，則回傳 logger實例名字為 <code>root</code> reference。</p>
+</li>
+<li><p>名稱如之前所提，有上下的層級架構關係</p>
+</li>
+<li><p>用相同的名稱 呼叫 <a href="https://docs.python.org/3/library/logging.html#logging.getLogger"><code>getLogger()</code></a> 得到的是 reference :arrow_right: 都參考至相同物件名稱的 logger 物件。</p>
+<pre class="language-python" data-language="python"><code class="language-python">logger1 <span class="token operator">=</span> logging<span class="token punctuation">.</span>get_logger<span class="token punctuation">(</span><span class="token string">"aaa"</span><span class="token punctuation">)</span>
+logger2 <span class="token operator">=</span> logging<span class="token punctuation">.</span>get_logger<span class="token punctuation">(</span><span class="token string">"aaa"</span><span class="token punctuation">)</span> 
+<span class="token builtin">id</span><span class="token punctuation">(</span>logger1<span class="token punctuation">)</span><span class="token operator">==</span><span class="token builtin">id</span><span class="token punctuation">(</span>logger2<span class="token punctuation">)</span> <span class="token comment"># True</span>
+
+<span class="token comment"># 兩條呼叫到的會是同一個 logger 物件：名為 'aaa' 的 logger object. </span></code></pre></li>
+<li><p>嚴重性等級的定義：Logger 能接受的訊息等級受到其父代所影響</p>
+<ol>
+<li>如果自己的等級沒有另外定義，會使用父代所定義的訊息嚴重性等級。</li>
+<li>如果父代沒有定義，會再往上使用「父代的父代」，往上追朔祖先直到有找到清楚的等級定義 (explicitly set level )</li>
+<li>root logger 必然會有一個很清楚的等級定義 (預設是 <code>warning</code>) </li>
+</ol>
+</li>
+<li><p>Logger 所定義能通過的訊息等級，會影響到是否能傳遞到旗下的 handler：</p>
+<ul>
+<li>如果在 logger 上定義通過 warning (30)，卻在 handler 定義等級 info (20) 就能紀錄，那這樣實際紀錄下來的也只會有 warning 以上的訊息，因為低於 warning 的根本進不來這個 logger 的手上。</li>
+</ul>
+</li>
+<li><p>不需要為每個logger 都定義 handler，只要對 root logger 做。</p>
+<ul>
+<li>由於 child logger 的訊息會往上傳遞，所以只需要在上層的 logger 設置即可。</li>
+<li>但是也可以把往上傳遞的功能關掉：參數 <code>propagate=False</code> </li>
+</ul>
+</li>
+</ol>
+<h2 id="Handlers"><a href="#Handlers" class="headerlink" title="Handlers"></a><a href="https://docs.python.org/3/howto/logging.html#handlers">Handlers</a></h2><p>Handler 物件基於所設定的訊息嚴重等級，將日誌訊息派到對應的目的地，像是 stdout。Logger 物件對於 handler 的數量沒什麼限制，可以不加、也可以加很多個。</p>
+<p>Handler 幾乎沒什麼方法可以調用，與其相關的主要是這幾個方法：</p>
+<ul>
+<li><p><code>Logger.addHandler(hdlr)</code></p>
+<ul>
+<li>舉例說明：目標是 (1) 將所有 log 寫進 log file  (2) 所有高於 error 的 msg 丟到 <code>stdout</code> (3)所有 critical 等級的寄信寄出去。一共 3個獨立的 handler 負責做各自的事情。所以需要添加三個不同的 handlers，呼應各自要寄送訊息的目的，還有寄送出去的信息等級。</li>
+<li>標準的library 有提供<a href="https://docs.python.org/3/howto/logging.html#useful-handlers">很多 handlers</a>，最常用的是 <a href="https://docs.python.org/3/library/logging.handlers.html#logging.StreamHandler"><code>StreamHandler</code></a> 和<a href="https://docs.python.org/3/library/logging.handlers.html#logging.FileHandler"><code>FileHandler</code></a>。</li>
+</ul>
+</li>
+<li><p><code>setLevel </code>：handler 也有 <code>setLevel()</code> 方法，和前面的 <code>setLevel</code> 不同</p>
+<ul>
+<li><code>logger.setLevel()</code> 設定的是哪些嚴重性的訊息可以<strong>被傳送到</strong> handlers，而 <code>handler.setLevel()</code>則是決定哪些程度的訊息<strong>可以被派遣到要目的地 (ex. write to file )</strong></li>
+</ul>
+</li>
+<li><p><code>setFormatter()</code>：設定 handler 把訊息傳到目的地時候的訊息格式。</p>
+</li>
+<li><p><code>addFilter()</code> and <code>removeFilter()</code>：配置和移除 filter 於handler 物件。</p>
+</li>
+</ul>
+<h2 id="Formatters"><a href="#Formatters" class="headerlink" title="Formatters"></a><a href="https://docs.python.org/3/howto/logging.html#formatters">Formatters</a></h2><p>決定訊息的格式，有三個可選擇擇的參數：</p>
+<ol>
+<li>訊息字串格式字串 <code>fmt</code>：可調用的一些屬性變數參見 <a href="https://docs.python.org/3.7/library/logging.html#logrecord-attributes">LogRecord attributes</a></li>
+<li>日期格式字串 <code>datefmt</code>: 預設使用  <a href="https://docs.python.org/3/library/time.html#time.localtime"><code>time.localtime()</code></a> 打下時間戳，預設的格式為 <code>%Y-%m-%d %H:%M:%S</code></li>
+<li>style indicator：撰寫模式的提取符號，預設是 <code>%</code>，可修改成 <code>&#123;</code> 或 <code>$</code>。參考不同的 style-indicator 所對應的 formatter 撰寫模式： <pre class="language-python" data-language="python"><code class="language-python">logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'%(asctime)s - %(message)s'</span><span class="token punctuation">,</span> style<span class="token operator">=</span><span class="token string">'%'</span><span class="token punctuation">)</span>
+logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'$(asctime)s - $(message)s'</span><span class="token punctuation">,</span> style<span class="token operator">=</span><span class="token string">'$'</span><span class="token punctuation">)</span>
+logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'&#123;asctime&#125; - &#123;message&#125;'</span><span class="token punctuation">,</span> style<span class="token operator">=</span><span class="token string">'&#123;'</span><span class="token punctuation">)</span></code></pre></li>
+</ol>
+<p>最後舉個例子：</p>
+<pre class="language-python" data-language="python"><code class="language-python">formatter <span class="token operator">=</span> logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'%(asctime)s - %(name)s - %(levelname)s : %(message)s'</span><span class="token punctuation">)</span></code></pre>
+
+<ul>
+<li><code>message</code>：應用程式傳入的日誌訊息</li>
+<li><code>asctime</code>, <code>name</code>, <code>levelname</code>： <a href="https://docs.python.org/3.7/library/logging.html#logrecord-attributes">LogRecord attributes</a> 中所提供可以調用的屬性，分別表示時間、哪個 logger (名稱) 傳入的、訊息等級名稱。</li>
+</ul>
+<h2 id="Filters"><a href="#Filters" class="headerlink" title="Filters"></a><a href="https://docs.python.org/3/library/logging.html#filter-objects">Filters</a></h2><ul>
+<li><p>用在 handler 和 logger 上，提供比「訊息緊急程度層級」更細節的過濾規則</p>
+</li>
+<li><p>最基本，不用實做改寫的 filter，提供以「logger 階層等級」過濾的方法：只能通過<strong>低於自己的層級</strong>。例如 : 設定<code>A.B</code> ，則只會通過 logger <code>A.B</code>, <code>A.B.C</code>, <code>A.B.D</code>…</p>
+<pre class="language-python" data-language="python"><code class="language-python">f <span class="token operator">=</span> logging<span class="token punctuation">.</span>Filter<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"A.B"</span><span class="token punctuation">)</span></code></pre>
+
+<p>代表 “A.B” 以下(包含)層級的 logger 事件訊息可以通過這個過濾器。</p>
+</li>
+<li><p>如果以空白字串初始化，則所有的事件都可以通過。</p>
+</li>
+<li><p>Filter 必須在 log 事件已經被傳送到 handler 前先附加在 handler 上面，才能起過濾的作用。(反正就是一開始先設定好就對了 = = )</p>
+</li>
+</ul>
+<p>預設功能只是基本的，也可以自己設計規則來決定哪些訊息可以通過。想自訂過濾器要做的事情是：</p>
+<ol>
+<li>實作一個 <code>logging.Filter</code> 類別，並實作其 <code>filter</code> 方法</li>
+<li>把這個客製化 filter 實例化後，用 <code>.addFilter()</code> 加到 logger 或 handler </li>
+</ol>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token comment"># 稍微用code表示上面的條列項目</span>
+<span class="token keyword">import</span> logging
+
+<span class="token keyword">class</span> <span class="token class-name">CustomFilter</span><span class="token punctuation">(</span>logging<span class="token punctuation">.</span>Filter<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">filter</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> record<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># 實作過濾規則 </span>
+        <span class="token keyword">return</span> <span class="token boolean">True</span> <span class="token comment"># 要 return True 才代表信息被保留</span>
+
+logging<span class="token punctuation">.</span>basicConfig<span class="token punctuation">(</span>level<span class="token operator">=</span>logging<span class="token punctuation">.</span>INFO<span class="token punctuation">)</span>
+logger <span class="token operator">=</span> logging<span class="token punctuation">.</span>getLogger<span class="token punctuation">(</span><span class="token punctuation">)</span>
+f <span class="token operator">=</span> CustomFilter<span class="token punctuation">(</span><span class="token punctuation">)</span>logger<span class="token punctuation">.</span>addFilter<span class="token punctuation">(</span>f<span class="token punctuation">)</span></code></pre>
+
+<p>舉例而言，一個過濾敏感資料的自定義 Filter 範例 <a href="https://gist.github.com/acdha/9238791">https://gist.github.com/acdha/9238791</a></p>
+]]></content>
+      <tags>
+        <tag>python</tag>
+        <tag>官方文件</tag>
+        <tag>logging</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python 視覺化(2) matplotlib 進階繪圖</title>
     <url>/posts/2022_01_27_python-visualize-advance.html</url>
     <content><![CDATA[<h2 id="多個直方圖疊加"><a href="#多個直方圖疊加" class="headerlink" title="多個直方圖疊加"></a>多個直方圖疊加</h2><ul>
@@ -1233,149 +1376,6 @@ hist.bins: 20 </code></pre>
       <tags>
         <tag>python</tag>
         <tag>visualize</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python 日誌模組 Logging (2)</title>
-    <url>/posts/2022_01_22_python-logging-advance.html</url>
-    <content><![CDATA[<p>Logging 模組中主要就是這四種物件：</p>
-<ul>
-<li>Loggers : 提供直接讓其他應用程式使用的接口 (expose the interface that application code directly uses)</li>
-<li>Handlers : 發送日誌紀錄到適合的目標地點，像是檔案、stdout、甚至 Qt GUI 等等。</li>
-<li>Formatters : 輸出的格式。</li>
-<li>Filters : 過濾器，決定哪些日誌訊息可以傳到輸出。</li>
-</ul>
-<h2 id="Loggers"><a href="#Loggers" class="headerlink" title="Loggers"></a><a href="https://docs.python.org/3/howto/logging.html#advanced-logging-tutorial">Loggers</a></h2><p>logger 負責三個工作</p>
-<ol>
-<li>暴露一些方法讓應用程式去調用，在執行期間(runtime) 中紀錄訊息。</li>
-<li>根據嚴重性或 filter 物件，決定讓那些訊息要傳遞出去。<ul>
-<li>預設的過濾條件就是根據嚴重性(severity)</li>
-</ul>
-</li>
-<li>將相關的日誌訊息傳遞到相關的 log handlers 手上。</li>
-</ol>
-<h3 id="常用的方法"><a href="#常用的方法" class="headerlink" title="常用的方法"></a>常用的方法</h3><ul>
-<li><code>Logger.setLevel()</code> : 設定嚴重性的 threshold 。</li>
-<li><code>Logger.addHandler()</code> , <code>Logger.removeHandler()</code> : 新增或移除 handler.</li>
-<li><code>Logger.addFilter()</code> ,<code>Logger.removeFilter()</code> : 新增或移除 Filter，</li>
-</ul>
-<p>每當 logger 物件被創建時，下面的函數會自動配置產生：</p>
-<ul>
-<li><p><code>Logger.debug()</code>, <code>Logger.info()</code>, <code>Logger.warning()</code>, <code>Logger.error()</code>, <code>Logger.critical() </code>：括號裡面填寫要傳入的日誌訊息， <strong>必須是 string 形式</strong>，剩下的一些參數可以透過 <code>**kwargs</code> 傳入 (ex. <code>exc_info</code>… )</p>
-<ul>
-<li><p>當紀錄的訊息是從 print 轉過來的時候要注意，所有的訊息要寫在同一條 string 裡面：</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"var1=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>var1<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">,</span> <span class="token string-interpolation"><span class="token string">f"var2=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>var2<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
-logger<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"var1=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>var1<span class="token punctuation">&#125;</span></span><span class="token string">; var2=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>var2<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span></code></pre>
-
-<p>如果像 print 一樣兩個 string 放不同位置，第二個位置的字串會被當作其他參數，必須要改成只有一條 string。</p>
-</li>
-</ul>
-</li>
-<li><p><code>Logger.exception() </code> : 一個很像 <code>Logger.error()</code> 模式的 logger 方法，不同的是它會<strong>追蹤例外發生的紀錄(traceback)</strong> (dumps a stack trace along with it)，這只應該在例外處理中 (exception handler) 使用。</p>
-</li>
-<li><p><code>Logger.log(level:int, msg: str)</code> : 除非是用到 <strong>自訂的訊息等級</strong> ，它的效果跟第一點的一樣，但是更加的冗長，沒事可以不要用。</p>
-</li>
-</ul>
-<h3 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h3><ol>
-<li><p><code>getLogger()</code> 回傳的是「和輸入名稱相同的 logger 實例的 reference」，如果沒有指定，則回傳 logger實例名字為 <code>root</code> reference。</p>
-</li>
-<li><p>名稱如之前所提，有上下的層級架構關係</p>
-</li>
-<li><p>用相同的名稱 呼叫 <a href="https://docs.python.org/3/library/logging.html#logging.getLogger"><code>getLogger()</code></a> 得到的是 reference :arrow_right: 都參考至相同物件名稱的 logger 物件。</p>
-<pre class="language-python" data-language="python"><code class="language-python">logger1 <span class="token operator">=</span> logging<span class="token punctuation">.</span>get_logger<span class="token punctuation">(</span><span class="token string">"aaa"</span><span class="token punctuation">)</span>
-logger2 <span class="token operator">=</span> logging<span class="token punctuation">.</span>get_logger<span class="token punctuation">(</span><span class="token string">"aaa"</span><span class="token punctuation">)</span> 
-<span class="token builtin">id</span><span class="token punctuation">(</span>logger1<span class="token punctuation">)</span><span class="token operator">==</span><span class="token builtin">id</span><span class="token punctuation">(</span>logger2<span class="token punctuation">)</span> <span class="token comment"># True</span>
-
-<span class="token comment"># 兩條呼叫到的會是同一個 logger 物件：名為 'aaa' 的 logger object. </span></code></pre></li>
-<li><p>嚴重性等級的定義：Logger 能接受的訊息等級受到其父代所影響</p>
-<ol>
-<li>如果自己的等級沒有另外定義，會使用父代所定義的訊息嚴重性等級。</li>
-<li>如果父代沒有定義，會再往上使用「父代的父代」，往上追朔祖先直到有找到清楚的等級定義 (explicitly set level )</li>
-<li>root logger 必然會有一個很清楚的等級定義 (預設是 <code>warning</code>) </li>
-</ol>
-</li>
-<li><p>Logger 所定義能通過的訊息等級，會影響到是否能傳遞到旗下的 handler：</p>
-<ul>
-<li>如果在 logger 上定義通過 warning (30)，卻在 handler 定義等級 info (20) 就能紀錄，那這樣實際紀錄下來的也只會有 warning 以上的訊息，因為低於 warning 的根本進不來這個 logger 的手上。</li>
-</ul>
-</li>
-<li><p>不需要為每個logger 都定義 handler，只要對 root logger 做。</p>
-<ul>
-<li>由於 child logger 的訊息會往上傳遞，所以只需要在上層的 logger 設置即可。</li>
-<li>但是也可以把往上傳遞的功能關掉：參數 <code>propagate=False</code> </li>
-</ul>
-</li>
-</ol>
-<h2 id="Handlers"><a href="#Handlers" class="headerlink" title="Handlers"></a><a href="https://docs.python.org/3/howto/logging.html#handlers">Handlers</a></h2><p>Handler 物件基於所設定的訊息嚴重等級，將日誌訊息派到對應的目的地，像是 stdout。Logger 物件對於 handler 的數量沒什麼限制，可以不加、也可以加很多個。</p>
-<p>Handler 幾乎沒什麼方法可以調用，與其相關的主要是這幾個方法：</p>
-<ul>
-<li><p><code>Logger.addHandler(hdlr)</code></p>
-<ul>
-<li>舉例說明：目標是 (1) 將所有 log 寫進 log file  (2) 所有高於 error 的 msg 丟到 <code>stdout</code> (3)所有 critical 等級的寄信寄出去。一共 3個獨立的 handler 負責做各自的事情。所以需要添加三個不同的 handlers，呼應各自要寄送訊息的目的，還有寄送出去的信息等級。</li>
-<li>標準的library 有提供<a href="https://docs.python.org/3/howto/logging.html#useful-handlers">很多 handlers</a>，最常用的是 <a href="https://docs.python.org/3/library/logging.handlers.html#logging.StreamHandler"><code>StreamHandler</code></a> 和<a href="https://docs.python.org/3/library/logging.handlers.html#logging.FileHandler"><code>FileHandler</code></a>。</li>
-</ul>
-</li>
-<li><p><code>setLevel </code>：handler 也有 <code>setLevel()</code> 方法，和前面的 <code>setLevel</code> 不同</p>
-<ul>
-<li><code>logger.setLevel()</code> 設定的是哪些嚴重性的訊息可以<strong>被傳送到</strong> handlers，而 <code>handler.setLevel()</code>則是決定哪些程度的訊息<strong>可以被派遣到要目的地 (ex. write to file )</strong></li>
-</ul>
-</li>
-<li><p><code>setFormatter()</code>：設定 handler 把訊息傳到目的地時候的訊息格式。</p>
-</li>
-<li><p><code>addFilter()</code> and <code>removeFilter()</code>：配置和移除 filter 於handler 物件。</p>
-</li>
-</ul>
-<h2 id="Formatters"><a href="#Formatters" class="headerlink" title="Formatters"></a><a href="https://docs.python.org/3/howto/logging.html#formatters">Formatters</a></h2><p>決定訊息的格式，有三個可選擇擇的參數：</p>
-<ol>
-<li>訊息字串格式字串 <code>fmt</code>：可調用的一些屬性變數參見 <a href="https://docs.python.org/3.7/library/logging.html#logrecord-attributes">LogRecord attributes</a></li>
-<li>日期格式字串 <code>datefmt</code>: 預設使用  <a href="https://docs.python.org/3/library/time.html#time.localtime"><code>time.localtime()</code></a> 打下時間戳，預設的格式為 <code>%Y-%m-%d %H:%M:%S</code></li>
-<li>style indicator：撰寫模式的提取符號，預設是 <code>%</code>，可修改成 <code>&#123;</code> 或 <code>$</code>。參考不同的 style-indicator 所對應的 formatter 撰寫模式： <pre class="language-python" data-language="python"><code class="language-python">logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'%(asctime)s - %(message)s'</span><span class="token punctuation">,</span> style<span class="token operator">=</span><span class="token string">'%'</span><span class="token punctuation">)</span>
-logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'$(asctime)s - $(message)s'</span><span class="token punctuation">,</span> style<span class="token operator">=</span><span class="token string">'$'</span><span class="token punctuation">)</span>
-logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'&#123;asctime&#125; - &#123;message&#125;'</span><span class="token punctuation">,</span> style<span class="token operator">=</span><span class="token string">'&#123;'</span><span class="token punctuation">)</span></code></pre></li>
-</ol>
-<p>最後舉個例子：</p>
-<pre class="language-python" data-language="python"><code class="language-python">formatter <span class="token operator">=</span> logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'%(asctime)s - %(name)s - %(levelname)s : %(message)s'</span><span class="token punctuation">)</span></code></pre>
-
-<ul>
-<li><code>message</code>：應用程式傳入的日誌訊息</li>
-<li><code>asctime</code>, <code>name</code>, <code>levelname</code>： <a href="https://docs.python.org/3.7/library/logging.html#logrecord-attributes">LogRecord attributes</a> 中所提供可以調用的屬性，分別表示時間、哪個 logger (名稱) 傳入的、訊息等級名稱。</li>
-</ul>
-<h2 id="Filters"><a href="#Filters" class="headerlink" title="Filters"></a><a href="https://docs.python.org/3/library/logging.html#filter-objects">Filters</a></h2><ul>
-<li><p>用在 handler 和 logger 上，提供比「訊息緊急程度層級」更細節的過濾規則</p>
-</li>
-<li><p>最基本，不用實做改寫的 filter，提供以「logger 階層等級」過濾的方法：只能通過<strong>低於自己的層級</strong>。例如 : 設定<code>A.B</code> ，則只會通過 logger <code>A.B</code>, <code>A.B.C</code>, <code>A.B.D</code>…</p>
-<pre class="language-python" data-language="python"><code class="language-python">f <span class="token operator">=</span> logging<span class="token punctuation">.</span>Filter<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"A.B"</span><span class="token punctuation">)</span></code></pre>
-
-<p>代表 “A.B” 以下(包含)層級的 logger 事件訊息可以通過這個過濾器。</p>
-</li>
-<li><p>如果以空白字串初始化，則所有的事件都可以通過。</p>
-</li>
-<li><p>Filter 必須在 log 事件已經被傳送到 handler 前先附加在 handler 上面，才能起過濾的作用。(反正就是一開始先設定好就對了 = = )</p>
-</li>
-</ul>
-<p>預設功能只是基本的，也可以自己設計規則來決定哪些訊息可以通過。想自訂過濾器要做的事情是：</p>
-<ol>
-<li>實作一個 <code>logging.Filter</code> 類別，並實作其 <code>filter</code> 方法</li>
-<li>把這個客製化 filter 實例化後，用 <code>.addFilter()</code> 加到 logger 或 handler </li>
-</ol>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token comment"># 稍微用code表示上面的條列項目</span>
-<span class="token keyword">import</span> logging
-
-<span class="token keyword">class</span> <span class="token class-name">CustomFilter</span><span class="token punctuation">(</span>logging<span class="token punctuation">.</span>Filter<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">filter</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> record<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token comment"># 實作過濾規則 </span>
-        <span class="token keyword">return</span> <span class="token boolean">True</span> <span class="token comment"># 要 return True 才代表信息被保留</span>
-
-logging<span class="token punctuation">.</span>basicConfig<span class="token punctuation">(</span>level<span class="token operator">=</span>logging<span class="token punctuation">.</span>INFO<span class="token punctuation">)</span>
-logger <span class="token operator">=</span> logging<span class="token punctuation">.</span>getLogger<span class="token punctuation">(</span><span class="token punctuation">)</span>
-f <span class="token operator">=</span> CustomFilter<span class="token punctuation">(</span><span class="token punctuation">)</span>logger<span class="token punctuation">.</span>addFilter<span class="token punctuation">(</span>f<span class="token punctuation">)</span></code></pre>
-
-<p>舉例而言，一個過濾敏感資料的自定義 Filter 範例 <a href="https://gist.github.com/acdha/9238791">https://gist.github.com/acdha/9238791</a></p>
-]]></content>
-      <tags>
-        <tag>python</tag>
-        <tag>官方文件</tag>
-        <tag>logging</tag>
       </tags>
   </entry>
 </search>
