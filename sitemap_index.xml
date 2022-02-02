@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://brainynight.github.io/posts/2021_12_30_python-visualize-basic</loc>
+    
+    <lastmod>2022-02-02</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://brainynight.github.io/posts/2022_01_17_pickle-basic</loc>
     
     <lastmod>2022-02-02</lastmod>
@@ -162,6 +171,13 @@
   
   <url>
     <loc>https://brainynight.github.io/tags/logging/</loc>
+    <lastmod>2022-02-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://brainynight.github.io/tags/visualize/</loc>
     <lastmod>2022-02-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
