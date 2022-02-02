@@ -274,6 +274,70 @@ public&#x2F;
       </tags>
   </entry>
   <entry>
+    <title>Hexo Blog 客製化 (2) Next 主題更新與 PrismJs 啟用</title>
+    <url>/posts/2022_01_26_blog-2-theme-Next-update.html</url>
+    <content><![CDATA[<h2 id="主題版本更新"><a href="#主題版本更新" class="headerlink" title="主題版本更新"></a>主題版本更新</h2><p>Next 主題有在定期更新，每次更新後可能 config 的內容位置都可能有更動。</p>
+<p><a href="https://theme-next.js.org/docs/getting-started/configuration">Next 在 v8.x 的版本中有給予建議</a>，不要將個人的變更寫在 <code>theme/Next/_config.yml</code> 下面，這樣每次 config 有改版都要一個個更新，不一定能完美的 merge。</p>
+<p>我們可以在與 site config (配置 hexo 的設定檔) 同層級的地方，創建一個 <code>_config.[theme].yml</code> 的檔案，<code>theme</code> 帶入主題的名稱。這個檔案中的內容會覆蓋 <code>theme/[next]/_config.yml</code> 的內容。</p>
+<p>如果以 NexT 主題為例：我的 <code>theme</code> 底下主題名稱為 <code>next</code>，配置的客製化檔案名稱為 <code>_config.next.yml</code>。並且我只在裡面放有修改區塊的 config ，避免未來如果要升級，我還花功夫去找哪裡有變更。</p>
+<h2 id="PrismJs-的啟用"><a href="#PrismJs-的啟用" class="headerlink" title="PrismJs 的啟用"></a>PrismJs 的啟用</h2><p>這部分跟主題的版本有關，雖然我是在 2021 年底創建部落格的，但不曉得為何用到了很舊版的 Next，其 <code>_config</code> 沒有有關 Prismjs 在 codeblock 欄位底下的配置。</p>
+<p>後來發現這個問題之後進行版本更新，並遇到在兩個配置落差頗大的 <code>_config</code> 之間玩比對遊戲，因此體悟出了上述辦法的優勢。</p>
+<p>更新後，codeblock 裡面有如下配置:</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">codeblock</span><span class="token punctuation">:</span>
+  <span class="token key atrule">theme</span><span class="token punctuation">:</span>
+    <span class="token key atrule">light</span><span class="token punctuation">:</span> default
+    <span class="token key atrule">dark</span><span class="token punctuation">:</span> tomorrow<span class="token punctuation">-</span>night
+  <span class="token key atrule">prism</span><span class="token punctuation">:</span>
+    <span class="token key atrule">light</span><span class="token punctuation">:</span> prism<span class="token punctuation">-</span>tomorrow
+    <span class="token key atrule">dark</span><span class="token punctuation">:</span> prism<span class="token punctuation">-</span>tomorrow</code></pre>
+
+<p>並且 hexo 的 <code>_config</code> 要將 prismjs 開啟、highlight 關閉: </p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">highlight</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">line_number</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">auto_detect</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">tab_replace</span><span class="token punctuation">:</span> <span class="token string">''</span>
+  <span class="token key atrule">wrap</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">hljs</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+<span class="token key atrule">prismjs</span><span class="token punctuation">:</span>
+  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">preprocess</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+  <span class="token key atrule">line_number</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+  <span class="token key atrule">tab_replace</span><span class="token punctuation">:</span> <span class="token string">''</span></code></pre>
+
+<h2 id="修改行中程式碼的格式-change-inline-code-style"><a href="#修改行中程式碼的格式-change-inline-code-style" class="headerlink" title="修改行中程式碼的格式 (change inline code style)"></a>修改行中程式碼的格式 (change inline code style)</h2><p>我不喜歡預設的 inline code 格式，覺得太灰、padding 太大。而且這些 code 似乎不隸屬 prismjs 的主題規範，要從 CSS 下手! </p>
+<p>首先，我們可以透過右鍵檢查元素發現 inline code 也是隸屬於 <code>code</code> tag，就瞄準這部份研究，我尋找到的方法是直接去改 css 設定。</p>
+<p>在 <code>source\_data\styles.styl</code> 當中(沒有則創建!)，寫入設定：</p>
+<pre class="language-stylus" data-language="stylus"><code class="language-stylus"><span class="token selector">code <span class="token punctuation">&#123;</span></span>
+  <span class="token property-declaration"><span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">0.1</span><span class="token unit">em</span> <span class="token number">0.25</span><span class="token unit">em</span><span class="token punctuation">;</span></span>
+  <span class="token property-declaration"><span class="token property">overflow-wrap</span><span class="token punctuation">:</span> break-word<span class="token punctuation">;</span></span>
+  <span class="token property-declaration"><span class="token property">word-break</span><span class="token punctuation">:</span> break-all<span class="token punctuation">;</span></span>
+  <span class="token property-declaration"><span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#cf222e</span><span class="token punctuation">;</span></span>
+  <span class="token property-declaration"><span class="token property">background</span><span class="token punctuation">:</span> <span class="token hexcode">#fbf7f8</span><span class="token punctuation">;</span></span>
+  <span class="token property-declaration"><span class="token property">border-radius</span><span class="token punctuation">:</span> <span class="token number">0.2</span><span class="token unit">em</span><span class="token punctuation">;</span></span>
+  <span class="token property-declaration"><span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token unit">em</span><span class="token punctuation">;</span></span>
+  <span class="token property-declaration"><span class="token property">font-weight</span><span class="token punctuation">:</span> lighter<span class="token punctuation">;</span> <span class="token comment">// bolder</span></span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+<p>字體顏色選擇跟 github keyword 相似的顏色 <code>#cf222e</code>，雖然這使得 inline code 變得紅字很惹眼，但等到看到受不了再來想其他改法吧。</p>
+<p>光寫入沒有用，還要把這個檔案引入 Next 的渲染過程中。在上述的 <code>_config.next.yml</code> 中添加一段：</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">custom_file_path</span><span class="token punctuation">:</span>
+  <span class="token key atrule">style</span><span class="token punctuation">:</span> source/_data/styles.styl</code></pre>
+
+<p>再嘗試 <code>hexo server</code> 之類的在本地 demo 一下，應該可以看到改動的內容了！</p>
+<hr>
+<p>參考自：</p>
+<ul>
+<li><a href="https://www.cnblogs.com/LyShark/p/11834144.html">Hexo之Next主題代碼優化</a></li>
+<li><a href="https://myiaj.github.io/2020/03/14/hexo-custom-style/">【Hexo】以 Next 主題為基礎，打造自己的樣式吧！</a></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>blog</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo Blog 客製化 (3) Next 主題加速</title>
     <url>/posts/2022_01_26_blog-3-speedup.html</url>
     <content><![CDATA[<p><strong>2022/01/30</strong>：最近在優化 SEO，想讓 google 可以索引到網站。遲遲不知道問題出在哪裡，google 表示有安排了但還沒索引到。反正就各種搞行動裝置優化，好笑的是把字體設定回預設、把 icon 關掉，一下子行動版跟網頁板效能都變 99~100 了，真是有點嘲諷…。</p>
@@ -401,70 +465,6 @@ public&#x2F;
   <span class="token key atrule">priority</span><span class="token punctuation">:</span> <span class="token number">12</span></code></pre>
 
 <p>使用 <code>hexo-filter-optimize</code> 之後，有機會讓分數提升，我在手機版面上的分數就從 55 提升到了 78 (雖然有點迷惑那個分數的意義)</p>
-]]></content>
-      <tags>
-        <tag>blog</tag>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo Blog 客製化 (2) Next 主題更新與 PrismJs 啟用</title>
-    <url>/posts/2022_01_26_blog-2-theme-Next-update.html</url>
-    <content><![CDATA[<h2 id="主題版本更新"><a href="#主題版本更新" class="headerlink" title="主題版本更新"></a>主題版本更新</h2><p>Next 主題有在定期更新，每次更新後可能 config 的內容位置都可能有更動。</p>
-<p><a href="https://theme-next.js.org/docs/getting-started/configuration">Next 在 v8.x 的版本中有給予建議</a>，不要將個人的變更寫在 <code>theme/Next/_config.yml</code> 下面，這樣每次 config 有改版都要一個個更新，不一定能完美的 merge。</p>
-<p>我們可以在與 site config (配置 hexo 的設定檔) 同層級的地方，創建一個 <code>_config.[theme].yml</code> 的檔案，<code>theme</code> 帶入主題的名稱。這個檔案中的內容會覆蓋 <code>theme/[next]/_config.yml</code> 的內容。</p>
-<p>如果以 NexT 主題為例：我的 <code>theme</code> 底下主題名稱為 <code>next</code>，配置的客製化檔案名稱為 <code>_config.next.yml</code>。並且我只在裡面放有修改區塊的 config ，避免未來如果要升級，我還花功夫去找哪裡有變更。</p>
-<h2 id="PrismJs-的啟用"><a href="#PrismJs-的啟用" class="headerlink" title="PrismJs 的啟用"></a>PrismJs 的啟用</h2><p>這部分跟主題的版本有關，雖然我是在 2021 年底創建部落格的，但不曉得為何用到了很舊版的 Next，其 <code>_config</code> 沒有有關 Prismjs 在 codeblock 欄位底下的配置。</p>
-<p>後來發現這個問題之後進行版本更新，並遇到在兩個配置落差頗大的 <code>_config</code> 之間玩比對遊戲，因此體悟出了上述辦法的優勢。</p>
-<p>更新後，codeblock 裡面有如下配置:</p>
-<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">codeblock</span><span class="token punctuation">:</span>
-  <span class="token key atrule">theme</span><span class="token punctuation">:</span>
-    <span class="token key atrule">light</span><span class="token punctuation">:</span> default
-    <span class="token key atrule">dark</span><span class="token punctuation">:</span> tomorrow<span class="token punctuation">-</span>night
-  <span class="token key atrule">prism</span><span class="token punctuation">:</span>
-    <span class="token key atrule">light</span><span class="token punctuation">:</span> prism<span class="token punctuation">-</span>tomorrow
-    <span class="token key atrule">dark</span><span class="token punctuation">:</span> prism<span class="token punctuation">-</span>tomorrow</code></pre>
-
-<p>並且 hexo 的 <code>_config</code> 要將 prismjs 開啟、highlight 關閉: </p>
-<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">highlight</span><span class="token punctuation">:</span>
-  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
-  <span class="token key atrule">line_number</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
-  <span class="token key atrule">auto_detect</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
-  <span class="token key atrule">tab_replace</span><span class="token punctuation">:</span> <span class="token string">''</span>
-  <span class="token key atrule">wrap</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-  <span class="token key atrule">hljs</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
-<span class="token key atrule">prismjs</span><span class="token punctuation">:</span>
-  <span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-  <span class="token key atrule">preprocess</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-  <span class="token key atrule">line_number</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
-  <span class="token key atrule">tab_replace</span><span class="token punctuation">:</span> <span class="token string">''</span></code></pre>
-
-<h2 id="修改行中程式碼的格式-change-inline-code-style"><a href="#修改行中程式碼的格式-change-inline-code-style" class="headerlink" title="修改行中程式碼的格式 (change inline code style)"></a>修改行中程式碼的格式 (change inline code style)</h2><p>我不喜歡預設的 inline code 格式，覺得太灰、padding 太大。而且這些 code 似乎不隸屬 prismjs 的主題規範，要從 CSS 下手! </p>
-<p>首先，我們可以透過右鍵檢查元素發現 inline code 也是隸屬於 <code>code</code> tag，就瞄準這部份研究，我尋找到的方法是直接去改 css 設定。</p>
-<p>在 <code>source\_data\styles.styl</code> 當中(沒有則創建!)，寫入設定：</p>
-<pre class="language-stylus" data-language="stylus"><code class="language-stylus"><span class="token selector">code <span class="token punctuation">&#123;</span></span>
-  <span class="token property-declaration"><span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">0.1</span><span class="token unit">em</span> <span class="token number">0.25</span><span class="token unit">em</span><span class="token punctuation">;</span></span>
-  <span class="token property-declaration"><span class="token property">overflow-wrap</span><span class="token punctuation">:</span> break-word<span class="token punctuation">;</span></span>
-  <span class="token property-declaration"><span class="token property">word-break</span><span class="token punctuation">:</span> break-all<span class="token punctuation">;</span></span>
-  <span class="token property-declaration"><span class="token property">color</span><span class="token punctuation">:</span> <span class="token hexcode">#cf222e</span><span class="token punctuation">;</span></span>
-  <span class="token property-declaration"><span class="token property">background</span><span class="token punctuation">:</span> <span class="token hexcode">#fbf7f8</span><span class="token punctuation">;</span></span>
-  <span class="token property-declaration"><span class="token property">border-radius</span><span class="token punctuation">:</span> <span class="token number">0.2</span><span class="token unit">em</span><span class="token punctuation">;</span></span>
-  <span class="token property-declaration"><span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token unit">em</span><span class="token punctuation">;</span></span>
-  <span class="token property-declaration"><span class="token property">font-weight</span><span class="token punctuation">:</span> lighter<span class="token punctuation">;</span> <span class="token comment">// bolder</span></span>
-<span class="token punctuation">&#125;</span></code></pre>
-
-<p>字體顏色選擇跟 github keyword 相似的顏色 <code>#cf222e</code>，雖然這使得 inline code 變得紅字很惹眼，但等到看到受不了再來想其他改法吧。</p>
-<p>光寫入沒有用，還要把這個檔案引入 Next 的渲染過程中。在上述的 <code>_config.next.yml</code> 中添加一段：</p>
-<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">custom_file_path</span><span class="token punctuation">:</span>
-  <span class="token key atrule">style</span><span class="token punctuation">:</span> source/_data/styles.styl</code></pre>
-
-<p>再嘗試 <code>hexo server</code> 之類的在本地 demo 一下，應該可以看到改動的內容了！</p>
-<hr>
-<p>參考自：</p>
-<ul>
-<li><a href="https://www.cnblogs.com/LyShark/p/11834144.html">Hexo之Next主題代碼優化</a></li>
-<li><a href="https://myiaj.github.io/2020/03/14/hexo-custom-style/">【Hexo】以 Next 主題為基礎，打造自己的樣式吧！</a></li>
-</ul>
 ]]></content>
       <tags>
         <tag>blog</tag>
@@ -1104,6 +1104,123 @@ f <span class="token operator">=</span> CustomFilter<span class="token punctuati
       </tags>
   </entry>
   <entry>
+    <title>Python 視覺化(1) matplotlib 基本設置</title>
+    <url>/posts/2021_12_30_python-visualize-basic.html</url>
+    <content><![CDATA[<p>使用 matplotlib 繪圖的常用基本操作: 子圖操作、合併子圖、跨行跨列、縮減圖上空白區、以及環境設定檔 matplotlibrc的建立。<span id="more"></span></p>
+<h2 id="子圖"><a href="#子圖" class="headerlink" title="子圖"></a>子圖</h2><h3 id="add-subplot"><a href="#add-subplot" class="headerlink" title="add_subplot"></a><code>add_subplot</code></h3><p>初使用時最常接觸的就是這個方法，當要用某張子圖的時候再使用 <code>fig.add_subplot()</code> 得到某個 <code>ax</code> ，用它進行繪圖。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+fig <span class="token operator">=</span> plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dpi<span class="token operator">=</span><span class="token number">300</span><span class="token punctuation">)</span> 
+fig<span class="token punctuation">.</span>suptitle<span class="token punctuation">(</span><span class="token string">"Big title"</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 子圖 1</span>
+ax <span class="token operator">=</span> fig<span class="token punctuation">.</span>add_subplot<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>title<span class="token punctuation">.</span>set_text<span class="token punctuation">(</span><span class="token string">"Subtitle 1"</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">'b'</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"lr"</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.7</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># 圖例</span>
+
+<span class="token comment"># 子圖 2</span>
+ax <span class="token operator">=</span> fig<span class="token punctuation">.</span>add_subplot<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>title<span class="token punctuation">.</span>set_text<span class="token punctuation">(</span><span class="token string">"Subtitle 1"</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">'r'</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"lr"</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.7</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>savefig<span class="token punctuation">(</span><span class="token string">"fileName.png"</span><span class="token punctuation">)</span>
+</code></pre>
+
+<p>但我並不喜歡這個用法，以上面這份程式為例，這總作法會讓 <code>fig.add_subplot(2, 1, 1)</code> 散布在整份程式中，一旦我要修改子圖在行列上的數量，修正起來變得無比麻煩。</p>
+<h3 id="一口氣指定完子圖"><a href="#一口氣指定完子圖" class="headerlink" title="一口氣指定完子圖"></a>一口氣指定完子圖</h3><p>一種方法是：</p>
+<pre class="language-python" data-language="python"><code class="language-python">fig<span class="token punctuation">,</span> axes <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span>n_rows<span class="token punctuation">,</span> n_cols<span class="token punctuation">)</span></code></pre>
+
+<p>不錯的是可以一口氣解決，但我更喜歡另一種作法：</p>
+<pre class="language-python" data-language="python"><code class="language-python">fig <span class="token operator">=</span> plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dpi<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">)</span>
+axes <span class="token operator">=</span> fig<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment"># axes.shape: (6, )</span>
+axes <span class="token operator">=</span> fig<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>             <span class="token comment"># axes.shape: (2, 3)</span></code></pre>
+
+<p>原先的作法在取用 <code>axes</code> 的時候，要謹慎的選取 <code>axes[0][1]</code> 之類的 index ，同樣的一旦子圖在行列上的數量改變，透過 index 取得 <code>ax</code> 的時候也很容易出錯。因此我習慣先把他 <code>reshape</code> 成一個維度，直接用 <code>ax = axes[i]</code> 取用，簡單省事。缺點是難以知道現在處於哪一行哪一列，如果子圖有需要落在確切位置的需求，這個簡單粗暴的方法可能就不太適合。</p>
+<h3 id="大標題"><a href="#大標題" class="headerlink" title="大標題"></a>大標題</h3><pre class="language-python" data-language="python"><code class="language-python">ax<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">"sub plot title"</span><span class="token punctuation">)</span> <span class="token comment"># 子圖的標題</span>
+fig<span class="token punctuation">.</span>suptitle<span class="token punctuation">(</span><span class="token string">"Figure title"</span><span class="token punctuation">)</span>   <span class="token comment"># 整張圖的大標題</span></code></pre>
+
+<h3 id="合併子圖、跨行跨列"><a href="#合併子圖、跨行跨列" class="headerlink" title="合併子圖、跨行跨列"></a>合併子圖、跨行跨列</h3><h4 id="subplot2grid"><a href="#subplot2grid" class="headerlink" title="subplot2grid"></a><code>subplot2grid</code></h4><p>上面的用法都是規規矩矩，每張子圖大小一致。想要讓圖的形狀跨越多欄多列，應該使用 <code>subplot2grid</code>。<a href="https://matplotlib.org/3.1.1/gallery/userdemo/demo_gridspec01.html#sphx-glr-gallery-userdemo-demo-gridspec01-py" title="matplotlib 官網 subplot2grid 的範例">subplot2grid example</a></p>
+<pre class="language-python" data-language="python"><code class="language-python">ax1 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> colspan<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span>
+ax2 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> colspan<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
+ax3 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> rowspan<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
+ax4 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+ax5 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+
+<p>得到的圖相當於：</p>
+<p><img src="https://matplotlib.org/3.1.1/_images/sphx_glr_demo_gridspec01_001.png" alt="subplot2grid"></p>
+<p>事實上 <code>subplot2grid</code> 依然可以作到像是 <code>subplot</code> 這樣只給出正規方正的子圖，在不做 <code>colspan</code>/<code>rowspan</code> 的情況下，這兩個操作是等價的：</p>
+<pre class="language-python" data-language="python"><code class="language-python">ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment"># 1. 算子圖要從 1 開始算子圖</span>
+ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 2. 先規定整張圖的 (row, col), 在列出要回傳的子圖位於哪個位置 (不像上面是算 index)</span></code></pre>
+
+<h4 id="GridSpec"><a href="#GridSpec" class="headerlink" title="GridSpec"></a><code>GridSpec</code></h4><p>還有另一個方法是透過 <code>GridSpec</code> 達成。我們可以先用 <code>gridspec</code> 創建一個框架，並把框架的某一塊指派給 <code>plt.subplot</code> 真正創建子圖。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>gridspec <span class="token keyword">as</span> gridspec
+gs <span class="token operator">=</span> gridspec<span class="token punctuation">.</span>GridSpec<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># 等價 ax = plt.subplot2grid((2,2),(0, 0))</span></code></pre>
+
+<p>所以，在前面一小節的分隔圖，在這個章節應該如下實做：</p>
+<pre class="language-python" data-language="python"><code class="language-python">gs <span class="token operator">=</span> gridspec<span class="token punctuation">.</span>GridSpec<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+ax1 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+ax2 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+ax3 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+ax4 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+ax5 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+
+<h4 id="subplot2grid-與-GridSpec-的差別"><a href="#subplot2grid-與-GridSpec-的差別" class="headerlink" title="subplot2grid 與 GridSpec 的差別"></a><code>subplot2grid</code> 與 <code>GridSpec</code> 的差別</h4><p>我覺得可這樣看待</p>
+<ul>
+<li><p><code>subplot2grid</code> 屬於 pyplot 類別中，它直接與畫面操作有關，所以直接指派位置就有圖出來了</p>
+<pre class="language-none"><code class="language-none">ax &#x3D; plt.subplot2grid((2,2),(0, 0))</code></pre></li>
+<li><p>但是 <code>gridspec</code> 不是屬於 pyplot ，如果只有創建而沒有再指定畫布，是不會出現東西的</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>gridspec <span class="token keyword">as</span> gridspec
+gs <span class="token operator">=</span> gridspec<span class="token punctuation">.</span>GridSpec<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># 不會有圖跑出來喔</span></code></pre></li>
+</ul>
+<p>此外，gridspec 能做到的 layout(布局) 也更加彈性，詳細可以在這篇裡面看: <a href="https://matplotlib.org/2.0.2/users/gridspec.html#customizing-location-of-subplot-using-gridspec">Customizing Location of Subplot Using GridSpec</a> ，中文版: <a href="https://wizardforcel.gitbooks.io/matplotlib-user-guide/content/3.3.html">使用 GridSpec 自定义子图位置</a>。</p>
+<p><img src="https://matplotlib.org/2.0.2/_images/demo_gridspec06.png" alt="gridspec 更加彈性的布局"></p>
+<h2 id="圖上標示與設置"><a href="#圖上標示與設置" class="headerlink" title="圖上標示與設置"></a>圖上標示與設置</h2><h3 id="限制座標軸數值"><a href="#限制座標軸數值" class="headerlink" title="限制座標軸數值"></a>限制座標軸數值</h3><p>限制 x 與 y 軸顯示的數值上下界。</p>
+<pre class="language-python" data-language="python"><code class="language-python">ax<span class="token punctuation">.</span>set_ylim<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_xlim<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+
+<h3 id="繪製橫-直線"><a href="#繪製橫-直線" class="headerlink" title="繪製橫/直線"></a>繪製橫/直線</h3><pre class="language-python" data-language="python"><code class="language-python">ax<span class="token punctuation">.</span>axhline<span class="token punctuation">(</span>y<span class="token operator">=</span><span class="token number">0.03</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">'r'</span><span class="token punctuation">,</span> linestyle<span class="token operator">=</span><span class="token string">'-.'</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.2</span><span class="token punctuation">)</span>  <span class="token comment"># 橫線</span>
+ax<span class="token punctuation">.</span>axvline<span class="token punctuation">(</span>x<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">'b'</span><span class="token punctuation">,</span> linestyle<span class="token operator">=</span><span class="token string">'-*'</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.2</span><span class="token punctuation">)</span>  <span class="token comment"># 直線</span></code></pre>
+
+<h3 id="縮減空白邊緣"><a href="#縮減空白邊緣" class="headerlink" title="縮減空白邊緣"></a><a href="https://stackoverflow.com/questions/55767312/how-to-position-suptitle" title="stackoverflow: How to position suptitle?">縮減空白邊緣</a></h3><pre class="language-python" data-language="python"><code class="language-python">fig<span class="token punctuation">.</span>tight_layout<span class="token punctuation">(</span>rect<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.03</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0.95</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># 保留標題的空間</span>
+fig<span class="token punctuation">.</span>suptitle<span class="token punctuation">(</span><span class="token string">"title"</span><span class="token punctuation">)</span>
+fig<span class="token punctuation">.</span>savefig<span class="token punctuation">(</span><span class="token string">"fig.png"</span><span class="token punctuation">)</span></code></pre>
+
+<p><code>tight_layout</code> 要在所有繪圖都結束之後，就要 <code>savefig</code> 或是 <code>plt.show()</code> 之前再放才會生效！或是在 import之後直接改變全局：</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+plt<span class="token punctuation">.</span>rcParams<span class="token punctuation">[</span><span class="token string">"figure.autolayout"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">True</span></code></pre>
+
+<h2 id="全局的設置-matplotlibrc"><a href="#全局的設置-matplotlibrc" class="headerlink" title="全局的設置 matplotlibrc"></a><a href="https://matplotlib.org/stable/tutorials/introductory/customizing.html?highlight=figure.autolayout#the-matplotlibrc-file" title="matplotlib 官網 subplot2grid 的 matplotlibrc 設置">全局的設置 <code>matplotlibrc</code></a></h2><p><code>matplotlib</code> 裡面有很多設定，包含 <code>dpi</code>, <code>figsize</code>, <code>color</code>, <code>linewidth</code>…..，如果希望一些改變能夠直接作用在 global 上，可以透過設定 <code>matplotlibrc</code> 檔案達成：</p>
+<p>在沒有使用 <code>style.use(&#39;&lt;path&gt;/&lt;style-name&gt;.mplstyle&#39;)</code> 指向設定檔時，預設的搜索順序是這樣：</p>
+<ol>
+<li>當前資料夾：當前這個資料夾中存在 <code>matplotlibrc</code>，而在這個資料夾之中所有的繪圖，也都想用這樣的設定套用，那非常適合這麼做。</li>
+<li>如果存在環境變數 <code>$MATPLOTLIBRC</code>：如果這是個檔案，就直接用。如果是個資料夾，會尋找並使用其下的 <code>$MATPLOTLIBRC/matplotlibrc</code> </li>
+<li>恩，剩下兩條我覺得太麻煩了，懶得翻譯。可以去看原文。</li>
+</ol>
+<p>如果上述的路徑下都沒有  <code>matplotlibrc</code> 檔案那不會再額外搜索其他地方。我們可以直接透過下面這個的作法尋找當前使用的是誰：</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib
+matplotlib<span class="token punctuation">.</span>matplotlib_fname<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+
+<h4 id="我的-matplotlibrc-檔案"><a href="#我的-matplotlibrc-檔案" class="headerlink" title="我的 matplotlibrc 檔案"></a>我的 <code>matplotlibrc</code> 檔案</h4><pre class="language-matplotlibrc" data-language="matplotlibrc"><code class="language-matplotlibrc">figure.autolayout: True
+legend.fontsize:   large
+figure.titlesize:   x-large
+figure.dpi:  100
+axes.titlesize:     x-large 
+image.cmap: hsv
+hist.bins: 20 </code></pre>
+
+
+
+<hr>
+]]></content>
+      <tags>
+        <tag>python</tag>
+        <tag>visualize</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python 視覺化(2) matplotlib 進階繪圖</title>
     <url>/posts/2022_01_27_python-visualize-advance.html</url>
     <content><![CDATA[<p>紀錄做數據研究時，使用 matplotlib 繪圖的進階操作: 直方圖疊加、如何合併 twinx 下不同的圖例(legend)、將圖例移出繪圖區、在軸上使用省略符號..。<span id="more"></span></p>
@@ -1258,123 +1375,6 @@ fig<span class="token punctuation">.</span>colorbar<span class="token punctuatio
 
 <p>Heatmap 的程式碼參考: <a href="https://stackoverflow.com/questions/2369492/generate-a-heatmap-in-matplotlib-using-a-scatter-data-set" title="熱力圖">Generate a heatmap in MatPlotLib using a scatter data set</a></p>
 <p><img src="https://i.imgur.com/F1yQcLB.jpeg"></p>
-<hr>
-]]></content>
-      <tags>
-        <tag>python</tag>
-        <tag>visualize</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python 視覺化(1) matplotlib 基本設置</title>
-    <url>/posts/2021_12_30_python-visualize-basic.html</url>
-    <content><![CDATA[<p>使用 matplotlib 繪圖的常用基本操作: 子圖操作、合併子圖、跨行跨列、縮減圖上空白區、以及環境設定檔 matplotlibrc的建立。<span id="more"></span></p>
-<h2 id="子圖"><a href="#子圖" class="headerlink" title="子圖"></a>子圖</h2><h3 id="add-subplot"><a href="#add-subplot" class="headerlink" title="add_subplot"></a><code>add_subplot</code></h3><p>初使用時最常接觸的就是這個方法，當要用某張子圖的時候再使用 <code>fig.add_subplot()</code> 得到某個 <code>ax</code> ，用它進行繪圖。</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
-fig <span class="token operator">=</span> plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dpi<span class="token operator">=</span><span class="token number">300</span><span class="token punctuation">)</span> 
-fig<span class="token punctuation">.</span>suptitle<span class="token punctuation">(</span><span class="token string">"Big title"</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">)</span>
-
-<span class="token comment"># 子圖 1</span>
-ax <span class="token operator">=</span> fig<span class="token punctuation">.</span>add_subplot<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>title<span class="token punctuation">.</span>set_text<span class="token punctuation">(</span><span class="token string">"Subtitle 1"</span><span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">'b'</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"lr"</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.7</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># 圖例</span>
-
-<span class="token comment"># 子圖 2</span>
-ax <span class="token operator">=</span> fig<span class="token punctuation">.</span>add_subplot<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>title<span class="token punctuation">.</span>set_text<span class="token punctuation">(</span><span class="token string">"Subtitle 1"</span><span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">'r'</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"lr"</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.7</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-plt<span class="token punctuation">.</span>savefig<span class="token punctuation">(</span><span class="token string">"fileName.png"</span><span class="token punctuation">)</span>
-</code></pre>
-
-<p>但我並不喜歡這個用法，以上面這份程式為例，這總作法會讓 <code>fig.add_subplot(2, 1, 1)</code> 散布在整份程式中，一旦我要修改子圖在行列上的數量，修正起來變得無比麻煩。</p>
-<h3 id="一口氣指定完子圖"><a href="#一口氣指定完子圖" class="headerlink" title="一口氣指定完子圖"></a>一口氣指定完子圖</h3><p>一種方法是：</p>
-<pre class="language-python" data-language="python"><code class="language-python">fig<span class="token punctuation">,</span> axes <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span>n_rows<span class="token punctuation">,</span> n_cols<span class="token punctuation">)</span></code></pre>
-
-<p>不錯的是可以一口氣解決，但我更喜歡另一種作法：</p>
-<pre class="language-python" data-language="python"><code class="language-python">fig <span class="token operator">=</span> plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dpi<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">)</span>
-axes <span class="token operator">=</span> fig<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment"># axes.shape: (6, )</span>
-axes <span class="token operator">=</span> fig<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>             <span class="token comment"># axes.shape: (2, 3)</span></code></pre>
-
-<p>原先的作法在取用 <code>axes</code> 的時候，要謹慎的選取 <code>axes[0][1]</code> 之類的 index ，同樣的一旦子圖在行列上的數量改變，透過 index 取得 <code>ax</code> 的時候也很容易出錯。因此我習慣先把他 <code>reshape</code> 成一個維度，直接用 <code>ax = axes[i]</code> 取用，簡單省事。缺點是難以知道現在處於哪一行哪一列，如果子圖有需要落在確切位置的需求，這個簡單粗暴的方法可能就不太適合。</p>
-<h3 id="大標題"><a href="#大標題" class="headerlink" title="大標題"></a>大標題</h3><pre class="language-python" data-language="python"><code class="language-python">ax<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">"sub plot title"</span><span class="token punctuation">)</span> <span class="token comment"># 子圖的標題</span>
-fig<span class="token punctuation">.</span>suptitle<span class="token punctuation">(</span><span class="token string">"Figure title"</span><span class="token punctuation">)</span>   <span class="token comment"># 整張圖的大標題</span></code></pre>
-
-<h3 id="合併子圖、跨行跨列"><a href="#合併子圖、跨行跨列" class="headerlink" title="合併子圖、跨行跨列"></a>合併子圖、跨行跨列</h3><h4 id="subplot2grid"><a href="#subplot2grid" class="headerlink" title="subplot2grid"></a><code>subplot2grid</code></h4><p>上面的用法都是規規矩矩，每張子圖大小一致。想要讓圖的形狀跨越多欄多列，應該使用 <code>subplot2grid</code>。<a href="https://matplotlib.org/3.1.1/gallery/userdemo/demo_gridspec01.html#sphx-glr-gallery-userdemo-demo-gridspec01-py" title="matplotlib 官網 subplot2grid 的範例">subplot2grid example</a></p>
-<pre class="language-python" data-language="python"><code class="language-python">ax1 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> colspan<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span>
-ax2 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> colspan<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
-ax3 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> rowspan<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
-ax4 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-ax5 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
-
-<p>得到的圖相當於：</p>
-<p><img src="https://matplotlib.org/3.1.1/_images/sphx_glr_demo_gridspec01_001.png" alt="subplot2grid"></p>
-<p>事實上 <code>subplot2grid</code> 依然可以作到像是 <code>subplot</code> 這樣只給出正規方正的子圖，在不做 <code>colspan</code>/<code>rowspan</code> 的情況下，這兩個操作是等價的：</p>
-<pre class="language-python" data-language="python"><code class="language-python">ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment"># 1. 算子圖要從 1 開始算子圖</span>
-ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 2. 先規定整張圖的 (row, col), 在列出要回傳的子圖位於哪個位置 (不像上面是算 index)</span></code></pre>
-
-<h4 id="GridSpec"><a href="#GridSpec" class="headerlink" title="GridSpec"></a><code>GridSpec</code></h4><p>還有另一個方法是透過 <code>GridSpec</code> 達成。我們可以先用 <code>gridspec</code> 創建一個框架，並把框架的某一塊指派給 <code>plt.subplot</code> 真正創建子圖。</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>gridspec <span class="token keyword">as</span> gridspec
-gs <span class="token operator">=</span> gridspec<span class="token punctuation">.</span>GridSpec<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
-ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># 等價 ax = plt.subplot2grid((2,2),(0, 0))</span></code></pre>
-
-<p>所以，在前面一小節的分隔圖，在這個章節應該如下實做：</p>
-<pre class="language-python" data-language="python"><code class="language-python">gs <span class="token operator">=</span> gridspec<span class="token punctuation">.</span>GridSpec<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
-ax1 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-ax2 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-ax3 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-ax4 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-ax5 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
-
-<h4 id="subplot2grid-與-GridSpec-的差別"><a href="#subplot2grid-與-GridSpec-的差別" class="headerlink" title="subplot2grid 與 GridSpec 的差別"></a><code>subplot2grid</code> 與 <code>GridSpec</code> 的差別</h4><p>我覺得可這樣看待</p>
-<ul>
-<li><p><code>subplot2grid</code> 屬於 pyplot 類別中，它直接與畫面操作有關，所以直接指派位置就有圖出來了</p>
-<pre class="language-none"><code class="language-none">ax &#x3D; plt.subplot2grid((2,2),(0, 0))</code></pre></li>
-<li><p>但是 <code>gridspec</code> 不是屬於 pyplot ，如果只有創建而沒有再指定畫布，是不會出現東西的</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>gridspec <span class="token keyword">as</span> gridspec
-gs <span class="token operator">=</span> gridspec<span class="token punctuation">.</span>GridSpec<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># 不會有圖跑出來喔</span></code></pre></li>
-</ul>
-<p>此外，gridspec 能做到的 layout(布局) 也更加彈性，詳細可以在這篇裡面看: <a href="https://matplotlib.org/2.0.2/users/gridspec.html#customizing-location-of-subplot-using-gridspec">Customizing Location of Subplot Using GridSpec</a> ，中文版: <a href="https://wizardforcel.gitbooks.io/matplotlib-user-guide/content/3.3.html">使用 GridSpec 自定义子图位置</a>。</p>
-<p><img src="https://matplotlib.org/2.0.2/_images/demo_gridspec06.png" alt="gridspec 更加彈性的布局"></p>
-<h2 id="圖上標示與設置"><a href="#圖上標示與設置" class="headerlink" title="圖上標示與設置"></a>圖上標示與設置</h2><h3 id="限制座標軸數值"><a href="#限制座標軸數值" class="headerlink" title="限制座標軸數值"></a>限制座標軸數值</h3><p>限制 x 與 y 軸顯示的數值上下界。</p>
-<pre class="language-python" data-language="python"><code class="language-python">ax<span class="token punctuation">.</span>set_ylim<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>set_xlim<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
-
-<h3 id="繪製橫-直線"><a href="#繪製橫-直線" class="headerlink" title="繪製橫/直線"></a>繪製橫/直線</h3><pre class="language-python" data-language="python"><code class="language-python">ax<span class="token punctuation">.</span>axhline<span class="token punctuation">(</span>y<span class="token operator">=</span><span class="token number">0.03</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">'r'</span><span class="token punctuation">,</span> linestyle<span class="token operator">=</span><span class="token string">'-.'</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.2</span><span class="token punctuation">)</span>  <span class="token comment"># 橫線</span>
-ax<span class="token punctuation">.</span>axvline<span class="token punctuation">(</span>x<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">'b'</span><span class="token punctuation">,</span> linestyle<span class="token operator">=</span><span class="token string">'-*'</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.2</span><span class="token punctuation">)</span>  <span class="token comment"># 直線</span></code></pre>
-
-<h3 id="縮減空白邊緣"><a href="#縮減空白邊緣" class="headerlink" title="縮減空白邊緣"></a><a href="https://stackoverflow.com/questions/55767312/how-to-position-suptitle" title="stackoverflow: How to position suptitle?">縮減空白邊緣</a></h3><pre class="language-python" data-language="python"><code class="language-python">fig<span class="token punctuation">.</span>tight_layout<span class="token punctuation">(</span>rect<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.03</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0.95</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># 保留標題的空間</span>
-fig<span class="token punctuation">.</span>suptitle<span class="token punctuation">(</span><span class="token string">"title"</span><span class="token punctuation">)</span>
-fig<span class="token punctuation">.</span>savefig<span class="token punctuation">(</span><span class="token string">"fig.png"</span><span class="token punctuation">)</span></code></pre>
-
-<p><code>tight_layout</code> 要在所有繪圖都結束之後，就要 <code>savefig</code> 或是 <code>plt.show()</code> 之前再放才會生效！或是在 import之後直接改變全局：</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
-plt<span class="token punctuation">.</span>rcParams<span class="token punctuation">[</span><span class="token string">"figure.autolayout"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">True</span></code></pre>
-
-<h2 id="全局的設置-matplotlibrc"><a href="#全局的設置-matplotlibrc" class="headerlink" title="全局的設置 matplotlibrc"></a><a href="https://matplotlib.org/stable/tutorials/introductory/customizing.html?highlight=figure.autolayout#the-matplotlibrc-file" title="matplotlib 官網 subplot2grid 的 matplotlibrc 設置">全局的設置 <code>matplotlibrc</code></a></h2><p><code>matplotlib</code> 裡面有很多設定，包含 <code>dpi</code>, <code>figsize</code>, <code>color</code>, <code>linewidth</code>…..，如果希望一些改變能夠直接作用在 global 上，可以透過設定 <code>matplotlibrc</code> 檔案達成：</p>
-<p>在沒有使用 <code>style.use(&#39;&lt;path&gt;/&lt;style-name&gt;.mplstyle&#39;)</code> 指向設定檔時，預設的搜索順序是這樣：</p>
-<ol>
-<li>當前資料夾：當前這個資料夾中存在 <code>matplotlibrc</code>，而在這個資料夾之中所有的繪圖，也都想用這樣的設定套用，那非常適合這麼做。</li>
-<li>如果存在環境變數 <code>$MATPLOTLIBRC</code>：如果這是個檔案，就直接用。如果是個資料夾，會尋找並使用其下的 <code>$MATPLOTLIBRC/matplotlibrc</code> </li>
-<li>恩，剩下兩條我覺得太麻煩了，懶得翻譯。可以去看原文。</li>
-</ol>
-<p>如果上述的路徑下都沒有  <code>matplotlibrc</code> 檔案那不會再額外搜索其他地方。我們可以直接透過下面這個的作法尋找當前使用的是誰：</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib
-matplotlib<span class="token punctuation">.</span>matplotlib_fname<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
-
-<h4 id="我的-matplotlibrc-檔案"><a href="#我的-matplotlibrc-檔案" class="headerlink" title="我的 matplotlibrc 檔案"></a>我的 <code>matplotlibrc</code> 檔案</h4><pre class="language-matplotlibrc" data-language="matplotlibrc"><code class="language-matplotlibrc">figure.autolayout: True
-legend.fontsize:   large
-figure.titlesize:   x-large
-figure.dpi:  100
-axes.titlesize:     x-large 
-image.cmap: hsv
-hist.bins: 20 </code></pre>
-
-
-
 <hr>
 ]]></content>
       <tags>
