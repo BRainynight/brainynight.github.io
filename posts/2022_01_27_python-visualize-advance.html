@@ -22,12 +22,12 @@
 
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"brainynight.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInUp","post_body":"fadeIn","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="多個直方圖疊加 histtype bar：傳統的 bar 形式圖，屬於同個 bin 不同的資料會肩並肩的橫向排列。 barstacked：bar 形式的，但是屬於同一個 bin 的不同資料會直接往上疊加。 step：只有階梯的框架線，沒有填滿顏色。 stepfilled：這是預設方法，除了階梯式之外在加上填滿色彩。    import numpy as np import matplotlib.p">
+<meta name="description" content="紀錄做數據研究時，使用 matplotlib 繪圖的進階操作: 直方圖疊加、如何合併 twinx 下不同的圖例(legend)、將圖例移出繪圖區、在軸上使用省略符號..。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python 視覺化(2) matplotlib 進階繪圖">
 <meta property="og:url" content="https://brainynight.github.io/posts/2022_01_27_python-visualize-advance">
 <meta property="og:site_name" content="Judy&#39;s Blog">
-<meta property="og:description" content="多個直方圖疊加 histtype bar：傳統的 bar 形式圖，屬於同個 bin 不同的資料會肩並肩的橫向排列。 barstacked：bar 形式的，但是屬於同一個 bin 的不同資料會直接往上疊加。 step：只有階梯的框架線，沒有填滿顏色。 stepfilled：這是預設方法，除了階梯式之外在加上填滿色彩。    import numpy as np import matplotlib.p">
+<meta property="og:description" content="紀錄做數據研究時，使用 matplotlib 繪圖的進階操作: 直方圖疊加、如何合併 twinx 下不同的圖例(legend)、將圖例移出繪圖區、在軸上使用省略符號..。">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://i.imgur.com/tB4vKCK.jpeg">
 <meta property="og:image" content="https://i.imgur.com/pSvuVHf.jpeg">
@@ -35,7 +35,7 @@
 <meta property="og:image" content="https://i.imgur.com/F9siwYf.jpeg">
 <meta property="og:image" content="https://i.imgur.com/F1yQcLB.jpeg">
 <meta property="article:published_time" content="2022-01-27T06:56:12.000Z">
-<meta property="article:modified_time" content="2022-02-02T05:51:35.818Z">
+<meta property="article:modified_time" content="2022-02-02T05:57:36.508Z">
 <meta property="article:author" content="Judy">
 <meta property="article:tag" content="python">
 <meta property="article:tag" content="visualize">
@@ -250,7 +250,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2022-02-02 13:51:35" itemprop="dateModified" datetime="2022-02-02T13:51:35+08:00">2022-02-02</time>
+      <time title="修改時間：2022-02-02 13:57:36" itemprop="dateModified" datetime="2022-02-02T13:57:36+08:00">2022-02-02</time>
     </span>
 
   
@@ -260,7 +260,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>4.9k</span>
+      <span>5k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
@@ -278,7 +278,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="多個直方圖疊加"><a href="#多個直方圖疊加" class="headerlink" title="多個直方圖疊加"></a>多個直方圖疊加</h2><ul>
+        <p>紀錄做數據研究時，使用 matplotlib 繪圖的進階操作: 直方圖疊加、如何合併 twinx 下不同的圖例(legend)、將圖例移出繪圖區、在軸上使用省略符號..。<span id="more"></span></p>
+<h2 id="多個直方圖疊加"><a href="#多個直方圖疊加" class="headerlink" title="多個直方圖疊加"></a>多個直方圖疊加</h2><ul>
 <li><code>histtype</code><ul>
 <li><code>bar</code>：傳統的 <code>bar</code> 形式圖，屬於同個 bin 不同的資料會肩並肩的橫向排列。</li>
 <li><code>barstacked</code>：<code>bar</code> 形式的，但是屬於同一個 bin 的不同資料會直接往上疊加。</li>
@@ -489,7 +490,7 @@ fig<span class="token punctuation">.</span>colorbar<span class="token punctuatio
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">1:19</span>
+    <span title="所需總閱讀時間">1:20</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 強力驅動
