@@ -22,17 +22,17 @@
 
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"brainynight.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInUp","post_body":"fadeIn","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="使用 matplotlib 繪圖的常用基本操作: 子圖操作、合併子圖、跨行跨列、縮減圖上空白區、以及環境設定檔 matplotlibrc的建立。">
+<meta name="description" content="使用 matplotlib 繪圖的常用基本操作，有關子圖操作、合併子圖、跨行跨列、縮減圖上空白區、以及環境設定檔 matplotlibrc的建立。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python 視覺化(1) matplotlib 基本設置">
 <meta property="og:url" content="https://brainynight.github.io/posts/2021_12_30_python-visualize-basic">
 <meta property="og:site_name" content="Judy&#39;s Blog">
-<meta property="og:description" content="使用 matplotlib 繪圖的常用基本操作: 子圖操作、合併子圖、跨行跨列、縮減圖上空白區、以及環境設定檔 matplotlibrc的建立。">
+<meta property="og:description" content="使用 matplotlib 繪圖的常用基本操作，有關子圖操作、合併子圖、跨行跨列、縮減圖上空白區、以及環境設定檔 matplotlibrc的建立。">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://matplotlib.org/3.1.1/_images/sphx_glr_demo_gridspec01_001.png">
 <meta property="og:image" content="https://matplotlib.org/2.0.2/_images/demo_gridspec06.png">
 <meta property="article:published_time" content="2021-12-30T10:27:08.000Z">
-<meta property="article:modified_time" content="2022-02-02T05:57:57.229Z">
+<meta property="article:modified_time" content="2022-02-03T05:39:02.732Z">
 <meta property="article:author" content="Judy">
 <meta property="article:tag" content="python">
 <meta property="article:tag" content="visualize">
@@ -155,11 +155,11 @@
       </ul>
 
       <div class="sidebar-panel-container">
-        <!--noindex-->
+         
         <div class="post-toc-wrap sidebar-panel">
             <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%90%E5%9C%96"><span class="nav-number">1.</span> <span class="nav-text">子圖</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#add-subplot"><span class="nav-number">1.1.</span> <span class="nav-text">add_subplot</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E5%8F%A3%E6%B0%A3%E6%8C%87%E5%AE%9A%E5%AE%8C%E5%AD%90%E5%9C%96"><span class="nav-number">1.2.</span> <span class="nav-text">一口氣指定完子圖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%A7%E6%A8%99%E9%A1%8C"><span class="nav-number">1.3.</span> <span class="nav-text">大標題</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%88%E4%BD%B5%E5%AD%90%E5%9C%96%E3%80%81%E8%B7%A8%E8%A1%8C%E8%B7%A8%E5%88%97"><span class="nav-number">1.4.</span> <span class="nav-text">合併子圖、跨行跨列</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#subplot2grid"><span class="nav-number">1.4.1.</span> <span class="nav-text">subplot2grid</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GridSpec"><span class="nav-number">1.4.2.</span> <span class="nav-text">GridSpec</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#subplot2grid-%E8%88%87-GridSpec-%E7%9A%84%E5%B7%AE%E5%88%A5"><span class="nav-number">1.4.3.</span> <span class="nav-text">subplot2grid 與 GridSpec 的差別</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%96%E4%B8%8A%E6%A8%99%E7%A4%BA%E8%88%87%E8%A8%AD%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">圖上標示與設置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%99%90%E5%88%B6%E5%BA%A7%E6%A8%99%E8%BB%B8%E6%95%B8%E5%80%BC"><span class="nav-number">2.1.</span> <span class="nav-text">限制座標軸數值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B9%AA%E8%A3%BD%E6%A9%AB-%E7%9B%B4%E7%B7%9A"><span class="nav-number">2.2.</span> <span class="nav-text">繪製橫&#x2F;直線</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B8%AE%E6%B8%9B%E7%A9%BA%E7%99%BD%E9%82%8A%E7%B7%A3"><span class="nav-number">2.3.</span> <span class="nav-text">縮減空白邊緣</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A8%E5%B1%80%E7%9A%84%E8%A8%AD%E7%BD%AE-matplotlibrc"><span class="nav-number">3.</span> <span class="nav-text">全局的設置 matplotlibrc</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%88%91%E7%9A%84-matplotlibrc-%E6%AA%94%E6%A1%88"><span class="nav-number">3.0.1.</span> <span class="nav-text">我的 matplotlibrc 檔案</span></a></li></ol></li></ol></li></ol></div>
         </div>
-        <!--/noindex-->
+         
 
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -173,6 +173,11 @@
           <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">文章</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
@@ -247,7 +252,16 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2022-02-02 13:57:57" itemprop="dateModified" datetime="2022-02-02T13:57:57+08:00">2022-02-02</time>
+      <time title="修改時間：2022-02-03 13:39:02" itemprop="dateModified" datetime="2022-02-03T13:39:02+08:00">2022-02-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+        </span>
     </span>
 
   
@@ -257,17 +271,18 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>3.6k</span>
+      <span>3.5k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>7 分鐘</span>
+      <span>6 分鐘</span>
     </span>
 </div>
 
+            <div class="post-description">使用 matplotlib 繪圖的常用基本操作，有關子圖操作、合併子圖、跨行跨列、縮減圖上空白區、以及環境設定檔 matplotlibrc的建立。</div>
         </div>
       </header>
 
@@ -275,8 +290,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>使用 matplotlib 繪圖的常用基本操作: 子圖操作、合併子圖、跨行跨列、縮減圖上空白區、以及環境設定檔 matplotlibrc的建立。<span id="more"></span></p>
-<h2 id="子圖"><a href="#子圖" class="headerlink" title="子圖"></a>子圖</h2><h3 id="add-subplot"><a href="#add-subplot" class="headerlink" title="add_subplot"></a><code>add_subplot</code></h3><p>初使用時最常接觸的就是這個方法，當要用某張子圖的時候再使用 <code>fig.add_subplot()</code> 得到某個 <code>ax</code> ，用它進行繪圖。</p>
+        <h2 id="子圖"><a href="#子圖" class="headerlink" title="子圖"></a>子圖</h2><h3 id="add-subplot"><a href="#add-subplot" class="headerlink" title="add_subplot"></a><code>add_subplot</code></h3><p>初使用時最常接觸的就是這個方法，當要用某張子圖的時候再使用 <code>fig.add_subplot()</code> 得到某個 <code>ax</code> ，用它進行繪圖。</p>
 <pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
 fig <span class="token operator">=</span> plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dpi<span class="token operator">=</span><span class="token number">300</span><span class="token punctuation">)</span> 
 fig<span class="token punctuation">.</span>suptitle<span class="token punctuation">(</span><span class="token string">"Big title"</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">)</span>
@@ -396,13 +410,13 @@ hist.bins: 20 </code></pre>
       <div class="popular-posts-title"><a href="\posts\2022_01_27_python-visualize-advance.html" rel="bookmark">Python 視覺化(2) matplotlib 進階繪圖</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\2022_01_17_pickle-advance.html" rel="bookmark">Python 資料永久化套件:Pickle (2)</a></div>
-    </li>
-    <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\posts\2022_01_20_python-logger-quick.html" rel="bookmark">Python 日誌模組 Logging (1)</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\posts\2022_01_17_pickle-basic.html" rel="bookmark">Python 資料永久化套件:Pickle (1)</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\2022_01_17_pickle-advance.html" rel="bookmark">Python 資料永久化套件:Pickle (2)</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\posts\2022_01_22_python-logging-advance.html" rel="bookmark">Python 日誌模組 Logging (2)</a></div>
@@ -465,7 +479,7 @@ hist.bins: 20 </code></pre>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">1:20</span>
+    <span title="所需總閱讀時間">1:19</span>
   </span>
 </div>
 

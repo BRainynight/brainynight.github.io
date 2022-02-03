@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
-Sitemap: https://brainynight.github.io/sitemap_index
+
+Disallow: https://brainynight.github.io/favicon.ico
+
 Sitemap: https://brainynight.github.io/sitemap.xml
