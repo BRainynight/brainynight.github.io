@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://brainynight.github.io/sitemap_index.xml
+Sitemap: https://brainynight.github.io/sitemap_index
+Sitemap: https://brainynight.github.io/sitemap.xml
