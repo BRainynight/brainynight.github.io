@@ -1,41 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo Blog 客製化 (1) 部落格指令自動化</title>
-    <url>/posts/2021-12-30-blog-1-automatic-command.html</url>
-    <content><![CDATA[<p>想用原始一點的方法來搞個半自動化，第一步當然就是不要打那麼多指令！</p>
-<p>我希望能將 <code>hexo clean</code>, <code>hexo generate</code>, <code>hexo server</code>/<code>hexo deploy</code> 的步驟集合在一起，並且開啟部落格的 Demo 網址。這裡使用 Make 做指令簡化。</p>
-<p>在部落格的根目錄創建一個 makefile，內容如下</p>
-<pre class="language-makefile" data-language="makefile"><code class="language-makefile"><span class="token symbol">local</span><span class="token punctuation">:</span>
-	python -m webbrowser <span class="token string">"http://localhost:4000"</span>
-	hexo cl &amp;&amp; hexo g &amp;&amp; hexo server 
-
-<span class="token symbol">demo</span><span class="token punctuation">:</span>
-	python -m webbrowser <span class="token string">"http://localhost:4000"</span>
-	hexo server 
-
-<span class="token symbol">push</span><span class="token punctuation">:</span>
-	python -m webbrowser <span class="token string">"https://&lt;UserName>.github.io/"</span>
-	hexo cl &amp;&amp; hexo g &amp;&amp; hexo d </code></pre>
-
-<p>需要注意，Command 的縮排是 tab 不是空白鍵！</p>
-<h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><p>先開啟網頁是因為一旦 server 打開就會佔一個 process  在那邊，阻斷後面的指令。而網頁先開啟來只是一個動作，不會阻斷後續的指令。</p>
-<h3 id="local"><a href="#local" class="headerlink" title="local"></a><code>local</code></h3><p>是每次改完部落格，要清除靜態檔案重新生成並打 local 的展示網頁的時候。</p>
-<pre class="language-sh" data-language="sh"><code class="language-sh">make local</code></pre>
-
-<h3 id="demo"><a href="#demo" class="headerlink" title="demo"></a><code>demo</code></h3><p>單純想打開 local demo，沒有要清掉資料重新生成。</p>
-<pre class="language-sh" data-language="sh"><code class="language-sh">make demo</code></pre>
-
-<h3 id="push"><a href="#push" class="headerlink" title="push"></a><code>push</code></h3><p>確認本地的改動，要將資料 push 到線上了。</p>
-<pre class="language-sh" data-language="sh"><code class="language-sh">make push</code></pre>]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>建置 Hexo 部落格</title>
     <url>/posts/2021-12-30-blog-0-hexo-build-env.html</url>
     <content><![CDATA[<h2 id="前置作業"><a href="#前置作業" class="headerlink" title="前置作業"></a>前置作業</h2><ol>
@@ -282,6 +247,41 @@ public&#x2F;
       </tags>
   </entry>
   <entry>
+    <title>Hexo Blog 客製化 (1) 部落格指令自動化</title>
+    <url>/posts/2021-12-30-blog-1-automatic-command.html</url>
+    <content><![CDATA[<p>想用原始一點的方法來搞個半自動化，第一步當然就是不要打那麼多指令！</p>
+<p>我希望能將 <code>hexo clean</code>, <code>hexo generate</code>, <code>hexo server</code>/<code>hexo deploy</code> 的步驟集合在一起，並且開啟部落格的 Demo 網址。這裡使用 Make 做指令簡化。</p>
+<p>在部落格的根目錄創建一個 makefile，內容如下</p>
+<pre class="language-makefile" data-language="makefile"><code class="language-makefile"><span class="token symbol">local</span><span class="token punctuation">:</span>
+	python -m webbrowser <span class="token string">"http://localhost:4000"</span>
+	hexo cl &amp;&amp; hexo g &amp;&amp; hexo server 
+
+<span class="token symbol">demo</span><span class="token punctuation">:</span>
+	python -m webbrowser <span class="token string">"http://localhost:4000"</span>
+	hexo server 
+
+<span class="token symbol">push</span><span class="token punctuation">:</span>
+	python -m webbrowser <span class="token string">"https://&lt;UserName>.github.io/"</span>
+	hexo cl &amp;&amp; hexo g &amp;&amp; hexo d </code></pre>
+
+<p>需要注意，Command 的縮排是 tab 不是空白鍵！</p>
+<h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><p>先開啟網頁是因為一旦 server 打開就會佔一個 process  在那邊，阻斷後面的指令。而網頁先開啟來只是一個動作，不會阻斷後續的指令。</p>
+<h3 id="local"><a href="#local" class="headerlink" title="local"></a><code>local</code></h3><p>是每次改完部落格，要清除靜態檔案重新生成並打 local 的展示網頁的時候。</p>
+<pre class="language-sh" data-language="sh"><code class="language-sh">make local</code></pre>
+
+<h3 id="demo"><a href="#demo" class="headerlink" title="demo"></a><code>demo</code></h3><p>單純想打開 local demo，沒有要清掉資料重新生成。</p>
+<pre class="language-sh" data-language="sh"><code class="language-sh">make demo</code></pre>
+
+<h3 id="push"><a href="#push" class="headerlink" title="push"></a><code>push</code></h3><p>確認本地的改動，要將資料 push 到線上了。</p>
+<pre class="language-sh" data-language="sh"><code class="language-sh">make push</code></pre>]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo Blog 客製化 (2) Next 主題更新與 PrismJs 啟用</title>
     <url>/posts/2022-01-26-blog-2-theme-Next-update.html</url>
     <content><![CDATA[<h2 id="主題版本更新"><a href="#主題版本更新" class="headerlink" title="主題版本更新"></a>主題版本更新</h2><p>Next 主題有在定期更新，每次更新後可能 config 的內容位置都可能有更動。</p>
@@ -346,118 +346,6 @@ public&#x2F;
       <tags>
         <tag>blog</tag>
         <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python 資料永久化套件:Pickle (2)</title>
-    <url>/posts/2022-01-17-pickle-advance.html</url>
-    <content><![CDATA[<h2 id="PEP-3155-Qualified-name"><a href="#PEP-3155-Qualified-name" class="headerlink" title="PEP 3155 Qualified name"></a>PEP 3155 Qualified name</h2><p>有關 Fully Qualified Name 的部份我是第一次看到…，嘗試閱讀 PEP 內容，不是很確定閱讀理解是否正確，若有錯誤歡迎指教！</p>
-<p>這個 PEP 議題是添加一個 <code>__qualname__</code> 屬性在函式跟類別中。對於 Top-Level 的函式與類別，這個屬性等同於 <code>__name__</code>，而對於巢狀的類別跟巢狀函式，<code>__qualname__</code> 屬性 dotted name 呈現，代表從 Top-Level 算起，該物件的層級位置。<code>repr()</code> 跟 <code>str()</code> 作用於類別與函式上時，也被修改成使用 <code>__qualname__</code>  而非 <code>__name__</code>。</p>
-<p>dotted name 表示從一個模組的 global 區域到該類別、函式或方法的路徑。</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">C</span><span class="token punctuation">:</span>
-    <span class="token keyword">class</span> <span class="token class-name">D</span><span class="token punctuation">:</span>
-        <span class="token keyword">def</span> <span class="token function">meth</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">pass</span>
-
-In <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">:</span> C<span class="token punctuation">.</span>__qualname__
-Out<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'C'</span>
-
-In <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">:</span> C<span class="token punctuation">.</span>D<span class="token punctuation">.</span>__qualname__
-Out<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'C.D'</span>
-
-In <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">:</span> C<span class="token punctuation">.</span>D<span class="token punctuation">.</span>__name__
-Out<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'D'</span>
-    
-In <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">:</span> C<span class="token punctuation">.</span>D<span class="token punctuation">.</span>meth<span class="token punctuation">.</span>__qualname__
-Out<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'C.D.meth'</span></code></pre>
-
-<p>而且對於被 <code>import</code> 的模組是不存在 <code>__qualname__</code> 屬性的，他們只有 <code>__name__</code>屬性，表達的是他的 Fully Qualified Name：該模組到其頂層父模組之間的層級關係：</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> email<span class="token punctuation">.</span>mime<span class="token punctuation">.</span>text
-email<span class="token punctuation">.</span>mime<span class="token punctuation">.</span>text<span class="token punctuation">.</span>__name__</code></pre>
-
-
-
-<h2 id="情境探討-有裝飾器的函式無法被-Pickle"><a href="#情境探討-有裝飾器的函式無法被-Pickle" class="headerlink" title="情境探討: 有裝飾器的函式無法被 Pickle"></a>情境探討: 有裝飾器的函式無法被 Pickle</h2><p>問題來源<a href="https://blog.csdn.net/qq_39314099/article/details/83822593">自此網站</a>，我們可以嘗試用閱讀完官方文件後的邏輯來解釋這個問題。因為覺得程式繁瑣，所以大概照著意思稍微改寫了一下，博主寫了一個名為 <code>haha</code> 的函式，會印出 <code>hello XXX</code>，並為它添加了計時裝飾器。雖然沒有明確的說怎麼存檔出了錯，但根據引發的 Error 我大致假設是嘗試存 <code>haha</code> 這個函式。</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> time<span class="token punctuation">,</span> pickle
-<span class="token keyword">from</span> functools <span class="token keyword">import</span> wraps
-
-<span class="token keyword">def</span> <span class="token function">timer</span><span class="token punctuation">(</span>mth<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>    
-    <span class="token comment"># @wraps(mth)</span>
-    <span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        st <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        res <span class="token operator">=</span> mth<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
-        et <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Spend </span><span class="token interpolation"><span class="token punctuation">&#123;</span><span class="token builtin">float</span><span class="token punctuation">(</span>et<span class="token operator">-</span>st<span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span><span class="token string"> sec."</span></span><span class="token punctuation">)</span>
-        <span class="token keyword">return</span> res
-    <span class="token keyword">return</span> wrapper
-
-<span class="token decorator annotation punctuation">@timer</span>
-<span class="token keyword">def</span> <span class="token function">haha</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Hello </span><span class="token interpolation"><span class="token punctuation">&#123;</span>name<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
-
-<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"function.pkl"</span><span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"name of haha function is:"</span><span class="token punctuation">,</span> haha<span class="token punctuation">)</span>
-    pickle<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>haha<span class="token punctuation">,</span> f<span class="token punctuation">)</span></code></pre>
-
-<p>在試圖存下這個函式時發生了問題：<code>AttributeError: Can&#39;t pickle local object &#39;timer.&lt;locals&gt;.wrapper&#39;</code>。而樓主表示只要給裝飾器裡面裝上 <code>warp</code>，問題就解決了。<code>warp</code>應該擺放的位置已經寫在程式裡面了，可以試著註解與取消註解看看函式的名稱的不同。</p>
-<ul>
-<li>沒有 <code>warp</code> 的情況：<code>&lt;function timer.&lt;locals&gt;.wrapper at 0x000001EBECA588B8&gt;</code></li>
-<li>有 <code>warp</code> 的情況：<code>&lt;function haha at 0x000001BF76B188B8&gt;</code></li>
-</ul>
-<p>所以追根究底，這個問題的癥結點在於包上裝飾器後，若沒有使用 <code>functools.wraps</code> 讓裝飾後的函式名稱仍保持原樣，該函式的名稱會變成裝飾器內部函式 <code>wrapper</code> 的名稱。而由於 <code>wrapper</code> 不是一個 top-level 的函式，而是隸屬 <code>timer</code> 函式下的 <code>&lt;locals&gt;</code>，因此 Pickle 在試圖存取時直接因為名稱不符合 Pickable 原則而引發了錯誤。</p>
-<p>而且決方法僅僅是讓裝飾後的函式保留原本的名稱，一樣叫做 <code>haha</code>，Pickle 發現這個名稱存在於 Top-Level 就把他記下來。但實際上他記得的也只有名稱，Unpickle 的時候如果沒有保留定義 <code>haha</code> 的函式、或是 <code>haha</code> 的內容和 Pickle 時不一樣，執行起來仍會是不同的內容！</p>
-<h2 id="個人見解"><a href="#個人見解" class="headerlink" title="個人見解"></a>個人見解</h2><p>Pickle 是刻意設計不儲存程式碼，對函式與類別都以 name reference 的方式保存的。因此想要透過 pickle 來「永久的」存下函式與類別是不可能的，乍聽起來很不方便。但換個角度或許該想的是：</p>
-<ul>
-<li><p>什麼東西是應該被永久保存的呢？應該是資料。</p>
-</li>
-<li><p>資料應該以何種形式存在呢？應該是實例。</p>
-</li>
-<li><p>所以函式、類別是什麼？我想是一個流程、或是一個抽象的敘述。</p>
-<p>理論上，如果有一些變動性的、Runtime 才決定的資料也應該是外部傳入，如果是內部所需要的資料也跟外界無關，作為 local 變數定義在程式碼中就好。</p>
-</li>
-</ul>
-<p>這樣思考起來，好像也能夠明白為何函式與類別不會把程式碼存下來。</p>
-<p>但如果，需要函式有一點「記憶力」呢？例如，在執行 Min-max 正規化時，希望函式能夠記住第一次正規化的上下界屬性，後面都直接帶入就好，不用每次都傳入上下界；或是希望把這組正規化參數記下來，但不希望是把 min ＆ max 倆組分別記下來、怕資訊太零散。</p>
-<p>這種時候，或許可以考慮使用 Callable Object。定義一個 Class 並實踐 <code>__call__</code> 方法，把正規化行為定義在裡面，而需要記憶的屬性紀錄在實例裡面，像是 <code>self.mins</code>, <code>self.maxs</code>… ，在儲存的時候直接把這個 normalizer 存下來即可。</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">norm</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">return</span> <span class="token punctuation">(</span>arr<span class="token operator">-</span>mins<span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span>maxs<span class="token operator">-</span>mins<span class="token punctuation">)</span>
-
-<span class="token keyword">class</span> <span class="token class-name">Normalizer</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        self<span class="token punctuation">.</span>mins <span class="token operator">=</span> mins 
-        self<span class="token punctuation">.</span>maxs <span class="token operator">=</span> maxs 
-        
-    <span class="token keyword">def</span> <span class="token function">__call__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> arr<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">return</span> <span class="token punctuation">(</span>arr<span class="token operator">-</span>self<span class="token punctuation">.</span>mins<span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>maxs<span class="token operator">-</span>self<span class="token punctuation">.</span>mins<span class="token punctuation">)</span>
-        
-<span class="token comment"># in some main process.... </span>
-<span class="token keyword">if</span> __name__<span class="token operator">==</span><span class="token string">"__main__"</span><span class="token punctuation">:</span>
-    <span class="token keyword">for</span> data <span class="token keyword">in</span> datalist<span class="token punctuation">:</span>
-        mins<span class="token punctuation">,</span> maxs <span class="token operator">=</span> data<span class="token punctuation">.</span><span class="token builtin">min</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> data<span class="token punctuation">.</span><span class="token builtin">max</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-        data <span class="token operator">=</span> norm<span class="token punctuation">(</span>data<span class="token punctuation">,</span> mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span>
-        
-        <span class="token comment"># 1. 透過 function 達成</span>
-        normalizer <span class="token operator">=</span> <span class="token keyword">lambda</span> arr<span class="token punctuation">:</span> norm<span class="token punctuation">(</span>arr<span class="token punctuation">,</span> mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span>
-        <span class="token keyword">def</span> <span class="token function">normalizer</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># OR do this... </span>
-            <span class="token keyword">return</span> norm<span class="token punctuation">(</span>arr<span class="token punctuation">,</span> mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span>
-        validation_data <span class="token operator">=</span> normalizer<span class="token punctuation">(</span>validation_data<span class="token punctuation">)</span>
-        
-        joblib<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>normalizer<span class="token punctuation">,</span> <span class="token string">"normalizer.pkl"</span><span class="token punctuation">)</span> <span class="token comment"># 決對會出錯.. </span>
-        
-        <span class="token comment"># 2. 透過 callable object 達成 </span>
-        normalizer <span class="token operator">=</span> Normalizer<span class="token punctuation">(</span>mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span>
-        data <span class="token operator">=</span> normalizer<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
-        validation_data <span class="token operator">=</span> normalizer<span class="token punctuation">(</span>validation_data<span class="token punctuation">)</span>
-        joblib<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>normalizer<span class="token punctuation">,</span> <span class="token string">"normalizer.pkl"</span><span class="token punctuation">)</span>     </code></pre>
-
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>官方文件</tag>
-        <tag>pickle</tag>
       </tags>
   </entry>
   <entry>
@@ -598,188 +486,106 @@ email<span class="token punctuation">.</span>mime<span class="token punctuation"
       </tags>
   </entry>
   <entry>
-    <title>Python 日誌模組 Logging (1)</title>
-    <url>/posts/2022-01-20-python-logger-quick.html</url>
-    <content><![CDATA[<p>在開發 Python 專案時，是否經歷過一種狀況：在測試的時候需要不斷輸出一些資訊以便觀察狀態，但在正式上線之後又不須要這些東西輸入。有可能是不想給使用者看到，也有可能是不斷 print out 會造成某些阻塞。<br>當開發版與上線版之間在切換時，最樸實無華的作法就是打開程式，一行行的把 Print 註解掉，但這顯然非常的沒有效率。</p>
-<span id="more"></span>
+    <title>Python 資料永久化套件:Pickle (2)</title>
+    <url>/posts/2022-01-17-pickle-advance.html</url>
+    <content><![CDATA[<h2 id="PEP-3155-Qualified-name"><a href="#PEP-3155-Qualified-name" class="headerlink" title="PEP 3155 Qualified name"></a>PEP 3155 Qualified name</h2><p>有關 Fully Qualified Name 的部份我是第一次看到…，嘗試閱讀 PEP 內容，不是很確定閱讀理解是否正確，若有錯誤歡迎指教！</p>
+<p>這個 PEP 議題是添加一個 <code>__qualname__</code> 屬性在函式跟類別中。對於 Top-Level 的函式與類別，這個屬性等同於 <code>__name__</code>，而對於巢狀的類別跟巢狀函式，<code>__qualname__</code> 屬性 dotted name 呈現，代表從 Top-Level 算起，該物件的層級位置。<code>repr()</code> 跟 <code>str()</code> 作用於類別與函式上時，也被修改成使用 <code>__qualname__</code>  而非 <code>__name__</code>。</p>
+<p>dotted name 表示從一個模組的 global 區域到該類別、函式或方法的路徑。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">C</span><span class="token punctuation">:</span>
+    <span class="token keyword">class</span> <span class="token class-name">D</span><span class="token punctuation">:</span>
+        <span class="token keyword">def</span> <span class="token function">meth</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">pass</span>
 
-<p>Python 的原生套件中有一個名為 <code>logging</code> 的模組，在一些較為正式的模組套件包中都不難看到它的蹤影。本篇文章接下來的內容大多是閱讀 Python 官方文件後的快速整理，希望能將 logging 模組簡單的介紹並上手！</p>
-<h2 id="日誌等級的基本認知"><a href="#日誌等級的基本認知" class="headerlink" title="日誌等級的基本認知"></a>日誌等級的基本認知</h2><p>預設的 logging 訊息等級一共有五個，其中 <strong>logging 的日誌等級預設是 WARNING(30)</strong> ，因此在預設的情況下，數值小於30的日誌等級不會輸出。</p>
-<table>
-<thead>
-<tr>
-<th>等級</th>
-<th>數值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>DEBUG</td>
-<td>10</td>
-</tr>
-<tr>
-<td>INFO</td>
-<td>20</td>
-</tr>
-<tr>
-<td>WARNING</td>
-<td>30</td>
-</tr>
-<tr>
-<td>ERROR</td>
-<td>40</td>
-</tr>
-<tr>
-<td>CRITICAL</td>
-<td>50</td>
-</tr>
-</tbody></table>
-<h2 id="單一模組：使用-logging-即可"><a href="#單一模組：使用-logging-即可" class="headerlink" title="單一模組：使用 logging 即可"></a>單一模組：使用 logging 即可</h2><h3 id="直接使用"><a href="#直接使用" class="headerlink" title="直接使用"></a>直接使用</h3><p>不設定 handler，也不設定<code>basicConfig</code> ，預設是輸出到終端機上(terminal/stdout)。如前面所說，logging 的日誌等級預設是 <code>WARNING(30)</code>。因此低於 WARNING 的 INFO 沒有被輸出在 terminal。</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> logging
-logging<span class="token punctuation">.</span>warning<span class="token punctuation">(</span><span class="token string">'Watch out!'</span><span class="token punctuation">)</span>  
-logging<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">'I told you so'</span><span class="token punctuation">)</span> </code></pre>
+In <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">:</span> C<span class="token punctuation">.</span>__qualname__
+Out<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'C'</span>
 
-<pre class="language-none"><code class="language-none">WARNING:root:Watch out!</code></pre>
+In <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">:</span> C<span class="token punctuation">.</span>D<span class="token punctuation">.</span>__qualname__
+Out<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'C.D'</span>
 
-<h3 id="寫入日誌檔案"><a href="#寫入日誌檔案" class="headerlink" title="寫入日誌檔案"></a>寫入日誌檔案</h3><p>多數的情況需要儲存、以供事後查看這些紀錄檔案，例如訓練深度學習模型的時候，或是執行一個長時間運行的系統的時候。</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> logging
-logging<span class="token punctuation">.</span>basicConfig<span class="token punctuation">(</span>filename<span class="token operator">=</span><span class="token string">'example.log'</span><span class="token punctuation">,</span> level<span class="token operator">=</span>logging<span class="token punctuation">.</span>DEBUG<span class="token punctuation">)</span>
-logging<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string">'This message should go to the log file'</span><span class="token punctuation">)</span>
-logging<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">'So should this'</span><span class="token punctuation">)</span>
-logging<span class="token punctuation">.</span>warning<span class="token punctuation">(</span><span class="token string">'And this, too'</span><span class="token punctuation">)</span></code></pre>
+In <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">:</span> C<span class="token punctuation">.</span>D<span class="token punctuation">.</span>__name__
+Out<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'D'</span>
+    
+In <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">:</span> C<span class="token punctuation">.</span>D<span class="token punctuation">.</span>meth<span class="token punctuation">.</span>__qualname__
+Out<span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token string">'C.D.meth'</span></code></pre>
 
-<p>如此一來將不會有任何輸出，但查看當前的執行目錄會發現 <code>example.log</code> 這個檔案裡有寫入日誌訊息。由於<code>basicConfig</code> 函式中，設置了等級為 DEBUG等級 (10)，因此三行訊息都有被包含進去。</p>
-<pre class="language-none"><code class="language-none"># example.log 內部的長相
-DEBUG:root:This message should go to the log file
-INFO:root:So should this
-WARNING:root:And this, too</code></pre>
+<p>而且對於被 <code>import</code> 的模組是不存在 <code>__qualname__</code> 屬性的，他們只有 <code>__name__</code>屬性，表達的是他的 Fully Qualified Name：該模組到其頂層父模組之間的層級關係：</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> email<span class="token punctuation">.</span>mime<span class="token punctuation">.</span>text
+email<span class="token punctuation">.</span>mime<span class="token punctuation">.</span>text<span class="token punctuation">.</span>__name__</code></pre>
 
-<p>如果重複執行上面的程式，日誌會不斷的加在<code>example.log</code>當前內容的後面，想要每次都直接刷新日誌檔案而不是接續(append)，需要加上參數 <code>filemode=w</code> 。</p>
-<pre class="language-python" data-language="python"><code class="language-python">logging<span class="token punctuation">.</span>basicConfig<span class="token punctuation">(</span>filename<span class="token operator">=</span><span class="token string">'example.log'</span><span class="token punctuation">,</span>filemode<span class="token operator">=</span><span class="token string">'w'</span><span class="token punctuation">,</span>  level<span class="token operator">=</span>logging<span class="token punctuation">.</span>DEBUG<span class="token punctuation">)</span></code></pre>
 
-<h2 id="多重模組：使用-logger"><a href="#多重模組：使用-logger" class="headerlink" title="多重模組：使用 logger"></a>多重模組：使用 logger</h2><p>多數情況我們所要面臨的狀況並沒有那麼簡單，專案是具有架構層級的模組，每個檔案都各自使用 logging 險得雜亂無章。後面會仔細介紹設定，這裡先簡單的提供了一個 function 可以直接調用。</p>
-<p>它將創建一個 logger，將輸出導向 terminal (stdout)、並自動儲存日誌到檔案。但以下幾點需要注意：</p>
-<ol>
-<li><p>不使用層級：直接使用 <code>get_logger()</code>，返回的 logger 不會有層級。<code>rootName</code> 參數可自由選擇是否更改，但 child 請設為空</p>
-<pre class="language-python" data-language="python"><code class="language-python">logger <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span><span class="token string">"__main__"</span><span class="token punctuation">,</span> childName<span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">)</span></code></pre></li>
-<li><p>根據程式的 package 層級自動設定：要把 <code>childName=__name__</code>在子程式中打上去！</p>
-<pre class="language-python" data-language="python"><code class="language-python">logger <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span><span class="token string">"__main__"</span><span class="token punctuation">,</span> childName<span class="token operator">=</span>__name__<span class="token punctuation">)</span></code></pre></li>
-<li><p>自定義層級：同時覆蓋 rootName, child 自己寫層級架構。</p>
-<pre class="language-python" data-language="python"><code class="language-python">get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span><span class="token string">"parent"</span><span class="token punctuation">,</span> childName<span class="token operator">=</span><span class="token string">"child1.child2"</span><span class="token punctuation">)</span></code></pre></li>
-</ol>
-<p>除了 <code>rootName</code> 與 <code>childName</code> 兩個參數是會影響到 logger 層級的，其他都是有關 log file 的參數：</p>
+
+<h2 id="情境探討-有裝飾器的函式無法被-Pickle"><a href="#情境探討-有裝飾器的函式無法被-Pickle" class="headerlink" title="情境探討: 有裝飾器的函式無法被 Pickle"></a>情境探討: 有裝飾器的函式無法被 Pickle</h2><p>問題來源<a href="https://blog.csdn.net/qq_39314099/article/details/83822593">自此網站</a>，我們可以嘗試用閱讀完官方文件後的邏輯來解釋這個問題。因為覺得程式繁瑣，所以大概照著意思稍微改寫了一下，博主寫了一個名為 <code>haha</code> 的函式，會印出 <code>hello XXX</code>，並為它添加了計時裝飾器。雖然沒有明確的說怎麼存檔出了錯，但根據引發的 Error 我大致假設是嘗試存 <code>haha</code> 這個函式。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> time<span class="token punctuation">,</span> pickle
+<span class="token keyword">from</span> functools <span class="token keyword">import</span> wraps
+
+<span class="token keyword">def</span> <span class="token function">timer</span><span class="token punctuation">(</span>mth<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>    
+    <span class="token comment"># @wraps(mth)</span>
+    <span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        st <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        res <span class="token operator">=</span> mth<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span><span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
+        et <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Spend </span><span class="token interpolation"><span class="token punctuation">&#123;</span><span class="token builtin">float</span><span class="token punctuation">(</span>et<span class="token operator">-</span>st<span class="token punctuation">)</span><span class="token punctuation">&#125;</span></span><span class="token string"> sec."</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">return</span> res
+    <span class="token keyword">return</span> wrapper
+
+<span class="token decorator annotation punctuation">@timer</span>
+<span class="token keyword">def</span> <span class="token function">haha</span><span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token boolean">None</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"Hello </span><span class="token interpolation"><span class="token punctuation">&#123;</span>name<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+
+<span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">"function.pkl"</span><span class="token punctuation">,</span> <span class="token string">'wb'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"name of haha function is:"</span><span class="token punctuation">,</span> haha<span class="token punctuation">)</span>
+    pickle<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>haha<span class="token punctuation">,</span> f<span class="token punctuation">)</span></code></pre>
+
+<p>在試圖存下這個函式時發生了問題：<code>AttributeError: Can&#39;t pickle local object &#39;timer.&lt;locals&gt;.wrapper&#39;</code>。而樓主表示只要給裝飾器裡面裝上 <code>warp</code>，問題就解決了。<code>warp</code>應該擺放的位置已經寫在程式裡面了，可以試著註解與取消註解看看函式的名稱的不同。</p>
 <ul>
-<li><code>fileName</code>：可自訂 log file 的名稱</li>
-<li><code>timeFalg</code>：是否要再檔名後面自動添加當前的時間戳，如此能使 log file 不被覆蓋，因為函式中預設的寫入行為是覆寫(<code>w</code>)。</li>
-<li><code>log_dir</code>：log file 所儲存的資料夾，預設會在當前的目錄下創建一個名為 <code>logs</code> 的資料夾，並將紀錄都存在裡面。</li>
+<li>沒有 <code>warp</code> 的情況：<code>&lt;function timer.&lt;locals&gt;.wrapper at 0x000001EBECA588B8&gt;</code></li>
+<li>有 <code>warp</code> 的情況：<code>&lt;function haha at 0x000001BF76B188B8&gt;</code></li>
 </ul>
-<p>如果有不只一個 python 檔在跑，且彼此沒有上下層級關係，記得覆寫 rootName，不要讓兩個 logger 同名，否則當其中一份程式碼中跑到新增訊息，輸入的訊息會讓兩個程式的 logger 都接收到，影響到彼此的 output。</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> logging<span class="token punctuation">,</span> sys<span class="token punctuation">,</span> os
+<p>所以追根究底，這個問題的癥結點在於包上裝飾器後，若沒有使用 <code>functools.wraps</code> 讓裝飾後的函式名稱仍保持原樣，該函式的名稱會變成裝飾器內部函式 <code>wrapper</code> 的名稱。而由於 <code>wrapper</code> 不是一個 top-level 的函式，而是隸屬 <code>timer</code> 函式下的 <code>&lt;locals&gt;</code>，因此 Pickle 在試圖存取時直接因為名稱不符合 Pickable 原則而引發了錯誤。</p>
+<p>而且決方法僅僅是讓裝飾後的函式保留原本的名稱，一樣叫做 <code>haha</code>，Pickle 發現這個名稱存在於 Top-Level 就把他記下來。但實際上他記得的也只有名稱，Unpickle 的時候如果沒有保留定義 <code>haha</code> 的函式、或是 <code>haha</code> 的內容和 Pickle 時不一樣，執行起來仍會是不同的內容！</p>
+<h2 id="個人見解"><a href="#個人見解" class="headerlink" title="個人見解"></a>個人見解</h2><p>Pickle 是刻意設計不儲存程式碼，對函式與類別都以 name reference 的方式保存的。因此想要透過 pickle 來「永久的」存下函式與類別是不可能的，乍聽起來很不方便。但換個角度或許該想的是：</p>
+<ul>
+<li><p>什麼東西是應該被永久保存的呢？應該是資料。</p>
+</li>
+<li><p>資料應該以何種形式存在呢？應該是實例。</p>
+</li>
+<li><p>所以函式、類別是什麼？我想是一個流程、或是一個抽象的敘述。</p>
+<p>理論上，如果有一些變動性的、Runtime 才決定的資料也應該是外部傳入，如果是內部所需要的資料也跟外界無關，作為 local 變數定義在程式碼中就好。</p>
+</li>
+</ul>
+<p>這樣思考起來，好像也能夠明白為何函式與類別不會把程式碼存下來。</p>
+<p>但如果，需要函式有一點「記憶力」呢？例如，在執行 Min-max 正規化時，希望函式能夠記住第一次正規化的上下界屬性，後面都直接帶入就好，不用每次都傳入上下界；或是希望把這組正規化參數記下來，但不希望是把 min ＆ max 倆組分別記下來、怕資訊太零散。</p>
+<p>這種時候，或許可以考慮使用 Callable Object。定義一個 Class 並實踐 <code>__call__</code> 方法，把正規化行為定義在裡面，而需要記憶的屬性紀錄在實例裡面，像是 <code>self.mins</code>, <code>self.maxs</code>… ，在儲存的時候直接把這個 normalizer 存下來即可。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">norm</span><span class="token punctuation">(</span>arr<span class="token punctuation">,</span> mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>arr<span class="token operator">-</span>mins<span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span>maxs<span class="token operator">-</span>mins<span class="token punctuation">)</span>
 
-<span class="token keyword">def</span> <span class="token function">get_logger</span><span class="token punctuation">(</span>rootName<span class="token operator">=</span><span class="token string">"__main__"</span><span class="token punctuation">,</span> childName<span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">,</span> fileName<span class="token operator">=</span><span class="token string">"record"</span><span class="token punctuation">,</span> timeFlag<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> log_dir<span class="token operator">=</span><span class="token string">"logs"</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    logName <span class="token operator">=</span> rootName <span class="token keyword">if</span> <span class="token keyword">not</span> childName <span class="token keyword">else</span>  rootName<span class="token operator">+</span><span class="token string">"."</span><span class="token operator">+</span>childName
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Your Log name is : "</span><span class="token punctuation">,</span> logName<span class="token punctuation">)</span>
-    logger <span class="token operator">=</span> logging<span class="token punctuation">.</span>getLogger<span class="token punctuation">(</span>logName<span class="token punctuation">)</span> 
-    logger<span class="token punctuation">.</span>setLevel<span class="token punctuation">(</span>logging<span class="token punctuation">.</span>DEBUG<span class="token punctuation">)</span>
-    <span class="token keyword">if</span> timeFlag<span class="token punctuation">:</span>
-        <span class="token keyword">from</span> datetime <span class="token keyword">import</span> datetime
-        now <span class="token operator">=</span> datetime<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        dt_string <span class="token operator">=</span> now<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%m%d_%H%M%S"</span><span class="token punctuation">)</span>
-        fileName<span class="token operator">+=</span><span class="token string">"_"</span><span class="token operator">+</span>dt_string
+<span class="token keyword">class</span> <span class="token class-name">Normalizer</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>mins <span class="token operator">=</span> mins 
+        self<span class="token punctuation">.</span>maxs <span class="token operator">=</span> maxs 
         
-    <span class="token keyword">if</span> <span class="token keyword">not</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>isdir<span class="token punctuation">(</span>log_dir<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        os<span class="token punctuation">.</span>mkdir<span class="token punctuation">(</span>log_dir<span class="token punctuation">)</span>
-    
-    fileName <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>log_dir<span class="token punctuation">,</span> fileName<span class="token punctuation">)</span>
-
-    <span class="token keyword">if</span> <span class="token keyword">not</span> childName<span class="token punctuation">:</span> <span class="token comment"># 只能在最頂層加，如果每一層都這樣加，每一個 child logger 也會都 print 一行</span>
-        <span class="token comment"># file handler</span>
-        fh <span class="token operator">=</span> logging<span class="token punctuation">.</span>FileHandler<span class="token punctuation">(</span>fileName<span class="token operator">+</span><span class="token string">".log"</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">'w'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8-sig'</span><span class="token punctuation">)</span>
-        fh<span class="token punctuation">.</span>setLevel<span class="token punctuation">(</span>logging<span class="token punctuation">.</span>INFO<span class="token punctuation">)</span>
-        ch <span class="token operator">=</span> logging<span class="token punctuation">.</span>StreamHandler<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># sys.stdout</span>
-        ch<span class="token punctuation">.</span>setLevel<span class="token punctuation">(</span>logging<span class="token punctuation">.</span>DEBUG<span class="token punctuation">)</span>
-
-        formatter <span class="token operator">=</span> logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'%(asctime)s - %(name)s - %(levelname)s : %(message)s'</span><span class="token punctuation">)</span>
-        <span class="token comment"># formatter = logging.Formatter('%(message)s')</span>
-        ch<span class="token punctuation">.</span>setFormatter<span class="token punctuation">(</span>formatter<span class="token punctuation">)</span>
-        fh<span class="token punctuation">.</span>setFormatter<span class="token punctuation">(</span>formatter<span class="token punctuation">)</span>
-
-        <span class="token comment"># put filehandler into logger</span>
-        logger<span class="token punctuation">.</span>addHandler<span class="token punctuation">(</span>fh<span class="token punctuation">)</span>
-        logger<span class="token punctuation">.</span>addHandler<span class="token punctuation">(</span>ch<span class="token punctuation">)</span>
-    <span class="token keyword">return</span> logger</code></pre>
-
-<h3 id="簡易範例"><a href="#簡易範例" class="headerlink" title="簡易範例"></a>簡易範例</h3><ol>
-<li><p>Root file，執行的時候是 <code>python xxx.py</code> 的那個 <code>xxx.py</code> 的檔案中應該這樣調用 logger : </p>
- <pre class="language-python" data-language="python"><code class="language-python">logger <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span>__name__<span class="token punctuation">)</span></code></pre></li>
-<li><p>Child file，被 <code>xxx.py</code> 所調用的模組</p>
- <pre class="language-python" data-language="python"><code class="language-python">logger <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>childName<span class="token operator">=</span>__name__<span class="token punctuation">)</span>  </code></pre></li>
-</ol>
-<p>不管是哪個檔案，使用 logger 的時候都直接按照訊息層級的嚴重性，正常使用即可: </p>
-<pre class="language-python" data-language="python"><code class="language-python">logger<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string">"just debug desp"</span><span class="token punctuation">)</span>
-logger<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">"some information"</span><span class="token punctuation">)</span>
-logger<span class="token punctuation">.</span>warning<span class="token punctuation">(</span><span class="token string">"This is warning, your action may cause some unexpected effect."</span><span class="token punctuation">)</span>
-logger<span class="token punctuation">.</span>error<span class="token punctuation">(</span><span class="token string">"something wrong!"</span><span class="token punctuation">)</span>
-logger<span class="token punctuation">.</span>critical<span class="token punctuation">(</span><span class="token string">"Your code is dead!!"</span><span class="token punctuation">)</span></code></pre>
-
-<p><strong>Hint 1.</strong> 如果覺得預設的 logger 格式太過冗長，可以參考下一章改變範例 code 中的 <code>formatter</code> 達成。</p>
-<p><strong>Hint 2.</strong> 如果希望錯誤/例外發生時，可以把 trace 一併寫進去，參考後面的 <a href="#%E7%B4%80%E9%8C%84%E4%BE%8B%E5%A4%96%E7%9A%84traceback%E8%A8%8A%E6%81%AF">紀錄例外的traceback訊息</a>。 </p>
-<h3 id="層級架構說明"><a href="#層級架構說明" class="headerlink" title="層級架構說明"></a>層級架構說明</h3><p>程式中的說明文字，具體範例如下:</p>
-<h4 id="狀況1-都不使用"><a href="#狀況1-都不使用" class="headerlink" title="狀況1. 都不使用"></a>狀況1. 都不使用</h4><p>完全不使用層級的話，大可以所有的檔案都如下: </p>
-<pre class="language-python" data-language="python"><code class="language-python">logger <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span>__name__<span class="token punctuation">)</span></code></pre>
-
-<p>但強烈不建議，如果這樣何必搞 logger，直接用 logging 就好了吧。</p>
-<h4 id="狀況2-根據套件層級自動設定"><a href="#狀況2-根據套件層級自動設定" class="headerlink" title="狀況2. 根據套件層級自動設定"></a>狀況2. 根據套件層級自動設定</h4><p>簡易範例中即示範了此種狀況，這種情況下，<strong>請勿改變 root file 中 logger 的 rootName 屬性</strong>，讓他保留範例中的樣子，也就是 <code>__name__</code> (在 main file 中 <code>__name__</code>==<code>__main__</code>) </p>
-<h4 id="狀況3-手動設定層級名稱"><a href="#狀況3-手動設定層級名稱" class="headerlink" title="狀況3. 手動設定層級名稱"></a>狀況3. 手動設定層級名稱</h4><p>想搞怪? 自己設定層級名稱! </p>
-<pre class="language-python" data-language="python"><code class="language-python">logger1 <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span><span class="token string">"boss"</span><span class="token punctuation">)</span>
-logger2 <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span><span class="token string">"boss"</span><span class="token punctuation">,</span> childName<span class="token operator">=</span><span class="token string">"manager"</span><span class="token punctuation">)</span>
-logger3 <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span><span class="token string">"boss"</span><span class="token punctuation">,</span> childName<span class="token operator">=</span><span class="token string">"manager.department"</span><span class="token punctuation">)</span>
-logger4 <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span><span class="token string">"boss"</span><span class="token punctuation">,</span> childName<span class="token operator">=</span><span class="token string">"manager.department.engineer"</span><span class="token punctuation">)</span></code></pre>
-
-
-
-<h2 id="訊息格式"><a href="#訊息格式" class="headerlink" title="訊息格式"></a>訊息格式</h2><p>logging 模組中，使用最原始的表達方式 <code>%s</code> 常常是為了向下兼容</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> logging
-logging<span class="token punctuation">.</span>warning<span class="token punctuation">(</span><span class="token string">'%s before you %s'</span><span class="token punctuation">,</span> <span class="token string">'Look'</span><span class="token punctuation">,</span> <span class="token string">'leap!'</span><span class="token punctuation">)</span></code></pre>
-
-<h3 id="改變訊息的呈現格式"><a href="#改變訊息的呈現格式" class="headerlink" title="改變訊息的呈現格式"></a>改變訊息的呈現格式</h3><p>透過<code>logging.basicConfig</code> 的 <code>format</code> 參數設定 log 的訊息模式，可以動用的變數可以參考<a href="https://docs.python.org/3.7/library/logging.html#logrecord-attributes">官方網站</a>，羅列了使用者可以動用的各種資訊，像是 function Name, … 各種的。</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> logging
-logging<span class="token punctuation">.</span>basicConfig<span class="token punctuation">(</span><span class="token builtin">format</span><span class="token operator">=</span><span class="token string">'%(levelname)s:%(message)s'</span><span class="token punctuation">,</span> level<span class="token operator">=</span>logging<span class="token punctuation">.</span>DEBUG<span class="token punctuation">)</span>
-logging<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string">'This message should appear on the console'</span><span class="token punctuation">)</span>
-logging<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">'So should this'</span><span class="token punctuation">)</span>
-logging<span class="token punctuation">.</span>warning<span class="token punctuation">(</span><span class="token string">'And this, too'</span><span class="token punctuation">)</span>
-
-<span class="token triple-quoted-string string">''' 
-DEBUG:This message should appear on the console
-INFO:So should this
-WARNING:And this, too
-'''</span>
-<span class="token comment"># %(levelname)s = DEBUG, INFO, WARNING... </span>
-<span class="token comment"># %(messages)s = ()裡面的訊息</span>
- </code></pre>
-
-<h2 id="紀錄例外的traceback訊息"><a href="#紀錄例外的traceback訊息" class="headerlink" title="紀錄例外的traceback訊息"></a>紀錄例外的traceback訊息</h2><ul>
-<li><code>logger.exception(&#39;any msg&#39;)</code> ：<strong>直接使用 exception層級，會將堆疊訊息寫進去 log 中</strong>。層級為 error 層級</li>
-<li><code>exc_info=True</code> 若想把例外訊息以<strong>其他層級寫入</strong>，可以把此參數調成True。預設為False，不會把堆疊訊息寫入。</li>
-</ul>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> traceback
-
-<span class="token keyword">def</span> <span class="token function">main_loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        logger<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'print </span><span class="token interpolation"><span class="token punctuation">&#123;</span>i<span class="token punctuation">&#125;</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
-        <span class="token keyword">if</span> i<span class="token operator">==</span> <span class="token number">5</span><span class="token punctuation">:</span>
-            <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">"Break"</span><span class="token punctuation">)</span>
-<span class="token keyword">try</span><span class="token punctuation">:</span>
-    main_loop<span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token keyword">except</span> Exception<span class="token punctuation">:</span>
-    <span class="token comment"># 將引發例外的堆疊訊息寫入logger, 甚麼動作都不用下</span>
-    logger<span class="token punctuation">.</span>exception<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span> 
-    <span class="token comment"># 堆疊訊息以info的層級寫入</span>
-    logger<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">'info has exc_info'</span><span class="token punctuation">,</span>exc_info<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-    <span class="token comment"># 當例外發生時，只會當純的寫入此行，因為 exc_info=False</span>
-    logger<span class="token punctuation">.</span>warning<span class="token punctuation">(</span><span class="token string">'warning without exc_info'</span><span class="token punctuation">,</span>exc_info<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
-    
-    <span class="token comment"># [Optional] 只將traceback的紀錄寫進指定txt</span>
-    traceback<span class="token punctuation">.</span>print_exc<span class="token punctuation">(</span><span class="token builtin">file</span><span class="token operator">=</span><span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'traceback_INFO.txt'</span><span class="token punctuation">,</span><span class="token string">'w+'</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+    <span class="token keyword">def</span> <span class="token function">__call__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> arr<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span>arr<span class="token operator">-</span>self<span class="token punctuation">.</span>mins<span class="token punctuation">)</span><span class="token operator">/</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>maxs<span class="token operator">-</span>self<span class="token punctuation">.</span>mins<span class="token punctuation">)</span>
+        
+<span class="token comment"># in some main process.... </span>
+<span class="token keyword">if</span> __name__<span class="token operator">==</span><span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> data <span class="token keyword">in</span> datalist<span class="token punctuation">:</span>
+        mins<span class="token punctuation">,</span> maxs <span class="token operator">=</span> data<span class="token punctuation">.</span><span class="token builtin">min</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> data<span class="token punctuation">.</span><span class="token builtin">max</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        data <span class="token operator">=</span> norm<span class="token punctuation">(</span>data<span class="token punctuation">,</span> mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span>
+        
+        <span class="token comment"># 1. 透過 function 達成</span>
+        normalizer <span class="token operator">=</span> <span class="token keyword">lambda</span> arr<span class="token punctuation">:</span> norm<span class="token punctuation">(</span>arr<span class="token punctuation">,</span> mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span>
+        <span class="token keyword">def</span> <span class="token function">normalizer</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token comment"># OR do this... </span>
+            <span class="token keyword">return</span> norm<span class="token punctuation">(</span>arr<span class="token punctuation">,</span> mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span>
+        validation_data <span class="token operator">=</span> normalizer<span class="token punctuation">(</span>validation_data<span class="token punctuation">)</span>
+        
+        joblib<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>normalizer<span class="token punctuation">,</span> <span class="token string">"normalizer.pkl"</span><span class="token punctuation">)</span> <span class="token comment"># 決對會出錯.. </span>
+        
+        <span class="token comment"># 2. 透過 callable object 達成 </span>
+        normalizer <span class="token operator">=</span> Normalizer<span class="token punctuation">(</span>mins<span class="token punctuation">,</span> maxs<span class="token punctuation">)</span>
+        data <span class="token operator">=</span> normalizer<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+        validation_data <span class="token operator">=</span> normalizer<span class="token punctuation">(</span>validation_data<span class="token punctuation">)</span>
+        joblib<span class="token punctuation">.</span>dump<span class="token punctuation">(</span>normalizer<span class="token punctuation">,</span> <span class="token string">"normalizer.pkl"</span><span class="token punctuation">)</span>     </code></pre>
 
 ]]></content>
       <categories>
@@ -788,7 +594,7 @@ WARNING:And this, too
       <tags>
         <tag>python</tag>
         <tag>官方文件</tag>
-        <tag>logging</tag>
+        <tag>pickle</tag>
       </tags>
   </entry>
   <entry>
@@ -984,122 +790,197 @@ new_reader<span class="token punctuation">.</span>readline<span class="token pun
       </tags>
   </entry>
   <entry>
-    <title>Python 視覺化(1) matplotlib 基本設置</title>
-    <url>/posts/2021-12-30-python-visualize-basic.html</url>
-    <content><![CDATA[<h2 id="子圖"><a href="#子圖" class="headerlink" title="子圖"></a>子圖</h2><h3 id="add-subplot"><a href="#add-subplot" class="headerlink" title="add_subplot"></a><code>add_subplot</code></h3><p>初使用時最常接觸的就是這個方法，當要用某張子圖的時候再使用 <code>fig.add_subplot()</code> 得到某個 <code>ax</code> ，用它進行繪圖。</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
-fig <span class="token operator">=</span> plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dpi<span class="token operator">=</span><span class="token number">300</span><span class="token punctuation">)</span> 
-fig<span class="token punctuation">.</span>suptitle<span class="token punctuation">(</span><span class="token string">"Big title"</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">)</span>
+    <title>Python 日誌模組 Logging (1)</title>
+    <url>/posts/2022-01-20-python-logger-quick.html</url>
+    <content><![CDATA[<p>在開發 Python 專案時，是否經歷過一種狀況：在測試的時候需要不斷輸出一些資訊以便觀察狀態，但在正式上線之後又不須要這些東西輸入。有可能是不想給使用者看到，也有可能是不斷 print out 會造成某些阻塞。<br>當開發版與上線版之間在切換時，最樸實無華的作法就是打開程式，一行行的把 Print 註解掉，但這顯然非常的沒有效率。</p>
+<span id="more"></span>
 
-<span class="token comment"># 子圖 1</span>
-ax <span class="token operator">=</span> fig<span class="token punctuation">.</span>add_subplot<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>title<span class="token punctuation">.</span>set_text<span class="token punctuation">(</span><span class="token string">"Subtitle 1"</span><span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">'b'</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"lr"</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.7</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># 圖例</span>
+<p>Python 的原生套件中有一個名為 <code>logging</code> 的模組，在一些較為正式的模組套件包中都不難看到它的蹤影。本篇文章接下來的內容大多是閱讀 Python 官方文件後的快速整理，希望能將 logging 模組簡單的介紹並上手！</p>
+<h2 id="日誌等級的基本認知"><a href="#日誌等級的基本認知" class="headerlink" title="日誌等級的基本認知"></a>日誌等級的基本認知</h2><p>預設的 logging 訊息等級一共有五個，其中 <strong>logging 的日誌等級預設是 WARNING(30)</strong> ，因此在預設的情況下，數值小於30的日誌等級不會輸出。</p>
+<table>
+<thead>
+<tr>
+<th>等級</th>
+<th>數值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>DEBUG</td>
+<td>10</td>
+</tr>
+<tr>
+<td>INFO</td>
+<td>20</td>
+</tr>
+<tr>
+<td>WARNING</td>
+<td>30</td>
+</tr>
+<tr>
+<td>ERROR</td>
+<td>40</td>
+</tr>
+<tr>
+<td>CRITICAL</td>
+<td>50</td>
+</tr>
+</tbody></table>
+<h2 id="單一模組：使用-logging-即可"><a href="#單一模組：使用-logging-即可" class="headerlink" title="單一模組：使用 logging 即可"></a>單一模組：使用 logging 即可</h2><h3 id="直接使用"><a href="#直接使用" class="headerlink" title="直接使用"></a>直接使用</h3><p>不設定 handler，也不設定<code>basicConfig</code> ，預設是輸出到終端機上(terminal/stdout)。如前面所說，logging 的日誌等級預設是 <code>WARNING(30)</code>。因此低於 WARNING 的 INFO 沒有被輸出在 terminal。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> logging
+logging<span class="token punctuation">.</span>warning<span class="token punctuation">(</span><span class="token string">'Watch out!'</span><span class="token punctuation">)</span>  
+logging<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">'I told you so'</span><span class="token punctuation">)</span> </code></pre>
 
-<span class="token comment"># 子圖 2</span>
-ax <span class="token operator">=</span> fig<span class="token punctuation">.</span>add_subplot<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>title<span class="token punctuation">.</span>set_text<span class="token punctuation">(</span><span class="token string">"Subtitle 1"</span><span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">'r'</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"lr"</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.7</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<pre class="language-none"><code class="language-none">WARNING:root:Watch out!</code></pre>
 
-plt<span class="token punctuation">.</span>savefig<span class="token punctuation">(</span><span class="token string">"fileName.png"</span><span class="token punctuation">)</span>
-</code></pre>
+<h3 id="寫入日誌檔案"><a href="#寫入日誌檔案" class="headerlink" title="寫入日誌檔案"></a>寫入日誌檔案</h3><p>多數的情況需要儲存、以供事後查看這些紀錄檔案，例如訓練深度學習模型的時候，或是執行一個長時間運行的系統的時候。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> logging
+logging<span class="token punctuation">.</span>basicConfig<span class="token punctuation">(</span>filename<span class="token operator">=</span><span class="token string">'example.log'</span><span class="token punctuation">,</span> level<span class="token operator">=</span>logging<span class="token punctuation">.</span>DEBUG<span class="token punctuation">)</span>
+logging<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string">'This message should go to the log file'</span><span class="token punctuation">)</span>
+logging<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">'So should this'</span><span class="token punctuation">)</span>
+logging<span class="token punctuation">.</span>warning<span class="token punctuation">(</span><span class="token string">'And this, too'</span><span class="token punctuation">)</span></code></pre>
 
-<p>但我並不喜歡這個用法，以上面這份程式為例，這總作法會讓 <code>fig.add_subplot(2, 1, 1)</code> 散布在整份程式中，一旦我要修改子圖在行列上的數量，修正起來變得無比麻煩。</p>
-<h3 id="一口氣指定完子圖"><a href="#一口氣指定完子圖" class="headerlink" title="一口氣指定完子圖"></a>一口氣指定完子圖</h3><p>一種方法是：</p>
-<pre class="language-python" data-language="python"><code class="language-python">fig<span class="token punctuation">,</span> axes <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span>n_rows<span class="token punctuation">,</span> n_cols<span class="token punctuation">)</span></code></pre>
+<p>如此一來將不會有任何輸出，但查看當前的執行目錄會發現 <code>example.log</code> 這個檔案裡有寫入日誌訊息。由於<code>basicConfig</code> 函式中，設置了等級為 DEBUG等級 (10)，因此三行訊息都有被包含進去。</p>
+<pre class="language-none"><code class="language-none"># example.log 內部的長相
+DEBUG:root:This message should go to the log file
+INFO:root:So should this
+WARNING:root:And this, too</code></pre>
 
-<p>不錯的是可以一口氣解決，但我更喜歡另一種作法：</p>
-<pre class="language-python" data-language="python"><code class="language-python">fig <span class="token operator">=</span> plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dpi<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">)</span>
-axes <span class="token operator">=</span> fig<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment"># axes.shape: (6, )</span>
-axes <span class="token operator">=</span> fig<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>             <span class="token comment"># axes.shape: (2, 3)</span></code></pre>
+<p>如果重複執行上面的程式，日誌會不斷的加在<code>example.log</code>當前內容的後面，想要每次都直接刷新日誌檔案而不是接續(append)，需要加上參數 <code>filemode=w</code> 。</p>
+<pre class="language-python" data-language="python"><code class="language-python">logging<span class="token punctuation">.</span>basicConfig<span class="token punctuation">(</span>filename<span class="token operator">=</span><span class="token string">'example.log'</span><span class="token punctuation">,</span>filemode<span class="token operator">=</span><span class="token string">'w'</span><span class="token punctuation">,</span>  level<span class="token operator">=</span>logging<span class="token punctuation">.</span>DEBUG<span class="token punctuation">)</span></code></pre>
 
-<p>原先的作法在取用 <code>axes</code> 的時候，要謹慎的選取 <code>axes[0][1]</code> 之類的 index ，同樣的一旦子圖在行列上的數量改變，透過 index 取得 <code>ax</code> 的時候也很容易出錯。因此我習慣先把他 <code>reshape</code> 成一個維度，直接用 <code>ax = axes[i]</code> 取用，簡單省事。缺點是難以知道現在處於哪一行哪一列，如果子圖有需要落在確切位置的需求，這個簡單粗暴的方法可能就不太適合。</p>
-<h3 id="大標題"><a href="#大標題" class="headerlink" title="大標題"></a>大標題</h3><pre class="language-python" data-language="python"><code class="language-python">ax<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">"sub plot title"</span><span class="token punctuation">)</span> <span class="token comment"># 子圖的標題</span>
-fig<span class="token punctuation">.</span>suptitle<span class="token punctuation">(</span><span class="token string">"Figure title"</span><span class="token punctuation">)</span>   <span class="token comment"># 整張圖的大標題</span></code></pre>
-
-<h3 id="合併子圖、跨行跨列"><a href="#合併子圖、跨行跨列" class="headerlink" title="合併子圖、跨行跨列"></a>合併子圖、跨行跨列</h3><h4 id="subplot2grid"><a href="#subplot2grid" class="headerlink" title="subplot2grid"></a><code>subplot2grid</code></h4><p>上面的用法都是規規矩矩，每張子圖大小一致。想要讓圖的形狀跨越多欄多列，應該使用 <code>subplot2grid</code>。<a href="https://matplotlib.org/3.1.1/gallery/userdemo/demo_gridspec01.html#sphx-glr-gallery-userdemo-demo-gridspec01-py" title="matplotlib 官網 subplot2grid 的範例">subplot2grid example</a></p>
-<pre class="language-python" data-language="python"><code class="language-python">ax1 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> colspan<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span>
-ax2 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> colspan<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
-ax3 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> rowspan<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
-ax4 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-ax5 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
-
-<p>得到的圖相當於：</p>
-<p><img src="https://matplotlib.org/3.1.1/_images/sphx_glr_demo_gridspec01_001.png" alt="subplot2grid"></p>
-<p>事實上 <code>subplot2grid</code> 依然可以作到像是 <code>subplot</code> 這樣只給出正規方正的子圖，在不做 <code>colspan</code>/<code>rowspan</code> 的情況下，這兩個操作是等價的：</p>
-<pre class="language-python" data-language="python"><code class="language-python">ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment"># 1. 算子圖要從 1 開始算子圖</span>
-ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 2. 先規定整張圖的 (row, col), 在列出要回傳的子圖位於哪個位置 (不像上面是算 index)</span></code></pre>
-
-<h4 id="GridSpec"><a href="#GridSpec" class="headerlink" title="GridSpec"></a><code>GridSpec</code></h4><p>還有另一個方法是透過 <code>GridSpec</code> 達成。我們可以先用 <code>gridspec</code> 創建一個框架，並把框架的某一塊指派給 <code>plt.subplot</code> 真正創建子圖。</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>gridspec <span class="token keyword">as</span> gridspec
-gs <span class="token operator">=</span> gridspec<span class="token punctuation">.</span>GridSpec<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
-ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># 等價 ax = plt.subplot2grid((2,2),(0, 0))</span></code></pre>
-
-<p>所以，在前面一小節的分隔圖，在這個章節應該如下實做：</p>
-<pre class="language-python" data-language="python"><code class="language-python">gs <span class="token operator">=</span> gridspec<span class="token punctuation">.</span>GridSpec<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
-ax1 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-ax2 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-ax3 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-ax4 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-ax5 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
-
-<h4 id="subplot2grid-與-GridSpec-的差別"><a href="#subplot2grid-與-GridSpec-的差別" class="headerlink" title="subplot2grid 與 GridSpec 的差別"></a><code>subplot2grid</code> 與 <code>GridSpec</code> 的差別</h4><p>我覺得可這樣看待</p>
-<ul>
-<li><p><code>subplot2grid</code> 屬於 pyplot 類別中，它直接與畫面操作有關，所以直接指派位置就有圖出來了</p>
-<pre class="language-none"><code class="language-none">ax &#x3D; plt.subplot2grid((2,2),(0, 0))</code></pre></li>
-<li><p>但是 <code>gridspec</code> 不是屬於 pyplot ，如果只有創建而沒有再指定畫布，是不會出現東西的</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>gridspec <span class="token keyword">as</span> gridspec
-gs <span class="token operator">=</span> gridspec<span class="token punctuation">.</span>GridSpec<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># 不會有圖跑出來喔</span></code></pre></li>
-</ul>
-<p>此外，gridspec 能做到的 layout(布局) 也更加彈性，詳細可以在這篇裡面看: <a href="https://matplotlib.org/2.0.2/users/gridspec.html#customizing-location-of-subplot-using-gridspec">Customizing Location of Subplot Using GridSpec</a> ，中文版: <a href="https://wizardforcel.gitbooks.io/matplotlib-user-guide/content/3.3.html">使用 GridSpec 自定义子图位置</a>。</p>
-<p><img src="https://matplotlib.org/2.0.2/_images/demo_gridspec06.png" alt="gridspec 更加彈性的布局"></p>
-<h2 id="圖上標示與設置"><a href="#圖上標示與設置" class="headerlink" title="圖上標示與設置"></a>圖上標示與設置</h2><h3 id="限制座標軸數值"><a href="#限制座標軸數值" class="headerlink" title="限制座標軸數值"></a>限制座標軸數值</h3><p>限制 x 與 y 軸顯示的數值上下界。</p>
-<pre class="language-python" data-language="python"><code class="language-python">ax<span class="token punctuation">.</span>set_ylim<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>set_xlim<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
-
-<h3 id="繪製橫-直線"><a href="#繪製橫-直線" class="headerlink" title="繪製橫/直線"></a>繪製橫/直線</h3><pre class="language-python" data-language="python"><code class="language-python">ax<span class="token punctuation">.</span>axhline<span class="token punctuation">(</span>y<span class="token operator">=</span><span class="token number">0.03</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">'r'</span><span class="token punctuation">,</span> linestyle<span class="token operator">=</span><span class="token string">'-.'</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.2</span><span class="token punctuation">)</span>  <span class="token comment"># 橫線</span>
-ax<span class="token punctuation">.</span>axvline<span class="token punctuation">(</span>x<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">'b'</span><span class="token punctuation">,</span> linestyle<span class="token operator">=</span><span class="token string">'-*'</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.2</span><span class="token punctuation">)</span>  <span class="token comment"># 直線</span></code></pre>
-
-<h3 id="縮減空白邊緣"><a href="#縮減空白邊緣" class="headerlink" title="縮減空白邊緣"></a><a href="https://stackoverflow.com/questions/55767312/how-to-position-suptitle" title="stackoverflow: How to position suptitle?">縮減空白邊緣</a></h3><pre class="language-python" data-language="python"><code class="language-python">fig<span class="token punctuation">.</span>tight_layout<span class="token punctuation">(</span>rect<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.03</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0.95</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># 保留標題的空間</span>
-fig<span class="token punctuation">.</span>suptitle<span class="token punctuation">(</span><span class="token string">"title"</span><span class="token punctuation">)</span>
-fig<span class="token punctuation">.</span>savefig<span class="token punctuation">(</span><span class="token string">"fig.png"</span><span class="token punctuation">)</span></code></pre>
-
-<p><code>tight_layout</code> 要在所有繪圖都結束之後，就要 <code>savefig</code> 或是 <code>plt.show()</code> 之前再放才會生效！或是在 import之後直接改變全局：</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
-plt<span class="token punctuation">.</span>rcParams<span class="token punctuation">[</span><span class="token string">"figure.autolayout"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">True</span></code></pre>
-
-<h2 id="全局的設置-matplotlibrc"><a href="#全局的設置-matplotlibrc" class="headerlink" title="全局的設置 matplotlibrc"></a><a href="https://matplotlib.org/stable/tutorials/introductory/customizing.html?highlight=figure.autolayout#the-matplotlibrc-file" title="matplotlib 官網 subplot2grid 的 matplotlibrc 設置">全局的設置 <code>matplotlibrc</code></a></h2><p><code>matplotlib</code> 裡面有很多設定，包含 <code>dpi</code>, <code>figsize</code>, <code>color</code>, <code>linewidth</code>…..，如果希望一些改變能夠直接作用在 global 上，可以透過設定 <code>matplotlibrc</code> 檔案達成：</p>
-<p>在沒有使用 <code>style.use(&#39;&lt;path&gt;/&lt;style-name&gt;.mplstyle&#39;)</code> 指向設定檔時，預設的搜索順序是這樣：</p>
+<h2 id="多重模組：使用-logger"><a href="#多重模組：使用-logger" class="headerlink" title="多重模組：使用 logger"></a>多重模組：使用 logger</h2><p>多數情況我們所要面臨的狀況並沒有那麼簡單，專案是具有架構層級的模組，每個檔案都各自使用 logging 險得雜亂無章。後面會仔細介紹設定，這裡先簡單的提供了一個 function 可以直接調用。</p>
+<p>它將創建一個 logger，將輸出導向 terminal (stdout)、並自動儲存日誌到檔案。但以下幾點需要注意：</p>
 <ol>
-<li>當前資料夾：當前這個資料夾中存在 <code>matplotlibrc</code>，而在這個資料夾之中所有的繪圖，也都想用這樣的設定套用，那非常適合這麼做。</li>
-<li>如果存在環境變數 <code>$MATPLOTLIBRC</code>：如果這是個檔案，就直接用。如果是個資料夾，會尋找並使用其下的 <code>$MATPLOTLIBRC/matplotlibrc</code> </li>
-<li>恩，剩下兩條我覺得太麻煩了，懶得翻譯。可以去看原文。</li>
+<li><p>不使用層級：直接使用 <code>get_logger()</code>，返回的 logger 不會有層級。<code>rootName</code> 參數可自由選擇是否更改，但 child 請設為空</p>
+<pre class="language-python" data-language="python"><code class="language-python">logger <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span><span class="token string">"__main__"</span><span class="token punctuation">,</span> childName<span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">)</span></code></pre></li>
+<li><p>根據程式的 package 層級自動設定：要把 <code>childName=__name__</code>在子程式中打上去！</p>
+<pre class="language-python" data-language="python"><code class="language-python">logger <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span><span class="token string">"__main__"</span><span class="token punctuation">,</span> childName<span class="token operator">=</span>__name__<span class="token punctuation">)</span></code></pre></li>
+<li><p>自定義層級：同時覆蓋 rootName, child 自己寫層級架構。</p>
+<pre class="language-python" data-language="python"><code class="language-python">get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span><span class="token string">"parent"</span><span class="token punctuation">,</span> childName<span class="token operator">=</span><span class="token string">"child1.child2"</span><span class="token punctuation">)</span></code></pre></li>
 </ol>
-<p>如果上述的路徑下都沒有  <code>matplotlibrc</code> 檔案那不會再額外搜索其他地方。我們可以直接透過下面這個的作法尋找當前使用的是誰：</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib
-matplotlib<span class="token punctuation">.</span>matplotlib_fname<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<p>除了 <code>rootName</code> 與 <code>childName</code> 兩個參數是會影響到 logger 層級的，其他都是有關 log file 的參數：</p>
+<ul>
+<li><code>fileName</code>：可自訂 log file 的名稱</li>
+<li><code>timeFalg</code>：是否要再檔名後面自動添加當前的時間戳，如此能使 log file 不被覆蓋，因為函式中預設的寫入行為是覆寫(<code>w</code>)。</li>
+<li><code>log_dir</code>：log file 所儲存的資料夾，預設會在當前的目錄下創建一個名為 <code>logs</code> 的資料夾，並將紀錄都存在裡面。</li>
+</ul>
+<p>如果有不只一個 python 檔在跑，且彼此沒有上下層級關係，記得覆寫 rootName，不要讓兩個 logger 同名，否則當其中一份程式碼中跑到新增訊息，輸入的訊息會讓兩個程式的 logger 都接收到，影響到彼此的 output。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> logging<span class="token punctuation">,</span> sys<span class="token punctuation">,</span> os
 
-<h4 id="我的-matplotlibrc-檔案"><a href="#我的-matplotlibrc-檔案" class="headerlink" title="我的 matplotlibrc 檔案"></a>我的 <code>matplotlibrc</code> 檔案</h4><pre class="language-matplotlibrc" data-language="matplotlibrc"><code class="language-matplotlibrc">figure.autolayout: True
-legend.fontsize:   large
-figure.titlesize:   x-large
-figure.dpi:  100
-axes.titlesize:     x-large 
-image.cmap: hsv
-hist.bins: 20 </code></pre>
+<span class="token keyword">def</span> <span class="token function">get_logger</span><span class="token punctuation">(</span>rootName<span class="token operator">=</span><span class="token string">"__main__"</span><span class="token punctuation">,</span> childName<span class="token operator">=</span><span class="token string">""</span><span class="token punctuation">,</span> fileName<span class="token operator">=</span><span class="token string">"record"</span><span class="token punctuation">,</span> timeFlag<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> log_dir<span class="token operator">=</span><span class="token string">"logs"</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    logName <span class="token operator">=</span> rootName <span class="token keyword">if</span> <span class="token keyword">not</span> childName <span class="token keyword">else</span>  rootName<span class="token operator">+</span><span class="token string">"."</span><span class="token operator">+</span>childName
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Your Log name is : "</span><span class="token punctuation">,</span> logName<span class="token punctuation">)</span>
+    logger <span class="token operator">=</span> logging<span class="token punctuation">.</span>getLogger<span class="token punctuation">(</span>logName<span class="token punctuation">)</span> 
+    logger<span class="token punctuation">.</span>setLevel<span class="token punctuation">(</span>logging<span class="token punctuation">.</span>DEBUG<span class="token punctuation">)</span>
+    <span class="token keyword">if</span> timeFlag<span class="token punctuation">:</span>
+        <span class="token keyword">from</span> datetime <span class="token keyword">import</span> datetime
+        now <span class="token operator">=</span> datetime<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        dt_string <span class="token operator">=</span> now<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%m%d_%H%M%S"</span><span class="token punctuation">)</span>
+        fileName<span class="token operator">+=</span><span class="token string">"_"</span><span class="token operator">+</span>dt_string
+        
+    <span class="token keyword">if</span> <span class="token keyword">not</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>isdir<span class="token punctuation">(</span>log_dir<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        os<span class="token punctuation">.</span>mkdir<span class="token punctuation">(</span>log_dir<span class="token punctuation">)</span>
+    
+    fileName <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>log_dir<span class="token punctuation">,</span> fileName<span class="token punctuation">)</span>
+
+    <span class="token keyword">if</span> <span class="token keyword">not</span> childName<span class="token punctuation">:</span> <span class="token comment"># 只能在最頂層加，如果每一層都這樣加，每一個 child logger 也會都 print 一行</span>
+        <span class="token comment"># file handler</span>
+        fh <span class="token operator">=</span> logging<span class="token punctuation">.</span>FileHandler<span class="token punctuation">(</span>fileName<span class="token operator">+</span><span class="token string">".log"</span><span class="token punctuation">,</span>mode<span class="token operator">=</span><span class="token string">'w'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8-sig'</span><span class="token punctuation">)</span>
+        fh<span class="token punctuation">.</span>setLevel<span class="token punctuation">(</span>logging<span class="token punctuation">.</span>INFO<span class="token punctuation">)</span>
+        ch <span class="token operator">=</span> logging<span class="token punctuation">.</span>StreamHandler<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># sys.stdout</span>
+        ch<span class="token punctuation">.</span>setLevel<span class="token punctuation">(</span>logging<span class="token punctuation">.</span>DEBUG<span class="token punctuation">)</span>
+
+        formatter <span class="token operator">=</span> logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'%(asctime)s - %(name)s - %(levelname)s : %(message)s'</span><span class="token punctuation">)</span>
+        <span class="token comment"># formatter = logging.Formatter('%(message)s')</span>
+        ch<span class="token punctuation">.</span>setFormatter<span class="token punctuation">(</span>formatter<span class="token punctuation">)</span>
+        fh<span class="token punctuation">.</span>setFormatter<span class="token punctuation">(</span>formatter<span class="token punctuation">)</span>
+
+        <span class="token comment"># put filehandler into logger</span>
+        logger<span class="token punctuation">.</span>addHandler<span class="token punctuation">(</span>fh<span class="token punctuation">)</span>
+        logger<span class="token punctuation">.</span>addHandler<span class="token punctuation">(</span>ch<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> logger</code></pre>
+
+<h3 id="簡易範例"><a href="#簡易範例" class="headerlink" title="簡易範例"></a>簡易範例</h3><ol>
+<li><p>Root file，執行的時候是 <code>python xxx.py</code> 的那個 <code>xxx.py</code> 的檔案中應該這樣調用 logger : </p>
+ <pre class="language-python" data-language="python"><code class="language-python">logger <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span>__name__<span class="token punctuation">)</span></code></pre></li>
+<li><p>Child file，被 <code>xxx.py</code> 所調用的模組</p>
+ <pre class="language-python" data-language="python"><code class="language-python">logger <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>childName<span class="token operator">=</span>__name__<span class="token punctuation">)</span>  </code></pre></li>
+</ol>
+<p>不管是哪個檔案，使用 logger 的時候都直接按照訊息層級的嚴重性，正常使用即可: </p>
+<pre class="language-python" data-language="python"><code class="language-python">logger<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string">"just debug desp"</span><span class="token punctuation">)</span>
+logger<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">"some information"</span><span class="token punctuation">)</span>
+logger<span class="token punctuation">.</span>warning<span class="token punctuation">(</span><span class="token string">"This is warning, your action may cause some unexpected effect."</span><span class="token punctuation">)</span>
+logger<span class="token punctuation">.</span>error<span class="token punctuation">(</span><span class="token string">"something wrong!"</span><span class="token punctuation">)</span>
+logger<span class="token punctuation">.</span>critical<span class="token punctuation">(</span><span class="token string">"Your code is dead!!"</span><span class="token punctuation">)</span></code></pre>
+
+<p><strong>Hint 1.</strong> 如果覺得預設的 logger 格式太過冗長，可以參考下一章改變範例 code 中的 <code>formatter</code> 達成。</p>
+<p><strong>Hint 2.</strong> 如果希望錯誤/例外發生時，可以把 trace 一併寫進去，參考後面的 <a href="#%E7%B4%80%E9%8C%84%E4%BE%8B%E5%A4%96%E7%9A%84traceback%E8%A8%8A%E6%81%AF">紀錄例外的traceback訊息</a>。 </p>
+<h3 id="層級架構說明"><a href="#層級架構說明" class="headerlink" title="層級架構說明"></a>層級架構說明</h3><p>程式中的說明文字，具體範例如下:</p>
+<h4 id="狀況1-都不使用"><a href="#狀況1-都不使用" class="headerlink" title="狀況1. 都不使用"></a>狀況1. 都不使用</h4><p>完全不使用層級的話，大可以所有的檔案都如下: </p>
+<pre class="language-python" data-language="python"><code class="language-python">logger <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span>__name__<span class="token punctuation">)</span></code></pre>
+
+<p>但強烈不建議，如果這樣何必搞 logger，直接用 logging 就好了吧。</p>
+<h4 id="狀況2-根據套件層級自動設定"><a href="#狀況2-根據套件層級自動設定" class="headerlink" title="狀況2. 根據套件層級自動設定"></a>狀況2. 根據套件層級自動設定</h4><p>簡易範例中即示範了此種狀況，這種情況下，<strong>請勿改變 root file 中 logger 的 rootName 屬性</strong>，讓他保留範例中的樣子，也就是 <code>__name__</code> (在 main file 中 <code>__name__</code>==<code>__main__</code>) </p>
+<h4 id="狀況3-手動設定層級名稱"><a href="#狀況3-手動設定層級名稱" class="headerlink" title="狀況3. 手動設定層級名稱"></a>狀況3. 手動設定層級名稱</h4><p>想搞怪? 自己設定層級名稱! </p>
+<pre class="language-python" data-language="python"><code class="language-python">logger1 <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span><span class="token string">"boss"</span><span class="token punctuation">)</span>
+logger2 <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span><span class="token string">"boss"</span><span class="token punctuation">,</span> childName<span class="token operator">=</span><span class="token string">"manager"</span><span class="token punctuation">)</span>
+logger3 <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span><span class="token string">"boss"</span><span class="token punctuation">,</span> childName<span class="token operator">=</span><span class="token string">"manager.department"</span><span class="token punctuation">)</span>
+logger4 <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span><span class="token string">"boss"</span><span class="token punctuation">,</span> childName<span class="token operator">=</span><span class="token string">"manager.department.engineer"</span><span class="token punctuation">)</span></code></pre>
 
 
 
-<hr>
+<h2 id="訊息格式"><a href="#訊息格式" class="headerlink" title="訊息格式"></a>訊息格式</h2><p>logging 模組中，使用最原始的表達方式 <code>%s</code> 常常是為了向下兼容</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> logging
+logging<span class="token punctuation">.</span>warning<span class="token punctuation">(</span><span class="token string">'%s before you %s'</span><span class="token punctuation">,</span> <span class="token string">'Look'</span><span class="token punctuation">,</span> <span class="token string">'leap!'</span><span class="token punctuation">)</span></code></pre>
+
+<h3 id="改變訊息的呈現格式"><a href="#改變訊息的呈現格式" class="headerlink" title="改變訊息的呈現格式"></a>改變訊息的呈現格式</h3><p>透過<code>logging.basicConfig</code> 的 <code>format</code> 參數設定 log 的訊息模式，可以動用的變數可以參考<a href="https://docs.python.org/3.7/library/logging.html#logrecord-attributes">官方網站</a>，羅列了使用者可以動用的各種資訊，像是 function Name, … 各種的。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> logging
+logging<span class="token punctuation">.</span>basicConfig<span class="token punctuation">(</span><span class="token builtin">format</span><span class="token operator">=</span><span class="token string">'%(levelname)s:%(message)s'</span><span class="token punctuation">,</span> level<span class="token operator">=</span>logging<span class="token punctuation">.</span>DEBUG<span class="token punctuation">)</span>
+logging<span class="token punctuation">.</span>debug<span class="token punctuation">(</span><span class="token string">'This message should appear on the console'</span><span class="token punctuation">)</span>
+logging<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">'So should this'</span><span class="token punctuation">)</span>
+logging<span class="token punctuation">.</span>warning<span class="token punctuation">(</span><span class="token string">'And this, too'</span><span class="token punctuation">)</span>
+
+<span class="token triple-quoted-string string">''' 
+DEBUG:This message should appear on the console
+INFO:So should this
+WARNING:And this, too
+'''</span>
+<span class="token comment"># %(levelname)s = DEBUG, INFO, WARNING... </span>
+<span class="token comment"># %(messages)s = ()裡面的訊息</span>
+ </code></pre>
+
+<h2 id="紀錄例外的traceback訊息"><a href="#紀錄例外的traceback訊息" class="headerlink" title="紀錄例外的traceback訊息"></a>紀錄例外的traceback訊息</h2><ul>
+<li><code>logger.exception(&#39;any msg&#39;)</code> ：<strong>直接使用 exception層級，會將堆疊訊息寫進去 log 中</strong>。層級為 error 層級</li>
+<li><code>exc_info=True</code> 若想把例外訊息以<strong>其他層級寫入</strong>，可以把此參數調成True。預設為False，不會把堆疊訊息寫入。</li>
+</ul>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> traceback
+
+<span class="token keyword">def</span> <span class="token function">main_loop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        logger<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f'print </span><span class="token interpolation"><span class="token punctuation">&#123;</span>i<span class="token punctuation">&#125;</span></span><span class="token string">'</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> i<span class="token operator">==</span> <span class="token number">5</span><span class="token punctuation">:</span>
+            <span class="token keyword">raise</span> Exception<span class="token punctuation">(</span><span class="token string">"Break"</span><span class="token punctuation">)</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+    main_loop<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span> Exception<span class="token punctuation">:</span>
+    <span class="token comment"># 將引發例外的堆疊訊息寫入logger, 甚麼動作都不用下</span>
+    logger<span class="token punctuation">.</span>exception<span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span> 
+    <span class="token comment"># 堆疊訊息以info的層級寫入</span>
+    logger<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string">'info has exc_info'</span><span class="token punctuation">,</span>exc_info<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    <span class="token comment"># 當例外發生時，只會當純的寫入此行，因為 exc_info=False</span>
+    logger<span class="token punctuation">.</span>warning<span class="token punctuation">(</span><span class="token string">'warning without exc_info'</span><span class="token punctuation">,</span>exc_info<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+    
+    <span class="token comment"># [Optional] 只將traceback的紀錄寫進指定txt</span>
+    traceback<span class="token punctuation">.</span>print_exc<span class="token punctuation">(</span><span class="token builtin">file</span><span class="token operator">=</span><span class="token builtin">open</span><span class="token punctuation">(</span><span class="token string">'traceback_INFO.txt'</span><span class="token punctuation">,</span><span class="token string">'w+'</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+
 ]]></content>
       <categories>
         <category>Python</category>
       </categories>
       <tags>
         <tag>python</tag>
-        <tag>visualize</tag>
+        <tag>官方文件</tag>
+        <tag>logging</tag>
       </tags>
   </entry>
   <entry>
@@ -1402,6 +1283,125 @@ fig<span class="token punctuation">.</span>colorbar<span class="token punctuatio
 
 <p>Heatmap 的程式碼參考: <a href="https://stackoverflow.com/questions/2369492/generate-a-heatmap-in-matplotlib-using-a-scatter-data-set" title="熱力圖">Generate a heatmap in MatPlotLib using a scatter data set</a></p>
 <p><img src="https://i.imgur.com/F1yQcLB.jpeg"></p>
+<hr>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>visualize</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python 視覺化(1) matplotlib 基本設置</title>
+    <url>/posts/2021-12-30-python-visualize-basic.html</url>
+    <content><![CDATA[<h2 id="子圖"><a href="#子圖" class="headerlink" title="子圖"></a>子圖</h2><h3 id="add-subplot"><a href="#add-subplot" class="headerlink" title="add_subplot"></a><code>add_subplot</code></h3><p>初使用時最常接觸的就是這個方法，當要用某張子圖的時候再使用 <code>fig.add_subplot()</code> 得到某個 <code>ax</code> ，用它進行繪圖。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+fig <span class="token operator">=</span> plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dpi<span class="token operator">=</span><span class="token number">300</span><span class="token punctuation">)</span> 
+fig<span class="token punctuation">.</span>suptitle<span class="token punctuation">(</span><span class="token string">"Big title"</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token number">20</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 子圖 1</span>
+ax <span class="token operator">=</span> fig<span class="token punctuation">.</span>add_subplot<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>title<span class="token punctuation">.</span>set_text<span class="token punctuation">(</span><span class="token string">"Subtitle 1"</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">'b'</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"lr"</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.7</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># 圖例</span>
+
+<span class="token comment"># 子圖 2</span>
+ax <span class="token operator">=</span> fig<span class="token punctuation">.</span>add_subplot<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>title<span class="token punctuation">.</span>set_text<span class="token punctuation">(</span><span class="token string">"Subtitle 1"</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">)</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">'r'</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"lr"</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.7</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+plt<span class="token punctuation">.</span>savefig<span class="token punctuation">(</span><span class="token string">"fileName.png"</span><span class="token punctuation">)</span>
+</code></pre>
+
+<p>但我並不喜歡這個用法，以上面這份程式為例，這總作法會讓 <code>fig.add_subplot(2, 1, 1)</code> 散布在整份程式中，一旦我要修改子圖在行列上的數量，修正起來變得無比麻煩。</p>
+<h3 id="一口氣指定完子圖"><a href="#一口氣指定完子圖" class="headerlink" title="一口氣指定完子圖"></a>一口氣指定完子圖</h3><p>一種方法是：</p>
+<pre class="language-python" data-language="python"><code class="language-python">fig<span class="token punctuation">,</span> axes <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span>n_rows<span class="token punctuation">,</span> n_cols<span class="token punctuation">)</span></code></pre>
+
+<p>不錯的是可以一口氣解決，但我更喜歡另一種作法：</p>
+<pre class="language-python" data-language="python"><code class="language-python">fig <span class="token operator">=</span> plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dpi<span class="token operator">=</span><span class="token number">100</span><span class="token punctuation">)</span>
+axes <span class="token operator">=</span> fig<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token comment"># axes.shape: (6, )</span>
+axes <span class="token operator">=</span> fig<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>             <span class="token comment"># axes.shape: (2, 3)</span></code></pre>
+
+<p>原先的作法在取用 <code>axes</code> 的時候，要謹慎的選取 <code>axes[0][1]</code> 之類的 index ，同樣的一旦子圖在行列上的數量改變，透過 index 取得 <code>ax</code> 的時候也很容易出錯。因此我習慣先把他 <code>reshape</code> 成一個維度，直接用 <code>ax = axes[i]</code> 取用，簡單省事。缺點是難以知道現在處於哪一行哪一列，如果子圖有需要落在確切位置的需求，這個簡單粗暴的方法可能就不太適合。</p>
+<h3 id="大標題"><a href="#大標題" class="headerlink" title="大標題"></a>大標題</h3><pre class="language-python" data-language="python"><code class="language-python">ax<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">"sub plot title"</span><span class="token punctuation">)</span> <span class="token comment"># 子圖的標題</span>
+fig<span class="token punctuation">.</span>suptitle<span class="token punctuation">(</span><span class="token string">"Figure title"</span><span class="token punctuation">)</span>   <span class="token comment"># 整張圖的大標題</span></code></pre>
+
+<h3 id="合併子圖、跨行跨列"><a href="#合併子圖、跨行跨列" class="headerlink" title="合併子圖、跨行跨列"></a>合併子圖、跨行跨列</h3><h4 id="subplot2grid"><a href="#subplot2grid" class="headerlink" title="subplot2grid"></a><code>subplot2grid</code></h4><p>上面的用法都是規規矩矩，每張子圖大小一致。想要讓圖的形狀跨越多欄多列，應該使用 <code>subplot2grid</code>。<a href="https://matplotlib.org/3.1.1/gallery/userdemo/demo_gridspec01.html#sphx-glr-gallery-userdemo-demo-gridspec01-py" title="matplotlib 官網 subplot2grid 的範例">subplot2grid example</a></p>
+<pre class="language-python" data-language="python"><code class="language-python">ax1 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> colspan<span class="token operator">=</span><span class="token number">3</span><span class="token punctuation">)</span>
+ax2 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> colspan<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
+ax3 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> rowspan<span class="token operator">=</span><span class="token number">2</span><span class="token punctuation">)</span>
+ax4 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+ax5 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre>
+
+<p>得到的圖相當於：</p>
+<p><img src="https://matplotlib.org/3.1.1/_images/sphx_glr_demo_gridspec01_001.png" alt="subplot2grid"></p>
+<p>事實上 <code>subplot2grid</code> 依然可以作到像是 <code>subplot</code> 這樣只給出正規方正的子圖，在不做 <code>colspan</code>/<code>rowspan</code> 的情況下，這兩個操作是等價的：</p>
+<pre class="language-python" data-language="python"><code class="language-python">ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span>  <span class="token comment"># 1. 算子圖要從 1 開始算子圖</span>
+ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot2grid<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment"># 2. 先規定整張圖的 (row, col), 在列出要回傳的子圖位於哪個位置 (不像上面是算 index)</span></code></pre>
+
+<h4 id="GridSpec"><a href="#GridSpec" class="headerlink" title="GridSpec"></a><code>GridSpec</code></h4><p>還有另一個方法是透過 <code>GridSpec</code> 達成。我們可以先用 <code>gridspec</code> 創建一個框架，並把框架的某一塊指派給 <code>plt.subplot</code> 真正創建子圖。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>gridspec <span class="token keyword">as</span> gridspec
+gs <span class="token operator">=</span> gridspec<span class="token punctuation">.</span>GridSpec<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># 等價 ax = plt.subplot2grid((2,2),(0, 0))</span></code></pre>
+
+<p>所以，在前面一小節的分隔圖，在這個章節應該如下實做：</p>
+<pre class="language-python" data-language="python"><code class="language-python">gs <span class="token operator">=</span> gridspec<span class="token punctuation">.</span>GridSpec<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+ax1 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+ax2 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+ax3 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+ax4 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+ax5 <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+
+<h4 id="subplot2grid-與-GridSpec-的差別"><a href="#subplot2grid-與-GridSpec-的差別" class="headerlink" title="subplot2grid 與 GridSpec 的差別"></a><code>subplot2grid</code> 與 <code>GridSpec</code> 的差別</h4><p>我覺得可這樣看待</p>
+<ul>
+<li><p><code>subplot2grid</code> 屬於 pyplot 類別中，它直接與畫面操作有關，所以直接指派位置就有圖出來了</p>
+<pre class="language-none"><code class="language-none">ax &#x3D; plt.subplot2grid((2,2),(0, 0))</code></pre></li>
+<li><p>但是 <code>gridspec</code> 不是屬於 pyplot ，如果只有創建而沒有再指定畫布，是不會出現東西的</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>gridspec <span class="token keyword">as</span> gridspec
+gs <span class="token operator">=</span> gridspec<span class="token punctuation">.</span>GridSpec<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># 不會有圖跑出來喔</span></code></pre></li>
+</ul>
+<p>此外，gridspec 能做到的 layout(布局) 也更加彈性，詳細可以在這篇裡面看: <a href="https://matplotlib.org/2.0.2/users/gridspec.html#customizing-location-of-subplot-using-gridspec">Customizing Location of Subplot Using GridSpec</a> ，中文版: <a href="https://wizardforcel.gitbooks.io/matplotlib-user-guide/content/3.3.html">使用 GridSpec 自定义子图位置</a>。</p>
+<p><img src="https://matplotlib.org/2.0.2/_images/demo_gridspec06.png" alt="gridspec 更加彈性的布局"></p>
+<h2 id="圖上標示與設置"><a href="#圖上標示與設置" class="headerlink" title="圖上標示與設置"></a>圖上標示與設置</h2><h3 id="限制座標軸數值"><a href="#限制座標軸數值" class="headerlink" title="限制座標軸數值"></a>限制座標軸數值</h3><p>限制 x 與 y 軸顯示的數值上下界。</p>
+<pre class="language-python" data-language="python"><code class="language-python">ax<span class="token punctuation">.</span>set_ylim<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_xlim<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">)</span></code></pre>
+
+<h3 id="繪製橫-直線"><a href="#繪製橫-直線" class="headerlink" title="繪製橫/直線"></a>繪製橫/直線</h3><pre class="language-python" data-language="python"><code class="language-python">ax<span class="token punctuation">.</span>axhline<span class="token punctuation">(</span>y<span class="token operator">=</span><span class="token number">0.03</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">'r'</span><span class="token punctuation">,</span> linestyle<span class="token operator">=</span><span class="token string">'-.'</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.2</span><span class="token punctuation">)</span>  <span class="token comment"># 橫線</span>
+ax<span class="token punctuation">.</span>axvline<span class="token punctuation">(</span>x<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">'b'</span><span class="token punctuation">,</span> linestyle<span class="token operator">=</span><span class="token string">'-*'</span><span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.2</span><span class="token punctuation">)</span>  <span class="token comment"># 直線</span></code></pre>
+
+<h3 id="縮減空白邊緣"><a href="#縮減空白邊緣" class="headerlink" title="縮減空白邊緣"></a><a href="https://stackoverflow.com/questions/55767312/how-to-position-suptitle" title="stackoverflow: How to position suptitle?">縮減空白邊緣</a></h3><pre class="language-python" data-language="python"><code class="language-python">fig<span class="token punctuation">.</span>tight_layout<span class="token punctuation">(</span>rect<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0.03</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0.95</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment"># 保留標題的空間</span>
+fig<span class="token punctuation">.</span>suptitle<span class="token punctuation">(</span><span class="token string">"title"</span><span class="token punctuation">)</span>
+fig<span class="token punctuation">.</span>savefig<span class="token punctuation">(</span><span class="token string">"fig.png"</span><span class="token punctuation">)</span></code></pre>
+
+<p><code>tight_layout</code> 要在所有繪圖都結束之後，就要 <code>savefig</code> 或是 <code>plt.show()</code> 之前再放才會生效！或是在 import之後直接改變全局：</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+plt<span class="token punctuation">.</span>rcParams<span class="token punctuation">[</span><span class="token string">"figure.autolayout"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">True</span></code></pre>
+
+<h2 id="全局的設置-matplotlibrc"><a href="#全局的設置-matplotlibrc" class="headerlink" title="全局的設置 matplotlibrc"></a><a href="https://matplotlib.org/stable/tutorials/introductory/customizing.html?highlight=figure.autolayout#the-matplotlibrc-file" title="matplotlib 官網 subplot2grid 的 matplotlibrc 設置">全局的設置 <code>matplotlibrc</code></a></h2><p><code>matplotlib</code> 裡面有很多設定，包含 <code>dpi</code>, <code>figsize</code>, <code>color</code>, <code>linewidth</code>…..，如果希望一些改變能夠直接作用在 global 上，可以透過設定 <code>matplotlibrc</code> 檔案達成：</p>
+<p>在沒有使用 <code>style.use(&#39;&lt;path&gt;/&lt;style-name&gt;.mplstyle&#39;)</code> 指向設定檔時，預設的搜索順序是這樣：</p>
+<ol>
+<li>當前資料夾：當前這個資料夾中存在 <code>matplotlibrc</code>，而在這個資料夾之中所有的繪圖，也都想用這樣的設定套用，那非常適合這麼做。</li>
+<li>如果存在環境變數 <code>$MATPLOTLIBRC</code>：如果這是個檔案，就直接用。如果是個資料夾，會尋找並使用其下的 <code>$MATPLOTLIBRC/matplotlibrc</code> </li>
+<li>恩，剩下兩條我覺得太麻煩了，懶得翻譯。可以去看原文。</li>
+</ol>
+<p>如果上述的路徑下都沒有  <code>matplotlibrc</code> 檔案那不會再額外搜索其他地方。我們可以直接透過下面這個的作法尋找當前使用的是誰：</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib
+matplotlib<span class="token punctuation">.</span>matplotlib_fname<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+
+<h4 id="我的-matplotlibrc-檔案"><a href="#我的-matplotlibrc-檔案" class="headerlink" title="我的 matplotlibrc 檔案"></a>我的 <code>matplotlibrc</code> 檔案</h4><pre class="language-matplotlibrc" data-language="matplotlibrc"><code class="language-matplotlibrc">figure.autolayout: True
+legend.fontsize:   large
+figure.titlesize:   x-large
+figure.dpi:  100
+axes.titlesize:     x-large 
+image.cmap: hsv
+hist.bins: 20 </code></pre>
+
+
+
 <hr>
 ]]></content>
       <categories>
