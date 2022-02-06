@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://brainynight.github.io/posts/2022-01-27-python-visualize-advance</loc>
+    
+    <lastmod>2022-02-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://brainynight.github.io/categories/</loc>
     
     <lastmod>2022-02-04</lastmod>
@@ -65,15 +74,6 @@
   </url>
   
   <url>
-    <loc>https://brainynight.github.io/posts/2022-01-27-python-visualize-advance</loc>
-    
-    <lastmod>2022-02-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://brainynight.github.io/posts/2021-12-30-python-visualize-basic</loc>
     
     <lastmod>2022-02-03</lastmod>
@@ -130,7 +130,7 @@
 
   <url>
     <loc>https://brainynight.github.io/</loc>
-    <lastmod>2022-02-05</lastmod>
+    <lastmod>2022-02-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -138,56 +138,56 @@
   
   <url>
     <loc>https://brainynight.github.io/tags/blog/</loc>
-    <lastmod>2022-02-05</lastmod>
+    <lastmod>2022-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://brainynight.github.io/tags/hexo/</loc>
-    <lastmod>2022-02-05</lastmod>
+    <lastmod>2022-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://brainynight.github.io/tags/about/</loc>
-    <lastmod>2022-02-05</lastmod>
+    <lastmod>2022-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://brainynight.github.io/tags/python/</loc>
-    <lastmod>2022-02-05</lastmod>
+    <lastmod>2022-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://brainynight.github.io/tags/%E5%AE%98%E6%96%B9%E6%96%87%E4%BB%B6/</loc>
-    <lastmod>2022-02-05</lastmod>
+    <lastmod>2022-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://brainynight.github.io/tags/pickle/</loc>
-    <lastmod>2022-02-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://brainynight.github.io/tags/visualize/</loc>
-    <lastmod>2022-02-05</lastmod>
+    <lastmod>2022-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://brainynight.github.io/tags/logging/</loc>
-    <lastmod>2022-02-05</lastmod>
+    <lastmod>2022-02-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://brainynight.github.io/tags/visualize/</loc>
+    <lastmod>2022-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -196,14 +196,14 @@
   
   <url>
     <loc>https://brainynight.github.io/categories/blog/</loc>
-    <lastmod>2022-02-05</lastmod>
+    <lastmod>2022-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://brainynight.github.io/categories/Python/</loc>
-    <lastmod>2022-02-05</lastmod>
+    <lastmod>2022-02-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
