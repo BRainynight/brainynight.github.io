@@ -24,13 +24,13 @@
 <script class="next-config" data-name="main" type="application/json">{"hostname":"brainynight.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInUp","post_body":"fadeIn","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 <meta name="description" content="在開發 Python 專案時，是否經歷過一種狀況：在測試的時候需要不斷輸出一些資訊以便觀察狀態，但在正式上線之後又不須要這些東西輸入。有可能是不想給使用者看到，也有可能是不斷 print out 會造成某些阻塞。當開發版與上線版之間在切換時，最樸實無華的作法就是打開程式，一行行的把 Print 註解掉，但這顯然非常的沒有效率。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python 日誌模組 Logging (1)">
+<meta property="og:title" content="Python 日誌模組 Logging (1) 建立一個基礎 logger 模板!">
 <meta property="og:url" content="https://brainynight.github.io/posts/2022-01-20-python-logger-quick">
 <meta property="og:site_name" content="Judy&#39;s Blog">
 <meta property="og:description" content="在開發 Python 專案時，是否經歷過一種狀況：在測試的時候需要不斷輸出一些資訊以便觀察狀態，但在正式上線之後又不須要這些東西輸入。有可能是不想給使用者看到，也有可能是不斷 print out 會造成某些阻塞。當開發版與上線版之間在切換時，最樸實無華的作法就是打開程式，一行行的把 Print 註解掉，但這顯然非常的沒有效率。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2022-01-20T15:11:51.000Z">
-<meta property="article:modified_time" content="2022-02-03T05:37:08.669Z">
+<meta property="article:modified_time" content="2022-02-06T14:14:00.993Z">
 <meta property="article:author" content="Judy">
 <meta property="article:tag" content="python">
 <meta property="article:tag" content="官方文件">
@@ -42,10 +42,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://brainynight.github.io/posts/2022-01-20-python-logger-quick","path":"posts/2022-01-20-python-logger-quick.html","title":"Python 日誌模組 Logging (1)"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://brainynight.github.io/posts/2022-01-20-python-logger-quick","path":"posts/2022-01-20-python-logger-quick.html","title":"Python 日誌模組 Logging (1) 建立一個基礎 logger 模板!"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Python 日誌模組 Logging (1) | Judy's Blog</title>
+<title>Python 日誌模組 Logging (1) 建立一個基礎 logger 模板! | Judy's Blog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QBCDYXBD36"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-QBCDYXBD36","only_pageview":false}</script>
@@ -237,7 +237,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Python 日誌模組 Logging (1)
+          Python 日誌模組 Logging (1) 建立一個基礎 logger 模板!
         </h1>
 
         <div class="post-meta-container">
@@ -255,7 +255,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2022-02-03 13:37:08" itemprop="dateModified" datetime="2022-02-03T13:37:08+08:00">2022-02-03</time>
+      <time title="修改時間：2022-02-06 22:14:00" itemprop="dateModified" datetime="2022-02-06T22:14:00+08:00">2022-02-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -295,7 +295,8 @@
         <p>在開發 Python 專案時，是否經歷過一種狀況：在測試的時候需要不斷輸出一些資訊以便觀察狀態，但在正式上線之後又不須要這些東西輸入。有可能是不想給使用者看到，也有可能是不斷 print out 會造成某些阻塞。<br>當開發版與上線版之間在切換時，最樸實無華的作法就是打開程式，一行行的把 Print 註解掉，但這顯然非常的沒有效率。</p>
 <span id="more"></span>
 
-<p>Python 的原生套件中有一個名為 <code>logging</code> 的模組，在一些較為正式的模組套件包中都不難看到它的蹤影。本篇文章接下來的內容大多是閱讀 Python 官方文件後的快速整理，希望能將 logging 模組簡單的介紹並上手！</p>
+<p>Python 的原生套件中有一個名為 <code>logging</code> 的模組，在一些較為正式的模組套件包中都不難看到它的蹤影。</p>
+<p>本篇文章接下來的內容大多是閱讀 Python 官方文件後的快速整理，希望能將 logging 模組簡單的介紹並上手！細部的設定會放在下一篇文章。建議使用電腦觀看，透過左邊的目錄快速切換！</p>
 <h2 id="日誌等級的基本認知"><a href="#日誌等級的基本認知" class="headerlink" title="日誌等級的基本認知"></a>日誌等級的基本認知</h2><p>預設的 logging 訊息等級一共有五個，其中 <strong>logging 的日誌等級預設是 WARNING(30)</strong> ，因此在預設的情況下，數值小於30的日誌等級不會輸出。</p>
 <table>
 <thead>
@@ -420,7 +421,7 @@ logger<span class="token punctuation">.</span>critical<span class="token punctua
 <pre class="language-python" data-language="python"><code class="language-python">logger <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span>__name__<span class="token punctuation">)</span></code></pre>
 
 <p>但強烈不建議，如果這樣何必搞 logger，直接用 logging 就好了吧。</p>
-<h4 id="狀況2-根據套件層級自動設定"><a href="#狀況2-根據套件層級自動設定" class="headerlink" title="狀況2. 根據套件層級自動設定"></a>狀況2. 根據套件層級自動設定</h4><p>簡易範例中即示範了此種狀況，這種情況下，<strong>請勿改變 root file 中 logger 的 rootName 屬性</strong>，讓他保留範例中的樣子，也就是 <code>__name__</code> (在 main file 中 <code>__name__</code>==<code>__main__</code>) </p>
+<h4 id="狀況2-根據套件層級自動設定"><a href="#狀況2-根據套件層級自動設定" class="headerlink" title="狀況2. 根據套件層級自動設定"></a>狀況2. 根據套件層級自動設定</h4><p>簡易範例中即示範了此種狀況，這種情況下，<strong>請勿改變 root file 中 logger 的 rootName 屬性</strong>，讓他保留範例中的樣子，也就是 <code>__name__</code> (在 main file 中 <code>__name__ == __main__</code>) </p>
 <h4 id="狀況3-手動設定層級名稱"><a href="#狀況3-手動設定層級名稱" class="headerlink" title="狀況3. 手動設定層級名稱"></a>狀況3. 手動設定層級名稱</h4><p>想搞怪? 自己設定層級名稱! </p>
 <pre class="language-python" data-language="python"><code class="language-python">logger1 <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span><span class="token string">"boss"</span><span class="token punctuation">)</span>
 logger2 <span class="token operator">=</span> get_logger<span class="token punctuation">(</span>rootName<span class="token operator">=</span><span class="token string">"boss"</span><span class="token punctuation">,</span> childName<span class="token operator">=</span><span class="token string">"manager"</span><span class="token punctuation">)</span>
@@ -483,19 +484,19 @@ WARNING:And this, too
   <div class="popular-posts-header">相關文章</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\2022-01-22-python-logging-advance.html" rel="bookmark">Python 日誌模組 Logging (2)</a></div>
+      <div class="popular-posts-title"><a href="\posts\2022-01-22-python-logging-advance.html" rel="bookmark">Python 日誌模組 Logging (2) 細探官方文件</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\2022-01-17-pickle-advance.html" rel="bookmark">Python 資料永久化套件:Pickle (2)</a></div>
+      <div class="popular-posts-title"><a href="\posts\2022-01-17-pickle-advance.html" rel="bookmark">Python 資料永久化套件：Pickle (2) 裝飾器可以被 Pickle?</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\2022-01-17-pickle-basic.html" rel="bookmark">Python 資料永久化套件:Pickle (1)</a></div>
+      <div class="popular-posts-title"><a href="\posts\2022-01-17-pickle-basic.html" rel="bookmark">Python 資料永久化套件：Pickle (1) 常見的 lambda PicklingError</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\posts\2022-01-27-python-visualize-advance.html" rel="bookmark">Python 視覺化(2) matplotlib 進階繪圖</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\2021-12-30-python-visualize-basic.html" rel="bookmark">Python 視覺化(1) matplotlib 基本設置</a></div>
+      <div class="popular-posts-title"><a href="\posts\2021-12-30-python-visualize-basic.html" rel="bookmark">Python 視覺化(1) matplotlib 基本設置：子圖操作</a></div>
     </li>
   </ul>
 
@@ -511,13 +512,13 @@ WARNING:And this, too
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/2022-01-17-pickle-advance" rel="prev" title="Python 資料永久化套件:Pickle (2)">
-                  <i class="fa fa-chevron-left"></i> Python 資料永久化套件:Pickle (2)
+                <a href="/posts/2022-01-17-pickle-advance" rel="prev" title="Python 資料永久化套件：Pickle (2) 裝飾器可以被 Pickle?">
+                  <i class="fa fa-chevron-left"></i> Python 資料永久化套件：Pickle (2) 裝飾器可以被 Pickle?
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/2022-01-22-python-logging-advance" rel="next" title="Python 日誌模組 Logging (2)">
-                  Python 日誌模組 Logging (2) <i class="fa fa-chevron-right"></i>
+                <a href="/posts/2022-01-22-python-logging-advance" rel="next" title="Python 日誌模組 Logging (2) 細探官方文件">
+                  Python 日誌模組 Logging (2) 細探官方文件 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -556,7 +557,7 @@ WARNING:And this, too
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">1:19</span>
+    <span title="所需總閱讀時間">1:20</span>
   </span>
 </div>
 

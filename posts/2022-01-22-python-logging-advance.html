@@ -22,15 +22,15 @@
 
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"brainynight.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInUp","post_body":"fadeIn","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="logging 模組第二篇，有關模組中四個常見物件的使用方式。">
+<meta name="description" content="logging 模組第二篇。有關過濾特定內容、將日誌內容輸出到特定的目的地、日誌格式可調用哪些系統參數等，模組中四個常見物件的使用方式。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python 日誌模組 Logging (2)">
+<meta property="og:title" content="Python 日誌模組 Logging (2) 細探官方文件">
 <meta property="og:url" content="https://brainynight.github.io/posts/2022-01-22-python-logging-advance">
 <meta property="og:site_name" content="Judy&#39;s Blog">
-<meta property="og:description" content="logging 模組第二篇，有關模組中四個常見物件的使用方式。">
+<meta property="og:description" content="logging 模組第二篇。有關過濾特定內容、將日誌內容輸出到特定的目的地、日誌格式可調用哪些系統參數等，模組中四個常見物件的使用方式。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2022-01-22T08:41:38.000Z">
-<meta property="article:modified_time" content="2022-02-03T05:37:12.747Z">
+<meta property="article:modified_time" content="2022-02-06T14:27:19.611Z">
 <meta property="article:author" content="Judy">
 <meta property="article:tag" content="python">
 <meta property="article:tag" content="官方文件">
@@ -42,10 +42,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://brainynight.github.io/posts/2022-01-22-python-logging-advance","path":"posts/2022-01-22-python-logging-advance.html","title":"Python 日誌模組 Logging (2)"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://brainynight.github.io/posts/2022-01-22-python-logging-advance","path":"posts/2022-01-22-python-logging-advance.html","title":"Python 日誌模組 Logging (2) 細探官方文件"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Python 日誌模組 Logging (2) | Judy's Blog</title>
+<title>Python 日誌模組 Logging (2) 細探官方文件 | Judy's Blog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QBCDYXBD36"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-QBCDYXBD36","only_pageview":false}</script>
@@ -237,7 +237,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Python 日誌模組 Logging (2)
+          Python 日誌模組 Logging (2) 細探官方文件
         </h1>
 
         <div class="post-meta-container">
@@ -255,7 +255,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2022-02-03 13:37:12" itemprop="dateModified" datetime="2022-02-03T13:37:12+08:00">2022-02-03</time>
+      <time title="修改時間：2022-02-06 22:27:19" itemprop="dateModified" datetime="2022-02-06T22:27:19+08:00">2022-02-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -274,18 +274,18 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>4k</span>
+      <span>4.2k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>7 分鐘</span>
+      <span>8 分鐘</span>
     </span>
 </div>
 
-            <div class="post-description">logging 模組第二篇，有關模組中四個常見物件的使用方式。</div>
+            <div class="post-description">logging 模組第二篇。有關過濾特定內容、將日誌內容輸出到特定的目的地、日誌格式可調用哪些系統參數等，模組中四個常見物件的使用方式。</div>
         </div>
       </header>
 
@@ -361,13 +361,13 @@ logger2 <span class="token operator">=</span> logging<span class="token punctuat
 </ul>
 </li>
 </ol>
-<h2 id="Handlers"><a href="#Handlers" class="headerlink" title="Handlers"></a><a target="_blank" rel="noopener" href="https://docs.python.org/3/howto/logging.html#handlers">Handlers</a></h2><p>Handler 物件基於所設定的訊息嚴重等級，將日誌訊息派到對應的目的地，像是 stdout。Logger 物件對於 handler 的數量沒什麼限制，可以不加、也可以加很多個。</p>
+<h2 id="Handlers"><a href="#Handlers" class="headerlink" title="Handlers"></a><a target="_blank" rel="noopener" href="https://docs.python.org/3/howto/logging.html#handlers">Handlers</a></h2><p>Handler 物件基於所設定的訊息嚴重等級，將日誌訊息派到<strong>對應的目的地</strong>，像是 stdout。Logger 物件對於 handler 的數量沒什麼限制，可以不加、也可以加很多個。光是官方提供的 handler 就多達 10 個以上，常見的輸出到 std out、輸出到檔案、連接到 Socket、傳遞到 http (<code>Get</code>, <code>POST</code>)、送到 <code>Queue</code>…等等。我也實做過把 logger 直接連動到 Qt GUI 的文字板上面過，不用另外從核心程式拉一條線到前端的 GUI，直接利用現有的 logger 即可非常方便！</p>
 <p>Handler 幾乎沒什麼方法可以調用，與其相關的主要是這幾個方法：</p>
 <ul>
 <li><p><code>Logger.addHandler(hdlr)</code></p>
 <ul>
 <li>舉例說明：目標是 (1) 將所有 log 寫進 log file  (2) 所有高於 error 的 msg 丟到 <code>stdout</code> (3)所有 critical 等級的寄信寄出去。一共 3個獨立的 handler 負責做各自的事情。所以需要添加三個不同的 handlers，呼應各自要寄送訊息的目的，還有寄送出去的信息等級。</li>
-<li>標準的library 有提供<a target="_blank" rel="noopener" href="https://docs.python.org/3/howto/logging.html#useful-handlers">很多 handlers</a>，最常用的是 <a target="_blank" rel="noopener" href="https://docs.python.org/3/library/logging.handlers.html#logging.StreamHandler"><code>StreamHandler</code></a> 和<a target="_blank" rel="noopener" href="https://docs.python.org/3/library/logging.handlers.html#logging.FileHandler"><code>FileHandler</code></a>。</li>
+<li>標準的library 有提供 <a target="_blank" rel="noopener" href="https://docs.python.org/3/howto/logging.html#useful-handlers">很多 handlers</a>，最常用的是 <a target="_blank" rel="noopener" href="https://docs.python.org/3/library/logging.handlers.html#logging.StreamHandler"><code>StreamHandler</code></a> 和<a target="_blank" rel="noopener" href="https://docs.python.org/3/library/logging.handlers.html#logging.FileHandler"><code>FileHandler</code></a>。</li>
 </ul>
 </li>
 <li><p><code>setLevel </code>：handler 也有 <code>setLevel()</code> 方法，和前面的 <code>setLevel</code> 不同</p>
@@ -436,19 +436,19 @@ f <span class="token operator">=</span> CustomFilter<span class="token punctuati
   <div class="popular-posts-header">相關文章</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\2022-01-20-python-logger-quick.html" rel="bookmark">Python 日誌模組 Logging (1)</a></div>
+      <div class="popular-posts-title"><a href="\posts\2022-01-20-python-logger-quick.html" rel="bookmark">Python 日誌模組 Logging (1) 建立一個基礎 logger 模板!</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\2022-01-17-pickle-advance.html" rel="bookmark">Python 資料永久化套件:Pickle (2)</a></div>
+      <div class="popular-posts-title"><a href="\posts\2022-01-17-pickle-advance.html" rel="bookmark">Python 資料永久化套件：Pickle (2) 裝飾器可以被 Pickle?</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\2022-01-17-pickle-basic.html" rel="bookmark">Python 資料永久化套件:Pickle (1)</a></div>
+      <div class="popular-posts-title"><a href="\posts\2022-01-17-pickle-basic.html" rel="bookmark">Python 資料永久化套件：Pickle (1) 常見的 lambda PicklingError</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\posts\2022-01-27-python-visualize-advance.html" rel="bookmark">Python 視覺化(2) matplotlib 進階繪圖</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\2021-12-30-python-visualize-basic.html" rel="bookmark">Python 視覺化(1) matplotlib 基本設置</a></div>
+      <div class="popular-posts-title"><a href="\posts\2021-12-30-python-visualize-basic.html" rel="bookmark">Python 視覺化(1) matplotlib 基本設置：子圖操作</a></div>
     </li>
   </ul>
 
@@ -464,8 +464,8 @@ f <span class="token operator">=</span> CustomFilter<span class="token punctuati
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/posts/2022-01-20-python-logger-quick" rel="prev" title="Python 日誌模組 Logging (1)">
-                  <i class="fa fa-chevron-left"></i> Python 日誌模組 Logging (1)
+                <a href="/posts/2022-01-20-python-logger-quick" rel="prev" title="Python 日誌模組 Logging (1) 建立一個基礎 logger 模板!">
+                  <i class="fa fa-chevron-left"></i> Python 日誌模組 Logging (1) 建立一個基礎 logger 模板!
                 </a>
             </div>
             <div class="post-nav-item">
@@ -509,7 +509,7 @@ f <span class="token operator">=</span> CustomFilter<span class="token punctuati
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">1:19</span>
+    <span title="所需總閱讀時間">1:20</span>
   </span>
 </div>
 

@@ -24,13 +24,13 @@
 <script class="next-config" data-name="main" type="application/json">{"hostname":"brainynight.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInUp","post_body":"fadeIn","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 <meta name="description" content="研究 Python 官方文件中的 Pickle 模組，探討常發生的 lambda PicklingError 問題。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python 資料永久化套件:Pickle (1)">
+<meta property="og:title" content="Python 資料永久化套件：Pickle (1) 常見的 lambda PicklingError">
 <meta property="og:url" content="https://brainynight.github.io/posts/2022-01-17-pickle-basic">
 <meta property="og:site_name" content="Judy&#39;s Blog">
 <meta property="og:description" content="研究 Python 官方文件中的 Pickle 模組，探討常發生的 lambda PicklingError 問題。">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2022-01-17T11:46:50.000Z">
-<meta property="article:modified_time" content="2022-02-03T05:37:06.065Z">
+<meta property="article:modified_time" content="2022-02-06T14:28:11.848Z">
 <meta property="article:author" content="Judy">
 <meta property="article:tag" content="python">
 <meta property="article:tag" content="官方文件">
@@ -42,10 +42,10 @@
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://brainynight.github.io/posts/2022-01-17-pickle-basic","path":"posts/2022-01-17-pickle-basic.html","title":"Python 資料永久化套件:Pickle (1)"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://brainynight.github.io/posts/2022-01-17-pickle-basic","path":"posts/2022-01-17-pickle-basic.html","title":"Python 資料永久化套件：Pickle (1) 常見的 lambda PicklingError"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Python 資料永久化套件:Pickle (1) | Judy's Blog</title>
+<title>Python 資料永久化套件：Pickle (1) 常見的 lambda PicklingError | Judy's Blog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QBCDYXBD36"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-QBCDYXBD36","only_pageview":false}</script>
@@ -237,7 +237,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Python 資料永久化套件:Pickle (1)
+          Python 資料永久化套件：Pickle (1) 常見的 lambda PicklingError
         </h1>
 
         <div class="post-meta-container">
@@ -255,7 +255,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2022-02-03 13:37:06" itemprop="dateModified" datetime="2022-02-03T13:37:06+08:00">2022-02-03</time>
+      <time title="修改時間：2022-02-06 22:28:11" itemprop="dateModified" datetime="2022-02-06T22:28:11+08:00">2022-02-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -482,19 +482,19 @@ new_reader<span class="token punctuation">.</span>readline<span class="token pun
   <div class="popular-posts-header">相關文章</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\2022-01-17-pickle-advance.html" rel="bookmark">Python 資料永久化套件:Pickle (2)</a></div>
+      <div class="popular-posts-title"><a href="\posts\2022-01-17-pickle-advance.html" rel="bookmark">Python 資料永久化套件：Pickle (2) 裝飾器可以被 Pickle?</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\2022-01-20-python-logger-quick.html" rel="bookmark">Python 日誌模組 Logging (1)</a></div>
+      <div class="popular-posts-title"><a href="\posts\2022-01-22-python-logging-advance.html" rel="bookmark">Python 日誌模組 Logging (2) 細探官方文件</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\2022-01-22-python-logging-advance.html" rel="bookmark">Python 日誌模組 Logging (2)</a></div>
+      <div class="popular-posts-title"><a href="\posts\2022-01-20-python-logger-quick.html" rel="bookmark">Python 日誌模組 Logging (1) 建立一個基礎 logger 模板!</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\posts\2022-01-27-python-visualize-advance.html" rel="bookmark">Python 視覺化(2) matplotlib 進階繪圖</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\2021-12-30-python-visualize-basic.html" rel="bookmark">Python 視覺化(1) matplotlib 基本設置</a></div>
+      <div class="popular-posts-title"><a href="\posts\2021-12-30-python-visualize-basic.html" rel="bookmark">Python 視覺化(1) matplotlib 基本設置：子圖操作</a></div>
     </li>
   </ul>
 
@@ -515,8 +515,8 @@ new_reader<span class="token punctuation">.</span>readline<span class="token pun
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/posts/2022-01-17-pickle-advance" rel="next" title="Python 資料永久化套件:Pickle (2)">
-                  Python 資料永久化套件:Pickle (2) <i class="fa fa-chevron-right"></i>
+                <a href="/posts/2022-01-17-pickle-advance" rel="next" title="Python 資料永久化套件：Pickle (2) 裝飾器可以被 Pickle?">
+                  Python 資料永久化套件：Pickle (2) 裝飾器可以被 Pickle? <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
@@ -555,7 +555,7 @@ new_reader<span class="token punctuation">.</span>readline<span class="token pun
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">1:19</span>
+    <span title="所需總閱讀時間">1:20</span>
   </span>
 </div>
 
