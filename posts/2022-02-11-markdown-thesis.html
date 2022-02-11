@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
+<meta name="generator" content="Hexo 5.4.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/uploads/blogicon32.webp">
+  <link rel="icon" type="image/png" sizes="32x32" href="/uploads/blogicon32.webp">
+  <link rel="icon" type="image/png" sizes="16x16" href="/uploads/blogicon16.webp">
+  <link rel="mask-icon" href="/uploads/blogicon32.webp" color="#222">
+  <meta name="google-site-verification" content="fInRyOgNeZhOz7qqAsRDN-Hh4cOsfLWjcr2M3c-HnsM">
+  <meta name="msvalidate.01" content="E0E5BF9DC17624BA5DB02DE076050404">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"brainynight.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInUp","post_body":"fadeIn","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="以 Markdown 寫論文時的文獻、圖片引用管理，以及使用 pandoc 將 markdown 轉 doc 的操作。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用 Markdown 寫論文">
+<meta property="og:url" content="https://brainynight.github.io/posts/2022-02-11-markdown-thesis">
+<meta property="og:site_name" content="Judy&#39;s Blog">
+<meta property="og:description" content="以 Markdown 寫論文時的文獻、圖片引用管理，以及使用 pandoc 將 markdown 轉 doc 的操作。">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://brainynight.github.io/uploads/4example-footnote.webp">
+<meta property="article:published_time" content="2022-02-11T05:01:31.000Z">
+<meta property="article:modified_time" content="2022-02-11T08:06:24.529Z">
+<meta property="article:author" content="Judy">
+<meta property="article:tag" content="blog, tool">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://brainynight.github.io/uploads/4example-footnote.webp">
+
+
+<link rel="canonical" href="https://brainynight.github.io/posts/2022-02-11-markdown-thesis.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://brainynight.github.io/posts/2022-02-11-markdown-thesis","path":"posts/2022-02-11-markdown-thesis.html","title":"使用 Markdown 寫論文"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>使用 Markdown 寫論文 | Judy's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QBCDYXBD36"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-QBCDYXBD36","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+  
+  
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Judy's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">程式＆興趣的集散地</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section">首頁</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section">標籤</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section">分類</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section">歸檔</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section">關於</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+         
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-vs-Latex"><span class="nav-number">1.</span> <span class="nav-text">Markdown vs. Latex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PDF-%E7%94%9F%E6%88%90"><span class="nav-number">2.</span> <span class="nav-text">PDF 生成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E7%AE%A1%E7%90%86"><span class="nav-number">3.</span> <span class="nav-text">引用管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E7%8D%BB%E6%96%87%E4%BB%B6%EF%BC%9Abib-%E6%AA%94%E6%A1%88"><span class="nav-number">3.1.</span> <span class="nav-text">文獻文件：bib 檔案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%AB%E4%BD%9C%E6%96%87%E4%BB%B6%EF%BC%9Amd-%E6%AA%94%E6%A1%88"><span class="nav-number">3.2.</span> <span class="nav-text">寫作文件：md 檔案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E7%8D%BB%E8%B6%85%E9%80%A3%E7%B5%90"><span class="nav-number">3.3.</span> <span class="nav-text">文獻超連結</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AA%BF%E6%95%B4%E6%96%87%E7%8D%BB%E6%8F%92%E5%85%A5%E7%9A%84%E6%A0%BC%E5%BC%8F"><span class="nav-number">3.4.</span> <span class="nav-text">調整文獻插入的格式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%89%E6%88%90-docx-%E6%99%82%E5%8C%85%E5%90%AB%E9%A0%90%E8%A8%AD-MS-Word-%E6%A8%A1%E6%9D%BF%E6%A0%BC%E5%BC%8F"><span class="nav-number">4.</span> <span class="nav-text">轉成 docx 時包含預設 MS Word 模板格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%A4%E4%BA%92%E5%8F%83%E7%85%A7"><span class="nav-number">5.</span> <span class="nav-text">交互參照</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A8%E6%A0%BC"><span class="nav-number">5.1.</span> <span class="nav-text">表格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%96%E7%89%87"><span class="nav-number">5.2.</span> <span class="nav-text">圖片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#meta-data"><span class="nav-number">5.3.</span> <span class="nav-text">meta-data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%96%E7%9B%AE%E9%8C%84%E8%88%87%E8%A1%A8%E7%9B%AE%E9%8C%84"><span class="nav-number">5.4.</span> <span class="nav-text">圖目錄與表目錄</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E5%90%AB%E4%BA%A4%E4%BA%92%E5%8F%83%E7%85%A7%E7%9A%84-Word-%E8%BD%89%E6%8F%9B%E6%8C%87%E4%BB%A4"><span class="nav-number">5.5.</span> <span class="nav-text">包含交互參照的 Word 轉換指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E9%A0%81%E7%AC%A6%E8%99%9F"><span class="nav-number">6.</span> <span class="nav-text">分頁符號</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8-WSL-%E5%AE%89%E8%A3%9D-Latex"><span class="nav-number">7.</span> <span class="nav-text">在 WSL 安裝 Latex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B"><span class="nav-number">8.</span> <span class="nav-text">範例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">9.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+        </div>
+         
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Judy</p>
+  <div class="site-description" itemprop="description">Python/Hexo/架站-各種疑難雜症的隨手記</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://brainynight.github.io/posts/2022-02-11-markdown-thesis">
+    <meta itemprop="image" content="/uploads/blogicon32.webp"> 
+      
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Judy">
+      <meta itemprop="url" content="/"> 
+      <meta itemprop="description" content="Python/Hexo/架站-各種疑難雜症的隨手記">
+      
+      
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Judy's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          使用 Markdown 寫論文
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2022-02-11 13:01:31 / 修改時間：16:06:24" itemprop="dateCreated datePublished" datetime="2022-02-11T13:01:31+08:00">2022-02-11</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tool/" itemprop="url" rel="index"><span itemprop="name">Tool</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>5.4k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>10 分鐘</span>
+    </span>
+</div>
+
+            <div class="post-description">以 Markdown 寫論文時的文獻、圖片引用管理，以及使用 pandoc 將 markdown 轉 doc 的操作。</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="Markdown-vs-Latex"><a href="#Markdown-vs-Latex" class="headerlink" title="Markdown vs. Latex"></a>Markdown vs. Latex</h2><p>主要是因為 Latex 語法有點過於繁雜，網路編輯器 Overleaf 雖然好用，但沒辦法直接輸入中文（或許要研究其他設定吧）。此外語法複雜，如果不是已經上手的人要寫通篇的長論文感覺有點負擔。</p>
+<p>相較之下，語法簡單的 Markdown 就好用很多，先大致在 markdown 把文字編輯的內容都完成，再去 word 套用統一格式，這是我選擇使用 Markdown 的原因。</p>
+<h2 id="PDF-生成"><a href="#PDF-生成" class="headerlink" title="PDF 生成"></a>PDF 生成</h2><p>套件 pandoc 可以直接將 markdown 轉成 PDF，但是預設的轉換引擎 pdflatex 、或是手動選定 xelatex 都需要下載完整的 Latex 套件。我在 Windows 安裝時被要求加了一堆東西，按得沒完又不想要它載東載西不告訴我，因此後來就改使用 wsl 端安裝跟執行 Pdf 操作。其中要注意中文文字的轉換，有可能需要指定字體！</p>
+<p>透過添加參數 <code>-V CJKmainfont=&quot;&lt;some_font&gt;.ttf&quot;</code>，並確認該字體檔可以被取得，最好是附在資料夾裡面。相關議題參照：<a target="_blank" rel="noopener" href="https://github.com/ZJU-Awesome/write_with_LaTeX/issues/1">mactex 2015 報錯</a>，字體檔案來源 <a target="_blank" rel="noopener" href="https://github.com/dolbydu/font/tree/master/unicode">dolbydu: font/unicode</a>。</p>
+<h2 id="引用管理"><a href="#引用管理" class="headerlink" title="引用管理"></a>引用管理</h2><h3 id="文獻文件：bib-檔案"><a href="#文獻文件：bib-檔案" class="headerlink" title="文獻文件：bib 檔案"></a>文獻文件：bib 檔案</h3><p>引用的部分採用 BibTex 管理文獻，使用 bibTex 必須遵守文獻規則撰寫並創建 <code>.bib</code> 檔案與。以 PanDoc 官網上的範例 bib 檔為例：</p>
+<ul>
+<li><code>@</code> 開頭作為一條新的引用</li>
+<li><code>@</code> 和大括弧 <code>&#123;</code>之間表示此 Reference 所屬的類別，是書、文章、或其他類別。</li>
+<li>大括弧 <code>&#123;</code> 後面的第一串字串，代表這條 reference 的 ID，在 markdown 中要如何引用它。</li>
+</ul>
+<pre class="language-latex" data-language="latex"><code class="language-latex">@Book<span class="token punctuation">&#123;</span>book1,
+author="John Doe",
+title="First Book",
+year="2005",
+address="Cambridge",
+publisher="Cambridge University Press"
+<span class="token punctuation">&#125;</span>
+
+@Article<span class="token punctuation">&#123;</span>art1,
+author="John Doe",
+title="Article",
+year="2006",
+journal="Journal of Generic Studies",
+volume="6",
+pages="33-34"
+<span class="token punctuation">&#125;</span>
+
+@InCollection<span class="token punctuation">&#123;</span>col1,
+author="John Doe and Jenny Roe",
+title="Why Water Is Wet",
+booktitle="Third Book",
+editor="Sam Smith",
+publisher="Oxford University Press",
+address="Oxford",
+year="2007"
+<span class="token punctuation">&#125;</span></code></pre>
+
+<p>BibTex 格式所能設定的 Reference 類別總共有 14 種，參見：<a target="_blank" rel="noopener" href="https://www.bibtex.com/e/entry-types/">Complete list of BibTeX entry types [with examples] - BibTeX.com</a>。</p>
+<h3 id="寫作文件：md-檔案"><a href="#寫作文件：md-檔案" class="headerlink" title="寫作文件：md 檔案"></a>寫作文件：md 檔案</h3><p>建立一個 <code>demo.md</code> 檔案，內容如下。</p>
+<pre class="language-markdown" data-language="markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> demo </span>
+根據文獻[@book1]所言，今天天氣真好。而文獻[@art1]提到，太陽會影響天氣。
+文獻[@col1]更是提到不但太陽會影響天氣，下雨、風也會。</code></pre>
+
+<p>經過指令調用 pandoc 來轉換成微軟 word 檔案：</p>
+<pre class="language-shell" data-language="shell"><code class="language-shell">pandoc --cite --bibliography&#x3D;biblio.bib demo.md -o demo-citation.docx</code></pre>
+
+<p>Word 產生的圖會在後面看到。</p>
+<h3 id="文獻超連結"><a href="#文獻超連結" class="headerlink" title="文獻超連結"></a>文獻超連結</h3><p>上述方法產生的文件，在數字引用的部份只有單純的文字，沒辦法超連結到下面的參考文件區。根據 <a target="_blank" rel="noopener" href="https://pandoc.org/MANUAL.html#other-relevant-metadata-fields">PanDoc 官方文件</a>，這需要在 markdown 中添加 meta-data 把參數開起來：</p>
+<pre class="language-markdown" data-language="markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token font-matter yaml language-yaml"><span class="token key atrule">link-bibliography</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">link-citations</span><span class="token punctuation">:</span> <span class="token boolean important">true</span></span>
+<span class="token punctuation">---</span></span></code></pre>
+
+<h3 id="調整文獻插入的格式"><a href="#調整文獻插入的格式" class="headerlink" title="調整文獻插入的格式"></a>調整文獻插入的格式</h3><p>我的領域並不慣用上面那種引用方式，要調整引用格式需要透過附加 <code>.csl</code> 檔案，上網查了 <a target="_blank" rel="noopener" href="https://github.com/citation-style-language/styles/blob/master/ieee.csl">IEEE 格式的 csl 檔案</a>。並在指令上添加 <code>--csl=ieee.csl</code> 參數：</p>
+<pre class="language-shell" data-language="shell"><code class="language-shell">pandoc --cite --csl&#x3D;ieee.csl --bibliography&#x3D;biblio.bib demo.md \
+	-o demo-citation.docx</code></pre>
+
+<h2 id="轉成-docx-時包含預設-MS-Word-模板格式"><a href="#轉成-docx-時包含預設-MS-Word-模板格式" class="headerlink" title="轉成 docx 時包含預設 MS Word 模板格式"></a>轉成 docx 時包含預設 MS Word 模板格式</h2><p>如果希望 docx 轉換成期望的格式，需要添加 <code>--reference-doc</code> 參數，我將論文格式儲存成 <code>render-sample.docx</code>，放在同一個資料夾。並且在 <code>.md</code> 最後加上了參考資料的標題，最後轉換效果如下：</p>
+<pre class="language-sh" data-language="sh"><code class="language-sh">pandoc --cite --csl&#x3D;ieee.csl \
+        --bibliography&#x3D;biblio.bib \
+        --reference-doc&#x3D;render-sample.docx demo.md -o cit.docx</code></pre>
+
+<p><img src="/uploads/4example-footnote.webp" alt="不同指令對應的結果"></p>
+<pre class="language-sh" data-language="sh"><code class="language-sh">pandoc --toc --cite --csl&#x3D;ieee.csl \
+	  --filter pandoc-xnos --bibliography&#x3D;biblio.bib \
+	  --reference-doc&#x3D;render-sample.docx demo.md -o cit.docx</code></pre>
+
+<h2 id="交互參照"><a href="#交互參照" class="headerlink" title="交互參照"></a>交互參照</h2><p>需下載套件 <code>pandoc-xnos</code>，並在下轉換指令的時候添加 <code>--filter pandoc-xnos</code>，其中包含四個套件，分別是：圖片 <a target="_blank" rel="noopener" href="https://github.com/tomduck/pandoc-fignos">pandoc-fignos</a>、公式 <a target="_blank" rel="noopener" href="https://github.com/tomduck/pandoc-eqnos">pandoc-eqnos</a>、表格 <a target="_blank" rel="noopener" href="https://github.com/tomduck/pandoc-tablenos">pandoc-tablenos</a>、章節 <a target="_blank" rel="noopener" href="https://github.com/tomduck/pandoc-secnos">pandoc-secnos</a>。</p>
+<p>可以直接在 pandoc 的轉換指令中添加  <code>--filter pandoc-xnos</code> 一口氣解決，也可以只取自己需要的 <code>--filter pandoc-fignos</code> 之類的，如果要同時使用兩個要加兩次參數，例如同時使用表格與圖片的參照 <code>--filter pandoc-fignos --filter-tablenos</code>。</p>
+<p>以下以表格與圖片的參照用法舉例說明。</p>
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>標註方法: <code>&#123;#tbl:id&#125;</code> ，<code>id</code> 可以自由換成此表格的專屬 id。</p>
+<pre class="language-markdown" data-language="markdown"><code class="language-markdown"><span class="token table"><span class="token table-header-row"><span class="token punctuation">|</span><span class="token table-header important">       </span><span class="token punctuation">|</span><span class="token table-header important"> Col 1 </span><span class="token punctuation">|</span><span class="token table-header important"> Col 2 </span><span class="token punctuation">|</span>
+</span><span class="token table-line"><span class="token punctuation">|</span> <span class="token punctuation">-----</span> <span class="token punctuation">|</span> <span class="token punctuation">-----</span> <span class="token punctuation">|</span> <span class="token punctuation">-----</span> <span class="token punctuation">|</span>
+</span><span class="token table-data-rows"><span class="token punctuation">|</span><span class="token table-data"> Row 1 </span><span class="token punctuation">|</span><span class="token table-data"> 11    </span><span class="token punctuation">|</span><span class="token table-data"> 12    </span><span class="token punctuation">|</span>
+<span class="token punctuation">|</span><span class="token table-data"> Row 2 </span><span class="token punctuation">|</span><span class="token table-data"> 21    </span><span class="token punctuation">|</span><span class="token table-data"> 22    </span><span class="token punctuation">|</span>
+<span class="token punctuation">|</span><span class="token table-data"> Row 3 </span><span class="token punctuation">|</span><span class="token table-data"> 31    </span><span class="token punctuation">|</span><span class="token table-data"> 32    </span><span class="token punctuation">|</span>
+</span></span>Table: 表格介紹 &#123;#tbl:tbl1&#125;</code></pre>
+
+<p>而想要參照(reference)某表格，則使用 <code>&#123;@tbl:id&#125;</code> 的方式參照。</p>
+<h3 id="圖片"><a href="#圖片" class="headerlink" title="圖片"></a>圖片</h3><p>標註方法: <code>&#123;#fig:id&#125;</code> 同樣 id 可以自由替換，參照方式也和表格雷同<code>&#123;@fig:id&#125;</code>。</p>
+<pre class="language-none"><code class="language-none">![圖片介紹](path\of\fig)&#123;#fig:fig1&#125;</code></pre>
+
+<h3 id="meta-data"><a href="#meta-data" class="headerlink" title="meta-data"></a>meta-data</h3><p>抬頭的 meta-formatter 需要添加，cleveref 開啟的話參照圖表時前綴才會有「圖」或「表」，plus-name 是設定被參照時在內文中該以何種前綴顯示。</p>
+<pre class="language-none"><code class="language-none">fignos-cleveref: true
+fignos-plus-name: 圖
+fignos-caption-name: 圖
+fignos-number-by-section: true
+
+tablenos-cleveref: true
+tablenos-plus-name: 表
+tablenos-caption-name: 表
+tablenos-number-by-section: true</code></pre>
+
+
+
+<h3 id="圖目錄與表目錄"><a href="#圖目錄與表目錄" class="headerlink" title="圖目錄與表目錄"></a>圖目錄與表目錄</h3><p>理論上可以在 meta-data 裡面設置這兩個參數自動生成，但似乎只支援生成 pdf，生成 word 時候這兩個參數不生效。</p>
+<pre class="language-none"><code class="language-none">lof: true 
+lot: true</code></pre>
+
+<p>要注意，雖然文章目錄的縮寫是 TOC (table of content)，但圖目錄與表目錄的縮寫分別是 lof (list of figure), lot (list of table) ，要用這個關鍵字去找! </p>
+<p>生成 PDF 的時候如果有報錯，注意是否為中文字 UTF-8 類字體所造成的轉換問題，相關議題參照前面章節[PDF生成](#PDF 生成)</p>
+<pre class="language-sh" data-language="sh"><code class="language-sh">pandoc --cite --csl&#x3D;ieee.csl --filter pandoc-xnos \
+		--bibliography&#x3D;biblio.bib --pdf-engine&#x3D;xelatex \
+		-V CJKmainfont&#x3D;&quot;KaiTi.ttf&quot; --reference-doc&#x3D;render-sample.docx demo.md \
+		-o cit.pdf
+		
+# 或將 fignos 與 tablenos 分開列
+pandoc --cite --csl&#x3D;ieee.csl \
+		--filter pandoc-fignos --filter pandoc-tablenos \
+		--bibliography&#x3D;biblio.bib --pdf-engine&#x3D;xelatex \
+		-V CJKmainfont&#x3D;&quot;KaiTi.ttf&quot; --reference-doc&#x3D;render-sample.docx demo.md \
+		-o cit.pdf</code></pre>
+
+<h3 id="包含交互參照的-Word-轉換指令"><a href="#包含交互參照的-Word-轉換指令" class="headerlink" title="包含交互參照的 Word 轉換指令"></a>包含交互參照的 Word 轉換指令</h3><p>但經過我的實驗，雖然這一連串的操作可以使圖表依照章節標號，卻沒辦法有標號超連結之類的，恐怕也沒辦法在 word 裡面生成圖目錄與表目錄。</p>
+<pre class="language-sh" data-language="sh"><code class="language-sh">pandoc --cite --csl&#x3D;ieee.csl --filter pandoc-xnos \
+		--bibliography&#x3D;biblio.bib --pdf-engine&#x3D;xelatex \
+		-V CJKmainfont&#x3D;&quot;KaiTi.ttf&quot; --reference-doc&#x3D;render-sample.docx demo.md \
+		-o cit.docx</code></pre>
+
+<h2 id="分頁符號"><a href="#分頁符號" class="headerlink" title="分頁符號"></a>分頁符號</h2><p>Markdown 本身是不支援分頁符號的，但我們可以使用 html code 讓它強制分頁：<a target="_blank" rel="noopener" href="https://github.com/hanxi/blog/issues/20">Markdown 輸出 pdf 強制分頁的方法</a> （但轉成 doc 後時靈時不靈，用 Latex 語法 <code>\newpage</code> 也一樣，我後來就直接從 doc 模板那邊下手：每個大標題都自動換頁）。</p>
+<pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">page-break-after</span><span class="token punctuation">:</span> always<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+
+<p>但是如果轉成 PDF 的話，在 markdown 中直接輸入 <code>\newpage</code> 作為分頁是可行的。</p>
+<h2 id="在-WSL-安裝-Latex"><a href="#在-WSL-安裝-Latex" class="headerlink" title="在 WSL 安裝 Latex"></a>在 WSL 安裝 Latex</h2><p>我用的是 Ubuntu 做為 Wsl2 的作業系統。首先安裝 Latex 基本的語法與擴充語法：</p>
+<pre class="language-sh" data-language="sh"><code class="language-sh">sudo apt-get install texlive
+sudo apt-get install texlive-latex-extra
+sudo apt-get install texlive-xetex</code></pre>
+
+<p>接著依照 <a target="_blank" rel="noopener" href="https://github.com/jgm/pandoc/blob/master/INSTALL.md#linux">Pandoc 的官方文件</a>選擇適合的檔案：</p>
+<pre class="language-sh" data-language="sh"><code class="language-sh">wget https:&#x2F;&#x2F;github.com&#x2F;jgm&#x2F;pandoc&#x2F;releases&#x2F;download&#x2F;2.17.1.1&#x2F;pandoc-2.17.1.1-1-amd64.deb
+sudo dpkg -i pandoc-2.17.1.1-1-amd64.deb</code></pre>
+
+<p>並且在 Markdown 中引用的圖片，最好是放在同層級或下層級的資料夾中，比較不容易發生圖片找不到的狀況。</p>
+<h2 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h2><p>範例 markdown 與轉換而成的 MS Word 如下，內文是產生器而得，完全只是要個排版的感覺，請勿深究！轉換指令：</p>
+<pre class="language-sh" data-language="sh"><code class="language-sh">pandoc --cite --csl&#x3D;ieee.csl --filter pandoc-xnos \
+		--bibliography&#x3D;biblio.bib --pdf-engine&#x3D;xelatex \
+		-V CJKmainfont&#x3D;&quot;KaiTi.ttf&quot; --reference-doc&#x3D;render-sample.docx demo.md \
+		-o cit.docx</code></pre>
+<ul>
+<li>所使用的 markdown 檔案、bib 引用檔案以及輸出的 word 檔案： <a href="/uploads/markdown-thesis.zip">markdown-thesis.zip</a>。</li>
+<li>render-sample 為個人的 doc 模板。</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39564555/article/details/112496861">Markdown、.bib、LaTeX + Typora、Pandoc 管理論文文獻</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.economics.utoronto.ca/osborne/latex/BIBTEX.HTM">using bibtex: a short guide</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+      
+
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/blog-tool/" rel="tag"># blog, tool</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/2022-01-27-python-visualize-advance" rel="prev" title="Python 視覺化(2) matplotlib 進階繪圖">
+                  <i class="fa fa-chevron-left"></i> Python 視覺化(2) matplotlib 進階繪圖
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="/uploads/address-book.svg"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Judy</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">49k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">1:30</span>
+  </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

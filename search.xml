@@ -219,38 +219,31 @@ public&#x2F;
       </tags>
   </entry>
   <entry>
-    <title>Hexo Blog 客製化 (1) 部落格指令自動化</title>
-    <url>/posts/2021-12-30-blog-1-automatic-command.html</url>
-    <content><![CDATA[<p>想用原始一點的方法來搞個半自動化，第一步當然就是不要打那麼多指令！</p>
-<p>我希望能將 <code>hexo clean</code>, <code>hexo generate</code>, <code>hexo server</code>/<code>hexo deploy</code> 的步驟集合在一起，並且開啟部落格的 Demo 網址。這裡使用 Make 做指令簡化。</p>
-<p>在部落格的根目錄創建一個 makefile，內容如下</p>
-<pre class="language-makefile" data-language="makefile"><code class="language-makefile"><span class="token symbol">local</span><span class="token punctuation">:</span>
-	python -m webbrowser <span class="token string">"http://localhost:4000"</span>
-	hexo cl &amp;&amp; hexo g &amp;&amp; hexo server 
+    <title>新年快樂之部落格沿革(?)</title>
+    <url>/posts/2022-01-01-blog-0-source.html</url>
+    <content><![CDATA[<p>2022 新年快樂！新年的第一篇文章，來寫個段小故事。相信自己一路走來在各種平台、格式上轉換的痛苦已經算少了，但每次想起依然常常覺得…. 小坎坷阿，希望現在的決定夠有遠見了？紀錄一下一路走來的辛酸淚。</p>
+<span id="more"></span>
 
-<span class="token symbol">demo</span><span class="token punctuation">:</span>
-	python -m webbrowser <span class="token string">"http://localhost:4000"</span>
-	hexo server 
-
-<span class="token symbol">push</span><span class="token punctuation">:</span>
-	python -m webbrowser <span class="token string">"https://&lt;UserName>.github.io/"</span>
-	hexo cl &amp;&amp; hexo g &amp;&amp; hexo d </code></pre>
-
-<p>需要注意，Command 的縮排是 tab 不是空白鍵！</p>
-<h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><p>先開啟網頁是因為一旦 server 打開就會佔一個 process  在那邊，阻斷後面的指令。而網頁先開啟來只是一個動作，不會阻斷後續的指令。</p>
-<h3 id="local"><a href="#local" class="headerlink" title="local"></a><code>local</code></h3><p>是每次改完部落格，要清除靜態檔案重新生成並打 local 的展示網頁的時候。</p>
-<pre class="language-sh" data-language="sh"><code class="language-sh">make local</code></pre>
-
-<h3 id="demo"><a href="#demo" class="headerlink" title="demo"></a><code>demo</code></h3><p>單純想打開 local demo，沒有要清掉資料重新生成。</p>
-<pre class="language-sh" data-language="sh"><code class="language-sh">make demo</code></pre>
-
-<h3 id="push"><a href="#push" class="headerlink" title="push"></a><code>push</code></h3><p>確認本地的改動，要將資料 push 到線上了。</p>
-<pre class="language-sh" data-language="sh"><code class="language-sh">make push</code></pre>]]></content>
+<h3 id="純樸的文字編輯器：Evernote"><a href="#純樸的文字編輯器：Evernote" class="headerlink" title="純樸的文字編輯器：Evernote"></a>純樸的文字編輯器：Evernote</h3><p>從高中起一直有寫心得、觀後感與日記的習慣，那時候用的是 Evernote。大學開始寫程式時，也有著紀錄 bug 的習慣，那時候用的是 Line 記事本跟 Evernote。可以想見，這種紀錄方式簡直是災難… 我希望至少 Code 可以是彩色的（好卑微阿），開始尋找替代方案。</p>
+<p>儘管將程式相關的內容從 Evernote 抽離，它依然是我挺喜歡的筆記軟體。但，隨著 Markdown 語法越來越盛行，Evernote 卻遲遲不能夠跟進，加上 Notion 後來出了教育帳戶免費的策略，最後包括慣用的其他紀錄也都轉移到 Notion 去了。</p>
+<h3 id="Blogger"><a href="#Blogger" class="headerlink" title="Blogger"></a>Blogger</h3><p>由於當時有在用 Blogger 在寫遊記，所以第一時間想到的替代工具就是 Google 旗下的 Blogger ，大約也用了一年多。當對排版越來越要求，發現 Blogger 那種 word 編輯器 + html 編輯界面的方式實在是太沒效率了！決定再次轉移。</p>
+<h3 id="HackMD"><a href="#HackMD" class="headerlink" title="HackMD"></a>HackMD</h3><p>開始用 Markdown 在寫技術筆記，並使用 HackMD 作為平台。但 HackMD 有個很大的缺點，它不支援內文搜尋模式….. （曾經支援，後來疑似因為 loading 太大拿掉內文搜索只能找標題）文章一多不記得什麼內容在哪篇文章，這根本災難！只好又開始尋找替代方案</p>
+<p>那個時期不知道為什麼，HackMD 老是不溫不火，號稱是從日本 IT 圈紅回來的軟體，在台灣小有名氣其實也很好用。但感覺一直是維持狀態，更新狀態不大，反而有退一步取消內文搜索功能的這種事件。</p>
+<h3 id="Github-Typora"><a href="#Github-Typora" class="headerlink" title="Github + Typora"></a>Github + Typora</h3><p>腦子動到 Github 的頭上，發展出用離線的 Markdown 編輯器 Typora 加上 Github 做同步。在我開始將 HackMD 的內容拉下來，跟本地的離線檔案整併時發現有些筆記不小心使用到了一些只有 HackMD 支援的 Markdown 延伸語法，導致這些內容在 Typora 上完全沒有效果！！像是亂碼一樣！</p>
+<p>至此，我下定決心，以後寫文章絕對不要再搞出這麼多麻煩，乖乖用基礎的 Markdown 語法，很方便了！別搞那麼多事！</p>
+<h3 id="熱門的部落格平台：Medium"><a href="#熱門的部落格平台：Medium" class="headerlink" title="熱門的部落格平台：Medium"></a>熱門的部落格平台：Medium</h3><p>想有個部落格的心情依舊在，我曾嘗試過 Medium 平台並不是很喜歡。一來是平台的彈性低、程式碼甚至沒辦法上色，非得透過 Gist ；二來是 Medium 還是比較適合英文文章，英文字寫起來格式是又優雅又漂亮，但中文一個斜體就搞得版面很不和諧。後來也就拿來放一些跟 Code 無關的事情，一些搞環境經驗之類的而已。</p>
+<h3 id="初體驗靜態網頁產生器：Pelican"><a href="#初體驗靜態網頁產生器：Pelican" class="headerlink" title="初體驗靜態網頁產生器：Pelican"></a>初體驗靜態網頁產生器：Pelican</h3><p>大四時一度嘗試使用 Github Page + Pelican 做靜態網站生成，挑選這個組合是因為覺得綁定網域得付錢、感覺這部落格又是有一更沒一更不知道哪天會不會荒廢，決定先從免費的試試看，Github Page 是這個選項很好的解答。而 Pelican 是它背後是用 Python 寫的，好歹我比較熟 (不敢一下子踏入 js) 。</p>
+<p>不知道是對網站管理沒經驗、放太多圖片塞到流量還是什麼問題，大約半年覺得網站載入太慢了受不了，加上對版面的主題既不滿意、又改不動，在充滿羞恥的心情下收掉了這個第一個自己架的部落格。</p>
+<h3 id="再次回歸-Github-Typora"><a href="#再次回歸-Github-Typora" class="headerlink" title="再次回歸 Github + Typora"></a>再次回歸 Github + Typora</h3><p>此後，我一直用 Typora + Github 的模式寫筆記，由於有過自己搭建的經驗，每次看到別人的部落格是使用 Github page 的時候，都會多留意兩眼框架與主題，以及一些自己喜歡的小工具、要素等等，也是那時候看到 Hexo 與 Next 主題被很多人採用。過去使用 Peclian 時，我極度討厭文章太長，每次都要卷到最上面才能點目錄跳轉的情況，甚至自己研究用 CSS 弄了一個懸浮目錄，功能是有卻醜到自己受不了，關站很大一個原因也是這樣。</p>
+<h3 id="現在：Hexo"><a href="#現在：Hexo" class="headerlink" title="現在：Hexo"></a>現在：Hexo</h3><p>直到最近看到有在追蹤的一位作者的文章<a href="https://www.ithome.com.tw/voice/148476">技術網站架設經驗雜談</a>，邊看產生了很多共鳴，想到了一直有個小小的期許：能彈性控制的部落格！才鼓起勇氣再次搭建了部落格。這次打算嘗試許多人都採用的 Hexo 來搭建，管他語言不一樣，大不了學學吧！於是最終就有了這個部落格。</p>
+<p>恩，真是一段不長不短的歷史。總之就是告誡自己，不要被漂亮的擴充功能迷惑，換了框架很痛苦的。</p>
+]]></content>
       <categories>
         <category>blog</category>
       </categories>
       <tags>
         <tag>blog</tag>
+        <tag>about</tag>
       </tags>
   </entry>
   <entry>
@@ -321,31 +314,160 @@ public&#x2F;
       </tags>
   </entry>
   <entry>
-    <title>新年快樂之部落格沿革(?)</title>
-    <url>/posts/2022-01-01-blog-0-source.html</url>
-    <content><![CDATA[<p>2022 新年快樂！新年的第一篇文章，來寫個段小故事。相信自己一路走來在各種平台、格式上轉換的痛苦已經算少了，但每次想起依然常常覺得…. 小坎坷阿，希望現在的決定夠有遠見了？紀錄一下一路走來的辛酸淚。</p>
-<span id="more"></span>
+    <title>使用 Markdown 寫論文</title>
+    <url>/posts/2022-02-11-markdown-thesis.html</url>
+    <content><![CDATA[<h2 id="Markdown-vs-Latex"><a href="#Markdown-vs-Latex" class="headerlink" title="Markdown vs. Latex"></a>Markdown vs. Latex</h2><p>主要是因為 Latex 語法有點過於繁雜，網路編輯器 Overleaf 雖然好用，但沒辦法直接輸入中文（或許要研究其他設定吧）。此外語法複雜，如果不是已經上手的人要寫通篇的長論文感覺有點負擔。</p>
+<p>相較之下，語法簡單的 Markdown 就好用很多，先大致在 markdown 把文字編輯的內容都完成，再去 word 套用統一格式，這是我選擇使用 Markdown 的原因。</p>
+<h2 id="PDF-生成"><a href="#PDF-生成" class="headerlink" title="PDF 生成"></a>PDF 生成</h2><p>套件 pandoc 可以直接將 markdown 轉成 PDF，但是預設的轉換引擎 pdflatex 、或是手動選定 xelatex 都需要下載完整的 Latex 套件。我在 Windows 安裝時被要求加了一堆東西，按得沒完又不想要它載東載西不告訴我，因此後來就改使用 wsl 端安裝跟執行 Pdf 操作。其中要注意中文文字的轉換，有可能需要指定字體！</p>
+<p>透過添加參數 <code>-V CJKmainfont=&quot;&lt;some_font&gt;.ttf&quot;</code>，並確認該字體檔可以被取得，最好是附在資料夾裡面。相關議題參照：<a href="https://github.com/ZJU-Awesome/write_with_LaTeX/issues/1">mactex 2015 報錯</a>，字體檔案來源 <a href="https://github.com/dolbydu/font/tree/master/unicode">dolbydu: font/unicode</a>。</p>
+<h2 id="引用管理"><a href="#引用管理" class="headerlink" title="引用管理"></a>引用管理</h2><h3 id="文獻文件：bib-檔案"><a href="#文獻文件：bib-檔案" class="headerlink" title="文獻文件：bib 檔案"></a>文獻文件：bib 檔案</h3><p>引用的部分採用 BibTex 管理文獻，使用 bibTex 必須遵守文獻規則撰寫並創建 <code>.bib</code> 檔案與。以 PanDoc 官網上的範例 bib 檔為例：</p>
+<ul>
+<li><code>@</code> 開頭作為一條新的引用</li>
+<li><code>@</code> 和大括弧 <code>&#123;</code>之間表示此 Reference 所屬的類別，是書、文章、或其他類別。</li>
+<li>大括弧 <code>&#123;</code> 後面的第一串字串，代表這條 reference 的 ID，在 markdown 中要如何引用它。</li>
+</ul>
+<pre class="language-latex" data-language="latex"><code class="language-latex">@Book<span class="token punctuation">&#123;</span>book1,
+author="John Doe",
+title="First Book",
+year="2005",
+address="Cambridge",
+publisher="Cambridge University Press"
+<span class="token punctuation">&#125;</span>
 
-<h3 id="純樸的文字編輯器：Evernote"><a href="#純樸的文字編輯器：Evernote" class="headerlink" title="純樸的文字編輯器：Evernote"></a>純樸的文字編輯器：Evernote</h3><p>從高中起一直有寫心得、觀後感與日記的習慣，那時候用的是 Evernote。大學開始寫程式時，也有著紀錄 bug 的習慣，那時候用的是 Line 記事本跟 Evernote。可以想見，這種紀錄方式簡直是災難… 我希望至少 Code 可以是彩色的（好卑微阿），開始尋找替代方案。</p>
-<p>儘管將程式相關的內容從 Evernote 抽離，它依然是我挺喜歡的筆記軟體。但，隨著 Markdown 語法越來越盛行，Evernote 卻遲遲不能夠跟進，加上 Notion 後來出了教育帳戶免費的策略，最後包括慣用的其他紀錄也都轉移到 Notion 去了。</p>
-<h3 id="Blogger"><a href="#Blogger" class="headerlink" title="Blogger"></a>Blogger</h3><p>由於當時有在用 Blogger 在寫遊記，所以第一時間想到的替代工具就是 Google 旗下的 Blogger ，大約也用了一年多。當對排版越來越要求，發現 Blogger 那種 word 編輯器 + html 編輯界面的方式實在是太沒效率了！決定再次轉移。</p>
-<h3 id="HackMD"><a href="#HackMD" class="headerlink" title="HackMD"></a>HackMD</h3><p>開始用 Markdown 在寫技術筆記，並使用 HackMD 作為平台。但 HackMD 有個很大的缺點，它不支援內文搜尋模式….. （曾經支援，後來疑似因為 loading 太大拿掉內文搜索只能找標題）文章一多不記得什麼內容在哪篇文章，這根本災難！只好又開始尋找替代方案</p>
-<p>那個時期不知道為什麼，HackMD 老是不溫不火，號稱是從日本 IT 圈紅回來的軟體，在台灣小有名氣其實也很好用。但感覺一直是維持狀態，更新狀態不大，反而有退一步取消內文搜索功能的這種事件。</p>
-<h3 id="Github-Typora"><a href="#Github-Typora" class="headerlink" title="Github + Typora"></a>Github + Typora</h3><p>腦子動到 Github 的頭上，發展出用離線的 Markdown 編輯器 Typora 加上 Github 做同步。在我開始將 HackMD 的內容拉下來，跟本地的離線檔案整併時發現有些筆記不小心使用到了一些只有 HackMD 支援的 Markdown 延伸語法，導致這些內容在 Typora 上完全沒有效果！！像是亂碼一樣！</p>
-<p>至此，我下定決心，以後寫文章絕對不要再搞出這麼多麻煩，乖乖用基礎的 Markdown 語法，很方便了！別搞那麼多事！</p>
-<h3 id="熱門的部落格平台：Medium"><a href="#熱門的部落格平台：Medium" class="headerlink" title="熱門的部落格平台：Medium"></a>熱門的部落格平台：Medium</h3><p>想有個部落格的心情依舊在，我曾嘗試過 Medium 平台並不是很喜歡。一來是平台的彈性低、程式碼甚至沒辦法上色，非得透過 Gist ；二來是 Medium 還是比較適合英文文章，英文字寫起來格式是又優雅又漂亮，但中文一個斜體就搞得版面很不和諧。後來也就拿來放一些跟 Code 無關的事情，一些搞環境經驗之類的而已。</p>
-<h3 id="初體驗靜態網頁產生器：Pelican"><a href="#初體驗靜態網頁產生器：Pelican" class="headerlink" title="初體驗靜態網頁產生器：Pelican"></a>初體驗靜態網頁產生器：Pelican</h3><p>大四時一度嘗試使用 Github Page + Pelican 做靜態網站生成，挑選這個組合是因為覺得綁定網域得付錢、感覺這部落格又是有一更沒一更不知道哪天會不會荒廢，決定先從免費的試試看，Github Page 是這個選項很好的解答。而 Pelican 是它背後是用 Python 寫的，好歹我比較熟 (不敢一下子踏入 js) 。</p>
-<p>不知道是對網站管理沒經驗、放太多圖片塞到流量還是什麼問題，大約半年覺得網站載入太慢了受不了，加上對版面的主題既不滿意、又改不動，在充滿羞恥的心情下收掉了這個第一個自己架的部落格。</p>
-<h3 id="再次回歸-Github-Typora"><a href="#再次回歸-Github-Typora" class="headerlink" title="再次回歸 Github + Typora"></a>再次回歸 Github + Typora</h3><p>此後，我一直用 Typora + Github 的模式寫筆記，由於有過自己搭建的經驗，每次看到別人的部落格是使用 Github page 的時候，都會多留意兩眼框架與主題，以及一些自己喜歡的小工具、要素等等，也是那時候看到 Hexo 與 Next 主題被很多人採用。過去使用 Peclian 時，我極度討厭文章太長，每次都要卷到最上面才能點目錄跳轉的情況，甚至自己研究用 CSS 弄了一個懸浮目錄，功能是有卻醜到自己受不了，關站很大一個原因也是這樣。</p>
-<h3 id="現在：Hexo"><a href="#現在：Hexo" class="headerlink" title="現在：Hexo"></a>現在：Hexo</h3><p>直到最近看到有在追蹤的一位作者的文章<a href="https://www.ithome.com.tw/voice/148476">技術網站架設經驗雜談</a>，邊看產生了很多共鳴，想到了一直有個小小的期許：能彈性控制的部落格！才鼓起勇氣再次搭建了部落格。這次打算嘗試許多人都採用的 Hexo 來搭建，管他語言不一樣，大不了學學吧！於是最終就有了這個部落格。</p>
-<p>恩，真是一段不長不短的歷史。總之就是告誡自己，不要被漂亮的擴充功能迷惑，換了框架很痛苦的。</p>
+@Article<span class="token punctuation">&#123;</span>art1,
+author="John Doe",
+title="Article",
+year="2006",
+journal="Journal of Generic Studies",
+volume="6",
+pages="33-34"
+<span class="token punctuation">&#125;</span>
+
+@InCollection<span class="token punctuation">&#123;</span>col1,
+author="John Doe and Jenny Roe",
+title="Why Water Is Wet",
+booktitle="Third Book",
+editor="Sam Smith",
+publisher="Oxford University Press",
+address="Oxford",
+year="2007"
+<span class="token punctuation">&#125;</span></code></pre>
+
+<p>BibTex 格式所能設定的 Reference 類別總共有 14 種，參見：<a href="https://www.bibtex.com/e/entry-types/">Complete list of BibTeX entry types [with examples] - BibTeX.com</a>。</p>
+<h3 id="寫作文件：md-檔案"><a href="#寫作文件：md-檔案" class="headerlink" title="寫作文件：md 檔案"></a>寫作文件：md 檔案</h3><p>建立一個 <code>demo.md</code> 檔案，內容如下。</p>
+<pre class="language-markdown" data-language="markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> demo </span>
+根據文獻[@book1]所言，今天天氣真好。而文獻[@art1]提到，太陽會影響天氣。
+文獻[@col1]更是提到不但太陽會影響天氣，下雨、風也會。</code></pre>
+
+<p>經過指令調用 pandoc 來轉換成微軟 word 檔案：</p>
+<pre class="language-shell" data-language="shell"><code class="language-shell">pandoc --cite --bibliography&#x3D;biblio.bib demo.md -o demo-citation.docx</code></pre>
+
+<p>Word 產生的圖會在後面看到。</p>
+<h3 id="文獻超連結"><a href="#文獻超連結" class="headerlink" title="文獻超連結"></a>文獻超連結</h3><p>上述方法產生的文件，在數字引用的部份只有單純的文字，沒辦法超連結到下面的參考文件區。根據 <a href="https://pandoc.org/MANUAL.html#other-relevant-metadata-fields">PanDoc 官方文件</a>，這需要在 markdown 中添加 meta-data 把參數開起來：</p>
+<pre class="language-markdown" data-language="markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token font-matter yaml language-yaml"><span class="token key atrule">link-bibliography</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">link-citations</span><span class="token punctuation">:</span> <span class="token boolean important">true</span></span>
+<span class="token punctuation">---</span></span></code></pre>
+
+<h3 id="調整文獻插入的格式"><a href="#調整文獻插入的格式" class="headerlink" title="調整文獻插入的格式"></a>調整文獻插入的格式</h3><p>我的領域並不慣用上面那種引用方式，要調整引用格式需要透過附加 <code>.csl</code> 檔案，上網查了 <a href="https://github.com/citation-style-language/styles/blob/master/ieee.csl">IEEE 格式的 csl 檔案</a>。並在指令上添加 <code>--csl=ieee.csl</code> 參數：</p>
+<pre class="language-shell" data-language="shell"><code class="language-shell">pandoc --cite --csl&#x3D;ieee.csl --bibliography&#x3D;biblio.bib demo.md \
+	-o demo-citation.docx</code></pre>
+
+<h2 id="轉成-docx-時包含預設-MS-Word-模板格式"><a href="#轉成-docx-時包含預設-MS-Word-模板格式" class="headerlink" title="轉成 docx 時包含預設 MS Word 模板格式"></a>轉成 docx 時包含預設 MS Word 模板格式</h2><p>如果希望 docx 轉換成期望的格式，需要添加 <code>--reference-doc</code> 參數，我將論文格式儲存成 <code>render-sample.docx</code>，放在同一個資料夾。並且在 <code>.md</code> 最後加上了參考資料的標題，最後轉換效果如下：</p>
+<pre class="language-sh" data-language="sh"><code class="language-sh">pandoc --cite --csl&#x3D;ieee.csl \
+        --bibliography&#x3D;biblio.bib \
+        --reference-doc&#x3D;render-sample.docx demo.md -o cit.docx</code></pre>
+
+<p><img src="/uploads/4example-footnote.webp" alt="不同指令對應的結果"></p>
+<pre class="language-sh" data-language="sh"><code class="language-sh">pandoc --toc --cite --csl&#x3D;ieee.csl \
+	  --filter pandoc-xnos --bibliography&#x3D;biblio.bib \
+	  --reference-doc&#x3D;render-sample.docx demo.md -o cit.docx</code></pre>
+
+<h2 id="交互參照"><a href="#交互參照" class="headerlink" title="交互參照"></a>交互參照</h2><p>需下載套件 <code>pandoc-xnos</code>，並在下轉換指令的時候添加 <code>--filter pandoc-xnos</code>，其中包含四個套件，分別是：圖片 <a href="https://github.com/tomduck/pandoc-fignos">pandoc-fignos</a>、公式 <a href="https://github.com/tomduck/pandoc-eqnos">pandoc-eqnos</a>、表格 <a href="https://github.com/tomduck/pandoc-tablenos">pandoc-tablenos</a>、章節 <a href="https://github.com/tomduck/pandoc-secnos">pandoc-secnos</a>。</p>
+<p>可以直接在 pandoc 的轉換指令中添加  <code>--filter pandoc-xnos</code> 一口氣解決，也可以只取自己需要的 <code>--filter pandoc-fignos</code> 之類的，如果要同時使用兩個要加兩次參數，例如同時使用表格與圖片的參照 <code>--filter pandoc-fignos --filter-tablenos</code>。</p>
+<p>以下以表格與圖片的參照用法舉例說明。</p>
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>標註方法: <code>&#123;#tbl:id&#125;</code> ，<code>id</code> 可以自由換成此表格的專屬 id。</p>
+<pre class="language-markdown" data-language="markdown"><code class="language-markdown"><span class="token table"><span class="token table-header-row"><span class="token punctuation">|</span><span class="token table-header important">       </span><span class="token punctuation">|</span><span class="token table-header important"> Col 1 </span><span class="token punctuation">|</span><span class="token table-header important"> Col 2 </span><span class="token punctuation">|</span>
+</span><span class="token table-line"><span class="token punctuation">|</span> <span class="token punctuation">-----</span> <span class="token punctuation">|</span> <span class="token punctuation">-----</span> <span class="token punctuation">|</span> <span class="token punctuation">-----</span> <span class="token punctuation">|</span>
+</span><span class="token table-data-rows"><span class="token punctuation">|</span><span class="token table-data"> Row 1 </span><span class="token punctuation">|</span><span class="token table-data"> 11    </span><span class="token punctuation">|</span><span class="token table-data"> 12    </span><span class="token punctuation">|</span>
+<span class="token punctuation">|</span><span class="token table-data"> Row 2 </span><span class="token punctuation">|</span><span class="token table-data"> 21    </span><span class="token punctuation">|</span><span class="token table-data"> 22    </span><span class="token punctuation">|</span>
+<span class="token punctuation">|</span><span class="token table-data"> Row 3 </span><span class="token punctuation">|</span><span class="token table-data"> 31    </span><span class="token punctuation">|</span><span class="token table-data"> 32    </span><span class="token punctuation">|</span>
+</span></span>Table: 表格介紹 &#123;#tbl:tbl1&#125;</code></pre>
+
+<p>而想要參照(reference)某表格，則使用 <code>&#123;@tbl:id&#125;</code> 的方式參照。</p>
+<h3 id="圖片"><a href="#圖片" class="headerlink" title="圖片"></a>圖片</h3><p>標註方法: <code>&#123;#fig:id&#125;</code> 同樣 id 可以自由替換，參照方式也和表格雷同<code>&#123;@fig:id&#125;</code>。</p>
+<pre class="language-none"><code class="language-none">![圖片介紹](path\of\fig)&#123;#fig:fig1&#125;</code></pre>
+
+<h3 id="meta-data"><a href="#meta-data" class="headerlink" title="meta-data"></a>meta-data</h3><p>抬頭的 meta-formatter 需要添加，cleveref 開啟的話參照圖表時前綴才會有「圖」或「表」，plus-name 是設定被參照時在內文中該以何種前綴顯示。</p>
+<pre class="language-none"><code class="language-none">fignos-cleveref: true
+fignos-plus-name: 圖
+fignos-caption-name: 圖
+fignos-number-by-section: true
+
+tablenos-cleveref: true
+tablenos-plus-name: 表
+tablenos-caption-name: 表
+tablenos-number-by-section: true</code></pre>
+
+
+
+<h3 id="圖目錄與表目錄"><a href="#圖目錄與表目錄" class="headerlink" title="圖目錄與表目錄"></a>圖目錄與表目錄</h3><p>理論上可以在 meta-data 裡面設置這兩個參數自動生成，但似乎只支援生成 pdf，生成 word 時候這兩個參數不生效。</p>
+<pre class="language-none"><code class="language-none">lof: true 
+lot: true</code></pre>
+
+<p>要注意，雖然文章目錄的縮寫是 TOC (table of content)，但圖目錄與表目錄的縮寫分別是 lof (list of figure), lot (list of table) ，要用這個關鍵字去找! </p>
+<p>生成 PDF 的時候如果有報錯，注意是否為中文字 UTF-8 類字體所造成的轉換問題，相關議題參照前面章節[PDF生成](#PDF 生成)</p>
+<pre class="language-sh" data-language="sh"><code class="language-sh">pandoc --cite --csl&#x3D;ieee.csl --filter pandoc-xnos \
+		--bibliography&#x3D;biblio.bib --pdf-engine&#x3D;xelatex \
+		-V CJKmainfont&#x3D;&quot;KaiTi.ttf&quot; --reference-doc&#x3D;render-sample.docx demo.md \
+		-o cit.pdf
+		
+# 或將 fignos 與 tablenos 分開列
+pandoc --cite --csl&#x3D;ieee.csl \
+		--filter pandoc-fignos --filter pandoc-tablenos \
+		--bibliography&#x3D;biblio.bib --pdf-engine&#x3D;xelatex \
+		-V CJKmainfont&#x3D;&quot;KaiTi.ttf&quot; --reference-doc&#x3D;render-sample.docx demo.md \
+		-o cit.pdf</code></pre>
+
+<h3 id="包含交互參照的-Word-轉換指令"><a href="#包含交互參照的-Word-轉換指令" class="headerlink" title="包含交互參照的 Word 轉換指令"></a>包含交互參照的 Word 轉換指令</h3><p>但經過我的實驗，雖然這一連串的操作可以使圖表依照章節標號，卻沒辦法有標號超連結之類的，恐怕也沒辦法在 word 裡面生成圖目錄與表目錄。</p>
+<pre class="language-sh" data-language="sh"><code class="language-sh">pandoc --cite --csl&#x3D;ieee.csl --filter pandoc-xnos \
+		--bibliography&#x3D;biblio.bib --pdf-engine&#x3D;xelatex \
+		-V CJKmainfont&#x3D;&quot;KaiTi.ttf&quot; --reference-doc&#x3D;render-sample.docx demo.md \
+		-o cit.docx</code></pre>
+
+<h2 id="分頁符號"><a href="#分頁符號" class="headerlink" title="分頁符號"></a>分頁符號</h2><p>Markdown 本身是不支援分頁符號的，但我們可以使用 html code 讓它強制分頁：<a href="https://github.com/hanxi/blog/issues/20">Markdown 輸出 pdf 強制分頁的方法</a> （但轉成 doc 後時靈時不靈，用 Latex 語法 <code>\newpage</code> 也一樣，我後來就直接從 doc 模板那邊下手：每個大標題都自動換頁）。</p>
+<pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">page-break-after</span><span class="token punctuation">:</span> always<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+
+<p>但是如果轉成 PDF 的話，在 markdown 中直接輸入 <code>\newpage</code> 作為分頁是可行的。</p>
+<h2 id="在-WSL-安裝-Latex"><a href="#在-WSL-安裝-Latex" class="headerlink" title="在 WSL 安裝 Latex"></a>在 WSL 安裝 Latex</h2><p>我用的是 Ubuntu 做為 Wsl2 的作業系統。首先安裝 Latex 基本的語法與擴充語法：</p>
+<pre class="language-sh" data-language="sh"><code class="language-sh">sudo apt-get install texlive
+sudo apt-get install texlive-latex-extra
+sudo apt-get install texlive-xetex</code></pre>
+
+<p>接著依照 <a href="https://github.com/jgm/pandoc/blob/master/INSTALL.md#linux">Pandoc 的官方文件</a>選擇適合的檔案：</p>
+<pre class="language-sh" data-language="sh"><code class="language-sh">wget https:&#x2F;&#x2F;github.com&#x2F;jgm&#x2F;pandoc&#x2F;releases&#x2F;download&#x2F;2.17.1.1&#x2F;pandoc-2.17.1.1-1-amd64.deb
+sudo dpkg -i pandoc-2.17.1.1-1-amd64.deb</code></pre>
+
+<p>並且在 Markdown 中引用的圖片，最好是放在同層級或下層級的資料夾中，比較不容易發生圖片找不到的狀況。</p>
+<h2 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h2><p>範例 markdown 與轉換而成的 MS Word 如下，內文是產生器而得，完全只是要個排版的感覺，請勿深究！轉換指令：</p>
+<pre class="language-sh" data-language="sh"><code class="language-sh">pandoc --cite --csl&#x3D;ieee.csl --filter pandoc-xnos \
+		--bibliography&#x3D;biblio.bib --pdf-engine&#x3D;xelatex \
+		-V CJKmainfont&#x3D;&quot;KaiTi.ttf&quot; --reference-doc&#x3D;render-sample.docx demo.md \
+		-o cit.docx</code></pre>
+<ul>
+<li>所使用的 markdown 檔案、bib 引用檔案以及輸出的 word 檔案： <a href="/uploads/markdown-thesis.zip">markdown-thesis.zip</a>。</li>
+<li>render-sample 為個人的 doc 模板。</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li><a href="https://blog.csdn.net/qq_39564555/article/details/112496861">Markdown、.bib、LaTeX + Typora、Pandoc 管理論文文獻</a></li>
+<li><a href="https://www.economics.utoronto.ca/osborne/latex/BIBTEX.HTM">using bibtex: a short guide</a></li>
+</ul>
 ]]></content>
       <categories>
-        <category>blog</category>
+        <category>Tool</category>
       </categories>
       <tags>
-        <tag>blog</tag>
-        <tag>about</tag>
+        <tag>blog, tool</tag>
       </tags>
   </entry>
   <entry>
@@ -790,6 +912,351 @@ new_reader<span class="token punctuation">.</span>readline<span class="token pun
       </tags>
   </entry>
   <entry>
+    <title>Hexo Blog 客製化 (1) 部落格指令自動化</title>
+    <url>/posts/2021-12-30-blog-1-automatic-command.html</url>
+    <content><![CDATA[<p>想用原始一點的方法來搞個半自動化，第一步當然就是不要打那麼多指令！</p>
+<p>我希望能將 <code>hexo clean</code>, <code>hexo generate</code>, <code>hexo server</code>/<code>hexo deploy</code> 的步驟集合在一起，並且開啟部落格的 Demo 網址。這裡使用 Make 做指令簡化。</p>
+<p>在部落格的根目錄創建一個 makefile，內容如下</p>
+<pre class="language-makefile" data-language="makefile"><code class="language-makefile"><span class="token symbol">local</span><span class="token punctuation">:</span>
+	python -m webbrowser <span class="token string">"http://localhost:4000"</span>
+	hexo cl &amp;&amp; hexo g &amp;&amp; hexo server 
+
+<span class="token symbol">demo</span><span class="token punctuation">:</span>
+	python -m webbrowser <span class="token string">"http://localhost:4000"</span>
+	hexo server 
+
+<span class="token symbol">push</span><span class="token punctuation">:</span>
+	python -m webbrowser <span class="token string">"https://&lt;UserName>.github.io/"</span>
+	hexo cl &amp;&amp; hexo g &amp;&amp; hexo d </code></pre>
+
+<p>需要注意，Command 的縮排是 tab 不是空白鍵！</p>
+<h2 id="說明"><a href="#說明" class="headerlink" title="說明"></a>說明</h2><p>先開啟網頁是因為一旦 server 打開就會佔一個 process  在那邊，阻斷後面的指令。而網頁先開啟來只是一個動作，不會阻斷後續的指令。</p>
+<h3 id="local"><a href="#local" class="headerlink" title="local"></a><code>local</code></h3><p>是每次改完部落格，要清除靜態檔案重新生成並打 local 的展示網頁的時候。</p>
+<pre class="language-sh" data-language="sh"><code class="language-sh">make local</code></pre>
+
+<h3 id="demo"><a href="#demo" class="headerlink" title="demo"></a><code>demo</code></h3><p>單純想打開 local demo，沒有要清掉資料重新生成。</p>
+<pre class="language-sh" data-language="sh"><code class="language-sh">make demo</code></pre>
+
+<h3 id="push"><a href="#push" class="headerlink" title="push"></a><code>push</code></h3><p>確認本地的改動，要將資料 push 到線上了。</p>
+<pre class="language-sh" data-language="sh"><code class="language-sh">make push</code></pre>]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python 視覺化(2) matplotlib 進階繪圖</title>
+    <url>/posts/2022-01-27-python-visualize-advance.html</url>
+    <content><![CDATA[<h2 id="多個直方圖疊加"><a href="#多個直方圖疊加" class="headerlink" title="多個直方圖疊加"></a>多個直方圖疊加</h2><ul>
+<li><code>histtype</code><ul>
+<li><code>bar</code>：傳統的 <code>bar</code> 形式圖，屬於同個 bin 不同的資料會肩並肩的橫向排列。</li>
+<li><code>barstacked</code>：<code>bar</code> 形式的，但是屬於同一個 bin 的不同資料會直接往上疊加。</li>
+<li><code>step</code>：只有階梯的框架線，沒有填滿顏色。</li>
+<li><code>stepfilled</code>：這是預設方法，除了階梯式之外在加上填滿色彩。</li>
+</ul>
+</li>
+</ul>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+
+np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>seed<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+n_bins <span class="token operator">=</span> <span class="token number">10</span>
+x <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+
+fig <span class="token operator">=</span> plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span><span class="token punctuation">)</span>
+axes <span class="token operator">=</span> fig<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+colors <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'pink'</span><span class="token punctuation">,</span> <span class="token string">'blue'</span><span class="token punctuation">,</span> <span class="token string">'lime'</span><span class="token punctuation">]</span>
+
+ax <span class="token operator">=</span> axes<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+ax<span class="token punctuation">.</span>hist<span class="token punctuation">(</span>x<span class="token punctuation">,</span> n_bins<span class="token punctuation">,</span> histtype<span class="token operator">=</span><span class="token string">'bar'</span><span class="token punctuation">,</span> color<span class="token operator">=</span>colors<span class="token punctuation">,</span> label<span class="token operator">=</span>colors<span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">'histtype bar'</span><span class="token punctuation">)</span>
+
+ax <span class="token operator">=</span> axes<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+ax<span class="token punctuation">.</span>hist<span class="token punctuation">(</span>x<span class="token punctuation">,</span> n_bins<span class="token punctuation">,</span> histtype<span class="token operator">=</span><span class="token string">'barstacked'</span><span class="token punctuation">,</span> color<span class="token operator">=</span>colors<span class="token punctuation">,</span> label<span class="token operator">=</span>colors<span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">'histtype barstacked'</span><span class="token punctuation">)</span>
+
+ax <span class="token operator">=</span> axes<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
+ax<span class="token punctuation">.</span>hist<span class="token punctuation">(</span>x<span class="token punctuation">,</span> n_bins<span class="token punctuation">,</span> histtype<span class="token operator">=</span><span class="token string">'step'</span><span class="token punctuation">,</span> stacked<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> color<span class="token operator">=</span>colors<span class="token punctuation">,</span> label<span class="token operator">=</span>colors<span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">'histtype step, stack steps'</span><span class="token punctuation">)</span>
+
+ax <span class="token operator">=</span> axes<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span>
+ax<span class="token punctuation">.</span>hist<span class="token punctuation">(</span>x<span class="token punctuation">,</span> n_bins<span class="token punctuation">,</span> histtype<span class="token operator">=</span><span class="token string">'step'</span><span class="token punctuation">,</span> color<span class="token operator">=</span>colors<span class="token punctuation">,</span> label<span class="token operator">=</span>colors<span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">'histtype step'</span><span class="token punctuation">)</span>
+
+ax <span class="token operator">=</span> axes<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span>
+ax<span class="token punctuation">.</span>hist<span class="token punctuation">(</span>x<span class="token punctuation">,</span> n_bins<span class="token punctuation">,</span> histtype<span class="token operator">=</span><span class="token string">'stepfilled'</span><span class="token punctuation">,</span> color<span class="token operator">=</span>colors<span class="token punctuation">,</span> label<span class="token operator">=</span>colors<span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">'histtype stepfilled'</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+
+<p><img src="https://i.imgur.com/tB4vKCK.jpeg" alt="matplotlib histtype"></p>
+<h2 id="圖例集合"><a href="#圖例集合" class="headerlink" title="圖例集合"></a>圖例集合</h2><p>當兩分資料想要放在一起比較，尺度卻又相差過大時常常會使用副軸 <code>ax.twinx()</code>，但是副軸上的圖例會被分開。若想要合併圖例，需要手動指定 <code>legend</code> 函式內的內容。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+
+fig <span class="token operator">=</span> plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dpi<span class="token operator">=</span><span class="token number">80</span><span class="token punctuation">)</span>
+axes <span class="token operator">=</span> fig<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+colors <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'pink'</span><span class="token punctuation">,</span> <span class="token string">'skyblue'</span><span class="token punctuation">,</span> <span class="token string">'lime'</span><span class="token punctuation">]</span>
+ax <span class="token operator">=</span> axes<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+ax<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">10</span><span class="token operator">+</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> color<span class="token operator">=</span>colors<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"data 1"</span><span class="token punctuation">)</span>
+ax_sub <span class="token operator">=</span> ax<span class="token punctuation">.</span>twinx<span class="token punctuation">(</span><span class="token punctuation">)</span>
+ax_sub<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.1</span><span class="token punctuation">)</span><span class="token operator">+</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> color<span class="token operator">=</span>colors<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"data 2"</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span>
+ax_sub<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">"No secondary axis legend"</span><span class="token punctuation">)</span>
+
+ax <span class="token operator">=</span> axes<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+ax_sub <span class="token operator">=</span> ax<span class="token punctuation">.</span>twinx<span class="token punctuation">(</span><span class="token punctuation">)</span>
+plist <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+plist <span class="token operator">+=</span> ax<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">10</span><span class="token operator">+</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> color<span class="token operator">=</span>colors<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"data 1"</span><span class="token punctuation">)</span>
+plist <span class="token operator">+=</span> ax_sub<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.1</span><span class="token punctuation">)</span><span class="token operator">+</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> color<span class="token operator">=</span>colors<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"data 2"</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>legend<span class="token punctuation">(</span>plist<span class="token punctuation">,</span> <span class="token punctuation">[</span>p<span class="token punctuation">.</span>get_label<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">for</span> p <span class="token keyword">in</span> plist<span class="token punctuation">]</span><span class="token punctuation">,</span> loc<span class="token operator">=</span><span class="token string">"best"</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">"Both axis legends"</span><span class="token punctuation">)</span>
+fig<span class="token punctuation">.</span>savefig<span class="token punctuation">(</span><span class="token string">"AxisLegends.jpg"</span><span class="token punctuation">)</span></code></pre>
+
+<p><img src="https://i.imgur.com/pSvuVHf.jpeg" alt="將圖例集合顯示"></p>
+<p>範例中使用 <code>plist</code> 匯集所有的繪圖物件，但需要注意繪圖物件回傳的形式為何。Scatter 回傳的是單純繪圖物件，plot 回傳的則是一個包含繪圖物件的 list ，要視情況將物件蒐集進 <code>plist</code>，選擇用 <code>plist.append(xxx)</code> 或是 <code>plist.extend(xxx)</code></p>
+<pre class="language-none"><code class="language-none">In [196]: ax.scatter(np.ones(10), np.random.rand(10))
+Out[196]: &lt;matplotlib.collections.PathCollection at 0x207bc23ad08&gt;
+
+In [197]: ax.plot(np.arange(0, 10, 0.1)&#x2F;10+np.random.rand(100), color&#x3D;colors[0], label&#x3D;&quot;data 1&quot;)        
+Out[197]: [&lt;matplotlib.lines.Line2D at 0x207bca2c248&gt;]</code></pre>
+
+
+
+<h2 id="Break-The-axis"><a href="#Break-The-axis" class="headerlink" title="Break The axis"></a><a href="https://matplotlib.org/3.1.0/gallery/subplots_axes_and_figures/broken_axis.html" title="Broken Axis (matplotlib)">Break The axis</a></h2><p>這裡先根據 matplotlib 的教學繪製了這種可以跳躍部份數值的圖：</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>gridspec <span class="token keyword">as</span> gridspec
+
+fig <span class="token operator">=</span> plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dpi<span class="token operator">=</span><span class="token number">80</span><span class="token punctuation">)</span>
+gs <span class="token operator">=</span> gridspec<span class="token punctuation">.</span>GridSpec<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 畫同一張</span>
+ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> 
+data1 <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">10</span><span class="token operator">+</span>np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+data2 <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">5</span>
+ax<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>data1<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> data1<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">"b"</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>data2<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> data2<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">"orange"</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">"Plot in 1 graph"</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token string">"x-large"</span><span class="token punctuation">)</span>
+
+<span class="token comment"># 切割不同張</span>
+ax_up <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+ax_bot <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> sharex<span class="token operator">=</span>ax_up<span class="token punctuation">)</span>
+ax_up<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>data1<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> data1<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">"b"</span><span class="token punctuation">)</span>
+ax_bot<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>data2<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> data2<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">"orange"</span><span class="token punctuation">)</span>
+
+ax_up<span class="token punctuation">.</span>spines<span class="token punctuation">[</span><span class="token string">'bottom'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>set_visible<span class="token punctuation">(</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+ax_bot<span class="token punctuation">.</span>spines<span class="token punctuation">[</span><span class="token string">'top'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>set_visible<span class="token punctuation">(</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+ax_up<span class="token punctuation">.</span>xaxis<span class="token punctuation">.</span>tick_top<span class="token punctuation">(</span><span class="token punctuation">)</span>
+ax_up<span class="token punctuation">.</span>tick_params<span class="token punctuation">(</span>labeltop<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>  <span class="token comment"># don't put tick labels at the top</span>
+ax_bot<span class="token punctuation">.</span>xaxis<span class="token punctuation">.</span>tick_bottom<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+d <span class="token operator">=</span> <span class="token number">.015</span>  
+kwargs <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span>transform<span class="token operator">=</span>ax_up<span class="token punctuation">.</span>transAxes<span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">'k'</span><span class="token punctuation">,</span> clip_on<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+ax_up<span class="token punctuation">.</span>plot<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">-</span>d<span class="token punctuation">,</span> <span class="token operator">+</span>d<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token operator">-</span>d<span class="token punctuation">,</span> <span class="token operator">+</span>d<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span>        <span class="token comment"># top-left diagonal</span>
+ax_up<span class="token punctuation">.</span>plot<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> d<span class="token punctuation">,</span> <span class="token number">1</span> <span class="token operator">+</span> d<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token operator">-</span>d<span class="token punctuation">,</span> <span class="token operator">+</span>d<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span>  <span class="token comment"># top-right diagonal</span>
+
+kwargs<span class="token punctuation">.</span>update<span class="token punctuation">(</span>transform<span class="token operator">=</span>ax_bot<span class="token punctuation">.</span>transAxes<span class="token punctuation">)</span>  <span class="token comment"># switch to the bottom axes</span>
+ax_bot<span class="token punctuation">.</span>plot<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">-</span>d<span class="token punctuation">,</span> <span class="token operator">+</span>d<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> d<span class="token punctuation">,</span> <span class="token number">1</span> <span class="token operator">+</span> d<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span>  <span class="token comment"># bottom-left diagonal</span>
+ax_bot<span class="token punctuation">.</span>plot<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> d<span class="token punctuation">,</span> <span class="token number">1</span> <span class="token operator">+</span> d<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> d<span class="token punctuation">,</span> <span class="token number">1</span> <span class="token operator">+</span> d<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span>  <span class="token comment"># bottom-right diagonal</span>
+ax_up<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">"Plot in broken axis"</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token string">"x-large"</span><span class="token punctuation">)</span>
+plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+
+<p><img src="https://i.imgur.com/1jZK1wb.jpeg" alt="切割軸"></p>
+<p>其實原始的套件並不好用，網路上有一個 <a href="https://pypi.org/project/brokenaxes/">brokenaxes</a> 的套件，能讓我們更輕鬆的達成這件事情。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> brokenaxes <span class="token keyword">import</span> brokenaxes 
+fig <span class="token operator">=</span> plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dpi<span class="token operator">=</span><span class="token number">80</span><span class="token punctuation">)</span> 
+baxes <span class="token operator">=</span> brokenaxes<span class="token punctuation">(</span>xlims<span class="token operator">=</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">0.001</span><span class="token punctuation">,</span> <span class="token number">5.001</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">99</span><span class="token punctuation">,</span> <span class="token number">111</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> ylims<span class="token operator">=</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">0.001</span><span class="token punctuation">,</span> <span class="token number">5.001</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">99</span><span class="token punctuation">,</span> <span class="token number">111</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> hspace<span class="token operator">=</span><span class="token number">.1</span><span class="token punctuation">)</span> 
+
+data1 <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">10</span><span class="token operator">+</span>np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+data2 <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">5</span>
+baxes<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>data1<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> data1<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">"b"</span><span class="token punctuation">)</span>
+baxes<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>data2<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> data2<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">"orange"</span><span class="token punctuation">)</span>
+fig<span class="token punctuation">.</span>savefig<span class="token punctuation">(</span><span class="token string">"brokenaxes_pkg.jpg"</span><span class="token punctuation">)</span></code></pre>
+
+<p><img src="https://i.imgur.com/F9siwYf.jpeg" alt="切割軸在兩個維度上"></p>
+<h2 id="圖例移出繪圖"><a href="#圖例移出繪圖" class="headerlink" title="圖例移出繪圖"></a><a href="https://www.delftstack.com/zh-tw/howto/matplotlib/how-to-place-legend-outside-of-the-plot-in-matplotlib/" title="Matplotlib 中如何將圖例放置在繪圖之外">圖例移出繪圖</a></h2><pre class="language-python" data-language="python"><code class="language-python">ax<span class="token punctuation">.</span>legend<span class="token punctuation">(</span>bbox_to_anchor<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">1.05</span><span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> loc<span class="token operator">=</span><span class="token string">'upper left'</span><span class="token punctuation">)</span></code></pre>
+
+<p>但需要注意，將圖例移出繪圖之後，圖例很容易被切掉。我自己是在環境有寫 matplotlibrc 檔案，裡面有設置自動調整版面 :</p>
+<pre class="language-none"><code class="language-none">figure.autolayout: True</code></pre>
+
+<p>如果沒有寫 matplotlibrc ，要記得對繪圖做 <code>fig.tightlayout()</code></p>
+<h2 id="假色圖"><a href="#假色圖" class="headerlink" title="假色圖"></a>假色圖</h2><pre class="language-python" data-language="python"><code class="language-python">data1 <span class="token operator">=</span> np<span class="token punctuation">.</span>repeat<span class="token punctuation">(</span>np<span class="token punctuation">.</span>sin<span class="token punctuation">(</span>np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
+pc <span class="token operator">=</span> ax<span class="token punctuation">.</span>pcolor<span class="token punctuation">(</span>data1<span class="token punctuation">.</span>T<span class="token punctuation">,</span> cmap<span class="token operator">=</span>plt<span class="token punctuation">.</span>cm<span class="token punctuation">.</span>Blues<span class="token punctuation">,</span> vmin<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> vmax<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+ax<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">"Sin"</span><span class="token punctuation">)</span>
+fig<span class="token punctuation">.</span>colorbar<span class="token punctuation">(</span>pc<span class="token punctuation">,</span> ax<span class="token operator">=</span>ax<span class="token punctuation">,</span> orientation<span class="token operator">=</span><span class="token string">"horizontal"</span><span class="token punctuation">)</span></code></pre>
+
+<p>在下圖一併展示</p>
+<h2 id="熱力圖"><a href="#熱力圖" class="headerlink" title="熱力圖"></a>熱力圖</h2><pre class="language-python" data-language="python"><code class="language-python">x <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+y <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
+heatmap<span class="token punctuation">,</span> xedges<span class="token punctuation">,</span> yedges <span class="token operator">=</span> np<span class="token punctuation">.</span>histogram2d<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> bins<span class="token operator">=</span><span class="token number">1000</span><span class="token punctuation">)</span>
+heatmap <span class="token operator">=</span> gaussian_filter<span class="token punctuation">(</span>heatmap<span class="token punctuation">,</span> sigma<span class="token operator">=</span><span class="token number">16</span><span class="token punctuation">)</span>
+extent <span class="token operator">=</span> <span class="token punctuation">[</span>xedges<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> xedges<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> yedges<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> yedges<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+img <span class="token operator">=</span> heatmap<span class="token punctuation">.</span>T
+pc <span class="token operator">=</span> ax<span class="token punctuation">.</span>imshow<span class="token punctuation">(</span>img<span class="token punctuation">,</span> extent<span class="token operator">=</span>extent<span class="token punctuation">,</span> origin<span class="token operator">=</span><span class="token string">'lower'</span><span class="token punctuation">,</span> cmap<span class="token operator">=</span>cm<span class="token punctuation">.</span>jet<span class="token punctuation">,</span><span class="token punctuation">)</span>
+fig<span class="token punctuation">.</span>colorbar<span class="token punctuation">(</span>pc<span class="token punctuation">,</span> ax<span class="token operator">=</span>ax<span class="token punctuation">,</span> orientation<span class="token operator">=</span><span class="token string">"horizontal"</span><span class="token punctuation">,</span> <span class="token punctuation">)</span></code></pre>
+
+<p>Heatmap 的程式碼參考: <a href="https://stackoverflow.com/questions/2369492/generate-a-heatmap-in-matplotlib-using-a-scatter-data-set" title="熱力圖">Generate a heatmap in MatPlotLib using a scatter data set</a></p>
+<p><img src="https://i.imgur.com/F1yQcLB.jpeg" alt="Heatmap 的展示與圖移出圖例"></p>
+<hr>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>visualize</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python 日誌模組 Logging (2) 細探官方文件</title>
+    <url>/posts/2022-01-22-python-logging-advance.html</url>
+    <content><![CDATA[<p>Logging 模組中主要就是這四種物件：</p>
+<ul>
+<li>Loggers : 提供直接讓其他應用程式使用的接口 (expose the interface that application code directly uses)</li>
+<li>Handlers : 發送日誌紀錄到適合的目標地點，像是檔案、stdout、甚至 Qt GUI 等等。</li>
+<li>Formatters : 輸出的格式。</li>
+<li>Filters : 過濾器，決定哪些日誌訊息可以傳到輸出。</li>
+</ul>
+<h2 id="Loggers"><a href="#Loggers" class="headerlink" title="Loggers"></a><a href="https://docs.python.org/3/howto/logging.html#advanced-logging-tutorial">Loggers</a></h2><p>logger 負責三個工作</p>
+<ol>
+<li>暴露一些方法讓應用程式去調用，在執行期間(runtime) 中紀錄訊息。</li>
+<li>根據嚴重性或 filter 物件，決定讓那些訊息要傳遞出去。<ul>
+<li>預設的過濾條件就是根據嚴重性(severity)</li>
+</ul>
+</li>
+<li>將相關的日誌訊息傳遞到相關的 log handlers 手上。</li>
+</ol>
+<h3 id="常用的方法"><a href="#常用的方法" class="headerlink" title="常用的方法"></a>常用的方法</h3><ul>
+<li><code>Logger.setLevel()</code> : 設定嚴重性的 threshold 。</li>
+<li><code>Logger.addHandler()</code> , <code>Logger.removeHandler()</code> : 新增或移除 handler.</li>
+<li><code>Logger.addFilter()</code> ,<code>Logger.removeFilter()</code> : 新增或移除 Filter，</li>
+</ul>
+<p>每當 logger 物件被創建時，下面的函數會自動配置產生：</p>
+<ul>
+<li><p><code>Logger.debug()</code>, <code>Logger.info()</code>, <code>Logger.warning()</code>, <code>Logger.error()</code>, <code>Logger.critical() </code>：括號裡面填寫要傳入的日誌訊息， <strong>必須是 string 形式</strong>，剩下的一些參數可以透過 <code>**kwargs</code> 傳入 (ex. <code>exc_info</code>… )</p>
+<ul>
+<li><p>當紀錄的訊息是從 print 轉過來的時候要注意，所有的訊息要寫在同一條 string 裡面：</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"var1=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>var1<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">,</span> <span class="token string-interpolation"><span class="token string">f"var2=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>var2<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+logger<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"var1=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>var1<span class="token punctuation">&#125;</span></span><span class="token string">; var2=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>var2<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span></code></pre>
+
+<p>如果像 print 一樣兩個 string 放不同位置，第二個位置的字串會被當作其他參數，必須要改成只有一條 string。</p>
+</li>
+</ul>
+</li>
+<li><p><code>Logger.exception() </code> : 一個很像 <code>Logger.error()</code> 模式的 logger 方法，不同的是它會<strong>追蹤例外發生的紀錄(traceback)</strong> (dumps a stack trace along with it)，這只應該在例外處理中 (exception handler) 使用。</p>
+</li>
+<li><p><code>Logger.log(level:int, msg: str)</code> : 除非是用到 <strong>自訂的訊息等級</strong> ，它的效果跟第一點的一樣，但是更加的冗長，沒事可以不要用。</p>
+</li>
+</ul>
+<h3 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h3><ol>
+<li><p><code>getLogger()</code> 回傳的是「和輸入名稱相同的 logger 實例的 reference」，如果沒有指定，則回傳 logger實例名字為 <code>root</code> reference。</p>
+</li>
+<li><p>名稱如之前所提，有上下的層級架構關係</p>
+</li>
+<li><p>用相同的名稱 呼叫 <a href="https://docs.python.org/3/library/logging.html#logging.getLogger"><code>getLogger()</code></a> 得到的是 reference :arrow_right: 都參考至相同物件名稱的 logger 物件。</p>
+<pre class="language-python" data-language="python"><code class="language-python">logger1 <span class="token operator">=</span> logging<span class="token punctuation">.</span>get_logger<span class="token punctuation">(</span><span class="token string">"aaa"</span><span class="token punctuation">)</span>
+logger2 <span class="token operator">=</span> logging<span class="token punctuation">.</span>get_logger<span class="token punctuation">(</span><span class="token string">"aaa"</span><span class="token punctuation">)</span> 
+<span class="token builtin">id</span><span class="token punctuation">(</span>logger1<span class="token punctuation">)</span><span class="token operator">==</span><span class="token builtin">id</span><span class="token punctuation">(</span>logger2<span class="token punctuation">)</span> <span class="token comment"># True</span>
+
+<span class="token comment"># 兩條呼叫到的會是同一個 logger 物件：名為 'aaa' 的 logger object. </span></code></pre></li>
+<li><p>嚴重性等級的定義：Logger 能接受的訊息等級受到其父代所影響</p>
+<ol>
+<li>如果自己的等級沒有另外定義，會使用父代所定義的訊息嚴重性等級。</li>
+<li>如果父代沒有定義，會再往上使用「父代的父代」，往上追朔祖先直到有找到清楚的等級定義 (explicitly set level )</li>
+<li>root logger 必然會有一個很清楚的等級定義 (預設是 <code>warning</code>) </li>
+</ol>
+</li>
+<li><p>Logger 所定義能通過的訊息等級，會影響到是否能傳遞到旗下的 handler：</p>
+<ul>
+<li>如果在 logger 上定義通過 warning (30)，卻在 handler 定義等級 info (20) 就能紀錄，那這樣實際紀錄下來的也只會有 warning 以上的訊息，因為低於 warning 的根本進不來這個 logger 的手上。</li>
+</ul>
+</li>
+<li><p>不需要為每個logger 都定義 handler，只要對 root logger 做。</p>
+<ul>
+<li>由於 child logger 的訊息會往上傳遞，所以只需要在上層的 logger 設置即可。</li>
+<li>但是也可以把往上傳遞的功能關掉：參數 <code>propagate=False</code> </li>
+</ul>
+</li>
+</ol>
+<h2 id="Handlers"><a href="#Handlers" class="headerlink" title="Handlers"></a><a href="https://docs.python.org/3/howto/logging.html#handlers">Handlers</a></h2><p>Handler 物件基於所設定的訊息嚴重等級，將日誌訊息派到<strong>對應的目的地</strong>，像是 stdout。Logger 物件對於 handler 的數量沒什麼限制，可以不加、也可以加很多個。光是官方提供的 handler 就多達 10 個以上，常見的輸出到 std out、輸出到檔案、連接到 Socket、傳遞到 http (<code>Get</code>, <code>POST</code>)、送到 <code>Queue</code>…等等。我也實做過把 logger 直接連動到 Qt GUI 的文字板上面過，不用另外從核心程式拉一條線到前端的 GUI，直接利用現有的 logger 即可非常方便！</p>
+<p>Handler 幾乎沒什麼方法可以調用，與其相關的主要是這幾個方法：</p>
+<ul>
+<li><p><code>Logger.addHandler(hdlr)</code></p>
+<ul>
+<li>舉例說明：目標是 (1) 將所有 log 寫進 log file  (2) 所有高於 error 的 msg 丟到 <code>stdout</code> (3)所有 critical 等級的寄信寄出去。一共 3個獨立的 handler 負責做各自的事情。所以需要添加三個不同的 handlers，呼應各自要寄送訊息的目的，還有寄送出去的信息等級。</li>
+<li>標準的library 有提供 <a href="https://docs.python.org/3/howto/logging.html#useful-handlers">很多 handlers</a>，最常用的是 <a href="https://docs.python.org/3/library/logging.handlers.html#logging.StreamHandler"><code>StreamHandler</code></a> 和<a href="https://docs.python.org/3/library/logging.handlers.html#logging.FileHandler"><code>FileHandler</code></a>。</li>
+</ul>
+</li>
+<li><p><code>setLevel </code>：handler 也有 <code>setLevel()</code> 方法，和前面的 <code>setLevel</code> 不同</p>
+<ul>
+<li><code>logger.setLevel()</code> 設定的是哪些嚴重性的訊息可以<strong>被傳送到</strong> handlers，而 <code>handler.setLevel()</code>則是決定哪些程度的訊息<strong>可以被派遣到要目的地 (ex. write to file )</strong></li>
+</ul>
+</li>
+<li><p><code>setFormatter()</code>：設定 handler 把訊息傳到目的地時候的訊息格式。</p>
+</li>
+<li><p><code>addFilter()</code> and <code>removeFilter()</code>：配置和移除 filter 於handler 物件。</p>
+</li>
+</ul>
+<h2 id="Formatters"><a href="#Formatters" class="headerlink" title="Formatters"></a><a href="https://docs.python.org/3/howto/logging.html#formatters">Formatters</a></h2><p>決定訊息的格式，有三個可選擇擇的參數：</p>
+<ol>
+<li>訊息字串格式字串 <code>fmt</code>：可調用的一些屬性變數參見 <a href="https://docs.python.org/3.7/library/logging.html#logrecord-attributes">LogRecord attributes</a></li>
+<li>日期格式字串 <code>datefmt</code>: 預設使用  <a href="https://docs.python.org/3/library/time.html#time.localtime"><code>time.localtime()</code></a> 打下時間戳，預設的格式為 <code>%Y-%m-%d %H:%M:%S</code></li>
+<li>style indicator：撰寫模式的提取符號，預設是 <code>%</code>，可修改成 <code>&#123;</code> 或 <code>$</code>。參考不同的 style-indicator 所對應的 formatter 撰寫模式： <pre class="language-python" data-language="python"><code class="language-python">logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'%(asctime)s - %(message)s'</span><span class="token punctuation">,</span> style<span class="token operator">=</span><span class="token string">'%'</span><span class="token punctuation">)</span>
+logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'$(asctime)s - $(message)s'</span><span class="token punctuation">,</span> style<span class="token operator">=</span><span class="token string">'$'</span><span class="token punctuation">)</span>
+logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'&#123;asctime&#125; - &#123;message&#125;'</span><span class="token punctuation">,</span> style<span class="token operator">=</span><span class="token string">'&#123;'</span><span class="token punctuation">)</span></code></pre></li>
+</ol>
+<p>最後舉個例子：</p>
+<pre class="language-python" data-language="python"><code class="language-python">formatter <span class="token operator">=</span> logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'%(asctime)s - %(name)s - %(levelname)s : %(message)s'</span><span class="token punctuation">)</span></code></pre>
+
+<ul>
+<li><code>message</code>：應用程式傳入的日誌訊息</li>
+<li><code>asctime</code>, <code>name</code>, <code>levelname</code>： <a href="https://docs.python.org/3.7/library/logging.html#logrecord-attributes">LogRecord attributes</a> 中所提供可以調用的屬性，分別表示時間、哪個 logger (名稱) 傳入的、訊息等級名稱。</li>
+</ul>
+<h2 id="Filters"><a href="#Filters" class="headerlink" title="Filters"></a><a href="https://docs.python.org/3/library/logging.html#filter-objects">Filters</a></h2><ul>
+<li><p>用在 handler 和 logger 上，提供比「訊息緊急程度層級」更細節的過濾規則</p>
+</li>
+<li><p>最基本，不用實做改寫的 filter，提供以「logger 階層等級」過濾的方法：只能通過<strong>低於自己的層級</strong>。例如 : 設定<code>A.B</code> ，則只會通過 logger <code>A.B</code>, <code>A.B.C</code>, <code>A.B.D</code>…</p>
+<pre class="language-python" data-language="python"><code class="language-python">f <span class="token operator">=</span> logging<span class="token punctuation">.</span>Filter<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"A.B"</span><span class="token punctuation">)</span></code></pre>
+
+<p>代表 “A.B” 以下(包含)層級的 logger 事件訊息可以通過這個過濾器。</p>
+</li>
+<li><p>如果以空白字串初始化，則所有的事件都可以通過。</p>
+</li>
+<li><p>Filter 必須在 log 事件已經被傳送到 handler 前先附加在 handler 上面，才能起過濾的作用。(反正就是一開始先設定好就對了 = = )</p>
+</li>
+</ul>
+<p>預設功能只是基本的，也可以自己設計規則來決定哪些訊息可以通過。想自訂過濾器要做的事情是：</p>
+<ol>
+<li>實作一個 <code>logging.Filter</code> 類別，並實作其 <code>filter</code> 方法</li>
+<li>把這個客製化 filter 實例化後，用 <code>.addFilter()</code> 加到 logger 或 handler </li>
+</ol>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token comment"># 稍微用code表示上面的條列項目</span>
+<span class="token keyword">import</span> logging
+
+<span class="token keyword">class</span> <span class="token class-name">CustomFilter</span><span class="token punctuation">(</span>logging<span class="token punctuation">.</span>Filter<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">filter</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> record<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># 實作過濾規則 </span>
+        <span class="token keyword">return</span> <span class="token boolean">True</span> <span class="token comment"># 要 return True 才代表信息被保留</span>
+
+logging<span class="token punctuation">.</span>basicConfig<span class="token punctuation">(</span>level<span class="token operator">=</span>logging<span class="token punctuation">.</span>INFO<span class="token punctuation">)</span>
+logger <span class="token operator">=</span> logging<span class="token punctuation">.</span>getLogger<span class="token punctuation">(</span><span class="token punctuation">)</span>
+f <span class="token operator">=</span> CustomFilter<span class="token punctuation">(</span><span class="token punctuation">)</span>logger<span class="token punctuation">.</span>addFilter<span class="token punctuation">(</span>f<span class="token punctuation">)</span></code></pre>
+
+<p>舉例而言，一個過濾敏感資料的自定義 Filter 範例 <a href="https://gist.github.com/acdha/9238791">https://gist.github.com/acdha/9238791</a></p>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>官方文件</tag>
+        <tag>logging</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python 日誌模組 Logging (1) 建立一個基礎 logger 模板!</title>
     <url>/posts/2022-01-20-python-logger-quick.html</url>
     <content><![CDATA[<p>在開發 Python 專案時，是否經歷過一種狀況：在測試的時候需要不斷輸出一些資訊以便觀察狀態，但在正式上線之後又不須要這些東西輸入。有可能是不想給使用者看到，也有可能是不斷 print out 會造成某些阻塞。<br>當開發版與上線版之間在切換時，最樸實無華的作法就是打開程式，一行行的把 Print 註解掉，但這顯然非常的沒有效率。</p>
@@ -982,316 +1449,6 @@ WARNING:And this, too
         <tag>python</tag>
         <tag>官方文件</tag>
         <tag>logging</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python 日誌模組 Logging (2) 細探官方文件</title>
-    <url>/posts/2022-01-22-python-logging-advance.html</url>
-    <content><![CDATA[<p>Logging 模組中主要就是這四種物件：</p>
-<ul>
-<li>Loggers : 提供直接讓其他應用程式使用的接口 (expose the interface that application code directly uses)</li>
-<li>Handlers : 發送日誌紀錄到適合的目標地點，像是檔案、stdout、甚至 Qt GUI 等等。</li>
-<li>Formatters : 輸出的格式。</li>
-<li>Filters : 過濾器，決定哪些日誌訊息可以傳到輸出。</li>
-</ul>
-<h2 id="Loggers"><a href="#Loggers" class="headerlink" title="Loggers"></a><a href="https://docs.python.org/3/howto/logging.html#advanced-logging-tutorial">Loggers</a></h2><p>logger 負責三個工作</p>
-<ol>
-<li>暴露一些方法讓應用程式去調用，在執行期間(runtime) 中紀錄訊息。</li>
-<li>根據嚴重性或 filter 物件，決定讓那些訊息要傳遞出去。<ul>
-<li>預設的過濾條件就是根據嚴重性(severity)</li>
-</ul>
-</li>
-<li>將相關的日誌訊息傳遞到相關的 log handlers 手上。</li>
-</ol>
-<h3 id="常用的方法"><a href="#常用的方法" class="headerlink" title="常用的方法"></a>常用的方法</h3><ul>
-<li><code>Logger.setLevel()</code> : 設定嚴重性的 threshold 。</li>
-<li><code>Logger.addHandler()</code> , <code>Logger.removeHandler()</code> : 新增或移除 handler.</li>
-<li><code>Logger.addFilter()</code> ,<code>Logger.removeFilter()</code> : 新增或移除 Filter，</li>
-</ul>
-<p>每當 logger 物件被創建時，下面的函數會自動配置產生：</p>
-<ul>
-<li><p><code>Logger.debug()</code>, <code>Logger.info()</code>, <code>Logger.warning()</code>, <code>Logger.error()</code>, <code>Logger.critical() </code>：括號裡面填寫要傳入的日誌訊息， <strong>必須是 string 形式</strong>，剩下的一些參數可以透過 <code>**kwargs</code> 傳入 (ex. <code>exc_info</code>… )</p>
-<ul>
-<li><p>當紀錄的訊息是從 print 轉過來的時候要注意，所有的訊息要寫在同一條 string 裡面：</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"var1=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>var1<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">,</span> <span class="token string-interpolation"><span class="token string">f"var2=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>var2<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
-logger<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"var1=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>var1<span class="token punctuation">&#125;</span></span><span class="token string">; var2=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>var2<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span></code></pre>
-
-<p>如果像 print 一樣兩個 string 放不同位置，第二個位置的字串會被當作其他參數，必須要改成只有一條 string。</p>
-</li>
-</ul>
-</li>
-<li><p><code>Logger.exception() </code> : 一個很像 <code>Logger.error()</code> 模式的 logger 方法，不同的是它會<strong>追蹤例外發生的紀錄(traceback)</strong> (dumps a stack trace along with it)，這只應該在例外處理中 (exception handler) 使用。</p>
-</li>
-<li><p><code>Logger.log(level:int, msg: str)</code> : 除非是用到 <strong>自訂的訊息等級</strong> ，它的效果跟第一點的一樣，但是更加的冗長，沒事可以不要用。</p>
-</li>
-</ul>
-<h3 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h3><ol>
-<li><p><code>getLogger()</code> 回傳的是「和輸入名稱相同的 logger 實例的 reference」，如果沒有指定，則回傳 logger實例名字為 <code>root</code> reference。</p>
-</li>
-<li><p>名稱如之前所提，有上下的層級架構關係</p>
-</li>
-<li><p>用相同的名稱 呼叫 <a href="https://docs.python.org/3/library/logging.html#logging.getLogger"><code>getLogger()</code></a> 得到的是 reference :arrow_right: 都參考至相同物件名稱的 logger 物件。</p>
-<pre class="language-python" data-language="python"><code class="language-python">logger1 <span class="token operator">=</span> logging<span class="token punctuation">.</span>get_logger<span class="token punctuation">(</span><span class="token string">"aaa"</span><span class="token punctuation">)</span>
-logger2 <span class="token operator">=</span> logging<span class="token punctuation">.</span>get_logger<span class="token punctuation">(</span><span class="token string">"aaa"</span><span class="token punctuation">)</span> 
-<span class="token builtin">id</span><span class="token punctuation">(</span>logger1<span class="token punctuation">)</span><span class="token operator">==</span><span class="token builtin">id</span><span class="token punctuation">(</span>logger2<span class="token punctuation">)</span> <span class="token comment"># True</span>
-
-<span class="token comment"># 兩條呼叫到的會是同一個 logger 物件：名為 'aaa' 的 logger object. </span></code></pre></li>
-<li><p>嚴重性等級的定義：Logger 能接受的訊息等級受到其父代所影響</p>
-<ol>
-<li>如果自己的等級沒有另外定義，會使用父代所定義的訊息嚴重性等級。</li>
-<li>如果父代沒有定義，會再往上使用「父代的父代」，往上追朔祖先直到有找到清楚的等級定義 (explicitly set level )</li>
-<li>root logger 必然會有一個很清楚的等級定義 (預設是 <code>warning</code>) </li>
-</ol>
-</li>
-<li><p>Logger 所定義能通過的訊息等級，會影響到是否能傳遞到旗下的 handler：</p>
-<ul>
-<li>如果在 logger 上定義通過 warning (30)，卻在 handler 定義等級 info (20) 就能紀錄，那這樣實際紀錄下來的也只會有 warning 以上的訊息，因為低於 warning 的根本進不來這個 logger 的手上。</li>
-</ul>
-</li>
-<li><p>不需要為每個logger 都定義 handler，只要對 root logger 做。</p>
-<ul>
-<li>由於 child logger 的訊息會往上傳遞，所以只需要在上層的 logger 設置即可。</li>
-<li>但是也可以把往上傳遞的功能關掉：參數 <code>propagate=False</code> </li>
-</ul>
-</li>
-</ol>
-<h2 id="Handlers"><a href="#Handlers" class="headerlink" title="Handlers"></a><a href="https://docs.python.org/3/howto/logging.html#handlers">Handlers</a></h2><p>Handler 物件基於所設定的訊息嚴重等級，將日誌訊息派到<strong>對應的目的地</strong>，像是 stdout。Logger 物件對於 handler 的數量沒什麼限制，可以不加、也可以加很多個。光是官方提供的 handler 就多達 10 個以上，常見的輸出到 std out、輸出到檔案、連接到 Socket、傳遞到 http (<code>Get</code>, <code>POST</code>)、送到 <code>Queue</code>…等等。我也實做過把 logger 直接連動到 Qt GUI 的文字板上面過，不用另外從核心程式拉一條線到前端的 GUI，直接利用現有的 logger 即可非常方便！</p>
-<p>Handler 幾乎沒什麼方法可以調用，與其相關的主要是這幾個方法：</p>
-<ul>
-<li><p><code>Logger.addHandler(hdlr)</code></p>
-<ul>
-<li>舉例說明：目標是 (1) 將所有 log 寫進 log file  (2) 所有高於 error 的 msg 丟到 <code>stdout</code> (3)所有 critical 等級的寄信寄出去。一共 3個獨立的 handler 負責做各自的事情。所以需要添加三個不同的 handlers，呼應各自要寄送訊息的目的，還有寄送出去的信息等級。</li>
-<li>標準的library 有提供 <a href="https://docs.python.org/3/howto/logging.html#useful-handlers">很多 handlers</a>，最常用的是 <a href="https://docs.python.org/3/library/logging.handlers.html#logging.StreamHandler"><code>StreamHandler</code></a> 和<a href="https://docs.python.org/3/library/logging.handlers.html#logging.FileHandler"><code>FileHandler</code></a>。</li>
-</ul>
-</li>
-<li><p><code>setLevel </code>：handler 也有 <code>setLevel()</code> 方法，和前面的 <code>setLevel</code> 不同</p>
-<ul>
-<li><code>logger.setLevel()</code> 設定的是哪些嚴重性的訊息可以<strong>被傳送到</strong> handlers，而 <code>handler.setLevel()</code>則是決定哪些程度的訊息<strong>可以被派遣到要目的地 (ex. write to file )</strong></li>
-</ul>
-</li>
-<li><p><code>setFormatter()</code>：設定 handler 把訊息傳到目的地時候的訊息格式。</p>
-</li>
-<li><p><code>addFilter()</code> and <code>removeFilter()</code>：配置和移除 filter 於handler 物件。</p>
-</li>
-</ul>
-<h2 id="Formatters"><a href="#Formatters" class="headerlink" title="Formatters"></a><a href="https://docs.python.org/3/howto/logging.html#formatters">Formatters</a></h2><p>決定訊息的格式，有三個可選擇擇的參數：</p>
-<ol>
-<li>訊息字串格式字串 <code>fmt</code>：可調用的一些屬性變數參見 <a href="https://docs.python.org/3.7/library/logging.html#logrecord-attributes">LogRecord attributes</a></li>
-<li>日期格式字串 <code>datefmt</code>: 預設使用  <a href="https://docs.python.org/3/library/time.html#time.localtime"><code>time.localtime()</code></a> 打下時間戳，預設的格式為 <code>%Y-%m-%d %H:%M:%S</code></li>
-<li>style indicator：撰寫模式的提取符號，預設是 <code>%</code>，可修改成 <code>&#123;</code> 或 <code>$</code>。參考不同的 style-indicator 所對應的 formatter 撰寫模式： <pre class="language-python" data-language="python"><code class="language-python">logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'%(asctime)s - %(message)s'</span><span class="token punctuation">,</span> style<span class="token operator">=</span><span class="token string">'%'</span><span class="token punctuation">)</span>
-logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'$(asctime)s - $(message)s'</span><span class="token punctuation">,</span> style<span class="token operator">=</span><span class="token string">'$'</span><span class="token punctuation">)</span>
-logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'&#123;asctime&#125; - &#123;message&#125;'</span><span class="token punctuation">,</span> style<span class="token operator">=</span><span class="token string">'&#123;'</span><span class="token punctuation">)</span></code></pre></li>
-</ol>
-<p>最後舉個例子：</p>
-<pre class="language-python" data-language="python"><code class="language-python">formatter <span class="token operator">=</span> logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'%(asctime)s - %(name)s - %(levelname)s : %(message)s'</span><span class="token punctuation">)</span></code></pre>
-
-<ul>
-<li><code>message</code>：應用程式傳入的日誌訊息</li>
-<li><code>asctime</code>, <code>name</code>, <code>levelname</code>： <a href="https://docs.python.org/3.7/library/logging.html#logrecord-attributes">LogRecord attributes</a> 中所提供可以調用的屬性，分別表示時間、哪個 logger (名稱) 傳入的、訊息等級名稱。</li>
-</ul>
-<h2 id="Filters"><a href="#Filters" class="headerlink" title="Filters"></a><a href="https://docs.python.org/3/library/logging.html#filter-objects">Filters</a></h2><ul>
-<li><p>用在 handler 和 logger 上，提供比「訊息緊急程度層級」更細節的過濾規則</p>
-</li>
-<li><p>最基本，不用實做改寫的 filter，提供以「logger 階層等級」過濾的方法：只能通過<strong>低於自己的層級</strong>。例如 : 設定<code>A.B</code> ，則只會通過 logger <code>A.B</code>, <code>A.B.C</code>, <code>A.B.D</code>…</p>
-<pre class="language-python" data-language="python"><code class="language-python">f <span class="token operator">=</span> logging<span class="token punctuation">.</span>Filter<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"A.B"</span><span class="token punctuation">)</span></code></pre>
-
-<p>代表 “A.B” 以下(包含)層級的 logger 事件訊息可以通過這個過濾器。</p>
-</li>
-<li><p>如果以空白字串初始化，則所有的事件都可以通過。</p>
-</li>
-<li><p>Filter 必須在 log 事件已經被傳送到 handler 前先附加在 handler 上面，才能起過濾的作用。(反正就是一開始先設定好就對了 = = )</p>
-</li>
-</ul>
-<p>預設功能只是基本的，也可以自己設計規則來決定哪些訊息可以通過。想自訂過濾器要做的事情是：</p>
-<ol>
-<li>實作一個 <code>logging.Filter</code> 類別，並實作其 <code>filter</code> 方法</li>
-<li>把這個客製化 filter 實例化後，用 <code>.addFilter()</code> 加到 logger 或 handler </li>
-</ol>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token comment"># 稍微用code表示上面的條列項目</span>
-<span class="token keyword">import</span> logging
-
-<span class="token keyword">class</span> <span class="token class-name">CustomFilter</span><span class="token punctuation">(</span>logging<span class="token punctuation">.</span>Filter<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">filter</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> record<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token comment"># 實作過濾規則 </span>
-        <span class="token keyword">return</span> <span class="token boolean">True</span> <span class="token comment"># 要 return True 才代表信息被保留</span>
-
-logging<span class="token punctuation">.</span>basicConfig<span class="token punctuation">(</span>level<span class="token operator">=</span>logging<span class="token punctuation">.</span>INFO<span class="token punctuation">)</span>
-logger <span class="token operator">=</span> logging<span class="token punctuation">.</span>getLogger<span class="token punctuation">(</span><span class="token punctuation">)</span>
-f <span class="token operator">=</span> CustomFilter<span class="token punctuation">(</span><span class="token punctuation">)</span>logger<span class="token punctuation">.</span>addFilter<span class="token punctuation">(</span>f<span class="token punctuation">)</span></code></pre>
-
-<p>舉例而言，一個過濾敏感資料的自定義 Filter 範例 <a href="https://gist.github.com/acdha/9238791">https://gist.github.com/acdha/9238791</a></p>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>官方文件</tag>
-        <tag>logging</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python 視覺化(2) matplotlib 進階繪圖</title>
-    <url>/posts/2022-01-27-python-visualize-advance.html</url>
-    <content><![CDATA[<h2 id="多個直方圖疊加"><a href="#多個直方圖疊加" class="headerlink" title="多個直方圖疊加"></a>多個直方圖疊加</h2><ul>
-<li><code>histtype</code><ul>
-<li><code>bar</code>：傳統的 <code>bar</code> 形式圖，屬於同個 bin 不同的資料會肩並肩的橫向排列。</li>
-<li><code>barstacked</code>：<code>bar</code> 形式的，但是屬於同一個 bin 的不同資料會直接往上疊加。</li>
-<li><code>step</code>：只有階梯的框架線，沒有填滿顏色。</li>
-<li><code>stepfilled</code>：這是預設方法，除了階梯式之外在加上填滿色彩。</li>
-</ul>
-</li>
-</ul>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
-<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
-
-np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>seed<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
-n_bins <span class="token operator">=</span> <span class="token number">10</span>
-x <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
-
-fig <span class="token operator">=</span> plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span><span class="token punctuation">)</span>
-axes <span class="token operator">=</span> fig<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
-colors <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'pink'</span><span class="token punctuation">,</span> <span class="token string">'blue'</span><span class="token punctuation">,</span> <span class="token string">'lime'</span><span class="token punctuation">]</span>
-
-ax <span class="token operator">=</span> axes<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-ax<span class="token punctuation">.</span>hist<span class="token punctuation">(</span>x<span class="token punctuation">,</span> n_bins<span class="token punctuation">,</span> histtype<span class="token operator">=</span><span class="token string">'bar'</span><span class="token punctuation">,</span> color<span class="token operator">=</span>colors<span class="token punctuation">,</span> label<span class="token operator">=</span>colors<span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">'histtype bar'</span><span class="token punctuation">)</span>
-
-ax <span class="token operator">=</span> axes<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
-ax<span class="token punctuation">.</span>hist<span class="token punctuation">(</span>x<span class="token punctuation">,</span> n_bins<span class="token punctuation">,</span> histtype<span class="token operator">=</span><span class="token string">'barstacked'</span><span class="token punctuation">,</span> color<span class="token operator">=</span>colors<span class="token punctuation">,</span> label<span class="token operator">=</span>colors<span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">'histtype barstacked'</span><span class="token punctuation">)</span>
-
-ax <span class="token operator">=</span> axes<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
-ax<span class="token punctuation">.</span>hist<span class="token punctuation">(</span>x<span class="token punctuation">,</span> n_bins<span class="token punctuation">,</span> histtype<span class="token operator">=</span><span class="token string">'step'</span><span class="token punctuation">,</span> stacked<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> color<span class="token operator">=</span>colors<span class="token punctuation">,</span> label<span class="token operator">=</span>colors<span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">'histtype step, stack steps'</span><span class="token punctuation">)</span>
-
-ax <span class="token operator">=</span> axes<span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span>
-ax<span class="token punctuation">.</span>hist<span class="token punctuation">(</span>x<span class="token punctuation">,</span> n_bins<span class="token punctuation">,</span> histtype<span class="token operator">=</span><span class="token string">'step'</span><span class="token punctuation">,</span> color<span class="token operator">=</span>colors<span class="token punctuation">,</span> label<span class="token operator">=</span>colors<span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">'histtype step'</span><span class="token punctuation">)</span>
-
-ax <span class="token operator">=</span> axes<span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">]</span>
-ax<span class="token punctuation">.</span>hist<span class="token punctuation">(</span>x<span class="token punctuation">,</span> n_bins<span class="token punctuation">,</span> histtype<span class="token operator">=</span><span class="token string">'stepfilled'</span><span class="token punctuation">,</span> color<span class="token operator">=</span>colors<span class="token punctuation">,</span> label<span class="token operator">=</span>colors<span class="token punctuation">,</span> alpha<span class="token operator">=</span><span class="token number">0.5</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">'histtype stepfilled'</span><span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
-
-<p><img src="https://i.imgur.com/tB4vKCK.jpeg" alt="matplotlib histtype"></p>
-<h2 id="圖例集合"><a href="#圖例集合" class="headerlink" title="圖例集合"></a>圖例集合</h2><p>當兩分資料想要放在一起比較，尺度卻又相差過大時常常會使用副軸 <code>ax.twinx()</code>，但是副軸上的圖例會被分開。若想要合併圖例，需要手動指定 <code>legend</code> 函式內的內容。</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
-<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
-
-fig <span class="token operator">=</span> plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dpi<span class="token operator">=</span><span class="token number">80</span><span class="token punctuation">)</span>
-axes <span class="token operator">=</span> fig<span class="token punctuation">.</span>subplots<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
-colors <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'pink'</span><span class="token punctuation">,</span> <span class="token string">'skyblue'</span><span class="token punctuation">,</span> <span class="token string">'lime'</span><span class="token punctuation">]</span>
-ax <span class="token operator">=</span> axes<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
-ax<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">10</span><span class="token operator">+</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> color<span class="token operator">=</span>colors<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"data 1"</span><span class="token punctuation">)</span>
-ax_sub <span class="token operator">=</span> ax<span class="token punctuation">.</span>twinx<span class="token punctuation">(</span><span class="token punctuation">)</span>
-ax_sub<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.1</span><span class="token punctuation">)</span><span class="token operator">+</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> color<span class="token operator">=</span>colors<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"data 2"</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span>
-ax_sub<span class="token punctuation">.</span>legend<span class="token punctuation">(</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">"No secondary axis legend"</span><span class="token punctuation">)</span>
-
-ax <span class="token operator">=</span> axes<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
-ax_sub <span class="token operator">=</span> ax<span class="token punctuation">.</span>twinx<span class="token punctuation">(</span><span class="token punctuation">)</span>
-plist <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-plist <span class="token operator">+=</span> ax<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">0.1</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">10</span><span class="token operator">+</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> color<span class="token operator">=</span>colors<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"data 1"</span><span class="token punctuation">)</span>
-plist <span class="token operator">+=</span> ax_sub<span class="token punctuation">.</span>plot<span class="token punctuation">(</span>np<span class="token punctuation">.</span>arange<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">90</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">0.1</span><span class="token punctuation">)</span><span class="token operator">+</span>np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> color<span class="token operator">=</span>colors<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> label<span class="token operator">=</span><span class="token string">"data 2"</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>legend<span class="token punctuation">(</span>plist<span class="token punctuation">,</span> <span class="token punctuation">[</span>p<span class="token punctuation">.</span>get_label<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">for</span> p <span class="token keyword">in</span> plist<span class="token punctuation">]</span><span class="token punctuation">,</span> loc<span class="token operator">=</span><span class="token string">"best"</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">"Both axis legends"</span><span class="token punctuation">)</span>
-fig<span class="token punctuation">.</span>savefig<span class="token punctuation">(</span><span class="token string">"AxisLegends.jpg"</span><span class="token punctuation">)</span></code></pre>
-
-<p><img src="https://i.imgur.com/pSvuVHf.jpeg" alt="將圖例集合顯示"></p>
-<p>範例中使用 <code>plist</code> 匯集所有的繪圖物件，但需要注意繪圖物件回傳的形式為何。Scatter 回傳的是單純繪圖物件，plot 回傳的則是一個包含繪圖物件的 list ，要視情況將物件蒐集進 <code>plist</code>，選擇用 <code>plist.append(xxx)</code> 或是 <code>plist.extend(xxx)</code></p>
-<pre class="language-none"><code class="language-none">In [196]: ax.scatter(np.ones(10), np.random.rand(10))
-Out[196]: &lt;matplotlib.collections.PathCollection at 0x207bc23ad08&gt;
-
-In [197]: ax.plot(np.arange(0, 10, 0.1)&#x2F;10+np.random.rand(100), color&#x3D;colors[0], label&#x3D;&quot;data 1&quot;)        
-Out[197]: [&lt;matplotlib.lines.Line2D at 0x207bca2c248&gt;]</code></pre>
-
-
-
-<h2 id="Break-The-axis"><a href="#Break-The-axis" class="headerlink" title="Break The axis"></a><a href="https://matplotlib.org/3.1.0/gallery/subplots_axes_and_figures/broken_axis.html" title="Broken Axis (matplotlib)">Break The axis</a></h2><p>這裡先根據 matplotlib 的教學繪製了這種可以跳躍部份數值的圖：</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
-<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
-<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>gridspec <span class="token keyword">as</span> gridspec
-
-fig <span class="token operator">=</span> plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dpi<span class="token operator">=</span><span class="token number">80</span><span class="token punctuation">)</span>
-gs <span class="token operator">=</span> gridspec<span class="token punctuation">.</span>GridSpec<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span>
-
-<span class="token comment"># 畫同一張</span>
-ax <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> 
-data1 <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">10</span><span class="token operator">+</span>np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-data2 <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">5</span>
-ax<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>data1<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> data1<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">"b"</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>data2<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> data2<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">"orange"</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">"Plot in 1 graph"</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token string">"x-large"</span><span class="token punctuation">)</span>
-
-<span class="token comment"># 切割不同張</span>
-ax_up <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-ax_bot <span class="token operator">=</span> plt<span class="token punctuation">.</span>subplot<span class="token punctuation">(</span>gs<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> sharex<span class="token operator">=</span>ax_up<span class="token punctuation">)</span>
-ax_up<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>data1<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> data1<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">"b"</span><span class="token punctuation">)</span>
-ax_bot<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>data2<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> data2<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">"orange"</span><span class="token punctuation">)</span>
-
-ax_up<span class="token punctuation">.</span>spines<span class="token punctuation">[</span><span class="token string">'bottom'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>set_visible<span class="token punctuation">(</span><span class="token boolean">False</span><span class="token punctuation">)</span>
-ax_bot<span class="token punctuation">.</span>spines<span class="token punctuation">[</span><span class="token string">'top'</span><span class="token punctuation">]</span><span class="token punctuation">.</span>set_visible<span class="token punctuation">(</span><span class="token boolean">False</span><span class="token punctuation">)</span>
-ax_up<span class="token punctuation">.</span>xaxis<span class="token punctuation">.</span>tick_top<span class="token punctuation">(</span><span class="token punctuation">)</span>
-ax_up<span class="token punctuation">.</span>tick_params<span class="token punctuation">(</span>labeltop<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>  <span class="token comment"># don't put tick labels at the top</span>
-ax_bot<span class="token punctuation">.</span>xaxis<span class="token punctuation">.</span>tick_bottom<span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-d <span class="token operator">=</span> <span class="token number">.015</span>  
-kwargs <span class="token operator">=</span> <span class="token builtin">dict</span><span class="token punctuation">(</span>transform<span class="token operator">=</span>ax_up<span class="token punctuation">.</span>transAxes<span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">'k'</span><span class="token punctuation">,</span> clip_on<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">)</span>
-ax_up<span class="token punctuation">.</span>plot<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">-</span>d<span class="token punctuation">,</span> <span class="token operator">+</span>d<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token operator">-</span>d<span class="token punctuation">,</span> <span class="token operator">+</span>d<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span>        <span class="token comment"># top-left diagonal</span>
-ax_up<span class="token punctuation">.</span>plot<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> d<span class="token punctuation">,</span> <span class="token number">1</span> <span class="token operator">+</span> d<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token operator">-</span>d<span class="token punctuation">,</span> <span class="token operator">+</span>d<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span>  <span class="token comment"># top-right diagonal</span>
-
-kwargs<span class="token punctuation">.</span>update<span class="token punctuation">(</span>transform<span class="token operator">=</span>ax_bot<span class="token punctuation">.</span>transAxes<span class="token punctuation">)</span>  <span class="token comment"># switch to the bottom axes</span>
-ax_bot<span class="token punctuation">.</span>plot<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">-</span>d<span class="token punctuation">,</span> <span class="token operator">+</span>d<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> d<span class="token punctuation">,</span> <span class="token number">1</span> <span class="token operator">+</span> d<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span>  <span class="token comment"># bottom-left diagonal</span>
-ax_bot<span class="token punctuation">.</span>plot<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> d<span class="token punctuation">,</span> <span class="token number">1</span> <span class="token operator">+</span> d<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">-</span> d<span class="token punctuation">,</span> <span class="token number">1</span> <span class="token operator">+</span> d<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span>  <span class="token comment"># bottom-right diagonal</span>
-ax_up<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">"Plot in broken axis"</span><span class="token punctuation">,</span> fontsize<span class="token operator">=</span><span class="token string">"x-large"</span><span class="token punctuation">)</span>
-plt<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
-
-<p><img src="https://i.imgur.com/1jZK1wb.jpeg" alt="切割軸"></p>
-<p>其實原始的套件並不好用，網路上有一個 <a href="https://pypi.org/project/brokenaxes/">brokenaxes</a> 的套件，能讓我們更輕鬆的達成這件事情。</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> brokenaxes <span class="token keyword">import</span> brokenaxes 
-fig <span class="token operator">=</span> plt<span class="token punctuation">.</span>figure<span class="token punctuation">(</span>figsize<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">,</span> dpi<span class="token operator">=</span><span class="token number">80</span><span class="token punctuation">)</span> 
-baxes <span class="token operator">=</span> brokenaxes<span class="token punctuation">(</span>xlims<span class="token operator">=</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">0.001</span><span class="token punctuation">,</span> <span class="token number">5.001</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">99</span><span class="token punctuation">,</span> <span class="token number">111</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> ylims<span class="token operator">=</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">0.001</span><span class="token punctuation">,</span> <span class="token number">5.001</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token number">99</span><span class="token punctuation">,</span> <span class="token number">111</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> hspace<span class="token operator">=</span><span class="token number">.1</span><span class="token punctuation">)</span> 
-
-data1 <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">10</span><span class="token operator">+</span>np<span class="token punctuation">.</span>array<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-data2 <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>rand<span class="token punctuation">(</span><span class="token number">25</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">*</span><span class="token number">5</span>
-baxes<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>data1<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> data1<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">"b"</span><span class="token punctuation">)</span>
-baxes<span class="token punctuation">.</span>scatter<span class="token punctuation">(</span>data2<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> data2<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> color<span class="token operator">=</span><span class="token string">"orange"</span><span class="token punctuation">)</span>
-fig<span class="token punctuation">.</span>savefig<span class="token punctuation">(</span><span class="token string">"brokenaxes_pkg.jpg"</span><span class="token punctuation">)</span></code></pre>
-
-<p><img src="https://i.imgur.com/F9siwYf.jpeg" alt="切割軸在兩個維度上"></p>
-<h2 id="圖例移出繪圖"><a href="#圖例移出繪圖" class="headerlink" title="圖例移出繪圖"></a><a href="https://www.delftstack.com/zh-tw/howto/matplotlib/how-to-place-legend-outside-of-the-plot-in-matplotlib/" title="Matplotlib 中如何將圖例放置在繪圖之外">圖例移出繪圖</a></h2><pre class="language-python" data-language="python"><code class="language-python">ax<span class="token punctuation">.</span>legend<span class="token punctuation">(</span>bbox_to_anchor<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">1.05</span><span class="token punctuation">,</span> <span class="token number">1.0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> loc<span class="token operator">=</span><span class="token string">'upper left'</span><span class="token punctuation">)</span></code></pre>
-
-<p>但需要注意，將圖例移出繪圖之後，圖例很容易被切掉。我自己是在環境有寫 matplotlibrc 檔案，裡面有設置自動調整版面 :</p>
-<pre class="language-none"><code class="language-none">figure.autolayout: True</code></pre>
-
-<p>如果沒有寫 matplotlibrc ，要記得對繪圖做 <code>fig.tightlayout()</code></p>
-<h2 id="假色圖"><a href="#假色圖" class="headerlink" title="假色圖"></a>假色圖</h2><pre class="language-python" data-language="python"><code class="language-python">data1 <span class="token operator">=</span> np<span class="token punctuation">.</span>repeat<span class="token punctuation">(</span>np<span class="token punctuation">.</span>sin<span class="token punctuation">(</span>np<span class="token punctuation">.</span>linspace<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>reshape<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">,</span> axis<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">)</span>
-pc <span class="token operator">=</span> ax<span class="token punctuation">.</span>pcolor<span class="token punctuation">(</span>data1<span class="token punctuation">.</span>T<span class="token punctuation">,</span> cmap<span class="token operator">=</span>plt<span class="token punctuation">.</span>cm<span class="token punctuation">.</span>Blues<span class="token punctuation">,</span> vmin<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">,</span> vmax<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
-ax<span class="token punctuation">.</span>set_title<span class="token punctuation">(</span><span class="token string">"Sin"</span><span class="token punctuation">)</span>
-fig<span class="token punctuation">.</span>colorbar<span class="token punctuation">(</span>pc<span class="token punctuation">,</span> ax<span class="token operator">=</span>ax<span class="token punctuation">,</span> orientation<span class="token operator">=</span><span class="token string">"horizontal"</span><span class="token punctuation">)</span></code></pre>
-
-<p>在下圖一併展示</p>
-<h2 id="熱力圖"><a href="#熱力圖" class="headerlink" title="熱力圖"></a>熱力圖</h2><pre class="language-python" data-language="python"><code class="language-python">x <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
-y <span class="token operator">=</span> np<span class="token punctuation">.</span>random<span class="token punctuation">.</span>randn<span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">)</span>
-heatmap<span class="token punctuation">,</span> xedges<span class="token punctuation">,</span> yedges <span class="token operator">=</span> np<span class="token punctuation">.</span>histogram2d<span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">,</span> bins<span class="token operator">=</span><span class="token number">1000</span><span class="token punctuation">)</span>
-heatmap <span class="token operator">=</span> gaussian_filter<span class="token punctuation">(</span>heatmap<span class="token punctuation">,</span> sigma<span class="token operator">=</span><span class="token number">16</span><span class="token punctuation">)</span>
-extent <span class="token operator">=</span> <span class="token punctuation">[</span>xedges<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> xedges<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> yedges<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> yedges<span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
-img <span class="token operator">=</span> heatmap<span class="token punctuation">.</span>T
-pc <span class="token operator">=</span> ax<span class="token punctuation">.</span>imshow<span class="token punctuation">(</span>img<span class="token punctuation">,</span> extent<span class="token operator">=</span>extent<span class="token punctuation">,</span> origin<span class="token operator">=</span><span class="token string">'lower'</span><span class="token punctuation">,</span> cmap<span class="token operator">=</span>cm<span class="token punctuation">.</span>jet<span class="token punctuation">,</span><span class="token punctuation">)</span>
-fig<span class="token punctuation">.</span>colorbar<span class="token punctuation">(</span>pc<span class="token punctuation">,</span> ax<span class="token operator">=</span>ax<span class="token punctuation">,</span> orientation<span class="token operator">=</span><span class="token string">"horizontal"</span><span class="token punctuation">,</span> <span class="token punctuation">)</span></code></pre>
-
-<p>Heatmap 的程式碼參考: <a href="https://stackoverflow.com/questions/2369492/generate-a-heatmap-in-matplotlib-using-a-scatter-data-set" title="熱力圖">Generate a heatmap in MatPlotLib using a scatter data set</a></p>
-<p><img src="https://i.imgur.com/F1yQcLB.jpeg" alt="Heatmap 的展示與圖移出圖例"></p>
-<hr>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>visualize</tag>
       </tags>
   </entry>
   <entry>
