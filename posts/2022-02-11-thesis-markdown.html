@@ -22,16 +22,16 @@
 
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"brainynight.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInUp","post_body":"fadeIn","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
-<meta name="description" content="以 Markdown 寫論文時的文獻、圖片引用管理，以及使用 pandoc 將 markdown 轉 doc 的操作。">
+<meta name="description" content="以 Markdown 寫論文時的文獻、圖片公式等地引用管理，以及使用 pandoc 將 markdown 轉 doc 的操作。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用 Markdown 寫論文">
 <meta property="og:url" content="https://brainynight.github.io/posts/2022-02-11-thesis-markdown">
 <meta property="og:site_name" content="Judy&#39;s Blog">
-<meta property="og:description" content="以 Markdown 寫論文時的文獻、圖片引用管理，以及使用 pandoc 將 markdown 轉 doc 的操作。">
+<meta property="og:description" content="以 Markdown 寫論文時的文獻、圖片公式等地引用管理，以及使用 pandoc 將 markdown 轉 doc 的操作。">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://brainynight.github.io/uploads/4example-footnote.webp">
 <meta property="article:published_time" content="2022-02-11T05:01:31.000Z">
-<meta property="article:modified_time" content="2022-02-11T16:59:20.802Z">
+<meta property="article:modified_time" content="2022-02-15T04:51:26.327Z">
 <meta property="article:author" content="Judy">
 <meta property="article:tag" content="blog">
 <meta property="article:tag" content="tool">
@@ -158,7 +158,7 @@
       <div class="sidebar-panel-container">
          
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-vs-Latex"><span class="nav-number">1.</span> <span class="nav-text">Markdown vs. Latex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PDF-%E7%94%9F%E6%88%90"><span class="nav-number">2.</span> <span class="nav-text">PDF 生成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E7%AE%A1%E7%90%86"><span class="nav-number">3.</span> <span class="nav-text">引用管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E7%8D%BB%E6%96%87%E4%BB%B6%EF%BC%9Abib-%E6%AA%94%E6%A1%88"><span class="nav-number">3.1.</span> <span class="nav-text">文獻文件：bib 檔案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%AB%E4%BD%9C%E6%96%87%E4%BB%B6%EF%BC%9Amd-%E6%AA%94%E6%A1%88"><span class="nav-number">3.2.</span> <span class="nav-text">寫作文件：md 檔案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E7%8D%BB%E8%B6%85%E9%80%A3%E7%B5%90"><span class="nav-number">3.3.</span> <span class="nav-text">文獻超連結</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AA%BF%E6%95%B4%E6%96%87%E7%8D%BB%E6%8F%92%E5%85%A5%E7%9A%84%E6%A0%BC%E5%BC%8F"><span class="nav-number">3.4.</span> <span class="nav-text">調整文獻插入的格式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%89%E6%88%90-docx-%E6%99%82%E5%8C%85%E5%90%AB%E9%A0%90%E8%A8%AD-MS-Word-%E6%A8%A1%E6%9D%BF%E6%A0%BC%E5%BC%8F"><span class="nav-number">4.</span> <span class="nav-text">轉成 docx 時包含預設 MS Word 模板格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%A4%E4%BA%92%E5%8F%83%E7%85%A7"><span class="nav-number">5.</span> <span class="nav-text">交互參照</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A8%E6%A0%BC"><span class="nav-number">5.1.</span> <span class="nav-text">表格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%96%E7%89%87"><span class="nav-number">5.2.</span> <span class="nav-text">圖片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#meta-data"><span class="nav-number">5.3.</span> <span class="nav-text">meta-data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%96%E7%9B%AE%E9%8C%84%E8%88%87%E8%A1%A8%E7%9B%AE%E9%8C%84"><span class="nav-number">5.4.</span> <span class="nav-text">圖目錄與表目錄</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8C%85%E5%90%AB%E4%BA%A4%E4%BA%92%E5%8F%83%E7%85%A7%E7%9A%84-Word-%E8%BD%89%E6%8F%9B%E6%8C%87%E4%BB%A4"><span class="nav-number">5.5.</span> <span class="nav-text">包含交互參照的 Word 轉換指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E9%A0%81%E7%AC%A6%E8%99%9F"><span class="nav-number">6.</span> <span class="nav-text">分頁符號</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8-WSL-%E5%AE%89%E8%A3%9D-Latex"><span class="nav-number">7.</span> <span class="nav-text">在 WSL 安裝 Latex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B"><span class="nav-number">8.</span> <span class="nav-text">範例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">9.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown-vs-Latex"><span class="nav-number">1.</span> <span class="nav-text">Markdown vs. Latex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PDF-%E7%94%9F%E6%88%90"><span class="nav-number">2.</span> <span class="nav-text">PDF 生成</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E7%94%A8%E7%AE%A1%E7%90%86"><span class="nav-number">3.</span> <span class="nav-text">引用管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E7%8D%BB%E6%96%87%E4%BB%B6%EF%BC%9Abib-%E6%AA%94%E6%A1%88"><span class="nav-number">3.1.</span> <span class="nav-text">文獻文件：bib 檔案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%AB%E4%BD%9C%E6%96%87%E4%BB%B6%EF%BC%9Amd-%E6%AA%94%E6%A1%88"><span class="nav-number">3.2.</span> <span class="nav-text">寫作文件：md 檔案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E7%8D%BB%E8%B6%85%E9%80%A3%E7%B5%90"><span class="nav-number">3.3.</span> <span class="nav-text">文獻超連結</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AA%BF%E6%95%B4%E6%96%87%E7%8D%BB%E6%8F%92%E5%85%A5%E7%9A%84%E6%A0%BC%E5%BC%8F"><span class="nav-number">3.4.</span> <span class="nav-text">調整文獻插入的格式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BD%89%E6%88%90-docx-%E6%99%82%E5%8C%85%E5%90%AB%E9%A0%90%E8%A8%AD-MS-Word-%E6%A8%A1%E6%9D%BF%E6%A0%BC%E5%BC%8F"><span class="nav-number">4.</span> <span class="nav-text">轉成 docx 時包含預設 MS Word 模板格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%A4%E4%BA%92%E5%8F%83%E7%85%A7"><span class="nav-number">5.</span> <span class="nav-text">交互參照</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A8%E6%A0%BC"><span class="nav-number">5.1.</span> <span class="nav-text">表格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%96%E7%89%87"><span class="nav-number">5.2.</span> <span class="nav-text">圖片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AC%E5%BC%8F%E5%8F%83%E7%85%A7"><span class="nav-number">5.3.</span> <span class="nav-text">公式參照</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#meta-formatter"><span class="nav-number">5.4.</span> <span class="nav-text">meta-formatter</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%96%E7%9B%AE%E9%8C%84%E8%88%87%E8%A1%A8%E7%9B%AE%E9%8C%84"><span class="nav-number">6.</span> <span class="nav-text">圖目錄與表目錄</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%85%E5%90%AB%E4%BA%A4%E4%BA%92%E5%8F%83%E7%85%A7%E7%9A%84-Word-%E8%BD%89%E6%8F%9B%E6%8C%87%E4%BB%A4"><span class="nav-number">7.</span> <span class="nav-text">包含交互參照的 Word 轉換指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E9%A0%81%E7%AC%A6%E8%99%9F"><span class="nav-number">8.</span> <span class="nav-text">分頁符號</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8-WSL-%E5%AE%89%E8%A3%9D-Latex"><span class="nav-number">9.</span> <span class="nav-text">在 WSL 安裝 Latex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AF%84%E4%BE%8B"><span class="nav-number">10.</span> <span class="nav-text">範例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">11.</span> <span class="nav-text">Reference</span></a></li></ol></div>
         </div>
          
 
@@ -257,7 +257,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2022-02-12 00:59:20" itemprop="dateModified" datetime="2022-02-12T00:59:20+08:00">2022-02-12</time>
+      <time title="修改時間：2022-02-15 12:51:26" itemprop="dateModified" datetime="2022-02-15T12:51:26+08:00">2022-02-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -276,18 +276,18 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">文章字數：</span>
-      <span>5.4k</span>
+      <span>6.8k</span>
     </span>
     <span class="post-meta-item" title="所需閱讀時間">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
-      <span>10 分鐘</span>
+      <span>12 分鐘</span>
     </span>
 </div>
 
-            <div class="post-description">以 Markdown 寫論文時的文獻、圖片引用管理，以及使用 pandoc 將 markdown 轉 doc 的操作。</div>
+            <div class="post-description">以 Markdown 寫論文時的文獻、圖片公式等地引用管理，以及使用 pandoc 將 markdown 轉 doc 的操作。</div>
         </div>
       </header>
 
@@ -377,20 +377,52 @@ year="2007"
 <h3 id="圖片"><a href="#圖片" class="headerlink" title="圖片"></a>圖片</h3><p>標註方法: <code>&#123;#fig:id&#125;</code> 同樣 id 可以自由替換，參照方式也和表格雷同<code>&#123;@fig:id&#125;</code>。</p>
 <pre class="language-none"><code class="language-none">![圖片介紹](path\of\fig)&#123;#fig:fig1&#125;</code></pre>
 
-<h3 id="meta-data"><a href="#meta-data" class="headerlink" title="meta-data"></a>meta-data</h3><p>抬頭的 meta-formatter 需要添加，cleveref 開啟的話參照圖表時前綴才會有「圖」或「表」，plus-name 是設定被參照時在內文中該以何種前綴顯示。</p>
-<pre class="language-none"><code class="language-none">fignos-cleveref: true
-fignos-plus-name: 圖
-fignos-caption-name: 圖
-fignos-number-by-section: true
+<h3 id="公式參照"><a href="#公式參照" class="headerlink" title="公式參照"></a>公式參照</h3><p>使用套件 pandoc-eqnos，然而我按照教學中使用，轉換成 docx 時卻發生錯誤: XML Parsing error。這個問題主因應該是 Word 其實是一個 xml 格式的檔案，eqnos 的套件中哪裡把應對齊 xml 標籤給漏掉了，就好像 html 裡面 <code>&lt;p&gt;</code> 後面得要加 <code>&lt;/p&gt;</code> 這樣成對式的 標籤(tag)。</p>
+<p>我依照文章 <a target="_blank" rel="noopener" href="https://ephrain.net/office-%E4%BF%AE%E5%BE%A9-xml-parsing-error-%E7%9A%84-word-docx-%E6%AA%94%E6%A1%88/">[Office] 修復 Xml parsing error 的 Word Docx 檔案</a> ，用網路上的線上 xml 分析網頁，解析了一下是哪裡發生狀況。發現就是在 <code>w:bookmarkStart</code> 附近出現 tag 有問題。最後，通過比較 pandoc-fignos 與 pandoc-eqnos ，發現兩份程式在 <code>bookmarkstart</code> 變數上處理不一樣! <code>fignos</code> 的程式碼沒有加上 <code>&lt;w:r&gt;&lt;w:t&gt;</code>。</p>
+<p>因此，我把 eqnos 中的程式碼(約在 215行附近) 改成如下: </p>
+<pre class="language-python" data-language="python"><code class="language-python">bookmarkstart <span class="token operator">=</span> \
+  RawInline<span class="token punctuation">(</span><span class="token string">'openxml'</span><span class="token punctuation">,</span>
+            <span class="token string">'&lt;w:bookmarkStart w:id="0" w:name="%s"/>'</span>
+            <span class="token operator">%</span>attrs<span class="token punctuation">.</span><span class="token builtin">id</span><span class="token punctuation">)</span>
+bookmarkend <span class="token operator">=</span> \
+  RawInline<span class="token punctuation">(</span><span class="token string">'openxml'</span><span class="token punctuation">,</span>
+            <span class="token string">'&lt;w:bookmarkEnd w:id="0"/>'</span><span class="token punctuation">)</span>
+ret <span class="token operator">=</span> <span class="token punctuation">[</span>bookmarkstart<span class="token punctuation">,</span> AttrMath<span class="token punctuation">(</span><span class="token operator">*</span>value<span class="token punctuation">)</span><span class="token punctuation">,</span> bookmarkend<span class="token punctuation">]</span></code></pre>
 
-tablenos-cleveref: true
-tablenos-plus-name: 表
-tablenos-caption-name: 表
-tablenos-number-by-section: true</code></pre>
+<p>然後整個都可以順利引用了! 我不是很確定刪掉 <code>&lt;w:r&gt;&lt;w:t&gt;</code> pair 之後，會不會對格式造成問題? 但如果圖片引用都這樣處理了，應該是還好? </p>
+<p>至於公式的引用與自動標號</p>
+<ul>
+<li><p>段落公式標號 (賦予公式 id )</p>
+<pre class="language-markdown" data-language="markdown"><code class="language-markdown">$$
+a+b=c
+$$&#123;#eq:eq1&#125; </code></pre></li>
+<li><p>引用有 id 的公式</p>
+<pre class="language-markdown" data-language="markdown"><code class="language-markdown">如@eq:eq1之計算得到結果</code></pre></li>
+<li><p>給公式標號，但不賦予 ID </p>
+<pre class="language-markdown" data-language="markdown"><code class="language-markdown">$$
+a=999
+$$&#123;#eq:&#125; </code></pre></li>
+</ul>
+<p>效果參見範例文件。</p>
+<h3 id="meta-formatter"><a href="#meta-formatter" class="headerlink" title="meta-formatter"></a>meta-formatter</h3><p>抬頭的 meta-formatter 需要添加，cleveref 開啟的話參照圖表時前綴才會有「圖」或「表」，plus-name 是設定被參照時在內文中該以何種前綴顯示。</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">fignos-cleveref</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">fignos-plus-name</span><span class="token punctuation">:</span> 圖
+<span class="token key atrule">fignos-caption-name</span><span class="token punctuation">:</span> 圖
+<span class="token key atrule">fignos-number-by-section</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">fignos-caption-separator</span><span class="token punctuation">:</span> space <span class="token comment"># 預設為冒號</span>
+
+<span class="token key atrule">tablenos-cleveref</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">tablenos-plus-name</span><span class="token punctuation">:</span> 表
+<span class="token key atrule">tablenos-caption-name</span><span class="token punctuation">:</span> 表
+<span class="token key atrule">tablenos-number-by-section</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+
+<span class="token key atrule">eqnos-cleveref</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">eqnos-number-by-section</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">eqnos-plus-name</span><span class="token punctuation">:</span> 公式 <span class="token comment"># 被引用時前綴詞為何</span></code></pre>
 
 
 
-<h3 id="圖目錄與表目錄"><a href="#圖目錄與表目錄" class="headerlink" title="圖目錄與表目錄"></a>圖目錄與表目錄</h3><p>理論上可以在 meta-data 裡面設置這兩個參數自動生成，但似乎只支援生成 pdf，生成 word 時候這兩個參數不生效。</p>
+<h2 id="圖目錄與表目錄"><a href="#圖目錄與表目錄" class="headerlink" title="圖目錄與表目錄"></a>圖目錄與表目錄</h2><p>理論上可以在 meta-data 裡面設置這兩個參數自動生成，但似乎只支援生成 pdf，生成 word 時候這兩個參數不生效。</p>
 <pre class="language-none"><code class="language-none">lof: true 
 lot: true</code></pre>
 
@@ -408,9 +440,10 @@ pandoc --cite --csl&#x3D;ieee.csl \
 		-V CJKmainfont&#x3D;&quot;KaiTi.ttf&quot; --reference-doc&#x3D;render-sample.docx demo.md \
 		-o cit.pdf</code></pre>
 
-<h3 id="包含交互參照的-Word-轉換指令"><a href="#包含交互參照的-Word-轉換指令" class="headerlink" title="包含交互參照的 Word 轉換指令"></a>包含交互參照的 Word 轉換指令</h3><p>但經過我的實驗，雖然這一連串的操作可以使圖表依照章節標號，卻沒辦法有標號超連結之類的，恐怕也沒辦法在 word 裡面生成圖目錄與表目錄。</p>
-<pre class="language-sh" data-language="sh"><code class="language-sh">pandoc --cite --csl&#x3D;ieee.csl --filter pandoc-xnos \
-		--bibliography&#x3D;biblio.bib --pdf-engine&#x3D;xelatex \
+<h2 id="包含交互參照的-Word-轉換指令"><a href="#包含交互參照的-Word-轉換指令" class="headerlink" title="包含交互參照的 Word 轉換指令"></a>包含交互參照的 Word 轉換指令</h2><p>但經過我的實驗，雖然這一連串的操作可以使圖表依照章節標號，卻沒辦法有標號超連結之類的，恐怕也沒辦法在 word 裡面生成圖目錄與表目錄。</p>
+<pre class="language-sh" data-language="sh"><code class="language-sh">pandoc  --filter pandoc-xnos \
+		--cite --csl&#x3D;ieee.csl --bibliography&#x3D;biblio.bib \
+        --pdf-engine&#x3D;xelatex \
 		-V CJKmainfont&#x3D;&quot;KaiTi.ttf&quot; --reference-doc&#x3D;render-sample.docx demo.md \
 		-o cit.docx</code></pre>
 
@@ -418,6 +451,16 @@ pandoc --cite --csl&#x3D;ieee.csl \
 <pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">page-break-after</span><span class="token punctuation">:</span> always<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
 
 <p>但是如果轉成 PDF 的話，在 markdown 中直接輸入 <code>\newpage</code> 作為分頁是可行的。</p>
+<p>轉成 doc 時的強制分頁(分頁符號)，需要直接插入一段 source code ：</p>
+<pre class="language-none"><code class="language-none">​&#96;&#96;&#96;&#123;&#x3D;openxml&#125;
+&lt;w:p&gt;
+  &lt;w:r&gt;
+    &lt;w:br w:type&#x3D;&quot;page&quot;&#x2F;&gt;
+  &lt;&#x2F;w:r&gt;
+&lt;&#x2F;w:p&gt;
+​&#96;&#96;&#96;</code></pre>
+
+<p>因為 ms word 本身是一個 xml 格式的檔案，pandoc 在轉換時對 docx 支援這種<a target="_blank" rel="noopener" href="https://pandoc.org/MANUAL.html#extension-raw_attribute">部份 raw attribute</a> 的功能，可以透過此方法達成強制分頁。</p>
 <h2 id="在-WSL-安裝-Latex"><a href="#在-WSL-安裝-Latex" class="headerlink" title="在 WSL 安裝 Latex"></a>在 WSL 安裝 Latex</h2><p>我用的是 Ubuntu 做為 Wsl2 的作業系統。首先安裝 Latex 基本的語法與擴充語法：</p>
 <pre class="language-sh" data-language="sh"><code class="language-sh">sudo apt-get install texlive
 sudo apt-get install texlive-latex-extra
@@ -429,10 +472,11 @@ sudo dpkg -i pandoc-2.17.1.1-1-amd64.deb</code></pre>
 
 <p>並且在 Markdown 中引用的圖片，最好是放在同層級或下層級的資料夾中，比較不容易發生圖片找不到的狀況。</p>
 <h2 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h2><p>範例 markdown 與轉換而成的 MS Word 如下，內文是產生器而得，完全只是要個排版的感覺，請勿深究！轉換指令：</p>
-<pre class="language-sh" data-language="sh"><code class="language-sh">pandoc --cite --csl&#x3D;ieee.csl --filter pandoc-xnos \
-		--bibliography&#x3D;biblio.bib --pdf-engine&#x3D;xelatex \
-		-V CJKmainfont&#x3D;&quot;KaiTi.ttf&quot; --reference-doc&#x3D;render-sample.docx demo.md \
-		-o cit.docx</code></pre>
+<pre class="language-sh" data-language="sh"><code class="language-sh">pandoc --filter pandoc-xnos \
+	--cite --csl&#x3D;ieee.csl --bibliography&#x3D;biblio.bib \
+	--pdf-engine&#x3D;xelatex -V CJKmainfont&#x3D;&quot;KaiTi.ttf&quot; \
+	--reference-doc&#x3D;render-sample.docx demo.md \
+	-o cit.docx</code></pre>
 <ul>
 <li>所使用的 markdown 檔案、bib 引用檔案以及輸出的 word 檔案： <a href="/uploads/markdown-thesis.zip">markdown-thesis.zip</a>。</li>
 <li>render-sample 為個人的 doc 模板。</li>
@@ -454,10 +498,10 @@ sudo dpkg -i pandoc-2.17.1.1-1-amd64.deb</code></pre>
       <div class="popular-posts-title"><a href="\posts\2021-12-30-blog-0-hexo-build-env.html" rel="bookmark">建置 Hexo 部落格</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\2021-12-30-blog-1-automatic-command.html" rel="bookmark">Hexo Blog 客製化 (1) 部落格指令自動化</a></div>
+      <div class="popular-posts-title"><a href="\posts\2022-01-01-blog-0-source.html" rel="bookmark">新年快樂之部落格沿革(?)</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\2022-01-01-blog-0-source.html" rel="bookmark">新年快樂之部落格沿革(?)</a></div>
+      <div class="popular-posts-title"><a href="\posts\2021-12-30-blog-1-automatic-command.html" rel="bookmark">Hexo Blog 客製化 (1) 部落格指令自動化</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\posts\2022-01-26-blog-2-theme-Next-update.html" rel="bookmark">Hexo Blog 客製化 (2) Next 主題更新與 PrismJs 啟用</a></div>
@@ -514,13 +558,13 @@ sudo dpkg -i pandoc-2.17.1.1-1-amd64.deb</code></pre>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">49k</span>
+    <span title="總字數">51k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">1:30</span>
+    <span title="所需總閱讀時間">1:32</span>
   </span>
 </div>
 

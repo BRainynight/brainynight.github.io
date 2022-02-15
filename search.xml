@@ -219,6 +219,34 @@ public&#x2F;
       </tags>
   </entry>
   <entry>
+    <title>新年快樂之部落格沿革(?)</title>
+    <url>/posts/2022-01-01-blog-0-source.html</url>
+    <content><![CDATA[<p>2022 新年快樂！新年的第一篇文章，來寫個段小故事。相信自己一路走來在各種平台、格式上轉換的痛苦已經算少了，但每次想起依然常常覺得…. 小坎坷阿，希望現在的決定夠有遠見了？紀錄一下一路走來的辛酸淚。</p>
+<span id="more"></span>
+
+<h3 id="純樸的文字編輯器：Evernote"><a href="#純樸的文字編輯器：Evernote" class="headerlink" title="純樸的文字編輯器：Evernote"></a>純樸的文字編輯器：Evernote</h3><p>從高中起一直有寫心得、觀後感與日記的習慣，那時候用的是 Evernote。大學開始寫程式時，也有著紀錄 bug 的習慣，那時候用的是 Line 記事本跟 Evernote。可以想見，這種紀錄方式簡直是災難… 我希望至少 Code 可以是彩色的（好卑微阿），開始尋找替代方案。</p>
+<p>儘管將程式相關的內容從 Evernote 抽離，它依然是我挺喜歡的筆記軟體。但，隨著 Markdown 語法越來越盛行，Evernote 卻遲遲不能夠跟進，加上 Notion 後來出了教育帳戶免費的策略，最後包括慣用的其他紀錄也都轉移到 Notion 去了。</p>
+<h3 id="Blogger"><a href="#Blogger" class="headerlink" title="Blogger"></a>Blogger</h3><p>由於當時有在用 Blogger 在寫遊記，所以第一時間想到的替代工具就是 Google 旗下的 Blogger ，大約也用了一年多。當對排版越來越要求，發現 Blogger 那種 word 編輯器 + html 編輯界面的方式實在是太沒效率了！決定再次轉移。</p>
+<h3 id="HackMD"><a href="#HackMD" class="headerlink" title="HackMD"></a>HackMD</h3><p>開始用 Markdown 在寫技術筆記，並使用 HackMD 作為平台。但 HackMD 有個很大的缺點，它不支援內文搜尋模式….. （曾經支援，後來疑似因為 loading 太大拿掉內文搜索只能找標題）文章一多不記得什麼內容在哪篇文章，這根本災難！只好又開始尋找替代方案</p>
+<p>那個時期不知道為什麼，HackMD 老是不溫不火，號稱是從日本 IT 圈紅回來的軟體，在台灣小有名氣其實也很好用。但感覺一直是維持狀態，更新狀態不大，反而有退一步取消內文搜索功能的這種事件。</p>
+<h3 id="Github-Typora"><a href="#Github-Typora" class="headerlink" title="Github + Typora"></a>Github + Typora</h3><p>腦子動到 Github 的頭上，發展出用離線的 Markdown 編輯器 Typora 加上 Github 做同步。在我開始將 HackMD 的內容拉下來，跟本地的離線檔案整併時發現有些筆記不小心使用到了一些只有 HackMD 支援的 Markdown 延伸語法，導致這些內容在 Typora 上完全沒有效果！！像是亂碼一樣！</p>
+<p>至此，我下定決心，以後寫文章絕對不要再搞出這麼多麻煩，乖乖用基礎的 Markdown 語法，很方便了！別搞那麼多事！</p>
+<h3 id="熱門的部落格平台：Medium"><a href="#熱門的部落格平台：Medium" class="headerlink" title="熱門的部落格平台：Medium"></a>熱門的部落格平台：Medium</h3><p>想有個部落格的心情依舊在，我曾嘗試過 Medium 平台並不是很喜歡。一來是平台的彈性低、程式碼甚至沒辦法上色，非得透過 Gist ；二來是 Medium 還是比較適合英文文章，英文字寫起來格式是又優雅又漂亮，但中文一個斜體就搞得版面很不和諧。後來也就拿來放一些跟 Code 無關的事情，一些搞環境經驗之類的而已。</p>
+<h3 id="初體驗靜態網頁產生器：Pelican"><a href="#初體驗靜態網頁產生器：Pelican" class="headerlink" title="初體驗靜態網頁產生器：Pelican"></a>初體驗靜態網頁產生器：Pelican</h3><p>大四時一度嘗試使用 Github Page + Pelican 做靜態網站生成，挑選這個組合是因為覺得綁定網域得付錢、感覺這部落格又是有一更沒一更不知道哪天會不會荒廢，決定先從免費的試試看，Github Page 是這個選項很好的解答。而 Pelican 是它背後是用 Python 寫的，好歹我比較熟 (不敢一下子踏入 js) 。</p>
+<p>不知道是對網站管理沒經驗、放太多圖片塞到流量還是什麼問題，大約半年覺得網站載入太慢了受不了，加上對版面的主題既不滿意、又改不動，在充滿羞恥的心情下收掉了這個第一個自己架的部落格。</p>
+<h3 id="再次回歸-Github-Typora"><a href="#再次回歸-Github-Typora" class="headerlink" title="再次回歸 Github + Typora"></a>再次回歸 Github + Typora</h3><p>此後，我一直用 Typora + Github 的模式寫筆記，由於有過自己搭建的經驗，每次看到別人的部落格是使用 Github page 的時候，都會多留意兩眼框架與主題，以及一些自己喜歡的小工具、要素等等，也是那時候看到 Hexo 與 Next 主題被很多人採用。過去使用 Peclian 時，我極度討厭文章太長，每次都要卷到最上面才能點目錄跳轉的情況，甚至自己研究用 CSS 弄了一個懸浮目錄，功能是有卻醜到自己受不了，關站很大一個原因也是這樣。</p>
+<h3 id="現在：Hexo"><a href="#現在：Hexo" class="headerlink" title="現在：Hexo"></a>現在：Hexo</h3><p>直到最近看到有在追蹤的一位作者的文章<a href="https://www.ithome.com.tw/voice/148476">技術網站架設經驗雜談</a>，邊看產生了很多共鳴，想到了一直有個小小的期許：能彈性控制的部落格！才鼓起勇氣再次搭建了部落格。這次打算嘗試許多人都採用的 Hexo 來搭建，管他語言不一樣，大不了學學吧！於是最終就有了這個部落格。</p>
+<p>恩，真是一段不長不短的歷史。總之就是告誡自己，不要被漂亮的擴充功能迷惑，換了框架很痛苦的。</p>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>about</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo Blog 客製化 (1) 部落格指令自動化</title>
     <url>/posts/2021-12-30-blog-1-automatic-command.html</url>
     <content><![CDATA[<p>想用原始一點的方法來搞個半自動化，第一步當然就是不要打那麼多指令！</p>
@@ -251,34 +279,6 @@ public&#x2F;
       </categories>
       <tags>
         <tag>blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>新年快樂之部落格沿革(?)</title>
-    <url>/posts/2022-01-01-blog-0-source.html</url>
-    <content><![CDATA[<p>2022 新年快樂！新年的第一篇文章，來寫個段小故事。相信自己一路走來在各種平台、格式上轉換的痛苦已經算少了，但每次想起依然常常覺得…. 小坎坷阿，希望現在的決定夠有遠見了？紀錄一下一路走來的辛酸淚。</p>
-<span id="more"></span>
-
-<h3 id="純樸的文字編輯器：Evernote"><a href="#純樸的文字編輯器：Evernote" class="headerlink" title="純樸的文字編輯器：Evernote"></a>純樸的文字編輯器：Evernote</h3><p>從高中起一直有寫心得、觀後感與日記的習慣，那時候用的是 Evernote。大學開始寫程式時，也有著紀錄 bug 的習慣，那時候用的是 Line 記事本跟 Evernote。可以想見，這種紀錄方式簡直是災難… 我希望至少 Code 可以是彩色的（好卑微阿），開始尋找替代方案。</p>
-<p>儘管將程式相關的內容從 Evernote 抽離，它依然是我挺喜歡的筆記軟體。但，隨著 Markdown 語法越來越盛行，Evernote 卻遲遲不能夠跟進，加上 Notion 後來出了教育帳戶免費的策略，最後包括慣用的其他紀錄也都轉移到 Notion 去了。</p>
-<h3 id="Blogger"><a href="#Blogger" class="headerlink" title="Blogger"></a>Blogger</h3><p>由於當時有在用 Blogger 在寫遊記，所以第一時間想到的替代工具就是 Google 旗下的 Blogger ，大約也用了一年多。當對排版越來越要求，發現 Blogger 那種 word 編輯器 + html 編輯界面的方式實在是太沒效率了！決定再次轉移。</p>
-<h3 id="HackMD"><a href="#HackMD" class="headerlink" title="HackMD"></a>HackMD</h3><p>開始用 Markdown 在寫技術筆記，並使用 HackMD 作為平台。但 HackMD 有個很大的缺點，它不支援內文搜尋模式….. （曾經支援，後來疑似因為 loading 太大拿掉內文搜索只能找標題）文章一多不記得什麼內容在哪篇文章，這根本災難！只好又開始尋找替代方案</p>
-<p>那個時期不知道為什麼，HackMD 老是不溫不火，號稱是從日本 IT 圈紅回來的軟體，在台灣小有名氣其實也很好用。但感覺一直是維持狀態，更新狀態不大，反而有退一步取消內文搜索功能的這種事件。</p>
-<h3 id="Github-Typora"><a href="#Github-Typora" class="headerlink" title="Github + Typora"></a>Github + Typora</h3><p>腦子動到 Github 的頭上，發展出用離線的 Markdown 編輯器 Typora 加上 Github 做同步。在我開始將 HackMD 的內容拉下來，跟本地的離線檔案整併時發現有些筆記不小心使用到了一些只有 HackMD 支援的 Markdown 延伸語法，導致這些內容在 Typora 上完全沒有效果！！像是亂碼一樣！</p>
-<p>至此，我下定決心，以後寫文章絕對不要再搞出這麼多麻煩，乖乖用基礎的 Markdown 語法，很方便了！別搞那麼多事！</p>
-<h3 id="熱門的部落格平台：Medium"><a href="#熱門的部落格平台：Medium" class="headerlink" title="熱門的部落格平台：Medium"></a>熱門的部落格平台：Medium</h3><p>想有個部落格的心情依舊在，我曾嘗試過 Medium 平台並不是很喜歡。一來是平台的彈性低、程式碼甚至沒辦法上色，非得透過 Gist ；二來是 Medium 還是比較適合英文文章，英文字寫起來格式是又優雅又漂亮，但中文一個斜體就搞得版面很不和諧。後來也就拿來放一些跟 Code 無關的事情，一些搞環境經驗之類的而已。</p>
-<h3 id="初體驗靜態網頁產生器：Pelican"><a href="#初體驗靜態網頁產生器：Pelican" class="headerlink" title="初體驗靜態網頁產生器：Pelican"></a>初體驗靜態網頁產生器：Pelican</h3><p>大四時一度嘗試使用 Github Page + Pelican 做靜態網站生成，挑選這個組合是因為覺得綁定網域得付錢、感覺這部落格又是有一更沒一更不知道哪天會不會荒廢，決定先從免費的試試看，Github Page 是這個選項很好的解答。而 Pelican 是它背後是用 Python 寫的，好歹我比較熟 (不敢一下子踏入 js) 。</p>
-<p>不知道是對網站管理沒經驗、放太多圖片塞到流量還是什麼問題，大約半年覺得網站載入太慢了受不了，加上對版面的主題既不滿意、又改不動，在充滿羞恥的心情下收掉了這個第一個自己架的部落格。</p>
-<h3 id="再次回歸-Github-Typora"><a href="#再次回歸-Github-Typora" class="headerlink" title="再次回歸 Github + Typora"></a>再次回歸 Github + Typora</h3><p>此後，我一直用 Typora + Github 的模式寫筆記，由於有過自己搭建的經驗，每次看到別人的部落格是使用 Github page 的時候，都會多留意兩眼框架與主題，以及一些自己喜歡的小工具、要素等等，也是那時候看到 Hexo 與 Next 主題被很多人採用。過去使用 Peclian 時，我極度討厭文章太長，每次都要卷到最上面才能點目錄跳轉的情況，甚至自己研究用 CSS 弄了一個懸浮目錄，功能是有卻醜到自己受不了，關站很大一個原因也是這樣。</p>
-<h3 id="現在：Hexo"><a href="#現在：Hexo" class="headerlink" title="現在：Hexo"></a>現在：Hexo</h3><p>直到最近看到有在追蹤的一位作者的文章<a href="https://www.ithome.com.tw/voice/148476">技術網站架設經驗雜談</a>，邊看產生了很多共鳴，想到了一直有個小小的期許：能彈性控制的部落格！才鼓起勇氣再次搭建了部落格。這次打算嘗試許多人都採用的 Hexo 來搭建，管他語言不一樣，大不了學學吧！於是最終就有了這個部落格。</p>
-<p>恩，真是一段不長不短的歷史。總之就是告誡自己，不要被漂亮的擴充功能迷惑，換了框架很痛苦的。</p>
-]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-        <tag>about</tag>
       </tags>
   </entry>
   <entry>
@@ -1295,6 +1295,208 @@ fig<span class="token punctuation">.</span>colorbar<span class="token punctuatio
       </tags>
   </entry>
   <entry>
+    <title>使用 Markdown 寫論文</title>
+    <url>/posts/2022-02-11-thesis-markdown.html</url>
+    <content><![CDATA[<h2 id="Markdown-vs-Latex"><a href="#Markdown-vs-Latex" class="headerlink" title="Markdown vs. Latex"></a>Markdown vs. Latex</h2><p>主要是因為 Latex 語法有點過於繁雜，網路編輯器 Overleaf 雖然好用，但沒辦法直接輸入中文（或許要研究其他設定吧）。此外語法複雜，如果不是已經上手的人要寫通篇的長論文感覺有點負擔。</p>
+<p>相較之下，語法簡單的 Markdown 就好用很多，先大致在 markdown 把文字編輯的內容都完成，再去 word 套用統一格式，這是我選擇使用 Markdown 的原因。</p>
+<h2 id="PDF-生成"><a href="#PDF-生成" class="headerlink" title="PDF 生成"></a>PDF 生成</h2><p>套件 pandoc 可以直接將 markdown 轉成 PDF，但是預設的轉換引擎 pdflatex 、或是手動選定 xelatex 都需要下載完整的 Latex 套件。我在 Windows 安裝時被要求加了一堆東西，按得沒完又不想要它載東載西不告訴我，因此後來就改使用 wsl 端安裝跟執行 Pdf 操作。其中要注意中文文字的轉換，有可能需要指定字體！</p>
+<p>透過添加參數 <code>-V CJKmainfont=&quot;&lt;some_font&gt;.ttf&quot;</code>，並確認該字體檔可以被取得，最好是附在資料夾裡面。相關議題參照：<a href="https://github.com/ZJU-Awesome/write_with_LaTeX/issues/1">mactex 2015 報錯</a>，字體檔案來源 <a href="https://github.com/dolbydu/font/tree/master/unicode">dolbydu: font/unicode</a>。</p>
+<h2 id="引用管理"><a href="#引用管理" class="headerlink" title="引用管理"></a>引用管理</h2><h3 id="文獻文件：bib-檔案"><a href="#文獻文件：bib-檔案" class="headerlink" title="文獻文件：bib 檔案"></a>文獻文件：bib 檔案</h3><p>引用的部分採用 BibTex 管理文獻，使用 bibTex 必須遵守文獻規則撰寫並創建 <code>.bib</code> 檔案與。以 PanDoc 官網上的範例 bib 檔為例：</p>
+<ul>
+<li><code>@</code> 開頭作為一條新的引用</li>
+<li><code>@</code> 和大括弧 <code>&#123;</code>之間表示此 Reference 所屬的類別，是書、文章、或其他類別。</li>
+<li>大括弧 <code>&#123;</code> 後面的第一串字串，代表這條 reference 的 ID，在 markdown 中要如何引用它。</li>
+</ul>
+<pre class="language-latex" data-language="latex"><code class="language-latex">@Book<span class="token punctuation">&#123;</span>book1,
+author="John Doe",
+title="First Book",
+year="2005",
+address="Cambridge",
+publisher="Cambridge University Press"
+<span class="token punctuation">&#125;</span>
+
+@Article<span class="token punctuation">&#123;</span>art1,
+author="John Doe",
+title="Article",
+year="2006",
+journal="Journal of Generic Studies",
+volume="6",
+pages="33-34"
+<span class="token punctuation">&#125;</span>
+
+@InCollection<span class="token punctuation">&#123;</span>col1,
+author="John Doe and Jenny Roe",
+title="Why Water Is Wet",
+booktitle="Third Book",
+editor="Sam Smith",
+publisher="Oxford University Press",
+address="Oxford",
+year="2007"
+<span class="token punctuation">&#125;</span></code></pre>
+
+<p>BibTex 格式所能設定的 Reference 類別總共有 14 種，參見：<a href="https://www.bibtex.com/e/entry-types/">Complete list of BibTeX entry types [with examples] - BibTeX.com</a>。</p>
+<h3 id="寫作文件：md-檔案"><a href="#寫作文件：md-檔案" class="headerlink" title="寫作文件：md 檔案"></a>寫作文件：md 檔案</h3><p>建立一個 <code>demo.md</code> 檔案，內容如下。</p>
+<pre class="language-markdown" data-language="markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> demo </span>
+根據文獻[@book1]所言，今天天氣真好。而文獻[@art1]提到，太陽會影響天氣。
+文獻[@col1]更是提到不但太陽會影響天氣，下雨、風也會。</code></pre>
+
+<p>經過指令調用 pandoc 來轉換成微軟 word 檔案：</p>
+<pre class="language-shell" data-language="shell"><code class="language-shell">pandoc --cite --bibliography&#x3D;biblio.bib demo.md -o demo-citation.docx</code></pre>
+
+<p>Word 產生的圖會在後面看到。</p>
+<h3 id="文獻超連結"><a href="#文獻超連結" class="headerlink" title="文獻超連結"></a>文獻超連結</h3><p>上述方法產生的文件，在數字引用的部份只有單純的文字，沒辦法超連結到下面的參考文件區。根據 <a href="https://pandoc.org/MANUAL.html#other-relevant-metadata-fields">PanDoc 官方文件</a>，這需要在 markdown 中添加 meta-data 把參數開起來：</p>
+<pre class="language-markdown" data-language="markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
+<span class="token font-matter yaml language-yaml"><span class="token key atrule">link-bibliography</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">link-citations</span><span class="token punctuation">:</span> <span class="token boolean important">true</span></span>
+<span class="token punctuation">---</span></span></code></pre>
+
+<h3 id="調整文獻插入的格式"><a href="#調整文獻插入的格式" class="headerlink" title="調整文獻插入的格式"></a>調整文獻插入的格式</h3><p>我的領域並不慣用上面那種引用方式，要調整引用格式需要透過附加 <code>.csl</code> 檔案，上網查了 <a href="https://github.com/citation-style-language/styles/blob/master/ieee.csl">IEEE 格式的 csl 檔案</a>。並在指令上添加 <code>--csl=ieee.csl</code> 參數：</p>
+<pre class="language-shell" data-language="shell"><code class="language-shell">pandoc --cite --csl&#x3D;ieee.csl --bibliography&#x3D;biblio.bib demo.md \
+	-o demo-citation.docx</code></pre>
+
+<h2 id="轉成-docx-時包含預設-MS-Word-模板格式"><a href="#轉成-docx-時包含預設-MS-Word-模板格式" class="headerlink" title="轉成 docx 時包含預設 MS Word 模板格式"></a>轉成 docx 時包含預設 MS Word 模板格式</h2><p>如果希望 docx 轉換成期望的格式，需要添加 <code>--reference-doc</code> 參數，我將論文格式儲存成 <code>render-sample.docx</code>，放在同一個資料夾。並且在 <code>.md</code> 最後加上了參考資料的標題，最後轉換效果如下：</p>
+<pre class="language-sh" data-language="sh"><code class="language-sh">pandoc --cite --csl&#x3D;ieee.csl \
+        --bibliography&#x3D;biblio.bib \
+        --reference-doc&#x3D;render-sample.docx demo.md -o cit.docx</code></pre>
+
+<p><img src="/uploads/4example-footnote.webp" alt="不同指令對應的結果"></p>
+<pre class="language-sh" data-language="sh"><code class="language-sh">pandoc --toc --cite --csl&#x3D;ieee.csl \
+	  --filter pandoc-xnos --bibliography&#x3D;biblio.bib \
+	  --reference-doc&#x3D;render-sample.docx demo.md -o cit.docx</code></pre>
+
+<h2 id="交互參照"><a href="#交互參照" class="headerlink" title="交互參照"></a>交互參照</h2><p>需下載套件 <code>pandoc-xnos</code>，並在下轉換指令的時候添加 <code>--filter pandoc-xnos</code>，其中包含四個套件，分別是：圖片 <a href="https://github.com/tomduck/pandoc-fignos">pandoc-fignos</a>、公式 <a href="https://github.com/tomduck/pandoc-eqnos">pandoc-eqnos</a>、表格 <a href="https://github.com/tomduck/pandoc-tablenos">pandoc-tablenos</a>、章節 <a href="https://github.com/tomduck/pandoc-secnos">pandoc-secnos</a>。</p>
+<p>可以直接在 pandoc 的轉換指令中添加  <code>--filter pandoc-xnos</code> 一口氣解決，也可以只取自己需要的 <code>--filter pandoc-fignos</code> 之類的，如果要同時使用兩個要加兩次參數，例如同時使用表格與圖片的參照 <code>--filter pandoc-fignos --filter-tablenos</code>。</p>
+<p>以下以表格與圖片的參照用法舉例說明。</p>
+<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>標註方法: <code>&#123;#tbl:id&#125;</code> ，<code>id</code> 可以自由換成此表格的專屬 id。</p>
+<pre class="language-markdown" data-language="markdown"><code class="language-markdown"><span class="token table"><span class="token table-header-row"><span class="token punctuation">|</span><span class="token table-header important">       </span><span class="token punctuation">|</span><span class="token table-header important"> Col 1 </span><span class="token punctuation">|</span><span class="token table-header important"> Col 2 </span><span class="token punctuation">|</span>
+</span><span class="token table-line"><span class="token punctuation">|</span> <span class="token punctuation">-----</span> <span class="token punctuation">|</span> <span class="token punctuation">-----</span> <span class="token punctuation">|</span> <span class="token punctuation">-----</span> <span class="token punctuation">|</span>
+</span><span class="token table-data-rows"><span class="token punctuation">|</span><span class="token table-data"> Row 1 </span><span class="token punctuation">|</span><span class="token table-data"> 11    </span><span class="token punctuation">|</span><span class="token table-data"> 12    </span><span class="token punctuation">|</span>
+<span class="token punctuation">|</span><span class="token table-data"> Row 2 </span><span class="token punctuation">|</span><span class="token table-data"> 21    </span><span class="token punctuation">|</span><span class="token table-data"> 22    </span><span class="token punctuation">|</span>
+<span class="token punctuation">|</span><span class="token table-data"> Row 3 </span><span class="token punctuation">|</span><span class="token table-data"> 31    </span><span class="token punctuation">|</span><span class="token table-data"> 32    </span><span class="token punctuation">|</span>
+</span></span>Table: 表格介紹 &#123;#tbl:tbl1&#125;</code></pre>
+
+<p>而想要參照(reference)某表格，則使用 <code>&#123;@tbl:id&#125;</code> 的方式參照。</p>
+<h3 id="圖片"><a href="#圖片" class="headerlink" title="圖片"></a>圖片</h3><p>標註方法: <code>&#123;#fig:id&#125;</code> 同樣 id 可以自由替換，參照方式也和表格雷同<code>&#123;@fig:id&#125;</code>。</p>
+<pre class="language-none"><code class="language-none">![圖片介紹](path\of\fig)&#123;#fig:fig1&#125;</code></pre>
+
+<h3 id="公式參照"><a href="#公式參照" class="headerlink" title="公式參照"></a>公式參照</h3><p>使用套件 pandoc-eqnos，然而我按照教學中使用，轉換成 docx 時卻發生錯誤: XML Parsing error。這個問題主因應該是 Word 其實是一個 xml 格式的檔案，eqnos 的套件中哪裡把應對齊 xml 標籤給漏掉了，就好像 html 裡面 <code>&lt;p&gt;</code> 後面得要加 <code>&lt;/p&gt;</code> 這樣成對式的 標籤(tag)。</p>
+<p>我依照文章 <a href="https://ephrain.net/office-%E4%BF%AE%E5%BE%A9-xml-parsing-error-%E7%9A%84-word-docx-%E6%AA%94%E6%A1%88/">[Office] 修復 Xml parsing error 的 Word Docx 檔案</a> ，用網路上的線上 xml 分析網頁，解析了一下是哪裡發生狀況。發現就是在 <code>w:bookmarkStart</code> 附近出現 tag 有問題。最後，通過比較 pandoc-fignos 與 pandoc-eqnos ，發現兩份程式在 <code>bookmarkstart</code> 變數上處理不一樣! <code>fignos</code> 的程式碼沒有加上 <code>&lt;w:r&gt;&lt;w:t&gt;</code>。</p>
+<p>因此，我把 eqnos 中的程式碼(約在 215行附近) 改成如下: </p>
+<pre class="language-python" data-language="python"><code class="language-python">bookmarkstart <span class="token operator">=</span> \
+  RawInline<span class="token punctuation">(</span><span class="token string">'openxml'</span><span class="token punctuation">,</span>
+            <span class="token string">'&lt;w:bookmarkStart w:id="0" w:name="%s"/>'</span>
+            <span class="token operator">%</span>attrs<span class="token punctuation">.</span><span class="token builtin">id</span><span class="token punctuation">)</span>
+bookmarkend <span class="token operator">=</span> \
+  RawInline<span class="token punctuation">(</span><span class="token string">'openxml'</span><span class="token punctuation">,</span>
+            <span class="token string">'&lt;w:bookmarkEnd w:id="0"/>'</span><span class="token punctuation">)</span>
+ret <span class="token operator">=</span> <span class="token punctuation">[</span>bookmarkstart<span class="token punctuation">,</span> AttrMath<span class="token punctuation">(</span><span class="token operator">*</span>value<span class="token punctuation">)</span><span class="token punctuation">,</span> bookmarkend<span class="token punctuation">]</span></code></pre>
+
+<p>然後整個都可以順利引用了! 我不是很確定刪掉 <code>&lt;w:r&gt;&lt;w:t&gt;</code> pair 之後，會不會對格式造成問題? 但如果圖片引用都這樣處理了，應該是還好? </p>
+<p>至於公式的引用與自動標號</p>
+<ul>
+<li><p>段落公式標號 (賦予公式 id )</p>
+<pre class="language-markdown" data-language="markdown"><code class="language-markdown">$$
+a+b=c
+$$&#123;#eq:eq1&#125; </code></pre></li>
+<li><p>引用有 id 的公式</p>
+<pre class="language-markdown" data-language="markdown"><code class="language-markdown">如@eq:eq1之計算得到結果</code></pre></li>
+<li><p>給公式標號，但不賦予 ID </p>
+<pre class="language-markdown" data-language="markdown"><code class="language-markdown">$$
+a=999
+$$&#123;#eq:&#125; </code></pre></li>
+</ul>
+<p>效果參見範例文件。</p>
+<h3 id="meta-formatter"><a href="#meta-formatter" class="headerlink" title="meta-formatter"></a>meta-formatter</h3><p>抬頭的 meta-formatter 需要添加，cleveref 開啟的話參照圖表時前綴才會有「圖」或「表」，plus-name 是設定被參照時在內文中該以何種前綴顯示。</p>
+<pre class="language-yaml" data-language="yaml"><code class="language-yaml"><span class="token key atrule">fignos-cleveref</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">fignos-plus-name</span><span class="token punctuation">:</span> 圖
+<span class="token key atrule">fignos-caption-name</span><span class="token punctuation">:</span> 圖
+<span class="token key atrule">fignos-number-by-section</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">fignos-caption-separator</span><span class="token punctuation">:</span> space <span class="token comment"># 預設為冒號</span>
+
+<span class="token key atrule">tablenos-cleveref</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">tablenos-plus-name</span><span class="token punctuation">:</span> 表
+<span class="token key atrule">tablenos-caption-name</span><span class="token punctuation">:</span> 表
+<span class="token key atrule">tablenos-number-by-section</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+
+<span class="token key atrule">eqnos-cleveref</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">eqnos-number-by-section</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">eqnos-plus-name</span><span class="token punctuation">:</span> 公式 <span class="token comment"># 被引用時前綴詞為何</span></code></pre>
+
+
+
+<h2 id="圖目錄與表目錄"><a href="#圖目錄與表目錄" class="headerlink" title="圖目錄與表目錄"></a>圖目錄與表目錄</h2><p>理論上可以在 meta-data 裡面設置這兩個參數自動生成，但似乎只支援生成 pdf，生成 word 時候這兩個參數不生效。</p>
+<pre class="language-none"><code class="language-none">lof: true 
+lot: true</code></pre>
+
+<p>要注意，雖然文章目錄的縮寫是 TOC (table of content)，但圖目錄與表目錄的縮寫分別是 lof (list of figure), lot (list of table) ，要用這個關鍵字去找! </p>
+<p>生成 PDF 的時候如果有報錯，注意是否為中文字 UTF-8 類字體所造成的轉換問題，相關議題參照前面章節[PDF生成](#PDF 生成)</p>
+<pre class="language-sh" data-language="sh"><code class="language-sh">pandoc --cite --csl&#x3D;ieee.csl --filter pandoc-xnos \
+		--bibliography&#x3D;biblio.bib --pdf-engine&#x3D;xelatex \
+		-V CJKmainfont&#x3D;&quot;KaiTi.ttf&quot; --reference-doc&#x3D;render-sample.docx demo.md \
+		-o cit.pdf
+		
+# 或將 fignos 與 tablenos 分開列
+pandoc --cite --csl&#x3D;ieee.csl \
+		--filter pandoc-fignos --filter pandoc-tablenos \
+		--bibliography&#x3D;biblio.bib --pdf-engine&#x3D;xelatex \
+		-V CJKmainfont&#x3D;&quot;KaiTi.ttf&quot; --reference-doc&#x3D;render-sample.docx demo.md \
+		-o cit.pdf</code></pre>
+
+<h2 id="包含交互參照的-Word-轉換指令"><a href="#包含交互參照的-Word-轉換指令" class="headerlink" title="包含交互參照的 Word 轉換指令"></a>包含交互參照的 Word 轉換指令</h2><p>但經過我的實驗，雖然這一連串的操作可以使圖表依照章節標號，卻沒辦法有標號超連結之類的，恐怕也沒辦法在 word 裡面生成圖目錄與表目錄。</p>
+<pre class="language-sh" data-language="sh"><code class="language-sh">pandoc  --filter pandoc-xnos \
+		--cite --csl&#x3D;ieee.csl --bibliography&#x3D;biblio.bib \
+        --pdf-engine&#x3D;xelatex \
+		-V CJKmainfont&#x3D;&quot;KaiTi.ttf&quot; --reference-doc&#x3D;render-sample.docx demo.md \
+		-o cit.docx</code></pre>
+
+<h2 id="分頁符號"><a href="#分頁符號" class="headerlink" title="分頁符號"></a>分頁符號</h2><p>Markdown 本身是不支援分頁符號的，但我們可以使用 html code 讓它強制分頁：<a href="https://github.com/hanxi/blog/issues/20">Markdown 輸出 pdf 強制分頁的方法</a> （但轉成 doc 後時靈時不靈，用 Latex 語法 <code>\newpage</code> 也一樣，我後來就直接從 doc 模板那邊下手：每個大標題都自動換頁）。</p>
+<pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">page-break-after</span><span class="token punctuation">:</span> always<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
+
+<p>但是如果轉成 PDF 的話，在 markdown 中直接輸入 <code>\newpage</code> 作為分頁是可行的。</p>
+<p>轉成 doc 時的強制分頁(分頁符號)，需要直接插入一段 source code ：</p>
+<pre class="language-none"><code class="language-none">​&#96;&#96;&#96;&#123;&#x3D;openxml&#125;
+&lt;w:p&gt;
+  &lt;w:r&gt;
+    &lt;w:br w:type&#x3D;&quot;page&quot;&#x2F;&gt;
+  &lt;&#x2F;w:r&gt;
+&lt;&#x2F;w:p&gt;
+​&#96;&#96;&#96;</code></pre>
+
+<p>因為 ms word 本身是一個 xml 格式的檔案，pandoc 在轉換時對 docx 支援這種<a href="https://pandoc.org/MANUAL.html#extension-raw_attribute">部份 raw attribute</a> 的功能，可以透過此方法達成強制分頁。</p>
+<h2 id="在-WSL-安裝-Latex"><a href="#在-WSL-安裝-Latex" class="headerlink" title="在 WSL 安裝 Latex"></a>在 WSL 安裝 Latex</h2><p>我用的是 Ubuntu 做為 Wsl2 的作業系統。首先安裝 Latex 基本的語法與擴充語法：</p>
+<pre class="language-sh" data-language="sh"><code class="language-sh">sudo apt-get install texlive
+sudo apt-get install texlive-latex-extra
+sudo apt-get install texlive-xetex</code></pre>
+
+<p>接著依照 <a href="https://github.com/jgm/pandoc/blob/master/INSTALL.md#linux">Pandoc 的官方文件</a>選擇適合的檔案：</p>
+<pre class="language-sh" data-language="sh"><code class="language-sh">wget https:&#x2F;&#x2F;github.com&#x2F;jgm&#x2F;pandoc&#x2F;releases&#x2F;download&#x2F;2.17.1.1&#x2F;pandoc-2.17.1.1-1-amd64.deb
+sudo dpkg -i pandoc-2.17.1.1-1-amd64.deb</code></pre>
+
+<p>並且在 Markdown 中引用的圖片，最好是放在同層級或下層級的資料夾中，比較不容易發生圖片找不到的狀況。</p>
+<h2 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h2><p>範例 markdown 與轉換而成的 MS Word 如下，內文是產生器而得，完全只是要個排版的感覺，請勿深究！轉換指令：</p>
+<pre class="language-sh" data-language="sh"><code class="language-sh">pandoc --filter pandoc-xnos \
+	--cite --csl&#x3D;ieee.csl --bibliography&#x3D;biblio.bib \
+	--pdf-engine&#x3D;xelatex -V CJKmainfont&#x3D;&quot;KaiTi.ttf&quot; \
+	--reference-doc&#x3D;render-sample.docx demo.md \
+	-o cit.docx</code></pre>
+<ul>
+<li>所使用的 markdown 檔案、bib 引用檔案以及輸出的 word 檔案： <a href="/uploads/markdown-thesis.zip">markdown-thesis.zip</a>。</li>
+<li>render-sample 為個人的 doc 模板。</li>
+</ul>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
+<li><a href="https://blog.csdn.net/qq_39564555/article/details/112496861">Markdown、.bib、LaTeX + Typora、Pandoc 管理論文文獻</a></li>
+<li><a href="https://www.economics.utoronto.ca/osborne/latex/BIBTEX.HTM">using bibtex: a short guide</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Tool</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>tool</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python 視覺化(1) matplotlib 基本設置：子圖操作</title>
     <url>/posts/2021-12-30-python-visualize-basic.html</url>
     <content><![CDATA[<h2 id="子圖"><a href="#子圖" class="headerlink" title="子圖"></a>子圖</h2><h3 id="add-subplot"><a href="#add-subplot" class="headerlink" title="add_subplot"></a><code>add_subplot</code></h3><p>初使用時最常接觸的就是這個方法，當要用某張子圖的時候再使用 <code>fig.add_subplot()</code> 得到某個 <code>ax</code> ，用它進行繪圖。</p>
@@ -1411,164 +1613,6 @@ hist.bins: 20 </code></pre>
       <tags>
         <tag>python</tag>
         <tag>visualize</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用 Markdown 寫論文</title>
-    <url>/posts/2022-02-11-thesis-markdown.html</url>
-    <content><![CDATA[<h2 id="Markdown-vs-Latex"><a href="#Markdown-vs-Latex" class="headerlink" title="Markdown vs. Latex"></a>Markdown vs. Latex</h2><p>主要是因為 Latex 語法有點過於繁雜，網路編輯器 Overleaf 雖然好用，但沒辦法直接輸入中文（或許要研究其他設定吧）。此外語法複雜，如果不是已經上手的人要寫通篇的長論文感覺有點負擔。</p>
-<p>相較之下，語法簡單的 Markdown 就好用很多，先大致在 markdown 把文字編輯的內容都完成，再去 word 套用統一格式，這是我選擇使用 Markdown 的原因。</p>
-<h2 id="PDF-生成"><a href="#PDF-生成" class="headerlink" title="PDF 生成"></a>PDF 生成</h2><p>套件 pandoc 可以直接將 markdown 轉成 PDF，但是預設的轉換引擎 pdflatex 、或是手動選定 xelatex 都需要下載完整的 Latex 套件。我在 Windows 安裝時被要求加了一堆東西，按得沒完又不想要它載東載西不告訴我，因此後來就改使用 wsl 端安裝跟執行 Pdf 操作。其中要注意中文文字的轉換，有可能需要指定字體！</p>
-<p>透過添加參數 <code>-V CJKmainfont=&quot;&lt;some_font&gt;.ttf&quot;</code>，並確認該字體檔可以被取得，最好是附在資料夾裡面。相關議題參照：<a href="https://github.com/ZJU-Awesome/write_with_LaTeX/issues/1">mactex 2015 報錯</a>，字體檔案來源 <a href="https://github.com/dolbydu/font/tree/master/unicode">dolbydu: font/unicode</a>。</p>
-<h2 id="引用管理"><a href="#引用管理" class="headerlink" title="引用管理"></a>引用管理</h2><h3 id="文獻文件：bib-檔案"><a href="#文獻文件：bib-檔案" class="headerlink" title="文獻文件：bib 檔案"></a>文獻文件：bib 檔案</h3><p>引用的部分採用 BibTex 管理文獻，使用 bibTex 必須遵守文獻規則撰寫並創建 <code>.bib</code> 檔案與。以 PanDoc 官網上的範例 bib 檔為例：</p>
-<ul>
-<li><code>@</code> 開頭作為一條新的引用</li>
-<li><code>@</code> 和大括弧 <code>&#123;</code>之間表示此 Reference 所屬的類別，是書、文章、或其他類別。</li>
-<li>大括弧 <code>&#123;</code> 後面的第一串字串，代表這條 reference 的 ID，在 markdown 中要如何引用它。</li>
-</ul>
-<pre class="language-latex" data-language="latex"><code class="language-latex">@Book<span class="token punctuation">&#123;</span>book1,
-author="John Doe",
-title="First Book",
-year="2005",
-address="Cambridge",
-publisher="Cambridge University Press"
-<span class="token punctuation">&#125;</span>
-
-@Article<span class="token punctuation">&#123;</span>art1,
-author="John Doe",
-title="Article",
-year="2006",
-journal="Journal of Generic Studies",
-volume="6",
-pages="33-34"
-<span class="token punctuation">&#125;</span>
-
-@InCollection<span class="token punctuation">&#123;</span>col1,
-author="John Doe and Jenny Roe",
-title="Why Water Is Wet",
-booktitle="Third Book",
-editor="Sam Smith",
-publisher="Oxford University Press",
-address="Oxford",
-year="2007"
-<span class="token punctuation">&#125;</span></code></pre>
-
-<p>BibTex 格式所能設定的 Reference 類別總共有 14 種，參見：<a href="https://www.bibtex.com/e/entry-types/">Complete list of BibTeX entry types [with examples] - BibTeX.com</a>。</p>
-<h3 id="寫作文件：md-檔案"><a href="#寫作文件：md-檔案" class="headerlink" title="寫作文件：md 檔案"></a>寫作文件：md 檔案</h3><p>建立一個 <code>demo.md</code> 檔案，內容如下。</p>
-<pre class="language-markdown" data-language="markdown"><code class="language-markdown"><span class="token title important"><span class="token punctuation">#</span> demo </span>
-根據文獻[@book1]所言，今天天氣真好。而文獻[@art1]提到，太陽會影響天氣。
-文獻[@col1]更是提到不但太陽會影響天氣，下雨、風也會。</code></pre>
-
-<p>經過指令調用 pandoc 來轉換成微軟 word 檔案：</p>
-<pre class="language-shell" data-language="shell"><code class="language-shell">pandoc --cite --bibliography&#x3D;biblio.bib demo.md -o demo-citation.docx</code></pre>
-
-<p>Word 產生的圖會在後面看到。</p>
-<h3 id="文獻超連結"><a href="#文獻超連結" class="headerlink" title="文獻超連結"></a>文獻超連結</h3><p>上述方法產生的文件，在數字引用的部份只有單純的文字，沒辦法超連結到下面的參考文件區。根據 <a href="https://pandoc.org/MANUAL.html#other-relevant-metadata-fields">PanDoc 官方文件</a>，這需要在 markdown 中添加 meta-data 把參數開起來：</p>
-<pre class="language-markdown" data-language="markdown"><code class="language-markdown"><span class="token front-matter-block"><span class="token punctuation">---</span>
-<span class="token font-matter yaml language-yaml"><span class="token key atrule">link-bibliography</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-<span class="token key atrule">link-citations</span><span class="token punctuation">:</span> <span class="token boolean important">true</span></span>
-<span class="token punctuation">---</span></span></code></pre>
-
-<h3 id="調整文獻插入的格式"><a href="#調整文獻插入的格式" class="headerlink" title="調整文獻插入的格式"></a>調整文獻插入的格式</h3><p>我的領域並不慣用上面那種引用方式，要調整引用格式需要透過附加 <code>.csl</code> 檔案，上網查了 <a href="https://github.com/citation-style-language/styles/blob/master/ieee.csl">IEEE 格式的 csl 檔案</a>。並在指令上添加 <code>--csl=ieee.csl</code> 參數：</p>
-<pre class="language-shell" data-language="shell"><code class="language-shell">pandoc --cite --csl&#x3D;ieee.csl --bibliography&#x3D;biblio.bib demo.md \
-	-o demo-citation.docx</code></pre>
-
-<h2 id="轉成-docx-時包含預設-MS-Word-模板格式"><a href="#轉成-docx-時包含預設-MS-Word-模板格式" class="headerlink" title="轉成 docx 時包含預設 MS Word 模板格式"></a>轉成 docx 時包含預設 MS Word 模板格式</h2><p>如果希望 docx 轉換成期望的格式，需要添加 <code>--reference-doc</code> 參數，我將論文格式儲存成 <code>render-sample.docx</code>，放在同一個資料夾。並且在 <code>.md</code> 最後加上了參考資料的標題，最後轉換效果如下：</p>
-<pre class="language-sh" data-language="sh"><code class="language-sh">pandoc --cite --csl&#x3D;ieee.csl \
-        --bibliography&#x3D;biblio.bib \
-        --reference-doc&#x3D;render-sample.docx demo.md -o cit.docx</code></pre>
-
-<p><img src="/uploads/4example-footnote.webp" alt="不同指令對應的結果"></p>
-<pre class="language-sh" data-language="sh"><code class="language-sh">pandoc --toc --cite --csl&#x3D;ieee.csl \
-	  --filter pandoc-xnos --bibliography&#x3D;biblio.bib \
-	  --reference-doc&#x3D;render-sample.docx demo.md -o cit.docx</code></pre>
-
-<h2 id="交互參照"><a href="#交互參照" class="headerlink" title="交互參照"></a>交互參照</h2><p>需下載套件 <code>pandoc-xnos</code>，並在下轉換指令的時候添加 <code>--filter pandoc-xnos</code>，其中包含四個套件，分別是：圖片 <a href="https://github.com/tomduck/pandoc-fignos">pandoc-fignos</a>、公式 <a href="https://github.com/tomduck/pandoc-eqnos">pandoc-eqnos</a>、表格 <a href="https://github.com/tomduck/pandoc-tablenos">pandoc-tablenos</a>、章節 <a href="https://github.com/tomduck/pandoc-secnos">pandoc-secnos</a>。</p>
-<p>可以直接在 pandoc 的轉換指令中添加  <code>--filter pandoc-xnos</code> 一口氣解決，也可以只取自己需要的 <code>--filter pandoc-fignos</code> 之類的，如果要同時使用兩個要加兩次參數，例如同時使用表格與圖片的參照 <code>--filter pandoc-fignos --filter-tablenos</code>。</p>
-<p>以下以表格與圖片的參照用法舉例說明。</p>
-<h3 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h3><p>標註方法: <code>&#123;#tbl:id&#125;</code> ，<code>id</code> 可以自由換成此表格的專屬 id。</p>
-<pre class="language-markdown" data-language="markdown"><code class="language-markdown"><span class="token table"><span class="token table-header-row"><span class="token punctuation">|</span><span class="token table-header important">       </span><span class="token punctuation">|</span><span class="token table-header important"> Col 1 </span><span class="token punctuation">|</span><span class="token table-header important"> Col 2 </span><span class="token punctuation">|</span>
-</span><span class="token table-line"><span class="token punctuation">|</span> <span class="token punctuation">-----</span> <span class="token punctuation">|</span> <span class="token punctuation">-----</span> <span class="token punctuation">|</span> <span class="token punctuation">-----</span> <span class="token punctuation">|</span>
-</span><span class="token table-data-rows"><span class="token punctuation">|</span><span class="token table-data"> Row 1 </span><span class="token punctuation">|</span><span class="token table-data"> 11    </span><span class="token punctuation">|</span><span class="token table-data"> 12    </span><span class="token punctuation">|</span>
-<span class="token punctuation">|</span><span class="token table-data"> Row 2 </span><span class="token punctuation">|</span><span class="token table-data"> 21    </span><span class="token punctuation">|</span><span class="token table-data"> 22    </span><span class="token punctuation">|</span>
-<span class="token punctuation">|</span><span class="token table-data"> Row 3 </span><span class="token punctuation">|</span><span class="token table-data"> 31    </span><span class="token punctuation">|</span><span class="token table-data"> 32    </span><span class="token punctuation">|</span>
-</span></span>Table: 表格介紹 &#123;#tbl:tbl1&#125;</code></pre>
-
-<p>而想要參照(reference)某表格，則使用 <code>&#123;@tbl:id&#125;</code> 的方式參照。</p>
-<h3 id="圖片"><a href="#圖片" class="headerlink" title="圖片"></a>圖片</h3><p>標註方法: <code>&#123;#fig:id&#125;</code> 同樣 id 可以自由替換，參照方式也和表格雷同<code>&#123;@fig:id&#125;</code>。</p>
-<pre class="language-none"><code class="language-none">![圖片介紹](path\of\fig)&#123;#fig:fig1&#125;</code></pre>
-
-<h3 id="meta-data"><a href="#meta-data" class="headerlink" title="meta-data"></a>meta-data</h3><p>抬頭的 meta-formatter 需要添加，cleveref 開啟的話參照圖表時前綴才會有「圖」或「表」，plus-name 是設定被參照時在內文中該以何種前綴顯示。</p>
-<pre class="language-none"><code class="language-none">fignos-cleveref: true
-fignos-plus-name: 圖
-fignos-caption-name: 圖
-fignos-number-by-section: true
-
-tablenos-cleveref: true
-tablenos-plus-name: 表
-tablenos-caption-name: 表
-tablenos-number-by-section: true</code></pre>
-
-
-
-<h3 id="圖目錄與表目錄"><a href="#圖目錄與表目錄" class="headerlink" title="圖目錄與表目錄"></a>圖目錄與表目錄</h3><p>理論上可以在 meta-data 裡面設置這兩個參數自動生成，但似乎只支援生成 pdf，生成 word 時候這兩個參數不生效。</p>
-<pre class="language-none"><code class="language-none">lof: true 
-lot: true</code></pre>
-
-<p>要注意，雖然文章目錄的縮寫是 TOC (table of content)，但圖目錄與表目錄的縮寫分別是 lof (list of figure), lot (list of table) ，要用這個關鍵字去找! </p>
-<p>生成 PDF 的時候如果有報錯，注意是否為中文字 UTF-8 類字體所造成的轉換問題，相關議題參照前面章節[PDF生成](#PDF 生成)</p>
-<pre class="language-sh" data-language="sh"><code class="language-sh">pandoc --cite --csl&#x3D;ieee.csl --filter pandoc-xnos \
-		--bibliography&#x3D;biblio.bib --pdf-engine&#x3D;xelatex \
-		-V CJKmainfont&#x3D;&quot;KaiTi.ttf&quot; --reference-doc&#x3D;render-sample.docx demo.md \
-		-o cit.pdf
-		
-# 或將 fignos 與 tablenos 分開列
-pandoc --cite --csl&#x3D;ieee.csl \
-		--filter pandoc-fignos --filter pandoc-tablenos \
-		--bibliography&#x3D;biblio.bib --pdf-engine&#x3D;xelatex \
-		-V CJKmainfont&#x3D;&quot;KaiTi.ttf&quot; --reference-doc&#x3D;render-sample.docx demo.md \
-		-o cit.pdf</code></pre>
-
-<h3 id="包含交互參照的-Word-轉換指令"><a href="#包含交互參照的-Word-轉換指令" class="headerlink" title="包含交互參照的 Word 轉換指令"></a>包含交互參照的 Word 轉換指令</h3><p>但經過我的實驗，雖然這一連串的操作可以使圖表依照章節標號，卻沒辦法有標號超連結之類的，恐怕也沒辦法在 word 裡面生成圖目錄與表目錄。</p>
-<pre class="language-sh" data-language="sh"><code class="language-sh">pandoc --cite --csl&#x3D;ieee.csl --filter pandoc-xnos \
-		--bibliography&#x3D;biblio.bib --pdf-engine&#x3D;xelatex \
-		-V CJKmainfont&#x3D;&quot;KaiTi.ttf&quot; --reference-doc&#x3D;render-sample.docx demo.md \
-		-o cit.docx</code></pre>
-
-<h2 id="分頁符號"><a href="#分頁符號" class="headerlink" title="分頁符號"></a>分頁符號</h2><p>Markdown 本身是不支援分頁符號的，但我們可以使用 html code 讓它強制分頁：<a href="https://github.com/hanxi/blog/issues/20">Markdown 輸出 pdf 強制分頁的方法</a> （但轉成 doc 後時靈時不靈，用 Latex 語法 <code>\newpage</code> 也一樣，我後來就直接從 doc 模板那邊下手：每個大標題都自動換頁）。</p>
-<pre class="language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">page-break-after</span><span class="token punctuation">:</span> always<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span></code></pre>
-
-<p>但是如果轉成 PDF 的話，在 markdown 中直接輸入 <code>\newpage</code> 作為分頁是可行的。</p>
-<h2 id="在-WSL-安裝-Latex"><a href="#在-WSL-安裝-Latex" class="headerlink" title="在 WSL 安裝 Latex"></a>在 WSL 安裝 Latex</h2><p>我用的是 Ubuntu 做為 Wsl2 的作業系統。首先安裝 Latex 基本的語法與擴充語法：</p>
-<pre class="language-sh" data-language="sh"><code class="language-sh">sudo apt-get install texlive
-sudo apt-get install texlive-latex-extra
-sudo apt-get install texlive-xetex</code></pre>
-
-<p>接著依照 <a href="https://github.com/jgm/pandoc/blob/master/INSTALL.md#linux">Pandoc 的官方文件</a>選擇適合的檔案：</p>
-<pre class="language-sh" data-language="sh"><code class="language-sh">wget https:&#x2F;&#x2F;github.com&#x2F;jgm&#x2F;pandoc&#x2F;releases&#x2F;download&#x2F;2.17.1.1&#x2F;pandoc-2.17.1.1-1-amd64.deb
-sudo dpkg -i pandoc-2.17.1.1-1-amd64.deb</code></pre>
-
-<p>並且在 Markdown 中引用的圖片，最好是放在同層級或下層級的資料夾中，比較不容易發生圖片找不到的狀況。</p>
-<h2 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h2><p>範例 markdown 與轉換而成的 MS Word 如下，內文是產生器而得，完全只是要個排版的感覺，請勿深究！轉換指令：</p>
-<pre class="language-sh" data-language="sh"><code class="language-sh">pandoc --cite --csl&#x3D;ieee.csl --filter pandoc-xnos \
-		--bibliography&#x3D;biblio.bib --pdf-engine&#x3D;xelatex \
-		-V CJKmainfont&#x3D;&quot;KaiTi.ttf&quot; --reference-doc&#x3D;render-sample.docx demo.md \
-		-o cit.docx</code></pre>
-<ul>
-<li>所使用的 markdown 檔案、bib 引用檔案以及輸出的 word 檔案： <a href="/uploads/markdown-thesis.zip">markdown-thesis.zip</a>。</li>
-<li>render-sample 為個人的 doc 模板。</li>
-</ul>
-<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ul>
-<li><a href="https://blog.csdn.net/qq_39564555/article/details/112496861">Markdown、.bib、LaTeX + Typora、Pandoc 管理論文文獻</a></li>
-<li><a href="https://www.economics.utoronto.ca/osborne/latex/BIBTEX.HTM">using bibtex: a short guide</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Tool</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-        <tag>tool</tag>
       </tags>
   </entry>
 </search>
