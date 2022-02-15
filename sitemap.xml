@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://brainynight.github.io/about/</loc>
+    
+    <lastmod>2022-02-15</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://brainynight.github.io/posts/2022-02-11-thesis-markdown</loc>
     
     <lastmod>2022-02-15</lastmod>
@@ -21,15 +30,6 @@
   
   <url>
     <loc>https://brainynight.github.io/posts/2022-01-26-blog-2-theme-Next-update</loc>
-    
-    <lastmod>2022-02-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://brainynight.github.io/about/</loc>
     
     <lastmod>2022-02-07</lastmod>
     
