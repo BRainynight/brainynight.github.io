@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
+<meta name="generator" content="Hexo 5.4.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/uploads/blogicon32.webp">
+  <link rel="icon" type="image/png" sizes="32x32" href="/uploads/blogicon32.webp">
+  <link rel="icon" type="image/png" sizes="16x16" href="/uploads/blogicon16.webp">
+  <link rel="mask-icon" href="/uploads/blogicon32.webp" color="#222">
+  <meta name="google-site-verification" content="fInRyOgNeZhOz7qqAsRDN-Hh4cOsfLWjcr2M3c-HnsM">
+  <meta name="msvalidate.01" content="E0E5BF9DC17624BA5DB02DE076050404">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"brainynight.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInUp","post_body":"fadeIn","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="有如 Spyder 的 IPython 互動介面、直接用 VSCode 以 SSH 遠端連線、VSCode 的 anaconda 切換問題等等，有些可能按照 Reference 的做法就成功了，有些會加一些自己的嘗試，所有個人經歷過的問題都記錄在本文中!">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VSCode 的環境設置">
+<meta property="og:url" content="https://brainynight.github.io/posts/2022-06-23-vscode-setting">
+<meta property="og:site_name" content="Judy&#39;s Blog">
+<meta property="og:description" content="有如 Spyder 的 IPython 互動介面、直接用 VSCode 以 SSH 遠端連線、VSCode 的 anaconda 切換問題等等，有些可能按照 Reference 的做法就成功了，有些會加一些自己的嘗試，所有個人經歷過的問題都記錄在本文中!">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2022-06-23T03:52:45.000Z">
+<meta property="article:modified_time" content="2022-06-23T05:42:39.920Z">
+<meta property="article:author" content="Judy">
+<meta property="article:tag" content="tool">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://brainynight.github.io/posts/2022-06-23-vscode-setting.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://brainynight.github.io/posts/2022-06-23-vscode-setting","path":"posts/2022-06-23-vscode-setting.html","title":"VSCode 的環境設置"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>VSCode 的環境設置 | Judy's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QBCDYXBD36"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-QBCDYXBD36","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+  
+  
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Judy's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">程式＆興趣的集散地</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section">首頁</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section">標籤</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section">分類</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section">歸檔</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section">關於</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+         
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vscode-%E4%B8%AD%E7%9A%84-Anaconda-%E8%99%9B%E6%93%AC%E7%92%B0%E5%A2%83%E5%88%87%E6%8F%9B%E5%95%8F%E9%A1%8C"><span class="nav-number">1.</span> <span class="nav-text">Vscode 中的 Anaconda 虛擬環境切換問題</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%83%85%E6%B3%81"><span class="nav-number">1.1.</span> <span class="nav-text">情況</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E6%B1%BA"><span class="nav-number">1.2.</span> <span class="nav-text">解決</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8-terminal-%E4%B8%AD%E4%BD%BF%E7%94%A8-iPython-kernel"><span class="nav-number">2.</span> <span class="nav-text">在 terminal 中使用 iPython kernel</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9C%80%E6%B1%82"><span class="nav-number">2.1.</span> <span class="nav-text">需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A8%AD%E5%AE%9A%E6%AA%94"><span class="nav-number">2.2.</span> <span class="nav-text">設定檔</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%83%E8%80%83"><span class="nav-number">2.3.</span> <span class="nav-text">參考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH-Remote-setting"><span class="nav-number">3.</span> <span class="nav-text">SSH Remote setting</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Find-IP"><span class="nav-number">3.1.</span> <span class="nav-text">Find IP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%84%8F%E5%A4%96"><span class="nav-number">3.2.</span> <span class="nav-text">意外</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH-Remote-key"><span class="nav-number">4.</span> <span class="nav-text">SSH Remote key</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Port-forwarding"><span class="nav-number">5.</span> <span class="nav-text">Port forwarding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GUI-%E4%B9%9F%E8%83%BD%E9%80%8F%E9%81%8ESSH%E5%82%B3%E9%80%81%E9%81%8E%E4%BE%86"><span class="nav-number">6.</span> <span class="nav-text">GUI 也能透過SSH傳送過來</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8D%E8%AE%93%E9%81%A0%E7%AB%AF%E6%A9%9F%E5%99%A8%E8%A8%98%E4%BD%8F%E6%AD%B7%E5%8F%B2%E6%8C%87%E4%BB%A4"><span class="nav-number">7.</span> <span class="nav-text">不讓遠端機器記住歷史指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Terminal-%E7%AA%81%E7%84%B6%E5%AD%97%E6%AF%8D%E9%83%BD%E8%AE%8A%E6%88%90%E5%85%A8%E5%BD%A2"><span class="nav-number">8.</span> <span class="nav-text">Terminal 突然字母都變成全形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-Vscode-%E9%A0%90%E8%A8%AD%E7%9A%84-Interactive-mode"><span class="nav-number">9.</span> <span class="nav-text">使用 Vscode 預設的 Interactive mode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%B9%E4%B8%BB%E9%A1%8C"><span class="nav-number">10.</span> <span class="nav-text">改主題</span></a></li></ol></div>
+        </div>
+         
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Judy</p>
+  <div class="site-description" itemprop="description">Python/Hexo/架站-各種疑難雜症的隨手記</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://brainynight.github.io/posts/2022-06-23-vscode-setting">
+    <meta itemprop="image" content="/uploads/blogicon32.webp"> 
+      
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Judy">
+      <meta itemprop="url" content="/"> 
+      <meta itemprop="description" content="Python/Hexo/架站-各種疑難雜症的隨手記">
+      
+      
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Judy's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          VSCode 的環境設置
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2022-06-23 11:52:45 / 修改時間：13:42:39" itemprop="dateCreated datePublished" datetime="2022-06-23T11:52:45+08:00">2022-06-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Tool/" itemprop="url" rel="index"><span itemprop="name">Tool</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>5.3k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>10 分鐘</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>有如 Spyder 的 IPython 互動介面、直接用 VSCode 以 SSH 遠端連線、VSCode 的 anaconda 切換問題等等，有些可能按照 Reference 的做法就成功了，有些會加一些自己的嘗試，所有個人經歷過的問題都記錄在本文中! </p>
+<span id="more"></span>
+
+<h2 id="Vscode-中的-Anaconda-虛擬環境切換問題"><a href="#Vscode-中的-Anaconda-虛擬環境切換問題" class="headerlink" title="Vscode 中的 Anaconda 虛擬環境切換問題"></a>Vscode 中的 Anaconda 虛擬環境切換問題</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Ocean_waver/article/details/108306791">VScode中Anaconda虚拟环境切换的问题（Python+Jupyter）</a></p>
+<h3 id="情況"><a href="#情況" class="headerlink" title="情況"></a>情況</h3><p>即便執行時已經改使用虛擬環境的 python.exe ，但是執行命令時仍常常失敗: 「找不到指定的模組」</p>
+<h3 id="解決"><a href="#解決" class="headerlink" title="解決"></a>解決</h3><p>原因是 Vscode使用的是 powershell 模式，而不是 cmd模式。</p>
+<p>透過在預設的 setting.json (<code>C://User//XXX/AppData/Roaming/Code/User/setting.json</code>)中，添加指定的終端機執行模式：改指向 cmd.exe</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token string">"terminal.integrated.shell.windows"</span><span class="token builtin class-name">:</span> <span class="token string">"C:<span class="token entity" title="\\">\\</span>Windows<span class="token entity" title="\\">\\</span>System32<span class="token entity" title="\\">\\</span>cmd.exe"</span>,</code></pre>
+
+<h2 id="在-terminal-中使用-iPython-kernel"><a href="#在-terminal-中使用-iPython-kernel" class="headerlink" title="在 terminal 中使用 iPython kernel"></a>在 terminal 中使用 iPython kernel</h2><p>請先看看 <a href="#%E4%BD%BF%E7%94%A8-Vscode-%E9%A0%90%E8%A8%AD%E7%9A%84-Interactive-mode">Interactive Mode</a> 是不是更貼近需求！這兩者的設定上可能會有衝突</p>
+<p>這邊指的是像 spyder 那樣，可以在側邊欄位 key 東西，而不是像 Jupyter 那樣一個個 block。</p>
+<h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><ol>
+<li>基本的需要有 python 程式，IPython (pip install)</li>
+<li>vscode 除了Python 插件，還要額外安裝 multi-command 插件 (支援多步驟的命令)</li>
+</ol>
+<h3 id="設定檔"><a href="#設定檔" class="headerlink" title="設定檔"></a>設定檔</h3><ol>
+<li><p><code>setting.json</code></p>
+<pre class="language-json" data-language="json"><code class="language-json"><span class="token property">"python.terminal.launchArgs"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"-m"</span><span class="token punctuation">,</span> <span class="token string">"IPython"</span><span class="token punctuation">,</span> <span class="token string">"--no-autoindent"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>     
+<span class="token property">"multiCommand.commands"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">&#123;</span>
+        <span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"multiCommand.executeIPython"</span><span class="token punctuation">,</span>
+        <span class="token property">"sequence"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token string">"python.execSelectionInTerminal"</span><span class="token punctuation">,</span>
+            <span class="token string">"workbench.action.terminal.focus"</span><span class="token punctuation">,</span>
+            <span class="token string">"workbench.action.terminal.scrollToBottom"</span><span class="token punctuation">,</span>
+            <span class="token punctuation">&#123;</span><span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"workbench.action.terminal.sendSequence"</span><span class="token punctuation">,</span>
+             <span class="token property">"args"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span> <span class="token property">"text"</span><span class="token operator">:</span> <span class="token string">"\u000D"</span> <span class="token punctuation">&#125;</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+            <span class="token string">"workbench.action.focusActiveEditorGroup"</span>
+        <span class="token punctuation">]</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span></code></pre></li>
+<li><p><code>keybindings.json</code></p>
+<pre class="language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+<span class="token property">"key"</span><span class="token operator">:</span> <span class="token string">"shift+enter"</span><span class="token punctuation">,</span> 
+<span class="token property">"command"</span><span class="token operator">:</span> <span class="token string">"multiCommand.executeIPython"</span><span class="token punctuation">,</span>
+<span class="token property">"when"</span><span class="token operator">:</span> <span class="token string">"editorTextFocus &amp;&amp; python.datascience.featureenabled &amp;&amp; python.datascience.ownsSelection &amp;&amp; !findInputFocussed &amp;&amp; !notebookEditorFocused &amp;&amp; !replaceInputFocussed &amp;&amp; editorLangId == 'python'"</span> 
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span></code></pre></li>
+</ol>
+<h3 id="參考"><a href="#參考" class="headerlink" title="參考"></a>參考</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/52310689/use-ipython-repl-in-vs-code/52324509#answer-59485636">Use IPython REPL in VS Code</a></li>
+<li><a target="_blank" rel="noopener" href="https://codingnote.cc/zh-tw/p/191622/">Python の 在 VSCode 中使用 IPython Kernel 的方法</a></li>
+</ul>
+<h2 id="SSH-Remote-setting"><a href="#SSH-Remote-setting" class="headerlink" title="SSH Remote setting"></a>SSH Remote setting</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://xenby.com/b/221-%E6%95%99%E5%AD%B8-%E4%BD%BF%E7%94%A8-visual-studio-code-%E9%80%8F%E9%81%8E-ssh-%E9%80%B2%E8%A1%8C%E9%81%A0%E7%AB%AF%E7%A8%8B%E5%BC%8F%E9%96%8B%E7%99%BC">使用 Visual Studio Code 透過 SSH 進行遠端程式開發</a>：現在一般的公開版就可以找到這個模組了！</li>
+</ul>
+<ol>
+<li>在 vscode 中下載模組：Remote Development （現在在一般版也可以下載了）</li>
+<li>輸入要連線的伺服器：<code>account@IP -p port</code>，確認後 enter</li>
+<li>會出現一個下拉式選單，列出一些 config 的位置，意思是要把這個 ssh 連線的設定存到哪個 config 裡面。反之，要調整已經紀錄的連線內容，也是在這個 config 裡面。選取要儲存的檔案 (我存在 <code>C:\User\user\.ssh\config</code>)</li>
+<li>再一次連線</li>
+<li>輸入密碼</li>
+<li>等待遠端完成一些同步的下載，當左下角顯示的是你的遠端IP，就代表連線成功了</li>
+</ol>
+<h3 id="Find-IP"><a href="#Find-IP" class="headerlink" title="Find IP"></a>Find IP</h3><p>嘗試 <code>ifconfig</code>, <code>ipconfig</code> 或 <code>cat /etc/hosts</code> 查看! </p>
+<h3 id="意外"><a href="#意外" class="headerlink" title="意外"></a>意外</h3><p>通常應該是按照<a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/remote/ssh">官方教學</a> 就可以了，但是我剛才出現了</p>
+<pre class="language-none"><code class="language-none">[11:32:55.138] Resolver error: Error: XHR failed
+    at XMLHttpRequest.s.onerror (file:&#x2F;&#x2F;&#x2F;C:&#x2F;Program Files&#x2F;Microsoft VS Code&#x2F;resources&#x2F;app&#x2F;out&#x2F;vs&#x2F;workbench&#x2F;workbench.desktop.main.js:462:158)</code></pre>
+
+<p>參考了<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/56671520/how-can-i-install-vscode-server-in-linux-offline">How can I install vscode-server in linux offline</a></p>
+<p>在 code-server 資料夾下多放一個檔案</p>
+<pre class="language-none"><code class="language-none">touch ~&#x2F;.vscode-server&#x2F;bin&#x2F;$&#123;commit_id&#125;&#x2F;0</code></pre>
+
+<p>再重新從 vscode 連一次 ssh 進去，就成功拉!</p>
+<p><strong>參考</strong> : 過程中調查到這個網站，或許會有幫助，但沒有實驗 <a target="_blank" rel="noopener" href="https://github.com/cdr/code-server">https://github.com/cdr/code-server</a></p>
+<h2 id="SSH-Remote-key"><a href="#SSH-Remote-key" class="headerlink" title="SSH Remote key"></a>SSH Remote key</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://hackmd.io/@brick9450/vscode-remote">使用VSCode Remote透過 SSH 進行遠端開發</a> ：用其他模組記住密碼</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.maxlist.xyz/2020/03/14/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-ssh-%E9%81%A0%E7%AB%AF%E9%80%A3%E7%B7%9A%EF%BC%9F/">如何使用 SSH 遠端連線？</a>：使用 ssh 連線，不用輸入密碼就能登入遠端裝置</p>
+</li>
+</ul>
+<p>但每次登入的時候都要輸入密碼，改用 SSH 可以免除每次都要 key 密碼！</p>
+<ol>
+<li><p>在自己（local）電腦：<code>ssh-keygen</code>，直接按 enter 就是產生在預設的資料夾，不使用密碼。</p>
+</li>
+<li><p>資料夾中，<code>id_rsa.pub</code> 是公鑰、<code>id_rsa</code> 是私鑰。</p>
+</li>
+<li><p>用 wordpad 之類的編輯器開啟公鑰，複製。</p>
+</li>
+<li><p>把公鑰放到遠端電腦的 <code>~/.ssh/authorized_keys</code> 檔案裡面：</p>
+<p>使用 Vim 修改</p>
+<ul>
+<li>在遠端電腦上輸入 <code>vim ~/.ssh/authorized_keys</code></li>
+<li>貼上公鑰</li>
+<li>按 <code>:wq</code> 儲存並離開</li>
+</ul>
+<p>或者，vim 太難用了，不如改用 vscode 吧! </p>
+<ul>
+<li>在遠端電腦上輸入 <code>code ~/.ssh/authorized_keys</code></li>
+<li>貼上公鑰、儲存、離開! </li>
+</ul>
+</li>
+<li><p>再一次用 vscode 登入遠端連線，應該可以不用 key 密碼了！</p>
+</li>
+</ol>
+<h2 id="Port-forwarding"><a href="#Port-forwarding" class="headerlink" title="Port forwarding"></a>Port forwarding</h2><p>如果使用遠端作為 Server，其local host 在遠端機器上，沒辦法從本地取得。這時候需要使用到 port 的映射。以 Docker 的官方新手教學為例: 我嘗試在遠端機器 tx2 上建立了一個網頁伺服器: <code>localhost:3000</code>，但在我的電腦上無法取得這個網頁。</p>
+<p>於是，在左邊欄位的「連接阜」直接打<code>3000</code>，然後在本地的 web 打開 <code>localhost:3000</code>，就能連線上去了! 或是如果滑鼠放在在 vscode 「連接阜」下面的內容的某行上，右邊會出現一個地球，也可以直接點擊連上!</p>
+<h2 id="GUI-也能透過SSH傳送過來"><a href="#GUI-也能透過SSH傳送過來" class="headerlink" title="GUI 也能透過SSH傳送過來"></a>GUI 也能透過SSH傳送過來</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zb12138/article/details/107160825">VSCODE 实现远程GUI，显示plt.plot， 设置x11端口转发</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/66875a1f294b">vscode + remote x11插件 +xserver 终端实现远程GUI显示</a></p>
+<p>在 mobaxterm 的時候 <code>plt.show()</code>，或是 qt GUI 都能透過 ssh 傳送過來，這是因為 Moba 裡面自帶 Xterm 的關係。</p>
+<ol>
+<li><p>在 Vscode, xterminal 是需要額外使用插件的：<br>(1) Remote X11 裝在遠端<br>(2) Remote X11 (SSH) 裝在本地</p>
+</li>
+<li><p>需要把 public key 放到遠端的 <code>~/.ssh/authorized_keys</code> 裡面。</p>
+</li>
+<li><p>本地需要載 Xserver，也可以只是打開 mobaXterm 放在那也行。</p>
+</li>
+<li><p>Vscode 裡面 F1後, 打  Remote X11 : Reconnect Display，有彈出通知表示 OK 就可以了 （我的經驗，不OK是因為沒有把公鑰授權過去）</p>
+</li>
+<li><p>輸入一些 GUI 的測試指令，看有沒有成功，成功的話會看到一雙眼睛或是一顆時鐘跳出來～！</p>
+<pre class="language-none"><code class="language-none">xeyes
+xclock</code></pre></li>
+</ol>
+<h2 id="不讓遠端機器記住歷史指令"><a href="#不讓遠端機器記住歷史指令" class="headerlink" title="不讓遠端機器記住歷史指令"></a>不讓遠端機器記住歷史指令</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.networkworld.com/article/3256279/linux-command-history-choosing-what-to-remember-and-how.html">Linux command history: Choosing what to remember and how</a></li>
+<li><a target="_blank" rel="noopener" href="https://taichunmin.idv.tw/blog/2019-10-16-ithelp-ironman-09.html">iT 邦幫忙鐵人賽 DAY 23~30 整合式終端機</a></li>
+</ul>
+<p>在 User 的 <code>settings.json</code> 中設定 (<code>c:User/user/AppData/Roaming/Code/User/settings.json</code>)</p>
+<pre class="language-json" data-language="json"><code class="language-json"><span class="token punctuation">&#123;</span>
+    <span class="token property">"terminal.integrated.defaultProfile.linux"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+    <span class="token property">"terminal.integrated.shell.linux"</span><span class="token operator">:</span> <span class="token punctuation">[</span> <span class="token string">"export HISTCONTROL=ignorespace"</span> <span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// 這行</span>
+    <span class="token property">"terminal.integrated.inheritEnv"</span><span class="token operator">:</span> <span class="token boolean">false</span> <span class="token comment">// 這是 vscode 建議如果有啟用 conda 的話設定 false.</span>
+<span class="token punctuation">&#125;</span></code></pre>
+
+<h2 id="Terminal-突然字母都變成全形"><a href="#Terminal-突然字母都變成全形" class="headerlink" title="Terminal 突然字母都變成全形"></a>Terminal 突然字母都變成全形</h2><p><a target="_blank" rel="noopener" href="https://github.com/microsoft/vscode/issues/120004">https://github.com/microsoft/vscode/issues/120004</a></p>
+<p>這是 windows 大小突然改變的問題，重新縮放可以解決。</p>
+<h2 id="使用-Vscode-預設的-Interactive-mode"><a href="#使用-Vscode-預設的-Interactive-mode" class="headerlink" title="使用 Vscode 預設的 Interactive mode"></a>使用 Vscode 預設的 Interactive mode</h2><p>看看這個影片 <a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=lwN4-W1WR84">VSCode’s Python Interactive mode is AMAZING!</a> 。只要在 .py 中，某個段落的 code 前面加上 <code># %%</code> ，它就會自動跳出一個 block </p>
+<ul>
+<li>Run cell : 只執行這個 block </li>
+<li>Run below : 應該是一路往下所有的 cell 都執行</li>
+<li>Debug cell : 對這個 blog 使用 vscode 的偵錯模組。</li>
+</ul>
+<p>沒有安裝 jupyter 套件沒關係，在嘗試執行 block 時它發現沒有 ipykernel 編譯器就會建議你安裝 Jupyter 了，按照建議的安裝即可。但個人覺得比起第二點在 terminal 裡面開 ipython ，jupyter 的連線比較慢，一段時間不碰還會自動斷線，有點麻煩。</p>
+<h2 id="改主題"><a href="#改主題" class="headerlink" title="改主題"></a><a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/getstarted/themes">改主題</a></h2><p>這邊要說的是基於某主題，進而更改某些不喜歡的設定。</p>
+<ul>
+<li><code>workbench.colorCustomizations</code> 能改變的是 vscode 框架。導覽 bar、整體背景等等。<ul>
+<li><code>&quot;sideBar.background&quot;</code>: 指的是<a target="_blank" rel="noopener" href="https://code.visualstudio.com/api/references/theme-color#editor-groups-tabs">左邊檔案總管</a>那邊</li>
+<li><code>&quot;editor.findMatchHighlightBackground&quot;</code> : 所有被搜尋到匹配的文字的底色。</li>
+</ul>
+</li>
+<li><code>&quot;editor.tokenColorCustomizations&quot;</code> : 管理的是語法的顏色。<ul>
+<li><code>&quot;comments&quot;</code> : 所有註解的顏色。我覺得許多預設主題為註解選擇墨綠色很不清楚，改成紫羅蘭色。</li>
+<li></li>
+</ul>
+</li>
+</ul>
+<pre class="language-json" data-language="json"><code class="language-json"><span class="token property">"workbench.colorTheme"</span><span class="token operator">:</span> <span class="token string">"Default High Contrast"</span><span class="token punctuation">,</span> <span class="token comment">// 當前所選用的主題</span>
+<span class="token property">"workbench.colorCustomizations"</span> <span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token property">"[Default High Contrast]"</span><span class="token operator">:</span><span class="token punctuation">&#123;</span>            
+        <span class="token property">"sideBar.background"</span><span class="token operator">:</span> <span class="token string">"#347890"</span><span class="token punctuation">,</span> <span class="token comment">// 其實不建議改成這個顏色, 只是改變顯眼列在這裡</span>
+        <span class="token property">"editor.findMatchHighlightBackground"</span><span class="token operator">:</span> <span class="token string">"#ffff3f70"</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">,</span> 
+<span class="token property">"editor.tokenColorCustomizations"</span><span class="token operator">:</span><span class="token punctuation">&#123;</span>
+    <span class="token property">"comments"</span><span class="token operator">:</span> <span class="token string">"#85b4ff"</span><span class="token punctuation">,</span>
+
+<span class="token punctuation">&#125;</span></code></pre>
+
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相關文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\2022-02-11-thesis-markdown.html" rel="bookmark">使用 Markdown 寫論文</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\2022-01-17-pickle-basic.html" rel="bookmark">Python 資料永久化套件：Pickle (1) 常見的 lambda PicklingError</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\2022-01-17-pickle-advance.html" rel="bookmark">Python 資料永久化套件：Pickle (2) 裝飾器可以被 Pickle?</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\2022-06-05-python-import.html" rel="bookmark">Python 相對匯入與絕對匯入</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\2022-01-20-python-logger-quick.html" rel="bookmark">Python 日誌模組 Logging (1) 建立一個基礎 logger 模板!</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/tool/" rel="tag"># tool</a>
+              <a href="/tags/python/" rel="tag"># python</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/2022-06-05-blog-4-seo" rel="prev" title="網頁搜尋優化">
+                  <i class="fa fa-chevron-left"></i> 網頁搜尋優化
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="/uploads/address-book.svg"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Judy</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">66k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">2:01</span>
+  </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

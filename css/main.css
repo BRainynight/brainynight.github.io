@@ -3118,3 +3118,13 @@ blockquote {
   margin: 20px 32px 20px 20px;
   font-family: Georgia, "Times New Roman", serif;
 }
+.post-body h1,
+.post-body h2 {
+  border-bottom: 1px solid #a9b3b8;
+}
+.post-body h3 {
+  border-bottom: 1px none #a9b3b8;
+}
+.post-body a {
+  color: #000080;
+}
