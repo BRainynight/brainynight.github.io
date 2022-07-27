@@ -30,7 +30,7 @@
 <meta property="og:description" content="有如 Spyder 的 IPython 互動介面、直接用 VSCode 以 SSH 遠端連線、VSCode 的 anaconda 切換問題等等，有些可能按照 Reference 的做法就成功了，有些會加一些自己的嘗試，所有個人經歷過的問題都記錄在本文中!">
 <meta property="og:locale" content="zh_TW">
 <meta property="article:published_time" content="2022-06-23T03:52:45.000Z">
-<meta property="article:modified_time" content="2022-06-23T05:42:39.920Z">
+<meta property="article:modified_time" content="2022-07-27T01:57:57.668Z">
 <meta property="article:author" content="Judy">
 <meta property="article:tag" content="tool">
 <meta property="article:tag" content="python">
@@ -247,9 +247,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">發表於</span>
-      
 
-      <time title="創建時間：2022-06-23 11:52:45 / 修改時間：13:42:39" itemprop="dateCreated datePublished" datetime="2022-06-23T11:52:45+08:00">2022-06-23</time>
+      <time title="創建時間：2022-06-23 11:52:45" itemprop="dateCreated datePublished" datetime="2022-06-23T11:52:45+08:00">2022-06-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新於</span>
+      <time title="修改時間：2022-07-27 09:57:57" itemprop="dateModified" datetime="2022-07-27T09:57:57+08:00">2022-07-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -341,8 +347,7 @@
 </ol>
 <h3 id="Find-IP"><a href="#Find-IP" class="headerlink" title="Find IP"></a>Find IP</h3><p>嘗試 <code>ifconfig</code>, <code>ipconfig</code> 或 <code>cat /etc/hosts</code> 查看! </p>
 <h3 id="意外"><a href="#意外" class="headerlink" title="意外"></a>意外</h3><p>通常應該是按照<a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/remote/ssh">官方教學</a> 就可以了，但是我剛才出現了</p>
-<pre class="language-none"><code class="language-none">[11:32:55.138] Resolver error: Error: XHR failed
-    at XMLHttpRequest.s.onerror (file:&#x2F;&#x2F;&#x2F;C:&#x2F;Program Files&#x2F;Microsoft VS Code&#x2F;resources&#x2F;app&#x2F;out&#x2F;vs&#x2F;workbench&#x2F;workbench.desktop.main.js:462:158)</code></pre>
+<pre class="language-none"><code class="language-none">[11:32:55.138] Resolver error: Error: XHR failed at XMLHttpRequest.s.onerror (file:&#x2F;&#x2F;&#x2F;C:&#x2F;Program Files&#x2F;Microsoft VS Code&#x2F;resources&#x2F;app&#x2F;out&#x2F;vs&#x2F;workbench&#x2F;workbench.desktop.main.js:462:158)</code></pre>
 
 <p>參考了<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/56671520/how-can-i-install-vscode-server-in-linux-offline">How can I install vscode-server in linux offline</a></p>
 <p>在 code-server 資料夾下多放一個檔案</p>
@@ -351,53 +356,38 @@
 <p>再重新從 vscode 連一次 ssh 進去，就成功拉!</p>
 <p><strong>參考</strong> : 過程中調查到這個網站，或許會有幫助，但沒有實驗 <a target="_blank" rel="noopener" href="https://github.com/cdr/code-server">https://github.com/cdr/code-server</a></p>
 <h2 id="SSH-Remote-key"><a href="#SSH-Remote-key" class="headerlink" title="SSH Remote key"></a>SSH Remote key</h2><ul>
-<li><p><a target="_blank" rel="noopener" href="https://hackmd.io/@brick9450/vscode-remote">使用VSCode Remote透過 SSH 進行遠端開發</a> ：用其他模組記住密碼</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.maxlist.xyz/2020/03/14/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-ssh-%E9%81%A0%E7%AB%AF%E9%80%A3%E7%B7%9A%EF%BC%9F/">如何使用 SSH 遠端連線？</a>：使用 ssh 連線，不用輸入密碼就能登入遠端裝置</p>
-</li>
+<li><a target="_blank" rel="noopener" href="https://hackmd.io/@brick9450/vscode-remote">使用VSCode Remote透過 SSH 進行遠端開發</a> ：用其他模組記住密碼</li>
+<li><a target="_blank" rel="noopener" href="https://www.maxlist.xyz/2020/03/14/%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8-ssh-%E9%81%A0%E7%AB%AF%E9%80%A3%E7%B7%9A%EF%BC%9F/">如何使用 SSH 遠端連線？</a>：使用 ssh 連線，不用輸入密碼就能登入遠端裝置</li>
 </ul>
 <p>但每次登入的時候都要輸入密碼，改用 SSH 可以免除每次都要 key 密碼！</p>
 <ol>
-<li><p>在自己（local）電腦：<code>ssh-keygen</code>，直接按 enter 就是產生在預設的資料夾，不使用密碼。</p>
-</li>
-<li><p>資料夾中，<code>id_rsa.pub</code> 是公鑰、<code>id_rsa</code> 是私鑰。</p>
-</li>
-<li><p>用 wordpad 之類的編輯器開啟公鑰，複製。</p>
-</li>
-<li><p>把公鑰放到遠端電腦的 <code>~/.ssh/authorized_keys</code> 檔案裡面：</p>
-<p>使用 Vim 修改</p>
-<ul>
+<li>在自己（local）電腦：<code>ssh-keygen</code>，直接按 enter 就是產生在預設的資料夾，不使用密碼。</li>
+<li>資料夾中，<code>id_rsa.pub</code> 是公鑰、<code>id_rsa</code> 是私鑰。</li>
+<li>用 wordpad 之類的編輯器開啟公鑰，複製。</li>
+<li>把公鑰放到遠端電腦的 <code>~/.ssh/authorized_keys</code> 檔案裡面：<br>A. 使用 Vim 修改<ul>
 <li>在遠端電腦上輸入 <code>vim ~/.ssh/authorized_keys</code></li>
 <li>貼上公鑰</li>
-<li>按 <code>:wq</code> 儲存並離開</li>
-</ul>
-<p>或者，vim 太難用了，不如改用 vscode 吧! </p>
-<ul>
+<li>按 <code>:wq</code> 儲存並離開<br>B. 或者，vim 太難用了，不如改用 vscode 吧! </li>
 <li>在遠端電腦上輸入 <code>code ~/.ssh/authorized_keys</code></li>
 <li>貼上公鑰、儲存、離開! </li>
 </ul>
 </li>
-<li><p>再一次用 vscode 登入遠端連線，應該可以不用 key 密碼了！</p>
-</li>
+<li>再一次用 vscode 登入遠端連線，應該可以不用 key 密碼了！</li>
 </ol>
 <h2 id="Port-forwarding"><a href="#Port-forwarding" class="headerlink" title="Port forwarding"></a>Port forwarding</h2><p>如果使用遠端作為 Server，其local host 在遠端機器上，沒辦法從本地取得。這時候需要使用到 port 的映射。以 Docker 的官方新手教學為例: 我嘗試在遠端機器 tx2 上建立了一個網頁伺服器: <code>localhost:3000</code>，但在我的電腦上無法取得這個網頁。</p>
 <p>於是，在左邊欄位的「連接阜」直接打<code>3000</code>，然後在本地的 web 打開 <code>localhost:3000</code>，就能連線上去了! 或是如果滑鼠放在在 vscode 「連接阜」下面的內容的某行上，右邊會出現一個地球，也可以直接點擊連上!</p>
-<h2 id="GUI-也能透過SSH傳送過來"><a href="#GUI-也能透過SSH傳送過來" class="headerlink" title="GUI 也能透過SSH傳送過來"></a>GUI 也能透過SSH傳送過來</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zb12138/article/details/107160825">VSCODE 实现远程GUI，显示plt.plot， 设置x11端口转发</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/66875a1f294b">vscode + remote x11插件 +xserver 终端实现远程GUI显示</a></p>
+<h2 id="GUI-也能透過SSH傳送過來"><a href="#GUI-也能透過SSH傳送過來" class="headerlink" title="GUI 也能透過SSH傳送過來"></a>GUI 也能透過SSH傳送過來</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zb12138/article/details/107160825">VSCODE 实现远程GUI，显示plt.plot， 设置x11端口转发</a><br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/66875a1f294b">vscode + remote x11插件 +xserver 终端实现远程GUI显示</a></p>
 <p>在 mobaxterm 的時候 <code>plt.show()</code>，或是 qt GUI 都能透過 ssh 傳送過來，這是因為 Moba 裡面自帶 Xterm 的關係。</p>
 <ol>
-<li><p>在 Vscode, xterminal 是需要額外使用插件的：<br>(1) Remote X11 裝在遠端<br>(2) Remote X11 (SSH) 裝在本地</p>
-</li>
-<li><p>需要把 public key 放到遠端的 <code>~/.ssh/authorized_keys</code> 裡面。</p>
-</li>
-<li><p>本地需要載 Xserver，也可以只是打開 mobaXterm 放在那也行。</p>
-</li>
-<li><p>Vscode 裡面 F1後, 打  Remote X11 : Reconnect Display，有彈出通知表示 OK 就可以了 （我的經驗，不OK是因為沒有把公鑰授權過去）</p>
-</li>
-<li><p>輸入一些 GUI 的測試指令，看有沒有成功，成功的話會看到一雙眼睛或是一顆時鐘跳出來～！</p>
-<pre class="language-none"><code class="language-none">xeyes
-xclock</code></pre></li>
+<li>在 Vscode, xterminal 是需要額外使用插件的：<br>(1) Remote X11 裝在遠端<br>(2) Remote X11 (SSH) 裝在本地</li>
+<li>需要把 public key 放到遠端的 <code>~/.ssh/authorized_keys</code> 裡面。</li>
+<li>本地需要載 Xserver，也可以只是打開 mobaXterm 放在那也行。</li>
+<li>Vscode 裡面 F1後, 打  Remote X11 : Reconnect Display，有彈出通知表示 OK 就可以了 （我的經驗，不OK是因為沒有把公鑰授權過去）</li>
+<li>輸入一些 GUI 的測試指令，看有沒有成功，成功的話會看到一雙眼睛或是一顆時鐘跳出來～！</li>
 </ol>
+<pre class="language-none"><code class="language-none">xeyes
+xclock</code></pre>
+
 <h2 id="不讓遠端機器記住歷史指令"><a href="#不讓遠端機器記住歷史指令" class="headerlink" title="不讓遠端機器記住歷史指令"></a>不讓遠端機器記住歷史指令</h2><ul>
 <li><a target="_blank" rel="noopener" href="https://www.networkworld.com/article/3256279/linux-command-history-choosing-what-to-remember-and-how.html">Linux command history: Choosing what to remember and how</a></li>
 <li><a target="_blank" rel="noopener" href="https://taichunmin.idv.tw/blog/2019-10-16-ithelp-ironman-09.html">iT 邦幫忙鐵人賽 DAY 23~30 整合式終端機</a></li>
@@ -427,7 +417,6 @@ xclock</code></pre></li>
 </li>
 <li><code>&quot;editor.tokenColorCustomizations&quot;</code> : 管理的是語法的顏色。<ul>
 <li><code>&quot;comments&quot;</code> : 所有註解的顏色。我覺得許多預設主題為註解選擇墨綠色很不清楚，改成紫羅蘭色。</li>
-<li></li>
 </ul>
 </li>
 </ul>
@@ -456,16 +445,16 @@ xclock</code></pre></li>
       <div class="popular-posts-title"><a href="\posts\2022-02-11-thesis-markdown.html" rel="bookmark">使用 Markdown 寫論文</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\2022-01-17-pickle-basic.html" rel="bookmark">Python 資料永久化套件：Pickle (1) 常見的 lambda PicklingError</a></div>
-    </li>
-    <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\posts\2022-01-17-pickle-advance.html" rel="bookmark">Python 資料永久化套件：Pickle (2) 裝飾器可以被 Pickle?</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\posts\2022-06-05-python-import.html" rel="bookmark">Python 相對匯入與絕對匯入</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\2022-01-20-python-logger-quick.html" rel="bookmark">Python 日誌模組 Logging (1) 建立一個基礎 logger 模板!</a></div>
+      <div class="popular-posts-title"><a href="\posts\2022-01-22-python-logging-advance.html" rel="bookmark">Python 日誌模組 Logging (2) 細探官方文件</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\2022-01-17-pickle-basic.html" rel="bookmark">Python 資料永久化套件：Pickle (1) 常見的 lambda PicklingError</a></div>
     </li>
   </ul>
 
