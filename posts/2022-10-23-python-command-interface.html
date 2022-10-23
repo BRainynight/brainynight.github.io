@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)">
+<meta name="generator" content="Hexo 5.4.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/uploads/blogicon32.webp">
+  <link rel="icon" type="image/png" sizes="32x32" href="/uploads/blogicon32.webp">
+  <link rel="icon" type="image/png" sizes="16x16" href="/uploads/blogicon16.webp">
+  <link rel="mask-icon" href="/uploads/blogicon32.webp" color="#222">
+  <meta name="google-site-verification" content="fInRyOgNeZhOz7qqAsRDN-Hh4cOsfLWjcr2M3c-HnsM">
+  <meta name="msvalidate.01" content="E0E5BF9DC17624BA5DB02DE076050404">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"brainynight.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.9.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInUp","post_body":"fadeIn","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<meta name="description" content="蒐集與互動式選單、command interface 相關的模組，可以根據用途找到適合的套件。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用 Python 模組寫互動式選單與 CLI">
+<meta property="og:url" content="https://brainynight.github.io/posts/2022-10-23-python-command-interface">
+<meta property="og:site_name" content="Judy&#39;s Blog">
+<meta property="og:description" content="蒐集與互動式選單、command interface 相關的模組，可以根據用途找到適合的套件。">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://files.realpython.com/media/snake.a9589582b58a.gif">
+<meta property="og:image" content="https://brainynight.github.io/uploads/inquire_demo.png">
+<meta property="article:published_time" content="2022-10-23T07:25:39.000Z">
+<meta property="article:modified_time" content="2022-10-23T07:36:20.554Z">
+<meta property="article:author" content="Judy">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="package">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://files.realpython.com/media/snake.a9589582b58a.gif">
+
+
+<link rel="canonical" href="https://brainynight.github.io/posts/2022-10-23-python-command-interface.html">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-TW","comments":true,"permalink":"https://brainynight.github.io/posts/2022-10-23-python-command-interface","path":"posts/2022-10-23-python-command-interface.html","title":"用 Python 模組寫互動式選單與 CLI"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>用 Python 模組寫互動式選單與 CLI | Judy's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QBCDYXBD36"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-QBCDYXBD36","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+  
+  
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切換導航欄" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Judy's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">程式＆興趣的集散地</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section">首頁</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section">標籤</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section">分類</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section">歸檔</a></li>
+        <li class="menu-item menu-item-about"><a href="/about/" rel="section">關於</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger">搜尋
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜尋..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目錄
+        </li>
+        <li class="sidebar-nav-overview">
+          本站概要
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+         
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Argparse"><span class="nav-number">1.</span> <span class="nav-text">Argparse</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Curses"><span class="nav-number">2.</span> <span class="nav-text">Curses</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Inquirer"><span class="nav-number">3.</span> <span class="nav-text">Inquirer</span></a></li></ol></div>
+        </div>
+         
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Judy</p>
+  <div class="site-description" itemprop="description">Python/Hexo/架站-各種疑難雜症的隨手記</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">文章</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分類</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">標籤</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="回到頂端">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-TW">
+    <link itemprop="mainEntityOfPage" href="https://brainynight.github.io/posts/2022-10-23-python-command-interface">
+    <meta itemprop="image" content="/uploads/blogicon32.webp"> 
+      
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Judy">
+      <meta itemprop="url" content="/"> 
+      <meta itemprop="description" content="Python/Hexo/架站-各種疑難雜症的隨手記">
+      
+      
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Judy's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          用 Python 模組寫互動式選單與 CLI
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
+      
+
+      <time title="創建時間：2022-10-23 15:25:39 / 修改時間：15:36:20" itemprop="dateCreated datePublished" datetime="2022-10-23T15:25:39+08:00">2022-10-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="文章字數">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">文章字數：</span>
+      <span>2.3k</span>
+    </span>
+    <span class="post-meta-item" title="所需閱讀時間">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">所需閱讀時間 &asymp;</span>
+      <span>4 分鐘</span>
+    </span>
+</div>
+
+            <div class="post-description">蒐集與互動式選單、command interface 相關的模組，可以根據用途找到適合的套件。</div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>本篇文章是一個蒐集可使用模組的總集，可以根據用途找到適合的套件。</p>
+<h2 id="Argparse"><a href="#Argparse" class="headerlink" title="Argparse"></a>Argparse</h2><p><a target="_blank" rel="noopener" href="https://docs.python.org/zh-tw/3/howto/argparse.html">官方套件</a> <code>argparse</code>讓寫 CLI 介面變得非常輕鬆，特別提一下 <a target="_blank" rel="noopener" href="https://docs.python.org/3/library/argparse.html#nargs"><code>nargs</code> 選項</a>。</p>
+<p><code>nargs</code>: 只要為數字 (int) ，回傳的型態會是一個 list 擁有 <code>nargs</code> 個元素，因此 <code>nargs=1</code> 會是一個 list 內容只有一個元素。而沒有添加 <code>nargs</code> 的話，就不會以 list 的形式回傳。除了整數，還有 <code>+</code>, <code>?</code>, <code>*</code> 三種特殊符號可以選，<code>*</code> 表示可接受任意數量的輸入參數，<code>+</code> 是至少要輸入一個、可接受輸入更多數量的參數，否則會報警告。<code>?</code> 表示可接受 1 個或 0 個參數，其結果不會以清單的形式存下，而是 single item。</p>
+<p><code>nargs=&#39;?&#39;</code> 很適合用於有時候需要求 user 附加檔案路徑的需求。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> argparse
+<span class="token keyword">def</span> <span class="token function">get_parser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    parser <span class="token operator">=</span> argparse<span class="token punctuation">.</span>ArgumentParser<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'--boo'</span><span class="token punctuation">,</span> nargs<span class="token operator">=</span><span class="token string">'?'</span><span class="token punctuation">)</span> <span class="token comment"># nargs = 1 or 0, 值不會是清單</span>
+    parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'--aoo'</span><span class="token punctuation">,</span> nargs<span class="token operator">=</span><span class="token string">'*'</span><span class="token punctuation">)</span> <span class="token comment"># nargs = 0 ~ N</span>
+    parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'--coo'</span><span class="token punctuation">,</span> nargs<span class="token operator">=</span><span class="token string">'+'</span><span class="token punctuation">)</span> <span class="token comment"># nargs >= 1</span>
+    parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'--number'</span><span class="token punctuation">,</span> nargs<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+    parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'--single'</span><span class="token punctuation">)</span>    
+    <span class="token keyword">return</span> parser
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    parser <span class="token operator">=</span> get_parser<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    args <span class="token operator">=</span> parser<span class="token punctuation">.</span>parse_args<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>args<span class="token punctuation">.</span>aoo<span class="token punctuation">)</span>     <span class="token comment"># 2 </span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>args<span class="token punctuation">.</span>boo<span class="token punctuation">)</span>     <span class="token comment"># ['1', '2', '3', '4']</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>args<span class="token punctuation">.</span>coo<span class="token punctuation">)</span>     <span class="token comment"># ['5']</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>args<span class="token punctuation">.</span>number<span class="token punctuation">)</span>  <span class="token comment"># ['2']</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>args<span class="token punctuation">.</span>single<span class="token punctuation">)</span>  <span class="token comment"># 1</span>
+
+<span class="token comment"># python .\example_argprase.py --aoo 1 2 3 4 --boo 2  --single 1 --number 2 --coo 5</span></code></pre>
+
+<p><code>parser</code> 的回傳值是一個 namespace，可以直接用名字取用值，像是上面數字的例子那樣直接用 <code>args.number</code> 對 <code>args</code> 這個回傳的 namespace 取值。另外還有<a target="_blank" rel="noopener" href="https://docs.python.org/3/library/argparse.html#mutual-exclusion">互斥選項</a>、<a target="_blank" rel="noopener" href="https://docs.python.org/3/library/argparse.html#argument-groups">Argument groups</a> 等進階的用法。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> argparse
+<span class="token keyword">def</span> <span class="token function">get_parser</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    parser <span class="token operator">=</span> argparse<span class="token punctuation">.</span>ArgumentParser<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"-u"</span><span class="token punctuation">,</span> <span class="token string">"--update"</span><span class="token punctuation">,</span> <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">"Clean dir and upate new code."</span><span class="token punctuation">,</span> default<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> action<span class="token operator">=</span><span class="token string">"store_true"</span><span class="token punctuation">)</span>
+
+    <span class="token comment"># 互斥組</span>
+    group <span class="token operator">=</span> parser<span class="token punctuation">.</span>add_mutually_exclusive_group<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    group<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"--gdb"</span><span class="token punctuation">,</span> <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">"Use gdb compile code."</span><span class="token punctuation">,</span> default<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> action<span class="token operator">=</span><span class="token string">"store_true"</span><span class="token punctuation">)</span>
+    group<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"--clang"</span><span class="token punctuation">,</span> <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">"Use clang compile code."</span><span class="token punctuation">,</span> default<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> action<span class="token operator">=</span><span class="token string">"store_true"</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> parser</code></pre>
+
+<h2 id="Curses"><a href="#Curses" class="headerlink" title="Curses"></a><a target="_blank" rel="noopener" href="https://docs.python.org/3/howto/curses.html">Curses</a></h2><p><code>curses </code> 也是一個 Python 官方的套件，可以使用它開發 console base 的 UI。<a target="_blank" rel="noopener" href="https://realpython.com/python-print/#building-console-user-interfaces">Real Python: Your Guide to the Python print() Function</a> 當中有些示例，像是做個貪吃蛇：</p>
+<p><img src="https://files.realpython.com/media/snake.a9589582b58a.gif" alt="貪吃蛇"></p>
+<p>最終沒有涉略這個模組，它似乎都是全螢幕式的，沒有辦法只顯示在打完指令下面的位置，與我的目的不合。</p>
+<h2 id="Inquirer"><a href="#Inquirer" class="headerlink" title="Inquirer"></a>Inquirer</h2><p>套件 <strong><a target="_blank" rel="noopener" href="https://github.com/magmax/python-inquirer">inquirer</a></strong> 不是 Python 原生的模組，是一個基於 inquire.js 想法產生的 Python 專案，主要支援 Unix 平台，在 <a target="_blank" rel="noopener" href="https://github.com/SBoudrias/Inquirer.js">inquirer.js</a> 裡面有比較多圖片說明。開發上，<code>pip install inquirer</code>  即可裝好模組。支援</p>
+<ul>
+<li>問答，要求使用者輸入內容並包含驗證格式。</li>
+<li>清單，提供選項，User 用鍵盤上下鍵選擇答案</li>
+<li>Check box </li>
+</ul>
+<p>簡單舉個例子! </p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> inquirer
+<span class="token keyword">import</span> os 
+
+questions <span class="token operator">=</span> <span class="token punctuation">[</span>
+  inquirer<span class="token punctuation">.</span>List<span class="token punctuation">(</span><span class="token string">'subdir'</span><span class="token punctuation">,</span>
+      message<span class="token operator">=</span><span class="token string">"cd to which dir"</span><span class="token punctuation">,</span>
+      choices<span class="token operator">=</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>os<span class="token punctuation">.</span>getcwd<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span>
+answers <span class="token operator">=</span> inquirer<span class="token punctuation">.</span>prompt<span class="token punctuation">(</span>questions<span class="token punctuation">)</span>
+questions<span class="token punctuation">[</span><span class="token string">"subdir"</span><span class="token punctuation">]</span> <span class="token comment"># user 選到的選項值</span></code></pre>
+
+<p>不過在 colab 的環境中，它沒辦法提供方向鍵在 console 上的互動，因此在印完以下內容後會報 error，但若在一般的 Linux terminal 用起來體驗是很不錯的！</p>
+<p><img src="/uploads/inquire_demo.png" alt="inquire question demo"></p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相關文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\2022-10-23-python-asyncio.html" rel="bookmark">Python 非同步處理-Asyncio</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\2022-01-20-python-logger-quick.html" rel="bookmark">Python 日誌模組 Logging (1) 建立一個基礎 logger 模板!</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\2022-06-05-python-import.html" rel="bookmark">Python 相對匯入與絕對匯入</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\2022-01-17-pickle-advance.html" rel="bookmark">Python 資料永久化套件：Pickle (2) 裝飾器可以被 Pickle?</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\2022-01-17-pickle-basic.html" rel="bookmark">Python 資料永久化套件：Pickle (1) 常見的 lambda PicklingError</a></div>
+    </li>
+  </ul>
+
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/python/" rel="tag"># python</a>
+              <a href="/tags/package/" rel="tag"># package</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/2022-06-23-vscode-setting" rel="prev" title="VSCode 的環境設置">
+                  <i class="fa fa-chevron-left"></i> VSCode 的環境設置
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/posts/2022-10-23-python-asyncio" rel="next" title="Python 非同步處理-Asyncio">
+                  Python 非同步處理-Asyncio <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="/uploads/address-book.svg"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Judy</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="總字數">72k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="所需總閱讀時間">2:10</span>
+  </span>
+</div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
