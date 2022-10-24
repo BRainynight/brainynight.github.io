@@ -171,18 +171,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">文章</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
           <a href="/categories/">
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分類</span></a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">標籤</span></a>
       </div>
   </nav>
@@ -339,7 +339,7 @@ year="2007"
 文獻[@col1]更是提到不但太陽會影響天氣，下雨、風也會。</code></pre>
 
 <p>經過指令調用 pandoc 來轉換成微軟 word 檔案：</p>
-<pre class="language-shell" data-language="shell"><code class="language-shell">pandoc --cite --bibliography&#x3D;biblio.bib demo.md -o demo-citation.docx</code></pre>
+<pre class="language-shell" data-language="shell"><code class="language-shell">pandoc --cite --bibliography<span class="token operator">=</span>biblio.bib demo.md -o demo-citation.docx</code></pre>
 
 <p>Word 產生的圖會在後面看到。</p>
 <h3 id="文獻超連結"><a href="#文獻超連結" class="headerlink" title="文獻超連結"></a>文獻超連結</h3><p>上述方法產生的文件，在數字引用的部份只有單純的文字，沒辦法超連結到下面的參考文件區。根據 <a target="_blank" rel="noopener" href="https://pandoc.org/MANUAL.html#other-relevant-metadata-fields">PanDoc 官方文件</a>，這需要在 markdown 中添加 meta-data 把參數開起來：</p>
@@ -349,7 +349,7 @@ year="2007"
 <span class="token punctuation">---</span></span></code></pre>
 
 <h3 id="調整文獻插入的格式"><a href="#調整文獻插入的格式" class="headerlink" title="調整文獻插入的格式"></a>調整文獻插入的格式</h3><p>我的領域並不慣用上面那種引用方式，要調整引用格式需要透過附加 <code>.csl</code> 檔案，上網查了 <a target="_blank" rel="noopener" href="https://github.com/citation-style-language/styles/blob/master/ieee.csl">IEEE 格式的 csl 檔案</a>。並在指令上添加 <code>--csl=ieee.csl</code> 參數：</p>
-<pre class="language-shell" data-language="shell"><code class="language-shell">pandoc --cite --csl&#x3D;ieee.csl --bibliography&#x3D;biblio.bib demo.md \
+<pre class="language-shell" data-language="shell"><code class="language-shell">pandoc --cite --csl<span class="token operator">=</span>ieee.csl --bibliography<span class="token operator">=</span>biblio.bib demo.md <span class="token punctuation">\</span>
 	-o demo-citation.docx</code></pre>
 
 <h2 id="轉成-docx-時包含預設-MS-Word-模板格式"><a href="#轉成-docx-時包含預設-MS-Word-模板格式" class="headerlink" title="轉成 docx 時包含預設 MS Word 模板格式"></a>轉成 docx 時包含預設 MS Word 模板格式</h2><p>如果希望 docx 轉換成期望的格式，需要添加 <code>--reference-doc</code> 參數，我將論文格式儲存成 <code>render-sample.docx</code>，放在同一個資料夾。並且在 <code>.md</code> 最後加上了參考資料的標題，最後轉換效果如下：</p>
@@ -498,9 +498,6 @@ sudo dpkg -i pandoc-2.17.1.1-1-amd64.deb</code></pre>
       <div class="popular-posts-title"><a href="\posts\2021-12-30-blog-0-hexo-build-env.html" rel="bookmark">建置 Hexo 部落格</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\posts\2022-01-26-blog-2-theme-Next-update.html" rel="bookmark">Hexo Blog 客製化 (2) Next 主題更新與 PrismJs 啟用</a></div>
-    </li>
-    <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\posts\2022-01-01-blog-0-source.html" rel="bookmark">新年快樂之部落格沿革(?)</a></div>
     </li>
     <li class="popular-posts-item">
@@ -508,6 +505,9 @@ sudo dpkg -i pandoc-2.17.1.1-1-amd64.deb</code></pre>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\posts\2022-01-26-blog-3-speedup.html" rel="bookmark">Hexo Blog 客製化 (3) Next 主題加速</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\posts\2022-01-26-blog-2-theme-Next-update.html" rel="bookmark">Hexo Blog 客製化 (2) Next 主題更新與 PrismJs 啟用</a></div>
     </li>
   </ul>
 
@@ -561,13 +561,13 @@ sudo dpkg -i pandoc-2.17.1.1-1-amd64.deb</code></pre>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="總字數">72k</span>
+    <span title="總字數">75k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="所需總閱讀時間">2:10</span>
+    <span title="所需總閱讀時間">2:16</span>
   </span>
 </div>
 
