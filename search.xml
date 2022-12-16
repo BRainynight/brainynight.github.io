@@ -219,6 +219,34 @@ public&#x2F;
       </tags>
   </entry>
   <entry>
+    <title>新年快樂之部落格沿革(?)</title>
+    <url>/posts/2022-01-01-blog-0-source.html</url>
+    <content><![CDATA[<p>2022 新年快樂！新年的第一篇文章，來寫個段小故事。相信自己一路走來在各種平台、格式上轉換的痛苦已經算少了，但每次想起依然常常覺得…. 小坎坷阿，希望現在的決定夠有遠見了？紀錄一下一路走來的辛酸淚。</p>
+<span id="more"></span>
+
+<h3 id="純樸的文字編輯器：Evernote"><a href="#純樸的文字編輯器：Evernote" class="headerlink" title="純樸的文字編輯器：Evernote"></a>純樸的文字編輯器：Evernote</h3><p>從高中起一直有寫心得、觀後感與日記的習慣，那時候用的是 Evernote。大學開始寫程式時，也有著紀錄 bug 的習慣，那時候用的是 Line 記事本跟 Evernote。可以想見，這種紀錄方式簡直是災難… 我希望至少 Code 可以是彩色的（好卑微阿），開始尋找替代方案。</p>
+<p>儘管將程式相關的內容從 Evernote 抽離，它依然是我挺喜歡的筆記軟體。但，隨著 Markdown 語法越來越盛行，Evernote 卻遲遲不能夠跟進，加上 Notion 後來出了教育帳戶免費的策略，最後包括慣用的其他紀錄也都轉移到 Notion 去了。</p>
+<h3 id="Blogger"><a href="#Blogger" class="headerlink" title="Blogger"></a>Blogger</h3><p>由於當時有在用 Blogger 在寫遊記，所以第一時間想到的替代工具就是 Google 旗下的 Blogger ，大約也用了一年多。當對排版越來越要求，發現 Blogger 那種 word 編輯器 + html 編輯界面的方式實在是太沒效率了！決定再次轉移。</p>
+<h3 id="HackMD"><a href="#HackMD" class="headerlink" title="HackMD"></a>HackMD</h3><p>開始用 Markdown 在寫技術筆記，並使用 HackMD 作為平台。但 HackMD 有個很大的缺點，它不支援內文搜尋模式….. （曾經支援，後來疑似因為 loading 太大拿掉內文搜索只能找標題）文章一多不記得什麼內容在哪篇文章，這根本災難！只好又開始尋找替代方案</p>
+<p>那個時期不知道為什麼，HackMD 老是不溫不火，號稱是從日本 IT 圈紅回來的軟體，在台灣小有名氣其實也很好用。但感覺一直是維持狀態，更新狀態不大，反而有退一步取消內文搜索功能的這種事件。</p>
+<h3 id="Github-Typora"><a href="#Github-Typora" class="headerlink" title="Github + Typora"></a>Github + Typora</h3><p>腦子動到 Github 的頭上，發展出用離線的 Markdown 編輯器 Typora 加上 Github 做同步。在我開始將 HackMD 的內容拉下來，跟本地的離線檔案整併時發現有些筆記不小心使用到了一些只有 HackMD 支援的 Markdown 延伸語法，導致這些內容在 Typora 上完全沒有效果！！像是亂碼一樣！</p>
+<p>至此，我下定決心，以後寫文章絕對不要再搞出這麼多麻煩，乖乖用基礎的 Markdown 語法，很方便了！別搞那麼多事！</p>
+<h3 id="熱門的部落格平台：Medium"><a href="#熱門的部落格平台：Medium" class="headerlink" title="熱門的部落格平台：Medium"></a>熱門的部落格平台：Medium</h3><p>想有個部落格的心情依舊在，我曾嘗試過 Medium 平台並不是很喜歡。一來是平台的彈性低、程式碼甚至沒辦法上色，非得透過 Gist ；二來是 Medium 還是比較適合英文文章，英文字寫起來格式是又優雅又漂亮，但中文一個斜體就搞得版面很不和諧。後來也就拿來放一些跟 Code 無關的事情，一些搞環境經驗之類的而已。</p>
+<h3 id="初體驗靜態網頁產生器：Pelican"><a href="#初體驗靜態網頁產生器：Pelican" class="headerlink" title="初體驗靜態網頁產生器：Pelican"></a>初體驗靜態網頁產生器：Pelican</h3><p>大四時一度嘗試使用 Github Page + Pelican 做靜態網站生成，挑選這個組合是因為覺得綁定網域得付錢、感覺這部落格又是有一更沒一更不知道哪天會不會荒廢，決定先從免費的試試看，Github Page 是這個選項很好的解答。而 Pelican 是它背後是用 Python 寫的，好歹我比較熟 (不敢一下子踏入 js) 。</p>
+<p>不知道是對網站管理沒經驗、放太多圖片塞到流量還是什麼問題，大約半年覺得網站載入太慢了受不了，加上對版面的主題既不滿意、又改不動，在充滿羞恥的心情下收掉了這個第一個自己架的部落格。</p>
+<h3 id="再次回歸-Github-Typora"><a href="#再次回歸-Github-Typora" class="headerlink" title="再次回歸 Github + Typora"></a>再次回歸 Github + Typora</h3><p>此後，我一直用 Typora + Github 的模式寫筆記，由於有過自己搭建的經驗，每次看到別人的部落格是使用 Github page 的時候，都會多留意兩眼框架與主題，以及一些自己喜歡的小工具、要素等等，也是那時候看到 Hexo 與 Next 主題被很多人採用。過去使用 Peclian 時，我極度討厭文章太長，每次都要卷到最上面才能點目錄跳轉的情況，甚至自己研究用 CSS 弄了一個懸浮目錄，功能是有卻醜到自己受不了，關站很大一個原因也是這樣。</p>
+<h3 id="現在：Hexo"><a href="#現在：Hexo" class="headerlink" title="現在：Hexo"></a>現在：Hexo</h3><p>直到最近看到有在追蹤的一位作者的文章<a href="https://www.ithome.com.tw/voice/148476">技術網站架設經驗雜談</a>，邊看產生了很多共鳴，想到了一直有個小小的期許：能彈性控制的部落格！才鼓起勇氣再次搭建了部落格。這次打算嘗試許多人都採用的 Hexo 來搭建，管他語言不一樣，大不了學學吧！於是最終就有了這個部落格。</p>
+<p>恩，真是一段不長不短的歷史。總之就是告誡自己，不要被漂亮的擴充功能迷惑，換了框架很痛苦的。</p>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>about</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo Blog 客製化 (1) 部落格指令自動化</title>
     <url>/posts/2021-12-30-blog-1-automatic-command.html</url>
     <content><![CDATA[<p>想用原始一點的方法來搞個半自動化，第一步當然就是不要打那麼多指令！</p>
@@ -251,6 +279,128 @@ public&#x2F;
       </categories>
       <tags>
         <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>網頁搜尋優化</title>
+    <url>/posts/2022-06-05-blog-4-seo.html</url>
+    <content><![CDATA[<p>這是一篇在部落格架設之初，嘗試使用 Google Search Console 時的苦痛新路歷程，多數內容是當時所寫。幾乎是每日每日更新當天的發現、新的疑難雜症，因此可能每個段落的「今天」都不一樣(尷尬)，但文章中都有把實際的日期標上去，請以相對時間的角度來閱讀本文!</p>
+<p>我並不是專業於網頁前端、SEO 的人，或許文中的推斷與說明會有偏差，但仍嘗試將過程中的試誤以及解決辦法給紀錄下來，對錯與否還請自行斟酌!</p>
+<hr>
+<p>首先，網頁架設之後如果搜尋引擎沒有收錄，就沒辦法讓網頁在使用者搜尋時被搜索到。Google 的爬蟲「有可能」可以主動探勘到部落格，但或許更大的機率是不會，畢竟現在網路這麼發達，爬蟲很忙的。</p>
+<p>要知道自己的網頁是否有被爬蟲收錄，可以直接在搜尋引擎上打 <code>site:&lt;你的網址&gt;</code>，像是要看本部落格在搜尋引擎的收錄狀況如下:</p>
+<pre class="language-none"><code class="language-none">site:brainynight.github.io</code></pre>
+
+<p>我們要做的事情是，讓自己的網頁在搜尋引擎登記在案! 使用的是 Google Search Console 的服務。有關如何登記，可以參考此篇文章: <a href="https://www.seo-tea.com/google-search-console-tutorial/">【完整指南】2022 Google Search Console教學(附索引問題處理) - SEO分解茶</a>。</p>
+<p>本文接下來所分享的內容，是有關我在 Google Search Console 建立網域、登記 Sitemap 之後所遇到的問題。</p>
+<p>PS. 在 2022/09 前後，Google 有修改一次搜尋引擎的策略，用 <code>site:XXX</code> 看收錄了哪些網站似乎不再管用，與在 Google Search Console 當中看到編入索引數量並不一致，顯示的只有熱門的幾篇文章。</p>
+<h2 id="提交-Sitemap-後等很久"><a href="#提交-Sitemap-後等很久" class="headerlink" title="提交 Sitemap 後等很久"></a>提交 Sitemap 後等很久</h2><p><img src="/uploads/sitemapfail.png" alt="image20220126135547909"></p>
+<p>圖中的三個網址，有兩個是拿來嘗試此情況下 Google 會顯示何狀態，只有 <code>sitemap.xml</code> 是我真正希望爬蟲看到的。</p>
+<ul>
+<li><p><code>sitemap_index.xml</code>: 在我的網頁中不存在，404 not found。Google 的狀態顯示「無法擷取」但點進去之後有寫到錯誤原因: <code>無法讀取 Sitemap: 一般的 HTTP 錯誤</code>。</p>
+<blockquote>
+<p>我們嘗試存取您的 Sitemap 時發生錯誤。請確定您的 Sitemap 符合我們的指南，而且可由您提供的位置存取，確認都沒有問題後再重新提交。 示例 HTTP 錯誤：404</p>
+</blockquote>
+</li>
+<li><p><code>robots.txt</code>: 他本身不是 xml 檔案，我在提交 robots.txt 的頁面有提交過，可以成功爬取。可讀取 Sitemap，但其中含有錯誤。</p>
+<blockquote>
+<p>不受支持的檔案格式。您的 Sitemap 格式似乎不受支援。請確認它符合我們的《Sitemap 指南》，然後重新提交。</p>
+</blockquote>
+</li>
+<li><p><code>sitemap.xml</code>: 真正的 sitemap，我確定 google 是可以存取他的，但不知道為何就是顯示無法擷取，點進去的內容也只有「無法讀取 Sitemap」。</p>
+</li>
+</ul>
+<p>網路上關於 sitemap 沒辦法被截取有很多解釋，主要歸類如下:</p>
+<ol>
+<li>真的有問題: 如格式不對 (含有 noindex, 不符合 sitemap 規範的幾種格式)、網址不存在 (404)</li>
+<li>沒問題，只是 Google 機器人還沒時間爬。</li>
+</ol>
+<p>主要就是如果可以確認自己的 sitemap 屬於後者，就只能等。幾天到幾個禮拜不一定… ，這兩篇文章可以參考:</p>
+<ul>
+<li><p><a href="https://stackoverflow.com/questions/53921636/google-search-console-fails-to-fetch-sitemaps-sitemap-could-not-be-read">Google search console fails to fetch sitemaps | “Sitemap could not be read”</a></p>
+</li>
+<li><p><a href="https://www.jcchouinard.com/sitemap-could-not-be-read-couldnt-fetch-in-google-search-console/">Sitemap could not be read (Couldn’t fetch) in Google Search Console</a></p>
+<p>如果狀況如下圖，可能如作者所言，就只是 google 引擎還沒抓到。</p>
+<p><img src="https://www.jcchouinard.com/wp-content/uploads/2021/07/image-4.png.webp" alt="img"></p>
+</li>
+</ul>
+<h2 id="Sitemap-被讀取成功"><a href="#Sitemap-被讀取成功" class="headerlink" title="Sitemap 被讀取成功"></a>Sitemap 被讀取成功</h2><p>大約是 1/25 晚上第一次提交 sitemap，1/27 早上看到頁面轉為通過 (快樂)。</p>
+<p>在一直不通過的期間我到處爬文，除了上面說的 googlebot delay 的關係，還有一個是 google 難以在茫茫大海中找到這個網站。由於之前有在 Medium 上寫作，知道它的 SEO 做的很好，所以在 Medium 上面發了一篇轉站的文章。</p>
+<p>今天早上 (1/27) 不但看到 sitemap 通過了，還發現我的 Blog 首頁在 <strong>網址審查</strong> 那邊，來源是從 Medium 來的!</p>
+<pre class="language-none"><code class="language-none">發現方式
+Sitemap: https:&#x2F;&#x2F;brainynight.github.io&#x2F;sitemap.xml
+參照網頁: &lt;我的 medium blog 網址&gt;</code></pre>
+
+<p>恩，雖然它依然顯示 <strong>網址不在 Google 服務中 (已找到 - 目前尚未建立索引)</strong> 。但這個階段，在 google 找自己的網域(文章一開始說的搜索方式)還是找不到東西的。</p>
+<p>網路上說「找到」直到「建立索引」的階段，可能要長達一周以上，反正就慢慢等囉。</p>
+<h2 id="所申請的主頁被索引成功"><a href="#所申請的主頁被索引成功" class="headerlink" title="所申請的主頁被索引成功"></a>所申請的主頁被索引成功</h2><p>1/30 中午 11 點! 我的部落格首頁被索引成功!</p>
+<p>一早 10 點起來還沒被索引，我查了一下有利 SEO 的條件基本上要利於手機檢索，於是開始調整東調整西。這之間我曾經嘗試調整字體，然而字體是外部資源，因此會耗費載入時間。對於 Hexo Next 這個主題我所做的優化，都記錄在文章<a href="/posts/2022-01-26-blog-3-speedup">Hexo Blog 客製化 (3) Next 主題加速</a>當中。諷刺的是，最影響效能的其實就是字體跟外載入的資源! 我把 <code>min.js</code> (來自 fontawsome 提供 icon 的) 跟字體客製化都關掉用最原始的預設字體。結果效率分數直接拉到 99~100。</p>
+<p>也就是說，甚麼美化都不搞其實更有利於檢索….。由於之前我的 sitemap 有被接收過，其中網址的狀態都被標示沒安排索引，原因是怕伺服器撐不住，我猜測是因為載入過慢的問題，因此做了這樣的調整。也不知道有沒有因果關係，總之做了這一些調整後，首頁被 googel 爬蟲臨幸拉! (快樂)</p>
+<p>可以使用 google 引擎看一下自己的收錄狀況，要注意 <code>site</code> 跟 <code>url</code> 之間不能有空格!</p>
+<pre class="language-none"><code class="language-none">site:&lt;your url&gt; [keyword]
+# Example: 
+site:https:&#x2F;&#x2F;brainynight.github.io
+site:https:&#x2F;&#x2F;brainynight.github.io pickle</code></pre>
+
+<h2 id="我的網頁有變更，Google-沒看到"><a href="#我的網頁有變更，Google-沒看到" class="headerlink" title="我的網頁有變更，Google 沒看到"></a>我的網頁有變更，Google 沒看到</h2><p>Google 搜尋引擎的演算法策略不斷改變，數位世代的網頁增長數量也非常快。Google 難以將全世界所有的網頁都收錄一遍、且隨時即時更新。使用 wordpress 或用 github page 自己架設部落格時，SEO 問題就需要自己一盤抓。</p>
+<p>而像這種個人的小部落格，Google 的更新頻率不快，即使它已經收錄了 sitemap，也不會有更新就看到。像是現在 2/2 而我的 sitemap 上次被看的時間是 1/27 !</p>
+<p>Google 的官方說明文件<a href="https://developers.google.com/search/docs/advanced/crawling/ask-google-to-recrawl?visit_id=637793786640453064-2510441601&rd=1">要求 Google 重新檢索網址</a>中提及:</p>
+<ul>
+<li><p>我們可以用「網址檢查工具」看單一網頁上次被檢索的時間得知狀態，網站數量不多時，我們可以在單一頁面的檢索狀態上按「要求建立索引」來提交，但 Google 對這個通路有數量限制。</p>
+</li>
+<li><p>或是用「索引狀態報表」查看 Sitemap 中有收錄的網址的狀態。提交大量網址時，一般建議使用 Sitemap。如果尚未在 Google Console 中提交 Sitemap 、或是提交後 Google 還沒接受（狀態還不是成功），這個報表是用不到的。</p>
+</li>
+</ul>
+<p>現在面臨的狀況是：我曾經提交 Sitemap 但後來有網址的發布方式，然而 Google 所存檔的是我舊的網址連結。想要讓 Google 知道我的網址都變更了。</p>
+<h3 id="通知-google-網站已經變更"><a href="#通知-google-網站已經變更" class="headerlink" title="通知 google 網站已經變更"></a>通知 google 網站已經變更</h3><p>官方文件<a href="https://developers.google.com/search/docs/advanced/sitemaps/build-sitemap#addsitemap">將 Sitemap 提交給 Google</a> 裡面有這樣一段話</p>
+<blockquote>
+<p>Google 不會在每次檢索網站時檢查 Sitemap。除非您透過連線偵測 (ping) 告知我們 Sitemap 有異動，否則我們只會在首次偵測到 Sitemap 時進行檢查。如果您並未新增或更新 Sitemap，請勿要求 Google 檢查 Sitemap；也不要重複提交相同的 Sitemap 或為其執行連線偵測 (ping)。</p>
+</blockquote>
+<p>簡單來說：</p>
+<ol>
+<li>Google第一次偵測到 Sitemap 的時候會對裡面進行檢查，之後不會每次檢索的時候都去看 Sitemap。</li>
+<li>所以如果 Sitemap 有變更，Google 沒看到要 Ping 一下它。</li>
+<li>如果有已經存在的網頁有更新，要使用 <code>&lt;lastmod&gt;</code>標記這些網頁。</li>
+</ol>
+<p>有兩種方式讓 Google 存取 Sitemap</p>
+<ol>
+<li><p>尚未讓 Google 收藏過 Sitemap：建議在 Google Console 中提交 <a href="https://support.google.com/webmasters/answer/7451001">Sitemap 報告</a></p>
+</li>
+<li><p>使用連線偵測 (ping) 工具：在網址中傳送 GET 要求：</p>
+<pre class="language-none"><code class="language-none">https:&#x2F;&#x2F;www.google.com&#x2F;ping?sitemap&#x3D;&lt;你的sitemap完整網址(包括https)&gt;</code></pre></li>
+</ol>
+<h2 id="小技巧-將-Search-Console-的版面切成英文"><a href="#小技巧-將-Search-Console-的版面切成英文" class="headerlink" title="小技巧: 將 Search Console 的版面切成英文"></a>小技巧: 將 Search Console 的版面切成英文</h2><p>在參數列添加 <code>&amp;hl=en</code> 可以直接將 google console 的報表直接轉換成英文，用英文的 Keyword 在搜尋引擎上查，可以得到比較多相關資料! 中文的討論串實在有點少。</p>
+<h2 id="分享一下-Sitemap-被光顧的時間頻率"><a href="#分享一下-Sitemap-被光顧的時間頻率" class="headerlink" title="分享一下 Sitemap 被光顧的時間頻率"></a>分享一下 Sitemap 被光顧的時間頻率</h2><p>需要注意的是，Google Console 的各表格更新時間<strong>並不一致</strong>！因此有些問題可能會沒辦法即時反應。例如，明明 Sitemap 在 2/5 被讀取了，然而涵蓋範圍頁面的更新日期卻停留在 2/2，因此我沒辦法知道這一次 Google 更新的網址有哪些，也沒辦法知道 Google 有沒有試圖對它們爬蟲、是不是我的頁面有問題等等，只能等。等它的統計表單更新… 。</p>
+<p>而包含成效(有多少點擊量)、涵蓋範圍、行動裝置可用性、檢索統計資料，每張表格的更新日期都是不一致的！以我寫這段文字的時間，他們的更新時間分別是 5小時前、2/1、 2/4、 2/2。因此「行動裝置頁面」的有效網頁數量反而比「涵蓋範圍」多，顯得有點弔詭。</p>
+<ul>
+<li>1/25 第一次提交 sitemap</li>
+<li>1/27 Sitemap 第一次被讀取，但沒有任何網頁被收錄。顯示「已找到、目前尚未建立索引」</li>
+<li>1/30 11:00 首頁被索引收錄成功，期間進行手機與電腦板的網頁載入速度優化。</li>
+</ul>
+<p>2月：修改 <strong>文章 (post)</strong> 網址的格式，也就是說 Google 收錄的 sitemap 內容，與我當前的網址不一致，只能等待 Google 再爬到我的 sitemap 發現有更新，才能同步兩邊的網址內容。而 tag 頁面的網址沒有被改，跟 sitemap 是一致的。期間，當我手動為 tag 進行索引提交，這些網頁幾乎都當天就被收錄了，而文章頁面則都被不理會。</p>
+<ul>
+<li>2/5 10:00 發現 Sitemap 被更新，距離上次被讀取相隔將近 9 天，一共處理 25 個網址。</li>
+<li>2/6 11:00 發現 Sitemap 連續兩天被臨幸，顯示「Sitemap已處理完畢」一共有 25 個網址。<ul>
+<li>然而涵蓋範圍內標示的網址都是舊網址，且總數只有 22 個。</li>
+<li>從網址檢查工具那邊查看，舊網址沒有被 sitemap 收錄，新網址（現在正常的）則都有被收錄。</li>
+<li>另外出現一個轉址錯誤，可是我透過其他工具看轉址都是正常的。</li>
+<li>發現有一個網址顯示「已檢索 - 目前尚未建立索引」，很難過以為被嫌棄了。</li>
+</ul>
+</li>
+<li>2/6 22:00 發現那個原本「已檢索 - 目前尚未建立索引」的網頁被收錄了，是我第一篇真正被收錄的文章（目前為止都是 tag 類的頁面被收錄）！雖然當前在 Google 引擎上我還是看不到。</li>
+<li>2/9 涵蓋範圍終於更新成我修改後的網址、並且網址數量和與我當前的 sitemap 一致。也就是說從我提交新的網址到涵蓋範圍變動之間大約 7~10 天才在報表上生效，若單論修改到爬蟲來光顧 Sitemap 間隔大約 5天。但目前也只有一篇手動提交的網址被檢索並建立索引，其他都還是「已找到、目前尚未建立索引」</li>
+<li>2/5~2/10 連續 6 天被 Google 爬蟲臨幸，文章介面實際被爬取的有 3 篇，其他時候都是一些 tag 頁面被爬 (可以去設定那邊的「檢索統計資料、依發現方式」看有多少文章被爬到）</li>
+<li>5月初爬蟲有再來連續光顧 7天，但其間個人忙碌，沒有更新文章。</li>
+<li>6/3 爬蟲又來了一天，結果我是隔天才更新文章 (掩面)。</li>
+</ul>
+<p>其實網路上許多人也都說了，爬蟲何時來只能耐心等候，我還是稍微紀錄了一下對於這個新開的站，爬蟲光顧的頻率以及我個人所遇到的狀況，如何應對。希望能夠提供給有類似問題的人一個經驗分享!!</p>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -318,34 +468,6 @@ public&#x2F;
       <tags>
         <tag>blog</tag>
         <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>新年快樂之部落格沿革(?)</title>
-    <url>/posts/2022-01-01-blog-0-source.html</url>
-    <content><![CDATA[<p>2022 新年快樂！新年的第一篇文章，來寫個段小故事。相信自己一路走來在各種平台、格式上轉換的痛苦已經算少了，但每次想起依然常常覺得…. 小坎坷阿，希望現在的決定夠有遠見了？紀錄一下一路走來的辛酸淚。</p>
-<span id="more"></span>
-
-<h3 id="純樸的文字編輯器：Evernote"><a href="#純樸的文字編輯器：Evernote" class="headerlink" title="純樸的文字編輯器：Evernote"></a>純樸的文字編輯器：Evernote</h3><p>從高中起一直有寫心得、觀後感與日記的習慣，那時候用的是 Evernote。大學開始寫程式時，也有著紀錄 bug 的習慣，那時候用的是 Line 記事本跟 Evernote。可以想見，這種紀錄方式簡直是災難… 我希望至少 Code 可以是彩色的（好卑微阿），開始尋找替代方案。</p>
-<p>儘管將程式相關的內容從 Evernote 抽離，它依然是我挺喜歡的筆記軟體。但，隨著 Markdown 語法越來越盛行，Evernote 卻遲遲不能夠跟進，加上 Notion 後來出了教育帳戶免費的策略，最後包括慣用的其他紀錄也都轉移到 Notion 去了。</p>
-<h3 id="Blogger"><a href="#Blogger" class="headerlink" title="Blogger"></a>Blogger</h3><p>由於當時有在用 Blogger 在寫遊記，所以第一時間想到的替代工具就是 Google 旗下的 Blogger ，大約也用了一年多。當對排版越來越要求，發現 Blogger 那種 word 編輯器 + html 編輯界面的方式實在是太沒效率了！決定再次轉移。</p>
-<h3 id="HackMD"><a href="#HackMD" class="headerlink" title="HackMD"></a>HackMD</h3><p>開始用 Markdown 在寫技術筆記，並使用 HackMD 作為平台。但 HackMD 有個很大的缺點，它不支援內文搜尋模式….. （曾經支援，後來疑似因為 loading 太大拿掉內文搜索只能找標題）文章一多不記得什麼內容在哪篇文章，這根本災難！只好又開始尋找替代方案</p>
-<p>那個時期不知道為什麼，HackMD 老是不溫不火，號稱是從日本 IT 圈紅回來的軟體，在台灣小有名氣其實也很好用。但感覺一直是維持狀態，更新狀態不大，反而有退一步取消內文搜索功能的這種事件。</p>
-<h3 id="Github-Typora"><a href="#Github-Typora" class="headerlink" title="Github + Typora"></a>Github + Typora</h3><p>腦子動到 Github 的頭上，發展出用離線的 Markdown 編輯器 Typora 加上 Github 做同步。在我開始將 HackMD 的內容拉下來，跟本地的離線檔案整併時發現有些筆記不小心使用到了一些只有 HackMD 支援的 Markdown 延伸語法，導致這些內容在 Typora 上完全沒有效果！！像是亂碼一樣！</p>
-<p>至此，我下定決心，以後寫文章絕對不要再搞出這麼多麻煩，乖乖用基礎的 Markdown 語法，很方便了！別搞那麼多事！</p>
-<h3 id="熱門的部落格平台：Medium"><a href="#熱門的部落格平台：Medium" class="headerlink" title="熱門的部落格平台：Medium"></a>熱門的部落格平台：Medium</h3><p>想有個部落格的心情依舊在，我曾嘗試過 Medium 平台並不是很喜歡。一來是平台的彈性低、程式碼甚至沒辦法上色，非得透過 Gist ；二來是 Medium 還是比較適合英文文章，英文字寫起來格式是又優雅又漂亮，但中文一個斜體就搞得版面很不和諧。後來也就拿來放一些跟 Code 無關的事情，一些搞環境經驗之類的而已。</p>
-<h3 id="初體驗靜態網頁產生器：Pelican"><a href="#初體驗靜態網頁產生器：Pelican" class="headerlink" title="初體驗靜態網頁產生器：Pelican"></a>初體驗靜態網頁產生器：Pelican</h3><p>大四時一度嘗試使用 Github Page + Pelican 做靜態網站生成，挑選這個組合是因為覺得綁定網域得付錢、感覺這部落格又是有一更沒一更不知道哪天會不會荒廢，決定先從免費的試試看，Github Page 是這個選項很好的解答。而 Pelican 是它背後是用 Python 寫的，好歹我比較熟 (不敢一下子踏入 js) 。</p>
-<p>不知道是對網站管理沒經驗、放太多圖片塞到流量還是什麼問題，大約半年覺得網站載入太慢了受不了，加上對版面的主題既不滿意、又改不動，在充滿羞恥的心情下收掉了這個第一個自己架的部落格。</p>
-<h3 id="再次回歸-Github-Typora"><a href="#再次回歸-Github-Typora" class="headerlink" title="再次回歸 Github + Typora"></a>再次回歸 Github + Typora</h3><p>此後，我一直用 Typora + Github 的模式寫筆記，由於有過自己搭建的經驗，每次看到別人的部落格是使用 Github page 的時候，都會多留意兩眼框架與主題，以及一些自己喜歡的小工具、要素等等，也是那時候看到 Hexo 與 Next 主題被很多人採用。過去使用 Peclian 時，我極度討厭文章太長，每次都要卷到最上面才能點目錄跳轉的情況，甚至自己研究用 CSS 弄了一個懸浮目錄，功能是有卻醜到自己受不了，關站很大一個原因也是這樣。</p>
-<h3 id="現在：Hexo"><a href="#現在：Hexo" class="headerlink" title="現在：Hexo"></a>現在：Hexo</h3><p>直到最近看到有在追蹤的一位作者的文章<a href="https://www.ithome.com.tw/voice/148476">技術網站架設經驗雜談</a>，邊看產生了很多共鳴，想到了一直有個小小的期許：能彈性控制的部落格！才鼓起勇氣再次搭建了部落格。這次打算嘗試許多人都採用的 Hexo 來搭建，管他語言不一樣，大不了學學吧！於是最終就有了這個部落格。</p>
-<p>恩，真是一段不長不短的歷史。總之就是告誡自己，不要被漂亮的擴充功能迷惑，換了框架很痛苦的。</p>
-]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-        <tag>about</tag>
       </tags>
   </entry>
   <entry>
@@ -486,6 +608,207 @@ public&#x2F;
       </tags>
   </entry>
   <entry>
+    <title>Linux 上的 SSH 常用模組與設定</title>
+    <url>/posts/2022-10-24-linux-ssh.html</url>
+    <content><![CDATA[<p>先前在 VS Code 的設定文章中有提及過 SSH 登入的設定，本篇以 Linux 的 SSH 登入開始介紹，並且提及 <code>scp</code>, <code>sshfs</code> 兩個基於 SSH 連線，方便於多台 Linux 機器之前交換資料的模組。</p>
+<h2 id="使用-SSH-登入"><a href="#使用-SSH-登入" class="headerlink" title="使用 SSH 登入"></a>使用 SSH 登入</h2><ol>
+<li><p>首先，本地 (local) 的電腦需要有 SSH key，</p>
+<pre class="language-none"><code class="language-none">ssh-keygen</code></pre>
+
+<p>首先它會問 ssh 存放的位置，預設是 <code>~/.ssh</code> 下面。密碼如果直接按 Enter 相當取用不需要用密碼，可自行斟酌。</p>
+<p>資料夾中 <code>id_rsa.pub</code> 是公鑰、<code>id_rsa</code> 是私鑰。</p>
+</li>
+<li><p>取得遠端 (remote) 電腦的 IP。登入遠端機器之後，使用 <code>ipconfig</code> 或 <code>ifconfig</code> 通常可以找到，如果兩者都無法，可以用指令 <code>cat /etc/hosts</code> 查找。</p>
+</li>
+</ol>
+<h3 id="把公鑰放到遠端機器上"><a href="#把公鑰放到遠端機器上" class="headerlink" title="把公鑰放到遠端機器上"></a>把公鑰放到遠端機器上</h3><p>先說簡單的方法，使用 <code>ssh-copy-id</code></p>
+<pre class="language-none"><code class="language-none">ssh-copy-id &lt;remote id&gt; </code></pre>
+
+<p>會需要輸入一次密碼，指令會把 public key 放到遠端機器上設定好。參考：<a href="https://dywang.csie.cyut.edu.tw/dywang/security/node85.html">ssh-copy-id</a>。</p>
+<p>另一種是手動方法，編號接續前面的 Step</p>
+<ol start="3">
+<li><p>在 Linux 上可用 <code>nano</code>, <code>vim</code> 之類的文字編輯器，在本地打開 <code>~/.ssh/id_rsa.pub</code>，複製內容。</p>
+</li>
+<li><p>把公鑰 (public key) 放到遠端電腦的  <code>~/.ssh/authorized_keys</code> 裡面。</p>
+</li>
+<li><p>從本地端使用 ssh 連線過去，嘗試是否成功！</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">ssh</span> username@IP -p port</code></pre></li>
+</ol>
+<p>使用 SSH 可以免去每次都要輸入密碼的環節，像是 mobaxterm 這種工具雖然有記住密碼的功能，有鑑於之前曾發生忘記 mobaxterm 密碼的慘劇，讓我後來都改用 SSH 的方式 。當然 <code>.ssh</code> 如果有設密碼一樣可能面臨相同的困擾，但 <code>ssh</code> 在 linux 上可用的範圍更為廣泛，算是個好處吧。</p>
+<h2 id="給予遠端-IP-別名"><a href="#給予遠端-IP-別名" class="headerlink" title="給予遠端 IP 別名"></a>給予遠端 IP 別名</h2><p>像是在用 docker, kubernetes 一次使用多台機器的時候，如果每一台的 IP 都不同，也不怎麼連續。有時候又會需要登入每一台做些設定，這時如果能給每一台機器的 IP 都設其他代稱，可以方便許多。以下會先說名 ssh 部份的作法，後面提及使用 docker 的經驗！</p>
+<h3 id="設置-ssh-config"><a href="#設置-ssh-config" class="headerlink" title="設置 .ssh/config"></a>設置 .ssh/config</h3><p>位置在 <code>~/.ssh/config</code> 下，</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">Host            remoete_machine 	<span class="token comment"># 代稱</span>
+Hostname        <span class="token number">192.168</span>.0.1        	<span class="token comment"># ip address</span>
+Port            <span class="token number">22</span>                	
+User            jonny                <span class="token comment"># user name</span>
+identityfile    ~/.ssh/id_rsa   	 <span class="token comment"># private key 位置 </span></code></pre>
+
+<p>這樣下次就可以直接用這邊設定的內容連線！但如果前面在產生 ssh key 的時候有設密碼，則每次連線會需要打那個密碼！</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">ssh</span> remoete_machine</code></pre>
+
+<h3 id="在網域上尋找機器"><a href="#在網域上尋找機器" class="headerlink" title="在網域上尋找機器"></a>在網域上尋找機器</h3><p>我曾遇到過需要自己找 IP 的情況….，要在網域上尋找機器，可使用使用 nmap，用法可參考文章最後的參考資料。</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> nmap
+<span class="token function">sudo</span> nmap -sn <span class="token number">192.168</span>.1.1-100</code></pre>
+
+<h3 id="改變-IP-address-的-hostname"><a href="#改變-IP-address-的-hostname" class="headerlink" title="改變 IP address 的 hostname"></a>改變 IP address 的 hostname</h3><p>這是另外一種作法，在使用 docker 管理多台 Raspberry Pi 時曾用此方法：修改檔案 <code>/etc/hosts</code> 。把 IP 位置改成自訂的 hostname，例如：</p>
+<pre class="language-none"><code class="language-none">192.168.1.181         docker1
+192.168.1.182         docker2
+192.168.1.183         docker3
+192.168.1.184         docker4</code></pre>
+
+<p>其實前面提到的 <code>ssh-copy-id</code>，如果在這一部先設好每一個 IP，用腳本跑 <code>ssh-copy-id</code> 有機會輕鬆的多。</p>
+<h2 id="scp"><a href="#scp" class="headerlink" title="scp"></a>scp</h2><p>透過 SSH 執行 Copy ，<code>scp</code> 之後第一個位置是 source、第二個位置是 destination</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># local to remote </span>
+<span class="token function">scp</span> <span class="token operator">&lt;</span>local path<span class="token operator">></span> user@192.168.0.1:<span class="token operator">&lt;</span>remote path<span class="token operator">></span>
+<span class="token comment"># remote to local</span>
+<span class="token function">scp</span> user@192.168.0.1:<span class="token operator">&lt;</span>remote path<span class="token operator">></span> <span class="token operator">&lt;</span>local path<span class="token operator">></span></code></pre>
+
+<p>複製目錄也跟原始的 <code>cp</code> 相似，加上 <code>-r</code> 參數：</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">scp</span> -r user@192.168.0.1:<span class="token operator">&lt;</span>remote path<span class="token operator">></span> <span class="token operator">&lt;</span>local path<span class="token operator">></span></code></pre>
+
+<p>要從同台機器上，複製多個資料夾的內容，則在冒號後面把路徑寫在一起：</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 正確作法</span>
+<span class="token function">scp</span> -r user@192.168.0.1:<span class="token string">"dir1 dir2 dir3"</span> <span class="token operator">&lt;</span>local path<span class="token operator">></span>
+
+<span class="token comment"># 會複製兩次! （如果有設密碼就要打兩次）</span>
+<span class="token function">scp</span> -r user@192.168.0.1:dir1 user@192.168.0.1:dir2 <span class="token operator">&lt;</span>local path<span class="token operator">></span></code></pre>
+
+<h2 id="sshfs"><a href="#sshfs" class="headerlink" title="sshfs"></a>sshfs</h2><p>需要注意，如果不是 root 用戶，本地位置<strong>目錄</strong>的<strong>擁有者</strong>必須為使用者自己（不能把檔案從遠端 copy 到這台電腦中，別的 user 所屬的資料夾的概念）。如果遠端機器的 ssh port 不是預設的 22 （是透過 router 設定 port forwarding 之類的），要透過 <code>-p &lt;port&gt;</code> 標明連哪個 port，否則會連線不進去。</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">sshfs <span class="token operator">&lt;</span>remote location<span class="token operator">></span> <span class="token operator">&lt;</span>local location<span class="token operator">></span>
+sshfs username@hostname:/path/to/folder /path/to/local/folder
+sshfs -p <span class="token operator">&lt;</span>remote port<span class="token operator">></span> username@hostname:/path/to/folder /path/to/local/folder
+<span class="token comment"># example</span>
+sshfs -p <span class="token number">1000</span> pi@0.0.0.100:/share_files /accept_file</code></pre>
+
+<p>這個舉動的意思是：把遠端機器(<code>0.0.0.100</code>) 上的 <code>share_files</code> 資料夾『掛載 (mount)』到我的機器上的 <code>accept_file</code> 資料夾！因為是用 mount 的，所以當遠端機器的 <code>share_files</code> 內容有更新，我這邊的 <code>accept_file</code> 也會同步更新！</p>
+<p>而如果希望解除綁定資料夾的狀態，可以參考下面連結的論壇，用 <code>fusermount -u /path/to/local/folder</code> 解除本地資料夾與遠端的連結。</p>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
+<li><p><a href="https://www.ibm.com/support/pages/configuring-ssh-login-without-password">Configuring an SSH login without password</a></p>
+</li>
+<li><p><a href="https://blog.gtwang.org/linux/nmap-command-examples-tutorials/">Nmap 網路診斷工具基本使用技巧與教學</a></p>
+</li>
+<li><p><a href="https://blog.miniasp.com/post/2013/11/30/Useful-tool-SSHFS-SSH-Filesystem">介紹好用工具： SSH Filesystem (簡單好用的 SSH 檔案系統)</a></p>
+</li>
+<li><p><a href="https://howchoo.com/g/njy4zdm3mwy/how-to-run-a-raspberry-pi-cluster-with-docker-swarm">How to Run a Raspberry Pi Cluster with Docker Swarm</a></p>
+</li>
+<li><p><a href="https://blog.gtwang.org/linux/linux-scp-command-tutorial-examples/">Linux 的 scp 指令用法教學與範例：遠端加密複製檔案與目錄</a></p>
+</li>
+<li><p><a href="https://blog.miniasp.com/post/2013/11/30/Useful-tool-SSHFS-SSH-Filesystem">介紹好用工具： SSH Filesystem (簡單好用的 SSH 檔案系統)</a></p>
+</li>
+<li><p><a href="https://unix.stackexchange.com/questions/106480/how-to-copy-files-from-one-machine-to-another-using-ssh#answer-106485">How to copy files from one machine to another using ssh</a></p>
+</li>
+<li><p><a href="https://ephrain.net/linux-%E5%9C%A8-centos-%E4%B8%8A%E4%BD%BF%E7%94%A8-sshfs-%E4%BE%86%E6%8E%9B%E8%BC%89-ssh-server-%E4%B8%8A%E7%9A%84%E6%AA%94%E6%A1%88%E7%B3%BB%E7%B5%B1/">[Linux] 在 CentOS 上使用 sshfs 來掛載 SSH server 上的檔案系統</a></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>ssh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Build GDB with Python 3</title>
+    <url>/posts/2022-12-16-build-gdb.html</url>
+    <content><![CDATA[<p>GDB 自 7.0 之後支援 Python 3，但需要在 compile 的時候就下指令以 python 3 compile。這篇文章是嘗試編譯內建擁有 Python3 GDB 的試誤經驗，以及讓 C++ STL Container 在 GDB 中有漂亮的排版 (pretty-print) 的設定。</p>
+<h2 id="Build-GDB"><a href="#Build-GDB" class="headerlink" title="Build GDB"></a>Build GDB</h2><p>試圖以 GDB 12.1 + Python3.8 的組合，使用 GCC/G++ 11 編譯。</p>
+<p>發生了不少的問題，解決的迷迷糊糊… 以下有一些經驗，僅僅是經驗，我尚不太清楚是否確實有直接的影響。</p>
+<ol>
+<li>把 GCC 的 Share library 放到環境變數 <code>$LD_LIBRARY_PATH</code> 裡面</li>
+<li>如果 Python 是用 apt-get 之類的方式下載，不是自己編譯、或不是從 Python.org 載下來的，有可能會沒有 share library。<br>可用 <code>apt-get</code> / <code>yum</code> 的話分別是下載 <code>python3-dev</code>, <code>python3-devel</code>，沒有權限使用則自己編譯 Python 吧。</li>
+<li>使用 python3.8 以上的版本，要修改 <code>gdb/configure</code> (見後文)。</li>
+<li>出現找不到 Python shared library 之類的，也可以嘗試把 Python shared library 的路徑放到 <code>$LD_LIBRARY_PATH</code>。</li>
+<li>有改環境變數或改 bashrc 之類的，建議把整個 terminal 關掉重開，避免有一些設定殘留。</li>
+<li>只要有改環境變數或 bashrc 等，務必要重新下 <code>./configure....</code> 的指令。如果是改 gdb 安裝包裡面的腳本則不影響，可以直接跑 <code>make</code>。</li>
+<li>如果 <code>make</code> 到一半報錯，但錯誤看起來很莫名其妙，可以直接再下一次 <code>make</code>，有機會前後兩次錯誤的輸出不同。但解決第二次的錯誤就順著跑下去了。</li>
+<li>如果有很莫名其妙的 <code>ld</code> error，可嘗試 <code>make clean</code>，把所有的東西殺掉重新跑！</li>
+</ol>
+<h3 id="修改-gdb-configure"><a href="#修改-gdb-configure" class="headerlink" title="修改 gdb/configure"></a>修改 <code>gdb/configure</code></h3><p>在 Python binary 的同個資料夾中 (<code>which python</code> 得到 binary 位置)，在編譯 GDB 的時候會用到 python-config 的輸出，只是預設是執行 gdb 裡面的 python-config.py 腳本。然而 Python 3.8 之後，<code>python-config</code> 之後對於 share library <code>-lpython3.8</code> 的配置 (?) 有些更動，詳情我說不大清楚原理，詳請可看<a href="https://docs.python.org/zh-tw/3/whatsnew/3.8.html?highlight=python%20config#debug-build-uses-the-same-abi-as-release-build">官方在 Python3.8 發布時的說明</a>。</p>
+<p>總之，不做以下改動，很容易發生找不到 share library 的狀況。首先創建一個變數 <code>custom_python_configure</code> 指向與 python3 binary 相同資料夾的 python-config，接著修改 <code>python_includes</code>, <code>python_libs</code>, <code>python_prefix</code> 三個變數的取得方式，都使用 <code>custom_python_configure</code> 來取得。</p>
+<pre class="language-shell" data-language="shell"><code class="language-shell"> <span class="token keyword">if</span> <span class="token builtin class-name">test</span> <span class="token string">"<span class="token variable">$&#123;python_prog&#125;</span>"</span> <span class="token operator">!=</span> missing<span class="token punctuation">;</span> <span class="token keyword">then</span>
+   <span class="token assign-left variable">have_python_config</span><span class="token operator">=</span>yes
+   <span class="token comment"># fix: </span>
+   <span class="token assign-left variable">custom_python_configure</span><span class="token operator">=</span><span class="token string">"&lt;path-to-python-location>/bin/python-config --embed"</span>
+   <span class="token assign-left variable">python_includes</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span>$<span class="token punctuation">&#123;</span>custom_python_configure<span class="token punctuation">&#125;</span> --includes<span class="token variable">`</span></span>
+   <span class="token comment"># origin: python_includes=`$&#123;python_prog&#125; $&#123;srcdir&#125;/python/python-config.py --includes`</span>
+   <span class="token keyword">if</span> <span class="token builtin class-name">test</span> <span class="token variable">$?</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+     <span class="token assign-left variable">have_python_config</span><span class="token operator">=</span>failed
+     <span class="token keyword">if</span> <span class="token builtin class-name">test</span> <span class="token string">"<span class="token variable">$&#123;with_python&#125;</span>"</span> <span class="token operator">!=</span> auto<span class="token punctuation">;</span> <span class="token keyword">then</span>
+as_fn_error <span class="token variable">$?</span> <span class="token string">"failure running python-config --includes"</span> <span class="token string">"<span class="token variable">$LINENO</span>"</span> <span class="token number">5</span>
+     <span class="token keyword">fi</span>
+   <span class="token keyword">fi</span>
+   <span class="token comment"># fix:</span>
+   <span class="token assign-left variable">python_libs</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span>$<span class="token punctuation">&#123;</span>custom_python_configure<span class="token punctuation">&#125;</span> --ldflags<span class="token variable">`</span></span>
+   <span class="token comment"># origin: python_libs=`$&#123;python_prog&#125; $&#123;srcdir&#125;/python/python-config.py --ldflags`</span>
+   <span class="token keyword">if</span> <span class="token builtin class-name">test</span> <span class="token variable">$?</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+     <span class="token assign-left variable">have_python_config</span><span class="token operator">=</span>failed
+     <span class="token keyword">if</span> <span class="token builtin class-name">test</span> <span class="token string">"<span class="token variable">$&#123;with_python&#125;</span>"</span> <span class="token operator">!=</span> auto<span class="token punctuation">;</span> <span class="token keyword">then</span>
+as_fn_error <span class="token variable">$?</span> <span class="token string">"failure running python-config --ldflags"</span> <span class="token string">"<span class="token variable">$LINENO</span>"</span> <span class="token number">5</span>
+     <span class="token keyword">fi</span>
+   <span class="token keyword">fi</span>
+   <span class="token comment"># fix</span>
+   <span class="token assign-left variable">python_prefix</span><span class="token operator">=</span><span class="token variable"><span class="token variable">`</span>$<span class="token punctuation">&#123;</span>custom_python_configure<span class="token punctuation">&#125;</span> --exec-prefix<span class="token variable">`</span></span>
+   <span class="token comment"># origin: python_prefix=`$&#123;python_prog&#125; $&#123;srcdir&#125;/python/python-config.py --exec-prefix`</span>
+   <span class="token keyword">if</span> <span class="token builtin class-name">test</span> <span class="token variable">$?</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+     <span class="token assign-left variable">have_python_config</span><span class="token operator">=</span>failed
+     <span class="token keyword">if</span> <span class="token builtin class-name">test</span> <span class="token string">"<span class="token variable">$&#123;with_python&#125;</span>"</span> <span class="token operator">!=</span> auto<span class="token punctuation">;</span> <span class="token keyword">then</span>
+as_fn_error <span class="token variable">$?</span> <span class="token string">"failure running python-config --exec-prefix"</span> <span class="token string">"<span class="token variable">$LINENO</span>"</span> <span class="token number">5</span>
+     <span class="token keyword">fi</span>
+   <span class="token keyword">fi</span>
+ <span class="token keyword">else</span></code></pre>
+
+
+
+<h2 id="Build-Python"><a href="#Build-Python" class="headerlink" title="Build Python"></a>Build Python</h2><p>直接從 python.org 下載（我載 gzip file），Python 3.11 的話我以 GCC 11 編譯，GCC 9.2 會報錯。</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash">./configure --enable-optimizations <span class="token punctuation">\</span>
+            --with-ensurepip<span class="token operator">=</span>install <span class="token punctuation">\</span>
+            --enable-shared --prefix<span class="token operator">=</span><span class="token operator">&lt;</span>python-location<span class="token operator">></span></code></pre>
+
+<p><code>--enable-shared</code> 這個參數會有 Share library 產生，在 <code>&lt;python-location&gt;/lib/</code> 底下，<code>libpython3.8.so</code> 之類的檔案。</p>
+<h2 id="Pretty-Print-STL-Container"><a href="#Pretty-Print-STL-Container" class="headerlink" title="Pretty Print STL Container"></a>Pretty Print STL Container</h2><p>我在 windows 上以 msys 安裝的 gdb 是自帶 python 3 的，並且 <code>info pretty-printer</code> 的列表中也都有所有 STL container。但在一些 Linux 電腦上，若無法重新編譯 GDB (沒有權限解決之類的)，透過以下方法可以把 pretty printer 註冊給 GDB。</p>
+<p>官網說明在此：<a href="https://sourceware.org/gdb/wiki/STLSupport">STL Support Tools</a>，它需要透過 <code>svn</code> 取得 <code>libstdc++</code> 再於 <code>~/.gdbinit</code> 設定。如果無法拜訪 <code>svn</code>，以下將提供一個解決辦法。</p>
+<ol>
+<li><p>在 Github 上的鏡像倉庫中找到 <code>libstdc++</code> </p>
+<ul>
+<li>GDB 內建 Python3: <a href="https://github.com/gcc-mirror/gcc/tree/master/libstdc%2B%2B-v3/python">https://github.com/gcc-mirror/gcc/tree/master/libstdc%2B%2B-v3/python</a></li>
+<li>GDB 內建 Python2: <a href="https://github.com/faskiri/gdb-pretty-printers/tree/master/gcc.gnu.org/svn/gcc/trunk/libstdc%2B%2B-v3/python/libstdcxx">gdb-pretty-printers</a></li>
+</ul>
+</li>
+<li><p>把 <code>gcc/libstdc++-v3/python/libstdcxx/</code> 之下的所有檔案下載下來，路徑為 <code>&lt;yourPath&gt;/libstdcxx</code></p>
+</li>
+<li><p>到 <code>~/.gdbinit</code> (Github 路徑中有 Makefile，但我懶得理解，自己手動改)</p>
+<pre class="language-python" data-language="python"><code class="language-python">python
+<span class="token keyword">import</span> sys
+sys<span class="token punctuation">.</span>path<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">"&lt;yourPath>/libstdcxx"</span><span class="token punctuation">)</span>
+<span class="token keyword">from</span> libstdcxx<span class="token punctuation">.</span>v6<span class="token punctuation">.</span>printers <span class="token keyword">import</span> register_libstdcxx_printers
+<span class="token comment"># register_libstdcxx_printers(None) # 此行視情況添加</span>
+end</code></pre>
+
+<p><code>register_libstdcxx_printers(None)</code> 這行在官網的教學是需要添加，但我添加後打開 gdb 卻出現已經註冊的訊息，若屬於此情況，把這行拿掉即可。</p>
+</li>
+<li><p>打開 gdb，輸入指令看各 std container 是否已經列在之中</p>
+<pre class="language-none"><code class="language-none">info pretty-printer</code></pre></li>
+</ol>
+<h2 id="尋找-Home-路徑"><a href="#尋找-Home-路徑" class="headerlink" title="尋找 Home 路徑"></a>尋找 Home 路徑</h2><p>在 Linux 底下通常就是在 <code>~/.gdbinit</code>，但在 windows 下因為是透過 msys 裝的….. 可以透過下列指令尋找 Home</p>
+<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># in GDB</span>
+show environment <span class="token environment constant">HOME</span>	<span class="token comment"># show home</span>
+shell <span class="token builtin class-name">echo</span> <span class="token environment constant">$HOME</span>	    <span class="token comment"># show home</span>
+shell <span class="token builtin class-name">pwd</span>			   <span class="token comment"># current directory</span></code></pre>
+
+
+
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+      <tags>
+        <tag>tool</tag>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python 資料永久化套件：Pickle (2) 裝飾器可以被 Pickle?</title>
     <url>/posts/2022-01-17-pickle-advance.html</url>
     <content><![CDATA[<h2 id="PEP-3155-Qualified-name"><a href="#PEP-3155-Qualified-name" class="headerlink" title="PEP 3155 Qualified name"></a>PEP 3155 Qualified name</h2><p>有關 Fully Qualified Name 的部份我是第一次看到…，嘗試閱讀 PEP 內容，不是很確定閱讀理解是否正確，若有錯誤歡迎指教！</p>
@@ -598,105 +921,78 @@ email<span class="token punctuation">.</span>mime<span class="token punctuation"
       </tags>
   </entry>
   <entry>
-    <title>Linux 上的 SSH 常用模組與設定</title>
-    <url>/posts/2022-10-24-linux-ssh.html</url>
-    <content><![CDATA[<p>先前在 VS Code 的設定文章中有提及過 SSH 登入的設定，本篇以 Linux 的 SSH 登入開始介紹，並且提及 <code>scp</code>, <code>sshfs</code> 兩個基於 SSH 連線，方便於多台 Linux 機器之前交換資料的模組。</p>
-<h2 id="使用-SSH-登入"><a href="#使用-SSH-登入" class="headerlink" title="使用 SSH 登入"></a>使用 SSH 登入</h2><ol>
-<li><p>首先，本地 (local) 的電腦需要有 SSH key，</p>
-<pre class="language-none"><code class="language-none">ssh-keygen</code></pre>
+    <title>用 Python 模組寫互動式選單與 CLI</title>
+    <url>/posts/2022-10-23-python-command-interface.html</url>
+    <content><![CDATA[<p>本篇文章是一個蒐集可使用模組的總集，可以根據用途找到適合的套件。</p>
+<h2 id="Argparse"><a href="#Argparse" class="headerlink" title="Argparse"></a>Argparse</h2><p><a href="https://docs.python.org/zh-tw/3/howto/argparse.html">官方套件</a> <code>argparse</code>讓寫 CLI 介面變得非常輕鬆，特別提一下 <a href="https://docs.python.org/3/library/argparse.html#nargs"><code>nargs</code> 選項</a>。</p>
+<p><code>nargs</code>: 只要為數字 (int) ，回傳的型態會是一個 list 擁有 <code>nargs</code> 個元素，因此 <code>nargs=1</code> 會是一個 list 內容只有一個元素。而沒有添加 <code>nargs</code> 的話，就不會以 list 的形式回傳。除了整數，還有 <code>+</code>, <code>?</code>, <code>*</code> 三種特殊符號可以選，<code>*</code> 表示可接受任意數量的輸入參數，<code>+</code> 是至少要輸入一個、可接受輸入更多數量的參數，否則會報警告。<code>?</code> 表示可接受 1 個或 0 個參數，其結果不會以清單的形式存下，而是 single item。</p>
+<p><code>nargs=&#39;?&#39;</code> 很適合用於有時候需要求 user 附加檔案路徑的需求。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> argparse
+<span class="token keyword">def</span> <span class="token function">get_args</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    parser <span class="token operator">=</span> argparse<span class="token punctuation">.</span>ArgumentParser<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'--boo'</span><span class="token punctuation">,</span> nargs<span class="token operator">=</span><span class="token string">'?'</span><span class="token punctuation">)</span> <span class="token comment"># nargs = 1 or 0, 值不會是清單</span>
+    parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'--aoo'</span><span class="token punctuation">,</span> nargs<span class="token operator">=</span><span class="token string">'*'</span><span class="token punctuation">)</span> <span class="token comment"># nargs = 0 ~ N</span>
+    parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'--coo'</span><span class="token punctuation">,</span> nargs<span class="token operator">=</span><span class="token string">'+'</span><span class="token punctuation">)</span> <span class="token comment"># nargs >= 1</span>
+    parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'--number'</span><span class="token punctuation">,</span> nargs<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+    parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'--single'</span><span class="token punctuation">)</span>   
+	<span class="token comment"># Positional Argument</span>
+    parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"flag1"</span><span class="token punctuation">,</span> nargs<span class="token operator">=</span><span class="token string">'?'</span><span class="token punctuation">)</span> <span class="token comment"># the first positional argument is `flag1`</span>
+    parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"flags"</span><span class="token punctuation">,</span> nargs<span class="token operator">=</span><span class="token string">'*'</span><span class="token punctuation">)</span> <span class="token comment"># the second ~ N-th positional argument will be collected to `flags`</span>
 
-<p>首先它會問 ssh 存放的位置，預設是 <code>~/.ssh</code> 下面。密碼如果直接按 Enter 相當取用不需要用密碼，可自行斟酌。</p>
-<p>資料夾中 <code>id_rsa.pub</code> 是公鑰、<code>id_rsa</code> 是私鑰。</p>
-</li>
-<li><p>取得遠端 (remote) 電腦的 IP。登入遠端機器之後，使用 <code>ipconfig</code> 或 <code>ifconfig</code> 通常可以找到，如果兩者都無法，可以用指令 <code>cat /etc/hosts</code> 查找。</p>
-</li>
-</ol>
-<h3 id="把公鑰放到遠端機器上"><a href="#把公鑰放到遠端機器上" class="headerlink" title="把公鑰放到遠端機器上"></a>把公鑰放到遠端機器上</h3><p>先說簡單的方法，使用 <code>ssh-copy-id</code></p>
-<pre class="language-none"><code class="language-none">ssh-copy-id &lt;remote id&gt; </code></pre>
+    <span class="token keyword">return</span> parser<span class="token punctuation">.</span>parse_args<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-<p>會需要輸入一次密碼，指令會把 public key 放到遠端機器上設定好。參考：<a href="https://dywang.csie.cyut.edu.tw/dywang/security/node85.html">ssh-copy-id</a>。</p>
-<p>另一種是手動方法，編號接續前面的 Step</p>
-<ol start="3">
-<li><p>在 Linux 上可用 <code>nano</code>, <code>vim</code> 之類的文字編輯器，在本地打開 <code>~/.ssh/id_rsa.pub</code>，複製內容。</p>
-</li>
-<li><p>把公鑰 (public key) 放到遠端電腦的  <code>~/.ssh/authorized_keys</code> 裡面。</p>
-</li>
-<li><p>從本地端使用 ssh 連線過去，嘗試是否成功！</p>
-<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">ssh</span> username@IP -p port</code></pre></li>
-</ol>
-<p>使用 SSH 可以免去每次都要輸入密碼的環節，像是 mobaxterm 這種工具雖然有記住密碼的功能，有鑑於之前曾發生忘記 mobaxterm 密碼的慘劇，讓我後來都改用 SSH 的方式 。當然 <code>.ssh</code> 如果有設密碼一樣可能面臨相同的困擾，但 <code>ssh</code> 在 linux 上可用的範圍更為廣泛，算是個好處吧。</p>
-<h2 id="給予遠端-IP-別名"><a href="#給予遠端-IP-別名" class="headerlink" title="給予遠端 IP 別名"></a>給予遠端 IP 別名</h2><p>像是在用 docker, kubernetes 一次使用多台機器的時候，如果每一台的 IP 都不同，也不怎麼連續。有時候又會需要登入每一台做些設定，這時如果能給每一台機器的 IP 都設其他代稱，可以方便許多。以下會先說名 ssh 部份的作法，後面提及使用 docker 的經驗！</p>
-<h3 id="設置-ssh-config"><a href="#設置-ssh-config" class="headerlink" title="設置 .ssh/config"></a>設置 .ssh/config</h3><p>位置在 <code>~/.ssh/config</code> 下，</p>
-<pre class="language-bash" data-language="bash"><code class="language-bash">Host            remoete_machine 	<span class="token comment"># 代稱</span>
-Hostname        <span class="token number">192.168</span>.0.1        	<span class="token comment"># ip address</span>
-Port            <span class="token number">22</span>                	
-User            jonny                <span class="token comment"># user name</span>
-identityfile    ~/.ssh/id_rsa   	 <span class="token comment"># private key 位置 </span></code></pre>
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    args <span class="token operator">=</span> get_args<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>args<span class="token punctuation">.</span>aoo<span class="token punctuation">)</span>     <span class="token comment"># 2 </span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>args<span class="token punctuation">.</span>boo<span class="token punctuation">)</span>     <span class="token comment"># ['1', '2', '3', '4']</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>args<span class="token punctuation">.</span>coo<span class="token punctuation">)</span>     <span class="token comment"># ['5']</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>args<span class="token punctuation">.</span>number<span class="token punctuation">)</span>  <span class="token comment"># ['2']</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>args<span class="token punctuation">.</span>single<span class="token punctuation">)</span>  <span class="token comment"># 1</span>
 
-<p>這樣下次就可以直接用這邊設定的內容連線！但如果前面在產生 ssh key 的時候有設密碼，則每次連線會需要打那個密碼！</p>
-<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">ssh</span> remoete_machine</code></pre>
+<span class="token comment"># python .\example_argprase.py --aoo 1 2 3 4 --boo 2   --number 2 --coo 5 --single 1 aaa bbb ccc</span></code></pre>
 
-<h3 id="在網域上尋找機器"><a href="#在網域上尋找機器" class="headerlink" title="在網域上尋找機器"></a>在網域上尋找機器</h3><p>我曾遇到過需要自己找 IP 的情況….，要在網域上尋找機器，可使用使用 nmap，用法可參考文章最後的參考資料。</p>
-<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> nmap
-<span class="token function">sudo</span> nmap -sn <span class="token number">192.168</span>.1.1-100</code></pre>
+<p><code>parser</code> 的回傳值是一個 namespace，可以直接用名字取用值，像是上面數字的例子那樣直接用 <code>args.number</code> 對 <code>args</code> 這個回傳的 namespace 取值。另外還有<a href="https://docs.python.org/3/library/argparse.html#mutual-exclusion">互斥選項</a>、<a href="https://docs.python.org/3/library/argparse.html#argument-groups">Argument groups</a> 等進階的用法。</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> argparse
+<span class="token keyword">def</span> <span class="token function">get_args</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    parser <span class="token operator">=</span> argparse<span class="token punctuation">.</span>ArgumentParser<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"-u"</span><span class="token punctuation">,</span> <span class="token string">"--update"</span><span class="token punctuation">,</span> <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">"Clean dir"</span><span class="token punctuation">,</span> default<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> action<span class="token operator">=</span><span class="token string">"store_true"</span><span class="token punctuation">)</span>
+    <span class="token comment"># 互斥組</span>
+    group <span class="token operator">=</span> parser<span class="token punctuation">.</span>add_mutually_exclusive_group<span class="token punctuation">(</span><span class="token builtin">help</span><span class="token operator">=</span><span class="token string">"you can only choose 1"</span><span class="token punctuation">)</span>
+    group<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"--dessert"</span><span class="token punctuation">,</span> <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">"Get dessert"</span><span class="token punctuation">,</span> default<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> action<span class="token operator">=</span><span class="token string">"store_true"</span><span class="token punctuation">)</span>
+    group<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"--drink"</span><span class="token punctuation">,</span> <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">"Get drink"</span><span class="token punctuation">,</span> default<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> action<span class="token operator">=</span><span class="token string">"store_true"</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> parser<span class="token punctuation">.</span>parse_args<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
 
-<h3 id="改變-IP-address-的-hostname"><a href="#改變-IP-address-的-hostname" class="headerlink" title="改變 IP address 的 hostname"></a>改變 IP address 的 hostname</h3><p>這是另外一種作法，在使用 docker 管理多台 Raspberry Pi 時曾用此方法：修改檔案 <code>/etc/hosts</code> 。把 IP 位置改成自訂的 hostname，例如：</p>
-<pre class="language-none"><code class="language-none">192.168.1.181         docker1
-192.168.1.182         docker2
-192.168.1.183         docker3
-192.168.1.184         docker4</code></pre>
-
-<p>其實前面提到的 <code>ssh-copy-id</code>，如果在這一部先設好每一個 IP，用腳本跑 <code>ssh-copy-id</code> 有機會輕鬆的多。</p>
-<h2 id="scp"><a href="#scp" class="headerlink" title="scp"></a>scp</h2><p>透過 SSH 執行 Copy ，<code>scp</code> 之後第一個位置是 source、第二個位置是 destination</p>
-<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># local to remote </span>
-<span class="token function">scp</span> <span class="token operator">&lt;</span>local path<span class="token operator">></span> user@192.168.0.1:<span class="token operator">&lt;</span>remote path<span class="token operator">></span>
-<span class="token comment"># remote to local</span>
-<span class="token function">scp</span> user@192.168.0.1:<span class="token operator">&lt;</span>remote path<span class="token operator">></span> <span class="token operator">&lt;</span>local path<span class="token operator">></span></code></pre>
-
-<p>複製目錄也跟原始的 <code>cp</code> 相似，加上 <code>-r</code> 參數：</p>
-<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token function">scp</span> -r user@192.168.0.1:<span class="token operator">&lt;</span>remote path<span class="token operator">></span> <span class="token operator">&lt;</span>local path<span class="token operator">></span></code></pre>
-
-<p>要從同台機器上，複製多個資料夾的內容，則在冒號後面把路徑寫在一起：</p>
-<pre class="language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 正確作法</span>
-<span class="token function">scp</span> -r user@192.168.0.1:<span class="token string">"dir1 dir2 dir3"</span> <span class="token operator">&lt;</span>local path<span class="token operator">></span>
-
-<span class="token comment"># 會複製兩次! （如果有設密碼就要打兩次）</span>
-<span class="token function">scp</span> -r user@192.168.0.1:dir1 user@192.168.0.1:dir2 <span class="token operator">&lt;</span>local path<span class="token operator">></span></code></pre>
-
-<h2 id="sshfs"><a href="#sshfs" class="headerlink" title="sshfs"></a>sshfs</h2><p>需要注意，如果不是 root 用戶，本地位置<strong>目錄</strong>的<strong>擁有者</strong>必須為使用者自己（不能把檔案從遠端 copy 到這台電腦中，別的 user 所屬的資料夾的概念）。如果遠端機器的 ssh port 不是預設的 22 （是透過 router 設定 port forwarding 之類的），要透過 <code>-p &lt;port&gt;</code> 標明連哪個 port，否則會連線不進去。</p>
-<pre class="language-bash" data-language="bash"><code class="language-bash">sshfs <span class="token operator">&lt;</span>remote location<span class="token operator">></span> <span class="token operator">&lt;</span>local location<span class="token operator">></span>
-sshfs username@hostname:/path/to/folder /path/to/local/folder
-sshfs -p <span class="token operator">&lt;</span>remote port<span class="token operator">></span> username@hostname:/path/to/folder /path/to/local/folder
-<span class="token comment"># example</span>
-sshfs -p <span class="token number">1000</span> pi@0.0.0.100:/share_files /accept_file</code></pre>
-
-<p>這個舉動的意思是：把遠端機器(<code>0.0.0.100</code>) 上的 <code>share_files</code> 資料夾『掛載 (mount)』到我的機器上的 <code>accept_file</code> 資料夾！因為是用 mount 的，所以當遠端機器的 <code>share_files</code> 內容有更新，我這邊的 <code>accept_file</code> 也會同步更新！</p>
-<p>而如果希望解除綁定資料夾的狀態，可以參考下面連結的論壇，用 <code>fusermount -u /path/to/local/folder</code> 解除本地資料夾與遠端的連結。</p>
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><ul>
-<li><p><a href="https://www.ibm.com/support/pages/configuring-ssh-login-without-password">Configuring an SSH login without password</a></p>
-</li>
-<li><p><a href="https://blog.gtwang.org/linux/nmap-command-examples-tutorials/">Nmap 網路診斷工具基本使用技巧與教學</a></p>
-</li>
-<li><p><a href="https://blog.miniasp.com/post/2013/11/30/Useful-tool-SSHFS-SSH-Filesystem">介紹好用工具： SSH Filesystem (簡單好用的 SSH 檔案系統)</a></p>
-</li>
-<li><p><a href="https://howchoo.com/g/njy4zdm3mwy/how-to-run-a-raspberry-pi-cluster-with-docker-swarm">How to Run a Raspberry Pi Cluster with Docker Swarm</a></p>
-</li>
-<li><p><a href="https://blog.gtwang.org/linux/linux-scp-command-tutorial-examples/">Linux 的 scp 指令用法教學與範例：遠端加密複製檔案與目錄</a></p>
-</li>
-<li><p><a href="https://blog.miniasp.com/post/2013/11/30/Useful-tool-SSHFS-SSH-Filesystem">介紹好用工具： SSH Filesystem (簡單好用的 SSH 檔案系統)</a></p>
-</li>
-<li><p><a href="https://unix.stackexchange.com/questions/106480/how-to-copy-files-from-one-machine-to-another-using-ssh#answer-106485">How to copy files from one machine to another using ssh</a></p>
-</li>
-<li><p><a href="https://ephrain.net/linux-%E5%9C%A8-centos-%E4%B8%8A%E4%BD%BF%E7%94%A8-sshfs-%E4%BE%86%E6%8E%9B%E8%BC%89-ssh-server-%E4%B8%8A%E7%9A%84%E6%AA%94%E6%A1%88%E7%B3%BB%E7%B5%B1/">[Linux] 在 CentOS 上使用 sshfs 來掛載 SSH server 上的檔案系統</a></p>
-</li>
+<h2 id="Curses"><a href="#Curses" class="headerlink" title="Curses"></a><a href="https://docs.python.org/3/howto/curses.html">Curses</a></h2><p><code>curses </code> 也是一個 Python 官方的套件，可以使用它開發 console base 的 UI。<a href="https://realpython.com/python-print/#building-console-user-interfaces">Real Python: Your Guide to the Python print() Function</a> 當中有些示例，像是做個貪吃蛇：</p>
+<p><img src="https://files.realpython.com/media/snake.a9589582b58a.gif" alt="貪吃蛇"></p>
+<p>最終沒有涉略這個模組，它似乎都是全螢幕式的，沒有辦法只顯示在打完指令下面的位置，與我的目的不合。</p>
+<h2 id="Inquirer"><a href="#Inquirer" class="headerlink" title="Inquirer"></a>Inquirer</h2><p>套件 <strong><a href="https://github.com/magmax/python-inquirer">inquirer</a></strong> 不是 Python 原生的模組，是一個基於 inquire.js 想法產生的 Python 專案，主要支援 Unix 平台，在 <a href="https://github.com/SBoudrias/Inquirer.js">inquirer.js</a> 裡面有比較多圖片說明。開發上，<code>pip install inquirer</code>  即可裝好模組。支援</p>
+<ul>
+<li>問答，要求使用者輸入內容並包含驗證格式。</li>
+<li>清單，提供選項，User 用鍵盤上下鍵選擇答案</li>
+<li>Check box </li>
 </ul>
+<p>簡單舉個例子! </p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> inquirer
+<span class="token keyword">import</span> os 
+
+questions <span class="token operator">=</span> <span class="token punctuation">[</span>
+  inquirer<span class="token punctuation">.</span>List<span class="token punctuation">(</span><span class="token string">'subdir'</span><span class="token punctuation">,</span>
+      message<span class="token operator">=</span><span class="token string">"cd to which dir"</span><span class="token punctuation">,</span>
+      choices<span class="token operator">=</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>os<span class="token punctuation">.</span>getcwd<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span>
+answers <span class="token operator">=</span> inquirer<span class="token punctuation">.</span>prompt<span class="token punctuation">(</span>questions<span class="token punctuation">)</span>
+questions<span class="token punctuation">[</span><span class="token string">"subdir"</span><span class="token punctuation">]</span> <span class="token comment"># user 選到的選項值</span></code></pre>
+
+<p>不過在 colab 的環境中，它沒辦法提供方向鍵在 console 上的互動，因此在印完以下內容後會報 error，但若在一般的 Linux terminal 用起來體驗是很不錯的！</p>
+<p><img src="/uploads/inquire_demo.png" alt="inquire question demo"></p>
 ]]></content>
       <categories>
-        <category>Linux</category>
+        <category>Python</category>
       </categories>
       <tags>
-        <tag>linux</tag>
-        <tag>ssh</tag>
+        <tag>python</tag>
+        <tag>package</tag>
       </tags>
   </entry>
   <entry>
@@ -892,6 +1188,152 @@ new_reader<span class="token punctuation">.</span>readline<span class="token pun
       </tags>
   </entry>
   <entry>
+    <title>Python 日誌模組 Logging (2) 細探官方文件</title>
+    <url>/posts/2022-01-22-python-logging-advance.html</url>
+    <content><![CDATA[<p>Logging 模組中主要就是這四種物件：</p>
+<ul>
+<li>Loggers : 提供直接讓其他應用程式使用的接口 (expose the interface that application code directly uses)</li>
+<li>Handlers : 發送日誌紀錄到適合的目標地點，像是檔案、stdout、甚至 Qt GUI 等等。</li>
+<li>Formatters : 輸出的格式。</li>
+<li>Filters : 過濾器，決定哪些日誌訊息可以傳到輸出。</li>
+</ul>
+<h2 id="Loggers"><a href="#Loggers" class="headerlink" title="Loggers"></a><a href="https://docs.python.org/3/howto/logging.html#advanced-logging-tutorial">Loggers</a></h2><p>logger 負責三個工作</p>
+<ol>
+<li>暴露一些方法讓應用程式去調用，在執行期間(runtime) 中紀錄訊息。</li>
+<li>根據嚴重性或 filter 物件，決定讓那些訊息要傳遞出去。<ul>
+<li>預設的過濾條件就是根據嚴重性(severity)</li>
+</ul>
+</li>
+<li>將相關的日誌訊息傳遞到相關的 log handlers 手上。</li>
+</ol>
+<h3 id="常用的方法"><a href="#常用的方法" class="headerlink" title="常用的方法"></a>常用的方法</h3><ul>
+<li><code>Logger.setLevel()</code> : 設定嚴重性的 threshold 。</li>
+<li><code>Logger.addHandler()</code> , <code>Logger.removeHandler()</code> : 新增或移除 handler.</li>
+<li><code>Logger.addFilter()</code> ,<code>Logger.removeFilter()</code> : 新增或移除 Filter，</li>
+</ul>
+<p>每當 logger 物件被創建時，下面的函數會自動配置產生：</p>
+<ul>
+<li><p><code>Logger.debug()</code>, <code>Logger.info()</code>, <code>Logger.warning()</code>, <code>Logger.error()</code>, <code>Logger.critical() </code>：括號裡面填寫要傳入的日誌訊息， <strong>必須是 string 形式</strong>，剩下的一些參數可以透過 <code>**kwargs</code> 傳入 (ex. <code>exc_info</code>… )</p>
+<ul>
+<li><p>當紀錄的訊息是從 print 轉過來的時候要注意，所有的訊息要寫在同一條 string 裡面：</p>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"var1=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>var1<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">,</span> <span class="token string-interpolation"><span class="token string">f"var2=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>var2<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
+logger<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"var1=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>var1<span class="token punctuation">&#125;</span></span><span class="token string">; var2=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>var2<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span></code></pre>
+
+<p>如果像 print 一樣兩個 string 放不同位置，第二個位置的字串會被當作其他參數，必須要改成只有一條 string。</p>
+</li>
+</ul>
+</li>
+<li><p><code>Logger.exception() </code> : 一個很像 <code>Logger.error()</code> 模式的 logger 方法，不同的是它會<strong>追蹤例外發生的紀錄(traceback)</strong> (dumps a stack trace along with it)，這只應該在例外處理中 (exception handler) 使用。</p>
+</li>
+<li><p><code>Logger.log(level:int, msg: str)</code> : 除非是用到 <strong>自訂的訊息等級</strong> ，它的效果跟第一點的一樣，但是更加的冗長，沒事可以不要用。</p>
+</li>
+</ul>
+<h3 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h3><ol>
+<li><p><code>getLogger()</code> 回傳的是「和輸入名稱相同的 logger 實例的 reference」，如果沒有指定，則回傳 logger實例名字為 <code>root</code> reference。</p>
+</li>
+<li><p>名稱如之前所提，有上下的層級架構關係</p>
+</li>
+<li><p>用相同的名稱 呼叫 <a href="https://docs.python.org/3/library/logging.html#logging.getLogger"><code>getLogger()</code></a> 得到的是 reference :arrow_right: 都參考至相同物件名稱的 logger 物件。</p>
+<pre class="language-python" data-language="python"><code class="language-python">logger1 <span class="token operator">=</span> logging<span class="token punctuation">.</span>get_logger<span class="token punctuation">(</span><span class="token string">"aaa"</span><span class="token punctuation">)</span>
+logger2 <span class="token operator">=</span> logging<span class="token punctuation">.</span>get_logger<span class="token punctuation">(</span><span class="token string">"aaa"</span><span class="token punctuation">)</span> 
+<span class="token builtin">id</span><span class="token punctuation">(</span>logger1<span class="token punctuation">)</span><span class="token operator">==</span><span class="token builtin">id</span><span class="token punctuation">(</span>logger2<span class="token punctuation">)</span> <span class="token comment"># True</span>
+
+<span class="token comment"># 兩條呼叫到的會是同一個 logger 物件：名為 'aaa' 的 logger object. </span></code></pre></li>
+<li><p>嚴重性等級的定義：Logger 能接受的訊息等級受到其父代所影響</p>
+<ol>
+<li>如果自己的等級沒有另外定義，會使用父代所定義的訊息嚴重性等級。</li>
+<li>如果父代沒有定義，會再往上使用「父代的父代」，往上追朔祖先直到有找到清楚的等級定義 (explicitly set level )</li>
+<li>root logger 必然會有一個很清楚的等級定義 (預設是 <code>warning</code>) </li>
+</ol>
+</li>
+<li><p>Logger 所定義能通過的訊息等級，會影響到是否能傳遞到旗下的 handler：</p>
+<ul>
+<li>如果在 logger 上定義通過 warning (30)，卻在 handler 定義等級 info (20) 就能紀錄，那這樣實際紀錄下來的也只會有 warning 以上的訊息，因為低於 warning 的根本進不來這個 logger 的手上。</li>
+</ul>
+</li>
+<li><p>不需要為每個logger 都定義 handler，只要對 root logger 做。</p>
+<ul>
+<li>由於 child logger 的訊息會往上傳遞，所以只需要在上層的 logger 設置即可。</li>
+<li>但是也可以把往上傳遞的功能關掉：參數 <code>propagate=False</code> </li>
+</ul>
+</li>
+</ol>
+<h2 id="Handlers"><a href="#Handlers" class="headerlink" title="Handlers"></a><a href="https://docs.python.org/3/howto/logging.html#handlers">Handlers</a></h2><p>Handler 物件基於所設定的訊息嚴重等級，將日誌訊息派到<strong>對應的目的地</strong>，像是 stdout。Logger 物件對於 handler 的數量沒什麼限制，可以不加、也可以加很多個。光是官方提供的 handler 就多達 10 個以上，常見的輸出到 std out、輸出到檔案、連接到 Socket、傳遞到 http (<code>Get</code>, <code>POST</code>)、送到 <code>Queue</code>…等等。我也實做過把 logger 直接連動到 Qt GUI 的文字板上面過，不用另外從核心程式拉一條線到前端的 GUI，直接利用現有的 logger 即可非常方便！</p>
+<p>Handler 幾乎沒什麼方法可以調用，與其相關的主要是這幾個方法：</p>
+<ul>
+<li><p><code>Logger.addHandler(hdlr)</code></p>
+<ul>
+<li>舉例說明：目標是 (1) 將所有 log 寫進 log file  (2) 所有高於 error 的 msg 丟到 <code>stdout</code> (3)所有 critical 等級的寄信寄出去。一共 3個獨立的 handler 負責做各自的事情。所以需要添加三個不同的 handlers，呼應各自要寄送訊息的目的，還有寄送出去的信息等級。</li>
+<li>標準的library 有提供 <a href="https://docs.python.org/3/howto/logging.html#useful-handlers">很多 handlers</a>，最常用的是 <a href="https://docs.python.org/3/library/logging.handlers.html#logging.StreamHandler"><code>StreamHandler</code></a> 和<a href="https://docs.python.org/3/library/logging.handlers.html#logging.FileHandler"><code>FileHandler</code></a>。</li>
+</ul>
+</li>
+<li><p><code>setLevel </code>：handler 也有 <code>setLevel()</code> 方法，和前面的 <code>setLevel</code> 不同</p>
+<ul>
+<li><code>logger.setLevel()</code> 設定的是哪些嚴重性的訊息可以<strong>被傳送到</strong> handlers，而 <code>handler.setLevel()</code>則是決定哪些程度的訊息<strong>可以被派遣到要目的地 (ex. write to file )</strong></li>
+</ul>
+</li>
+<li><p><code>setFormatter()</code>：設定 handler 把訊息傳到目的地時候的訊息格式。</p>
+</li>
+<li><p><code>addFilter()</code> and <code>removeFilter()</code>：配置和移除 filter 於handler 物件。</p>
+</li>
+</ul>
+<h2 id="Formatters"><a href="#Formatters" class="headerlink" title="Formatters"></a><a href="https://docs.python.org/3/howto/logging.html#formatters">Formatters</a></h2><p>決定訊息的格式，有三個可選擇擇的參數：</p>
+<ol>
+<li>訊息字串格式字串 <code>fmt</code>：可調用的一些屬性變數參見 <a href="https://docs.python.org/3.7/library/logging.html#logrecord-attributes">LogRecord attributes</a></li>
+<li>日期格式字串 <code>datefmt</code>: 預設使用  <a href="https://docs.python.org/3/library/time.html#time.localtime"><code>time.localtime()</code></a> 打下時間戳，預設的格式為 <code>%Y-%m-%d %H:%M:%S</code></li>
+<li>style indicator：撰寫模式的提取符號，預設是 <code>%</code>，可修改成 <code>&#123;</code> 或 <code>$</code>。參考不同的 style-indicator 所對應的 formatter 撰寫模式： <pre class="language-python" data-language="python"><code class="language-python">logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'%(asctime)s - %(message)s'</span><span class="token punctuation">,</span> style<span class="token operator">=</span><span class="token string">'%'</span><span class="token punctuation">)</span>
+logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'$(asctime)s - $(message)s'</span><span class="token punctuation">,</span> style<span class="token operator">=</span><span class="token string">'$'</span><span class="token punctuation">)</span>
+logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'&#123;asctime&#125; - &#123;message&#125;'</span><span class="token punctuation">,</span> style<span class="token operator">=</span><span class="token string">'&#123;'</span><span class="token punctuation">)</span></code></pre></li>
+</ol>
+<p>最後舉個例子：</p>
+<pre class="language-python" data-language="python"><code class="language-python">formatter <span class="token operator">=</span> logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'%(asctime)s - %(name)s - %(levelname)s : %(message)s'</span><span class="token punctuation">)</span></code></pre>
+
+<ul>
+<li><code>message</code>：應用程式傳入的日誌訊息</li>
+<li><code>asctime</code>, <code>name</code>, <code>levelname</code>： <a href="https://docs.python.org/3.7/library/logging.html#logrecord-attributes">LogRecord attributes</a> 中所提供可以調用的屬性，分別表示時間、哪個 logger (名稱) 傳入的、訊息等級名稱。</li>
+</ul>
+<h2 id="Filters"><a href="#Filters" class="headerlink" title="Filters"></a><a href="https://docs.python.org/3/library/logging.html#filter-objects">Filters</a></h2><ul>
+<li><p>用在 handler 和 logger 上，提供比「訊息緊急程度層級」更細節的過濾規則</p>
+</li>
+<li><p>最基本，不用實做改寫的 filter，提供以「logger 階層等級」過濾的方法：只能通過<strong>低於自己的層級</strong>。例如 : 設定<code>A.B</code> ，則只會通過 logger <code>A.B</code>, <code>A.B.C</code>, <code>A.B.D</code>…</p>
+<pre class="language-python" data-language="python"><code class="language-python">f <span class="token operator">=</span> logging<span class="token punctuation">.</span>Filter<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"A.B"</span><span class="token punctuation">)</span></code></pre>
+
+<p>代表 “A.B” 以下(包含)層級的 logger 事件訊息可以通過這個過濾器。</p>
+</li>
+<li><p>如果以空白字串初始化，則所有的事件都可以通過。</p>
+</li>
+<li><p>Filter 必須在 log 事件已經被傳送到 handler 前先附加在 handler 上面，才能起過濾的作用。(反正就是一開始先設定好就對了 = = )</p>
+</li>
+</ul>
+<p>預設功能只是基本的，也可以自己設計規則來決定哪些訊息可以通過。想自訂過濾器要做的事情是：</p>
+<ol>
+<li>實作一個 <code>logging.Filter</code> 類別，並實作其 <code>filter</code> 方法</li>
+<li>把這個客製化 filter 實例化後，用 <code>.addFilter()</code> 加到 logger 或 handler </li>
+</ol>
+<pre class="language-python" data-language="python"><code class="language-python"><span class="token comment"># 稍微用code表示上面的條列項目</span>
+<span class="token keyword">import</span> logging
+
+<span class="token keyword">class</span> <span class="token class-name">CustomFilter</span><span class="token punctuation">(</span>logging<span class="token punctuation">.</span>Filter<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">filter</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> record<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment"># 實作過濾規則 </span>
+        <span class="token keyword">return</span> <span class="token boolean">True</span> <span class="token comment"># 要 return True 才代表信息被保留</span>
+
+logging<span class="token punctuation">.</span>basicConfig<span class="token punctuation">(</span>level<span class="token operator">=</span>logging<span class="token punctuation">.</span>INFO<span class="token punctuation">)</span>
+logger <span class="token operator">=</span> logging<span class="token punctuation">.</span>getLogger<span class="token punctuation">(</span><span class="token punctuation">)</span>
+f <span class="token operator">=</span> CustomFilter<span class="token punctuation">(</span><span class="token punctuation">)</span>logger<span class="token punctuation">.</span>addFilter<span class="token punctuation">(</span>f<span class="token punctuation">)</span></code></pre>
+
+<p>舉例而言，一個過濾敏感資料的自定義 Filter 範例 <a href="https://gist.github.com/acdha/9238791">https://gist.github.com/acdha/9238791</a></p>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>官方文件</tag>
+        <tag>logging</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python 非同步處理-Asyncio</title>
     <url>/posts/2022-10-23-python-asyncio.html</url>
     <content><![CDATA[<p>Python 自 3.4 開始支援asyncio，但在談及這個模組包之前，首先要了解</p>
@@ -969,203 +1411,6 @@ new_reader<span class="token punctuation">.</span>readline<span class="token pun
 <li><p><a href="https://realpython.com/python-concurrency/">Speed Up Your Python Program With Concurrency</a></p>
 </li>
 </ul>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>package</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>網頁搜尋優化</title>
-    <url>/posts/2022-06-05-blog-4-seo.html</url>
-    <content><![CDATA[<p>這是一篇在部落格架設之初，嘗試使用 Google Search Console 時的苦痛新路歷程，多數內容是當時所寫。幾乎是每日每日更新當天的發現、新的疑難雜症，因此可能每個段落的「今天」都不一樣(尷尬)，但文章中都有把實際的日期標上去，請以相對時間的角度來閱讀本文!</p>
-<p>我並不是專業於網頁前端、SEO 的人，或許文中的推斷與說明會有偏差，但仍嘗試將過程中的試誤以及解決辦法給紀錄下來，對錯與否還請自行斟酌!</p>
-<hr>
-<p>首先，網頁架設之後如果搜尋引擎沒有收錄，就沒辦法讓網頁在使用者搜尋時被搜索到。Google 的爬蟲「有可能」可以主動探勘到部落格，但或許更大的機率是不會，畢竟現在網路這麼發達，爬蟲很忙的。</p>
-<p>要知道自己的網頁是否有被爬蟲收錄，可以直接在搜尋引擎上打 <code>site:&lt;你的網址&gt;</code>，像是要看本部落格在搜尋引擎的收錄狀況如下:</p>
-<pre class="language-none"><code class="language-none">site:brainynight.github.io</code></pre>
-
-<p>我們要做的事情是，讓自己的網頁在搜尋引擎登記在案! 使用的是 Google Search Console 的服務。有關如何登記，可以參考此篇文章: <a href="https://www.seo-tea.com/google-search-console-tutorial/">【完整指南】2022 Google Search Console教學(附索引問題處理) - SEO分解茶</a>。</p>
-<p>本文接下來所分享的內容，是有關我在 Google Search Console 建立網域、登記 Sitemap 之後所遇到的問題。</p>
-<p>PS. 在 2022/09 前後，Google 有修改一次搜尋引擎的策略，用 <code>site:XXX</code> 看收錄了哪些網站似乎不再管用，與在 Google Search Console 當中看到編入索引數量並不一致，顯示的只有熱門的幾篇文章。</p>
-<h2 id="提交-Sitemap-後等很久"><a href="#提交-Sitemap-後等很久" class="headerlink" title="提交 Sitemap 後等很久"></a>提交 Sitemap 後等很久</h2><p><img src="/uploads/sitemapfail.png" alt="image20220126135547909"></p>
-<p>圖中的三個網址，有兩個是拿來嘗試此情況下 Google 會顯示何狀態，只有 <code>sitemap.xml</code> 是我真正希望爬蟲看到的。</p>
-<ul>
-<li><p><code>sitemap_index.xml</code>: 在我的網頁中不存在，404 not found。Google 的狀態顯示「無法擷取」但點進去之後有寫到錯誤原因: <code>無法讀取 Sitemap: 一般的 HTTP 錯誤</code>。</p>
-<blockquote>
-<p>我們嘗試存取您的 Sitemap 時發生錯誤。請確定您的 Sitemap 符合我們的指南，而且可由您提供的位置存取，確認都沒有問題後再重新提交。 示例 HTTP 錯誤：404</p>
-</blockquote>
-</li>
-<li><p><code>robots.txt</code>: 他本身不是 xml 檔案，我在提交 robots.txt 的頁面有提交過，可以成功爬取。可讀取 Sitemap，但其中含有錯誤。</p>
-<blockquote>
-<p>不受支持的檔案格式。您的 Sitemap 格式似乎不受支援。請確認它符合我們的《Sitemap 指南》，然後重新提交。</p>
-</blockquote>
-</li>
-<li><p><code>sitemap.xml</code>: 真正的 sitemap，我確定 google 是可以存取他的，但不知道為何就是顯示無法擷取，點進去的內容也只有「無法讀取 Sitemap」。</p>
-</li>
-</ul>
-<p>網路上關於 sitemap 沒辦法被截取有很多解釋，主要歸類如下:</p>
-<ol>
-<li>真的有問題: 如格式不對 (含有 noindex, 不符合 sitemap 規範的幾種格式)、網址不存在 (404)</li>
-<li>沒問題，只是 Google 機器人還沒時間爬。</li>
-</ol>
-<p>主要就是如果可以確認自己的 sitemap 屬於後者，就只能等。幾天到幾個禮拜不一定… ，這兩篇文章可以參考:</p>
-<ul>
-<li><p><a href="https://stackoverflow.com/questions/53921636/google-search-console-fails-to-fetch-sitemaps-sitemap-could-not-be-read">Google search console fails to fetch sitemaps | “Sitemap could not be read”</a></p>
-</li>
-<li><p><a href="https://www.jcchouinard.com/sitemap-could-not-be-read-couldnt-fetch-in-google-search-console/">Sitemap could not be read (Couldn’t fetch) in Google Search Console</a></p>
-<p>如果狀況如下圖，可能如作者所言，就只是 google 引擎還沒抓到。</p>
-<p><img src="https://www.jcchouinard.com/wp-content/uploads/2021/07/image-4.png.webp" alt="img"></p>
-</li>
-</ul>
-<h2 id="Sitemap-被讀取成功"><a href="#Sitemap-被讀取成功" class="headerlink" title="Sitemap 被讀取成功"></a>Sitemap 被讀取成功</h2><p>大約是 1/25 晚上第一次提交 sitemap，1/27 早上看到頁面轉為通過 (快樂)。</p>
-<p>在一直不通過的期間我到處爬文，除了上面說的 googlebot delay 的關係，還有一個是 google 難以在茫茫大海中找到這個網站。由於之前有在 Medium 上寫作，知道它的 SEO 做的很好，所以在 Medium 上面發了一篇轉站的文章。</p>
-<p>今天早上 (1/27) 不但看到 sitemap 通過了，還發現我的 Blog 首頁在 <strong>網址審查</strong> 那邊，來源是從 Medium 來的!</p>
-<pre class="language-none"><code class="language-none">發現方式
-Sitemap: https:&#x2F;&#x2F;brainynight.github.io&#x2F;sitemap.xml
-參照網頁: &lt;我的 medium blog 網址&gt;</code></pre>
-
-<p>恩，雖然它依然顯示 <strong>網址不在 Google 服務中 (已找到 - 目前尚未建立索引)</strong> 。但這個階段，在 google 找自己的網域(文章一開始說的搜索方式)還是找不到東西的。</p>
-<p>網路上說「找到」直到「建立索引」的階段，可能要長達一周以上，反正就慢慢等囉。</p>
-<h2 id="所申請的主頁被索引成功"><a href="#所申請的主頁被索引成功" class="headerlink" title="所申請的主頁被索引成功"></a>所申請的主頁被索引成功</h2><p>1/30 中午 11 點! 我的部落格首頁被索引成功!</p>
-<p>一早 10 點起來還沒被索引，我查了一下有利 SEO 的條件基本上要利於手機檢索，於是開始調整東調整西。這之間我曾經嘗試調整字體，然而字體是外部資源，因此會耗費載入時間。對於 Hexo Next 這個主題我所做的優化，都記錄在文章<a href="/posts/2022-01-26-blog-3-speedup">Hexo Blog 客製化 (3) Next 主題加速</a>當中。諷刺的是，最影響效能的其實就是字體跟外載入的資源! 我把 <code>min.js</code> (來自 fontawsome 提供 icon 的) 跟字體客製化都關掉用最原始的預設字體。結果效率分數直接拉到 99~100。</p>
-<p>也就是說，甚麼美化都不搞其實更有利於檢索….。由於之前我的 sitemap 有被接收過，其中網址的狀態都被標示沒安排索引，原因是怕伺服器撐不住，我猜測是因為載入過慢的問題，因此做了這樣的調整。也不知道有沒有因果關係，總之做了這一些調整後，首頁被 googel 爬蟲臨幸拉! (快樂)</p>
-<p>可以使用 google 引擎看一下自己的收錄狀況，要注意 <code>site</code> 跟 <code>url</code> 之間不能有空格!</p>
-<pre class="language-none"><code class="language-none">site:&lt;your url&gt; [keyword]
-# Example: 
-site:https:&#x2F;&#x2F;brainynight.github.io
-site:https:&#x2F;&#x2F;brainynight.github.io pickle</code></pre>
-
-<h2 id="我的網頁有變更，Google-沒看到"><a href="#我的網頁有變更，Google-沒看到" class="headerlink" title="我的網頁有變更，Google 沒看到"></a>我的網頁有變更，Google 沒看到</h2><p>Google 搜尋引擎的演算法策略不斷改變，數位世代的網頁增長數量也非常快。Google 難以將全世界所有的網頁都收錄一遍、且隨時即時更新。使用 wordpress 或用 github page 自己架設部落格時，SEO 問題就需要自己一盤抓。</p>
-<p>而像這種個人的小部落格，Google 的更新頻率不快，即使它已經收錄了 sitemap，也不會有更新就看到。像是現在 2/2 而我的 sitemap 上次被看的時間是 1/27 !</p>
-<p>Google 的官方說明文件<a href="https://developers.google.com/search/docs/advanced/crawling/ask-google-to-recrawl?visit_id=637793786640453064-2510441601&rd=1">要求 Google 重新檢索網址</a>中提及:</p>
-<ul>
-<li><p>我們可以用「網址檢查工具」看單一網頁上次被檢索的時間得知狀態，網站數量不多時，我們可以在單一頁面的檢索狀態上按「要求建立索引」來提交，但 Google 對這個通路有數量限制。</p>
-</li>
-<li><p>或是用「索引狀態報表」查看 Sitemap 中有收錄的網址的狀態。提交大量網址時，一般建議使用 Sitemap。如果尚未在 Google Console 中提交 Sitemap 、或是提交後 Google 還沒接受（狀態還不是成功），這個報表是用不到的。</p>
-</li>
-</ul>
-<p>現在面臨的狀況是：我曾經提交 Sitemap 但後來有網址的發布方式，然而 Google 所存檔的是我舊的網址連結。想要讓 Google 知道我的網址都變更了。</p>
-<h3 id="通知-google-網站已經變更"><a href="#通知-google-網站已經變更" class="headerlink" title="通知 google 網站已經變更"></a>通知 google 網站已經變更</h3><p>官方文件<a href="https://developers.google.com/search/docs/advanced/sitemaps/build-sitemap#addsitemap">將 Sitemap 提交給 Google</a> 裡面有這樣一段話</p>
-<blockquote>
-<p>Google 不會在每次檢索網站時檢查 Sitemap。除非您透過連線偵測 (ping) 告知我們 Sitemap 有異動，否則我們只會在首次偵測到 Sitemap 時進行檢查。如果您並未新增或更新 Sitemap，請勿要求 Google 檢查 Sitemap；也不要重複提交相同的 Sitemap 或為其執行連線偵測 (ping)。</p>
-</blockquote>
-<p>簡單來說：</p>
-<ol>
-<li>Google第一次偵測到 Sitemap 的時候會對裡面進行檢查，之後不會每次檢索的時候都去看 Sitemap。</li>
-<li>所以如果 Sitemap 有變更，Google 沒看到要 Ping 一下它。</li>
-<li>如果有已經存在的網頁有更新，要使用 <code>&lt;lastmod&gt;</code>標記這些網頁。</li>
-</ol>
-<p>有兩種方式讓 Google 存取 Sitemap</p>
-<ol>
-<li><p>尚未讓 Google 收藏過 Sitemap：建議在 Google Console 中提交 <a href="https://support.google.com/webmasters/answer/7451001">Sitemap 報告</a></p>
-</li>
-<li><p>使用連線偵測 (ping) 工具：在網址中傳送 GET 要求：</p>
-<pre class="language-none"><code class="language-none">https:&#x2F;&#x2F;www.google.com&#x2F;ping?sitemap&#x3D;&lt;你的sitemap完整網址(包括https)&gt;</code></pre></li>
-</ol>
-<h2 id="小技巧-將-Search-Console-的版面切成英文"><a href="#小技巧-將-Search-Console-的版面切成英文" class="headerlink" title="小技巧: 將 Search Console 的版面切成英文"></a>小技巧: 將 Search Console 的版面切成英文</h2><p>在參數列添加 <code>&amp;hl=en</code> 可以直接將 google console 的報表直接轉換成英文，用英文的 Keyword 在搜尋引擎上查，可以得到比較多相關資料! 中文的討論串實在有點少。</p>
-<h2 id="分享一下-Sitemap-被光顧的時間頻率"><a href="#分享一下-Sitemap-被光顧的時間頻率" class="headerlink" title="分享一下 Sitemap 被光顧的時間頻率"></a>分享一下 Sitemap 被光顧的時間頻率</h2><p>需要注意的是，Google Console 的各表格更新時間<strong>並不一致</strong>！因此有些問題可能會沒辦法即時反應。例如，明明 Sitemap 在 2/5 被讀取了，然而涵蓋範圍頁面的更新日期卻停留在 2/2，因此我沒辦法知道這一次 Google 更新的網址有哪些，也沒辦法知道 Google 有沒有試圖對它們爬蟲、是不是我的頁面有問題等等，只能等。等它的統計表單更新… 。</p>
-<p>而包含成效(有多少點擊量)、涵蓋範圍、行動裝置可用性、檢索統計資料，每張表格的更新日期都是不一致的！以我寫這段文字的時間，他們的更新時間分別是 5小時前、2/1、 2/4、 2/2。因此「行動裝置頁面」的有效網頁數量反而比「涵蓋範圍」多，顯得有點弔詭。</p>
-<ul>
-<li>1/25 第一次提交 sitemap</li>
-<li>1/27 Sitemap 第一次被讀取，但沒有任何網頁被收錄。顯示「已找到、目前尚未建立索引」</li>
-<li>1/30 11:00 首頁被索引收錄成功，期間進行手機與電腦板的網頁載入速度優化。</li>
-</ul>
-<p>2月：修改 <strong>文章 (post)</strong> 網址的格式，也就是說 Google 收錄的 sitemap 內容，與我當前的網址不一致，只能等待 Google 再爬到我的 sitemap 發現有更新，才能同步兩邊的網址內容。而 tag 頁面的網址沒有被改，跟 sitemap 是一致的。期間，當我手動為 tag 進行索引提交，這些網頁幾乎都當天就被收錄了，而文章頁面則都被不理會。</p>
-<ul>
-<li>2/5 10:00 發現 Sitemap 被更新，距離上次被讀取相隔將近 9 天，一共處理 25 個網址。</li>
-<li>2/6 11:00 發現 Sitemap 連續兩天被臨幸，顯示「Sitemap已處理完畢」一共有 25 個網址。<ul>
-<li>然而涵蓋範圍內標示的網址都是舊網址，且總數只有 22 個。</li>
-<li>從網址檢查工具那邊查看，舊網址沒有被 sitemap 收錄，新網址（現在正常的）則都有被收錄。</li>
-<li>另外出現一個轉址錯誤，可是我透過其他工具看轉址都是正常的。</li>
-<li>發現有一個網址顯示「已檢索 - 目前尚未建立索引」，很難過以為被嫌棄了。</li>
-</ul>
-</li>
-<li>2/6 22:00 發現那個原本「已檢索 - 目前尚未建立索引」的網頁被收錄了，是我第一篇真正被收錄的文章（目前為止都是 tag 類的頁面被收錄）！雖然當前在 Google 引擎上我還是看不到。</li>
-<li>2/9 涵蓋範圍終於更新成我修改後的網址、並且網址數量和與我當前的 sitemap 一致。也就是說從我提交新的網址到涵蓋範圍變動之間大約 7~10 天才在報表上生效，若單論修改到爬蟲來光顧 Sitemap 間隔大約 5天。但目前也只有一篇手動提交的網址被檢索並建立索引，其他都還是「已找到、目前尚未建立索引」</li>
-<li>2/5~2/10 連續 6 天被 Google 爬蟲臨幸，文章介面實際被爬取的有 3 篇，其他時候都是一些 tag 頁面被爬 (可以去設定那邊的「檢索統計資料、依發現方式」看有多少文章被爬到）</li>
-<li>5月初爬蟲有再來連續光顧 7天，但其間個人忙碌，沒有更新文章。</li>
-<li>6/3 爬蟲又來了一天，結果我是隔天才更新文章 (掩面)。</li>
-</ul>
-<p>其實網路上許多人也都說了，爬蟲何時來只能耐心等候，我還是稍微紀錄了一下對於這個新開的站，爬蟲光顧的頻率以及我個人所遇到的狀況，如何應對。希望能夠提供給有類似問題的人一個經驗分享!!</p>
-]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>用 Python 模組寫互動式選單與 CLI</title>
-    <url>/posts/2022-10-23-python-command-interface.html</url>
-    <content><![CDATA[<p>本篇文章是一個蒐集可使用模組的總集，可以根據用途找到適合的套件。</p>
-<h2 id="Argparse"><a href="#Argparse" class="headerlink" title="Argparse"></a>Argparse</h2><p><a href="https://docs.python.org/zh-tw/3/howto/argparse.html">官方套件</a> <code>argparse</code>讓寫 CLI 介面變得非常輕鬆，特別提一下 <a href="https://docs.python.org/3/library/argparse.html#nargs"><code>nargs</code> 選項</a>。</p>
-<p><code>nargs</code>: 只要為數字 (int) ，回傳的型態會是一個 list 擁有 <code>nargs</code> 個元素，因此 <code>nargs=1</code> 會是一個 list 內容只有一個元素。而沒有添加 <code>nargs</code> 的話，就不會以 list 的形式回傳。除了整數，還有 <code>+</code>, <code>?</code>, <code>*</code> 三種特殊符號可以選，<code>*</code> 表示可接受任意數量的輸入參數，<code>+</code> 是至少要輸入一個、可接受輸入更多數量的參數，否則會報警告。<code>?</code> 表示可接受 1 個或 0 個參數，其結果不會以清單的形式存下，而是 single item。</p>
-<p><code>nargs=&#39;?&#39;</code> 很適合用於有時候需要求 user 附加檔案路徑的需求。</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> argparse
-<span class="token keyword">def</span> <span class="token function">get_args</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    parser <span class="token operator">=</span> argparse<span class="token punctuation">.</span>ArgumentParser<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'--boo'</span><span class="token punctuation">,</span> nargs<span class="token operator">=</span><span class="token string">'?'</span><span class="token punctuation">)</span> <span class="token comment"># nargs = 1 or 0, 值不會是清單</span>
-    parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'--aoo'</span><span class="token punctuation">,</span> nargs<span class="token operator">=</span><span class="token string">'*'</span><span class="token punctuation">)</span> <span class="token comment"># nargs = 0 ~ N</span>
-    parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'--coo'</span><span class="token punctuation">,</span> nargs<span class="token operator">=</span><span class="token string">'+'</span><span class="token punctuation">)</span> <span class="token comment"># nargs >= 1</span>
-    parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'--number'</span><span class="token punctuation">,</span> nargs<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
-    parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">'--single'</span><span class="token punctuation">)</span>   
-	<span class="token comment"># Positional Argument</span>
-    parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"flag1"</span><span class="token punctuation">,</span> nargs<span class="token operator">=</span><span class="token string">'?'</span><span class="token punctuation">)</span> <span class="token comment"># the first positional argument is `flag1`</span>
-    parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"flags"</span><span class="token punctuation">,</span> nargs<span class="token operator">=</span><span class="token string">'*'</span><span class="token punctuation">)</span> <span class="token comment"># the second ~ N-th positional argument will be collected to `flags`</span>
-
-    <span class="token keyword">return</span> parser<span class="token punctuation">.</span>parse_args<span class="token punctuation">(</span><span class="token punctuation">)</span>
-
-<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
-    args <span class="token operator">=</span> get_args<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>args<span class="token punctuation">.</span>aoo<span class="token punctuation">)</span>     <span class="token comment"># 2 </span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>args<span class="token punctuation">.</span>boo<span class="token punctuation">)</span>     <span class="token comment"># ['1', '2', '3', '4']</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>args<span class="token punctuation">.</span>coo<span class="token punctuation">)</span>     <span class="token comment"># ['5']</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>args<span class="token punctuation">.</span>number<span class="token punctuation">)</span>  <span class="token comment"># ['2']</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>args<span class="token punctuation">.</span>single<span class="token punctuation">)</span>  <span class="token comment"># 1</span>
-
-<span class="token comment"># python .\example_argprase.py --aoo 1 2 3 4 --boo 2   --number 2 --coo 5 --single 1 aaa bbb ccc</span></code></pre>
-
-<p><code>parser</code> 的回傳值是一個 namespace，可以直接用名字取用值，像是上面數字的例子那樣直接用 <code>args.number</code> 對 <code>args</code> 這個回傳的 namespace 取值。另外還有<a href="https://docs.python.org/3/library/argparse.html#mutual-exclusion">互斥選項</a>、<a href="https://docs.python.org/3/library/argparse.html#argument-groups">Argument groups</a> 等進階的用法。</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> argparse
-<span class="token keyword">def</span> <span class="token function">get_args</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-    parser <span class="token operator">=</span> argparse<span class="token punctuation">.</span>ArgumentParser<span class="token punctuation">(</span><span class="token punctuation">)</span>
-    parser<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"-u"</span><span class="token punctuation">,</span> <span class="token string">"--update"</span><span class="token punctuation">,</span> <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">"Clean dir"</span><span class="token punctuation">,</span> default<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> action<span class="token operator">=</span><span class="token string">"store_true"</span><span class="token punctuation">)</span>
-    <span class="token comment"># 互斥組</span>
-    group <span class="token operator">=</span> parser<span class="token punctuation">.</span>add_mutually_exclusive_group<span class="token punctuation">(</span><span class="token builtin">help</span><span class="token operator">=</span><span class="token string">"you can only choose 1"</span><span class="token punctuation">)</span>
-    group<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"--dessert"</span><span class="token punctuation">,</span> <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">"Get dessert"</span><span class="token punctuation">,</span> default<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> action<span class="token operator">=</span><span class="token string">"store_true"</span><span class="token punctuation">)</span>
-    group<span class="token punctuation">.</span>add_argument<span class="token punctuation">(</span><span class="token string">"--drink"</span><span class="token punctuation">,</span> <span class="token builtin">help</span><span class="token operator">=</span><span class="token string">"Get drink"</span><span class="token punctuation">,</span> default<span class="token operator">=</span><span class="token boolean">False</span><span class="token punctuation">,</span> action<span class="token operator">=</span><span class="token string">"store_true"</span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span> parser<span class="token punctuation">.</span>parse_args<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
-
-<h2 id="Curses"><a href="#Curses" class="headerlink" title="Curses"></a><a href="https://docs.python.org/3/howto/curses.html">Curses</a></h2><p><code>curses </code> 也是一個 Python 官方的套件，可以使用它開發 console base 的 UI。<a href="https://realpython.com/python-print/#building-console-user-interfaces">Real Python: Your Guide to the Python print() Function</a> 當中有些示例，像是做個貪吃蛇：</p>
-<p><img src="https://files.realpython.com/media/snake.a9589582b58a.gif" alt="貪吃蛇"></p>
-<p>最終沒有涉略這個模組，它似乎都是全螢幕式的，沒有辦法只顯示在打完指令下面的位置，與我的目的不合。</p>
-<h2 id="Inquirer"><a href="#Inquirer" class="headerlink" title="Inquirer"></a>Inquirer</h2><p>套件 <strong><a href="https://github.com/magmax/python-inquirer">inquirer</a></strong> 不是 Python 原生的模組，是一個基於 inquire.js 想法產生的 Python 專案，主要支援 Unix 平台，在 <a href="https://github.com/SBoudrias/Inquirer.js">inquirer.js</a> 裡面有比較多圖片說明。開發上，<code>pip install inquirer</code>  即可裝好模組。支援</p>
-<ul>
-<li>問答，要求使用者輸入內容並包含驗證格式。</li>
-<li>清單，提供選項，User 用鍵盤上下鍵選擇答案</li>
-<li>Check box </li>
-</ul>
-<p>簡單舉個例子! </p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> inquirer
-<span class="token keyword">import</span> os 
-
-questions <span class="token operator">=</span> <span class="token punctuation">[</span>
-  inquirer<span class="token punctuation">.</span>List<span class="token punctuation">(</span><span class="token string">'subdir'</span><span class="token punctuation">,</span>
-      message<span class="token operator">=</span><span class="token string">"cd to which dir"</span><span class="token punctuation">,</span>
-      choices<span class="token operator">=</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>os<span class="token punctuation">.</span>getcwd<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
-  <span class="token punctuation">)</span><span class="token punctuation">,</span>
-<span class="token punctuation">]</span>
-answers <span class="token operator">=</span> inquirer<span class="token punctuation">.</span>prompt<span class="token punctuation">(</span>questions<span class="token punctuation">)</span>
-questions<span class="token punctuation">[</span><span class="token string">"subdir"</span><span class="token punctuation">]</span> <span class="token comment"># user 選到的選項值</span></code></pre>
-
-<p>不過在 colab 的環境中，它沒辦法提供方向鍵在 console 上的互動，因此在印完以下內容後會報 error，但若在一般的 Linux terminal 用起來體驗是很不錯的！</p>
-<p><img src="/uploads/inquire_demo.png" alt="inquire question demo"></p>
 ]]></content>
       <categories>
         <category>Python</category>
@@ -1633,152 +1878,6 @@ hist.bins: 20 </code></pre>
       <tags>
         <tag>python</tag>
         <tag>visualize</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python 日誌模組 Logging (2) 細探官方文件</title>
-    <url>/posts/2022-01-22-python-logging-advance.html</url>
-    <content><![CDATA[<p>Logging 模組中主要就是這四種物件：</p>
-<ul>
-<li>Loggers : 提供直接讓其他應用程式使用的接口 (expose the interface that application code directly uses)</li>
-<li>Handlers : 發送日誌紀錄到適合的目標地點，像是檔案、stdout、甚至 Qt GUI 等等。</li>
-<li>Formatters : 輸出的格式。</li>
-<li>Filters : 過濾器，決定哪些日誌訊息可以傳到輸出。</li>
-</ul>
-<h2 id="Loggers"><a href="#Loggers" class="headerlink" title="Loggers"></a><a href="https://docs.python.org/3/howto/logging.html#advanced-logging-tutorial">Loggers</a></h2><p>logger 負責三個工作</p>
-<ol>
-<li>暴露一些方法讓應用程式去調用，在執行期間(runtime) 中紀錄訊息。</li>
-<li>根據嚴重性或 filter 物件，決定讓那些訊息要傳遞出去。<ul>
-<li>預設的過濾條件就是根據嚴重性(severity)</li>
-</ul>
-</li>
-<li>將相關的日誌訊息傳遞到相關的 log handlers 手上。</li>
-</ol>
-<h3 id="常用的方法"><a href="#常用的方法" class="headerlink" title="常用的方法"></a>常用的方法</h3><ul>
-<li><code>Logger.setLevel()</code> : 設定嚴重性的 threshold 。</li>
-<li><code>Logger.addHandler()</code> , <code>Logger.removeHandler()</code> : 新增或移除 handler.</li>
-<li><code>Logger.addFilter()</code> ,<code>Logger.removeFilter()</code> : 新增或移除 Filter，</li>
-</ul>
-<p>每當 logger 物件被創建時，下面的函數會自動配置產生：</p>
-<ul>
-<li><p><code>Logger.debug()</code>, <code>Logger.info()</code>, <code>Logger.warning()</code>, <code>Logger.error()</code>, <code>Logger.critical() </code>：括號裡面填寫要傳入的日誌訊息， <strong>必須是 string 形式</strong>，剩下的一些參數可以透過 <code>**kwargs</code> 傳入 (ex. <code>exc_info</code>… )</p>
-<ul>
-<li><p>當紀錄的訊息是從 print 轉過來的時候要注意，所有的訊息要寫在同一條 string 裡面：</p>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"var1=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>var1<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">,</span> <span class="token string-interpolation"><span class="token string">f"var2=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>var2<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span>
-logger<span class="token punctuation">.</span>info<span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"var1=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>var1<span class="token punctuation">&#125;</span></span><span class="token string">; var2=</span><span class="token interpolation"><span class="token punctuation">&#123;</span>var2<span class="token punctuation">&#125;</span></span><span class="token string">"</span></span><span class="token punctuation">)</span></code></pre>
-
-<p>如果像 print 一樣兩個 string 放不同位置，第二個位置的字串會被當作其他參數，必須要改成只有一條 string。</p>
-</li>
-</ul>
-</li>
-<li><p><code>Logger.exception() </code> : 一個很像 <code>Logger.error()</code> 模式的 logger 方法，不同的是它會<strong>追蹤例外發生的紀錄(traceback)</strong> (dumps a stack trace along with it)，這只應該在例外處理中 (exception handler) 使用。</p>
-</li>
-<li><p><code>Logger.log(level:int, msg: str)</code> : 除非是用到 <strong>自訂的訊息等級</strong> ，它的效果跟第一點的一樣，但是更加的冗長，沒事可以不要用。</p>
-</li>
-</ul>
-<h3 id="注意事項"><a href="#注意事項" class="headerlink" title="注意事項"></a>注意事項</h3><ol>
-<li><p><code>getLogger()</code> 回傳的是「和輸入名稱相同的 logger 實例的 reference」，如果沒有指定，則回傳 logger實例名字為 <code>root</code> reference。</p>
-</li>
-<li><p>名稱如之前所提，有上下的層級架構關係</p>
-</li>
-<li><p>用相同的名稱 呼叫 <a href="https://docs.python.org/3/library/logging.html#logging.getLogger"><code>getLogger()</code></a> 得到的是 reference :arrow_right: 都參考至相同物件名稱的 logger 物件。</p>
-<pre class="language-python" data-language="python"><code class="language-python">logger1 <span class="token operator">=</span> logging<span class="token punctuation">.</span>get_logger<span class="token punctuation">(</span><span class="token string">"aaa"</span><span class="token punctuation">)</span>
-logger2 <span class="token operator">=</span> logging<span class="token punctuation">.</span>get_logger<span class="token punctuation">(</span><span class="token string">"aaa"</span><span class="token punctuation">)</span> 
-<span class="token builtin">id</span><span class="token punctuation">(</span>logger1<span class="token punctuation">)</span><span class="token operator">==</span><span class="token builtin">id</span><span class="token punctuation">(</span>logger2<span class="token punctuation">)</span> <span class="token comment"># True</span>
-
-<span class="token comment"># 兩條呼叫到的會是同一個 logger 物件：名為 'aaa' 的 logger object. </span></code></pre></li>
-<li><p>嚴重性等級的定義：Logger 能接受的訊息等級受到其父代所影響</p>
-<ol>
-<li>如果自己的等級沒有另外定義，會使用父代所定義的訊息嚴重性等級。</li>
-<li>如果父代沒有定義，會再往上使用「父代的父代」，往上追朔祖先直到有找到清楚的等級定義 (explicitly set level )</li>
-<li>root logger 必然會有一個很清楚的等級定義 (預設是 <code>warning</code>) </li>
-</ol>
-</li>
-<li><p>Logger 所定義能通過的訊息等級，會影響到是否能傳遞到旗下的 handler：</p>
-<ul>
-<li>如果在 logger 上定義通過 warning (30)，卻在 handler 定義等級 info (20) 就能紀錄，那這樣實際紀錄下來的也只會有 warning 以上的訊息，因為低於 warning 的根本進不來這個 logger 的手上。</li>
-</ul>
-</li>
-<li><p>不需要為每個logger 都定義 handler，只要對 root logger 做。</p>
-<ul>
-<li>由於 child logger 的訊息會往上傳遞，所以只需要在上層的 logger 設置即可。</li>
-<li>但是也可以把往上傳遞的功能關掉：參數 <code>propagate=False</code> </li>
-</ul>
-</li>
-</ol>
-<h2 id="Handlers"><a href="#Handlers" class="headerlink" title="Handlers"></a><a href="https://docs.python.org/3/howto/logging.html#handlers">Handlers</a></h2><p>Handler 物件基於所設定的訊息嚴重等級，將日誌訊息派到<strong>對應的目的地</strong>，像是 stdout。Logger 物件對於 handler 的數量沒什麼限制，可以不加、也可以加很多個。光是官方提供的 handler 就多達 10 個以上，常見的輸出到 std out、輸出到檔案、連接到 Socket、傳遞到 http (<code>Get</code>, <code>POST</code>)、送到 <code>Queue</code>…等等。我也實做過把 logger 直接連動到 Qt GUI 的文字板上面過，不用另外從核心程式拉一條線到前端的 GUI，直接利用現有的 logger 即可非常方便！</p>
-<p>Handler 幾乎沒什麼方法可以調用，與其相關的主要是這幾個方法：</p>
-<ul>
-<li><p><code>Logger.addHandler(hdlr)</code></p>
-<ul>
-<li>舉例說明：目標是 (1) 將所有 log 寫進 log file  (2) 所有高於 error 的 msg 丟到 <code>stdout</code> (3)所有 critical 等級的寄信寄出去。一共 3個獨立的 handler 負責做各自的事情。所以需要添加三個不同的 handlers，呼應各自要寄送訊息的目的，還有寄送出去的信息等級。</li>
-<li>標準的library 有提供 <a href="https://docs.python.org/3/howto/logging.html#useful-handlers">很多 handlers</a>，最常用的是 <a href="https://docs.python.org/3/library/logging.handlers.html#logging.StreamHandler"><code>StreamHandler</code></a> 和<a href="https://docs.python.org/3/library/logging.handlers.html#logging.FileHandler"><code>FileHandler</code></a>。</li>
-</ul>
-</li>
-<li><p><code>setLevel </code>：handler 也有 <code>setLevel()</code> 方法，和前面的 <code>setLevel</code> 不同</p>
-<ul>
-<li><code>logger.setLevel()</code> 設定的是哪些嚴重性的訊息可以<strong>被傳送到</strong> handlers，而 <code>handler.setLevel()</code>則是決定哪些程度的訊息<strong>可以被派遣到要目的地 (ex. write to file )</strong></li>
-</ul>
-</li>
-<li><p><code>setFormatter()</code>：設定 handler 把訊息傳到目的地時候的訊息格式。</p>
-</li>
-<li><p><code>addFilter()</code> and <code>removeFilter()</code>：配置和移除 filter 於handler 物件。</p>
-</li>
-</ul>
-<h2 id="Formatters"><a href="#Formatters" class="headerlink" title="Formatters"></a><a href="https://docs.python.org/3/howto/logging.html#formatters">Formatters</a></h2><p>決定訊息的格式，有三個可選擇擇的參數：</p>
-<ol>
-<li>訊息字串格式字串 <code>fmt</code>：可調用的一些屬性變數參見 <a href="https://docs.python.org/3.7/library/logging.html#logrecord-attributes">LogRecord attributes</a></li>
-<li>日期格式字串 <code>datefmt</code>: 預設使用  <a href="https://docs.python.org/3/library/time.html#time.localtime"><code>time.localtime()</code></a> 打下時間戳，預設的格式為 <code>%Y-%m-%d %H:%M:%S</code></li>
-<li>style indicator：撰寫模式的提取符號，預設是 <code>%</code>，可修改成 <code>&#123;</code> 或 <code>$</code>。參考不同的 style-indicator 所對應的 formatter 撰寫模式： <pre class="language-python" data-language="python"><code class="language-python">logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'%(asctime)s - %(message)s'</span><span class="token punctuation">,</span> style<span class="token operator">=</span><span class="token string">'%'</span><span class="token punctuation">)</span>
-logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'$(asctime)s - $(message)s'</span><span class="token punctuation">,</span> style<span class="token operator">=</span><span class="token string">'$'</span><span class="token punctuation">)</span>
-logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'&#123;asctime&#125; - &#123;message&#125;'</span><span class="token punctuation">,</span> style<span class="token operator">=</span><span class="token string">'&#123;'</span><span class="token punctuation">)</span></code></pre></li>
-</ol>
-<p>最後舉個例子：</p>
-<pre class="language-python" data-language="python"><code class="language-python">formatter <span class="token operator">=</span> logging<span class="token punctuation">.</span>Formatter<span class="token punctuation">(</span><span class="token string">'%(asctime)s - %(name)s - %(levelname)s : %(message)s'</span><span class="token punctuation">)</span></code></pre>
-
-<ul>
-<li><code>message</code>：應用程式傳入的日誌訊息</li>
-<li><code>asctime</code>, <code>name</code>, <code>levelname</code>： <a href="https://docs.python.org/3.7/library/logging.html#logrecord-attributes">LogRecord attributes</a> 中所提供可以調用的屬性，分別表示時間、哪個 logger (名稱) 傳入的、訊息等級名稱。</li>
-</ul>
-<h2 id="Filters"><a href="#Filters" class="headerlink" title="Filters"></a><a href="https://docs.python.org/3/library/logging.html#filter-objects">Filters</a></h2><ul>
-<li><p>用在 handler 和 logger 上，提供比「訊息緊急程度層級」更細節的過濾規則</p>
-</li>
-<li><p>最基本，不用實做改寫的 filter，提供以「logger 階層等級」過濾的方法：只能通過<strong>低於自己的層級</strong>。例如 : 設定<code>A.B</code> ，則只會通過 logger <code>A.B</code>, <code>A.B.C</code>, <code>A.B.D</code>…</p>
-<pre class="language-python" data-language="python"><code class="language-python">f <span class="token operator">=</span> logging<span class="token punctuation">.</span>Filter<span class="token punctuation">(</span>name<span class="token operator">=</span><span class="token string">"A.B"</span><span class="token punctuation">)</span></code></pre>
-
-<p>代表 “A.B” 以下(包含)層級的 logger 事件訊息可以通過這個過濾器。</p>
-</li>
-<li><p>如果以空白字串初始化，則所有的事件都可以通過。</p>
-</li>
-<li><p>Filter 必須在 log 事件已經被傳送到 handler 前先附加在 handler 上面，才能起過濾的作用。(反正就是一開始先設定好就對了 = = )</p>
-</li>
-</ul>
-<p>預設功能只是基本的，也可以自己設計規則來決定哪些訊息可以通過。想自訂過濾器要做的事情是：</p>
-<ol>
-<li>實作一個 <code>logging.Filter</code> 類別，並實作其 <code>filter</code> 方法</li>
-<li>把這個客製化 filter 實例化後，用 <code>.addFilter()</code> 加到 logger 或 handler </li>
-</ol>
-<pre class="language-python" data-language="python"><code class="language-python"><span class="token comment"># 稍微用code表示上面的條列項目</span>
-<span class="token keyword">import</span> logging
-
-<span class="token keyword">class</span> <span class="token class-name">CustomFilter</span><span class="token punctuation">(</span>logging<span class="token punctuation">.</span>Filter<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">filter</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> record<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token comment"># 實作過濾規則 </span>
-        <span class="token keyword">return</span> <span class="token boolean">True</span> <span class="token comment"># 要 return True 才代表信息被保留</span>
-
-logging<span class="token punctuation">.</span>basicConfig<span class="token punctuation">(</span>level<span class="token operator">=</span>logging<span class="token punctuation">.</span>INFO<span class="token punctuation">)</span>
-logger <span class="token operator">=</span> logging<span class="token punctuation">.</span>getLogger<span class="token punctuation">(</span><span class="token punctuation">)</span>
-f <span class="token operator">=</span> CustomFilter<span class="token punctuation">(</span><span class="token punctuation">)</span>logger<span class="token punctuation">.</span>addFilter<span class="token punctuation">(</span>f<span class="token punctuation">)</span></code></pre>
-
-<p>舉例而言，一個過濾敏感資料的自定義 Filter 範例 <a href="https://gist.github.com/acdha/9238791">https://gist.github.com/acdha/9238791</a></p>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-        <tag>官方文件</tag>
-        <tag>logging</tag>
       </tags>
   </entry>
   <entry>
