@@ -107,18 +107,14 @@ taxonomies:
 ###############################################################################
 # Docsy - Site Parameters
 ###############################################################################
-# params:
-#   taxonomy:
-#     taxonomyCloud:
-#       - projects    # remove all entries
-#       - tags        # to hide taxonomy clouds
-#     taxonomyCloudTitle:   # if used, must have the same
-#       - Our Projects      # number of entries as taxonomyCloud
-#       - Tag Cloud
-#     taxonomyPageHeader:
-#       - tags        # remove all entries
-#       - categories  # to hide taxonomy clouds
+params:
+  # Activate Lunr search 
+  offlineSearch: true
+  
 
+###############################################################################
+# Hugo
+###############################################################################
 
 
 ################################################################
