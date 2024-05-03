@@ -5,6 +5,7 @@ categories: Python
 description: 使用 matplotlib 繪圖的常用基本操作，有關子圖操作、合併子圖、跨行跨列、縮減圖上空白區、以及環境設定檔 matplotlibrc的建立。
 aliases: 
 - /posts/2021-12-30-python-visualize-basic
+- /posts/2021-12-30-python-visualize-basic.html
 ---
 ## 子圖
 

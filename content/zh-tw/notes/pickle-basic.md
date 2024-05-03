@@ -5,6 +5,7 @@ categories: Python
 description: 研究 Python 官方文件中的 Pickle 模組，探討常發生的 lambda PicklingError 問題。
 aliases:
 - /posts/2022-01-17-pickle-basic
+- /posts/2022-01-17-pickle-basic.html
 ---
 
 Pickle 是 Python 裡面物件儲存的原生套件，延伸的套件有不少，我個人就慣用 `joblib`。

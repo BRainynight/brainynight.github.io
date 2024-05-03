@@ -5,6 +5,7 @@ tags: [ hexo]
 description: 使用 Hexo 建立部落格並連動發布到 github page (github.io)上、文章發布、Hexo基本設定檔、NexT 主題設定檔...等初次使用的操作。
 aliases: 
 - /posts/2021-12-30-blog-0-hexo-build-env
+- /posts/2021-12-30-blog-0-hexo-build-env.html
 ---
 
 ## 前置作業

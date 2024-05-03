@@ -5,6 +5,7 @@ date: 2022-06-23 11:52:45
 categories: Tool
 aliases:
 - /posts/2022-06-23-vscode-setting
+- /posts/2022-06-23-vscode-setting.html
 ---
 有如 Spyder 的 IPython 互動介面、直接用 VSCode 以 SSH 遠端連線、VSCode 的 anaconda 切換問題等等，有些可能按照 Reference 的做法就成功了，有些會加一些自己的嘗試，所有個人經歷過的問題都記錄在本文中! 
 <!--more-->

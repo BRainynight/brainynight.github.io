@@ -5,6 +5,7 @@ categories: Python
 description: 繼前一篇文章進一步探討 Pickle 模組：理解 PEP3155談論到的 Qualified name、與帶有裝飾器(decorator) 的函式遇到 Can't pickle local object 應如何解決。
 aliases:
 - /posts/2022-01-17-pickle-advance
+- /posts/2022-01-17-pickle-advance.html
 ---
 
 ## PEP 3155 Qualified name

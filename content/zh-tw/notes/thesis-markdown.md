@@ -5,6 +5,7 @@ date: 2022-02-11 13:01:31
 categories: Tool
 aliases:
 - /posts/2022-02-11-thesis-markdown
+- /posts/2022-02-11-thesis-markdown.html
 ---
 
 ## Markdown vs. Latex

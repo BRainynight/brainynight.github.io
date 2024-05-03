@@ -5,6 +5,7 @@ date: 2022-10-24 21:47:12
 categories: Linux
 aliases:
 - /posts/2022-10-24-linux-ssh
+- /posts/2022-10-24-linux-ssh.html
 ---
 
 先前在 VS Code 的設定文章中有提及過 SSH 登入的設定，本篇以 Linux 的 SSH 登入開始介紹，並且提及 `scp`, `sshfs` 兩個基於 SSH 連線，方便於多台 Linux 機器之前交換資料的模組。

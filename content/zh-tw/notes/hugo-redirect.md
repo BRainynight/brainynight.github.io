@@ -4,6 +4,7 @@ description: "學習使用 Config，用最小的設定了解 docsy"
 date: 2024-05-03 14:07:00
 aliases:
 - /2023-01-01-posts
+- /2023-01-01-posts.html
 ---
 
 ## redirect URL 

@@ -5,6 +5,7 @@ date: 2022-10-23 15:25:39
 categories: Python
 aliases:
 - /posts/2022-10-23-python-command-interface
+- /posts/2022-10-23-python-command-interface.html
 ---
 
 本篇文章是一個蒐集可使用模組的總集，可以根據用途找到適合的套件。

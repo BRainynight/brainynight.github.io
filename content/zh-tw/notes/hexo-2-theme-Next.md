@@ -5,6 +5,7 @@ tags: [hexo]
 description: 更新 Next 主題與啟用 prismjs，並修改行中程式碼(inline code) 的 CSS 格式。
 aliases: 
 - /posts/2022-01-26-blog-2-theme-Next-update
+- /posts/2022-01-26-blog-2-theme-Next-update.html
 ---
 
 ## 主題版本更新

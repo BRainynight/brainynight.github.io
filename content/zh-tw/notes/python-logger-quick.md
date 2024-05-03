@@ -5,6 +5,7 @@ categories: Python
 description: 提供一個快速使用 logger 的 code snippet
 aliases:
 - /posts/2022-01-20-python-logger-quick
+- /posts/2022-01-20-python-logger-quick.html
 ---
 
 在開發 Python 專案時，是否經歷過一種狀況：在測試的時候需要不斷輸出一些資訊以便觀察狀態，但在正式上線之後又不須要這些東西輸入。有可能是不想給使用者看到，也有可能是不斷 print out 會造成某些阻塞。

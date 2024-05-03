@@ -5,6 +5,7 @@ date: 2022-10-23 23:11:36
 categories: Python
 aliases:
 - /posts/2022-10-23-python-asyncio
+- /posts/2022-10-23-python-asyncio.html
 ---
 
 Python 自 3.4 開始支援asyncio，但在談及這個模組包之前，首先要了解

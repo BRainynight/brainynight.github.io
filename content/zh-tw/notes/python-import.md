@@ -5,6 +5,7 @@ date: 2022-06-05 11:11:40
 categories: Python
 aliases:
 - /posts/2022-06-05-python-import
+- /posts/2022-06-05-python-import.html
 ---
 
 這篇的重點依然在於「相對引用與絕對引用」，但在這之間，先來看一些有關 import 的觀念。

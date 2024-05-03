@@ -5,6 +5,7 @@ categories: Python
 description: logging 模組第二篇，有關過濾特定內容、將日誌內容輸出到特定的目的地、日誌格式可調用哪些系統參數等，模組中四個常見物件的使用方式。
 aliases:
 - /posts/2022-01-22-python-logging-advance
+- /posts/2022-01-22-python-logging-advance.html
 ---
 
 Logging 模組中主要就是這四種物件：

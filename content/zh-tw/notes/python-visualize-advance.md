@@ -5,6 +5,7 @@ categories: Python
 description: 紀錄做數據研究時，使用 matplotlib 繪圖的進階操作。直方圖疊加、如何合併 twinx 下不同的圖例(legend)、將圖例移出繪圖區、在軸上使用省略符號..。
 aliases: 
 - /posts/2022-01-27-python-visualize-advance
+- /posts/2022-01-27-python-visualize-advance.html
 ---
 
 ## 多個直方圖疊加
