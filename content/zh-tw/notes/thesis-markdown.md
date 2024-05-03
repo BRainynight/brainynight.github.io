@@ -4,7 +4,7 @@ description: 以 Markdown 寫論文時的文獻、圖片公式等地引用管理
 date: 2022-02-11 13:01:31
 categories: Tool
 aliases:
-- /posts/2022-06-23-vscode-setting
+- /posts/2022-02-11-thesis-markdown
 ---
 
 ## Markdown vs. Latex
