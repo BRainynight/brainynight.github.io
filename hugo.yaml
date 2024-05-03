@@ -1,0 +1,135 @@
+baseURL : "/"
+title : "Coding Corner"
+description : "Studying note for anything!"
+
+###############################################################################
+# Docsy
+###############################################################################
+enableGitInfo : false
+# language settings
+contentDir : "content/zh-tw"
+defaultContentLanguage : "zh-tw"
+# tell Hugo not to include the /zh-tw/ element in the URL path for English docs
+defaultContentLanguageInSubdir : false
+# useful when translating
+enableMissingTranslationPlaceholders : true
+# deprecated directories
+ignoreFiles : []
+
+###############################################################################
+# Hugo - Top-level navigation (horizontal)
+###############################################################################
+
+menu:
+  main:
+    - name: "Notes"
+      weight: -101
+      pre: "<i class='fas fa-book pr-2'></i>"
+      url: "/notes/"
+    # - name: "Blog"
+    #   weight: -100
+    #   pre: "<i class='fas fa-rss pr-2'></i>"
+    #   url: "/blog/"
+    - name: "GitHub"
+      weight: -99
+      pre: "<i class='fab fa-github pr-2'></i>"
+      url: "https://github.com/brainynight/"
+###############################################################################
+# Docsy - Goldmark markdown parser
+# A markdown render in Go Lang.
+###############################################################################
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+    # For MathJax
+    # https://gohugo.io/content-management/mathematics/#setup
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          block:
+            - ['\[', '\]']
+            - ['$$', '$$']
+          inline:
+            - ['\(', '\)']
+  highlight:
+    # See a complete list of available styles at https://xyproto.github.io/splash/docs/all.html
+    style: "tango"
+    guessSyntax: true
+
+
+###############################################################################
+# Docsy - DrawIO configuration
+###############################################################################
+params:
+  drawio:
+    enable: true
+
+###############################################################################
+# Docsy - Image processing configuration
+###############################################################################
+imaging:
+  resampleFilter: "CatmullRom"
+  quality: 75
+  anchor: "smart"
+
+###############################################################################
+# Docsy - Services configuration
+###############################################################################
+services:
+  googleAnalytics:
+    id: "G-QBCDYXBD36"
+
+###############################################################################
+# Docsy - Language configuration
+###############################################################################
+languages:
+  zh-tw:
+    title: "Coding Corner"
+    languageName: "English"
+    weight: 1
+    params:
+      description: "Studying note for anything!"
+
+###############################################################################
+# Docsy - Tag
+###############################################################################
+disableKinds:
+  - taxonomy
+  - taxonomyTerm
+
+taxonomies:
+  tag: tags
+  category: categories
+  project: projects
+
+
+###############################################################################
+# Docsy - Site Parameters
+###############################################################################
+# params:
+#   taxonomy:
+#     taxonomyCloud:
+#       - projects    # remove all entries
+#       - tags        # to hide taxonomy clouds
+#     taxonomyCloudTitle:   # if used, must have the same
+#       - Our Projects      # number of entries as taxonomyCloud
+#       - Tag Cloud
+#     taxonomyPageHeader:
+#       - tags        # remove all entries
+#       - categories  # to hide taxonomy clouds
+
+
+
+################################################################
+module:
+  proxy: "direct"
+  hugoVersion:
+    extended: true
+    min: "v0.119.0+extended"
+  imports:
+    - path: "github.com/google/docsy"
+      disable: false
+    - path: "github.com/google/docsy/dependencies"
+      disable: false
