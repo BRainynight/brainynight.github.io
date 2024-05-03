@@ -1,9 +1,8 @@
 ---
 title: 從零開始 Docsy (2)
+date: 2024-05-03 13:07
 description: "學習使用 Config，用最小的設定了解 docsy"
 ---
-
-
 
 ## 學習使用 Config
 

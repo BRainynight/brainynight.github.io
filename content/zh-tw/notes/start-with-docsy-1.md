@@ -1,5 +1,6 @@
 ---
 title: 從零開始 Docsy (1)
+date: 2024-05-03 12:05
 description: "啟動一個 docsy 主題的 hugo 網站"
 ---
 ## 開始之前
