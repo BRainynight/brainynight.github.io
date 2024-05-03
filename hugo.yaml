@@ -1,4 +1,4 @@
-baseURL : "https://brainynight.github.io/coding-corner/"
+baseURL : "https://brainynight.github.io/"
 title : "Coding Corner"
 description : "Studying note for anything!"
 
@@ -97,7 +97,6 @@ languages:
 ###############################################################################
 disableKinds:
   - taxonomy
-  - taxonomyTerm
 
 taxonomies:
   tag: tags
