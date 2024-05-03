@@ -1,7 +1,3 @@
-/*
-Projects can override this file. For details, see:
-https://www.docsy.dev/docs/adding-content/lookandfeel/#project-style-files
-*/
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i&display=swap");
 :root,
 [data-bs-theme="light"] {
@@ -19709,13 +19705,5 @@ div.drawioframe {
     margin-top: -5rem;
     height: 5rem;
     visibility: hidden; } }
-
-/*
-
-Nothing defined here. The Hugo project that uses this theme can override Bootstrap by adding a file to:
-
-assets/scss/_styles_project.scss
-
-*/
 
 /*# sourceMappingURL=main.css.map */

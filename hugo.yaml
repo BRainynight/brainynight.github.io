@@ -55,7 +55,6 @@ markup:
             - ['\(', '\)']
   highlight:
     # See a complete list of available styles at https://xyproto.github.io/splash/docs/all.html
-    style: "tango"
     guessSyntax: true
 
 
@@ -110,6 +109,8 @@ taxonomies:
 params:
   # Activate Lunr search 
   offlineSearch: true
+  ui:
+    showLightDarkModeMenu: true
   
 
 ###############################################################################
