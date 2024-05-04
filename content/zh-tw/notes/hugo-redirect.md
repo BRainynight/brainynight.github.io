@@ -1,7 +1,7 @@
 ---
 title: Hugo-重新導向網址
 description: "學習使用 Config，用最小的設定了解 docsy"
-date: 2024-05-03 14:07:00
+date: 2024-05-03 23:59:59
 aliases:
 - /2023-01-01-posts
 - /2023-01-01-posts.html

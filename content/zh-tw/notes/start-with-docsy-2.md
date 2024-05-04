@@ -6,12 +6,12 @@ description: "學習使用 Config，用最小的設定了解 docsy"
 
 ## 學習使用 Config
 
-Config 內容繁雜，參考既有的會比較容易。個人認為 docsy-example 的 config 不容易參考，下面將提及另一個資源更容易讀。官方列出了[一些範例網站](https://www.docsy.dev/docs/examples/)，可以前往他們的 Github 找 config 參考。這裡提供兩個連結: 
+Config 內容繁雜，參考既有的會比較容易。個人認為 [docsy-example](https://github.com/google/docsy-example) 的 config 不容易參考，下面將提及另一個資源更容易讀。官方列出了[一些範例網站](https://www.docsy.dev/docs/examples/)，可以前往他們的 Github 找 config 參考。這裡提供兩個連結: 
 - [Docsy official: Basic Config](https://www.docsy.dev/docs/get-started/basic-configuration/): 官方的文章
 - [kubeflow Config](https://github.com/kubeflow/website/blob/master/config.toml): 較簡單，且 config 有分區寫 comment，比官方範例網站更容易讀。
 
 ## 簡易 Config
-參考自 kubeflow，我設置了最簡易的 config，讓啟動的網站有 Top-level navigation，不再是一片空白。
+參考自 kubeflow，我設置了較簡易的 config，讓啟動的網站有 Top-level navigation，不再是一片空白。
 
 ```yaml
 baseURL : "/"
