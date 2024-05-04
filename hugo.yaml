@@ -54,7 +54,7 @@ markup:
           inline:
             - ['\(', '\)']
   highlight:
-    # See a complete list of available styles at https://xyproto.github.io/splash/docs/all.html
+    style : catppuccin-latte
     guessSyntax: true
 
 

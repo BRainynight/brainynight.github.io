@@ -71,6 +71,10 @@ CPU-bound：程式並不需要跟網路有什麼交互，沒有等待外部資�
 
 另外，subprocess 中可使用的 timeout，在 asyncio 當中要透過 `wait_for` 執行。
 
+
+
+需要注意，這裡 async 的作用是對「等待 subprocess 的 response 」做異步。傳統的 subprocess 要等到 subprocess  結束才能執行下一行，而透過這個方式可以一次丟出多個 subprocess。
+
 ### 範例
 
 ```python
