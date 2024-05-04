@@ -33,13 +33,13 @@ $light-dark-color: light-dark($primary, $gray-300) !default;
   }
 
   > h3 {
-    text-shadow: $secondary 0.1rem 0 1rem;
+    font-weight: bold;
+    // text-shadow: $secondary 0.1rem 0 1rem;
   }
   > h3,
   > h4,
   > h5,
   > h6 {
-    font-weight: bold;
     color: $light-dark-color;
     margin-bottom: 1rem;
     margin-top: 2rem;
@@ -54,11 +54,11 @@ $light-dark-color: light-dark($primary, $gray-300) !default;
   }
 
   blockquote {
-    padding: 0 0 0 1rem;
+    padding: 0.5rem 0 0.3rem 1rem; // T R B L
     margin-bottom: $spacer;
     color: $gray-600;
-    border-left: 6px solid $secondary;
-    background-color: rgba($secondary, 0.2);
+    border-left: 6px solid light-dark($secondary, $primary);
+    background-color: light-dark( rgba($secondary, 0.25), $secondary);
   }
 
   ul li,
