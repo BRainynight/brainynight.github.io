@@ -86,11 +86,12 @@ services:
 languages:
   zh-tw:
     title: "Coding Corner"
-    languageName: "English"
+    languageName: "zh-tw"
     weight: 1
+    staticDir: "static"
     params:
       description: "Studying note for anything!"
-
+    
 ###############################################################################
 # Docsy - Tag
 ###############################################################################
