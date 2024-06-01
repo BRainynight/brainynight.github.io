@@ -1,5 +1,5 @@
 ---
-title: PythonQt 讓 Python 的 QT Application 嵌入 Cpp
+title: PythonQt 讓 Python 的 QT Application 嵌入於 C++
 date: 2024-06-01 05:30:00
 description: 研究 PythonQt 模組
 categories:
@@ -9,7 +9,7 @@ categories:
 
 
 ## Install PyQt5
-```bash 
+```bash
 sudo apt install qtbase5-dev
 sudo apt install libqt5widgets5
 sudo apt install libqt5widgets5
@@ -23,7 +23,11 @@ sudo apt install qtwebengine5-dev qtwebengine5-dev-tools libqt5webengine5 libqt5
 ## Install PythonQt
 我的環境是 WSL
 
-1. git clone python qt
+1. git clone PythonQt
+
+    ```bash
+    git clone https://github.com/MeVisLab/pythonqt.git
+    ```
 2. 參考 [Building](https://mevislab.github.io/pythonqt/Building.html) 頁面 Linux 的環節
 
     ```bash 
@@ -33,8 +37,8 @@ sudo apt install qtwebengine5-dev qtwebengine5-dev-tools libqt5webengine5 libqt5
     ```
 
 ### [fatal error: 'private/qmetaobjectbuilderp.h'](https://stackoverflow.com/questions/65924650/how-to-build-pythonqt-in-ubutnu)
-Install qtbase5-private-dev
-```
+安裝 `qtbase5-private-dev`
+```bash
 sudo apt install qtbase5-private-dev
 ```
 
