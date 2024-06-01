@@ -151,6 +151,7 @@ class TableWidget(QWidget):
 
 
 if __name__ == '__main__':
+    print(sys.argv)
     app = QApplication(sys.argv)
     mainWin = TableWidget()
     pattle = mainWin.palette()
