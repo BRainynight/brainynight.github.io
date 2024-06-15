@@ -37,7 +37,7 @@ class MyModel(QAbstractTableModel):
     def setData(self, index, value, role=Qt.EditRole):
         if role == Qt.EditRole:
             self._data[index.row()][index.column()] = value
-            self.dataChanged.emit(index, index, [Qt.DisplayRole])
+            self.dataChanged.emit(index, index, [Qt.EditRole])
             return True
         return False
 ```
