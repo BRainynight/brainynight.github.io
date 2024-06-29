@@ -11,7 +11,7 @@ data = [
 ]
 headers = [ "Name", "Group", "Org", "Start Date", "End Date", "Reported"]
     
-def get_travel_length(st, et):
+def get_duration(st, et):
     st = (QDate.fromString(st, "yyyy-MM-dd")).toPyDate()
     et = (QDate.fromString(et, "yyyy-MM-dd")).toPyDate()
     res = et - st
@@ -35,8 +35,8 @@ def main():
     model = set_model(app, data)
 
     table_view = QTableView()
-    table_view.setSortingEnabled(True)
     table_view.setModel(model)
+    table_view.setSortingEnabled(True)
     combobox_delegate = delegates.GroupComboBoxDelegate()
     checkbox_delegate = delegates.CheckBoxDelegate()
     calendar_delegate = delegates.CalendarDelegate()
@@ -45,7 +45,7 @@ def main():
     table_view.setItemDelegateForColumn(3, calendar_delegate)
     table_view.setItemDelegateForColumn(4, calendar_delegate)
     table_view.show()
-    get_travel_length(model.index(0, 3).data(), model.index(0, 4).data(),)
+    get_duration(model.index(0, 3).data(), model.index(0, 4).data(),)
     sys.exit(app.exec_())
 
 

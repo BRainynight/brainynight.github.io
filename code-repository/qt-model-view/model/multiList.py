@@ -4,6 +4,7 @@ from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 
 class MultiList(QComboBox):
+    # Source: https://notes84.blogspot.com/2016/05/c-qt56-combobox-with-checkboxes.html
     itemChanged = pyqtSignal()
 
     def __init__(self, parent=None):

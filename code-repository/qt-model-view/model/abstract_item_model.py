@@ -7,6 +7,10 @@ from PyQt5.QtCore import *
 
 import delegates  
 
+'''
+Abstract item model: can calculate duration from TravelData.
+
+'''
 
 def convert_to_datetime(s: str):
     if s =="":

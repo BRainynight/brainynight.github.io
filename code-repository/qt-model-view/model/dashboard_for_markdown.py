@@ -10,12 +10,19 @@ from delegates import SimpleDelegate
 PATH = "../../../content/zh-tw/notes"
 from markdown_to_json import convert_md_to_json
 
+'''
+Try to use QAbstractItemModel to implement model can fit QTreeView and QTableView
+
+- Need to implement QAbstractItemModel.index
+    QAbstractTableModel is difficult to fit QTreeView
+'''
+
 class Markdown:
     attrs = ["title", "date", "categories", "tags", "description"]
     def __init__(self, d) -> None:
         self.categories = []
         self.tags = []
-        self.date = None 
+        self.date = "" 
         self.description = ""
         self.title = ""
         self.init(d)
@@ -28,13 +35,19 @@ class Markdown:
 
     def init(self, d: dict):
         for key, val in d.items():
+            if val is None:
+                val = ""
+
             if key == "categories":
                 val = Markdown.str_to_list(val)
             elif key == "tags":
                 val = Markdown.str_to_list(val)
+            elif key == "date":
+                val = str(val)
+
             setattr(self, key, val)
 
-class MyModel(QAbstractTableModel):
+class MyModel(QAbstractItemModel):
     def __init__(self, data, p):
         super(MyModel, self).__init__(p)
         self._data = data
@@ -69,6 +82,22 @@ class MyModel(QAbstractTableModel):
         # Let cell content is editable
         return Qt.ItemIsSelectable | Qt.ItemIsEnabled | Qt.ItemIsEditable
 
+    def sort(self, column, order=Qt.AscendingOrder):
+        attr_name = Markdown.attrs[column]
+        self.layoutAboutToBeChanged.emit()
+        # Sorting the data
+        print(column)
+        self._data.sort(key=lambda x: getattr(x, attr_name), reverse=(order == Qt.DescendingOrder))
+        self.dataChanged.emit(self.index(0, column), self.index(self.rowCount()-1, column), [Qt.EditRole])
+
+    def index(self, row, column, parent=QModelIndex()):
+        if self.hasIndex(row, column, parent):
+            return self.createIndex(row, column, self._data[row])
+        return QModelIndex()
+
+    def parent(self, index):
+        return QModelIndex()
+
 def prepare_markdown_objs():
     files = os.listdir(PATH)
     lt = []
@@ -98,5 +127,6 @@ h = table_view.verticalHeader().length()+table_view.horizontalHeader().height()
 print(table_view.horizontalHeader().height())
 
 table_view.setFixedSize(w, h )
+table_view.setSortingEnabled(True)
 table_view.show()
 app.exec_()

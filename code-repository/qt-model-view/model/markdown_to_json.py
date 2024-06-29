@@ -28,12 +28,16 @@ def convert_md_to_json(md_file_path):
 
     # Parse YAML metadata
     metadata = yaml.safe_load(yaml_content)
+    title = md_file_path.split("/")[-1].replace(".md", "")
+    metadata['title'] = title
 
     # Convert to JSON
     json_data = {
         "metadata": metadata,
         "content": "".join(content).strip()
     }
+    
+
     return json_data
 
 
