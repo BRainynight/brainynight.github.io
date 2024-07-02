@@ -13,9 +13,6 @@ class CustomButton(QPushButton):
             painter = QPainter(self)
             painter.save()
 
-            pen = QPen(QColor('red'))
-            painter.setPen(pen)
-
             option = QStyleOptionFocusRect()
             option.initFrom(self)
             option.rect = QRect(0, 0, 100, 100)
@@ -49,7 +46,7 @@ class App(QWidget):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    # app.setStyle('Windows')
+    app.setStyle('Windows')
     ex = App()
     ex.show()
     sys.exit(app.exec_())
