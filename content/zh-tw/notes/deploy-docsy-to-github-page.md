@@ -3,7 +3,7 @@ title: 部屬 Docsy 到 Github Page
 date: 2024-05-03 23:09:00
 description: "實際部屬到 github Page 時遇到的困難"
 categories:
-  - Default@
+  - Default
 ---
 
 ## 前情概要
