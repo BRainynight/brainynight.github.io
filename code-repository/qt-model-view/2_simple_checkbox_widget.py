@@ -3,6 +3,11 @@ from PyQt5.QtWidgets import QApplication, QTableView, QCheckBox, QVBoxLayout, QW
 from PyQt5.QtGui import QStandardItemModel, QStandardItem
 from PyQt5.QtCore import Qt
 
+'''
+Show checkbox in QTableView by add QCheckBox.
+No setting on model.
+'''
+
 class TableWidget(QWidget):
     def __init__(self):
         super().__init__()

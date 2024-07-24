@@ -3,7 +3,10 @@ from PyQt5.QtWidgets import QApplication, QTableView, QCheckBox, QVBoxLayout, QW
 from PyQt5.QtWidgets import QStyledItemDelegate
 from PyQt5.QtGui import QStandardItemModel
 from PyQt5.QtCore import Qt
-
+'''
+Fix the 'two boxes' issue in another way : by delegate `NoCheckboxDelegate`. 
+No 'two boxes' issue in row1 now. 
+'''
 class CustomizeCheckBox(QWidget):
     def __init__(self, parent, ftor ):
         super().__init__(parent)

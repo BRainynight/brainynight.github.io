@@ -3,6 +3,11 @@ from PyQt5.QtWidgets import QApplication, QTableView, QCheckBox, QVBoxLayout, QW
 from PyQt5.QtGui import QStandardItemModel, QStandardItem
 from PyQt5.QtCore import Qt
 
+'''
+Customize a center alignment QWidget, but get strange result.
+Should set setContentsMargins to layout.
+'''
+
 class TableWidget(QWidget):
     def __init__(self):
         super().__init__()

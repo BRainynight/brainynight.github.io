@@ -3,6 +3,12 @@ from PyQt5.QtWidgets import QApplication, QTableView, QCheckBox, QVBoxLayout, QW
 from PyQt5.QtGui import QStandardItemModel
 from PyQt5.QtCore import Qt
 
+'''
+Checkboxes are center alignment by customizing checkbox `CustomizeCheckBox`.
+Complete the setData in QStandardItemModel.
+Show the 'two boxes' in row1, but fixed in row2.
+'''
+
 class CustomizeCheckBox(QWidget):
     def __init__(self, parent, ftor ):
         super().__init__(parent)

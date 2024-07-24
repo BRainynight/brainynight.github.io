@@ -3,6 +3,11 @@ from PyQt5.QtWidgets import QApplication, QTableView, QCheckBox, QVBoxLayout, QW
 from PyQt5.QtGui import QStandardItemModel, QStandardItem
 from PyQt5.QtCore import Qt
 
+'''
+Show checkbox in QTableView by setCheckState in QStandardItemModel.
+The checkboxes are alignment to the left side.
+'''
+
 class TableWidget(QWidget):
     def __init__(self):
         super().__init__()
@@ -22,13 +27,6 @@ class TableWidget(QWidget):
         self.init_model()
         self.tableView = QTableView(self)
         self.tableView.setModel(self.model)
-
-        for row in range(self.model.rowCount()):
-            for column in range(self.model.columnCount()):
-                index = self.model.index(row, column)
-                # Method 2: Add checkbox directly, it will not cause starange layout.
-                # cb = QCheckBox(self)
-                # self.tableView.setIndexWidget(index, cb)
 
         layout.addWidget(self.tableView)
         self.setLayout(layout)
