@@ -140,6 +140,10 @@ ax.set_ylim([0, 0.1])
 ax.set_xlim([0, 10])
 ```
 
+下圖是來自 [Matplotlib 的 Quick Start](https://matplotlib.org/stable/users/explain/quick_start.html)，快速提及幾個常用的 function 各自歸屬 `Figure` 還是 `Axes`。
+
+![](https://matplotlib.org/stable/_images/anatomy.png)
+
 ### 繪製橫/直線
 
 ```python
