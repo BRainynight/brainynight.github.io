@@ -104,3 +104,11 @@ QHeaderView 跟 QTableView [通常會使用同一個 model](https://doc.qt.io/qt
    ```
 
 這樣的實作可以讓 Checkbox 和文字作為一體，在 section 中置中顯示，隨著滑鼠點擊更新 Checkbox 的狀態。
+
+
+
+## 最終成果
+
+讓 Checkbox 在 Header 和 Table Cells 都置中吧!
+
+![image-20241226144414763](../img/pyqt5-center-align-checkbox-in-qheaderview/image-20241226144414763.png)
